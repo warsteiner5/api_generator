@@ -9,7 +9,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "generate": "plop",
-    "ast:scan": "tsx tools/ast/scan-project.ts",
     "generate:ui:enums": "tsx tools/generators/ui/generate-enums.ts",
     "generate:ui:models": "tsx tools/generators/ui/generate-models.ts",
     "generate:ui:adapters": "tsx tools/generators/ui/generate-adapters.ts",
