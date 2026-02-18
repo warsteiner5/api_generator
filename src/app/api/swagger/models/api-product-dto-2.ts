@@ -1,0 +1,51 @@
+/* tslint:disable */
+/* eslint-disable */
+import { ApiAvailableVatTypeEnum } from '../models/api-available-vat-type-enum';
+import { ApiExternalFieldValueAltDto } from '../models/api-external-field-value';
+import { ApiJustificationForNonUseNationalModeTypeEnum } from '../models/api-justification-for-non-use-national-mode-type-enum';
+import { ApiKtruCharacteristicValuesDto } from '../models/api-ktru-characteristic-values-dto';
+import { ApiNationalModeRequirementTypeEnum } from '../models/api-national-mode-requirement-type-enum';
+import { ApiOkpd2CodeMarketDto } from '../models/api-okpd-2-code-market-dto';
+import { ApiTruTypeEnum } from '../models/api-tru-type-enum';
+import { ApiUsedClassificatorTypeEnum } from '../models/api-used-classificator-type-enum';
+export interface ApiProductDto2 {
+  ClassificatorCode?: string | null;
+  ClassificatorDescription?: string | null;
+  ClassificatorType?: ApiUsedClassificatorTypeEnum;
+  Description?: string | null;
+  ExternalFieldValues?: Array<ApiExternalFieldValueAltDto> | null;
+  Gost?: string | null;
+  Id?: number;
+  JustificationForNonUseNationalModeAdditionalInfo?: string | null;
+  JustificationForNonUseNationalModeType?: ApiJustificationForNonUseNationalModeTypeEnum;
+  KsrCode?: string | null;
+  KsrName?: string | null;
+  KsrUnit?: string | null;
+  KsrUnitQuantity?: number | null;
+  KtruCharacteristicValues?: Array<ApiKtruCharacteristicValuesDto> | null;
+  KtruCode?: string | null;
+  KtruInfo?: string | null;
+  KtruName?: string | null;
+  KtruSpecification?: string | null;
+  KtruVersionNumber?: number;
+  Mark?: string | null;
+  Name?: string | null;
+  NationalModeRequirementType?: ApiNationalModeRequirementTypeEnum;
+  OfferId?: number | null;
+  OkeiCode?: string | null;
+  OkeiDescription?: string | null;
+  Okpd2Codes?: Array<ApiOkpd2CodeMarketDto> | null;
+  Okved2Code?: string | null;
+  Parameters?: string | null;
+  PositionNumber?: number;
+  Price?: number | null;
+  Quantity?: number;
+  ShortOkeiName?: string | null;
+  Sum?: number | null;
+  SumWithVat?: number | null;
+  Type?: ApiTruTypeEnum | null;
+  UniqueId?: string | null;
+  UserDictionaryPositionName?: string | null;
+  UserDictionaryPositionNumber?: string | null;
+  VatRate?: ApiAvailableVatTypeEnum | null;
+}

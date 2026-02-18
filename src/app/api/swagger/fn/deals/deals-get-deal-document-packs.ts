@@ -1,0 +1,34 @@
+/* tslint:disable */
+/* eslint-disable */
+import { HttpClient, HttpContext, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { StrictHttpResponse } from '../../strict-http-response';
+import { RequestBuilder } from '../../request-builder';
+
+import { ApiDocumentTypeEnum } from '../../models/api-document-type-enum';
+import { ApiMarketJsonResultOfDocumentPackDtoOf } from '../../models/api-market-json-result-of-document-pack-dto-of';
+
+export interface DealsGetDealDocumentPacks$Params {
+  id: number;
+  DocumentTypes?: Array<ApiDocumentTypeEnum> | null;
+}
+
+export function dealsGetDealDocumentPacks(http: HttpClient, rootUrl: string, params: DealsGetDealDocumentPacks$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDocumentPackDtoOf>> {
+  const rb = new RequestBuilder(rootUrl, dealsGetDealDocumentPacks.PATH, 'get');
+  if (params) {
+    rb.path('id', params.id, {});
+    rb.query('DocumentTypes', params.DocumentTypes, {"style":"form","explode":true});
+  }
+
+  return http.request(
+    rb.build({ responseType: 'json', accept: 'application/json', context })
+  ).pipe(
+    filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
+    map((r: HttpResponse<any>) => {
+      return r as StrictHttpResponse<ApiMarketJsonResultOfDocumentPackDtoOf>;
+    })
+  );
+}
+
+dealsGetDealDocumentPacks.PATH = '/bla-bla-vla/deals/{id}/document-packs';

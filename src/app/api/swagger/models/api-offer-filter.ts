@@ -1,0 +1,48 @@
+/* tslint:disable */
+/* eslint-disable */
+import { ApiBaseFilterObjectAltDto } from '../models/api-base-filter-object';
+import { ApiParticipantOfferSourceEnum } from '../models/api-participant-offer-source-enum';
+import { ApiParticipantOfferStateEnum } from '../models/api-participant-offer-state-enum';
+import { ApiParticipantOfferTypeEnum } from '../models/api-participant-offer-type-enum';
+import { ApiUsedClassificatorTypeEnum } from '../models/api-used-classificator-type-enum';
+export type ApiOfferFilterAltDto = ApiBaseFilterObjectAltDto & {
+'ProductName'?: string | null;
+'SubProductName'?: string | null;
+'UsedClassificator'?: ApiUsedClassificatorTypeEnum | null;
+'ClassificatorCodes'?: Array<string> | null;
+'PriceFrom'?: number | null;
+'PriceTo'?: number | null;
+'OfferTermsFrom'?: string | null;
+'OfferTermsTo'?: string | null;
+'OfferState'?: ApiParticipantOfferStateEnum | null;
+'ParticipantInn'?: string | null;
+'ParticipantName'?: string | null;
+'OfferType'?: ApiParticipantOfferTypeEnum;
+'PublishDateFrom'?: string | null;
+'PublishDateTo'?: string | null;
+'IsPublicOffer'?: boolean | null;
+'OnlyWithoutPictures'?: boolean;
+'ParticipantOfferSource'?: ApiParticipantOfferSourceEnum | null;
+'OnlyMyOffers'?: boolean | null;
+'ItemInStock'?: boolean;
+'OnOrder'?: boolean;
+'HasPhoto'?: boolean | null;
+'QuantityInStockFrom'?: number | null;
+'QuantityInStockTo'?: number | null;
+'LastModificationDateFrom'?: string | null;
+'LastModificationDateTo'?: string | null;
+'ViewsCountFrom'?: number | null;
+'ViewsCountTo'?: number | null;
+'StartedDealsCountFrom'?: number | null;
+'StartedDealsCountTo'?: number | null;
+'HasStartedDeals'?: boolean;
+'HasCompletedDeals'?: boolean;
+'OrganizationId'?: number | null;
+'UserId'?: number | null;
+'ParentObjectId'?: number | null;
+'VendorCode'?: string | null;
+'SellerCode'?: string | null;
+'BarCode'?: string | null;
+'CategoryIds'?: Array<string> | null;
+'KladrCodeProductionRegions'?: Array<string> | null;
+};

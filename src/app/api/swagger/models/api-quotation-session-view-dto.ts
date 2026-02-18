@@ -1,0 +1,57 @@
+/* tslint:disable */
+/* eslint-disable */
+import { ApiAvailableVatTypeEnum } from '../models/api-available-vat-type-enum';
+import { ApiConditionsOfVatAltEnum } from '../models/api-conditions-of-vat';
+import { ApiDealSignerAltDto } from '../models/api-deal-signer';
+import { ApiM4DDealSignRequiredEnum } from '../models/api-m-4-d-deal-sign-required-enum';
+import { ApiMarketDealStateEnum } from '../models/api-market-deal-state-enum';
+import { ApiMarketTradePersonAltDto } from '../models/api-market-trade-person';
+import { ApiQuotationSessionDealDto } from '../models/api-quotation-session-deal-dto';
+import { ApiVatRateStateEnum } from '../models/api-vat-rate-state-enum';
+import { ApiZmoFinanceSourceEnum } from '../models/api-zmo-finance-source-enum';
+export interface ApiQuotationSessionViewDto {
+  AutoProlongation?: number;
+  ConditionsOfPayment?: string | null;
+  ConditionsOfVat?: ApiConditionsOfVatAltEnum;
+  ContactPerson?: ApiMarketTradePersonAltDto | null;
+  CustomerAddress?: string | null;
+  CustomerFullName?: string | null;
+  CustomerGuid?: string | null;
+  CustomerId?: number | null;
+  CustomerRegionName?: string | null;
+  Deals?: Array<ApiQuotationSessionDealDto> | null;
+  DeliveryTerms?: string | null;
+  Description?: string | null;
+  EndDate?: string | null;
+  FinanceSource?: ApiZmoFinanceSourceEnum | null;
+  FinanceSourceDescription?: string | null;
+  FzType?: number | null;
+  FzTypeDescription?: string | null;
+  FzTypeHint?: string | null;
+  FzTypeName?: string | null;
+  Id?: number;
+  IsContractInElectronicForm?: boolean | null;
+  IsCustomer?: boolean;
+  IsEisConcludeDealRequired?: boolean;
+  IsOnlySmp?: boolean;
+  IsOrganizer?: boolean;
+  ItemsCount?: number;
+  LotId?: number;
+  M4DDealSignRequired?: ApiM4DDealSignRequiredEnum;
+  MaxStepPercent?: number;
+  MinStepPercent?: number;
+  MonetizationMarketWithoutNmz?: boolean;
+  Name?: string | null;
+  PlanedDealSignDate?: string | null;
+  Price?: number | null;
+  PriceWithVat?: number | null;
+  PublicationDate?: string | null;
+  RateVat?: ApiAvailableVatTypeEnum;
+  ShowProtocol?: boolean;
+  Signer?: ApiDealSignerAltDto | null;
+  State?: ApiMarketDealStateEnum;
+  StateDescription?: string | null;
+  SupplierWithSmallBusinessRequirements?: boolean;
+  SupplierWithUniversalRequirements?: boolean;
+  VatRateState?: ApiVatRateStateEnum;
+}

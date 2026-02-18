@@ -1,0 +1,17 @@
+/* tslint:disable */
+/* eslint-disable */
+export enum ApiSourceTypeAltEnum {
+  Undefined = 0,
+  Eruz = 1,
+  PP = 2,
+  Edo = 3,
+  Etp223 = 4,
+  Etp44 = 5,
+  Passport = 6,
+  Mo = 7,
+  Sso = 8,
+  SalesTech = 9,
+  Krista = 10,
+  ExportBy = 11,
+  Eat = 12
+}

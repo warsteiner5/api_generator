@@ -1,0 +1,30 @@
+/* tslint:disable */
+/* eslint-disable */
+import { HttpClient, HttpContext, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { StrictHttpResponse } from '../../strict-http-response';
+import { RequestBuilder } from '../../request-builder';
+
+
+export interface OrganizationRequestSubordinateInstitution$Params {
+  relationId: number;
+}
+
+export function organizationRequestSubordinateInstitution(http: HttpClient, rootUrl: string, params: OrganizationRequestSubordinateInstitution$Params, context?: HttpContext): Observable<StrictHttpResponse<Blob>> {
+  const rb = new RequestBuilder(rootUrl, organizationRequestSubordinateInstitution.PATH, 'get');
+  if (params) {
+    rb.query('relationId', params.relationId, {});
+  }
+
+  return http.request(
+    rb.build({ responseType: 'blob', accept: 'application/octet-stream', context })
+  ).pipe(
+    filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
+    map((r: HttpResponse<any>) => {
+      return r as StrictHttpResponse<Blob>;
+    })
+  );
+}
+
+organizationRequestSubordinateInstitution.PATH = '/bla-bla-vla/Organization/RequestSubordinateInstitution';

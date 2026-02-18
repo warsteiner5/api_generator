@@ -1,0 +1,32 @@
+/* tslint:disable */
+/* eslint-disable */
+import { HttpClient, HttpContext, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { StrictHttpResponse } from '../../strict-http-response';
+import { RequestBuilder } from '../../request-builder';
+
+import { ApiGetNextWorkingDateRequestAltDto } from '../../models/api-get-next-working-date-request';
+import { ApiMarketJsonResultOfDateTime } from '../../models/api-market-json-result-of-date-time';
+
+export interface CalendarGetNextWorkDay$Params {
+      body?: ApiGetNextWorkingDateRequestAltDto | null
+}
+
+export function calendarGetNextWorkDay(http: HttpClient, rootUrl: string, params?: CalendarGetNextWorkDay$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDateTime>> {
+  const rb = new RequestBuilder(rootUrl, calendarGetNextWorkDay.PATH, 'post');
+  if (params) {
+    rb.body(params.body, 'application/json');
+  }
+
+  return http.request(
+    rb.build({ responseType: 'json', accept: 'application/json', context })
+  ).pipe(
+    filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
+    map((r: HttpResponse<any>) => {
+      return r as StrictHttpResponse<ApiMarketJsonResultOfDateTime>;
+    })
+  );
+}
+
+calendarGetNextWorkDay.PATH = '/bla-bla-vla/calendar/nextworkday';

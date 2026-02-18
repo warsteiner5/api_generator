@@ -1,0 +1,9 @@
+/* tslint:disable */
+/* eslint-disable */
+export enum ApiOfferCreatedMethodEnum {
+  WebSite = 0,
+  Yml = 1,
+  Excel = 2,
+  MinPromTorg = 3,
+  SalesTech = 4
+}

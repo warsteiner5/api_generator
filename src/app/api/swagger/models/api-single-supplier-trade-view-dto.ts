@@ -1,0 +1,50 @@
+/* tslint:disable */
+/* eslint-disable */
+import { ApiDealStateEnum } from '../models/api-deal-state-enum';
+import { ApiDeliveryMethodAltEnum } from '../models/api-delivery-method';
+import { ApiM4DDealSignRequiredEnum } from '../models/api-m-4-d-deal-sign-required-enum';
+import { ApiMarketDealStateEnum } from '../models/api-market-deal-state-enum';
+import { ApiSingleSupplierTradeProductAltDto } from '../models/api-single-supplier-trade-product';
+import { ApiTradeBusinessFlowEnum } from '../models/api-trade-business-flow-enum';
+export interface ApiSingleSupplierTradeViewDto {
+  BusinessFlowType?: ApiTradeBusinessFlowEnum;
+  CustomerFullName?: string | null;
+  CustomerGuid?: string;
+  CustomerPhysAddress?: string | null;
+  DealConclusionTermInfo?: string | null;
+  DealId?: number | null;
+  DealState?: ApiDealStateEnum | null;
+  DeliveryKladrRegionName?: string | null;
+  DeliveryMethod?: ApiDeliveryMethodAltEnum;
+  DeliveryTerms?: string | null;
+  FillingApplicationEndDate?: string | null;
+  Id?: number;
+  InitialPriceWithVat?: number | null;
+  InitialPriceWithoutVat?: number | null;
+  IsContractInElectronicForm?: boolean | null;
+  IsCustomPrice?: boolean;
+  IsCustomer?: boolean;
+  IsOrganizer?: boolean;
+  IsParentContractNumberNotSpecified?: boolean | null;
+  IsRussianPurchaseObjectHasAdvantage?: boolean;
+  IsSanctionedPurchase?: boolean | null;
+  IsUnitBidding?: boolean;
+  LotId?: number;
+  M4DDealSignRequired?: ApiM4DDealSignRequiredEnum;
+  MarketState?: ApiMarketDealStateEnum;
+  MarketStateDescription?: string | null;
+  MovingProLink?: string | null;
+  ParentContractNumber?: string | null;
+  ParentNotTookPlaceTradeHost?: string | null;
+  ParentNotTookPlaceTradeId?: number | null;
+  ParticipantFullName?: string | null;
+  ParticipantGuid?: string;
+  PlanedDealSignDate?: string | null;
+  Products?: Array<ApiSingleSupplierTradeProductAltDto> | null;
+  PublicationDate?: string | null;
+  TradeName?: string | null;
+  TradeNumber?: string | null;
+  ZmoFinanceSourceDescription?: string | null;
+  ZmoFzTypeDescription?: string | null;
+  ZmoFzTypeName?: string | null;
+}

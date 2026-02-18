@@ -1,0 +1,33 @@
+/* tslint:disable */
+/* eslint-disable */
+import { HttpClient, HttpContext, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { StrictHttpResponse } from '../../strict-http-response';
+import { RequestBuilder } from '../../request-builder';
+
+import { ApiUpdateRoleRequestAltDto } from '../../models/api-update-role-request';
+
+export interface RolesUpdateRole$Params {
+  id: number;
+      body?: ApiUpdateRoleRequestAltDto | null
+}
+
+export function rolesUpdateRole(http: HttpClient, rootUrl: string, params: RolesUpdateRole$Params, context?: HttpContext): Observable<StrictHttpResponse<Blob>> {
+  const rb = new RequestBuilder(rootUrl, rolesUpdateRole.PATH, 'post');
+  if (params) {
+    rb.path('id', params.id, {});
+    rb.body(params.body, 'application/json');
+  }
+
+  return http.request(
+    rb.build({ responseType: 'blob', accept: 'application/octet-stream', context })
+  ).pipe(
+    filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
+    map((r: HttpResponse<any>) => {
+      return r as StrictHttpResponse<Blob>;
+    })
+  );
+}
+
+rolesUpdateRole.PATH = '/bla-bla-vla/security/roles/{id}';

@@ -1,0 +1,58 @@
+/* tslint:disable */
+/* eslint-disable */
+import { ApiExternalSystemsSettingsDto } from '../models/api-external-systems-settings-dto';
+import { ApiMarketOfficeOrganizationContactDto } from '../models/api-market-office-organization-contact-dto';
+import { ApiMarketProtocolSettingsDto } from '../models/api-market-protocol-settings-dto';
+import { ApiMarketPurchaseSettingsDto } from '../models/api-market-purchase-settings-dto';
+import { ApiOrgAccreditationLevelDto } from '../models/api-org-accreditation-level-dto';
+import { ApiOrganizationActivityInfoDto } from '../models/api-organization-activity-info-dto';
+import { ApiOrganizationBankInfoDto } from '../models/api-organization-bank-info-dto';
+import { ApiOrganizationContactsDto } from '../models/api-organization-contacts-dto';
+import { ApiOrganizationDescriptionDto } from '../models/api-organization-description-dto';
+import { ApiOrganizationDesignDto } from '../models/api-organization-design-dto';
+import { ApiOrganizationEmployeesInfoDto } from '../models/api-organization-employees-info-dto';
+import { ApiOrganizationProfileDocumentDto } from '../models/api-organization-profile-document-dto';
+import { ApiOrganizationTypeEnum } from '../models/api-organization-type-enum';
+import { ApiRestrictionsDto } from '../models/api-restrictions-dto';
+import { ApiTagViewDto } from '../models/api-tag-view-dto';
+export interface ApiMarketOrganizationFullInfoDto {
+  ActivityInfo?: ApiOrganizationActivityInfoDto | null;
+  BankInfos?: Array<ApiOrganizationBankInfoDto> | null;
+  Categories?: Array<string> | null;
+  Contacts?: ApiOrganizationContactsDto | null;
+  Description?: ApiOrganizationDescriptionDto | null;
+  Design?: ApiOrganizationDesignDto | null;
+  Director?: string | null;
+  Documents?: Array<ApiOrganizationProfileDocumentDto> | null;
+  DomainName?: string | null;
+  Email?: string | null;
+  EmployeesInfo?: ApiOrganizationEmployeesInfoDto | null;
+  ExternalSystemsSettings?: ApiExternalSystemsSettingsDto | null;
+  Guid?: string | null;
+  Id?: number;
+  Industries?: Array<string> | null;
+  Inn?: string | null;
+  Instagram?: string | null;
+  IsExporter?: boolean;
+  IsManufacturer?: boolean;
+  IsSmb?: boolean;
+  Kpp?: string | null;
+  Name?: string | null;
+  Offices?: Array<ApiMarketOfficeOrganizationContactDto> | null;
+  Ogrn?: string | null;
+  Okato?: string | null;
+  Okpo?: string | null;
+  Okved?: string | null;
+  OrgAccreditationLevel?: ApiOrgAccreditationLevelDto | null;
+  PhoneNumber?: string | null;
+  ProtocolSettings?: ApiMarketProtocolSettingsDto | null;
+  PurchaseSettings?: ApiMarketPurchaseSettingsDto | null;
+  Restrictions?: ApiRestrictionsDto | null;
+  Tags?: Array<ApiTagViewDto> | null;
+  Telegram?: string | null;
+  Type?: ApiOrganizationTypeEnum;
+  VideoUrls?: Array<string> | null;
+  Vkontakte?: string | null;
+  WebSiteUrl?: string | null;
+  Youtube?: string | null;
+}

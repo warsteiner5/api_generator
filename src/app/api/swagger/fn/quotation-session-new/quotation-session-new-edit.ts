@@ -1,0 +1,31 @@
+/* tslint:disable */
+/* eslint-disable */
+import { HttpClient, HttpContext, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { StrictHttpResponse } from '../../strict-http-response';
+import { RequestBuilder } from '../../request-builder';
+
+import { ApiMarketJsonResultOfQuotationSession } from '../../models/api-market-json-result-of-quotation-session';
+
+export interface QuotationSessionNewEdit$Params {
+  tradeGuid: string;
+}
+
+export function quotationSessionNewEdit(http: HttpClient, rootUrl: string, params: QuotationSessionNewEdit$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfQuotationSession>> {
+  const rb = new RequestBuilder(rootUrl, quotationSessionNewEdit.PATH, 'get');
+  if (params) {
+    rb.path('tradeGuid', params.tradeGuid, {});
+  }
+
+  return http.request(
+    rb.build({ responseType: 'json', accept: 'application/json', context })
+  ).pipe(
+    filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
+    map((r: HttpResponse<any>) => {
+      return r as StrictHttpResponse<ApiMarketJsonResultOfQuotationSession>;
+    })
+  );
+}
+
+quotationSessionNewEdit.PATH = '/bla-bla-vla/quotation-session-new/edit/{tradeGuid}';

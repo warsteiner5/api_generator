@@ -1,0 +1,33 @@
+/* tslint:disable */
+/* eslint-disable */
+export enum ApiSectionEnum {
+  Trades = 1,
+  Orders = 2,
+  ParticipantPortal = 3,
+  SectionSale = 4,
+  SectionBuy = 5,
+  PublicSearchBuyButton = 6,
+  PublicSearchSellButton = 7,
+  PublicSearchFindButton = 8,
+  ParticipantOffers = 9,
+  AuthInfo = 10,
+  Services = 11,
+  Recommendations = 12,
+  PriceAnalysis = 13,
+  OrderStatistics = 14,
+  PrivateBuyButton = 15,
+  AboutServiceSection = 16,
+  UisApplicationsSection = 17,
+  AllTradesForCustomer = 18,
+  WrongContractExecutionListSection = 19,
+  WrongContractExecutionInsertSection = 20,
+  ZmoPersonalAccountSection = 21,
+  SettingsSectionForLK = 22,
+  ExportToExcelButton = 23,
+  Registration = 24,
+  RtsTenderPro = 25,
+  PurchaseSettings = 26,
+  Help = 27,
+  ChangeRole = 28,
+  ChangePasswordButton = 29
+}

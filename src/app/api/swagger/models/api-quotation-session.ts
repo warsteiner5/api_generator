@@ -1,0 +1,50 @@
+/* tslint:disable */
+/* eslint-disable */
+import { ApiAvailableVatTypeEnum } from '../models/api-available-vat-type-enum';
+import { ApiConditionsOfVatAltEnum } from '../models/api-conditions-of-vat';
+import { ApiContactInformationDto } from '../models/api-contact-information-dto';
+import { ApiDocumentDto } from '../models/api-document-dto';
+import { ApiInvitationDto } from '../models/api-invitation-dto';
+import { ApiInvitationMethodEnum } from '../models/api-invitation-method-enum';
+import { ApiQuotationSessionDetailAltDto } from '../models/api-quotation-session-detail';
+import { ApiVatRateStateEnum } from '../models/api-vat-rate-state-enum';
+import { ApiZmoFinanceSourceEnum } from '../models/api-zmo-finance-source-enum';
+export interface ApiQuotationSessionAltDto {
+  AutoProlongation?: number;
+  BidStepInfo?: string | null;
+  ConditionsOfPayment?: string | null;
+  ConditionsOfVat?: ApiConditionsOfVatAltEnum;
+  ContactInfo?: ApiContactInformationDto | null;
+  CustomerId?: number;
+  DeliveryAddress?: string | null;
+  DeliveryRegion?: string | null;
+  DeliveryTerms?: string | null;
+  Description?: string | null;
+  Details?: Array<ApiQuotationSessionDetailAltDto> | null;
+  Documents?: Array<ApiDocumentDto> | null;
+  Duration?: number;
+  EndDate?: string | null;
+  Guid?: string;
+  Id?: number;
+  InitialPrice?: number;
+  InitialPriceWithVat?: number;
+  InitialPriceWithoutVat?: number;
+  InvitationIsAllRegions?: boolean;
+  InvitationMethod?: ApiInvitationMethodEnum;
+  InvitationRegions?: Array<string> | null;
+  InvitationTags?: Array<string> | null;
+  Invitations?: Array<ApiInvitationDto> | null;
+  IsContractInElectronicForm?: boolean | null;
+  IsFederalLawsEnable?: boolean;
+  IsManualEnterPriceForEachProduct?: boolean;
+  IsOnlySmp?: boolean;
+  KladrRegionCodes?: Array<string> | null;
+  LotId?: number;
+  Name?: string | null;
+  PlanedDealSignDate?: string | null;
+  SumVat?: number;
+  VatRate?: ApiAvailableVatTypeEnum;
+  VatRateState?: ApiVatRateStateEnum;
+  ZmoFinanceSource?: ApiZmoFinanceSourceEnum | null;
+  ZmoFzType?: number | null;
+}

@@ -1,0 +1,32 @@
+/* tslint:disable */
+/* eslint-disable */
+import { HttpClient, HttpContext, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { StrictHttpResponse } from '../../strict-http-response';
+import { RequestBuilder } from '../../request-builder';
+
+import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketOrganizationProfileDocumentDto } from '../../models/api-market-organization-profile-document-dto';
+
+export interface OrganizationProfilesUpdateProfileDocuments$Params {
+      body?: Array<ApiMarketOrganizationProfileDocumentDto> | null
+}
+
+export function organizationProfilesUpdateProfileDocuments(http: HttpClient, rootUrl: string, params?: OrganizationProfilesUpdateProfileDocuments$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  const rb = new RequestBuilder(rootUrl, organizationProfilesUpdateProfileDocuments.PATH, 'post');
+  if (params) {
+    rb.body(params.body, 'application/json');
+  }
+
+  return http.request(
+    rb.build({ responseType: 'json', accept: 'application/json', context })
+  ).pipe(
+    filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
+    map((r: HttpResponse<any>) => {
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+    })
+  );
+}
+
+organizationProfilesUpdateProfileDocuments.PATH = '/bla-bla-vla/organization-profiles/my/documents';

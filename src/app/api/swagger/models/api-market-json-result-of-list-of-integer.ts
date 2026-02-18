@@ -1,0 +1,6 @@
+/* tslint:disable */
+/* eslint-disable */
+import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
+export type ApiMarketJsonResultOfListOfInteger = ApiMarketJsonVoidResultAltDto & {
+'data'?: Array<number> | null;
+};

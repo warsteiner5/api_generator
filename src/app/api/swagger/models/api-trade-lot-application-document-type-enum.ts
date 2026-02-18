@@ -1,0 +1,24 @@
+/* tslint:disable */
+/* eslint-disable */
+export enum ApiTradeLotApplicationDocumentTypeEnum {
+  Trademark = 1,
+  Requirements = 2,
+  MaxPermittedAmount = 3,
+  OtherDocuments = 4,
+  Preferences = 5,
+  MatchUnifiedRequirements = 6,
+  MatchCustomerRequirements44 = 7,
+  BankGurantee = 8,
+  TradeConditionsAgreement = 9,
+  OtherDocuments615 = 10,
+  QualificationRequirementsDocuments = 11,
+  FinalProposalDocuments = 12,
+  QuotationInfo = 13,
+  OpenPart = 14,
+  ClosePart = 15,
+  Archive = 16,
+  DraftAgreement = 17,
+  TechnicalTask = 18,
+  SpecTRU = 19,
+  PrivateDocument = 20
+}

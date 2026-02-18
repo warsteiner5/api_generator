@@ -9,7 +9,12 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "generate": "plop",
-    "ast:scan": "tsx tools/ast/scan-project.ts"
+    "ast:scan": "tsx tools/ast/scan-project.ts",
+    "generate:ui:enums": "tsx tools/generators/ui/generate-enums.ts",
+    "generate:ui:models": "tsx tools/generators/ui/generate-models.ts",
+    "generate:ui:adapters": "tsx tools/generators/ui/generate-adapters.ts",
+    "generate:ui:repositories": "tsx tools/generators/ui/generate-repositories.ts",
+    "generate:ui": "npm run generate:ui:enums && npm run generate:ui:models && npm run generate:ui:adapters && npm run generate:ui:repositories"
   },
   "dependencies": {
     "@angular/animations": "^17.3.0",
