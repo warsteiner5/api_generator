@@ -1,0 +1,18 @@
+.shell {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgb(25 35 56 / 0.08);
+
+  h1 {
+    margin-top: 0;
+    color: #1f2a44;
+  }
+
+  p,
+  li {
+    color: #475372;
+  }
+}
