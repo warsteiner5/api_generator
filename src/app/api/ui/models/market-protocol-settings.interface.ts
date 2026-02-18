@@ -1,0 +1,4 @@
+export interface MarketProtocolSettings {
+  showProtocolForTradeWithApplicationEndDateWithoutSentToEis: boolean;
+  showProtocolForTradeWithoutApplicationEndDateWithoutSentToEis: boolean;
+}

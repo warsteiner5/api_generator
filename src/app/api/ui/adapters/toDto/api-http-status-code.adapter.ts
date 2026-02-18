@@ -1,0 +1,103 @@
+import { HttpStatusCodeAltEnum } from '../../enums/http-status-code-alt.enum';
+import { ApiHttpStatusCodeAltEnum } from '../../../swagger/models/api-http-status-code';
+
+export function adaptApiHttpStatusCodeAltEnum(source?: HttpStatusCodeAltEnum | null): ApiHttpStatusCodeAltEnum {
+  switch (source) {
+    case HttpStatusCodeAltEnum.Continue:
+      return ApiHttpStatusCodeAltEnum.Continue;
+    case HttpStatusCodeAltEnum.SwitchingProtocols:
+      return ApiHttpStatusCodeAltEnum.SwitchingProtocols;
+    case HttpStatusCodeAltEnum.OK:
+      return ApiHttpStatusCodeAltEnum.OK;
+    case HttpStatusCodeAltEnum.Created:
+      return ApiHttpStatusCodeAltEnum.Created;
+    case HttpStatusCodeAltEnum.Accepted:
+      return ApiHttpStatusCodeAltEnum.Accepted;
+    case HttpStatusCodeAltEnum.NonAuthoritativeInformation:
+      return ApiHttpStatusCodeAltEnum.NonAuthoritativeInformation;
+    case HttpStatusCodeAltEnum.NoContent:
+      return ApiHttpStatusCodeAltEnum.NoContent;
+    case HttpStatusCodeAltEnum.ResetContent:
+      return ApiHttpStatusCodeAltEnum.ResetContent;
+    case HttpStatusCodeAltEnum.PartialContent:
+      return ApiHttpStatusCodeAltEnum.PartialContent;
+    case HttpStatusCodeAltEnum.MultipleChoices:
+      return ApiHttpStatusCodeAltEnum.MultipleChoices;
+    case HttpStatusCodeAltEnum.Ambiguous:
+      return ApiHttpStatusCodeAltEnum.Ambiguous;
+    case HttpStatusCodeAltEnum.MovedPermanently:
+      return ApiHttpStatusCodeAltEnum.MovedPermanently;
+    case HttpStatusCodeAltEnum.Moved:
+      return ApiHttpStatusCodeAltEnum.Moved;
+    case HttpStatusCodeAltEnum.Found:
+      return ApiHttpStatusCodeAltEnum.Found;
+    case HttpStatusCodeAltEnum.Redirect:
+      return ApiHttpStatusCodeAltEnum.Redirect;
+    case HttpStatusCodeAltEnum.SeeOther:
+      return ApiHttpStatusCodeAltEnum.SeeOther;
+    case HttpStatusCodeAltEnum.RedirectMethod:
+      return ApiHttpStatusCodeAltEnum.RedirectMethod;
+    case HttpStatusCodeAltEnum.NotModified:
+      return ApiHttpStatusCodeAltEnum.NotModified;
+    case HttpStatusCodeAltEnum.UseProxy:
+      return ApiHttpStatusCodeAltEnum.UseProxy;
+    case HttpStatusCodeAltEnum.Unused:
+      return ApiHttpStatusCodeAltEnum.Unused;
+    case HttpStatusCodeAltEnum.TemporaryRedirect:
+      return ApiHttpStatusCodeAltEnum.TemporaryRedirect;
+    case HttpStatusCodeAltEnum.RedirectKeepVerb:
+      return ApiHttpStatusCodeAltEnum.RedirectKeepVerb;
+    case HttpStatusCodeAltEnum.BadRequest:
+      return ApiHttpStatusCodeAltEnum.BadRequest;
+    case HttpStatusCodeAltEnum.Unauthorized:
+      return ApiHttpStatusCodeAltEnum.Unauthorized;
+    case HttpStatusCodeAltEnum.PaymentRequired:
+      return ApiHttpStatusCodeAltEnum.PaymentRequired;
+    case HttpStatusCodeAltEnum.Forbidden:
+      return ApiHttpStatusCodeAltEnum.Forbidden;
+    case HttpStatusCodeAltEnum.NotFound:
+      return ApiHttpStatusCodeAltEnum.NotFound;
+    case HttpStatusCodeAltEnum.MethodNotAllowed:
+      return ApiHttpStatusCodeAltEnum.MethodNotAllowed;
+    case HttpStatusCodeAltEnum.NotAcceptable:
+      return ApiHttpStatusCodeAltEnum.NotAcceptable;
+    case HttpStatusCodeAltEnum.ProxyAuthenticationRequired:
+      return ApiHttpStatusCodeAltEnum.ProxyAuthenticationRequired;
+    case HttpStatusCodeAltEnum.RequestTimeout:
+      return ApiHttpStatusCodeAltEnum.RequestTimeout;
+    case HttpStatusCodeAltEnum.Conflict:
+      return ApiHttpStatusCodeAltEnum.Conflict;
+    case HttpStatusCodeAltEnum.Gone:
+      return ApiHttpStatusCodeAltEnum.Gone;
+    case HttpStatusCodeAltEnum.LengthRequired:
+      return ApiHttpStatusCodeAltEnum.LengthRequired;
+    case HttpStatusCodeAltEnum.PreconditionFailed:
+      return ApiHttpStatusCodeAltEnum.PreconditionFailed;
+    case HttpStatusCodeAltEnum.RequestEntityTooLarge:
+      return ApiHttpStatusCodeAltEnum.RequestEntityTooLarge;
+    case HttpStatusCodeAltEnum.RequestUriTooLong:
+      return ApiHttpStatusCodeAltEnum.RequestUriTooLong;
+    case HttpStatusCodeAltEnum.UnsupportedMediaType:
+      return ApiHttpStatusCodeAltEnum.UnsupportedMediaType;
+    case HttpStatusCodeAltEnum.RequestedRangeNotSatisfiable:
+      return ApiHttpStatusCodeAltEnum.RequestedRangeNotSatisfiable;
+    case HttpStatusCodeAltEnum.ExpectationFailed:
+      return ApiHttpStatusCodeAltEnum.ExpectationFailed;
+    case HttpStatusCodeAltEnum.UpgradeRequired:
+      return ApiHttpStatusCodeAltEnum.UpgradeRequired;
+    case HttpStatusCodeAltEnum.InternalServerError:
+      return ApiHttpStatusCodeAltEnum.InternalServerError;
+    case HttpStatusCodeAltEnum.NotImplemented:
+      return ApiHttpStatusCodeAltEnum.NotImplemented;
+    case HttpStatusCodeAltEnum.BadGateway:
+      return ApiHttpStatusCodeAltEnum.BadGateway;
+    case HttpStatusCodeAltEnum.ServiceUnavailable:
+      return ApiHttpStatusCodeAltEnum.ServiceUnavailable;
+    case HttpStatusCodeAltEnum.GatewayTimeout:
+      return ApiHttpStatusCodeAltEnum.GatewayTimeout;
+    case HttpStatusCodeAltEnum.HttpVersionNotSupported:
+      return ApiHttpStatusCodeAltEnum.HttpVersionNotSupported;
+    default:
+      throw new Error(`Enum value is not defined: HttpStatusCodeAltEnum=${String(source)}`);
+  }
+}

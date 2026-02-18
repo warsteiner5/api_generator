@@ -1,0 +1,105 @@
+import { MarketSearchResult } from '../../models/market-search-result.interface';
+import { ApiMarketSearchResultDto } from '../../../swagger/models/api-market-search-result-dto';
+import { adaptApiCountryDto } from './api-country-dto.adapter';
+import { adaptApiDictionaryItemAltDto } from './api-dictionary-item.adapter';
+import { adaptApiMarketDealStateEnum } from './api-market-deal-state-enum.adapter';
+import { adaptApiOrganizationCountryAltEnum } from './api-organization-country.adapter';
+import { adaptApiParticipantOfferSourceEnum } from './api-participant-offer-source-enum.adapter';
+import { adaptApiParticipantOfferStateEnum } from './api-participant-offer-state-enum.adapter';
+import { adaptApiPriceListStateEnum } from './api-price-list-state-enum.adapter';
+import { adaptApiPurchaseMethodTypeEnum } from './api-purchase-method-type-enum.adapter';
+import { adaptApiRegionKladrDto } from './api-region-kladr-dto.adapter';
+import { adaptApiRetradingTypeEnum } from './api-retrading-type-enum.adapter';
+import { adaptApiTagViewDto } from './api-tag-view-dto.adapter';
+import { adaptApiTradeBusinessFlowEnum } from './api-trade-business-flow-enum.adapter';
+import { adaptApiVatRateStateEnum } from './api-vat-rate-state-enum.adapter';
+
+export function adaptApiMarketSearchResultDto(source?: MarketSearchResult | null): ApiMarketSearchResultDto {
+  return {
+    ApplicationsCount: source?.applicationsCount,
+    AuctionEndDate: source?.auctionEndDate,
+    BarCode: source?.barCode,
+    BidsCount: source?.bidsCount,
+    BusinessFlowType: adaptApiTradeBusinessFlowEnum(source?.businessFlowType),
+    Country: adaptApiCountryDto(source?.country),
+    CurrencyCode: source?.currencyCode,
+    CustomerExternalOrganizationId: source?.customerExternalOrganizationId,
+    CustomerGuid: source?.customerGuid,
+    CustomerId: source?.customerId,
+    CustomerName: source?.customerName,
+    CustomerSource: source?.customerSource,
+    DeliveryKladrRegionName: source?.deliveryKladrRegionName,
+    DeliveryKladrs: (source?.deliveryKladrs ?? []).map((item) => adaptApiDictionaryItemAltDto(item)),
+    DiscussionId: source?.discussionId,
+    DuringDays: source?.duringDays,
+    ExternalId: source?.externalId,
+    ExternalSystemId: source?.externalSystemId,
+    FillingApplicationEndDate: source?.fillingApplicationEndDate,
+    Hosts: source?.hosts ?? [],
+    Id: source?.id,
+    IsAnyApplicationExists: source?.isAnyApplicationExists,
+    IsContractSigningSuspended: source?.isContractSigningSuspended,
+    IsCustomerAcceptByOkeiOffers: source?.isCustomerAcceptByOkeiOffers,
+    IsCustomerAcceptOnlyManualOffers: source?.isCustomerAcceptOnlyManualOffers,
+    IsExternal: source?.isExternal,
+    IsFavorite: source?.isFavorite,
+    IsForOnlySmb: source?.isForOnlySmb,
+    IsFoundMatchHighlightlInInnerScope: source?.isFoundMatchHighlightlInInnerScope,
+    IsFromManufacturer: source?.isFromManufacturer,
+    IsImmediate: source?.isImmediate,
+    IsImportPhaseout: source?.isImportPhaseout,
+    IsPhysicalPerson: source?.isPhysicalPerson,
+    IsRetradingEnabled: source?.isRetradingEnabled,
+    IsSmallBusinessEntity: source?.isSmallBusinessEntity,
+    IsSuspended: source?.isSuspended,
+    IsUnitBidding: source?.isUnitBidding,
+    LastModificationDate: source?.lastModificationDate,
+    LotId: source?.lotId,
+    LotItemsCount: source?.lotItemsCount,
+    MinQuantity: source?.minQuantity,
+    Name: source?.name,
+    NameWithHighlight: source?.nameWithHighlight,
+    OfferTerms: source?.offerTerms,
+    OkeiCode: source?.okeiCode,
+    Okpd2Code: source?.okpd2Code,
+    Okpd2Description: source?.okpd2Description,
+    OnlyOneRetradingBidAllowed: source?.onlyOneRetradingBidAllowed,
+    OrganizationCountry: adaptApiOrganizationCountryAltEnum(source?.organizationCountry),
+    OrganizerExternalOrganizationId: source?.organizerExternalOrganizationId,
+    OrganizerGuid: source?.organizerGuid,
+    OrganizerId: source?.organizerId,
+    OrganizerName: source?.organizerName,
+    Participant: source?.participant,
+    ParticipantOfferSource: adaptApiParticipantOfferSourceEnum(source?.participantOfferSource),
+    ParticipantOfferState: adaptApiParticipantOfferStateEnum(source?.participantOfferState),
+    PictureGuid: source?.pictureGuid,
+    PlanNumber: source?.planNumber,
+    PlanPositionNumber: source?.planPositionNumber,
+    Price: source?.price,
+    PriceListId: source?.priceListId,
+    PriceListState: adaptApiPriceListStateEnum(source?.priceListState),
+    ProductDescription: source?.productDescription,
+    PublicationDate: source?.publicationDate,
+    PurchaseMethodType: adaptApiPurchaseMethodTypeEnum(source?.purchaseMethodType),
+    Quantity: source?.quantity,
+    RegionalProductSignTenantId: source?.regionalProductSignTenantId,
+    Regions: (source?.regions ?? []).map((item) => adaptApiRegionKladrDto(item)),
+    RetradingEndDate: source?.retradingEndDate,
+    RetradingStartDate: source?.retradingStartDate,
+    RetradingType: adaptApiRetradingTypeEnum(source?.retradingType),
+    SellerCode: source?.sellerCode,
+    ShortOkeiName: source?.shortOkeiName,
+    ShouldRedirectToAnotherTenant: source?.shouldRedirectToAnotherTenant,
+    State: adaptApiMarketDealStateEnum(source?.state),
+    StateString: source?.stateString,
+    Tags: (source?.tags ?? []).map((item) => adaptApiTagViewDto(item)),
+    TradeNumber: source?.tradeNumber,
+    UniqueId: source?.uniqueId,
+    UnitPrice: source?.unitPrice,
+    UnitPriceInCurrency: source?.unitPriceInCurrency,
+    VatRate: source?.vatRate,
+    VatRateDescription: source?.vatRateDescription,
+    VatRateState: adaptApiVatRateStateEnum(source?.vatRateState),
+    VendorCode: source?.vendorCode,
+  };
+}

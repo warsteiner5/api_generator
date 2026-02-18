@@ -1,0 +1,15 @@
+export enum DealStateEnum {
+  Draft = 0,
+  SentForApprove = 5,
+  ApprovedByParticipant = 10,
+  Concluded = 15,
+  CustomerRefusedToSignDeal = 20,
+  ParticipantRefusedToSignDeal = 25,
+  ParticipantSuggestedToSignPaperDeal = 30,
+  Executed = 35,
+  Terminate = 40,
+  SendToReworkByCustomer = 45,
+  Canceled = 50,
+  CustomerSuggestedToSignPaperDeal = 55,
+  DifferenceProtocolSent = 60,
+}

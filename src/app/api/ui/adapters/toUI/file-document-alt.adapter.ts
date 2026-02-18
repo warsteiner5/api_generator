@@ -1,0 +1,9 @@
+import { ApiFileDocumentAltDto } from '../../../swagger/models/api-file-document';
+import { FileDocumentAlt } from '../../models/file-document-alt.interface';
+
+export function adaptFileDocumentAltToUI(source?: ApiFileDocumentAltDto | null): FileDocumentAlt {
+  return {
+    fileName: source?.FileName ?? '',
+    id: source?.Id ?? '',
+  };
+}

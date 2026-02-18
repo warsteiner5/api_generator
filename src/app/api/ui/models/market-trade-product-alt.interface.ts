@@ -1,0 +1,47 @@
+import { AvailableVatTypeEnum } from '../enums/available-vat-type.enum';
+import { JustificationForNonUseNationalModeTypeEnum } from '../enums/justification-for-non-use-national-mode-type.enum';
+import { KtruCharacteristic } from './ktru-characteristic.interface';
+import { MyTermsAlt } from './my-terms-alt.interface';
+import { NationalModeRequirementTypeEnum } from '../enums/national-mode-requirement-type.enum';
+import { Okpd2CodeMarket } from './okpd-2-code-market.interface';
+import { TruTypeEnum } from '../enums/tru-type.enum';
+
+export interface MarketTradeProductAlt {
+  canEditKtruInfo: boolean;
+  classificatorCode: string;
+  description: string;
+  gost: string;
+  id: number;
+  isCustomPrice: boolean;
+  justificationForNonUseNationalModeAdditionalInfo: string;
+  justificationForNonUseNationalModeType: JustificationForNonUseNationalModeTypeEnum;
+  ksrFullName: string;
+  ktruCharacteristics: KtruCharacteristic[];
+  ktruCode: string;
+  ktruInfo: string;
+  ktruName: string;
+  ktruSpecification: string;
+  mark: string;
+  name: string;
+  nationalModeRequirementType: NationalModeRequirementTypeEnum;
+  offerId: number;
+  offerTerms: MyTermsAlt;
+  okeiCode: string;
+  okeiName: string;
+  okpd2Code: string;
+  okpd2Codes: Okpd2CodeMarket[];
+  okpd2Name: string;
+  okved2Code: string;
+  parametrs: string;
+  pictureGuid: string;
+  positionNumber: number;
+  price: number;
+  quantity: number;
+  shortOkeiName: string;
+  sum: number;
+  sumWithVat: number;
+  type: TruTypeEnum;
+  userDictionaryPositionName: string;
+  userDictionaryPositionNumber: string;
+  vatRate: AvailableVatTypeEnum;
+}

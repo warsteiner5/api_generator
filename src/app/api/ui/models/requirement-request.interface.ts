@@ -1,0 +1,45 @@
+import { CatalogItem } from './catalog-item.interface';
+import { Characteristic } from './characteristic.interface';
+import { CharacteristicsSourceEnum } from '../enums/characteristics-source.enum';
+import { ConditionsOfPaymentEnum } from '../enums/conditions-of-payment.enum';
+import { KladrRegionCode } from './kladr-region-code.interface';
+import { PriceRegionDetail } from './price-region-detail.interface';
+import { RequirementRequestDocument } from './requirement-request-document.interface';
+import { RequirementRequestStateEnum } from '../enums/requirement-request-state.enum';
+
+export interface RequirementRequest {
+  category: CatalogItem;
+  categoryId: number;
+  characteristics: Characteristic[];
+  characteristicsSource: CharacteristicsSourceEnum;
+  conditionsOfPayment: ConditionsOfPaymentEnum;
+  contactAdditionalPhone: string;
+  contactFio: string;
+  contactPhone: string;
+  deliveryTerms: string;
+  description: string;
+  documents: RequirementRequestDocument[];
+  endDate: string;
+  id: number;
+  isOnlyForSmsp: boolean;
+  kladrRegionCodes: KladrRegionCode[];
+  manufacturerCountries: string[];
+  manufacturers: string[];
+  minQuantity: number;
+  minQuantityMax: number;
+  minQuantityMin: number;
+  name: string;
+  okeiCode: string;
+  okeiDescription: string;
+  okpd2: string;
+  priceRegionDetails: PriceRegionDetail[];
+  productName: string;
+  quantity: number;
+  restQuantity: number;
+  segmentId: number;
+  segmentName: string;
+  startDate: string;
+  state: RequirementRequestStateEnum;
+  totalPrice: number;
+  unitPrice: number;
+}

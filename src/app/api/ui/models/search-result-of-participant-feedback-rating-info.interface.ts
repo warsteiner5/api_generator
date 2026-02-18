@@ -1,0 +1,9 @@
+import { ParticipantFeedbackRatingInfo } from './participant-feedback-rating-info.interface';
+
+export interface SearchResultOfParticipantFeedbackRatingInfo {
+  currentPage: number;
+  infos: ParticipantFeedbackRatingInfo[];
+  showTotal: boolean;
+  totalPages: number;
+  totalRecords: number;
+}
