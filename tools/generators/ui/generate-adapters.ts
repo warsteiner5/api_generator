@@ -6,6 +6,7 @@ import {
   getAdapterFileBase,
   getEnumFileBase,
   getModelFileBase,
+  isExcludedMarketJsonResult,
   toCamelCaseProperty,
   UI_ADAPTERS_DIR,
   UI_ADAPTERS_TO_DTO_DIR,
@@ -68,6 +69,8 @@ async function generateAdapters(): Promise<void> {
   const toDtoFiles = new Map<string, string>();
   const toUiExports: string[] = [];
   const toDtoExports: string[] = [];
+  let generatedToUiCount = 0;
+  let generatedToDtoCount = 0;
 
   for (const enumEntity of context.enums) {
     const fileBase = getAdapterFileBase(enumEntity.localName);
@@ -127,6 +130,10 @@ async function generateAdapters(): Promise<void> {
   }
 
   for (const typeEntity of context.types) {
+    if (isExcludedMarketJsonResult(typeEntity.swaggerName)) {
+      continue;
+    }
+
     const fileBase = getAdapterFileBase(typeEntity.localName);
     const fileName = `${fileBase}.adapter.ts`;
     const dtoFileBase = getToDtoAdapterFileBase(typeEntity.sourceFileBase);
@@ -143,6 +150,7 @@ async function generateAdapters(): Promise<void> {
     ];
     toUiFiles.set(fileName, `${toUiLines.join('\n')}\n`);
     toUiExports.push(`./${fileBase}.adapter`);
+    generatedToUiCount += 1;
 
     const toDtoFunction = getAdapterToDtoName(typeEntity.swaggerName);
     const toDtoLines: string[] = [
@@ -155,9 +163,14 @@ async function generateAdapters(): Promise<void> {
     ];
     toDtoFiles.set(dtoFileName, `${toDtoLines.join('\n')}\n`);
     toDtoExports.push(`./${dtoFileBase}.adapter`);
+    generatedToDtoCount += 1;
   }
 
   for (const interfaceEntity of context.interfaces) {
+    if (isExcludedMarketJsonResult(interfaceEntity.swaggerName)) {
+      continue;
+    }
+
     const fileBase = getAdapterFileBase(interfaceEntity.localName);
     const fileName = `${fileBase}.adapter.ts`;
     const dtoFileBase = getToDtoAdapterFileBase(interfaceEntity.sourceFileBase);
@@ -180,7 +193,11 @@ async function generateAdapters(): Promise<void> {
       let toUiExpression: string;
       let toDtoExpression: string;
 
-      if (analysis.kind === 'array-entity' && analysis.entity) {
+      if (
+        analysis.kind === 'array-entity' &&
+        analysis.entity &&
+        !isExcludedMarketJsonResult(analysis.entity.swaggerName)
+      ) {
         const nestedToUiFunction = getAdapterToUIName(analysis.entity.localName);
         const nestedToDtoFunction = getAdapterToDtoName(analysis.entity.swaggerName);
         if (analysis.entity.localName !== interfaceEntity.localName) {
@@ -197,7 +214,11 @@ async function generateAdapters(): Promise<void> {
         }
         toUiExpression = `(${dtoSourceAccessor} ?? []).map((item) => ${nestedToUiFunction}(item))`;
         toDtoExpression = `(${uiSourceAccessor} ?? []).map((item) => ${nestedToDtoFunction}(item))`;
-      } else if (analysis.kind === 'entity' && analysis.entity) {
+      } else if (
+        analysis.kind === 'entity' &&
+        analysis.entity &&
+        !isExcludedMarketJsonResult(analysis.entity.swaggerName)
+      ) {
         const nestedToUiFunction = getAdapterToUIName(analysis.entity.localName);
         const nestedToDtoFunction = getAdapterToDtoName(analysis.entity.swaggerName);
         if (analysis.entity.localName !== interfaceEntity.localName) {
@@ -244,6 +265,7 @@ async function generateAdapters(): Promise<void> {
     );
     toUiFiles.set(fileName, `${toUiLines.join('\n')}\n`);
     toUiExports.push(`./${fileBase}.adapter`);
+    generatedToUiCount += 1;
 
     const toDtoImportLines = [
       `import { ${interfaceEntity.localName} } from '../../models/${getModelFileBase(interfaceEntity.localName)}.interface';`,
@@ -260,6 +282,7 @@ async function generateAdapters(): Promise<void> {
     );
     toDtoFiles.set(dtoFileName, `${toDtoLines.join('\n')}\n`);
     toDtoExports.push(`./${dtoFileBase}.adapter`);
+    generatedToDtoCount += 1;
   }
 
   toUiExports.sort((left, right) => left.localeCompare(right));
@@ -285,9 +308,9 @@ async function generateAdapters(): Promise<void> {
     (fileName) => fileName.endsWith('.adapter.ts') || fileName === 'index.ts'
   );
 
-  console.log(`Adapters toUI generated: ${context.interfaces.length + context.types.length + context.enums.length}`);
+  console.log(`Adapters toUI generated: ${generatedToUiCount + context.enums.length}`);
   console.log(`Output: ${path.relative(process.cwd(), UI_ADAPTERS_TO_UI_DIR)}`);
-  console.log(`Adapters toDto generated: ${context.interfaces.length + context.types.length + context.enums.length}`);
+  console.log(`Adapters toDto generated: ${generatedToDtoCount + context.enums.length}`);
   console.log(`Output: ${path.relative(process.cwd(), UI_ADAPTERS_TO_DTO_DIR)}`);
 }
 

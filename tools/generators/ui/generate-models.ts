@@ -6,6 +6,7 @@ import {
   LocalEntityMeta,
   getEnumFileBase,
   getModelFileBase,
+  isExcludedMarketJsonResult,
   normalizeTypeText,
   toCamelCaseProperty,
   UI_MODELS_DIR,
@@ -17,6 +18,10 @@ function addEntityImport(
   entity: LocalEntityMeta,
   selfLocalName: string
 ): void {
+  if (isExcludedMarketJsonResult(entity.swaggerName)) {
+    return;
+  }
+
   if (entity.localName === selfLocalName) {
     return;
   }
@@ -35,8 +40,13 @@ async function generateModels(): Promise<void> {
   const context = await collectEntitiesContext();
   const files = new Map<string, string>();
   const exportsForIndex: string[] = [];
+  let generatedCount = 0;
 
   for (const interfaceEntity of context.interfaces) {
+    if (isExcludedMarketJsonResult(interfaceEntity.swaggerName)) {
+      continue;
+    }
+
     const fileBase = getModelFileBase(interfaceEntity.localName);
     const fileName = `${fileBase}.interface.ts`;
     const imports = new Map<string, string>();
@@ -69,9 +79,14 @@ async function generateModels(): Promise<void> {
 
     files.set(fileName, `${contentLines.join('\n')}\n`);
     exportsForIndex.push(`./${fileBase}.interface`);
+    generatedCount += 1;
   }
 
   for (const typeEntity of context.types) {
+    if (isExcludedMarketJsonResult(typeEntity.swaggerName)) {
+      continue;
+    }
+
     const fileBase = getModelFileBase(typeEntity.localName);
     const fileName = `${fileBase}.interface.ts`;
     const imports = new Map<string, string>();
@@ -91,6 +106,7 @@ async function generateModels(): Promise<void> {
 
     files.set(fileName, `${contentLines.join('\n')}\n`);
     exportsForIndex.push(`./${fileBase}.interface`);
+    generatedCount += 1;
   }
 
   exportsForIndex.sort((left, right) => left.localeCompare(right));
@@ -102,7 +118,7 @@ async function generateModels(): Promise<void> {
     (fileName) => fileName.endsWith('.interface.ts') || fileName === 'index.ts'
   );
 
-  console.log(`Models generated: ${context.interfaces.length + context.types.length}`);
+  console.log(`Models generated: ${generatedCount}`);
   console.log(`Output: ${path.relative(process.cwd(), UI_MODELS_DIR)}`);
 }
 

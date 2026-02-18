@@ -87,6 +87,10 @@ export function toLocalEntityName(swaggerName: string): string {
   return result;
 }
 
+export function isExcludedMarketJsonResult(swaggerName: string): boolean {
+  return swaggerName.startsWith('ApiMarketJsonResult');
+}
+
 export function toKebabCase(value: string): string {
   return value
     .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
