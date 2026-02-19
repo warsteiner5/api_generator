@@ -29,4 +29,4 @@ export function accountsGetAccountRefillDocument(http: HttpClient, rootUrl: stri
   );
 }
 
-accountsGetAccountRefillDocument.PATH = '/bla-bla-vla/accounts/my/{accountNumber}/refill/{sum}';
+accountsGetAccountRefillDocument.PATH = '/market/api/v1/accounts/my/{accountNumber}/refill/{sum}';

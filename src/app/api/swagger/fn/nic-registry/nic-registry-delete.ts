@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface NicRegistryDelete$Params {
   entryId: number;
 }
 
-export function nicRegistryDelete(http: HttpClient, rootUrl: string, params: NicRegistryDelete$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function nicRegistryDelete(http: HttpClient, rootUrl: string, params: NicRegistryDelete$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, nicRegistryDelete.PATH, 'post');
   if (params) {
     rb.path('entryId', params.entryId, {});
@@ -23,9 +23,9 @@ export function nicRegistryDelete(http: HttpClient, rootUrl: string, params: Nic
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-nicRegistryDelete.PATH = '/bla-bla-vla/registry/nic/{entryId}/delete';
+nicRegistryDelete.PATH = '/market/api/v1/registry/nic/{entryId}/delete';

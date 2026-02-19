@@ -29,4 +29,4 @@ export function companyCatalogGetIndustryGroups(http: HttpClient, rootUrl: strin
   );
 }
 
-companyCatalogGetIndustryGroups.PATH = '/bla-bla-vla/companies/industry-groups/search';
+companyCatalogGetIndustryGroups.PATH = '/market/api/v1/companies/industry-groups/search';

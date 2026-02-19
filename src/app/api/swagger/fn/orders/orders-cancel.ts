@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
 
 export interface OrdersCancel$Params {
   id: number;
 }
 
-export function ordersCancel(http: HttpClient, rootUrl: string, params: OrdersCancel$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function ordersCancel(http: HttpClient, rootUrl: string, params: OrdersCancel$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, ordersCancel.PATH, 'post');
   if (params) {
     rb.path('id', params.id, {});
@@ -23,9 +23,9 @@ export function ordersCancel(http: HttpClient, rootUrl: string, params: OrdersCa
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-ordersCancel.PATH = '/bla-bla-vla/orders/customers/{id}/cancel';
+ordersCancel.PATH = '/market/api/v1/orders/customers/{id}/cancel';

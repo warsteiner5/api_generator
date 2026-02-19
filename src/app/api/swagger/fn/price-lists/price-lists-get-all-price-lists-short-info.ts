@@ -26,4 +26,4 @@ export function priceListsGetAllPriceListsShortInfo(http: HttpClient, rootUrl: s
   );
 }
 
-priceListsGetAllPriceListsShortInfo.PATH = '/bla-bla-vla/priceLists/all';
+priceListsGetAllPriceListsShortInfo.PATH = '/market/api/v1/priceLists/all';

@@ -27,4 +27,4 @@ export function organizationRequestSubordinateInstitution(http: HttpClient, root
   );
 }
 
-organizationRequestSubordinateInstitution.PATH = '/bla-bla-vla/Organization/RequestSubordinateInstitution';
+organizationRequestSubordinateInstitution.PATH = '/api/Organization/RequestSubordinateInstitution';

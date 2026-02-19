@@ -25,4 +25,4 @@ export function filesUpload(http: HttpClient, rootUrl: string, params?: FilesUpl
   );
 }
 
-filesUpload.PATH = '/bla-bla-vla/files';
+filesUpload.PATH = '/market/api/v1/files';

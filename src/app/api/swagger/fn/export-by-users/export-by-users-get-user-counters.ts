@@ -26,4 +26,4 @@ export function exportByUsersGetUserCounters(http: HttpClient, rootUrl: string, 
   );
 }
 
-exportByUsersGetUserCounters.PATH = '/bla-bla-vla/export-by/users/counters';
+exportByUsersGetUserCounters.PATH = '/market/api/v1/export-by/users/counters';

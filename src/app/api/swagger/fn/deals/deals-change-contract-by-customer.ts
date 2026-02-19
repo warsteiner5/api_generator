@@ -7,14 +7,14 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiChangeContractByCustomerRequestAltDto } from '../../models/api-change-contract-by-customer-request';
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
 
 export interface DealsChangeContractByCustomer$Params {
   id: number;
       body?: ApiChangeContractByCustomerRequestAltDto | null
 }
 
-export function dealsChangeContractByCustomer(http: HttpClient, rootUrl: string, params: DealsChangeContractByCustomer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function dealsChangeContractByCustomer(http: HttpClient, rootUrl: string, params: DealsChangeContractByCustomer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, dealsChangeContractByCustomer.PATH, 'post');
   if (params) {
     rb.path('id', params.id, {});
@@ -26,9 +26,9 @@ export function dealsChangeContractByCustomer(http: HttpClient, rootUrl: string,
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-dealsChangeContractByCustomer.PATH = '/bla-bla-vla/deals/{id}/customer/change';
+dealsChangeContractByCustomer.PATH = '/market/api/v1/deals/{id}/customer/change';

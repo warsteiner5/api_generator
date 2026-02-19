@@ -29,4 +29,4 @@ export function segmentsSearch(http: HttpClient, rootUrl: string, params?: Segme
   );
 }
 
-segmentsSearch.PATH = '/bla-bla-vla/Segment/Search';
+segmentsSearch.PATH = '/market/api/v1/Segment/Search';

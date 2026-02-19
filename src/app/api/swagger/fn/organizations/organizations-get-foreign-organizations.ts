@@ -28,4 +28,4 @@ export function organizationsGetForeignOrganizations(http: HttpClient, rootUrl: 
   );
 }
 
-organizationsGetForeignOrganizations.PATH = '/bla-bla-vla/organizations/foreign';
+organizationsGetForeignOrganizations.PATH = '/market/api/v1/organizations/foreign';

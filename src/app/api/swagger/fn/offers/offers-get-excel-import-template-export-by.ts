@@ -25,4 +25,4 @@ export function offersGetExcelImportTemplateExportBy(http: HttpClient, rootUrl: 
   );
 }
 
-offersGetExcelImportTemplateExportBy.PATH = '/bla-bla-vla/offers/ExcelImportTemplate/export-by';
+offersGetExcelImportTemplateExportBy.PATH = '/market/api/v1/offers/ExcelImportTemplate/export-by';

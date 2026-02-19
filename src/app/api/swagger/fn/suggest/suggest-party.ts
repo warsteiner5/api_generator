@@ -25,4 +25,4 @@ export function suggestParty(http: HttpClient, rootUrl: string, params?: Suggest
   );
 }
 
-suggestParty.PATH = '/bla-bla-vla/Suggest/Suggest/Party';
+suggestParty.PATH = '/api/Suggest/Suggest/Party';

@@ -29,4 +29,4 @@ export function dealDownloadSpecification(http: HttpClient, rootUrl: string, par
   );
 }
 
-dealDownloadSpecification.PATH = '/bla-bla-vla/Deal/{dealId}/application/{applicationId}/download/specification';
+dealDownloadSpecification.PATH = '/api/Deal/{dealId}/application/{applicationId}/download/specification';

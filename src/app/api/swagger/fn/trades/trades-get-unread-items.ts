@@ -30,4 +30,4 @@ export function tradesGetUnreadItems(http: HttpClient, rootUrl: string, params: 
   );
 }
 
-tradesGetUnreadItems.PATH = '/bla-bla-vla/trades/{id}/chat/{chatId}/unread/items';
+tradesGetUnreadItems.PATH = '/market/api/v1/trades/{id}/chat/{chatId}/unread/items';

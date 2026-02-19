@@ -30,4 +30,4 @@ export function dictionaryGetElementWithoutChildsByCode(http: HttpClient, rootUr
   );
 }
 
-dictionaryGetElementWithoutChildsByCode.PATH = '/bla-bla-vla/Dictionary/GetElementWithoutChildsByCode';
+dictionaryGetElementWithoutChildsByCode.PATH = '/api/Dictionary/GetElementWithoutChildsByCode';

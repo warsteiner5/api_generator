@@ -30,4 +30,4 @@ export function dealsGetTradeAndDealHistory(http: HttpClient, rootUrl: string, p
   );
 }
 
-dealsGetTradeAndDealHistory.PATH = '/bla-bla-vla/deals/GetTradeDealsHistory/{tradeId}/{dealId}';
+dealsGetTradeAndDealHistory.PATH = '/market/api/v1/deals/GetTradeDealsHistory/{tradeId}/{dealId}';

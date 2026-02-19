@@ -25,4 +25,4 @@ export function declarationGet(http: HttpClient, rootUrl: string, params?: Decla
   );
 }
 
-declarationGet.PATH = '/bla-bla-vla/Declaration';
+declarationGet.PATH = '/api/Declaration';

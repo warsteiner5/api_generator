@@ -28,4 +28,4 @@ export function partnersDelete(http: HttpClient, rootUrl: string, params: Partne
   );
 }
 
-partnersDelete.PATH = '/bla-bla-vla/organization/partners/{guid}';
+partnersDelete.PATH = '/market/api/v1/organization/partners/{guid}';

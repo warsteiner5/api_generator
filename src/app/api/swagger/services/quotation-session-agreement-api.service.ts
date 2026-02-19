@@ -20,7 +20,7 @@ export class QuotationSessionAgreementApiService extends BaseService {
   }
 
   /** Path part for operation `quotationSessionAgreementGetDataForSign()` */
-  static readonly QuotationSessionAgreementGetDataForSignPath = '/bla-bla-vla/quotation-session/agreement/sign/data';
+  static readonly QuotationSessionAgreementGetDataForSignPath = '/market/api/v1/quotation-session/agreement/sign/data';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

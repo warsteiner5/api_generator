@@ -31,4 +31,4 @@ export function competetiveListRemoveParticipantOfferFromCompetitiveListItem(htt
   );
 }
 
-competetiveListRemoveParticipantOfferFromCompetitiveListItem.PATH = '/bla-bla-vla/competetivelist/detachPriceList';
+competetiveListRemoveParticipantOfferFromCompetitiveListItem.PATH = '/market/api/v1/competetivelist/detachPriceList';

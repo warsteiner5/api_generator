@@ -28,4 +28,4 @@ export function documentsDeleteDocument(http: HttpClient, rootUrl: string, param
   );
 }
 
-documentsDeleteDocument.PATH = '/bla-bla-vla/documents/delete';
+documentsDeleteDocument.PATH = '/market/api/v1/documents/delete';

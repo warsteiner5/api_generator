@@ -9,7 +9,7 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
 import { ApiMarketJsonResultOfCertificateOrganizationDtoOf } from '../models/api-market-json-result-of-certificate-organization-dto-of';
 import { ApiMarketJsonResultOfCertificateViewModelDto } from '../models/api-market-json-result-of-certificate-view-model-dto';
 import { ApiMarketJsonResultOfFileInfoForSignDto } from '../models/api-market-json-result-of-file-info-for-sign-dto';
@@ -17,7 +17,7 @@ import { ApiMarketJsonResultOfIReadOnlyCollectionOfForeignOrganizationDto } from
 import { ApiMarketJsonResultOfListOfMarketOrganizationFullInfoDto } from '../models/api-market-json-result-of-list-of-market-organization-full-info-dto';
 import { ApiMarketJsonResultOfListOfMarketPartnerOrganizationDto } from '../models/api-market-json-result-of-list-of-market-partner-organization-dto';
 import { ApiMarketJsonResultOfMarketCompositeOrganizationShortInfoDto } from '../models/api-market-json-result-of-market-composite-organization-short-info-dto';
-import { ApiMarketJsonResultOfMarketEmployeeShortInfo } from '../models/api-market-json-result-of-market-employee-short-info';
+import { ApiMarketJsonResultOfMarketEmployeeShortInfoAltDto } from '../models/api-market-json-result-of-market-employee-short-info';
 import { ApiMarketJsonResultOfMarketOrganizationCommonInfoDto } from '../models/api-market-json-result-of-market-organization-common-info-dto';
 import { ApiMarketJsonResultOfMarketOrganizationFullInfoDto } from '../models/api-market-json-result-of-market-organization-full-info-dto';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfOrganizationWithAddressShortInfoDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-organization-with-address-short-info-dto';
@@ -27,8 +27,8 @@ import { ApiMarketJsonResultOfOrganizationProfileDocumentDto } from '../models/a
 import { ApiMarketJsonResultOfPaginationResultOfForeignOrganizationDto } from '../models/api-market-json-result-of-pagination-result-of-foreign-organization-dto';
 import { ApiMarketJsonResultOfPaginationResultOfOrganizationForAutocompleteDto } from '../models/api-market-json-result-of-pagination-result-of-organization-for-autocomplete-dto';
 import { ApiMarketJsonResultOfTaskOfAgreement2323Dto } from '../models/api-market-json-result-of-task-of-agreement-2323-dto';
-import { ApiMarketJsonResultOfTaskOfGuid } from '../models/api-market-json-result-of-task-of-guid';
-import { ApiMarketJsonResultOfUpdateOrganizationBaseInfoDataToSign } from '../models/api-market-json-result-of-update-organization-base-info-data-to-sign';
+import { ApiMarketJsonResultOfTaskOfGuidAltDto } from '../models/api-market-json-result-of-task-of-guid';
+import { ApiMarketJsonResultOfUpdateOrganizationBaseInfoDataToSignAltDto } from '../models/api-market-json-result-of-update-organization-base-info-data-to-sign';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 import { organizationsApplyHomeRegionMessage } from '../fn/organizations/organizations-apply-home-region-message';
 import { OrganizationsApplyHomeRegionMessage$Params } from '../fn/organizations/organizations-apply-home-region-message';
@@ -108,7 +108,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsIsCurrentUserHaveValidCert()` */
-  static readonly OrganizationsIsCurrentUserHaveValidCertPath = '/bla-bla-vla/organizations/checkCertExists';
+  static readonly OrganizationsIsCurrentUserHaveValidCertPath = '/market/api/v1/organizations/checkCertExists';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -116,7 +116,7 @@ export class OrganizationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  organizationsIsCurrentUserHaveValidCert$Response(params?: OrganizationsIsCurrentUserHaveValidCert$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  organizationsIsCurrentUserHaveValidCert$Response(params?: OrganizationsIsCurrentUserHaveValidCert$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return organizationsIsCurrentUserHaveValidCert(this.http, this.rootUrl, params, context);
   }
 
@@ -126,14 +126,14 @@ export class OrganizationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  organizationsIsCurrentUserHaveValidCert(params?: OrganizationsIsCurrentUserHaveValidCert$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  organizationsIsCurrentUserHaveValidCert(params?: OrganizationsIsCurrentUserHaveValidCert$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.organizationsIsCurrentUserHaveValidCert$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `organizationsGetCurrentOrganizationInfo()` */
-  static readonly OrganizationsGetCurrentOrganizationInfoPath = '/bla-bla-vla/organizations/self';
+  static readonly OrganizationsGetCurrentOrganizationInfoPath = '/market/api/v1/organizations/self';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -158,7 +158,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsApplyHomeRegionMessage()` */
-  static readonly OrganizationsApplyHomeRegionMessagePath = '/bla-bla-vla/organizations/applyHomeRegionMessage';
+  static readonly OrganizationsApplyHomeRegionMessagePath = '/market/api/v1/organizations/applyHomeRegionMessage';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -183,7 +183,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsFindOrganizationInfoByGuid()` */
-  static readonly OrganizationsFindOrganizationInfoByGuidPath = '/bla-bla-vla/organizations/{guid}';
+  static readonly OrganizationsFindOrganizationInfoByGuidPath = '/market/api/v1/organizations/{guid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -208,7 +208,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsFindOrganizationInfo()` */
-  static readonly OrganizationsFindOrganizationInfoPath = '/bla-bla-vla/organizations/my';
+  static readonly OrganizationsFindOrganizationInfoPath = '/market/api/v1/organizations/my';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -233,7 +233,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsGetOrganizationInfoByGuid()` */
-  static readonly OrganizationsGetOrganizationInfoByGuidPath = '/bla-bla-vla/organizations/{guid}/card';
+  static readonly OrganizationsGetOrganizationInfoByGuidPath = '/market/api/v1/organizations/{guid}/card';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -258,7 +258,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsGetEmployees()` */
-  static readonly OrganizationsGetEmployeesPath = '/bla-bla-vla/organizations/employees';
+  static readonly OrganizationsGetEmployeesPath = '/market/api/v1/organizations/employees';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -266,7 +266,7 @@ export class OrganizationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  organizationsGetEmployees$Response(params?: OrganizationsGetEmployees$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketEmployeeShortInfo>> {
+  organizationsGetEmployees$Response(params?: OrganizationsGetEmployees$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketEmployeeShortInfoAltDto>> {
     return organizationsGetEmployees(this.http, this.rootUrl, params, context);
   }
 
@@ -276,14 +276,14 @@ export class OrganizationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  organizationsGetEmployees(params?: OrganizationsGetEmployees$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketEmployeeShortInfo> {
+  organizationsGetEmployees(params?: OrganizationsGetEmployees$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketEmployeeShortInfoAltDto> {
     return this.organizationsGetEmployees$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketEmployeeShortInfo>): ApiMarketJsonResultOfMarketEmployeeShortInfo => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketEmployeeShortInfoAltDto>): ApiMarketJsonResultOfMarketEmployeeShortInfoAltDto => r.body)
     );
   }
 
   /** Path part for operation `organizationsGetOrganizationDocuments()` */
-  static readonly OrganizationsGetOrganizationDocumentsPath = '/bla-bla-vla/organizations/self/documents';
+  static readonly OrganizationsGetOrganizationDocumentsPath = '/market/api/v1/organizations/self/documents';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -308,7 +308,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsGetOrganizationDocuments2()` */
-  static readonly OrganizationsGetOrganizationDocuments2Path = '/bla-bla-vla/organizations/documents/{guid}';
+  static readonly OrganizationsGetOrganizationDocuments2Path = '/market/api/v1/organizations/documents/{guid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -333,7 +333,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsGetOrganizationsByFilter()` */
-  static readonly OrganizationsGetOrganizationsByFilterPath = '/bla-bla-vla/organizations/filtered';
+  static readonly OrganizationsGetOrganizationsByFilterPath = '/market/api/v1/organizations/filtered';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -358,7 +358,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsIsCurrentOrganizationSmsp()` */
-  static readonly OrganizationsIsCurrentOrganizationSmspPath = '/bla-bla-vla/organizations/IsSmsp';
+  static readonly OrganizationsIsCurrentOrganizationSmspPath = '/market/api/v1/organizations/IsSmsp';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -383,7 +383,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsGetOrganizationsForAutocomplete()` */
-  static readonly OrganizationsGetOrganizationsForAutocompletePath = '/bla-bla-vla/organizations/autocomplete';
+  static readonly OrganizationsGetOrganizationsForAutocompletePath = '/market/api/v1/organizations/autocomplete';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -408,7 +408,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsAutocompleteForeignOrganizations()` */
-  static readonly OrganizationsAutocompleteForeignOrganizationsPath = '/bla-bla-vla/organizations/autocomplete/foreign';
+  static readonly OrganizationsAutocompleteForeignOrganizationsPath = '/market/api/v1/organizations/autocomplete/foreign';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -433,7 +433,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsGetForeignOrganizations()` */
-  static readonly OrganizationsGetForeignOrganizationsPath = '/bla-bla-vla/organizations/foreign';
+  static readonly OrganizationsGetForeignOrganizationsPath = '/market/api/v1/organizations/foreign';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -458,7 +458,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsGetOrganizationsForCurrentUser()` */
-  static readonly OrganizationsGetOrganizationsForCurrentUserPath = '/bla-bla-vla/organizations/getOrganizationsForCurrentUser';
+  static readonly OrganizationsGetOrganizationsForCurrentUserPath = '/market/api/v1/organizations/getOrganizationsForCurrentUser';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -483,7 +483,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsCreateOrganization()` */
-  static readonly OrganizationsCreateOrganizationPath = '/bla-bla-vla/organizations/CreateOrganization';
+  static readonly OrganizationsCreateOrganizationPath = '/market/api/v1/organizations/CreateOrganization';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -508,7 +508,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsCheckAndGetOrganization()` */
-  static readonly OrganizationsCheckAndGetOrganizationPath = '/bla-bla-vla/organizations/CheckAndGetOrganization';
+  static readonly OrganizationsCheckAndGetOrganizationPath = '/market/api/v1/organizations/CheckAndGetOrganization';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -533,7 +533,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsGetOrganizationFz223Info()` */
-  static readonly OrganizationsGetOrganizationFz223InfoPath = '/bla-bla-vla/organizations/fz223/info';
+  static readonly OrganizationsGetOrganizationFz223InfoPath = '/market/api/v1/organizations/fz223/info';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -558,7 +558,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsGetAgrement2323Info()` */
-  static readonly OrganizationsGetAgrement2323InfoPath = '/bla-bla-vla/organizations/self/2323Info';
+  static readonly OrganizationsGetAgrement2323InfoPath = '/market/api/v1/organizations/self/2323Info';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -583,7 +583,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsSaveAgreement2323()` */
-  static readonly OrganizationsSaveAgreement2323Path = '/bla-bla-vla/organizations/save-agreement-2323';
+  static readonly OrganizationsSaveAgreement2323Path = '/market/api/v1/organizations/save-agreement-2323';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -608,7 +608,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsCreateAgreement2323()` */
-  static readonly OrganizationsCreateAgreement2323Path = '/bla-bla-vla/organizations/create-agreement-2323';
+  static readonly OrganizationsCreateAgreement2323Path = '/market/api/v1/organizations/create-agreement-2323';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -616,7 +616,7 @@ export class OrganizationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  organizationsCreateAgreement2323$Response(params?: OrganizationsCreateAgreement2323$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTaskOfGuid>> {
+  organizationsCreateAgreement2323$Response(params?: OrganizationsCreateAgreement2323$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTaskOfGuidAltDto>> {
     return organizationsCreateAgreement2323(this.http, this.rootUrl, params, context);
   }
 
@@ -626,14 +626,14 @@ export class OrganizationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  organizationsCreateAgreement2323(params?: OrganizationsCreateAgreement2323$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTaskOfGuid> {
+  organizationsCreateAgreement2323(params?: OrganizationsCreateAgreement2323$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTaskOfGuidAltDto> {
     return this.organizationsCreateAgreement2323$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfTaskOfGuid>): ApiMarketJsonResultOfTaskOfGuid => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfTaskOfGuidAltDto>): ApiMarketJsonResultOfTaskOfGuidAltDto => r.body)
     );
   }
 
   /** Path part for operation `organizationsGetAgreementInfoForSign()` */
-  static readonly OrganizationsGetAgreementInfoForSignPath = '/bla-bla-vla/organizations/agreement-info-sign';
+  static readonly OrganizationsGetAgreementInfoForSignPath = '/market/api/v1/organizations/agreement-info-sign';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -658,7 +658,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsSignAgreement()` */
-  static readonly OrganizationsSignAgreementPath = '/bla-bla-vla/organizations/sign-agreement';
+  static readonly OrganizationsSignAgreementPath = '/market/api/v1/organizations/sign-agreement';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -666,7 +666,7 @@ export class OrganizationsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  organizationsSignAgreement$Response(params?: OrganizationsSignAgreement$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  organizationsSignAgreement$Response(params?: OrganizationsSignAgreement$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return organizationsSignAgreement(this.http, this.rootUrl, params, context);
   }
 
@@ -676,14 +676,14 @@ export class OrganizationsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  organizationsSignAgreement(params?: OrganizationsSignAgreement$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  organizationsSignAgreement(params?: OrganizationsSignAgreement$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.organizationsSignAgreement$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `organizationsGetOrganizationWorkGroups()` */
-  static readonly OrganizationsGetOrganizationWorkGroupsPath = '/bla-bla-vla/organizations/work-groups';
+  static readonly OrganizationsGetOrganizationWorkGroupsPath = '/market/api/v1/organizations/work-groups';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -708,7 +708,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsGetMyCustomerPartners()` */
-  static readonly OrganizationsGetMyCustomerPartnersPath = '/bla-bla-vla/organizations/partners';
+  static readonly OrganizationsGetMyCustomerPartnersPath = '/market/api/v1/organizations/partners';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -733,7 +733,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsSendCustomerCommercialOffer()` */
-  static readonly OrganizationsSendCustomerCommercialOfferPath = '/bla-bla-vla/organizations/{guid}/commercial-offer';
+  static readonly OrganizationsSendCustomerCommercialOfferPath = '/market/api/v1/organizations/{guid}/commercial-offer';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -758,7 +758,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsGetVCard()` */
-  static readonly OrganizationsGetVCardPath = '/bla-bla-vla/organizations/{guid}/vcard';
+  static readonly OrganizationsGetVCardPath = '/market/api/v1/organizations/{guid}/vcard';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -783,7 +783,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsGetUpdateBaseInfoDataToSign()` */
-  static readonly OrganizationsGetUpdateBaseInfoDataToSignPath = '/bla-bla-vla/organizations/my/base-info';
+  static readonly OrganizationsGetUpdateBaseInfoDataToSignPath = '/market/api/v1/organizations/my/base-info';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -791,7 +791,7 @@ export class OrganizationsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  organizationsGetUpdateBaseInfoDataToSign$Response(params?: OrganizationsGetUpdateBaseInfoDataToSign$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfUpdateOrganizationBaseInfoDataToSign>> {
+  organizationsGetUpdateBaseInfoDataToSign$Response(params?: OrganizationsGetUpdateBaseInfoDataToSign$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfUpdateOrganizationBaseInfoDataToSignAltDto>> {
     return organizationsGetUpdateBaseInfoDataToSign(this.http, this.rootUrl, params, context);
   }
 
@@ -801,14 +801,14 @@ export class OrganizationsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  organizationsGetUpdateBaseInfoDataToSign(params?: OrganizationsGetUpdateBaseInfoDataToSign$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfUpdateOrganizationBaseInfoDataToSign> {
+  organizationsGetUpdateBaseInfoDataToSign(params?: OrganizationsGetUpdateBaseInfoDataToSign$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfUpdateOrganizationBaseInfoDataToSignAltDto> {
     return this.organizationsGetUpdateBaseInfoDataToSign$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfUpdateOrganizationBaseInfoDataToSign>): ApiMarketJsonResultOfUpdateOrganizationBaseInfoDataToSign => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfUpdateOrganizationBaseInfoDataToSignAltDto>): ApiMarketJsonResultOfUpdateOrganizationBaseInfoDataToSignAltDto => r.body)
     );
   }
 
   /** Path part for operation `organizationsUpdateBaseInfo()` */
-  static readonly OrganizationsUpdateBaseInfoPath = '/bla-bla-vla/organizations/my/base-info/signed';
+  static readonly OrganizationsUpdateBaseInfoPath = '/market/api/v1/organizations/my/base-info/signed';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -833,7 +833,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsUpdateAddresses()` */
-  static readonly OrganizationsUpdateAddressesPath = '/bla-bla-vla/organizations/my/addresses';
+  static readonly OrganizationsUpdateAddressesPath = '/market/api/v1/organizations/my/addresses';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -858,7 +858,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsUpdateDocuments()` */
-  static readonly OrganizationsUpdateDocumentsPath = '/bla-bla-vla/organizations/my/documents';
+  static readonly OrganizationsUpdateDocumentsPath = '/market/api/v1/organizations/my/documents';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -883,7 +883,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsGetCertificateInfoFromFile()` */
-  static readonly OrganizationsGetCertificateInfoFromFilePath = '/bla-bla-vla/organizations/my/documents/{fileGuid}/signature';
+  static readonly OrganizationsGetCertificateInfoFromFilePath = '/market/api/v1/organizations/my/documents/{fileGuid}/signature';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -908,7 +908,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsGetOrganizationShortInfo()` */
-  static readonly OrganizationsGetOrganizationShortInfoPath = '/bla-bla-vla/organizations/my/short-info';
+  static readonly OrganizationsGetOrganizationShortInfoPath = '/market/api/v1/organizations/my/short-info';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -933,7 +933,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsPatchOrganizationShortInfo()` */
-  static readonly OrganizationsPatchOrganizationShortInfoPath = '/bla-bla-vla/organizations/my/short-info';
+  static readonly OrganizationsPatchOrganizationShortInfoPath = '/market/api/v1/organizations/my/short-info';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -958,7 +958,7 @@ export class OrganizationsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationsGetCertificateOrganizations()` */
-  static readonly OrganizationsGetCertificateOrganizationsPath = '/bla-bla-vla/organizations/certificates';
+  static readonly OrganizationsGetCertificateOrganizationsPath = '/market/api/v1/organizations/certificates';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

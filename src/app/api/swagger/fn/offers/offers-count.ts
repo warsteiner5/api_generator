@@ -29,4 +29,4 @@ export function offersCount(http: HttpClient, rootUrl: string, params?: OffersCo
   );
 }
 
-offersCount.PATH = '/bla-bla-vla/offers/count';
+offersCount.PATH = '/market/api/v1/offers/count';

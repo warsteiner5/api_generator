@@ -25,4 +25,4 @@ export function participantOfferLoadCommercialExcelDocument(http: HttpClient, ro
   );
 }
 
-participantOfferLoadCommercialExcelDocument.PATH = '/bla-bla-vla/participantoffer/LoadCommercialExcelDocument';
+participantOfferLoadCommercialExcelDocument.PATH = '/api/participantoffer/LoadCommercialExcelDocument';

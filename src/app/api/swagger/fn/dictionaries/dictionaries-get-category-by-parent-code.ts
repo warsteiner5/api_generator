@@ -28,4 +28,4 @@ export function dictionariesGetCategoryByParentCode(http: HttpClient, rootUrl: s
   );
 }
 
-dictionariesGetCategoryByParentCode.PATH = '/bla-bla-vla/dictionaries/category/childs';
+dictionariesGetCategoryByParentCode.PATH = '/market/api/v1/dictionaries/category/childs';

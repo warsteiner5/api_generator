@@ -26,4 +26,4 @@ export function organizationAgreementSetCatalogAgreement(http: HttpClient, rootU
   );
 }
 
-organizationAgreementSetCatalogAgreement.PATH = '/bla-bla-vla/organization-agreements/catalog-agreement/approve';
+organizationAgreementSetCatalogAgreement.PATH = '/market/api/v1/organization-agreements/catalog-agreement/approve';

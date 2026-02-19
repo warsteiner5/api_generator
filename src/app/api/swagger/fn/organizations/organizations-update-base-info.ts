@@ -29,4 +29,4 @@ export function organizationsUpdateBaseInfo(http: HttpClient, rootUrl: string, p
   );
 }
 
-organizationsUpdateBaseInfo.PATH = '/bla-bla-vla/organizations/my/base-info/signed';
+organizationsUpdateBaseInfo.PATH = '/market/api/v1/organizations/my/base-info/signed';

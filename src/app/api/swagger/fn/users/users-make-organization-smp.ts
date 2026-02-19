@@ -29,4 +29,4 @@ export function usersMakeOrganizationSmp(http: HttpClient, rootUrl: string, para
   );
 }
 
-usersMakeOrganizationSmp.PATH = '/bla-bla-vla/users/makeSmp';
+usersMakeOrganizationSmp.PATH = '/market/api/v1/users/makeSmp';

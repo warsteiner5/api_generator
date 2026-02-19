@@ -28,4 +28,4 @@ export function dictionariesGetCategoryAsync1(http: HttpClient, rootUrl: string,
   );
 }
 
-dictionariesGetCategoryAsync1.PATH = '/bla-bla-vla/dictionaries/category/search';
+dictionariesGetCategoryAsync1.PATH = '/market/api/v1/dictionaries/category/search';

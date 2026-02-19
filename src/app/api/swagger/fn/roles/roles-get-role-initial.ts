@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfRoleDetailResponse } from '../../models/api-market-json-result-of-role-detail-response';
+import { ApiMarketJsonResultOfRoleDetailResponseAltDto } from '../../models/api-market-json-result-of-role-detail-response';
 
 export interface RolesGetRoleInitial$Params {
 }
 
-export function rolesGetRoleInitial(http: HttpClient, rootUrl: string, params?: RolesGetRoleInitial$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfRoleDetailResponse>> {
+export function rolesGetRoleInitial(http: HttpClient, rootUrl: string, params?: RolesGetRoleInitial$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfRoleDetailResponseAltDto>> {
   const rb = new RequestBuilder(rootUrl, rolesGetRoleInitial.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function rolesGetRoleInitial(http: HttpClient, rootUrl: string, params?: 
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfRoleDetailResponse>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfRoleDetailResponseAltDto>;
     })
   );
 }
 
-rolesGetRoleInitial.PATH = '/bla-bla-vla/security/roles/create';
+rolesGetRoleInitial.PATH = '/market/api/v1/security/roles/create';

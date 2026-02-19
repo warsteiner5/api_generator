@@ -28,4 +28,4 @@ export function outDocumentSetOutDocumentRead(http: HttpClient, rootUrl: string,
   );
 }
 
-outDocumentSetOutDocumentRead.PATH = '/bla-bla-vla/OutDocument/SetOutDocumentRead';
+outDocumentSetOutDocumentRead.PATH = '/api/OutDocument/SetOutDocumentRead';

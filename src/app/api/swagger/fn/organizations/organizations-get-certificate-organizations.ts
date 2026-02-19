@@ -28,4 +28,4 @@ export function organizationsGetCertificateOrganizations(http: HttpClient, rootU
   );
 }
 
-organizationsGetCertificateOrganizations.PATH = '/bla-bla-vla/organizations/certificates';
+organizationsGetCertificateOrganizations.PATH = '/market/api/v1/organizations/certificates';

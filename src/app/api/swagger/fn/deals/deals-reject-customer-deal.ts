@@ -7,13 +7,13 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiDifferenceDealProtocolAltDto } from '../../models/api-difference-deal-protocol';
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface DealsRejectCustomerDeal$Params {
       body?: ApiDifferenceDealProtocolAltDto | null
 }
 
-export function dealsRejectCustomerDeal(http: HttpClient, rootUrl: string, params?: DealsRejectCustomerDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function dealsRejectCustomerDeal(http: HttpClient, rootUrl: string, params?: DealsRejectCustomerDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, dealsRejectCustomerDeal.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function dealsRejectCustomerDeal(http: HttpClient, rootUrl: string, param
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-dealsRejectCustomerDeal.PATH = '/bla-bla-vla/deals/participants/reject';
+dealsRejectCustomerDeal.PATH = '/market/api/v1/deals/participants/reject';

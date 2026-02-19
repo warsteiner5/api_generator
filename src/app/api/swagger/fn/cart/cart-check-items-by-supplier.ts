@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiValueDtoOfBooleanAltDto } from '../../models/api-value-dto-of-boolean';
+import { ApiValueDtoOfBoolean } from '../../models/api-value-dto-of-boolean';
 
 export interface CartCheckItemsBySupplier$Params {
   cartId: string;
   supplierOrganizationId: number;
-      body?: ApiValueDtoOfBooleanAltDto | null
+      body?: ApiValueDtoOfBoolean | null
 }
 
 export function cartCheckItemsBySupplier(http: HttpClient, rootUrl: string, params: CartCheckItemsBySupplier$Params, context?: HttpContext): Observable<StrictHttpResponse<Blob>> {
@@ -32,4 +32,4 @@ export function cartCheckItemsBySupplier(http: HttpClient, rootUrl: string, para
   );
 }
 
-cartCheckItemsBySupplier.PATH = '/bla-bla-vla/carts/{cartId}/cart-items/by-supplier/{supplierOrganizationId}/isChecked';
+cartCheckItemsBySupplier.PATH = '/market/api/v1/carts/{cartId}/cart-items/by-supplier/{supplierOrganizationId}/isChecked';

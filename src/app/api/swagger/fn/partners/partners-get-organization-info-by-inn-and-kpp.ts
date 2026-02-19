@@ -30,4 +30,4 @@ export function partnersGetOrganizationInfoByInnAndKpp(http: HttpClient, rootUrl
   );
 }
 
-partnersGetOrganizationInfoByInnAndKpp.PATH = '/bla-bla-vla/organization/partners/info';
+partnersGetOrganizationInfoByInnAndKpp.PATH = '/market/api/v1/organization/partners/info';

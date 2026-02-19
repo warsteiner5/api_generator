@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfQuotationSession } from '../../models/api-market-json-result-of-quotation-session';
+import { ApiMarketJsonResultOfQuotationSessionAltDto } from '../../models/api-market-json-result-of-quotation-session';
 
 export interface QuotationSessionInit$Params {
 }
 
-export function quotationSessionInit(http: HttpClient, rootUrl: string, params?: QuotationSessionInit$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfQuotationSession>> {
+export function quotationSessionInit(http: HttpClient, rootUrl: string, params?: QuotationSessionInit$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionAltDto>> {
   const rb = new RequestBuilder(rootUrl, quotationSessionInit.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function quotationSessionInit(http: HttpClient, rootUrl: string, params?:
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfQuotationSession>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionAltDto>;
     })
   );
 }
 
-quotationSessionInit.PATH = '/bla-bla-vla/quotation-session/init';
+quotationSessionInit.PATH = '/market/api/v1/quotation-session/init';

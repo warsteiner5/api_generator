@@ -29,4 +29,4 @@ export function organizationsPatchOrganizationShortInfo(http: HttpClient, rootUr
   );
 }
 
-organizationsPatchOrganizationShortInfo.PATH = '/bla-bla-vla/organizations/my/short-info';
+organizationsPatchOrganizationShortInfo.PATH = '/market/api/v1/organizations/my/short-info';

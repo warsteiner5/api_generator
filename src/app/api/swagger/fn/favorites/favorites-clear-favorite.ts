@@ -29,4 +29,4 @@ export function favoritesClearFavorite(http: HttpClient, rootUrl: string, params
   );
 }
 
-favoritesClearFavorite.PATH = '/bla-bla-vla/favorite/clear';
+favoritesClearFavorite.PATH = '/market/api/v1/favorite/clear';

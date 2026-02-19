@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
 import { ApiOrderAltDto } from '../../models/api-order';
 
 export interface OrdersCreate$Params {
       body?: ApiOrderAltDto | null
 }
 
-export function ordersCreate(http: HttpClient, rootUrl: string, params?: OrdersCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function ordersCreate(http: HttpClient, rootUrl: string, params?: OrdersCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, ordersCreate.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function ordersCreate(http: HttpClient, rootUrl: string, params?: OrdersC
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-ordersCreate.PATH = '/bla-bla-vla/orders';
+ordersCreate.PATH = '/market/api/v1/orders';

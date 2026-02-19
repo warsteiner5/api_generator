@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
 import { ApiNicRegistryAddEditDto } from '../../models/api-nic-registry-add-edit-dto';
 
 export interface NicRegistrySave$Params {
       body?: ApiNicRegistryAddEditDto | null
 }
 
-export function nicRegistrySave(http: HttpClient, rootUrl: string, params?: NicRegistrySave$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function nicRegistrySave(http: HttpClient, rootUrl: string, params?: NicRegistrySave$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, nicRegistrySave.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function nicRegistrySave(http: HttpClient, rootUrl: string, params?: NicR
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-nicRegistrySave.PATH = '/bla-bla-vla/registry/nic/save';
+nicRegistrySave.PATH = '/market/api/v1/registry/nic/save';

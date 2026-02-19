@@ -29,4 +29,4 @@ export function regulationSaveDocument(http: HttpClient, rootUrl: string, params
   );
 }
 
-regulationSaveDocument.PATH = '/bla-bla-vla/regulation/save/document';
+regulationSaveDocument.PATH = '/market/api/v1/regulation/save/document';

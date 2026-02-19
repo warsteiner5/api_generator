@@ -28,4 +28,4 @@ export function dealsGetTradeActualDeal(http: HttpClient, rootUrl: string, param
   );
 }
 
-dealsGetTradeActualDeal.PATH = '/bla-bla-vla/deals/{id}';
+dealsGetTradeActualDeal.PATH = '/market/api/v1/deals/{id}';

@@ -28,4 +28,4 @@ export function bannersHideBannerPermanently(http: HttpClient, rootUrl: string, 
   );
 }
 
-bannersHideBannerPermanently.PATH = '/bla-bla-vla/banners/{bannerKey}/hide';
+bannersHideBannerPermanently.PATH = '/market/api/v1/banners/{bannerKey}/hide';

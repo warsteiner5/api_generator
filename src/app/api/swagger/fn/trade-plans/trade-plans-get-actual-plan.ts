@@ -26,4 +26,4 @@ export function tradePlansGetActualPlan(http: HttpClient, rootUrl: string, param
   );
 }
 
-tradePlansGetActualPlan.PATH = '/bla-bla-vla/plans';
+tradePlansGetActualPlan.PATH = '/market/api/v1/plans';

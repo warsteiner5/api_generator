@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfImportExcelApplicationSpecificationsResult } from '../../models/api-market-json-result-of-import-excel-application-specifications-result';
+import { ApiMarketJsonResultOfImportExcelApplicationSpecificationsResultAltDto } from '../../models/api-market-json-result-of-import-excel-application-specifications-result';
 
 export interface ParticipantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel$Params {
   tradeId: number;
   fileGuid: string;
 }
 
-export function participantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel(http: HttpClient, rootUrl: string, params: ParticipantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfImportExcelApplicationSpecificationsResult>> {
+export function participantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel(http: HttpClient, rootUrl: string, params: ParticipantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfImportExcelApplicationSpecificationsResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, participantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel.PATH, 'post');
   if (params) {
     rb.path('tradeId', params.tradeId, {});
@@ -25,9 +25,9 @@ export function participantOfferToTradeImportTradeLotApplicationSpecificationsFr
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfImportExcelApplicationSpecificationsResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfImportExcelApplicationSpecificationsResultAltDto>;
     })
   );
 }
 
-participantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel.PATH = '/bla-bla-vla/offerToTrade/{tradeId}/participant-offers/excel/import/specifications/{fileGuid}';
+participantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel.PATH = '/market/api/v1/offerToTrade/{tradeId}/participant-offers/excel/import/specifications/{fileGuid}';

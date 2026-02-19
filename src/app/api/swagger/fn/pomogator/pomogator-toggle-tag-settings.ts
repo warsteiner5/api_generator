@@ -29,4 +29,4 @@ export function pomogatorToggleTagSettings(http: HttpClient, rootUrl: string, pa
   );
 }
 
-pomogatorToggleTagSettings.PATH = '/bla-bla-vla/pomogator/toggleTagSettings';
+pomogatorToggleTagSettings.PATH = '/market/api/v1/pomogator/toggleTagSettings';

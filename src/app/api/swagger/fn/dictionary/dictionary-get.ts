@@ -30,4 +30,4 @@ export function dictionaryGet(http: HttpClient, rootUrl: string, params?: Dictio
   );
 }
 
-dictionaryGet.PATH = '/bla-bla-vla/Dictionary';
+dictionaryGet.PATH = '/api/Dictionary';

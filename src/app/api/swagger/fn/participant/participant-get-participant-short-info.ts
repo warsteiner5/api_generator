@@ -29,4 +29,4 @@ export function participantGetParticipantShortInfo(http: HttpClient, rootUrl: st
   );
 }
 
-participantGetParticipantShortInfo.PATH = '/bla-bla-vla/participants/participantshortinfo';
+participantGetParticipantShortInfo.PATH = '/api/participants/participantshortinfo';

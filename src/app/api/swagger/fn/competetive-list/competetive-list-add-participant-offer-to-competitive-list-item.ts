@@ -31,4 +31,4 @@ export function competetiveListAddParticipantOfferToCompetitiveListItem(http: Ht
   );
 }
 
-competetiveListAddParticipantOfferToCompetitiveListItem.PATH = '/bla-bla-vla/competetivelist/attachPriceList';
+competetiveListAddParticipantOfferToCompetitiveListItem.PATH = '/market/api/v1/competetivelist/attachPriceList';

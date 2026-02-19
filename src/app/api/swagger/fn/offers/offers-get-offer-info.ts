@@ -28,4 +28,4 @@ export function offersGetOfferInfo(http: HttpClient, rootUrl: string, params: Of
   );
 }
 
-offersGetOfferInfo.PATH = '/bla-bla-vla/offers/{id}';
+offersGetOfferInfo.PATH = '/market/api/v1/offers/{id}';

@@ -28,4 +28,4 @@ export function applicationGetCreateApplicationInfo(http: HttpClient, rootUrl: s
   );
 }
 
-applicationGetCreateApplicationInfo.PATH = '/bla-bla-vla/GetCreateApplicationInfo/{id}';
+applicationGetCreateApplicationInfo.PATH = '/api/GetCreateApplicationInfo/{id}';

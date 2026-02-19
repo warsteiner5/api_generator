@@ -27,4 +27,4 @@ export function tradesTurnSingleSupplierToPriceReuest(http: HttpClient, rootUrl:
   );
 }
 
-tradesTurnSingleSupplierToPriceReuest.PATH = '/bla-bla-vla/trades/{tradeId}/to-price-request';
+tradesTurnSingleSupplierToPriceReuest.PATH = '/market/api/v1/trades/{tradeId}/to-price-request';

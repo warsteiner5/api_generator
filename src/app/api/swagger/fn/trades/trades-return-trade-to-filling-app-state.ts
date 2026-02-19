@@ -29,4 +29,4 @@ export function tradesReturnTradeToFillingAppState(http: HttpClient, rootUrl: st
   );
 }
 
-tradesReturnTradeToFillingAppState.PATH = '/bla-bla-vla/trades/tofillingappstate';
+tradesReturnTradeToFillingAppState.PATH = '/market/api/v1/trades/tofillingappstate';

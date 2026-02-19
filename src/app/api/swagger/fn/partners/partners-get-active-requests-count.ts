@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
 
 export interface PartnersGetActiveRequestsCount$Params {
 }
 
-export function partnersGetActiveRequestsCount(http: HttpClient, rootUrl: string, params?: PartnersGetActiveRequestsCount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function partnersGetActiveRequestsCount(http: HttpClient, rootUrl: string, params?: PartnersGetActiveRequestsCount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, partnersGetActiveRequestsCount.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function partnersGetActiveRequestsCount(http: HttpClient, rootUrl: string
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-partnersGetActiveRequestsCount.PATH = '/bla-bla-vla/organization/partners/requests/count';
+partnersGetActiveRequestsCount.PATH = '/market/api/v1/organization/partners/requests/count';

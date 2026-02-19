@@ -28,4 +28,4 @@ export function priceListsRemovePriceList(http: HttpClient, rootUrl: string, par
   );
 }
 
-priceListsRemovePriceList.PATH = '/bla-bla-vla/priceLists';
+priceListsRemovePriceList.PATH = '/market/api/v1/priceLists';

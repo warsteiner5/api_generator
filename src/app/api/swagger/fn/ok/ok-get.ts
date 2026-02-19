@@ -28,4 +28,4 @@ export function okGet(http: HttpClient, rootUrl: string, params: OkGet$Params, c
   );
 }
 
-okGet.PATH = '/bla-bla-vla/okservice';
+okGet.PATH = '/market/api/v1/okservice';

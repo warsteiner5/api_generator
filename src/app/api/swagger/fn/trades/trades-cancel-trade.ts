@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 import { ApiTradeCanceletionRequestDto } from '../../models/api-trade-canceletion-request-dto';
 
 export interface TradesCancelTrade$Params {
       body?: ApiTradeCanceletionRequestDto | null
 }
 
-export function tradesCancelTrade(http: HttpClient, rootUrl: string, params?: TradesCancelTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function tradesCancelTrade(http: HttpClient, rootUrl: string, params?: TradesCancelTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesCancelTrade.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function tradesCancelTrade(http: HttpClient, rootUrl: string, params?: Tr
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-tradesCancelTrade.PATH = '/bla-bla-vla/trades/cancel';
+tradesCancelTrade.PATH = '/market/api/v1/trades/cancel';

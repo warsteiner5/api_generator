@@ -1,3 +1,3 @@
-import { EntityDtoOfIntegerAlt } from './entity-dto-of-integer-alt.interface';
+import { EntityDtoOfInteger } from './entity-dto-of-integer.interface';
 
-export type OrganizationCountry = EntityDtoOfIntegerAlt & { 'Code'?: string | null; 'Name'?: string | null; };
+export type OrganizationCountry = EntityDtoOfInteger & { 'Code'?: string | null; 'Name'?: string | null; };

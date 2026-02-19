@@ -25,4 +25,4 @@ export function suggestFio(http: HttpClient, rootUrl: string, params?: SuggestFi
   );
 }
 
-suggestFio.PATH = '/bla-bla-vla/Suggest/Suggest/fio';
+suggestFio.PATH = '/api/Suggest/Suggest/fio';

@@ -32,4 +32,4 @@ export function cartPutItemsBySupplier(http: HttpClient, rootUrl: string, params
   );
 }
 
-cartPutItemsBySupplier.PATH = '/bla-bla-vla/carts/{cartId}/cart-items/by-supplier/{supplierOrganizationId}';
+cartPutItemsBySupplier.PATH = '/market/api/v1/carts/{cartId}/cart-items/by-supplier/{supplierOrganizationId}';

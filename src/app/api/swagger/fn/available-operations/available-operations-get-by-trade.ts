@@ -28,4 +28,4 @@ export function availableOperationsGetByTrade(http: HttpClient, rootUrl: string,
   );
 }
 
-availableOperationsGetByTrade.PATH = '/bla-bla-vla/available-operations/trade/{tradeId}';
+availableOperationsGetByTrade.PATH = '/market/api/v1/available-operations/trade/{tradeId}';

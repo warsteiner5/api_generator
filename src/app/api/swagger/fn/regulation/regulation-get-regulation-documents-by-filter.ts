@@ -29,4 +29,4 @@ export function regulationGetRegulationDocumentsByFilter(http: HttpClient, rootU
   );
 }
 
-regulationGetRegulationDocumentsByFilter.PATH = '/bla-bla-vla/regulation/documents';
+regulationGetRegulationDocumentsByFilter.PATH = '/market/api/v1/regulation/documents';

@@ -31,4 +31,4 @@ export function offersSendCustomerCommercialOffer(http: HttpClient, rootUrl: str
   );
 }
 
-offersSendCustomerCommercialOffer.PATH = '/bla-bla-vla/offers/{id}/commercial-offer';
+offersSendCustomerCommercialOffer.PATH = '/market/api/v1/offers/{id}/commercial-offer';

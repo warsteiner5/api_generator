@@ -28,4 +28,4 @@ export function participantRatingExportFeedbackToExcelByFilter(http: HttpClient,
   );
 }
 
-participantRatingExportFeedbackToExcelByFilter.PATH = '/bla-bla-vla/ParticipantRating/ExportFeedbackToExcelByFilter';
+participantRatingExportFeedbackToExcelByFilter.PATH = '/api/ParticipantRating/ExportFeedbackToExcelByFilter';

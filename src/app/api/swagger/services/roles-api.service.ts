@@ -9,9 +9,9 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfRoleItemResponseDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-role-item-response-dto';
-import { ApiMarketJsonResultOfRoleDetailResponse } from '../models/api-market-json-result-of-role-detail-response';
+import { ApiMarketJsonResultOfRoleDetailResponseAltDto } from '../models/api-market-json-result-of-role-detail-response';
 import { rolesActivateRole } from '../fn/roles/roles-activate-role';
 import { RolesActivateRole$Params } from '../fn/roles/roles-activate-role';
 import { rolesCreateRole } from '../fn/roles/roles-create-role';
@@ -36,7 +36,7 @@ export class RolesApiService extends BaseService {
   }
 
   /** Path part for operation `rolesSearchRoles()` */
-  static readonly RolesSearchRolesPath = '/bla-bla-vla/security/roles/search';
+  static readonly RolesSearchRolesPath = '/market/api/v1/security/roles/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -61,7 +61,7 @@ export class RolesApiService extends BaseService {
   }
 
   /** Path part for operation `rolesGetRoleInitial()` */
-  static readonly RolesGetRoleInitialPath = '/bla-bla-vla/security/roles/create';
+  static readonly RolesGetRoleInitialPath = '/market/api/v1/security/roles/create';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -69,7 +69,7 @@ export class RolesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  rolesGetRoleInitial$Response(params?: RolesGetRoleInitial$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfRoleDetailResponse>> {
+  rolesGetRoleInitial$Response(params?: RolesGetRoleInitial$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfRoleDetailResponseAltDto>> {
     return rolesGetRoleInitial(this.http, this.rootUrl, params, context);
   }
 
@@ -79,14 +79,14 @@ export class RolesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  rolesGetRoleInitial(params?: RolesGetRoleInitial$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfRoleDetailResponse> {
+  rolesGetRoleInitial(params?: RolesGetRoleInitial$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfRoleDetailResponseAltDto> {
     return this.rolesGetRoleInitial$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfRoleDetailResponse>): ApiMarketJsonResultOfRoleDetailResponse => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfRoleDetailResponseAltDto>): ApiMarketJsonResultOfRoleDetailResponseAltDto => r.body)
     );
   }
 
   /** Path part for operation `rolesGetRole()` */
-  static readonly RolesGetRolePath = '/bla-bla-vla/security/roles/{id}';
+  static readonly RolesGetRolePath = '/market/api/v1/security/roles/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -94,7 +94,7 @@ export class RolesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  rolesGetRole$Response(params: RolesGetRole$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfRoleDetailResponse>> {
+  rolesGetRole$Response(params: RolesGetRole$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfRoleDetailResponseAltDto>> {
     return rolesGetRole(this.http, this.rootUrl, params, context);
   }
 
@@ -104,14 +104,14 @@ export class RolesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  rolesGetRole(params: RolesGetRole$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfRoleDetailResponse> {
+  rolesGetRole(params: RolesGetRole$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfRoleDetailResponseAltDto> {
     return this.rolesGetRole$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfRoleDetailResponse>): ApiMarketJsonResultOfRoleDetailResponse => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfRoleDetailResponseAltDto>): ApiMarketJsonResultOfRoleDetailResponseAltDto => r.body)
     );
   }
 
   /** Path part for operation `rolesUpdateRole()` */
-  static readonly RolesUpdateRolePath = '/bla-bla-vla/security/roles/{id}';
+  static readonly RolesUpdateRolePath = '/market/api/v1/security/roles/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -136,7 +136,7 @@ export class RolesApiService extends BaseService {
   }
 
   /** Path part for operation `rolesDeleteRole()` */
-  static readonly RolesDeleteRolePath = '/bla-bla-vla/security/roles/{id}';
+  static readonly RolesDeleteRolePath = '/market/api/v1/security/roles/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -161,7 +161,7 @@ export class RolesApiService extends BaseService {
   }
 
   /** Path part for operation `rolesCreateRole()` */
-  static readonly RolesCreateRolePath = '/bla-bla-vla/security/roles';
+  static readonly RolesCreateRolePath = '/market/api/v1/security/roles';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -169,7 +169,7 @@ export class RolesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  rolesCreateRole$Response(params?: RolesCreateRole$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  rolesCreateRole$Response(params?: RolesCreateRole$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return rolesCreateRole(this.http, this.rootUrl, params, context);
   }
 
@@ -179,14 +179,14 @@ export class RolesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  rolesCreateRole(params?: RolesCreateRole$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  rolesCreateRole(params?: RolesCreateRole$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.rolesCreateRole$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `rolesActivateRole()` */
-  static readonly RolesActivateRolePath = '/bla-bla-vla/security/roles/{id}/activate';
+  static readonly RolesActivateRolePath = '/market/api/v1/security/roles/{id}/activate';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -211,7 +211,7 @@ export class RolesApiService extends BaseService {
   }
 
   /** Path part for operation `rolesDeactivateRole()` */
-  static readonly RolesDeactivateRolePath = '/bla-bla-vla/security/roles/{id}/deactivate';
+  static readonly RolesDeactivateRolePath = '/market/api/v1/security/roles/{id}/deactivate';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

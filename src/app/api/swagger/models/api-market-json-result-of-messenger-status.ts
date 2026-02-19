@@ -2,6 +2,6 @@
 /* eslint-disable */
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 import { ApiMessengerStatusAltDto } from '../models/api-messenger-status';
-export type ApiMarketJsonResultOfMessengerStatus = ApiMarketJsonVoidResultAltDto & {
+export type ApiMarketJsonResultOfMessengerStatusAltDto = ApiMarketJsonVoidResultAltDto & {
 'data'?: ApiMessengerStatusAltDto | null;
 };

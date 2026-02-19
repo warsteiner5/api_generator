@@ -29,4 +29,4 @@ export function pomogatorUpdateTagsSettings(http: HttpClient, rootUrl: string, p
   );
 }
 
-pomogatorUpdateTagsSettings.PATH = '/bla-bla-vla/pomogator/updateTagsSettings';
+pomogatorUpdateTagsSettings.PATH = '/market/api/v1/pomogator/updateTagsSettings';

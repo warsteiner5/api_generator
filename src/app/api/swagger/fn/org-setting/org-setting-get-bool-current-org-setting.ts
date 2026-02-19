@@ -28,4 +28,4 @@ export function orgSettingGetBoolCurrentOrgSetting(http: HttpClient, rootUrl: st
   );
 }
 
-orgSettingGetBoolCurrentOrgSetting.PATH = '/bla-bla-vla/OrgSetting/bool/{settingName}';
+orgSettingGetBoolCurrentOrgSetting.PATH = '/api/OrgSetting/bool/{settingName}';

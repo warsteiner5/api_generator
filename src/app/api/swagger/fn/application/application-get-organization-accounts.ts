@@ -25,4 +25,4 @@ export function applicationGetOrganizationAccounts(http: HttpClient, rootUrl: st
   );
 }
 
-applicationGetOrganizationAccounts.PATH = '/bla-bla-vla/Application/GetOrganizationAccounts';
+applicationGetOrganizationAccounts.PATH = '/api/Application/GetOrganizationAccounts';

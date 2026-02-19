@@ -28,4 +28,4 @@ export function messageQueueServiceLogSearchAction(http: HttpClient, rootUrl: st
   );
 }
 
-messageQueueServiceLogSearchAction.PATH = '/bla-bla-vla/messageQueueService/fksMarketSearch';
+messageQueueServiceLogSearchAction.PATH = '/market/api/v1/messageQueueService/fksMarketSearch';

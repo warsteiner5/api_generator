@@ -28,4 +28,4 @@ export function complaintGetPriceListComplaints(http: HttpClient, rootUrl: strin
   );
 }
 
-complaintGetPriceListComplaints.PATH = '/bla-bla-vla/complaint/price-list/{id}';
+complaintGetPriceListComplaints.PATH = '/market/api/v1/complaint/price-list/{id}';

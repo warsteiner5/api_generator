@@ -2,6 +2,6 @@
 /* eslint-disable */
 import { ApiDealExtendedInfoAltDto } from '../models/api-deal-extended-info';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
-export type ApiMarketJsonResultOfDealExtendedInfo = ApiMarketJsonVoidResultAltDto & {
+export type ApiMarketJsonResultOfDealExtendedInfoAltDto = ApiMarketJsonVoidResultAltDto & {
 'data'?: ApiDealExtendedInfoAltDto | null;
 };

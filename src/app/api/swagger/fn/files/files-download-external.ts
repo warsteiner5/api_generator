@@ -27,4 +27,4 @@ export function filesDownloadExternal(http: HttpClient, rootUrl: string, params:
   );
 }
 
-filesDownloadExternal.PATH = '/bla-bla-vla/files/downloadExternal';
+filesDownloadExternal.PATH = '/market/api/v1/files/downloadExternal';

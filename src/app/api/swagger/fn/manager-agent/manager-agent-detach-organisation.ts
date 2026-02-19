@@ -27,4 +27,4 @@ export function managerAgentDetachOrganisation(http: HttpClient, rootUrl: string
   );
 }
 
-managerAgentDetachOrganisation.PATH = '/bla-bla-vla/managerAgent/detach-organisation/{organizationGuid}';
+managerAgentDetachOrganisation.PATH = '/market/api/v1/managerAgent/detach-organisation/{organizationGuid}';

@@ -27,4 +27,4 @@ export function okGetReport(http: HttpClient, rootUrl: string, params: OkGetRepo
   );
 }
 
-okGetReport.PATH = '/bla-bla-vla/okservice/report';
+okGetReport.PATH = '/market/api/v1/okservice/report';

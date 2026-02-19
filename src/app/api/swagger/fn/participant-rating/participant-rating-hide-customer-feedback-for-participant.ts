@@ -28,4 +28,4 @@ export function participantRatingHideCustomerFeedbackForParticipant(http: HttpCl
   );
 }
 
-participantRatingHideCustomerFeedbackForParticipant.PATH = '/bla-bla-vla/ParticipantRating/HideCustomerFeedbackForParticipant';
+participantRatingHideCustomerFeedbackForParticipant.PATH = '/api/ParticipantRating/HideCustomerFeedbackForParticipant';

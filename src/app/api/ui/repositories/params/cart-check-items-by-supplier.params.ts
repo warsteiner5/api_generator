@@ -1,11 +1,11 @@
 import { CartCheckItemsBySupplier$Params } from '../../../swagger/fn/cart/cart-check-items-by-supplier';
-import { ValueDtoOfBooleanAlt } from '../../models/value-dto-of-boolean-alt.interface';
-import { adaptApiValueDtoOfBooleanAltDto } from '../../adapters/toDto/api-value-dto-of-boolean.adapter';
+import { ValueDtoOfBoolean } from '../../models/value-dto-of-boolean.interface';
+import { adaptApiValueDtoOfBoolean } from '../../adapters/toDto/api-value-dto-of-boolean.adapter';
 
 export interface CartCheckItemsBySupplierParams {
   cartId: string;
   supplierOrganizationId: number;
-  body?: ValueDtoOfBooleanAlt;
+  body?: ValueDtoOfBoolean;
 }
 
 export const cartCheckItemsBySupplierParamsAdapter = {
@@ -16,7 +16,7 @@ export const cartCheckItemsBySupplierParamsAdapter = {
     return {
       cartId: params.cartId,
       supplierOrganizationId: params.supplierOrganizationId,
-      body: adaptApiValueDtoOfBooleanAltDto(params.body),
+      body: adaptApiValueDtoOfBoolean(params.body),
     };
   }
 };

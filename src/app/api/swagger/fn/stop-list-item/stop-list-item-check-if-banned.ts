@@ -27,4 +27,4 @@ export function stopListItemCheckIfBanned(http: HttpClient, rootUrl: string, par
   );
 }
 
-stopListItemCheckIfBanned.PATH = '/bla-bla-vla/stoplistitem/checkIfSupplierBanned/{supplierId}';
+stopListItemCheckIfBanned.PATH = '/market/api/v1/stoplistitem/checkIfSupplierBanned/{supplierId}';

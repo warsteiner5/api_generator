@@ -30,4 +30,4 @@ export function certificatesParseGet(http: HttpClient, rootUrl: string, params: 
   );
 }
 
-certificatesParseGet.PATH = '/bla-bla-vla/certificates/parse/{fileGuid}';
+certificatesParseGet.PATH = '/market/api/v1/certificates/parse/{fileGuid}';

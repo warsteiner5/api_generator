@@ -31,4 +31,4 @@ export function dealAgreementsAddDealAgreementHistory(http: HttpClient, rootUrl:
   );
 }
 
-dealAgreementsAddDealAgreementHistory.PATH = '/bla-bla-vla/deals/{dealId}/agreements/initial/history';
+dealAgreementsAddDealAgreementHistory.PATH = '/market/api/v1/deals/{dealId}/agreements/initial/history';

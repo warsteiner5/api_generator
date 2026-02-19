@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfTagItem } from '../../models/api-market-json-result-of-tag-item';
+import { ApiMarketJsonResultOfTagItemAltDto } from '../../models/api-market-json-result-of-tag-item';
 import { ApiSearchTypeEnum } from '../../models/api-search-type-enum';
 
 export interface PomogatorGetSettingsTag$Params {
@@ -14,7 +14,7 @@ export interface PomogatorGetSettingsTag$Params {
   type: ApiSearchTypeEnum;
 }
 
-export function pomogatorGetSettingsTag(http: HttpClient, rootUrl: string, params: PomogatorGetSettingsTag$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTagItem>> {
+export function pomogatorGetSettingsTag(http: HttpClient, rootUrl: string, params: PomogatorGetSettingsTag$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTagItemAltDto>> {
   const rb = new RequestBuilder(rootUrl, pomogatorGetSettingsTag.PATH, 'get');
   if (params) {
     rb.path('id', params.id, {});
@@ -26,9 +26,9 @@ export function pomogatorGetSettingsTag(http: HttpClient, rootUrl: string, param
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfTagItem>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfTagItemAltDto>;
     })
   );
 }
 
-pomogatorGetSettingsTag.PATH = '/bla-bla-vla/pomogator/settings/tags/{id}';
+pomogatorGetSettingsTag.PATH = '/market/api/v1/pomogator/settings/tags/{id}';

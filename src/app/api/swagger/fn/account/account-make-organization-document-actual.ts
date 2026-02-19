@@ -27,4 +27,4 @@ export function accountMakeOrganizationDocumentActual(http: HttpClient, rootUrl:
   );
 }
 
-accountMakeOrganizationDocumentActual.PATH = '/bla-bla-vla/Account/MakeOrganizationDocumentActual';
+accountMakeOrganizationDocumentActual.PATH = '/api/Account/MakeOrganizationDocumentActual';

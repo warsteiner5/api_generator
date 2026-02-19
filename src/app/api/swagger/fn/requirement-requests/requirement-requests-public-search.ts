@@ -29,4 +29,4 @@ export function requirementRequestsPublicSearch(http: HttpClient, rootUrl: strin
   );
 }
 
-requirementRequestsPublicSearch.PATH = '/bla-bla-vla/RequirementRequests/PublicSearch';
+requirementRequestsPublicSearch.PATH = '/market/api/v1/RequirementRequests/PublicSearch';

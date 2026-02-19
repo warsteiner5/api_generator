@@ -129,27 +129,27 @@ import { dealsUpdateDealDocumentsExternal } from '../fn/deals/deals-update-deal-
 import { DealsUpdateDealDocumentsExternal$Params } from '../fn/deals/deals-update-deal-documents-external';
 import { dealsUpdateFullDealPrice } from '../fn/deals/deals-update-full-deal-price';
 import { DealsUpdateFullDealPrice$Params } from '../fn/deals/deals-update-full-deal-price';
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
 import { ApiMarketJsonResultOfCertificateViewModelDto } from '../models/api-market-json-result-of-certificate-view-model-dto';
 import { ApiMarketJsonResultOfDealCountdownDto } from '../models/api-market-json-result-of-deal-countdown-dto';
-import { ApiMarketJsonResultOfDealExtendedInfo } from '../models/api-market-json-result-of-deal-extended-info';
+import { ApiMarketJsonResultOfDealExtendedInfoAltDto } from '../models/api-market-json-result-of-deal-extended-info';
 import { ApiMarketJsonResultOfDealFullPriceChangeDto } from '../models/api-market-json-result-of-deal-full-price-change-dto';
 import { ApiMarketJsonResultOfDealHashToSignDto } from '../models/api-market-json-result-of-deal-hash-to-sign-dto';
 import { ApiMarketJsonResultOfDocumentPackDtoOf } from '../models/api-market-json-result-of-document-pack-dto-of';
 import { ApiMarketJsonResultOfEisIntegrationResultDto } from '../models/api-market-json-result-of-eis-integration-result-dto';
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
-import { ApiMarketJsonResultOfIReadOnlyCollectionOfInteger } from '../models/api-market-json-result-of-i-read-only-collection-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto } from '../models/api-market-json-result-of-i-read-only-collection-of-integer';
 import { ApiMarketJsonResultOfListOfDiscussionDto } from '../models/api-market-json-result-of-list-of-discussion-dto';
 import { ApiMarketJsonResultOfListOfIDiscussionHistoryDto } from '../models/api-market-json-result-of-list-of-i-discussion-history-dto';
-import { ApiMarketJsonResultOfLong } from '../models/api-market-json-result-of-long';
+import { ApiMarketJsonResultOfLongAltDto } from '../models/api-market-json-result-of-long';
 import { ApiMarketJsonResultOfMarketDealDto } from '../models/api-market-json-result-of-market-deal-dto';
 import { ApiMarketJsonResultOfMarketDealDtoOf } from '../models/api-market-json-result-of-market-deal-dto-of';
 import { ApiMarketJsonResultOfMarketFullDealDto } from '../models/api-market-json-result-of-market-full-deal-dto';
 import { ApiMarketJsonResultOfMarketFullOrderDealDto } from '../models/api-market-json-result-of-market-full-order-deal-dto';
-import { ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfo } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-deal-info';
+import { ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfoAltDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-deal-info';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfDealListItemDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-deal-list-item-dto';
-import { ApiMarketJsonResultOfNullableGuid } from '../models/api-market-json-result-of-nullable-guid';
-import { ApiMarketJsonResultOfString } from '../models/api-market-json-result-of-string';
+import { ApiMarketJsonResultOfNullableGuidAltDto } from '../models/api-market-json-result-of-nullable-guid';
+import { ApiMarketJsonResultOfStringAltDto } from '../models/api-market-json-result-of-string';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 
 @Injectable({ providedIn: 'root' })
@@ -159,7 +159,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsCreateDeal()` */
-  static readonly DealsCreateDealPath = '/bla-bla-vla/deals';
+  static readonly DealsCreateDealPath = '/market/api/v1/deals';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -167,7 +167,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsCreateDeal$Response(params?: DealsCreateDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  dealsCreateDeal$Response(params?: DealsCreateDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return dealsCreateDeal(this.http, this.rootUrl, params, context);
   }
 
@@ -177,14 +177,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsCreateDeal(params?: DealsCreateDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  dealsCreateDeal(params?: DealsCreateDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.dealsCreateDeal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsCreateDealInternal()` */
-  static readonly DealsCreateDealInternalPath = '/bla-bla-vla/deals/internal';
+  static readonly DealsCreateDealInternalPath = '/market/api/v1/deals/internal';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -192,7 +192,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsCreateDealInternal$Response(params?: DealsCreateDealInternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  dealsCreateDealInternal$Response(params?: DealsCreateDealInternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return dealsCreateDealInternal(this.http, this.rootUrl, params, context);
   }
 
@@ -202,14 +202,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsCreateDealInternal(params?: DealsCreateDealInternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  dealsCreateDealInternal(params?: DealsCreateDealInternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.dealsCreateDealInternal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsCreateDealExternal()` */
-  static readonly DealsCreateDealExternalPath = '/bla-bla-vla/deals/external';
+  static readonly DealsCreateDealExternalPath = '/market/api/v1/deals/external';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -217,7 +217,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsCreateDealExternal$Response(params?: DealsCreateDealExternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  dealsCreateDealExternal$Response(params?: DealsCreateDealExternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return dealsCreateDealExternal(this.http, this.rootUrl, params, context);
   }
 
@@ -227,14 +227,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsCreateDealExternal(params?: DealsCreateDealExternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  dealsCreateDealExternal(params?: DealsCreateDealExternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.dealsCreateDealExternal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsCreateDeals()` */
-  static readonly DealsCreateDealsPath = '/bla-bla-vla/deals/create';
+  static readonly DealsCreateDealsPath = '/market/api/v1/deals/create';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -242,7 +242,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsCreateDeals$Response(params?: DealsCreateDeals$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfInteger>> {
+  dealsCreateDeals$Response(params?: DealsCreateDeals$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto>> {
     return dealsCreateDeals(this.http, this.rootUrl, params, context);
   }
 
@@ -252,14 +252,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsCreateDeals(params?: DealsCreateDeals$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIReadOnlyCollectionOfInteger> {
+  dealsCreateDeals(params?: DealsCreateDeals$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto> {
     return this.dealsCreateDeals$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfInteger>): ApiMarketJsonResultOfIReadOnlyCollectionOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto>): ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsCreateDealsExternal()` */
-  static readonly DealsCreateDealsExternalPath = '/bla-bla-vla/deals/create/external';
+  static readonly DealsCreateDealsExternalPath = '/market/api/v1/deals/create/external';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -267,7 +267,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsCreateDealsExternal$Response(params?: DealsCreateDealsExternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfInteger>> {
+  dealsCreateDealsExternal$Response(params?: DealsCreateDealsExternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto>> {
     return dealsCreateDealsExternal(this.http, this.rootUrl, params, context);
   }
 
@@ -277,14 +277,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsCreateDealsExternal(params?: DealsCreateDealsExternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIReadOnlyCollectionOfInteger> {
+  dealsCreateDealsExternal(params?: DealsCreateDealsExternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto> {
     return this.dealsCreateDealsExternal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfInteger>): ApiMarketJsonResultOfIReadOnlyCollectionOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto>): ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsAutoCreateDeals()` */
-  static readonly DealsAutoCreateDealsPath = '/bla-bla-vla/deals/create/lot/{tradeLotId}';
+  static readonly DealsAutoCreateDealsPath = '/market/api/v1/deals/create/lot/{tradeLotId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -292,7 +292,7 @@ export class DealsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  dealsAutoCreateDeals$Response(params: DealsAutoCreateDeals$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfInteger>> {
+  dealsAutoCreateDeals$Response(params: DealsAutoCreateDeals$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto>> {
     return dealsAutoCreateDeals(this.http, this.rootUrl, params, context);
   }
 
@@ -302,14 +302,14 @@ export class DealsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  dealsAutoCreateDeals(params: DealsAutoCreateDeals$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIReadOnlyCollectionOfInteger> {
+  dealsAutoCreateDeals(params: DealsAutoCreateDeals$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto> {
     return this.dealsAutoCreateDeals$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfInteger>): ApiMarketJsonResultOfIReadOnlyCollectionOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto>): ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsGetDeals()` */
-  static readonly DealsGetDealsPath = '/bla-bla-vla/deals/my';
+  static readonly DealsGetDealsPath = '/market/api/v1/deals/my';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -317,7 +317,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsGetDeals$Response(params?: DealsGetDeals$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfo>> {
+  dealsGetDeals$Response(params?: DealsGetDeals$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfoAltDto>> {
     return dealsGetDeals(this.http, this.rootUrl, params, context);
   }
 
@@ -327,14 +327,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsGetDeals(params?: DealsGetDeals$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfo> {
+  dealsGetDeals(params?: DealsGetDeals$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfoAltDto> {
     return this.dealsGetDeals$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfo>): ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfo => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfoAltDto>): ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfoAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsGetDeals2()` */
-  static readonly DealsGetDeals2Path = '/bla-bla-vla/deals/search';
+  static readonly DealsGetDeals2Path = '/market/api/v1/deals/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -359,7 +359,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsGetDeal()` */
-  static readonly DealsGetDealPath = '/bla-bla-vla/deals/{id}/{dealObject}';
+  static readonly DealsGetDealPath = '/market/api/v1/deals/{id}/{dealObject}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -384,7 +384,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsGetCustomerSignInfo()` */
-  static readonly DealsGetCustomerSignInfoPath = '/bla-bla-vla/deals/customer_sign_info';
+  static readonly DealsGetCustomerSignInfoPath = '/market/api/v1/deals/customer_sign_info';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -409,7 +409,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsGetSupplierSignInfo()` */
-  static readonly DealsGetSupplierSignInfoPath = '/bla-bla-vla/deals/supplier_sign_info';
+  static readonly DealsGetSupplierSignInfoPath = '/market/api/v1/deals/supplier_sign_info';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -434,7 +434,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsGetDataToSignByParticipantForDeal()` */
-  static readonly DealsGetDataToSignByParticipantForDealPath = '/bla-bla-vla/deals/participants/data_to_sign';
+  static readonly DealsGetDataToSignByParticipantForDealPath = '/market/api/v1/deals/participants/data_to_sign';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -459,7 +459,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsApproveCustomerDeal()` */
-  static readonly DealsApproveCustomerDealPath = '/bla-bla-vla/deals/participants/approve';
+  static readonly DealsApproveCustomerDealPath = '/market/api/v1/deals/participants/approve';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -467,7 +467,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsApproveCustomerDeal$Response(params?: DealsApproveCustomerDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  dealsApproveCustomerDeal$Response(params?: DealsApproveCustomerDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return dealsApproveCustomerDeal(this.http, this.rootUrl, params, context);
   }
 
@@ -477,14 +477,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsApproveCustomerDeal(params?: DealsApproveCustomerDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  dealsApproveCustomerDeal(params?: DealsApproveCustomerDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.dealsApproveCustomerDeal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsRejectCustomerDeal()` */
-  static readonly DealsRejectCustomerDealPath = '/bla-bla-vla/deals/participants/reject';
+  static readonly DealsRejectCustomerDealPath = '/market/api/v1/deals/participants/reject';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -492,7 +492,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsRejectCustomerDeal$Response(params?: DealsRejectCustomerDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  dealsRejectCustomerDeal$Response(params?: DealsRejectCustomerDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return dealsRejectCustomerDeal(this.http, this.rootUrl, params, context);
   }
 
@@ -502,14 +502,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsRejectCustomerDeal(params?: DealsRejectCustomerDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  dealsRejectCustomerDeal(params?: DealsRejectCustomerDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.dealsRejectCustomerDeal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsSuggestPaperFormSigning()` */
-  static readonly DealsSuggestPaperFormSigningPath = '/bla-bla-vla/deals/participants/paper_form/suggest';
+  static readonly DealsSuggestPaperFormSigningPath = '/market/api/v1/deals/participants/paper_form/suggest';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -517,7 +517,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsSuggestPaperFormSigning$Response(params?: DealsSuggestPaperFormSigning$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  dealsSuggestPaperFormSigning$Response(params?: DealsSuggestPaperFormSigning$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return dealsSuggestPaperFormSigning(this.http, this.rootUrl, params, context);
   }
 
@@ -527,14 +527,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsSuggestPaperFormSigning(params?: DealsSuggestPaperFormSigning$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  dealsSuggestPaperFormSigning(params?: DealsSuggestPaperFormSigning$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.dealsSuggestPaperFormSigning$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsChangeDealByParticipant()` */
-  static readonly DealsChangeDealByParticipantPath = '/bla-bla-vla/deals/participants/change';
+  static readonly DealsChangeDealByParticipantPath = '/market/api/v1/deals/participants/change';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -542,7 +542,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsChangeDealByParticipant$Response(params?: DealsChangeDealByParticipant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  dealsChangeDealByParticipant$Response(params?: DealsChangeDealByParticipant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return dealsChangeDealByParticipant(this.http, this.rootUrl, params, context);
   }
 
@@ -552,14 +552,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsChangeDealByParticipant(params?: DealsChangeDealByParticipant$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  dealsChangeDealByParticipant(params?: DealsChangeDealByParticipant$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.dealsChangeDealByParticipant$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsGetDataToSignByCustomerForDeal()` */
-  static readonly DealsGetDataToSignByCustomerForDealPath = '/bla-bla-vla/deals/customers/data_to_sign';
+  static readonly DealsGetDataToSignByCustomerForDealPath = '/market/api/v1/deals/customers/data_to_sign';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -584,7 +584,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsReworkDeal()` */
-  static readonly DealsReworkDealPath = '/bla-bla-vla/deals/customers/rework';
+  static readonly DealsReworkDealPath = '/market/api/v1/deals/customers/rework';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -592,7 +592,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsReworkDeal$Response(params?: DealsReworkDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  dealsReworkDeal$Response(params?: DealsReworkDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return dealsReworkDeal(this.http, this.rootUrl, params, context);
   }
 
@@ -602,14 +602,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsReworkDeal(params?: DealsReworkDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  dealsReworkDeal(params?: DealsReworkDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.dealsReworkDeal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsCancelDeal()` */
-  static readonly DealsCancelDealPath = '/bla-bla-vla/deals/customers/cancel';
+  static readonly DealsCancelDealPath = '/market/api/v1/deals/customers/cancel';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -617,7 +617,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsCancelDeal$Response(params?: DealsCancelDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  dealsCancelDeal$Response(params?: DealsCancelDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return dealsCancelDeal(this.http, this.rootUrl, params, context);
   }
 
@@ -627,14 +627,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsCancelDeal(params?: DealsCancelDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  dealsCancelDeal(params?: DealsCancelDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.dealsCancelDeal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsCancelExternalDeal()` */
-  static readonly DealsCancelExternalDealPath = '/bla-bla-vla/deals/{dealId}/customers/{organizationId}/users/{userId}/cancel/external';
+  static readonly DealsCancelExternalDealPath = '/market/api/v1/deals/{dealId}/customers/{organizationId}/users/{userId}/cancel/external';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -642,7 +642,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsCancelExternalDeal$Response(params: DealsCancelExternalDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  dealsCancelExternalDeal$Response(params: DealsCancelExternalDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return dealsCancelExternalDeal(this.http, this.rootUrl, params, context);
   }
 
@@ -652,14 +652,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsCancelExternalDeal(params: DealsCancelExternalDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  dealsCancelExternalDeal(params: DealsCancelExternalDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.dealsCancelExternalDeal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsConcludeApprovedDeal()` */
-  static readonly DealsConcludeApprovedDealPath = '/bla-bla-vla/deals/customers/conclude';
+  static readonly DealsConcludeApprovedDealPath = '/market/api/v1/deals/customers/conclude';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -667,7 +667,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsConcludeApprovedDeal$Response(params?: DealsConcludeApprovedDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  dealsConcludeApprovedDeal$Response(params?: DealsConcludeApprovedDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return dealsConcludeApprovedDeal(this.http, this.rootUrl, params, context);
   }
 
@@ -677,14 +677,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsConcludeApprovedDeal(params?: DealsConcludeApprovedDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  dealsConcludeApprovedDeal(params?: DealsConcludeApprovedDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.dealsConcludeApprovedDeal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsConcludeApprovedExternalDeal()` */
-  static readonly DealsConcludeApprovedExternalDealPath = '/bla-bla-vla/deals/{dealId}/customers/{organizationId}/users/{userId}/conclude/external';
+  static readonly DealsConcludeApprovedExternalDealPath = '/market/api/v1/deals/{dealId}/customers/{organizationId}/users/{userId}/conclude/external';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -692,7 +692,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsConcludeApprovedExternalDeal$Response(params: DealsConcludeApprovedExternalDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  dealsConcludeApprovedExternalDeal$Response(params: DealsConcludeApprovedExternalDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return dealsConcludeApprovedExternalDeal(this.http, this.rootUrl, params, context);
   }
 
@@ -702,14 +702,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsConcludeApprovedExternalDeal(params: DealsConcludeApprovedExternalDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  dealsConcludeApprovedExternalDeal(params: DealsConcludeApprovedExternalDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.dealsConcludeApprovedExternalDeal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsSentForParticipantApprove()` */
-  static readonly DealsSentForParticipantApprovePath = '/bla-bla-vla/deals/customers/sent_for_approve';
+  static readonly DealsSentForParticipantApprovePath = '/market/api/v1/deals/customers/sent_for_approve';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -717,7 +717,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsSentForParticipantApprove$Response(params?: DealsSentForParticipantApprove$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLong>> {
+  dealsSentForParticipantApprove$Response(params?: DealsSentForParticipantApprove$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>> {
     return dealsSentForParticipantApprove(this.http, this.rootUrl, params, context);
   }
 
@@ -727,14 +727,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsSentForParticipantApprove(params?: DealsSentForParticipantApprove$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLong> {
+  dealsSentForParticipantApprove(params?: DealsSentForParticipantApprove$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLongAltDto> {
     return this.dealsSentForParticipantApprove$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfLong>): ApiMarketJsonResultOfLong => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>): ApiMarketJsonResultOfLongAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsSentForParticipantApproveExternal()` */
-  static readonly DealsSentForParticipantApproveExternalPath = '/bla-bla-vla/deals/customers/sent_for_approve_external';
+  static readonly DealsSentForParticipantApproveExternalPath = '/market/api/v1/deals/customers/sent_for_approve_external';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -742,7 +742,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsSentForParticipantApproveExternal$Response(params?: DealsSentForParticipantApproveExternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLong>> {
+  dealsSentForParticipantApproveExternal$Response(params?: DealsSentForParticipantApproveExternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>> {
     return dealsSentForParticipantApproveExternal(this.http, this.rootUrl, params, context);
   }
 
@@ -752,14 +752,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsSentForParticipantApproveExternal(params?: DealsSentForParticipantApproveExternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLong> {
+  dealsSentForParticipantApproveExternal(params?: DealsSentForParticipantApproveExternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLongAltDto> {
     return this.dealsSentForParticipantApproveExternal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfLong>): ApiMarketJsonResultOfLong => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>): ApiMarketJsonResultOfLongAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsUpdateDealDocumentsExternal()` */
-  static readonly DealsUpdateDealDocumentsExternalPath = '/bla-bla-vla/deals/customers/update_deal_documents_external';
+  static readonly DealsUpdateDealDocumentsExternalPath = '/market/api/v1/deals/customers/update_deal_documents_external';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -784,7 +784,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsChangeFormToPaper()` */
-  static readonly DealsChangeFormToPaperPath = '/bla-bla-vla/deals/customers/paper_form/change';
+  static readonly DealsChangeFormToPaperPath = '/market/api/v1/deals/customers/paper_form/change';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -792,7 +792,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsChangeFormToPaper$Response(params?: DealsChangeFormToPaper$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLong>> {
+  dealsChangeFormToPaper$Response(params?: DealsChangeFormToPaper$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>> {
     return dealsChangeFormToPaper(this.http, this.rootUrl, params, context);
   }
 
@@ -802,14 +802,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsChangeFormToPaper(params?: DealsChangeFormToPaper$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLong> {
+  dealsChangeFormToPaper(params?: DealsChangeFormToPaper$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLongAltDto> {
     return this.dealsChangeFormToPaper$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfLong>): ApiMarketJsonResultOfLong => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>): ApiMarketJsonResultOfLongAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsRejectChangeFormToPaper()` */
-  static readonly DealsRejectChangeFormToPaperPath = '/bla-bla-vla/deals/customers/paper_form/reject';
+  static readonly DealsRejectChangeFormToPaperPath = '/market/api/v1/deals/customers/paper_form/reject';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -817,7 +817,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsRejectChangeFormToPaper$Response(params?: DealsRejectChangeFormToPaper$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  dealsRejectChangeFormToPaper$Response(params?: DealsRejectChangeFormToPaper$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return dealsRejectChangeFormToPaper(this.http, this.rootUrl, params, context);
   }
 
@@ -827,14 +827,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsRejectChangeFormToPaper(params?: DealsRejectChangeFormToPaper$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  dealsRejectChangeFormToPaper(params?: DealsRejectChangeFormToPaper$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.dealsRejectChangeFormToPaper$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsChangeForm()` */
-  static readonly DealsChangeFormPath = '/bla-bla-vla/deals/customers/form/change';
+  static readonly DealsChangeFormPath = '/market/api/v1/deals/customers/form/change';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -859,7 +859,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsEditWorkGroups()` */
-  static readonly DealsEditWorkGroupsPath = '/bla-bla-vla/deals/customers/work_groups/edit';
+  static readonly DealsEditWorkGroupsPath = '/market/api/v1/deals/customers/work_groups/edit';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -867,7 +867,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsEditWorkGroups$Response(params?: DealsEditWorkGroups$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  dealsEditWorkGroups$Response(params?: DealsEditWorkGroups$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return dealsEditWorkGroups(this.http, this.rootUrl, params, context);
   }
 
@@ -877,14 +877,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsEditWorkGroups(params?: DealsEditWorkGroups$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  dealsEditWorkGroups(params?: DealsEditWorkGroups$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.dealsEditWorkGroups$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsSetDealExecuted()` */
-  static readonly DealsSetDealExecutedPath = '/bla-bla-vla/deals/{id}/customers/execute';
+  static readonly DealsSetDealExecutedPath = '/market/api/v1/deals/{id}/customers/execute';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -909,7 +909,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsSetDealTerminated()` */
-  static readonly DealsSetDealTerminatedPath = '/bla-bla-vla/deals/{dealId}/customers/terminate';
+  static readonly DealsSetDealTerminatedPath = '/market/api/v1/deals/{dealId}/customers/terminate';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -934,7 +934,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsSaveDealExtendedInfo()` */
-  static readonly DealsSaveDealExtendedInfoPath = '/bla-bla-vla/deals/SaveDealExtendedInfo';
+  static readonly DealsSaveDealExtendedInfoPath = '/market/api/v1/deals/SaveDealExtendedInfo';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -959,7 +959,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsGetDealExtendedInfo()` */
-  static readonly DealsGetDealExtendedInfoPath = '/bla-bla-vla/deals/{dealId}/ExtendedInfo';
+  static readonly DealsGetDealExtendedInfoPath = '/market/api/v1/deals/{dealId}/ExtendedInfo';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -967,7 +967,7 @@ export class DealsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  dealsGetDealExtendedInfo$Response(params: DealsGetDealExtendedInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDealExtendedInfo>> {
+  dealsGetDealExtendedInfo$Response(params: DealsGetDealExtendedInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDealExtendedInfoAltDto>> {
     return dealsGetDealExtendedInfo(this.http, this.rootUrl, params, context);
   }
 
@@ -977,14 +977,14 @@ export class DealsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  dealsGetDealExtendedInfo(params: DealsGetDealExtendedInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDealExtendedInfo> {
+  dealsGetDealExtendedInfo(params: DealsGetDealExtendedInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDealExtendedInfoAltDto> {
     return this.dealsGetDealExtendedInfo$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDealExtendedInfo>): ApiMarketJsonResultOfDealExtendedInfo => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDealExtendedInfoAltDto>): ApiMarketJsonResultOfDealExtendedInfoAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsGetTradeActualDeal()` */
-  static readonly DealsGetTradeActualDealPath = '/bla-bla-vla/deals/{id}';
+  static readonly DealsGetTradeActualDealPath = '/market/api/v1/deals/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1009,7 +1009,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsGetTradeActualDeals()` */
-  static readonly DealsGetTradeActualDealsPath = '/bla-bla-vla/deals/GetDealsByTradeId/{tradeId}';
+  static readonly DealsGetTradeActualDealsPath = '/market/api/v1/deals/GetDealsByTradeId/{tradeId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1034,7 +1034,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsGetTradeHistory()` */
-  static readonly DealsGetTradeHistoryPath = '/bla-bla-vla/deals/GetTradeDealsHistory/{tradeId}';
+  static readonly DealsGetTradeHistoryPath = '/market/api/v1/deals/GetTradeDealsHistory/{tradeId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1059,7 +1059,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsGetTradeAndDealHistory()` */
-  static readonly DealsGetTradeAndDealHistoryPath = '/bla-bla-vla/deals/GetTradeDealsHistory/{tradeId}/{dealId}';
+  static readonly DealsGetTradeAndDealHistoryPath = '/market/api/v1/deals/GetTradeDealsHistory/{tradeId}/{dealId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1084,7 +1084,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsGetTradeAndDealDiscussionHistory()` */
-  static readonly DealsGetTradeAndDealDiscussionHistoryPath = '/bla-bla-vla/deals/{dealId}/discussion-history';
+  static readonly DealsGetTradeAndDealDiscussionHistoryPath = '/market/api/v1/deals/{dealId}/discussion-history';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1109,7 +1109,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsExportDealsInfoIntoExcel()` */
-  static readonly DealsExportDealsInfoIntoExcelPath = '/bla-bla-vla/deals/export-into-excel';
+  static readonly DealsExportDealsInfoIntoExcelPath = '/market/api/v1/deals/export-into-excel';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1117,7 +1117,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsExportDealsInfoIntoExcel$Response(params?: DealsExportDealsInfoIntoExcel$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfNullableGuid>> {
+  dealsExportDealsInfoIntoExcel$Response(params?: DealsExportDealsInfoIntoExcel$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfNullableGuidAltDto>> {
     return dealsExportDealsInfoIntoExcel(this.http, this.rootUrl, params, context);
   }
 
@@ -1127,14 +1127,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsExportDealsInfoIntoExcel(params?: DealsExportDealsInfoIntoExcel$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfNullableGuid> {
+  dealsExportDealsInfoIntoExcel(params?: DealsExportDealsInfoIntoExcel$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfNullableGuidAltDto> {
     return this.dealsExportDealsInfoIntoExcel$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfNullableGuid>): ApiMarketJsonResultOfNullableGuid => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfNullableGuidAltDto>): ApiMarketJsonResultOfNullableGuidAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsUpdateFullDealPrice()` */
-  static readonly DealsUpdateFullDealPricePath = '/bla-bla-vla/deals/price/change';
+  static readonly DealsUpdateFullDealPricePath = '/market/api/v1/deals/price/change';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1159,7 +1159,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsGetLastDealFullPriceChange()` */
-  static readonly DealsGetLastDealFullPriceChangePath = '/bla-bla-vla/deals/price/lastPriceChange';
+  static readonly DealsGetLastDealFullPriceChangePath = '/market/api/v1/deals/price/lastPriceChange';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1184,7 +1184,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsDoNotConcludeDeal()` */
-  static readonly DealsDoNotConcludeDealPath = '/bla-bla-vla/deals/do_not_conclude';
+  static readonly DealsDoNotConcludeDealPath = '/market/api/v1/deals/do_not_conclude';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1192,7 +1192,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsDoNotConcludeDeal$Response(params?: DealsDoNotConcludeDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  dealsDoNotConcludeDeal$Response(params?: DealsDoNotConcludeDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return dealsDoNotConcludeDeal(this.http, this.rootUrl, params, context);
   }
 
@@ -1202,14 +1202,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsDoNotConcludeDeal(params?: DealsDoNotConcludeDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  dealsDoNotConcludeDeal(params?: DealsDoNotConcludeDeal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.dealsDoNotConcludeDeal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsSaveDealEisDataDraft()` */
-  static readonly DealsSaveDealEisDataDraftPath = '/bla-bla-vla/deals/save/eis/draft';
+  static readonly DealsSaveDealEisDataDraftPath = '/market/api/v1/deals/save/eis/draft';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1234,7 +1234,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsSendDealToEis()` */
-  static readonly DealsSendDealToEisPath = '/bla-bla-vla/deals/send_to_eis';
+  static readonly DealsSendDealToEisPath = '/market/api/v1/deals/send_to_eis';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1259,7 +1259,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsGetExportDealDocuments()` */
-  static readonly DealsGetExportDealDocumentsPath = '/bla-bla-vla/deals/export_documents';
+  static readonly DealsGetExportDealDocumentsPath = '/market/api/v1/deals/export_documents';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1267,7 +1267,7 @@ export class DealsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  dealsGetExportDealDocuments$Response(params: DealsGetExportDealDocuments$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfNullableGuid>> {
+  dealsGetExportDealDocuments$Response(params: DealsGetExportDealDocuments$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfNullableGuidAltDto>> {
     return dealsGetExportDealDocuments(this.http, this.rootUrl, params, context);
   }
 
@@ -1277,14 +1277,14 @@ export class DealsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  dealsGetExportDealDocuments(params: DealsGetExportDealDocuments$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfNullableGuid> {
+  dealsGetExportDealDocuments(params: DealsGetExportDealDocuments$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfNullableGuidAltDto> {
     return this.dealsGetExportDealDocuments$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfNullableGuid>): ApiMarketJsonResultOfNullableGuid => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfNullableGuidAltDto>): ApiMarketJsonResultOfNullableGuidAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsGetExportDealDocumentsFile()` */
-  static readonly DealsGetExportDealDocumentsFilePath = '/bla-bla-vla/deals/export_documents/file';
+  static readonly DealsGetExportDealDocumentsFilePath = '/market/api/v1/deals/export_documents/file';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1309,7 +1309,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsGetDealDocumentPacks()` */
-  static readonly DealsGetDealDocumentPacksPath = '/bla-bla-vla/deals/{id}/document-packs';
+  static readonly DealsGetDealDocumentPacksPath = '/market/api/v1/deals/{id}/document-packs';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1334,7 +1334,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsAddPaperDealDocuments()` */
-  static readonly DealsAddPaperDealDocumentsPath = '/bla-bla-vla/deals/{id}/paper-documents';
+  static readonly DealsAddPaperDealDocumentsPath = '/market/api/v1/deals/{id}/paper-documents';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1359,7 +1359,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsGenerateDealNumber()` */
-  static readonly DealsGenerateDealNumberPath = '/bla-bla-vla/deals/number/generate';
+  static readonly DealsGenerateDealNumberPath = '/market/api/v1/deals/number/generate';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1367,7 +1367,7 @@ export class DealsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  dealsGenerateDealNumber$Response(params?: DealsGenerateDealNumber$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+  dealsGenerateDealNumber$Response(params?: DealsGenerateDealNumber$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
     return dealsGenerateDealNumber(this.http, this.rootUrl, params, context);
   }
 
@@ -1377,14 +1377,14 @@ export class DealsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  dealsGenerateDealNumber(params?: DealsGenerateDealNumber$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfString> {
+  dealsGenerateDealNumber(params?: DealsGenerateDealNumber$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfStringAltDto> {
     return this.dealsGenerateDealNumber$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfString>): ApiMarketJsonResultOfString => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>): ApiMarketJsonResultOfStringAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsSignDealOutsideEShop()` */
-  static readonly DealsSignDealOutsideEShopPath = '/bla-bla-vla/deals/SignDealOutsideEShop';
+  static readonly DealsSignDealOutsideEShopPath = '/market/api/v1/deals/SignDealOutsideEShop';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1409,7 +1409,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsGetCountDownTime()` */
-  static readonly DealsGetCountDownTimePath = '/bla-bla-vla/deals/{dealId}/countdown-time';
+  static readonly DealsGetCountDownTimePath = '/market/api/v1/deals/{dealId}/countdown-time';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1434,7 +1434,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsSendContractFromCustomerToSupplier()` */
-  static readonly DealsSendContractFromCustomerToSupplierPath = '/bla-bla-vla/deals/{id}/customer/send';
+  static readonly DealsSendContractFromCustomerToSupplierPath = '/market/api/v1/deals/{id}/customer/send';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1442,7 +1442,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsSendContractFromCustomerToSupplier$Response(params: DealsSendContractFromCustomerToSupplier$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  dealsSendContractFromCustomerToSupplier$Response(params: DealsSendContractFromCustomerToSupplier$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return dealsSendContractFromCustomerToSupplier(this.http, this.rootUrl, params, context);
   }
 
@@ -1452,14 +1452,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsSendContractFromCustomerToSupplier(params: DealsSendContractFromCustomerToSupplier$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  dealsSendContractFromCustomerToSupplier(params: DealsSendContractFromCustomerToSupplier$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.dealsSendContractFromCustomerToSupplier$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsSendContractFromSupplierToCustomer()` */
-  static readonly DealsSendContractFromSupplierToCustomerPath = '/bla-bla-vla/deals/{id}/participant/send';
+  static readonly DealsSendContractFromSupplierToCustomerPath = '/market/api/v1/deals/{id}/participant/send';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1467,7 +1467,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsSendContractFromSupplierToCustomer$Response(params: DealsSendContractFromSupplierToCustomer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  dealsSendContractFromSupplierToCustomer$Response(params: DealsSendContractFromSupplierToCustomer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return dealsSendContractFromSupplierToCustomer(this.http, this.rootUrl, params, context);
   }
 
@@ -1477,14 +1477,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsSendContractFromSupplierToCustomer(params: DealsSendContractFromSupplierToCustomer$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  dealsSendContractFromSupplierToCustomer(params: DealsSendContractFromSupplierToCustomer$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.dealsSendContractFromSupplierToCustomer$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsChangeContractByCustomer()` */
-  static readonly DealsChangeContractByCustomerPath = '/bla-bla-vla/deals/{id}/customer/change';
+  static readonly DealsChangeContractByCustomerPath = '/market/api/v1/deals/{id}/customer/change';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1492,7 +1492,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsChangeContractByCustomer$Response(params: DealsChangeContractByCustomer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  dealsChangeContractByCustomer$Response(params: DealsChangeContractByCustomer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return dealsChangeContractByCustomer(this.http, this.rootUrl, params, context);
   }
 
@@ -1502,14 +1502,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsChangeContractByCustomer(params: DealsChangeContractByCustomer$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  dealsChangeContractByCustomer(params: DealsChangeContractByCustomer$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.dealsChangeContractByCustomer$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsChangeContractBySupplier()` */
-  static readonly DealsChangeContractBySupplierPath = '/bla-bla-vla/deals/{id}/participant/change';
+  static readonly DealsChangeContractBySupplierPath = '/market/api/v1/deals/{id}/participant/change';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1517,7 +1517,7 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsChangeContractBySupplier$Response(params: DealsChangeContractBySupplier$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  dealsChangeContractBySupplier$Response(params: DealsChangeContractBySupplier$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return dealsChangeContractBySupplier(this.http, this.rootUrl, params, context);
   }
 
@@ -1527,14 +1527,14 @@ export class DealsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealsChangeContractBySupplier(params: DealsChangeContractBySupplier$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  dealsChangeContractBySupplier(params: DealsChangeContractBySupplier$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.dealsChangeContractBySupplier$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealsRevokeDealByCustomer()` */
-  static readonly DealsRevokeDealByCustomerPath = '/bla-bla-vla/deals/{id}/customer/revoke';
+  static readonly DealsRevokeDealByCustomerPath = '/market/api/v1/deals/{id}/customer/revoke';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1559,7 +1559,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsRevokeDealBySupplier()` */
-  static readonly DealsRevokeDealBySupplierPath = '/bla-bla-vla/deals/{id}/participant/revoke';
+  static readonly DealsRevokeDealBySupplierPath = '/market/api/v1/deals/{id}/participant/revoke';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1584,7 +1584,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsAddDealProvisionBySupplier()` */
-  static readonly DealsAddDealProvisionBySupplierPath = '/bla-bla-vla/deals/{id}/participant/provision';
+  static readonly DealsAddDealProvisionBySupplierPath = '/market/api/v1/deals/{id}/participant/provision';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1609,7 +1609,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsCreateDifferenceProtocolBySupplier()` */
-  static readonly DealsCreateDifferenceProtocolBySupplierPath = '/bla-bla-vla/deals/{id}/participant/difference-protocol';
+  static readonly DealsCreateDifferenceProtocolBySupplierPath = '/market/api/v1/deals/{id}/participant/difference-protocol';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1634,7 +1634,7 @@ export class DealsApiService extends BaseService {
   }
 
   /** Path part for operation `dealsChangeFormToPaperByCustomer()` */
-  static readonly DealsChangeFormToPaperByCustomerPath = '/bla-bla-vla/deals/{id}/customer/form/change/paper';
+  static readonly DealsChangeFormToPaperByCustomerPath = '/market/api/v1/deals/{id}/customer/form/change/paper';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

@@ -7,13 +7,13 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiEntitiesWithApprovalRequestFilterAltDto } from '../../models/api-entities-with-approval-request-filter';
-import { ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItem } from '../../models/api-market-json-result-of-market-pagination-result-of-list-of-trade-with-approval-request-list-item';
+import { ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItemAltDto } from '../../models/api-market-json-result-of-market-pagination-result-of-list-of-trade-with-approval-request-list-item';
 
 export interface ApprovalRequestGetTradesWithApprovalRequest$Params {
       body?: ApiEntitiesWithApprovalRequestFilterAltDto | null
 }
 
-export function approvalRequestGetTradesWithApprovalRequest(http: HttpClient, rootUrl: string, params?: ApprovalRequestGetTradesWithApprovalRequest$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItem>> {
+export function approvalRequestGetTradesWithApprovalRequest(http: HttpClient, rootUrl: string, params?: ApprovalRequestGetTradesWithApprovalRequest$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItemAltDto>> {
   const rb = new RequestBuilder(rootUrl, approvalRequestGetTradesWithApprovalRequest.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function approvalRequestGetTradesWithApprovalRequest(http: HttpClient, ro
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItem>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItemAltDto>;
     })
   );
 }
 
-approvalRequestGetTradesWithApprovalRequest.PATH = '/bla-bla-vla/approval/Trades';
+approvalRequestGetTradesWithApprovalRequest.PATH = '/market/api/v1/approval/Trades';

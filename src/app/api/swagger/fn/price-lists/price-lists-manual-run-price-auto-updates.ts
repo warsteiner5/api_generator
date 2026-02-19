@@ -28,4 +28,4 @@ export function priceListsManualRunPriceAutoUpdates(http: HttpClient, rootUrl: s
   );
 }
 
-priceListsManualRunPriceAutoUpdates.PATH = '/bla-bla-vla/priceLists/{id}/auto-update';
+priceListsManualRunPriceAutoUpdates.PATH = '/market/api/v1/priceLists/{id}/auto-update';

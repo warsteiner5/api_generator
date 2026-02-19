@@ -27,4 +27,4 @@ export function messageQueueServiceOfferImportProcess(http: HttpClient, rootUrl:
   );
 }
 
-messageQueueServiceOfferImportProcess.PATH = '/bla-bla-vla/messageQueueService/OfferImportEnd/{taskId}';
+messageQueueServiceOfferImportProcess.PATH = '/market/api/v1/messageQueueService/OfferImportEnd/{taskId}';

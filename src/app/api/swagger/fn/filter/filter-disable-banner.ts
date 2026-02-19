@@ -25,4 +25,4 @@ export function filterDisableBanner(http: HttpClient, rootUrl: string, params?: 
   );
 }
 
-filterDisableBanner.PATH = '/bla-bla-vla/filters/banner/disable';
+filterDisableBanner.PATH = '/market/api/v1/filters/banner/disable';

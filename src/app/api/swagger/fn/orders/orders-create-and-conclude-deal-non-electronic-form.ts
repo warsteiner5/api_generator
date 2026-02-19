@@ -28,4 +28,4 @@ export function ordersCreateAndConcludeDealNonElectronicForm(http: HttpClient, r
   );
 }
 
-ordersCreateAndConcludeDealNonElectronicForm.PATH = '/bla-bla-vla/orders/CreateAndConcludeDealNonElectronicForm';
+ordersCreateAndConcludeDealNonElectronicForm.PATH = '/market/api/v1/orders/CreateAndConcludeDealNonElectronicForm';

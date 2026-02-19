@@ -27,4 +27,4 @@ export function imagesCompressImages(http: HttpClient, rootUrl: string, params?:
   );
 }
 
-imagesCompressImages.PATH = '/bla-bla-vla/images/compress';
+imagesCompressImages.PATH = '/market/api/v1/images/compress';

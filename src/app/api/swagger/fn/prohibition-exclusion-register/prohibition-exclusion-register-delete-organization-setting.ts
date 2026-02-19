@@ -27,4 +27,4 @@ export function prohibitionExclusionRegisterDeleteOrganizationSetting(http: Http
   );
 }
 
-prohibitionExclusionRegisterDeleteOrganizationSetting.PATH = '/bla-bla-vla/ProhibitionExclusionRegister/DeleteSetting';
+prohibitionExclusionRegisterDeleteOrganizationSetting.PATH = '/api/ProhibitionExclusionRegister/DeleteSetting';

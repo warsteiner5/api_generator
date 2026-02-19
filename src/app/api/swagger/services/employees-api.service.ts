@@ -25,7 +25,7 @@ import { employeesUpdate } from '../fn/employees/employees-update';
 import { EmployeesUpdate$Params } from '../fn/employees/employees-update';
 import { employeesUpdateSignedEmployee } from '../fn/employees/employees-update-signed-employee';
 import { EmployeesUpdateSignedEmployee$Params } from '../fn/employees/employees-update-signed-employee';
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
 import { ApiMarketJsonResultOfEmployeeDataToSignDto } from '../models/api-market-json-result-of-employee-data-to-sign-dto';
 import { ApiMarketJsonResultOfEmployeeDto } from '../models/api-market-json-result-of-employee-dto';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfEmployeeItemDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-employee-item-dto';
@@ -38,7 +38,7 @@ export class EmployeesApiService extends BaseService {
   }
 
   /** Path part for operation `employeesSelf()` */
-  static readonly EmployeesSelfPath = '/bla-bla-vla/employees/self';
+  static readonly EmployeesSelfPath = '/market/api/v1/employees/self';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -63,7 +63,7 @@ export class EmployeesApiService extends BaseService {
   }
 
   /** Path part for operation `employeesSearch()` */
-  static readonly EmployeesSearchPath = '/bla-bla-vla/employees/search';
+  static readonly EmployeesSearchPath = '/market/api/v1/employees/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -88,7 +88,7 @@ export class EmployeesApiService extends BaseService {
   }
 
   /** Path part for operation `employeesGet()` */
-  static readonly EmployeesGetPath = '/bla-bla-vla/employees/{id}';
+  static readonly EmployeesGetPath = '/market/api/v1/employees/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -113,7 +113,7 @@ export class EmployeesApiService extends BaseService {
   }
 
   /** Path part for operation `employeesUpdate()` */
-  static readonly EmployeesUpdatePath = '/bla-bla-vla/employees/{id}';
+  static readonly EmployeesUpdatePath = '/market/api/v1/employees/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -138,7 +138,7 @@ export class EmployeesApiService extends BaseService {
   }
 
   /** Path part for operation `employeesGetEmployeeDataToSign()` */
-  static readonly EmployeesGetEmployeeDataToSignPath = '/bla-bla-vla/employees/{id}/data-to-sign';
+  static readonly EmployeesGetEmployeeDataToSignPath = '/market/api/v1/employees/{id}/data-to-sign';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -163,7 +163,7 @@ export class EmployeesApiService extends BaseService {
   }
 
   /** Path part for operation `employeesUpdateSignedEmployee()` */
-  static readonly EmployeesUpdateSignedEmployeePath = '/bla-bla-vla/employees/{id}/signed';
+  static readonly EmployeesUpdateSignedEmployeePath = '/market/api/v1/employees/{id}/signed';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -171,7 +171,7 @@ export class EmployeesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  employeesUpdateSignedEmployee$Response(params: EmployeesUpdateSignedEmployee$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  employeesUpdateSignedEmployee$Response(params: EmployeesUpdateSignedEmployee$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return employeesUpdateSignedEmployee(this.http, this.rootUrl, params, context);
   }
 
@@ -181,14 +181,14 @@ export class EmployeesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  employeesUpdateSignedEmployee(params: EmployeesUpdateSignedEmployee$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  employeesUpdateSignedEmployee(params: EmployeesUpdateSignedEmployee$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.employeesUpdateSignedEmployee$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `employeesBlock()` */
-  static readonly EmployeesBlockPath = '/bla-bla-vla/employees/{id}/block';
+  static readonly EmployeesBlockPath = '/market/api/v1/employees/{id}/block';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -213,7 +213,7 @@ export class EmployeesApiService extends BaseService {
   }
 
   /** Path part for operation `employeesUnblock()` */
-  static readonly EmployeesUnblockPath = '/bla-bla-vla/employees/{id}/unblock';
+  static readonly EmployeesUnblockPath = '/market/api/v1/employees/{id}/unblock';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

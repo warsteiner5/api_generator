@@ -27,7 +27,7 @@ export class OkApiService extends BaseService {
   }
 
   /** Path part for operation `okGet()` */
-  static readonly OkGetPath = '/bla-bla-vla/okservice';
+  static readonly OkGetPath = '/market/api/v1/okservice';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -52,7 +52,7 @@ export class OkApiService extends BaseService {
   }
 
   /** Path part for operation `okGetBriefList()` */
-  static readonly OkGetBriefListPath = '/bla-bla-vla/okservice/brieflist';
+  static readonly OkGetBriefListPath = '/market/api/v1/okservice/brieflist';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -77,7 +77,7 @@ export class OkApiService extends BaseService {
   }
 
   /** Path part for operation `okGetReport()` */
-  static readonly OkGetReportPath = '/bla-bla-vla/okservice/report';
+  static readonly OkGetReportPath = '/market/api/v1/okservice/report';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -102,7 +102,7 @@ export class OkApiService extends BaseService {
   }
 
   /** Path part for operation `okSendReportOnEmail()` */
-  static readonly OkSendReportOnEmailPath = '/bla-bla-vla/okservice/sendReportToEmail';
+  static readonly OkSendReportOnEmailPath = '/market/api/v1/okservice/sendReportToEmail';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

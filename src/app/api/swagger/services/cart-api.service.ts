@@ -43,7 +43,7 @@ export class CartApiService extends BaseService {
   }
 
   /** Path part for operation `cartGetClientCarts()` */
-  static readonly CartGetClientCartsPath = '/bla-bla-vla/carts';
+  static readonly CartGetClientCartsPath = '/market/api/v1/carts';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -68,7 +68,7 @@ export class CartApiService extends BaseService {
   }
 
   /** Path part for operation `cartExportCartItemsToExcel()` */
-  static readonly CartExportCartItemsToExcelPath = '/bla-bla-vla/carts/{cartId}/export-excel';
+  static readonly CartExportCartItemsToExcelPath = '/market/api/v1/carts/{cartId}/export-excel';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -93,7 +93,7 @@ export class CartApiService extends BaseService {
   }
 
   /** Path part for operation `cartUpdateCart()` */
-  static readonly CartUpdateCartPath = '/bla-bla-vla/carts/{id}';
+  static readonly CartUpdateCartPath = '/market/api/v1/carts/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -118,7 +118,7 @@ export class CartApiService extends BaseService {
   }
 
   /** Path part for operation `cartUpdateCartProperty()` */
-  static readonly CartUpdateCartPropertyPath = '/bla-bla-vla/carts/{id}/{propertyName}';
+  static readonly CartUpdateCartPropertyPath = '/market/api/v1/carts/{id}/{propertyName}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -143,7 +143,7 @@ export class CartApiService extends BaseService {
   }
 
   /** Path part for operation `cartUpdateCartItemProperty()` */
-  static readonly CartUpdateCartItemPropertyPath = '/bla-bla-vla/cart-items/{cartItemid}/{propertyName}';
+  static readonly CartUpdateCartItemPropertyPath = '/market/api/v1/cart-items/{cartItemid}/{propertyName}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -168,7 +168,7 @@ export class CartApiService extends BaseService {
   }
 
   /** Path part for operation `cartAddCartItem()` */
-  static readonly CartAddCartItemPath = '/bla-bla-vla/cart-items';
+  static readonly CartAddCartItemPath = '/market/api/v1/cart-items';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -193,7 +193,7 @@ export class CartApiService extends BaseService {
   }
 
   /** Path part for operation `cartUpdateCartItem()` */
-  static readonly CartUpdateCartItemPath = '/bla-bla-vla/cart-items/{id}';
+  static readonly CartUpdateCartItemPath = '/market/api/v1/cart-items/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -218,7 +218,7 @@ export class CartApiService extends BaseService {
   }
 
   /** Path part for operation `cartDeleteCartItem()` */
-  static readonly CartDeleteCartItemPath = '/bla-bla-vla/cart-items/{id}';
+  static readonly CartDeleteCartItemPath = '/market/api/v1/cart-items/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -243,7 +243,7 @@ export class CartApiService extends BaseService {
   }
 
   /** Path part for operation `cartDeleteClientCarts()` */
-  static readonly CartDeleteClientCartsPath = '/bla-bla-vla/cart-items/to-delete';
+  static readonly CartDeleteClientCartsPath = '/market/api/v1/cart-items/to-delete';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -268,7 +268,7 @@ export class CartApiService extends BaseService {
   }
 
   /** Path part for operation `cartPutItemsBySupplier()` */
-  static readonly CartPutItemsBySupplierPath = '/bla-bla-vla/carts/{cartId}/cart-items/by-supplier/{supplierOrganizationId}';
+  static readonly CartPutItemsBySupplierPath = '/market/api/v1/carts/{cartId}/cart-items/by-supplier/{supplierOrganizationId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -293,7 +293,7 @@ export class CartApiService extends BaseService {
   }
 
   /** Path part for operation `cartCheckItemsBySupplier()` */
-  static readonly CartCheckItemsBySupplierPath = '/bla-bla-vla/carts/{cartId}/cart-items/by-supplier/{supplierOrganizationId}/isChecked';
+  static readonly CartCheckItemsBySupplierPath = '/market/api/v1/carts/{cartId}/cart-items/by-supplier/{supplierOrganizationId}/isChecked';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -318,7 +318,7 @@ export class CartApiService extends BaseService {
   }
 
   /** Path part for operation `cartSendToExternalSystem()` */
-  static readonly CartSendToExternalSystemPath = '/bla-bla-vla/carts/to-external-system';
+  static readonly CartSendToExternalSystemPath = '/market/api/v1/carts/to-external-system';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

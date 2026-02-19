@@ -29,4 +29,4 @@ export function tradeGetTradesForAdmin(http: HttpClient, rootUrl: string, params
   );
 }
 
-tradeGetTradesForAdmin.PATH = '/bla-bla-vla/Trade/GetTradesForAdmin';
+tradeGetTradesForAdmin.PATH = '/api/Trade/GetTradesForAdmin';

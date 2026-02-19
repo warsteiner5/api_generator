@@ -26,4 +26,4 @@ export function reportsCategoryTenant(http: HttpClient, rootUrl: string, params?
   );
 }
 
-reportsCategoryTenant.PATH = '/bla-bla-vla/reports/statistic/priceLists';
+reportsCategoryTenant.PATH = '/market/api/v1/reports/statistic/priceLists';

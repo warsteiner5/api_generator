@@ -28,4 +28,4 @@ export function logLogError(http: HttpClient, rootUrl: string, params?: LogLogEr
   );
 }
 
-logLogError.PATH = '/bla-bla-vla/log/error';
+logLogError.PATH = '/market/api/v1/log/error';

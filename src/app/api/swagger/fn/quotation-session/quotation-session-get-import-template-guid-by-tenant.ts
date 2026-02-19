@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfGuid } from '../../models/api-market-json-result-of-guid';
+import { ApiMarketJsonResultOfGuidAltDto } from '../../models/api-market-json-result-of-guid';
 
 export interface QuotationSessionGetImportTemplateGuidByTenant$Params {
 }
 
-export function quotationSessionGetImportTemplateGuidByTenant(http: HttpClient, rootUrl: string, params?: QuotationSessionGetImportTemplateGuidByTenant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuid>> {
+export function quotationSessionGetImportTemplateGuidByTenant(http: HttpClient, rootUrl: string, params?: QuotationSessionGetImportTemplateGuidByTenant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>> {
   const rb = new RequestBuilder(rootUrl, quotationSessionGetImportTemplateGuidByTenant.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function quotationSessionGetImportTemplateGuidByTenant(http: HttpClient, 
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfGuid>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>;
     })
   );
 }
 
-quotationSessionGetImportTemplateGuidByTenant.PATH = '/bla-bla-vla/quotation-session/import-template-guid';
+quotationSessionGetImportTemplateGuidByTenant.PATH = '/market/api/v1/quotation-session/import-template-guid';

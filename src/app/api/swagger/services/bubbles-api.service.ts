@@ -20,7 +20,7 @@ export class BubblesApiService extends BaseService {
   }
 
   /** Path part for operation `bubblesGetTradeBubble()` */
-  static readonly BubblesGetTradeBubblePath = '/bla-bla-vla/bubbles/trade/{tradeId}';
+  static readonly BubblesGetTradeBubblePath = '/market/api/v1/bubbles/trade/{tradeId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

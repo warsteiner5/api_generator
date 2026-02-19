@@ -1,9 +1,9 @@
-import { TradeDtoWithSignatureAlt } from '../../models/trade-dto-with-signature-alt.interface';
+import { TradeDtoWithSignature } from '../../models/trade-dto-with-signature.interface';
 import { TradesPublish2$Params } from '../../../swagger/fn/trades/trades-publish-2';
-import { adaptApiTradeDtoWithSignatureAltDto } from '../../adapters/toDto/api-trade-dto-with-signature.adapter';
+import { adaptApiTradeDtoWithSignature } from '../../adapters/toDto/api-trade-dto-with-signature.adapter';
 
 export interface TradesPublish2Params {
-  body?: TradeDtoWithSignatureAlt;
+  body?: TradeDtoWithSignature;
 }
 
 export const tradesPublish2ParamsAdapter = {
@@ -12,7 +12,7 @@ export const tradesPublish2ParamsAdapter = {
       return {} as TradesPublish2$Params;
     }
     return {
-      body: adaptApiTradeDtoWithSignatureAltDto(params.body),
+      body: adaptApiTradeDtoWithSignature(params.body),
     };
   }
 };

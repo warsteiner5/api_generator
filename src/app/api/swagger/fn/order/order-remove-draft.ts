@@ -27,4 +27,4 @@ export function orderRemoveDraft(http: HttpClient, rootUrl: string, params: Orde
   );
 }
 
-orderRemoveDraft.PATH = '/bla-bla-vla/order';
+orderRemoveDraft.PATH = '/api/order';

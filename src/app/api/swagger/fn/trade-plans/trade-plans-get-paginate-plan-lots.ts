@@ -31,4 +31,4 @@ export function tradePlansGetPaginatePlanLots(http: HttpClient, rootUrl: string,
   );
 }
 
-tradePlansGetPaginatePlanLots.PATH = '/bla-bla-vla/plans/{id}/lots';
+tradePlansGetPaginatePlanLots.PATH = '/market/api/v1/plans/{id}/lots';

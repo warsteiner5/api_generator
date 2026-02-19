@@ -27,4 +27,4 @@ export function rolesActivateRole(http: HttpClient, rootUrl: string, params: Rol
   );
 }
 
-rolesActivateRole.PATH = '/bla-bla-vla/security/roles/{id}/activate';
+rolesActivateRole.PATH = '/market/api/v1/security/roles/{id}/activate';

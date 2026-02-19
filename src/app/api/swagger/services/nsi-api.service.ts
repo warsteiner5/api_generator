@@ -37,7 +37,7 @@ export class NsiApiService extends BaseService {
   }
 
   /** Path part for operation `nsiGetCountry()` */
-  static readonly NsiGetCountryPath = '/bla-bla-vla/nsi/getCountry';
+  static readonly NsiGetCountryPath = '/market/api/v1/nsi/getCountry';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -62,7 +62,7 @@ export class NsiApiService extends BaseService {
   }
 
   /** Path part for operation `nsiSearchCountry()` */
-  static readonly NsiSearchCountryPath = '/bla-bla-vla/nsi/searchCountry';
+  static readonly NsiSearchCountryPath = '/market/api/v1/nsi/searchCountry';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -87,7 +87,7 @@ export class NsiApiService extends BaseService {
   }
 
   /** Path part for operation `nsiSuggestAddress()` */
-  static readonly NsiSuggestAddressPath = '/bla-bla-vla/nsi/address/suggest';
+  static readonly NsiSuggestAddressPath = '/market/api/v1/nsi/address/suggest';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -112,7 +112,7 @@ export class NsiApiService extends BaseService {
   }
 
   /** Path part for operation `nsiCleanAddress()` */
-  static readonly NsiCleanAddressPath = '/bla-bla-vla/nsi/address/clean';
+  static readonly NsiCleanAddressPath = '/market/api/v1/nsi/address/clean';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -137,7 +137,7 @@ export class NsiApiService extends BaseService {
   }
 
   /** Path part for operation `nsiSuggestBank()` */
-  static readonly NsiSuggestBankPath = '/bla-bla-vla/nsi/bank/suggest';
+  static readonly NsiSuggestBankPath = '/market/api/v1/nsi/bank/suggest';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -162,7 +162,7 @@ export class NsiApiService extends BaseService {
   }
 
   /** Path part for operation `nsiSuggestOrganization()` */
-  static readonly NsiSuggestOrganizationPath = '/bla-bla-vla/nsi/organization/suggest';
+  static readonly NsiSuggestOrganizationPath = '/market/api/v1/nsi/organization/suggest';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -187,7 +187,7 @@ export class NsiApiService extends BaseService {
   }
 
   /** Path part for operation `nsiFindOrganization()` */
-  static readonly NsiFindOrganizationPath = '/bla-bla-vla/nsi/organization/find';
+  static readonly NsiFindOrganizationPath = '/market/api/v1/nsi/organization/find';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

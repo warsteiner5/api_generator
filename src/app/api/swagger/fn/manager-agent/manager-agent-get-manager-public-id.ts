@@ -25,4 +25,4 @@ export function managerAgentGetManagerPublicId(http: HttpClient, rootUrl: string
   );
 }
 
-managerAgentGetManagerPublicId.PATH = '/bla-bla-vla/managerAgent/manager-public-id';
+managerAgentGetManagerPublicId.PATH = '/market/api/v1/managerAgent/manager-public-id';

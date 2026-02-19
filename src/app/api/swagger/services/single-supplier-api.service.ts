@@ -20,7 +20,7 @@ export class SingleSupplierApiService extends BaseService {
   }
 
   /** Path part for operation `singleSupplierGet()` */
-  static readonly SingleSupplierGetPath = '/bla-bla-vla/single-supplier/{id}';
+  static readonly SingleSupplierGetPath = '/market/api/v1/single-supplier/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

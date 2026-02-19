@@ -27,4 +27,4 @@ export function tradeRemoveDraft(http: HttpClient, rootUrl: string, params: Trad
   );
 }
 
-tradeRemoveDraft.PATH = '/bla-bla-vla/Trade';
+tradeRemoveDraft.PATH = '/api/Trade';

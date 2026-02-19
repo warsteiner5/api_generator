@@ -28,4 +28,4 @@ export function dealExportToExcelByFilter(http: HttpClient, rootUrl: string, par
   );
 }
 
-dealExportToExcelByFilter.PATH = '/bla-bla-vla/Deal/ExportToExcelByFilter';
+dealExportToExcelByFilter.PATH = '/api/Deal/ExportToExcelByFilter';

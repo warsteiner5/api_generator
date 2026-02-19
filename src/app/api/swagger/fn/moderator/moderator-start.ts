@@ -27,4 +27,4 @@ export function moderatorStart(http: HttpClient, rootUrl: string, params: Modera
   );
 }
 
-moderatorStart.PATH = '/bla-bla-vla/moderator/{id}/start';
+moderatorStart.PATH = '/market/api/v1/moderator/{id}/start';

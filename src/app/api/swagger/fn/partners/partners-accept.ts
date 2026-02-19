@@ -28,4 +28,4 @@ export function partnersAccept(http: HttpClient, rootUrl: string, params: Partne
   );
 }
 
-partnersAccept.PATH = '/bla-bla-vla/organization/partners/{id}/accept';
+partnersAccept.PATH = '/market/api/v1/organization/partners/{id}/accept';

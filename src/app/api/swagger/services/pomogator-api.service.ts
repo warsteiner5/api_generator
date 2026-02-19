@@ -9,16 +9,16 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketSearchResultDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-market-search-result-dto';
-import { ApiMarketJsonResultOfMarketPaginationResultOfListOfPriceListItem } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-price-list-item';
-import { ApiMarketJsonResultOfMarketPaginationResultOfListOfTagItem } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-tag-item';
-import { ApiMarketJsonResultOfPomogatorSettingsResult } from '../models/api-market-json-result-of-pomogator-settings-result';
-import { ApiMarketJsonResultOfPriceListItem } from '../models/api-market-json-result-of-price-list-item';
-import { ApiMarketJsonResultOfSearchRecommendationsResult } from '../models/api-market-json-result-of-search-recommendations-result';
-import { ApiMarketJsonResultOfSettingsAddedResponse } from '../models/api-market-json-result-of-settings-added-response';
-import { ApiMarketJsonResultOfSettingsStatsResult } from '../models/api-market-json-result-of-settings-stats-result';
-import { ApiMarketJsonResultOfTagItem } from '../models/api-market-json-result-of-tag-item';
+import { ApiMarketJsonResultOfMarketPaginationResultOfListOfPriceListItemAltDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-price-list-item';
+import { ApiMarketJsonResultOfMarketPaginationResultOfListOfTagItemAltDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-tag-item';
+import { ApiMarketJsonResultOfPomogatorSettingsResultAltDto } from '../models/api-market-json-result-of-pomogator-settings-result';
+import { ApiMarketJsonResultOfPriceListItemAltDto } from '../models/api-market-json-result-of-price-list-item';
+import { ApiMarketJsonResultOfSearchRecommendationsResultAltDto } from '../models/api-market-json-result-of-search-recommendations-result';
+import { ApiMarketJsonResultOfSettingsAddedResponseAltDto } from '../models/api-market-json-result-of-settings-added-response';
+import { ApiMarketJsonResultOfSettingsStatsResultAltDto } from '../models/api-market-json-result-of-settings-stats-result';
+import { ApiMarketJsonResultOfTagItemAltDto } from '../models/api-market-json-result-of-tag-item';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 import { pomogatorAddMultipleTagsSettings } from '../fn/pomogator/pomogator-add-multiple-tags-settings';
 import { PomogatorAddMultipleTagsSettings$Params } from '../fn/pomogator/pomogator-add-multiple-tags-settings';
@@ -68,7 +68,7 @@ export class PomogatorApiService extends BaseService {
   }
 
   /** Path part for operation `pomogatorGetTradeRecommendations()` */
-  static readonly PomogatorGetTradeRecommendationsPath = '/bla-bla-vla/pomogator/recommendations';
+  static readonly PomogatorGetTradeRecommendationsPath = '/market/api/v1/pomogator/recommendations';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -76,7 +76,7 @@ export class PomogatorApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  pomogatorGetTradeRecommendations$Response(params?: PomogatorGetTradeRecommendations$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSearchRecommendationsResult>> {
+  pomogatorGetTradeRecommendations$Response(params?: PomogatorGetTradeRecommendations$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSearchRecommendationsResultAltDto>> {
     return pomogatorGetTradeRecommendations(this.http, this.rootUrl, params, context);
   }
 
@@ -86,14 +86,14 @@ export class PomogatorApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  pomogatorGetTradeRecommendations(params?: PomogatorGetTradeRecommendations$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSearchRecommendationsResult> {
+  pomogatorGetTradeRecommendations(params?: PomogatorGetTradeRecommendations$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSearchRecommendationsResultAltDto> {
     return this.pomogatorGetTradeRecommendations$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfSearchRecommendationsResult>): ApiMarketJsonResultOfSearchRecommendationsResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfSearchRecommendationsResultAltDto>): ApiMarketJsonResultOfSearchRecommendationsResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `pomogatorGetTradeRecommendationsExtended()` */
-  static readonly PomogatorGetTradeRecommendationsExtendedPath = '/bla-bla-vla/pomogator/recommendationsExtended';
+  static readonly PomogatorGetTradeRecommendationsExtendedPath = '/market/api/v1/pomogator/recommendationsExtended';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -118,7 +118,7 @@ export class PomogatorApiService extends BaseService {
   }
 
   /** Path part for operation `pomogatorGetSettings()` */
-  static readonly PomogatorGetSettingsPath = '/bla-bla-vla/pomogator/getSettings';
+  static readonly PomogatorGetSettingsPath = '/market/api/v1/pomogator/getSettings';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -126,7 +126,7 @@ export class PomogatorApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  pomogatorGetSettings$Response(params?: PomogatorGetSettings$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPomogatorSettingsResult>> {
+  pomogatorGetSettings$Response(params?: PomogatorGetSettings$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPomogatorSettingsResultAltDto>> {
     return pomogatorGetSettings(this.http, this.rootUrl, params, context);
   }
 
@@ -136,14 +136,14 @@ export class PomogatorApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  pomogatorGetSettings(params?: PomogatorGetSettings$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfPomogatorSettingsResult> {
+  pomogatorGetSettings(params?: PomogatorGetSettings$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfPomogatorSettingsResultAltDto> {
     return this.pomogatorGetSettings$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfPomogatorSettingsResult>): ApiMarketJsonResultOfPomogatorSettingsResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfPomogatorSettingsResultAltDto>): ApiMarketJsonResultOfPomogatorSettingsResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `pomogatorAddTagsSettings()` */
-  static readonly PomogatorAddTagsSettingsPath = '/bla-bla-vla/pomogator/addTagsSettings';
+  static readonly PomogatorAddTagsSettingsPath = '/market/api/v1/pomogator/addTagsSettings';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -151,7 +151,7 @@ export class PomogatorApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  pomogatorAddTagsSettings$Response(params?: PomogatorAddTagsSettings$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSettingsAddedResponse>> {
+  pomogatorAddTagsSettings$Response(params?: PomogatorAddTagsSettings$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSettingsAddedResponseAltDto>> {
     return pomogatorAddTagsSettings(this.http, this.rootUrl, params, context);
   }
 
@@ -161,14 +161,14 @@ export class PomogatorApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  pomogatorAddTagsSettings(params?: PomogatorAddTagsSettings$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSettingsAddedResponse> {
+  pomogatorAddTagsSettings(params?: PomogatorAddTagsSettings$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSettingsAddedResponseAltDto> {
     return this.pomogatorAddTagsSettings$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfSettingsAddedResponse>): ApiMarketJsonResultOfSettingsAddedResponse => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfSettingsAddedResponseAltDto>): ApiMarketJsonResultOfSettingsAddedResponseAltDto => r.body)
     );
   }
 
   /** Path part for operation `pomogatorAddMultipleTagsSettings()` */
-  static readonly PomogatorAddMultipleTagsSettingsPath = '/bla-bla-vla/pomogator/addMultipleTagsSettings';
+  static readonly PomogatorAddMultipleTagsSettingsPath = '/market/api/v1/pomogator/addMultipleTagsSettings';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -176,7 +176,7 @@ export class PomogatorApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  pomogatorAddMultipleTagsSettings$Response(params?: PomogatorAddMultipleTagsSettings$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSettingsAddedResponse>> {
+  pomogatorAddMultipleTagsSettings$Response(params?: PomogatorAddMultipleTagsSettings$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSettingsAddedResponseAltDto>> {
     return pomogatorAddMultipleTagsSettings(this.http, this.rootUrl, params, context);
   }
 
@@ -186,14 +186,14 @@ export class PomogatorApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  pomogatorAddMultipleTagsSettings(params?: PomogatorAddMultipleTagsSettings$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSettingsAddedResponse> {
+  pomogatorAddMultipleTagsSettings(params?: PomogatorAddMultipleTagsSettings$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSettingsAddedResponseAltDto> {
     return this.pomogatorAddMultipleTagsSettings$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfSettingsAddedResponse>): ApiMarketJsonResultOfSettingsAddedResponse => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfSettingsAddedResponseAltDto>): ApiMarketJsonResultOfSettingsAddedResponseAltDto => r.body)
     );
   }
 
   /** Path part for operation `pomogatorUpdateTagsSettings()` */
-  static readonly PomogatorUpdateTagsSettingsPath = '/bla-bla-vla/pomogator/updateTagsSettings';
+  static readonly PomogatorUpdateTagsSettingsPath = '/market/api/v1/pomogator/updateTagsSettings';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -218,7 +218,7 @@ export class PomogatorApiService extends BaseService {
   }
 
   /** Path part for operation `pomogatorDeleteTagsSettings()` */
-  static readonly PomogatorDeleteTagsSettingsPath = '/bla-bla-vla/pomogator/deleteTagsSettings';
+  static readonly PomogatorDeleteTagsSettingsPath = '/market/api/v1/pomogator/deleteTagsSettings';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -243,7 +243,7 @@ export class PomogatorApiService extends BaseService {
   }
 
   /** Path part for operation `pomogatorAddPriceListSettings()` */
-  static readonly PomogatorAddPriceListSettingsPath = '/bla-bla-vla/pomogator/addPriceListSettings';
+  static readonly PomogatorAddPriceListSettingsPath = '/market/api/v1/pomogator/addPriceListSettings';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -253,7 +253,7 @@ export class PomogatorApiService extends BaseService {
    *
    * @deprecated
    */
-  pomogatorAddPriceListSettings$Response(params?: PomogatorAddPriceListSettings$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSettingsAddedResponse>> {
+  pomogatorAddPriceListSettings$Response(params?: PomogatorAddPriceListSettings$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSettingsAddedResponseAltDto>> {
     return pomogatorAddPriceListSettings(this.http, this.rootUrl, params, context);
   }
 
@@ -265,14 +265,14 @@ export class PomogatorApiService extends BaseService {
    *
    * @deprecated
    */
-  pomogatorAddPriceListSettings(params?: PomogatorAddPriceListSettings$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSettingsAddedResponse> {
+  pomogatorAddPriceListSettings(params?: PomogatorAddPriceListSettings$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSettingsAddedResponseAltDto> {
     return this.pomogatorAddPriceListSettings$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfSettingsAddedResponse>): ApiMarketJsonResultOfSettingsAddedResponse => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfSettingsAddedResponseAltDto>): ApiMarketJsonResultOfSettingsAddedResponseAltDto => r.body)
     );
   }
 
   /** Path part for operation `pomogatorUpdatePriceListSettings()` */
-  static readonly PomogatorUpdatePriceListSettingsPath = '/bla-bla-vla/pomogator/updatePriceListSettings';
+  static readonly PomogatorUpdatePriceListSettingsPath = '/market/api/v1/pomogator/updatePriceListSettings';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -297,7 +297,7 @@ export class PomogatorApiService extends BaseService {
   }
 
   /** Path part for operation `pomogatorDeletePriceListSettings()` */
-  static readonly PomogatorDeletePriceListSettingsPath = '/bla-bla-vla/pomogator/deletePriceListSettings';
+  static readonly PomogatorDeletePriceListSettingsPath = '/market/api/v1/pomogator/deletePriceListSettings';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -322,7 +322,7 @@ export class PomogatorApiService extends BaseService {
   }
 
   /** Path part for operation `pomogatorToggleTagSettings()` */
-  static readonly PomogatorToggleTagSettingsPath = '/bla-bla-vla/pomogator/toggleTagSettings';
+  static readonly PomogatorToggleTagSettingsPath = '/market/api/v1/pomogator/toggleTagSettings';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -347,7 +347,7 @@ export class PomogatorApiService extends BaseService {
   }
 
   /** Path part for operation `pomogatorTogglePriceListSettings()` */
-  static readonly PomogatorTogglePriceListSettingsPath = '/bla-bla-vla/pomogator/togglePriceListSettings';
+  static readonly PomogatorTogglePriceListSettingsPath = '/market/api/v1/pomogator/togglePriceListSettings';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -372,7 +372,7 @@ export class PomogatorApiService extends BaseService {
   }
 
   /** Path part for operation `pomogatorSetRegionsForAllTags()` */
-  static readonly PomogatorSetRegionsForAllTagsPath = '/bla-bla-vla/pomogator/setRegionsForAllTags';
+  static readonly PomogatorSetRegionsForAllTagsPath = '/market/api/v1/pomogator/setRegionsForAllTags';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -397,7 +397,7 @@ export class PomogatorApiService extends BaseService {
   }
 
   /** Path part for operation `pomogatorGetSettingsStats()` */
-  static readonly PomogatorGetSettingsStatsPath = '/bla-bla-vla/pomogator/settings/stats';
+  static readonly PomogatorGetSettingsStatsPath = '/market/api/v1/pomogator/settings/stats';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -405,7 +405,7 @@ export class PomogatorApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  pomogatorGetSettingsStats$Response(params?: PomogatorGetSettingsStats$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSettingsStatsResult>> {
+  pomogatorGetSettingsStats$Response(params?: PomogatorGetSettingsStats$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSettingsStatsResultAltDto>> {
     return pomogatorGetSettingsStats(this.http, this.rootUrl, params, context);
   }
 
@@ -415,14 +415,14 @@ export class PomogatorApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  pomogatorGetSettingsStats(params?: PomogatorGetSettingsStats$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSettingsStatsResult> {
+  pomogatorGetSettingsStats(params?: PomogatorGetSettingsStats$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSettingsStatsResultAltDto> {
     return this.pomogatorGetSettingsStats$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfSettingsStatsResult>): ApiMarketJsonResultOfSettingsStatsResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfSettingsStatsResultAltDto>): ApiMarketJsonResultOfSettingsStatsResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `pomogatorGetSettingsTags()` */
-  static readonly PomogatorGetSettingsTagsPath = '/bla-bla-vla/pomogator/settings/tags';
+  static readonly PomogatorGetSettingsTagsPath = '/market/api/v1/pomogator/settings/tags';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -430,7 +430,7 @@ export class PomogatorApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  pomogatorGetSettingsTags$Response(params?: PomogatorGetSettingsTags$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfTagItem>> {
+  pomogatorGetSettingsTags$Response(params?: PomogatorGetSettingsTags$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfTagItemAltDto>> {
     return pomogatorGetSettingsTags(this.http, this.rootUrl, params, context);
   }
 
@@ -440,14 +440,14 @@ export class PomogatorApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  pomogatorGetSettingsTags(params?: PomogatorGetSettingsTags$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfListOfTagItem> {
+  pomogatorGetSettingsTags(params?: PomogatorGetSettingsTags$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfListOfTagItemAltDto> {
     return this.pomogatorGetSettingsTags$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfTagItem>): ApiMarketJsonResultOfMarketPaginationResultOfListOfTagItem => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfTagItemAltDto>): ApiMarketJsonResultOfMarketPaginationResultOfListOfTagItemAltDto => r.body)
     );
   }
 
   /** Path part for operation `pomogatorGetSettingsPriceLists()` */
-  static readonly PomogatorGetSettingsPriceListsPath = '/bla-bla-vla/pomogator/settings/price-lists';
+  static readonly PomogatorGetSettingsPriceListsPath = '/market/api/v1/pomogator/settings/price-lists';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -455,7 +455,7 @@ export class PomogatorApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  pomogatorGetSettingsPriceLists$Response(params?: PomogatorGetSettingsPriceLists$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfPriceListItem>> {
+  pomogatorGetSettingsPriceLists$Response(params?: PomogatorGetSettingsPriceLists$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfPriceListItemAltDto>> {
     return pomogatorGetSettingsPriceLists(this.http, this.rootUrl, params, context);
   }
 
@@ -465,14 +465,14 @@ export class PomogatorApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  pomogatorGetSettingsPriceLists(params?: PomogatorGetSettingsPriceLists$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfListOfPriceListItem> {
+  pomogatorGetSettingsPriceLists(params?: PomogatorGetSettingsPriceLists$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfListOfPriceListItemAltDto> {
     return this.pomogatorGetSettingsPriceLists$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfPriceListItem>): ApiMarketJsonResultOfMarketPaginationResultOfListOfPriceListItem => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfPriceListItemAltDto>): ApiMarketJsonResultOfMarketPaginationResultOfListOfPriceListItemAltDto => r.body)
     );
   }
 
   /** Path part for operation `pomogatorGetSettingsExistFlag()` */
-  static readonly PomogatorGetSettingsExistFlagPath = '/bla-bla-vla/pomogator/settings/exist';
+  static readonly PomogatorGetSettingsExistFlagPath = '/market/api/v1/pomogator/settings/exist';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -480,7 +480,7 @@ export class PomogatorApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  pomogatorGetSettingsExistFlag$Response(params?: PomogatorGetSettingsExistFlag$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  pomogatorGetSettingsExistFlag$Response(params?: PomogatorGetSettingsExistFlag$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return pomogatorGetSettingsExistFlag(this.http, this.rootUrl, params, context);
   }
 
@@ -490,14 +490,14 @@ export class PomogatorApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  pomogatorGetSettingsExistFlag(params?: PomogatorGetSettingsExistFlag$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  pomogatorGetSettingsExistFlag(params?: PomogatorGetSettingsExistFlag$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.pomogatorGetSettingsExistFlag$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `pomogatorGetSettingsTagExist()` */
-  static readonly PomogatorGetSettingsTagExistPath = '/bla-bla-vla/pomogator/settings/tags/exist';
+  static readonly PomogatorGetSettingsTagExistPath = '/market/api/v1/pomogator/settings/tags/exist';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -505,7 +505,7 @@ export class PomogatorApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  pomogatorGetSettingsTagExist$Response(params: PomogatorGetSettingsTagExist$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  pomogatorGetSettingsTagExist$Response(params: PomogatorGetSettingsTagExist$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return pomogatorGetSettingsTagExist(this.http, this.rootUrl, params, context);
   }
 
@@ -515,14 +515,14 @@ export class PomogatorApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  pomogatorGetSettingsTagExist(params: PomogatorGetSettingsTagExist$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  pomogatorGetSettingsTagExist(params: PomogatorGetSettingsTagExist$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.pomogatorGetSettingsTagExist$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `pomogatorGetSettingsTag()` */
-  static readonly PomogatorGetSettingsTagPath = '/bla-bla-vla/pomogator/settings/tags/{id}';
+  static readonly PomogatorGetSettingsTagPath = '/market/api/v1/pomogator/settings/tags/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -530,7 +530,7 @@ export class PomogatorApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  pomogatorGetSettingsTag$Response(params: PomogatorGetSettingsTag$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTagItem>> {
+  pomogatorGetSettingsTag$Response(params: PomogatorGetSettingsTag$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTagItemAltDto>> {
     return pomogatorGetSettingsTag(this.http, this.rootUrl, params, context);
   }
 
@@ -540,14 +540,14 @@ export class PomogatorApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  pomogatorGetSettingsTag(params: PomogatorGetSettingsTag$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTagItem> {
+  pomogatorGetSettingsTag(params: PomogatorGetSettingsTag$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTagItemAltDto> {
     return this.pomogatorGetSettingsTag$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfTagItem>): ApiMarketJsonResultOfTagItem => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfTagItemAltDto>): ApiMarketJsonResultOfTagItemAltDto => r.body)
     );
   }
 
   /** Path part for operation `pomogatorGetSettingsPriceList()` */
-  static readonly PomogatorGetSettingsPriceListPath = '/bla-bla-vla/pomogator/settings/price-lists/{id}';
+  static readonly PomogatorGetSettingsPriceListPath = '/market/api/v1/pomogator/settings/price-lists/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -555,7 +555,7 @@ export class PomogatorApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  pomogatorGetSettingsPriceList$Response(params: PomogatorGetSettingsPriceList$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPriceListItem>> {
+  pomogatorGetSettingsPriceList$Response(params: PomogatorGetSettingsPriceList$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPriceListItemAltDto>> {
     return pomogatorGetSettingsPriceList(this.http, this.rootUrl, params, context);
   }
 
@@ -565,9 +565,9 @@ export class PomogatorApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  pomogatorGetSettingsPriceList(params: PomogatorGetSettingsPriceList$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfPriceListItem> {
+  pomogatorGetSettingsPriceList(params: PomogatorGetSettingsPriceList$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfPriceListItemAltDto> {
     return this.pomogatorGetSettingsPriceList$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfPriceListItem>): ApiMarketJsonResultOfPriceListItem => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfPriceListItemAltDto>): ApiMarketJsonResultOfPriceListItemAltDto => r.body)
     );
   }
 

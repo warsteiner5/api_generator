@@ -27,4 +27,4 @@ export function tagsDeleteTagParticipantOfferRule(http: HttpClient, rootUrl: str
   );
 }
 
-tagsDeleteTagParticipantOfferRule.PATH = '/bla-bla-vla/tags/participant-offer-rule/{id}';
+tagsDeleteTagParticipantOfferRule.PATH = '/market/api/v1/tags/participant-offer-rule/{id}';

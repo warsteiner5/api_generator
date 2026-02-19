@@ -27,4 +27,4 @@ export function externalDealsDeleteExternalDeal(http: HttpClient, rootUrl: strin
   );
 }
 
-externalDealsDeleteExternalDeal.PATH = '/bla-bla-vla/external-deals/{id}';
+externalDealsDeleteExternalDeal.PATH = '/market/api/v1/external-deals/{id}';

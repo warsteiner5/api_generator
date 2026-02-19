@@ -28,4 +28,4 @@ export function tagsSaveSettings(http: HttpClient, rootUrl: string, params?: Tag
   );
 }
 
-tagsSaveSettings.PATH = '/bla-bla-vla/tags/settings';
+tagsSaveSettings.PATH = '/market/api/v1/tags/settings';

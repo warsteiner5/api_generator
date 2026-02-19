@@ -27,4 +27,4 @@ export function participantOfferImportRestartImportTask(http: HttpClient, rootUr
   );
 }
 
-participantOfferImportRestartImportTask.PATH = '/bla-bla-vla/offerimport/restart/{taskId}';
+participantOfferImportRestartImportTask.PATH = '/market/api/v1/offerimport/restart/{taskId}';

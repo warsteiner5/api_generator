@@ -27,4 +27,4 @@ export function tradeGetTradeDocuments(http: HttpClient, rootUrl: string, params
   );
 }
 
-tradeGetTradeDocuments.PATH = '/bla-bla-vla/Trade/{tradeId}/GetTradeDocuments';
+tradeGetTradeDocuments.PATH = '/api/Trade/{tradeId}/GetTradeDocuments';

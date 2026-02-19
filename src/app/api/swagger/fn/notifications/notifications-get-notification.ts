@@ -28,4 +28,4 @@ export function notificationsGetNotification(http: HttpClient, rootUrl: string, 
   );
 }
 
-notificationsGetNotification.PATH = '/bla-bla-vla/notifications/{id}';
+notificationsGetNotification.PATH = '/market/api/v1/notifications/{id}';

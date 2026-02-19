@@ -28,4 +28,4 @@ export function participantExportToExcel(http: HttpClient, rootUrl: string, para
   );
 }
 
-participantExportToExcel.PATH = '/bla-bla-vla/participants/ExportToExcel';
+participantExportToExcel.PATH = '/api/participants/ExportToExcel';

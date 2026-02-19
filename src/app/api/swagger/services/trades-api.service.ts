@@ -14,41 +14,41 @@ import { ApiDiscussionFileDto } from '../models/api-discussion-file-dto';
 import { ApiMarketJsonResultOfAllTradeDocumentsDto } from '../models/api-market-json-result-of-all-trade-documents-dto';
 import { ApiMarketJsonResultOfApplicationDocumentDto } from '../models/api-market-json-result-of-application-document-dto';
 import { ApiMarketJsonResultOfApplicationDto } from '../models/api-market-json-result-of-application-dto';
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
-import { ApiMarketJsonResultOfCardPaymentAvailability } from '../models/api-market-json-result-of-card-payment-availability';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfCardPaymentAvailabilityAltDto } from '../models/api-market-json-result-of-card-payment-availability';
 import { ApiMarketJsonResultOfCustomerComissionProtocolWithDocsDto } from '../models/api-market-json-result-of-customer-comission-protocol-with-docs-dto';
-import { ApiMarketJsonResultOfDictionaryOfIntegerAndInteger } from '../models/api-market-json-result-of-dictionary-of-integer-and-integer';
-import { ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo } from '../models/api-market-json-result-of-dictionary-of-integer-and-list-of-read-item-info';
-import { ApiMarketJsonResultOfDictionaryOfIntegerAndString } from '../models/api-market-json-result-of-dictionary-of-integer-and-string';
+import { ApiMarketJsonResultOfDictionaryOfIntegerAndIntegerAltDto } from '../models/api-market-json-result-of-dictionary-of-integer-and-integer';
+import { ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto } from '../models/api-market-json-result-of-dictionary-of-integer-and-list-of-read-item-info';
+import { ApiMarketJsonResultOfDictionaryOfIntegerAndStringAltDto } from '../models/api-market-json-result-of-dictionary-of-integer-and-string';
 import { ApiMarketJsonResultOfDiscussionItemDto } from '../models/api-market-json-result-of-discussion-item-dto';
 import { ApiMarketJsonResultOfEisIntegrationResultDto } from '../models/api-market-json-result-of-eis-integration-result-dto';
 import { ApiMarketJsonResultOfFormTemplateDto } from '../models/api-market-json-result-of-form-template-dto';
-import { ApiMarketJsonResultOfGuid } from '../models/api-market-json-result-of-guid';
-import { ApiMarketJsonResultOfIEnumerableOfInteger } from '../models/api-market-json-result-of-i-enumerable-of-integer';
-import { ApiMarketJsonResultOfImportApplicationProductsResponse } from '../models/api-market-json-result-of-import-application-products-response';
-import { ApiMarketJsonResultOfImportExcelProductResponse } from '../models/api-market-json-result-of-import-excel-product-response';
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfGuidAltDto } from '../models/api-market-json-result-of-guid';
+import { ApiMarketJsonResultOfIEnumerableOfIntegerAltDto } from '../models/api-market-json-result-of-i-enumerable-of-integer';
+import { ApiMarketJsonResultOfImportApplicationProductsResponseAltDto } from '../models/api-market-json-result-of-import-application-products-response';
+import { ApiMarketJsonResultOfImportExcelProductResponseAltDto } from '../models/api-market-json-result-of-import-excel-product-response';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
 import { ApiMarketJsonResultOfListOfCharacteristicDto } from '../models/api-market-json-result-of-list-of-characteristic-dto';
 import { ApiMarketJsonResultOfListOfDiscussionDto } from '../models/api-market-json-result-of-list-of-discussion-dto';
 import { ApiMarketJsonResultOfListOfDiscussionItemDto } from '../models/api-market-json-result-of-list-of-discussion-item-dto';
 import { ApiMarketJsonResultOfListOfDiscussionTitleDto } from '../models/api-market-json-result-of-list-of-discussion-title-dto';
 import { ApiMarketJsonResultOfListOfIDiscussionHistoryDto } from '../models/api-market-json-result-of-list-of-i-discussion-history-dto';
-import { ApiMarketJsonResultOfListOfInteger } from '../models/api-market-json-result-of-list-of-integer';
-import { ApiMarketJsonResultOfListOfMarketApplicationDetail } from '../models/api-market-json-result-of-list-of-market-application-detail';
-import { ApiMarketJsonResultOfListOfMarketTradePerson } from '../models/api-market-json-result-of-list-of-market-trade-person';
-import { ApiMarketJsonResultOfLong } from '../models/api-market-json-result-of-long';
-import { ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketDeal } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-market-deal';
+import { ApiMarketJsonResultOfListOfIntegerAltDto } from '../models/api-market-json-result-of-list-of-integer';
+import { ApiMarketJsonResultOfListOfMarketApplicationDetailAltDto } from '../models/api-market-json-result-of-list-of-market-application-detail';
+import { ApiMarketJsonResultOfListOfMarketTradePersonAltDto } from '../models/api-market-json-result-of-list-of-market-trade-person';
+import { ApiMarketJsonResultOfLongAltDto } from '../models/api-market-json-result-of-long';
+import { ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketDealAltDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-market-deal';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketSearchResultDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-market-search-result-dto';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeRecommendationDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-trade-recommendation-dto';
 import { ApiMarketJsonResultOfMarketTradeViewDto } from '../models/api-market-json-result-of-market-trade-view-dto';
-import { ApiMarketJsonResultOfPriceReductionResponse } from '../models/api-market-json-result-of-price-reduction-response';
-import { ApiMarketJsonResultOfPublishApplicationResult } from '../models/api-market-json-result-of-publish-application-result';
+import { ApiMarketJsonResultOfPriceReductionResponseAltDto } from '../models/api-market-json-result-of-price-reduction-response';
+import { ApiMarketJsonResultOfPublishApplicationResultAltDto } from '../models/api-market-json-result-of-publish-application-result';
 import { ApiMarketJsonResultOfStarLightSearchResultDto } from '../models/api-market-json-result-of-star-light-search-result-dto';
-import { ApiMarketJsonResultOfStarSearchObj } from '../models/api-market-json-result-of-star-search-obj';
-import { ApiMarketJsonResultOfStarSuggestObjectOf } from '../models/api-market-json-result-of-star-suggest-object-of';
-import { ApiMarketJsonResultOfString } from '../models/api-market-json-result-of-string';
+import { ApiMarketJsonResultOfStarSearchObjAltDto } from '../models/api-market-json-result-of-star-search-obj';
+import { ApiMarketJsonResultOfStarSuggestObjectOfAltDto } from '../models/api-market-json-result-of-star-suggest-object-of';
+import { ApiMarketJsonResultOfStringAltDto } from '../models/api-market-json-result-of-string';
 import { ApiMarketJsonResultOfTradeDto } from '../models/api-market-json-result-of-trade-dto';
-import { ApiMarketJsonResultOfTradePublishResult } from '../models/api-market-json-result-of-trade-publish-result';
+import { ApiMarketJsonResultOfTradePublishResultAltDto } from '../models/api-market-json-result-of-trade-publish-result';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 import { tradesAddChatMessage } from '../fn/trades/trades-add-chat-message';
 import { TradesAddChatMessage$Params } from '../fn/trades/trades-add-chat-message';
@@ -260,7 +260,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesFinishReviewApplication()` */
-  static readonly TradesFinishReviewApplicationPath = '/bla-bla-vla/trades/{id}/applications/review/finish';
+  static readonly TradesFinishReviewApplicationPath = '/market/api/v1/trades/{id}/applications/review/finish';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -268,7 +268,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesFinishReviewApplication$Response(params: TradesFinishReviewApplication$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  tradesFinishReviewApplication$Response(params: TradesFinishReviewApplication$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return tradesFinishReviewApplication(this.http, this.rootUrl, params, context);
   }
 
@@ -278,14 +278,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesFinishReviewApplication(params: TradesFinishReviewApplication$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  tradesFinishReviewApplication(params: TradesFinishReviewApplication$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.tradesFinishReviewApplication$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesFinishReviewApplicationExternal()` */
-  static readonly TradesFinishReviewApplicationExternalPath = '/bla-bla-vla/trades/{id}/applications/review/finish-external';
+  static readonly TradesFinishReviewApplicationExternalPath = '/market/api/v1/trades/{id}/applications/review/finish-external';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -293,7 +293,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesFinishReviewApplicationExternal$Response(params: TradesFinishReviewApplicationExternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  tradesFinishReviewApplicationExternal$Response(params: TradesFinishReviewApplicationExternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return tradesFinishReviewApplicationExternal(this.http, this.rootUrl, params, context);
   }
 
@@ -303,14 +303,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesFinishReviewApplicationExternal(params: TradesFinishReviewApplicationExternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  tradesFinishReviewApplicationExternal(params: TradesFinishReviewApplicationExternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.tradesFinishReviewApplicationExternal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesSaveApplicationDraft()` */
-  static readonly TradesSaveApplicationDraftPath = '/bla-bla-vla/trades/applications/draft';
+  static readonly TradesSaveApplicationDraftPath = '/market/api/v1/trades/applications/draft';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -318,7 +318,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesSaveApplicationDraft$Response(params?: TradesSaveApplicationDraft$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  tradesSaveApplicationDraft$Response(params?: TradesSaveApplicationDraft$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return tradesSaveApplicationDraft(this.http, this.rootUrl, params, context);
   }
 
@@ -328,14 +328,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesSaveApplicationDraft(params?: TradesSaveApplicationDraft$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  tradesSaveApplicationDraft(params?: TradesSaveApplicationDraft$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.tradesSaveApplicationDraft$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesPublish()` */
-  static readonly TradesPublishPath = '/bla-bla-vla/trades/applications/publish';
+  static readonly TradesPublishPath = '/market/api/v1/trades/applications/publish';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -343,7 +343,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesPublish$Response(params?: TradesPublish$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResult>> {
+  tradesPublish$Response(params?: TradesPublish$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResultAltDto>> {
     return tradesPublish(this.http, this.rootUrl, params, context);
   }
 
@@ -353,14 +353,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesPublish(params?: TradesPublish$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfPublishApplicationResult> {
+  tradesPublish(params?: TradesPublish$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfPublishApplicationResultAltDto> {
     return this.tradesPublish$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResult>): ApiMarketJsonResultOfPublishApplicationResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResultAltDto>): ApiMarketJsonResultOfPublishApplicationResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesValidate()` */
-  static readonly TradesValidatePath = '/bla-bla-vla/trades/applications/validate';
+  static readonly TradesValidatePath = '/market/api/v1/trades/applications/validate';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -368,7 +368,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesValidate$Response(params?: TradesValidate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  tradesValidate$Response(params?: TradesValidate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return tradesValidate(this.http, this.rootUrl, params, context);
   }
 
@@ -378,14 +378,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesValidate(params?: TradesValidate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  tradesValidate(params?: TradesValidate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.tradesValidate$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesRevokeApplication()` */
-  static readonly TradesRevokeApplicationPath = '/bla-bla-vla/trades/{tradeId}/applications/{applicationId}/revoke';
+  static readonly TradesRevokeApplicationPath = '/market/api/v1/trades/{tradeId}/applications/{applicationId}/revoke';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -410,7 +410,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesRemoveApplicationDraft()` */
-  static readonly TradesRemoveApplicationDraftPath = '/bla-bla-vla/trades/applications/{applicationId}';
+  static readonly TradesRemoveApplicationDraftPath = '/market/api/v1/trades/applications/{applicationId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -435,7 +435,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetApplicationInfo()` */
-  static readonly TradesGetApplicationInfoPath = '/bla-bla-vla/trades/{id}/applications/{applicationId}';
+  static readonly TradesGetApplicationInfoPath = '/market/api/v1/trades/{id}/applications/{applicationId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -460,7 +460,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetApplicationsByTradeId()` */
-  static readonly TradesGetApplicationsByTradeIdPath = '/bla-bla-vla/trades/{id}/applications';
+  static readonly TradesGetApplicationsByTradeIdPath = '/market/api/v1/trades/{id}/applications';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -468,7 +468,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetApplicationsByTradeId$Response(params: TradesGetApplicationsByTradeId$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfMarketApplicationDetail>> {
+  tradesGetApplicationsByTradeId$Response(params: TradesGetApplicationsByTradeId$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfMarketApplicationDetailAltDto>> {
     return tradesGetApplicationsByTradeId(this.http, this.rootUrl, params, context);
   }
 
@@ -478,14 +478,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetApplicationsByTradeId(params: TradesGetApplicationsByTradeId$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfListOfMarketApplicationDetail> {
+  tradesGetApplicationsByTradeId(params: TradesGetApplicationsByTradeId$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfListOfMarketApplicationDetailAltDto> {
     return this.tradesGetApplicationsByTradeId$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfListOfMarketApplicationDetail>): ApiMarketJsonResultOfListOfMarketApplicationDetail => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfListOfMarketApplicationDetailAltDto>): ApiMarketJsonResultOfListOfMarketApplicationDetailAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesRetradingUpdate()` */
-  static readonly TradesRetradingUpdatePath = '/bla-bla-vla/trades/application/RetradingUpdate';
+  static readonly TradesRetradingUpdatePath = '/market/api/v1/trades/application/RetradingUpdate';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -510,7 +510,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesSaveManufacturerCountryCodes()` */
-  static readonly TradesSaveManufacturerCountryCodesPath = '/bla-bla-vla/trades/application/SaveCountryCodes';
+  static readonly TradesSaveManufacturerCountryCodesPath = '/market/api/v1/trades/application/SaveCountryCodes';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -535,7 +535,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetApplicationPriceShortInfo()` */
-  static readonly TradesGetApplicationPriceShortInfoPath = '/bla-bla-vla/trades/application/{applicationId}/price';
+  static readonly TradesGetApplicationPriceShortInfoPath = '/market/api/v1/trades/application/{applicationId}/price';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -560,7 +560,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetApplicationDeclaration()` */
-  static readonly TradesGetApplicationDeclarationPath = '/bla-bla-vla/trades/application/declaration';
+  static readonly TradesGetApplicationDeclarationPath = '/market/api/v1/trades/application/declaration';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -585,7 +585,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesCreatePreliminaryOffers()` */
-  static readonly TradesCreatePreliminaryOffersPath = '/bla-bla-vla/trades/{tradeId}/application/create-preliminary-offers';
+  static readonly TradesCreatePreliminaryOffersPath = '/market/api/v1/trades/{tradeId}/application/create-preliminary-offers';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -593,7 +593,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesCreatePreliminaryOffers$Response(params: TradesCreatePreliminaryOffers$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIEnumerableOfInteger>> {
+  tradesCreatePreliminaryOffers$Response(params: TradesCreatePreliminaryOffers$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIEnumerableOfIntegerAltDto>> {
     return tradesCreatePreliminaryOffers(this.http, this.rootUrl, params, context);
   }
 
@@ -603,14 +603,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesCreatePreliminaryOffers(params: TradesCreatePreliminaryOffers$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIEnumerableOfInteger> {
+  tradesCreatePreliminaryOffers(params: TradesCreatePreliminaryOffers$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIEnumerableOfIntegerAltDto> {
     return this.tradesCreatePreliminaryOffers$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfIEnumerableOfInteger>): ApiMarketJsonResultOfIEnumerableOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIEnumerableOfIntegerAltDto>): ApiMarketJsonResultOfIEnumerableOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesCreatePreliminaryOffers2()` */
-  static readonly TradesCreatePreliminaryOffers2Path = '/bla-bla-vla/trades/{tradeId}/application/create-preliminary-offers-by-operator';
+  static readonly TradesCreatePreliminaryOffers2Path = '/market/api/v1/trades/{tradeId}/application/create-preliminary-offers-by-operator';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -618,7 +618,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesCreatePreliminaryOffers2$Response(params: TradesCreatePreliminaryOffers2$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  tradesCreatePreliminaryOffers2$Response(params: TradesCreatePreliminaryOffers2$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return tradesCreatePreliminaryOffers2(this.http, this.rootUrl, params, context);
   }
 
@@ -628,14 +628,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesCreatePreliminaryOffers2(params: TradesCreatePreliminaryOffers2$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  tradesCreatePreliminaryOffers2(params: TradesCreatePreliminaryOffers2$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.tradesCreatePreliminaryOffers2$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesCreatePreliminaryOffersForPrivateTrade()` */
-  static readonly TradesCreatePreliminaryOffersForPrivateTradePath = '/bla-bla-vla/trades/{tradeId}/application/create-preliminary-offers/private';
+  static readonly TradesCreatePreliminaryOffersForPrivateTradePath = '/market/api/v1/trades/{tradeId}/application/create-preliminary-offers/private';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -643,7 +643,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesCreatePreliminaryOffersForPrivateTrade$Response(params: TradesCreatePreliminaryOffersForPrivateTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIEnumerableOfInteger>> {
+  tradesCreatePreliminaryOffersForPrivateTrade$Response(params: TradesCreatePreliminaryOffersForPrivateTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIEnumerableOfIntegerAltDto>> {
     return tradesCreatePreliminaryOffersForPrivateTrade(this.http, this.rootUrl, params, context);
   }
 
@@ -653,14 +653,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesCreatePreliminaryOffersForPrivateTrade(params: TradesCreatePreliminaryOffersForPrivateTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIEnumerableOfInteger> {
+  tradesCreatePreliminaryOffersForPrivateTrade(params: TradesCreatePreliminaryOffersForPrivateTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIEnumerableOfIntegerAltDto> {
     return this.tradesCreatePreliminaryOffersForPrivateTrade$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfIEnumerableOfInteger>): ApiMarketJsonResultOfIEnumerableOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIEnumerableOfIntegerAltDto>): ApiMarketJsonResultOfIEnumerableOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesBlockFinance()` */
-  static readonly TradesBlockFinancePath = '/bla-bla-vla/trades/applications/block-finance';
+  static readonly TradesBlockFinancePath = '/market/api/v1/trades/applications/block-finance';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -668,7 +668,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesBlockFinance$Response(params?: TradesBlockFinance$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResult>> {
+  tradesBlockFinance$Response(params?: TradesBlockFinance$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResultAltDto>> {
     return tradesBlockFinance(this.http, this.rootUrl, params, context);
   }
 
@@ -678,14 +678,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesBlockFinance(params?: TradesBlockFinance$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfPublishApplicationResult> {
+  tradesBlockFinance(params?: TradesBlockFinance$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfPublishApplicationResultAltDto> {
     return this.tradesBlockFinance$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResult>): ApiMarketJsonResultOfPublishApplicationResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResultAltDto>): ApiMarketJsonResultOfPublishApplicationResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesGetArchiveDocuments()` */
-  static readonly TradesGetArchiveDocumentsPath = '/bla-bla-vla/trades/application/{applicationId}/documents/archive';
+  static readonly TradesGetArchiveDocumentsPath = '/market/api/v1/trades/application/{applicationId}/documents/archive';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -710,7 +710,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetApplicationProductsImportTemplate()` */
-  static readonly TradesGetApplicationProductsImportTemplatePath = '/bla-bla-vla/trades/{tradeId}/application/products/import/template';
+  static readonly TradesGetApplicationProductsImportTemplatePath = '/market/api/v1/trades/{tradeId}/application/products/import/template';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -718,7 +718,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetApplicationProductsImportTemplate$Response(params: TradesGetApplicationProductsImportTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+  tradesGetApplicationProductsImportTemplate$Response(params: TradesGetApplicationProductsImportTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
     return tradesGetApplicationProductsImportTemplate(this.http, this.rootUrl, params, context);
   }
 
@@ -728,14 +728,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetApplicationProductsImportTemplate(params: TradesGetApplicationProductsImportTemplate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfString> {
+  tradesGetApplicationProductsImportTemplate(params: TradesGetApplicationProductsImportTemplate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfStringAltDto> {
     return this.tradesGetApplicationProductsImportTemplate$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfString>): ApiMarketJsonResultOfString => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>): ApiMarketJsonResultOfStringAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesGetApplicationProductsInfoFromImportTemplate()` */
-  static readonly TradesGetApplicationProductsInfoFromImportTemplatePath = '/bla-bla-vla/trades/{tradeId}/application/products/import/{fileGuid}';
+  static readonly TradesGetApplicationProductsInfoFromImportTemplatePath = '/market/api/v1/trades/{tradeId}/application/products/import/{fileGuid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -743,7 +743,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetApplicationProductsInfoFromImportTemplate$Response(params: TradesGetApplicationProductsInfoFromImportTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfImportApplicationProductsResponse>> {
+  tradesGetApplicationProductsInfoFromImportTemplate$Response(params: TradesGetApplicationProductsInfoFromImportTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfImportApplicationProductsResponseAltDto>> {
     return tradesGetApplicationProductsInfoFromImportTemplate(this.http, this.rootUrl, params, context);
   }
 
@@ -753,14 +753,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetApplicationProductsInfoFromImportTemplate(params: TradesGetApplicationProductsInfoFromImportTemplate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfImportApplicationProductsResponse> {
+  tradesGetApplicationProductsInfoFromImportTemplate(params: TradesGetApplicationProductsInfoFromImportTemplate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfImportApplicationProductsResponseAltDto> {
     return this.tradesGetApplicationProductsInfoFromImportTemplate$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfImportApplicationProductsResponse>): ApiMarketJsonResultOfImportApplicationProductsResponse => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfImportApplicationProductsResponseAltDto>): ApiMarketJsonResultOfImportApplicationProductsResponseAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesGetCardPaymentAvailability()` */
-  static readonly TradesGetCardPaymentAvailabilityPath = '/bla-bla-vla/trades/{tradeId}/application/card-payment/available';
+  static readonly TradesGetCardPaymentAvailabilityPath = '/market/api/v1/trades/{tradeId}/application/card-payment/available';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -768,7 +768,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesGetCardPaymentAvailability$Response(params: TradesGetCardPaymentAvailability$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCardPaymentAvailability>> {
+  tradesGetCardPaymentAvailability$Response(params: TradesGetCardPaymentAvailability$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCardPaymentAvailabilityAltDto>> {
     return tradesGetCardPaymentAvailability(this.http, this.rootUrl, params, context);
   }
 
@@ -778,14 +778,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesGetCardPaymentAvailability(params: TradesGetCardPaymentAvailability$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfCardPaymentAvailability> {
+  tradesGetCardPaymentAvailability(params: TradesGetCardPaymentAvailability$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfCardPaymentAvailabilityAltDto> {
     return this.tradesGetCardPaymentAvailability$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfCardPaymentAvailability>): ApiMarketJsonResultOfCardPaymentAvailability => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfCardPaymentAvailabilityAltDto>): ApiMarketJsonResultOfCardPaymentAvailabilityAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesGetChat()` */
-  static readonly TradesGetChatPath = '/bla-bla-vla/trades/{id}/chat/{chatId}';
+  static readonly TradesGetChatPath = '/market/api/v1/trades/{id}/chat/{chatId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -810,7 +810,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesAddChatMessage()` */
-  static readonly TradesAddChatMessagePath = '/bla-bla-vla/trades/{id}/chat/{chatId}';
+  static readonly TradesAddChatMessagePath = '/market/api/v1/trades/{id}/chat/{chatId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -835,7 +835,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetAllChatItems()` */
-  static readonly TradesGetAllChatItemsPath = '/bla-bla-vla/trades/{id}/chat/{chatId}/items';
+  static readonly TradesGetAllChatItemsPath = '/market/api/v1/trades/{id}/chat/{chatId}/items';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -860,7 +860,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetChatItems()` */
-  static readonly TradesGetChatItemsPath = '/bla-bla-vla/trades/{id}/chat/{chatId}/read/items';
+  static readonly TradesGetChatItemsPath = '/market/api/v1/trades/{id}/chat/{chatId}/read/items';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -885,7 +885,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetReadItemInfo()` */
-  static readonly TradesGetReadItemInfoPath = '/bla-bla-vla/trades/{id}/chat/{itemId}/who';
+  static readonly TradesGetReadItemInfoPath = '/market/api/v1/trades/{id}/chat/{itemId}/who';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -893,7 +893,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetReadItemInfo$Response(params: TradesGetReadItemInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo>> {
+  tradesGetReadItemInfo$Response(params: TradesGetReadItemInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto>> {
     return tradesGetReadItemInfo(this.http, this.rootUrl, params, context);
   }
 
@@ -903,14 +903,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetReadItemInfo(params: TradesGetReadItemInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo> {
+  tradesGetReadItemInfo(params: TradesGetReadItemInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto> {
     return this.tradesGetReadItemInfo$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo>): ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto>): ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesGetUnreadItems()` */
-  static readonly TradesGetUnreadItemsPath = '/bla-bla-vla/trades/{id}/chat/{chatId}/unread/items';
+  static readonly TradesGetUnreadItemsPath = '/market/api/v1/trades/{id}/chat/{chatId}/unread/items';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -935,7 +935,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetUnreadItemsCount()` */
-  static readonly TradesGetUnreadItemsCountPath = '/bla-bla-vla/trades/{id}/chat/{chatId}/unread/count';
+  static readonly TradesGetUnreadItemsCountPath = '/market/api/v1/trades/{id}/chat/{chatId}/unread/count';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -943,7 +943,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetUnreadItemsCount$Response(params: TradesGetUnreadItemsCount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  tradesGetUnreadItemsCount$Response(params: TradesGetUnreadItemsCount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return tradesGetUnreadItemsCount(this.http, this.rootUrl, params, context);
   }
 
@@ -953,14 +953,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetUnreadItemsCount(params: TradesGetUnreadItemsCount$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  tradesGetUnreadItemsCount(params: TradesGetUnreadItemsCount$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.tradesGetUnreadItemsCount$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesGetChatsUnreadItems()` */
-  static readonly TradesGetChatsUnreadItemsPath = '/bla-bla-vla/trades/{id}/chat/unread';
+  static readonly TradesGetChatsUnreadItemsPath = '/market/api/v1/trades/{id}/chat/unread';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -968,7 +968,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetChatsUnreadItems$Response(params: TradesGetChatsUnreadItems$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndInteger>> {
+  tradesGetChatsUnreadItems$Response(params: TradesGetChatsUnreadItems$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndIntegerAltDto>> {
     return tradesGetChatsUnreadItems(this.http, this.rootUrl, params, context);
   }
 
@@ -978,14 +978,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetChatsUnreadItems(params: TradesGetChatsUnreadItems$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDictionaryOfIntegerAndInteger> {
+  tradesGetChatsUnreadItems(params: TradesGetChatsUnreadItems$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDictionaryOfIntegerAndIntegerAltDto> {
     return this.tradesGetChatsUnreadItems$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndInteger>): ApiMarketJsonResultOfDictionaryOfIntegerAndInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndIntegerAltDto>): ApiMarketJsonResultOfDictionaryOfIntegerAndIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesReadChatItemByIds()` */
-  static readonly TradesReadChatItemByIdsPath = '/bla-bla-vla/trades/{id}/chat/{chatId}/read';
+  static readonly TradesReadChatItemByIdsPath = '/market/api/v1/trades/{id}/chat/{chatId}/read';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -993,7 +993,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesReadChatItemByIds$Response(params: TradesReadChatItemByIds$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  tradesReadChatItemByIds$Response(params: TradesReadChatItemByIds$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return tradesReadChatItemByIds(this.http, this.rootUrl, params, context);
   }
 
@@ -1003,14 +1003,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesReadChatItemByIds(params: TradesReadChatItemByIds$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  tradesReadChatItemByIds(params: TradesReadChatItemByIds$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.tradesReadChatItemByIds$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesReadAllItemsFromId()` */
-  static readonly TradesReadAllItemsFromIdPath = '/bla-bla-vla/trades/{id}/chat/{chatId}/read/{itemId}/all';
+  static readonly TradesReadAllItemsFromIdPath = '/market/api/v1/trades/{id}/chat/{chatId}/read/{itemId}/all';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1018,7 +1018,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesReadAllItemsFromId$Response(params: TradesReadAllItemsFromId$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  tradesReadAllItemsFromId$Response(params: TradesReadAllItemsFromId$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return tradesReadAllItemsFromId(this.http, this.rootUrl, params, context);
   }
 
@@ -1028,14 +1028,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesReadAllItemsFromId(params: TradesReadAllItemsFromId$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  tradesReadAllItemsFromId(params: TradesReadAllItemsFromId$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.tradesReadAllItemsFromId$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesGetLastChatItems()` */
-  static readonly TradesGetLastChatItemsPath = '/bla-bla-vla/trades/{id}/chat/{chatId}/{lastId}';
+  static readonly TradesGetLastChatItemsPath = '/market/api/v1/trades/{id}/chat/{chatId}/{lastId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1060,7 +1060,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetChats()` */
-  static readonly TradesGetChatsPath = '/bla-bla-vla/trades/{id}/chats';
+  static readonly TradesGetChatsPath = '/market/api/v1/trades/{id}/chats';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1068,7 +1068,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetChats$Response(params: TradesGetChats$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndString>> {
+  tradesGetChats$Response(params: TradesGetChats$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndStringAltDto>> {
     return tradesGetChats(this.http, this.rootUrl, params, context);
   }
 
@@ -1078,14 +1078,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetChats(params: TradesGetChats$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDictionaryOfIntegerAndString> {
+  tradesGetChats(params: TradesGetChats$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDictionaryOfIntegerAndStringAltDto> {
     return this.tradesGetChats$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndString>): ApiMarketJsonResultOfDictionaryOfIntegerAndString => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndStringAltDto>): ApiMarketJsonResultOfDictionaryOfIntegerAndStringAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesCreateChat()` */
-  static readonly TradesCreateChatPath = '/bla-bla-vla/trades/{id}/chats';
+  static readonly TradesCreateChatPath = '/market/api/v1/trades/{id}/chats';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1093,7 +1093,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesCreateChat$Response(params: TradesCreateChat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  tradesCreateChat$Response(params: TradesCreateChat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return tradesCreateChat(this.http, this.rootUrl, params, context);
   }
 
@@ -1103,14 +1103,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesCreateChat(params: TradesCreateChat$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  tradesCreateChat(params: TradesCreateChat$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.tradesCreateChat$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesGetCustomerChats()` */
-  static readonly TradesGetCustomerChatsPath = '/bla-bla-vla/trades/{id}/customer-chats';
+  static readonly TradesGetCustomerChatsPath = '/market/api/v1/trades/{id}/customer-chats';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1135,7 +1135,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesAddMessageToChat()` */
-  static readonly TradesAddMessageToChatPath = '/bla-bla-vla/trades/{id}/chat/add/{chatOwnerId}';
+  static readonly TradesAddMessageToChatPath = '/market/api/v1/trades/{id}/chat/add/{chatOwnerId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1143,7 +1143,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesAddMessageToChat$Response(params: TradesAddMessageToChat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLong>> {
+  tradesAddMessageToChat$Response(params: TradesAddMessageToChat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>> {
     return tradesAddMessageToChat(this.http, this.rootUrl, params, context);
   }
 
@@ -1153,14 +1153,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesAddMessageToChat(params: TradesAddMessageToChat$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLong> {
+  tradesAddMessageToChat(params: TradesAddMessageToChat$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLongAltDto> {
     return this.tradesAddMessageToChat$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfLong>): ApiMarketJsonResultOfLong => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>): ApiMarketJsonResultOfLongAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesAddCustomerDealCommentSystemMessage()` */
-  static readonly TradesAddCustomerDealCommentSystemMessagePath = '/bla-bla-vla/trades/{id}/chat/{chatOwnerId}/AddCustomerDealCommentSystemMessage';
+  static readonly TradesAddCustomerDealCommentSystemMessagePath = '/market/api/v1/trades/{id}/chat/{chatOwnerId}/AddCustomerDealCommentSystemMessage';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1168,7 +1168,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesAddCustomerDealCommentSystemMessage$Response(params: TradesAddCustomerDealCommentSystemMessage$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLong>> {
+  tradesAddCustomerDealCommentSystemMessage$Response(params: TradesAddCustomerDealCommentSystemMessage$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>> {
     return tradesAddCustomerDealCommentSystemMessage(this.http, this.rootUrl, params, context);
   }
 
@@ -1178,14 +1178,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesAddCustomerDealCommentSystemMessage(params: TradesAddCustomerDealCommentSystemMessage$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLong> {
+  tradesAddCustomerDealCommentSystemMessage(params: TradesAddCustomerDealCommentSystemMessage$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLongAltDto> {
     return this.tradesAddCustomerDealCommentSystemMessage$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfLong>): ApiMarketJsonResultOfLong => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>): ApiMarketJsonResultOfLongAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesAddMmoCreateDealSystemMessage()` */
-  static readonly TradesAddMmoCreateDealSystemMessagePath = '/bla-bla-vla/trades/{tradeId}/chat/AddMmoCreateDealSystemMessage/{discussionOwnerId}';
+  static readonly TradesAddMmoCreateDealSystemMessagePath = '/market/api/v1/trades/{tradeId}/chat/AddMmoCreateDealSystemMessage/{discussionOwnerId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1210,7 +1210,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesAddMmoTradeFromDealNotSignedToFillingApplicationsSystemMessage()` */
-  static readonly TradesAddMmoTradeFromDealNotSignedToFillingApplicationsSystemMessagePath = '/bla-bla-vla/trades/{tradeId}/chat/add/MmoTradeFromDealNotSignedToFillingApplicationsSystemMessage';
+  static readonly TradesAddMmoTradeFromDealNotSignedToFillingApplicationsSystemMessagePath = '/market/api/v1/trades/{tradeId}/chat/add/MmoTradeFromDealNotSignedToFillingApplicationsSystemMessage';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1235,7 +1235,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesAddMmoParticipantMissedSigningTimeSystemMessage()` */
-  static readonly TradesAddMmoParticipantMissedSigningTimeSystemMessagePath = '/bla-bla-vla/trades/{tradeId}/chat/MmoParticipantMissedSigningTimeSystemMessage/{discussionOwnerId}';
+  static readonly TradesAddMmoParticipantMissedSigningTimeSystemMessagePath = '/market/api/v1/trades/{tradeId}/chat/MmoParticipantMissedSigningTimeSystemMessage/{discussionOwnerId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1260,7 +1260,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesAddMmoTradeFromDealSigningToDealNotSignedChatSystemMessage()` */
-  static readonly TradesAddMmoTradeFromDealSigningToDealNotSignedChatSystemMessagePath = '/bla-bla-vla/trades/{tradeId}/chat/MmoTradeFromDealSigningToDealNotSignedChatSystemMessage/{dealId}';
+  static readonly TradesAddMmoTradeFromDealSigningToDealNotSignedChatSystemMessagePath = '/market/api/v1/trades/{tradeId}/chat/MmoTradeFromDealSigningToDealNotSignedChatSystemMessage/{dealId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1285,7 +1285,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetChatFiles()` */
-  static readonly TradesGetChatFilesPath = '/bla-bla-vla/trades/chat/{chatId}/files';
+  static readonly TradesGetChatFilesPath = '/market/api/v1/trades/chat/{chatId}/files';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1310,7 +1310,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesAddDealSigningExpiredMessage()` */
-  static readonly TradesAddDealSigningExpiredMessagePath = '/bla-bla-vla/trades/chat/add-deal-signing-expired-message';
+  static readonly TradesAddDealSigningExpiredMessagePath = '/market/api/v1/trades/chat/add-deal-signing-expired-message';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1335,7 +1335,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesDisableSupplierMessages()` */
-  static readonly TradesDisableSupplierMessagesPath = '/bla-bla-vla/trades/chat/{chatId}/disable-supplier-messages';
+  static readonly TradesDisableSupplierMessagesPath = '/market/api/v1/trades/chat/{chatId}/disable-supplier-messages';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1360,7 +1360,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesEnableSupplierMessages()` */
-  static readonly TradesEnableSupplierMessagesPath = '/bla-bla-vla/trades/chat/{chatId}/enable-supplier-messages';
+  static readonly TradesEnableSupplierMessagesPath = '/market/api/v1/trades/chat/{chatId}/enable-supplier-messages';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1385,7 +1385,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesSpeedUpPriceRequest()` */
-  static readonly TradesSpeedUpPriceRequestPath = '/bla-bla-vla/trades/speedup/{tradeId}';
+  static readonly TradesSpeedUpPriceRequestPath = '/market/api/v1/trades/speedup/{tradeId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1410,7 +1410,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetDealsList()` */
-  static readonly TradesGetDealsListPath = '/bla-bla-vla/trades/deals';
+  static readonly TradesGetDealsListPath = '/market/api/v1/trades/deals';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1418,7 +1418,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesGetDealsList$Response(params?: TradesGetDealsList$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketDeal>> {
+  tradesGetDealsList$Response(params?: TradesGetDealsList$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketDealAltDto>> {
     return tradesGetDealsList(this.http, this.rootUrl, params, context);
   }
 
@@ -1428,14 +1428,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesGetDealsList(params?: TradesGetDealsList$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketDeal> {
+  tradesGetDealsList(params?: TradesGetDealsList$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketDealAltDto> {
     return this.tradesGetDealsList$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketDeal>): ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketDeal => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketDealAltDto>): ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketDealAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesStarLightSearch()` */
-  static readonly TradesStarLightSearchPath = '/bla-bla-vla/trades/star-light-search';
+  static readonly TradesStarLightSearchPath = '/market/api/v1/trades/star-light-search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1460,7 +1460,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesPublicLightSearch()` */
-  static readonly TradesPublicLightSearchPath = '/bla-bla-vla/trades/public-light-search';
+  static readonly TradesPublicLightSearchPath = '/market/api/v1/trades/public-light-search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1485,7 +1485,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesPublicSearch2()` */
-  static readonly TradesPublicSearch2Path = '/bla-bla-vla/trades/publicsearch2';
+  static readonly TradesPublicSearch2Path = '/market/api/v1/trades/publicsearch2';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1510,7 +1510,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesExternalSearch()` */
-  static readonly TradesExternalSearchPath = '/bla-bla-vla/trades/external/search';
+  static readonly TradesExternalSearchPath = '/market/api/v1/trades/external/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1535,7 +1535,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetTradeRecommendations()` */
-  static readonly TradesGetTradeRecommendationsPath = '/bla-bla-vla/trades/recommendations';
+  static readonly TradesGetTradeRecommendationsPath = '/market/api/v1/trades/recommendations';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1560,7 +1560,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesSuggest()` */
-  static readonly TradesSuggestPath = '/bla-bla-vla/trades/suggest';
+  static readonly TradesSuggestPath = '/market/api/v1/trades/suggest';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1568,7 +1568,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesSuggest$Response(params: TradesSuggest$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStarSuggestObjectOf>> {
+  tradesSuggest$Response(params: TradesSuggest$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStarSuggestObjectOfAltDto>> {
     return tradesSuggest(this.http, this.rootUrl, params, context);
   }
 
@@ -1578,14 +1578,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesSuggest(params: TradesSuggest$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfStarSuggestObjectOf> {
+  tradesSuggest(params: TradesSuggest$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfStarSuggestObjectOfAltDto> {
     return this.tradesSuggest$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfStarSuggestObjectOf>): ApiMarketJsonResultOfStarSuggestObjectOf => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfStarSuggestObjectOfAltDto>): ApiMarketJsonResultOfStarSuggestObjectOfAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesSearch()` */
-  static readonly TradesSearchPath = '/bla-bla-vla/trades/search';
+  static readonly TradesSearchPath = '/market/api/v1/trades/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1593,7 +1593,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesSearch$Response(params?: TradesSearch$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStarSearchObj>> {
+  tradesSearch$Response(params?: TradesSearch$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStarSearchObjAltDto>> {
     return tradesSearch(this.http, this.rootUrl, params, context);
   }
 
@@ -1603,14 +1603,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesSearch(params?: TradesSearch$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfStarSearchObj> {
+  tradesSearch(params?: TradesSearch$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfStarSearchObjAltDto> {
     return this.tradesSearch$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfStarSearchObj>): ApiMarketJsonResultOfStarSearchObj => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfStarSearchObjAltDto>): ApiMarketJsonResultOfStarSearchObjAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesPublish2()` */
-  static readonly TradesPublish2Path = '/bla-bla-vla/trades';
+  static readonly TradesPublish2Path = '/market/api/v1/trades';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1618,7 +1618,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesPublish2$Response(params?: TradesPublish2$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>> {
+  tradesPublish2$Response(params?: TradesPublish2$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>> {
     return tradesPublish2(this.http, this.rootUrl, params, context);
   }
 
@@ -1628,14 +1628,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesPublish2(params?: TradesPublish2$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTradePublishResult> {
+  tradesPublish2(params?: TradesPublish2$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTradePublishResultAltDto> {
     return this.tradesPublish2$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>): ApiMarketJsonResultOfTradePublishResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>): ApiMarketJsonResultOfTradePublishResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesPublishFromEis()` */
-  static readonly TradesPublishFromEisPath = '/bla-bla-vla/trades/eis/publish';
+  static readonly TradesPublishFromEisPath = '/market/api/v1/trades/eis/publish';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1643,7 +1643,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesPublishFromEis$Response(params?: TradesPublishFromEis$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>> {
+  tradesPublishFromEis$Response(params?: TradesPublishFromEis$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>> {
     return tradesPublishFromEis(this.http, this.rootUrl, params, context);
   }
 
@@ -1653,14 +1653,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesPublishFromEis(params?: TradesPublishFromEis$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTradePublishResult> {
+  tradesPublishFromEis(params?: TradesPublishFromEis$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTradePublishResultAltDto> {
     return this.tradesPublishFromEis$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>): ApiMarketJsonResultOfTradePublishResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>): ApiMarketJsonResultOfTradePublishResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesSaveAsDraft()` */
-  static readonly TradesSaveAsDraftPath = '/bla-bla-vla/trades/draft';
+  static readonly TradesSaveAsDraftPath = '/market/api/v1/trades/draft';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1668,7 +1668,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesSaveAsDraft$Response(params?: TradesSaveAsDraft$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>> {
+  tradesSaveAsDraft$Response(params?: TradesSaveAsDraft$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>> {
     return tradesSaveAsDraft(this.http, this.rootUrl, params, context);
   }
 
@@ -1678,14 +1678,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesSaveAsDraft(params?: TradesSaveAsDraft$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTradePublishResult> {
+  tradesSaveAsDraft(params?: TradesSaveAsDraft$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTradePublishResultAltDto> {
     return this.tradesSaveAsDraft$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>): ApiMarketJsonResultOfTradePublishResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>): ApiMarketJsonResultOfTradePublishResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesPublishById()` */
-  static readonly TradesPublishByIdPath = '/bla-bla-vla/trades/publish/{id}';
+  static readonly TradesPublishByIdPath = '/market/api/v1/trades/publish/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1693,7 +1693,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesPublishById$Response(params: TradesPublishById$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>> {
+  tradesPublishById$Response(params: TradesPublishById$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>> {
     return tradesPublishById(this.http, this.rootUrl, params, context);
   }
 
@@ -1703,14 +1703,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesPublishById(params: TradesPublishById$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTradePublishResult> {
+  tradesPublishById(params: TradesPublishById$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTradePublishResultAltDto> {
     return this.tradesPublishById$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>): ApiMarketJsonResultOfTradePublishResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>): ApiMarketJsonResultOfTradePublishResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesCreateTradeFromPlanLots()` */
-  static readonly TradesCreateTradeFromPlanLotsPath = '/bla-bla-vla/trades/create-from-plan';
+  static readonly TradesCreateTradeFromPlanLotsPath = '/market/api/v1/trades/create-from-plan';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1718,7 +1718,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesCreateTradeFromPlanLots$Response(params?: TradesCreateTradeFromPlanLots$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  tradesCreateTradeFromPlanLots$Response(params?: TradesCreateTradeFromPlanLots$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return tradesCreateTradeFromPlanLots(this.http, this.rootUrl, params, context);
   }
 
@@ -1728,14 +1728,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesCreateTradeFromPlanLots(params?: TradesCreateTradeFromPlanLots$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  tradesCreateTradeFromPlanLots(params?: TradesCreateTradeFromPlanLots$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.tradesCreateTradeFromPlanLots$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesPrepareTradeFromPlanLots()` */
-  static readonly TradesPrepareTradeFromPlanLotsPath = '/bla-bla-vla/trades/prepare-from-plan/{marketPlanLotId}';
+  static readonly TradesPrepareTradeFromPlanLotsPath = '/market/api/v1/trades/prepare-from-plan/{marketPlanLotId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1760,7 +1760,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesCancelTrade()` */
-  static readonly TradesCancelTradePath = '/bla-bla-vla/trades/cancel';
+  static readonly TradesCancelTradePath = '/market/api/v1/trades/cancel';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1768,7 +1768,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesCancelTrade$Response(params?: TradesCancelTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  tradesCancelTrade$Response(params?: TradesCancelTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return tradesCancelTrade(this.http, this.rootUrl, params, context);
   }
 
@@ -1778,14 +1778,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesCancelTrade(params?: TradesCancelTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  tradesCancelTrade(params?: TradesCancelTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.tradesCancelTrade$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesCancelTradeExternal()` */
-  static readonly TradesCancelTradeExternalPath = '/bla-bla-vla/trades/cancel/external';
+  static readonly TradesCancelTradeExternalPath = '/market/api/v1/trades/cancel/external';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1793,7 +1793,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesCancelTradeExternal$Response(params?: TradesCancelTradeExternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  tradesCancelTradeExternal$Response(params?: TradesCancelTradeExternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return tradesCancelTradeExternal(this.http, this.rootUrl, params, context);
   }
 
@@ -1803,14 +1803,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesCancelTradeExternal(params?: TradesCancelTradeExternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  tradesCancelTradeExternal(params?: TradesCancelTradeExternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.tradesCancelTradeExternal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesGetTradeForView()` */
-  static readonly TradesGetTradeForViewPath = '/bla-bla-vla/trades/{id}';
+  static readonly TradesGetTradeForViewPath = '/market/api/v1/trades/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1835,7 +1835,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetTradeForViewByLot()` */
-  static readonly TradesGetTradeForViewByLotPath = '/bla-bla-vla/trades/byLotId/{id}';
+  static readonly TradesGetTradeForViewByLotPath = '/market/api/v1/trades/byLotId/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1860,7 +1860,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesRegisterForTradeLot()` */
-  static readonly TradesRegisterForTradeLotPath = '/bla-bla-vla/trades/registerForTradeLot/{id}';
+  static readonly TradesRegisterForTradeLotPath = '/market/api/v1/trades/registerForTradeLot/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1885,7 +1885,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetTradeForEdit()` */
-  static readonly TradesGetTradeForEditPath = '/bla-bla-vla/trades/{id}/full';
+  static readonly TradesGetTradeForEditPath = '/market/api/v1/trades/{id}/full';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1910,7 +1910,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetTradeCopy()` */
-  static readonly TradesGetTradeCopyPath = '/bla-bla-vla/trades/{id}/copy';
+  static readonly TradesGetTradeCopyPath = '/market/api/v1/trades/{id}/copy';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1918,7 +1918,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetTradeCopy$Response(params: TradesGetTradeCopy$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>> {
+  tradesGetTradeCopy$Response(params: TradesGetTradeCopy$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>> {
     return tradesGetTradeCopy(this.http, this.rootUrl, params, context);
   }
 
@@ -1928,14 +1928,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetTradeCopy(params: TradesGetTradeCopy$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTradePublishResult> {
+  tradesGetTradeCopy(params: TradesGetTradeCopy$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTradePublishResultAltDto> {
     return this.tradesGetTradeCopy$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>): ApiMarketJsonResultOfTradePublishResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>): ApiMarketJsonResultOfTradePublishResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesEditPublished()` */
-  static readonly TradesEditPublishedPath = '/bla-bla-vla/trades/editpublished';
+  static readonly TradesEditPublishedPath = '/market/api/v1/trades/editpublished';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1943,7 +1943,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesEditPublished$Response(params?: TradesEditPublished$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  tradesEditPublished$Response(params?: TradesEditPublished$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return tradesEditPublished(this.http, this.rootUrl, params, context);
   }
 
@@ -1953,14 +1953,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesEditPublished(params?: TradesEditPublished$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  tradesEditPublished(params?: TradesEditPublished$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.tradesEditPublished$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesEditPublishedFromEis()` */
-  static readonly TradesEditPublishedFromEisPath = '/bla-bla-vla/trades/eis/editpublished';
+  static readonly TradesEditPublishedFromEisPath = '/market/api/v1/trades/eis/editpublished';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1968,7 +1968,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesEditPublishedFromEis$Response(params?: TradesEditPublishedFromEis$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  tradesEditPublishedFromEis$Response(params?: TradesEditPublishedFromEis$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return tradesEditPublishedFromEis(this.http, this.rootUrl, params, context);
   }
 
@@ -1978,14 +1978,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesEditPublishedFromEis(params?: TradesEditPublishedFromEis$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  tradesEditPublishedFromEis(params?: TradesEditPublishedFromEis$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.tradesEditPublishedFromEis$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesGetTenderTenant()` */
-  static readonly TradesGetTenderTenantPath = '/bla-bla-vla/trades/{id}/tenants';
+  static readonly TradesGetTenderTenantPath = '/market/api/v1/trades/{id}/tenants';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -1993,7 +1993,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetTenderTenant$Response(params: TradesGetTenderTenant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfInteger>> {
+  tradesGetTenderTenant$Response(params: TradesGetTenderTenant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfIntegerAltDto>> {
     return tradesGetTenderTenant(this.http, this.rootUrl, params, context);
   }
 
@@ -2003,14 +2003,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetTenderTenant(params: TradesGetTenderTenant$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfListOfInteger> {
+  tradesGetTenderTenant(params: TradesGetTenderTenant$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfListOfIntegerAltDto> {
     return this.tradesGetTenderTenant$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfListOfInteger>): ApiMarketJsonResultOfListOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfListOfIntegerAltDto>): ApiMarketJsonResultOfListOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesReturnTradeToFillingAppState()` */
-  static readonly TradesReturnTradeToFillingAppStatePath = '/bla-bla-vla/trades/tofillingappstate';
+  static readonly TradesReturnTradeToFillingAppStatePath = '/market/api/v1/trades/tofillingappstate';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2035,7 +2035,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesCreatePreliminaryOffersForPrivateTrade2()` */
-  static readonly TradesCreatePreliminaryOffersForPrivateTrade2Path = '/bla-bla-vla/trades/preliminary-offer/tofillingappstate';
+  static readonly TradesCreatePreliminaryOffersForPrivateTrade2Path = '/market/api/v1/trades/preliminary-offer/tofillingappstate';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2060,7 +2060,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesCloseTradeWithoutDeal()` */
-  static readonly TradesCloseTradeWithoutDealPath = '/bla-bla-vla/trades/{id}/close';
+  static readonly TradesCloseTradeWithoutDealPath = '/market/api/v1/trades/{id}/close';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2085,7 +2085,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetTradeCharacteristics()` */
-  static readonly TradesGetTradeCharacteristicsPath = '/bla-bla-vla/trades/{id}/characteristics';
+  static readonly TradesGetTradeCharacteristicsPath = '/market/api/v1/trades/{id}/characteristics';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2110,7 +2110,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetCharacteristicsByTradeIdAsFile()` */
-  static readonly TradesGetCharacteristicsByTradeIdAsFilePath = '/bla-bla-vla/trades/{id}/characteristics/file';
+  static readonly TradesGetCharacteristicsByTradeIdAsFilePath = '/market/api/v1/trades/{id}/characteristics/file';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2135,7 +2135,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesImportProductsFromExcelWithGuid()` */
-  static readonly TradesImportProductsFromExcelWithGuidPath = '/bla-bla-vla/trades/import-products';
+  static readonly TradesImportProductsFromExcelWithGuidPath = '/market/api/v1/trades/import-products';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2143,7 +2143,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesImportProductsFromExcelWithGuid$Response(params?: TradesImportProductsFromExcelWithGuid$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfImportExcelProductResponse>> {
+  tradesImportProductsFromExcelWithGuid$Response(params?: TradesImportProductsFromExcelWithGuid$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfImportExcelProductResponseAltDto>> {
     return tradesImportProductsFromExcelWithGuid(this.http, this.rootUrl, params, context);
   }
 
@@ -2153,14 +2153,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesImportProductsFromExcelWithGuid(params?: TradesImportProductsFromExcelWithGuid$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfImportExcelProductResponse> {
+  tradesImportProductsFromExcelWithGuid(params?: TradesImportProductsFromExcelWithGuid$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfImportExcelProductResponseAltDto> {
     return this.tradesImportProductsFromExcelWithGuid$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfImportExcelProductResponse>): ApiMarketJsonResultOfImportExcelProductResponse => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfImportExcelProductResponseAltDto>): ApiMarketJsonResultOfImportExcelProductResponseAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesGetImportTemplateGuidByTenant()` */
-  static readonly TradesGetImportTemplateGuidByTenantPath = '/bla-bla-vla/trades/import-template-guid';
+  static readonly TradesGetImportTemplateGuidByTenantPath = '/market/api/v1/trades/import-template-guid';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2168,7 +2168,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetImportTemplateGuidByTenant$Response(params?: TradesGetImportTemplateGuidByTenant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuid>> {
+  tradesGetImportTemplateGuidByTenant$Response(params?: TradesGetImportTemplateGuidByTenant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>> {
     return tradesGetImportTemplateGuidByTenant(this.http, this.rootUrl, params, context);
   }
 
@@ -2178,14 +2178,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetImportTemplateGuidByTenant(params?: TradesGetImportTemplateGuidByTenant$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfGuid> {
+  tradesGetImportTemplateGuidByTenant(params?: TradesGetImportTemplateGuidByTenant$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfGuidAltDto> {
     return this.tradesGetImportTemplateGuidByTenant$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfGuid>): ApiMarketJsonResultOfGuid => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>): ApiMarketJsonResultOfGuidAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesDeleteTradeDraft()` */
-  static readonly TradesDeleteTradeDraftPath = '/bla-bla-vla/trades/deleteDraft/{id}';
+  static readonly TradesDeleteTradeDraftPath = '/market/api/v1/trades/deleteDraft/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2193,7 +2193,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesDeleteTradeDraft$Response(params: TradesDeleteTradeDraft$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  tradesDeleteTradeDraft$Response(params: TradesDeleteTradeDraft$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return tradesDeleteTradeDraft(this.http, this.rootUrl, params, context);
   }
 
@@ -2203,14 +2203,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesDeleteTradeDraft(params: TradesDeleteTradeDraft$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  tradesDeleteTradeDraft(params: TradesDeleteTradeDraft$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.tradesDeleteTradeDraft$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesGenerateTradeProtocol()` */
-  static readonly TradesGenerateTradeProtocolPath = '/bla-bla-vla/trades/tradeProtocol';
+  static readonly TradesGenerateTradeProtocolPath = '/market/api/v1/trades/tradeProtocol';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2218,7 +2218,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesGenerateTradeProtocol$Response(params?: TradesGenerateTradeProtocol$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuid>> {
+  tradesGenerateTradeProtocol$Response(params?: TradesGenerateTradeProtocol$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>> {
     return tradesGenerateTradeProtocol(this.http, this.rootUrl, params, context);
   }
 
@@ -2228,14 +2228,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesGenerateTradeProtocol(params?: TradesGenerateTradeProtocol$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfGuid> {
+  tradesGenerateTradeProtocol(params?: TradesGenerateTradeProtocol$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfGuidAltDto> {
     return this.tradesGenerateTradeProtocol$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfGuid>): ApiMarketJsonResultOfGuid => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>): ApiMarketJsonResultOfGuidAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesSaveSupplierFromMmo()` */
-  static readonly TradesSaveSupplierFromMmoPath = '/bla-bla-vla/trades/{tradeId}/save-supplier-from-mmo/{sessionGuid}';
+  static readonly TradesSaveSupplierFromMmoPath = '/market/api/v1/trades/{tradeId}/save-supplier-from-mmo/{sessionGuid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2260,7 +2260,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetTenantIdByTrade()` */
-  static readonly TradesGetTenantIdByTradePath = '/bla-bla-vla/trades/GetTenantIdByTrade/{tradeId}';
+  static readonly TradesGetTenantIdByTradePath = '/market/api/v1/trades/GetTenantIdByTrade/{tradeId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2268,7 +2268,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetTenantIdByTrade$Response(params: TradesGetTenantIdByTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  tradesGetTenantIdByTrade$Response(params: TradesGetTenantIdByTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return tradesGetTenantIdByTrade(this.http, this.rootUrl, params, context);
   }
 
@@ -2278,14 +2278,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetTenantIdByTrade(params: TradesGetTenantIdByTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  tradesGetTenantIdByTrade(params: TradesGetTenantIdByTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.tradesGetTenantIdByTrade$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesSendTradeToEis()` */
-  static readonly TradesSendTradeToEisPath = '/bla-bla-vla/trades/send-trade-to-eis';
+  static readonly TradesSendTradeToEisPath = '/market/api/v1/trades/send-trade-to-eis';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2310,7 +2310,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesSendTradeCancelToEis()` */
-  static readonly TradesSendTradeCancelToEisPath = '/bla-bla-vla/trades/sendTradeCancelToEis/{tradeId}';
+  static readonly TradesSendTradeCancelToEisPath = '/market/api/v1/trades/sendTradeCancelToEis/{tradeId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2335,7 +2335,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesSendProtocolToEis()` */
-  static readonly TradesSendProtocolToEisPath = '/bla-bla-vla/trades/send-protocol-to-eis';
+  static readonly TradesSendProtocolToEisPath = '/market/api/v1/trades/send-protocol-to-eis';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2360,7 +2360,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesCreateCustomerComissionProtocol()` */
-  static readonly TradesCreateCustomerComissionProtocolPath = '/bla-bla-vla/trades/{id}/customer-comission-protocol/create';
+  static readonly TradesCreateCustomerComissionProtocolPath = '/market/api/v1/trades/{id}/customer-comission-protocol/create';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2385,7 +2385,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesPublishConsiderationProtocol()` */
-  static readonly TradesPublishConsiderationProtocolPath = '/bla-bla-vla/trades/{id}/customer-comission-protocol/publish';
+  static readonly TradesPublishConsiderationProtocolPath = '/market/api/v1/trades/{id}/customer-comission-protocol/publish';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2410,7 +2410,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesNoEisPublishConsiderationProtocol()` */
-  static readonly TradesNoEisPublishConsiderationProtocolPath = '/bla-bla-vla/trades/{id}/customer-comission-protocol/no-eis-publish';
+  static readonly TradesNoEisPublishConsiderationProtocolPath = '/market/api/v1/trades/{id}/customer-comission-protocol/no-eis-publish';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2435,7 +2435,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetConsiderationProtocol()` */
-  static readonly TradesGetConsiderationProtocolPath = '/bla-bla-vla/trades/{id}/customer-comission-protocol';
+  static readonly TradesGetConsiderationProtocolPath = '/market/api/v1/trades/{id}/customer-comission-protocol';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2460,7 +2460,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetCustomerSignerList()` */
-  static readonly TradesGetCustomerSignerListPath = '/bla-bla-vla/trades/deal-signer-list';
+  static readonly TradesGetCustomerSignerListPath = '/market/api/v1/trades/deal-signer-list';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2468,7 +2468,7 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetCustomerSignerList$Response(params?: TradesGetCustomerSignerList$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfMarketTradePerson>> {
+  tradesGetCustomerSignerList$Response(params?: TradesGetCustomerSignerList$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfMarketTradePersonAltDto>> {
     return tradesGetCustomerSignerList(this.http, this.rootUrl, params, context);
   }
 
@@ -2478,14 +2478,14 @@ export class TradesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesGetCustomerSignerList(params?: TradesGetCustomerSignerList$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfListOfMarketTradePerson> {
+  tradesGetCustomerSignerList(params?: TradesGetCustomerSignerList$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfListOfMarketTradePersonAltDto> {
     return this.tradesGetCustomerSignerList$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfListOfMarketTradePerson>): ApiMarketJsonResultOfListOfMarketTradePerson => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfListOfMarketTradePersonAltDto>): ApiMarketJsonResultOfListOfMarketTradePersonAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesSaveContractSigner()` */
-  static readonly TradesSaveContractSignerPath = '/bla-bla-vla/trades/save-deal-signer/{tradeId}/{userId}';
+  static readonly TradesSaveContractSignerPath = '/market/api/v1/trades/save-deal-signer/{tradeId}/{userId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2510,7 +2510,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesDeleteDealSigner()` */
-  static readonly TradesDeleteDealSignerPath = '/bla-bla-vla/trades/delete-deal-signer/{tradeId}/{userId}';
+  static readonly TradesDeleteDealSignerPath = '/market/api/v1/trades/delete-deal-signer/{tradeId}/{userId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2535,7 +2535,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetCompetitiveListReport()` */
-  static readonly TradesGetCompetitiveListReportPath = '/bla-bla-vla/trades/{tradeId}/competitive-list/excel';
+  static readonly TradesGetCompetitiveListReportPath = '/market/api/v1/trades/{tradeId}/competitive-list/excel';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2560,7 +2560,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetApplicationsArchive()` */
-  static readonly TradesGetApplicationsArchivePath = '/bla-bla-vla/trades/{tradeId}/applications/arhive';
+  static readonly TradesGetApplicationsArchivePath = '/market/api/v1/trades/{tradeId}/applications/arhive';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2585,7 +2585,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesTurnSingleSupplierToPriceReuest()` */
-  static readonly TradesTurnSingleSupplierToPriceReuestPath = '/bla-bla-vla/trades/{tradeId}/to-price-request';
+  static readonly TradesTurnSingleSupplierToPriceReuestPath = '/market/api/v1/trades/{tradeId}/to-price-request';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2610,7 +2610,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesValidateWorkgroupForSigner()` */
-  static readonly TradesValidateWorkgroupForSignerPath = '/bla-bla-vla/trades/validate-work-groups-signer';
+  static readonly TradesValidateWorkgroupForSignerPath = '/market/api/v1/trades/validate-work-groups-signer';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2618,7 +2618,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesValidateWorkgroupForSigner$Response(params?: TradesValidateWorkgroupForSigner$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  tradesValidateWorkgroupForSigner$Response(params?: TradesValidateWorkgroupForSigner$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return tradesValidateWorkgroupForSigner(this.http, this.rootUrl, params, context);
   }
 
@@ -2628,14 +2628,14 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesValidateWorkgroupForSigner(params?: TradesValidateWorkgroupForSigner$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  tradesValidateWorkgroupForSigner(params?: TradesValidateWorkgroupForSigner$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.tradesValidateWorkgroupForSigner$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesGetFiles()` */
-  static readonly TradesGetFilesPath = '/bla-bla-vla/trades/{tradeId}/files';
+  static readonly TradesGetFilesPath = '/market/api/v1/trades/{tradeId}/files';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2660,7 +2660,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesReturnTradeToReviewApplicaitons()` */
-  static readonly TradesReturnTradeToReviewApplicaitonsPath = '/bla-bla-vla/trades/{tradeId}/review-applications/return';
+  static readonly TradesReturnTradeToReviewApplicaitonsPath = '/market/api/v1/trades/{tradeId}/review-applications/return';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2685,7 +2685,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetCreateApplicationFormTemplateSettings()` */
-  static readonly TradesGetCreateApplicationFormTemplateSettingsPath = '/bla-bla-vla/trades/{tradeId}/application-template';
+  static readonly TradesGetCreateApplicationFormTemplateSettingsPath = '/market/api/v1/trades/{tradeId}/application-template';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2710,7 +2710,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetTradeDiscussionHistory()` */
-  static readonly TradesGetTradeDiscussionHistoryPath = '/bla-bla-vla/trades/{tradeId}/discussion-history';
+  static readonly TradesGetTradeDiscussionHistoryPath = '/market/api/v1/trades/{tradeId}/discussion-history';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2735,7 +2735,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesGetSpecificationsByParticipants()` */
-  static readonly TradesGetSpecificationsByParticipantsPath = '/bla-bla-vla/trades/{tradeId}/specifications-by-participants-archive';
+  static readonly TradesGetSpecificationsByParticipantsPath = '/market/api/v1/trades/{tradeId}/specifications-by-participants-archive';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2760,7 +2760,7 @@ export class TradesApiService extends BaseService {
   }
 
   /** Path part for operation `tradesCalculatePriceReduction()` */
-  static readonly TradesCalculatePriceReductionPath = '/bla-bla-vla/trades/price/reduction/calculate';
+  static readonly TradesCalculatePriceReductionPath = '/market/api/v1/trades/price/reduction/calculate';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -2768,7 +2768,7 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesCalculatePriceReduction$Response(params?: TradesCalculatePriceReduction$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPriceReductionResponse>> {
+  tradesCalculatePriceReduction$Response(params?: TradesCalculatePriceReduction$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPriceReductionResponseAltDto>> {
     return tradesCalculatePriceReduction(this.http, this.rootUrl, params, context);
   }
 
@@ -2778,9 +2778,9 @@ export class TradesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesCalculatePriceReduction(params?: TradesCalculatePriceReduction$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfPriceReductionResponse> {
+  tradesCalculatePriceReduction(params?: TradesCalculatePriceReduction$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfPriceReductionResponseAltDto> {
     return this.tradesCalculatePriceReduction$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfPriceReductionResponse>): ApiMarketJsonResultOfPriceReductionResponse => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfPriceReductionResponseAltDto>): ApiMarketJsonResultOfPriceReductionResponseAltDto => r.body)
     );
   }
 

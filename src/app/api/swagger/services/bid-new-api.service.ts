@@ -15,8 +15,8 @@ import { bidNewGetBids } from '../fn/bid-new/bid-new-get-bids';
 import { BidNewGetBids$Params } from '../fn/bid-new/bid-new-get-bids';
 import { bidNewSign } from '../fn/bid-new/bid-new-sign';
 import { BidNewSign$Params } from '../fn/bid-new/bid-new-sign';
-import { ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOf } from '../models/api-market-json-result-of-market-pagination-result-of-bid-info-of';
-import { ApiMarketJsonResultOfSignBidResponse } from '../models/api-market-json-result-of-sign-bid-response';
+import { ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOfAltDto } from '../models/api-market-json-result-of-market-pagination-result-of-bid-info-of';
+import { ApiMarketJsonResultOfSignBidResponseAltDto } from '../models/api-market-json-result-of-sign-bid-response';
 
 @Injectable({ providedIn: 'root' })
 export class BidNewApiService extends BaseService {
@@ -25,7 +25,7 @@ export class BidNewApiService extends BaseService {
   }
 
   /** Path part for operation `bidNewSign()` */
-  static readonly BidNewSignPath = '/bla-bla-vla/bid-new/sign';
+  static readonly BidNewSignPath = '/market/api/v1/bid-new/sign';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -33,7 +33,7 @@ export class BidNewApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  bidNewSign$Response(params?: BidNewSign$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSignBidResponse>> {
+  bidNewSign$Response(params?: BidNewSign$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSignBidResponseAltDto>> {
     return bidNewSign(this.http, this.rootUrl, params, context);
   }
 
@@ -43,14 +43,14 @@ export class BidNewApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  bidNewSign(params?: BidNewSign$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSignBidResponse> {
+  bidNewSign(params?: BidNewSign$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSignBidResponseAltDto> {
     return this.bidNewSign$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfSignBidResponse>): ApiMarketJsonResultOfSignBidResponse => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfSignBidResponseAltDto>): ApiMarketJsonResultOfSignBidResponseAltDto => r.body)
     );
   }
 
   /** Path part for operation `bidNewCreate()` */
-  static readonly BidNewCreatePath = '/bla-bla-vla/bid-new';
+  static readonly BidNewCreatePath = '/market/api/v1/bid-new';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -75,7 +75,7 @@ export class BidNewApiService extends BaseService {
   }
 
   /** Path part for operation `bidNewGetBids()` */
-  static readonly BidNewGetBidsPath = '/bla-bla-vla/bid-new/trade/{tradeGuid}';
+  static readonly BidNewGetBidsPath = '/market/api/v1/bid-new/trade/{tradeGuid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -83,7 +83,7 @@ export class BidNewApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  bidNewGetBids$Response(params: BidNewGetBids$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOf>> {
+  bidNewGetBids$Response(params: BidNewGetBids$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOfAltDto>> {
     return bidNewGetBids(this.http, this.rootUrl, params, context);
   }
 
@@ -93,9 +93,9 @@ export class BidNewApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  bidNewGetBids(params: BidNewGetBids$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOf> {
+  bidNewGetBids(params: BidNewGetBids$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOfAltDto> {
     return this.bidNewGetBids$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOf>): ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOf => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOfAltDto>): ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOfAltDto => r.body)
     );
   }
 

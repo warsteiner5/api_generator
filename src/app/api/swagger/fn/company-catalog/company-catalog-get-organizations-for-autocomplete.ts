@@ -29,4 +29,4 @@ export function companyCatalogGetOrganizationsForAutocomplete(http: HttpClient, 
   );
 }
 
-companyCatalogGetOrganizationsForAutocomplete.PATH = '/bla-bla-vla/companies/autocomplete';
+companyCatalogGetOrganizationsForAutocomplete.PATH = '/market/api/v1/companies/autocomplete';

@@ -26,4 +26,4 @@ export function complaintComplaintTypes(http: HttpClient, rootUrl: string, param
   );
 }
 
-complaintComplaintTypes.PATH = '/bla-bla-vla/complaint/types';
+complaintComplaintTypes.PATH = '/market/api/v1/complaint/types';

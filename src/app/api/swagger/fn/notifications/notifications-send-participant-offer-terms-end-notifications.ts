@@ -26,4 +26,4 @@ export function notificationsSendParticipantOfferTermsEndNotifications(http: Htt
   );
 }
 
-notificationsSendParticipantOfferTermsEndNotifications.PATH = '/bla-bla-vla/notifications/sendOfferEndTermsNotifications';
+notificationsSendParticipantOfferTermsEndNotifications.PATH = '/market/api/v1/notifications/sendOfferEndTermsNotifications';

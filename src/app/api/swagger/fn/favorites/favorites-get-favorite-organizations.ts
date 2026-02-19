@@ -29,4 +29,4 @@ export function favoritesGetFavoriteOrganizations(http: HttpClient, rootUrl: str
   );
 }
 
-favoritesGetFavoriteOrganizations.PATH = '/bla-bla-vla/favorite/organizations';
+favoritesGetFavoriteOrganizations.PATH = '/market/api/v1/favorite/organizations';

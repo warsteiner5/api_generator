@@ -33,4 +33,4 @@ export function dealsGetCustomerSignInfo(http: HttpClient, rootUrl: string, para
   );
 }
 
-dealsGetCustomerSignInfo.PATH = '/bla-bla-vla/deals/customer_sign_info';
+dealsGetCustomerSignInfo.PATH = '/market/api/v1/deals/customer_sign_info';

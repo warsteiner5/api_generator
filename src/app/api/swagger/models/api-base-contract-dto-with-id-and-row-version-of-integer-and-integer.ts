@@ -1,6 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
-export interface ApiBaseContractDtoWithIdAndRowVersionOfIntegerAndIntegerAltDto {
+export interface ApiBaseContractDtoWithIdAndRowVersionOfIntegerAndInteger {
   Id?: number;
   RowVersion?: number;
 }

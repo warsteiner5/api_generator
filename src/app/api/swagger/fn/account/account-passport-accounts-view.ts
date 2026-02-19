@@ -27,4 +27,4 @@ export function accountPassportAccountsView(http: HttpClient, rootUrl: string, p
   );
 }
 
-accountPassportAccountsView.PATH = '/bla-bla-vla/Account/PassportAccountsView';
+accountPassportAccountsView.PATH = '/api/Account/PassportAccountsView';

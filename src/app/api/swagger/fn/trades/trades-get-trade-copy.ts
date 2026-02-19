@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfTradePublishResult } from '../../models/api-market-json-result-of-trade-publish-result';
+import { ApiMarketJsonResultOfTradePublishResultAltDto } from '../../models/api-market-json-result-of-trade-publish-result';
 
 export interface TradesGetTradeCopy$Params {
   id: number;
 }
 
-export function tradesGetTradeCopy(http: HttpClient, rootUrl: string, params: TradesGetTradeCopy$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>> {
+export function tradesGetTradeCopy(http: HttpClient, rootUrl: string, params: TradesGetTradeCopy$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesGetTradeCopy.PATH, 'get');
   if (params) {
     rb.path('id', params.id, {});
@@ -23,9 +23,9 @@ export function tradesGetTradeCopy(http: HttpClient, rootUrl: string, params: Tr
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>;
     })
   );
 }
 
-tradesGetTradeCopy.PATH = '/bla-bla-vla/trades/{id}/copy';
+tradesGetTradeCopy.PATH = '/market/api/v1/trades/{id}/copy';

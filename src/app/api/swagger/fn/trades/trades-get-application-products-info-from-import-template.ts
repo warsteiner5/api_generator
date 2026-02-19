@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfImportApplicationProductsResponse } from '../../models/api-market-json-result-of-import-application-products-response';
+import { ApiMarketJsonResultOfImportApplicationProductsResponseAltDto } from '../../models/api-market-json-result-of-import-application-products-response';
 
 export interface TradesGetApplicationProductsInfoFromImportTemplate$Params {
   tradeId: number;
   fileGuid: string;
 }
 
-export function tradesGetApplicationProductsInfoFromImportTemplate(http: HttpClient, rootUrl: string, params: TradesGetApplicationProductsInfoFromImportTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfImportApplicationProductsResponse>> {
+export function tradesGetApplicationProductsInfoFromImportTemplate(http: HttpClient, rootUrl: string, params: TradesGetApplicationProductsInfoFromImportTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfImportApplicationProductsResponseAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesGetApplicationProductsInfoFromImportTemplate.PATH, 'get');
   if (params) {
     rb.path('tradeId', params.tradeId, {});
@@ -25,9 +25,9 @@ export function tradesGetApplicationProductsInfoFromImportTemplate(http: HttpCli
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfImportApplicationProductsResponse>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfImportApplicationProductsResponseAltDto>;
     })
   );
 }
 
-tradesGetApplicationProductsInfoFromImportTemplate.PATH = '/bla-bla-vla/trades/{tradeId}/application/products/import/{fileGuid}';
+tradesGetApplicationProductsInfoFromImportTemplate.PATH = '/market/api/v1/trades/{tradeId}/application/products/import/{fileGuid}';

@@ -27,4 +27,4 @@ export function tradesGetCharacteristicsByTradeIdAsFile(http: HttpClient, rootUr
   );
 }
 
-tradesGetCharacteristicsByTradeIdAsFile.PATH = '/bla-bla-vla/trades/{id}/characteristics/file';
+tradesGetCharacteristicsByTradeIdAsFile.PATH = '/market/api/v1/trades/{id}/characteristics/file';

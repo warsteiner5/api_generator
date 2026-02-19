@@ -28,4 +28,4 @@ export function okGetBriefList(http: HttpClient, rootUrl: string, params?: OkGet
   );
 }
 
-okGetBriefList.PATH = '/bla-bla-vla/okservice/brieflist';
+okGetBriefList.PATH = '/market/api/v1/okservice/brieflist';

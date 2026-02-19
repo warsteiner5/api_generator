@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfListOfOkpd2Value } from '../../models/api-market-json-result-of-list-of-okpd-2-value';
+import { ApiMarketJsonResultOfListOfOkpd2ValueAltDto } from '../../models/api-market-json-result-of-list-of-okpd-2-value';
 import { ApiOkpd2FilterAltDto } from '../../models/api-okpd-2-filter';
 
 export interface DictionariesGetOkdp2AutocompleteListPost$Params {
       body?: ApiOkpd2FilterAltDto | null
 }
 
-export function dictionariesGetOkdp2AutocompleteListPost(http: HttpClient, rootUrl: string, params?: DictionariesGetOkdp2AutocompleteListPost$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfOkpd2Value>> {
+export function dictionariesGetOkdp2AutocompleteListPost(http: HttpClient, rootUrl: string, params?: DictionariesGetOkdp2AutocompleteListPost$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfOkpd2ValueAltDto>> {
   const rb = new RequestBuilder(rootUrl, dictionariesGetOkdp2AutocompleteListPost.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function dictionariesGetOkdp2AutocompleteListPost(http: HttpClient, rootU
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfListOfOkpd2Value>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfListOfOkpd2ValueAltDto>;
     })
   );
 }
 
-dictionariesGetOkdp2AutocompleteListPost.PATH = '/bla-bla-vla/dictionaries/okpd2/autocomplete';
+dictionariesGetOkdp2AutocompleteListPost.PATH = '/market/api/v1/dictionaries/okpd2/autocomplete';

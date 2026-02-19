@@ -31,4 +31,4 @@ export function cartAddCartItem(http: HttpClient, rootUrl: string, params?: Cart
   );
 }
 
-cartAddCartItem.PATH = '/bla-bla-vla/cart-items';
+cartAddCartItem.PATH = '/market/api/v1/cart-items';

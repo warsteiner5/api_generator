@@ -7,13 +7,13 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiExternalOrderRequestAltDto } from '../../models/api-external-order-request';
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
 
 export interface OrdersCreateByExternalSystem$Params {
       body?: ApiExternalOrderRequestAltDto | null
 }
 
-export function ordersCreateByExternalSystem(http: HttpClient, rootUrl: string, params?: OrdersCreateByExternalSystem$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function ordersCreateByExternalSystem(http: HttpClient, rootUrl: string, params?: OrdersCreateByExternalSystem$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, ordersCreateByExternalSystem.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function ordersCreateByExternalSystem(http: HttpClient, rootUrl: string, 
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-ordersCreateByExternalSystem.PATH = '/bla-bla-vla/orders/create/external';
+ordersCreateByExternalSystem.PATH = '/market/api/v1/orders/create/external';

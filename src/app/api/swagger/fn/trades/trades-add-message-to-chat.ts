@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfLong } from '../../models/api-market-json-result-of-long';
+import { ApiMarketJsonResultOfLongAltDto } from '../../models/api-market-json-result-of-long';
 import { ApiMessageAltDto } from '../../models/api-message';
 
 export interface TradesAddMessageToChat$Params {
@@ -15,7 +15,7 @@ export interface TradesAddMessageToChat$Params {
       body?: ApiMessageAltDto | null
 }
 
-export function tradesAddMessageToChat(http: HttpClient, rootUrl: string, params: TradesAddMessageToChat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLong>> {
+export function tradesAddMessageToChat(http: HttpClient, rootUrl: string, params: TradesAddMessageToChat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesAddMessageToChat.PATH, 'post');
   if (params) {
     rb.path('id', params.id, {});
@@ -28,9 +28,9 @@ export function tradesAddMessageToChat(http: HttpClient, rootUrl: string, params
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfLong>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>;
     })
   );
 }
 
-tradesAddMessageToChat.PATH = '/bla-bla-vla/trades/{id}/chat/add/{chatOwnerId}';
+tradesAddMessageToChat.PATH = '/market/api/v1/trades/{id}/chat/add/{chatOwnerId}';

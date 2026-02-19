@@ -28,4 +28,4 @@ export function additionalAgreementCreate(http: HttpClient, rootUrl: string, par
   );
 }
 
-additionalAgreementCreate.PATH = '/bla-bla-vla/AdditionalAgreement/Create';
+additionalAgreementCreate.PATH = '/api/AdditionalAgreement/Create';

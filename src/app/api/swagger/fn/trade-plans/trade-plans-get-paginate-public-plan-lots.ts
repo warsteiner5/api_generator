@@ -29,4 +29,4 @@ export function tradePlansGetPaginatePublicPlanLots(http: HttpClient, rootUrl: s
   );
 }
 
-tradePlansGetPaginatePublicPlanLots.PATH = '/bla-bla-vla/plans/publicLots';
+tradePlansGetPaginatePublicPlanLots.PATH = '/market/api/v1/plans/publicLots';

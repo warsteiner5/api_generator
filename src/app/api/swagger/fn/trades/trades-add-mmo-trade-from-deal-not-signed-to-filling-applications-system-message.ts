@@ -27,4 +27,4 @@ export function tradesAddMmoTradeFromDealNotSignedToFillingApplicationsSystemMes
   );
 }
 
-tradesAddMmoTradeFromDealNotSignedToFillingApplicationsSystemMessage.PATH = '/bla-bla-vla/trades/{tradeId}/chat/add/MmoTradeFromDealNotSignedToFillingApplicationsSystemMessage';
+tradesAddMmoTradeFromDealNotSignedToFillingApplicationsSystemMessage.PATH = '/market/api/v1/trades/{tradeId}/chat/add/MmoTradeFromDealNotSignedToFillingApplicationsSystemMessage';

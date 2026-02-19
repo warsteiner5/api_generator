@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfString } from '../../models/api-market-json-result-of-string';
+import { ApiMarketJsonResultOfStringAltDto } from '../../models/api-market-json-result-of-string';
 
 export interface TradeProtocolsGetAutoProtocol$Params {
   tradeId: number;
 }
 
-export function tradeProtocolsGetAutoProtocol(http: HttpClient, rootUrl: string, params: TradeProtocolsGetAutoProtocol$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+export function tradeProtocolsGetAutoProtocol(http: HttpClient, rootUrl: string, params: TradeProtocolsGetAutoProtocol$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradeProtocolsGetAutoProtocol.PATH, 'get');
   if (params) {
     rb.path('tradeId', params.tradeId, {});
@@ -23,9 +23,9 @@ export function tradeProtocolsGetAutoProtocol(http: HttpClient, rootUrl: string,
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfString>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>;
     })
   );
 }
 
-tradeProtocolsGetAutoProtocol.PATH = '/bla-bla-vla/protocols/trades/{tradeId}/auto';
+tradeProtocolsGetAutoProtocol.PATH = '/market/api/v1/protocols/trades/{tradeId}/auto';

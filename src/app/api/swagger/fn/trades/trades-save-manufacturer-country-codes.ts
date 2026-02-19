@@ -28,4 +28,4 @@ export function tradesSaveManufacturerCountryCodes(http: HttpClient, rootUrl: st
   );
 }
 
-tradesSaveManufacturerCountryCodes.PATH = '/bla-bla-vla/trades/application/SaveCountryCodes';
+tradesSaveManufacturerCountryCodes.PATH = '/market/api/v1/trades/application/SaveCountryCodes';

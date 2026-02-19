@@ -27,4 +27,4 @@ export function applicationRevoke(http: HttpClient, rootUrl: string, params: App
   );
 }
 
-applicationRevoke.PATH = '/bla-bla-vla/Applications/{applicationId}/Revoke';
+applicationRevoke.PATH = '/api/Applications/{applicationId}/Revoke';

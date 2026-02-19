@@ -29,4 +29,4 @@ export function managerAgentGetOrganizationsForAutocomplete(http: HttpClient, ro
   );
 }
 
-managerAgentGetOrganizationsForAutocomplete.PATH = '/bla-bla-vla/managerAgent/possible-organizations/autocomplete';
+managerAgentGetOrganizationsForAutocomplete.PATH = '/market/api/v1/managerAgent/possible-organizations/autocomplete';

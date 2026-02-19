@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfPriceReductionResponse } from '../../models/api-market-json-result-of-price-reduction-response';
+import { ApiMarketJsonResultOfPriceReductionResponseAltDto } from '../../models/api-market-json-result-of-price-reduction-response';
 import { ApiPriceReductionRequestAltDto } from '../../models/api-price-reduction-request';
 
 export interface TradesCalculatePriceReduction$Params {
       body?: ApiPriceReductionRequestAltDto | null
 }
 
-export function tradesCalculatePriceReduction(http: HttpClient, rootUrl: string, params?: TradesCalculatePriceReduction$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPriceReductionResponse>> {
+export function tradesCalculatePriceReduction(http: HttpClient, rootUrl: string, params?: TradesCalculatePriceReduction$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPriceReductionResponseAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesCalculatePriceReduction.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function tradesCalculatePriceReduction(http: HttpClient, rootUrl: string,
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfPriceReductionResponse>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfPriceReductionResponseAltDto>;
     })
   );
 }
 
-tradesCalculatePriceReduction.PATH = '/bla-bla-vla/trades/price/reduction/calculate';
+tradesCalculatePriceReduction.PATH = '/market/api/v1/trades/price/reduction/calculate';

@@ -25,7 +25,7 @@ export class BannersApiService extends BaseService {
   }
 
   /** Path part for operation `bannersGetUserBanners()` */
-  static readonly BannersGetUserBannersPath = '/bla-bla-vla/banners';
+  static readonly BannersGetUserBannersPath = '/market/api/v1/banners';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -50,7 +50,7 @@ export class BannersApiService extends BaseService {
   }
 
   /** Path part for operation `bannersHideBannerPermanently()` */
-  static readonly BannersHideBannerPermanentlyPath = '/bla-bla-vla/banners/{bannerKey}/hide';
+  static readonly BannersHideBannerPermanentlyPath = '/market/api/v1/banners/{bannerKey}/hide';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -75,7 +75,7 @@ export class BannersApiService extends BaseService {
   }
 
   /** Path part for operation `bannersGetBannerSettings()` */
-  static readonly BannersGetBannerSettingsPath = '/bla-bla-vla/banners/settings';
+  static readonly BannersGetBannerSettingsPath = '/market/api/v1/banners/settings';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

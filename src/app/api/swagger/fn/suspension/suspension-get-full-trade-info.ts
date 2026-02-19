@@ -28,4 +28,4 @@ export function suspensionGetFullTradeInfo(http: HttpClient, rootUrl: string, pa
   );
 }
 
-suspensionGetFullTradeInfo.PATH = '/bla-bla-vla/suspension/trade/{tradeId}';
+suspensionGetFullTradeInfo.PATH = '/market/api/v1/suspension/trade/{tradeId}';

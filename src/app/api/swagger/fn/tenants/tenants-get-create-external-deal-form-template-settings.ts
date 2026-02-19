@@ -26,4 +26,4 @@ export function tenantsGetCreateExternalDealFormTemplateSettings(http: HttpClien
   );
 }
 
-tenantsGetCreateExternalDealFormTemplateSettings.PATH = '/bla-bla-vla/tenants/external-deal-template';
+tenantsGetCreateExternalDealFormTemplateSettings.PATH = '/market/api/v1/tenants/external-deal-template';

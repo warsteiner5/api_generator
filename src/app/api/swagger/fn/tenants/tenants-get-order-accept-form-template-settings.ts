@@ -26,4 +26,4 @@ export function tenantsGetOrderAcceptFormTemplateSettings(http: HttpClient, root
   );
 }
 
-tenantsGetOrderAcceptFormTemplateSettings.PATH = '/bla-bla-vla/tenants/order-accept-template';
+tenantsGetOrderAcceptFormTemplateSettings.PATH = '/market/api/v1/tenants/order-accept-template';

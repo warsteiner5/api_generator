@@ -13,8 +13,8 @@ import { finalProposalGetFinalProposal } from '../fn/final-proposal/final-propos
 import { FinalProposalGetFinalProposal$Params } from '../fn/final-proposal/final-proposal-get-final-proposal';
 import { finalProposalSaveFinalProposal } from '../fn/final-proposal/final-proposal-save-final-proposal';
 import { FinalProposalSaveFinalProposal$Params } from '../fn/final-proposal/final-proposal-save-final-proposal';
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
-import { ApiMarketJsonResultOfQuotationSessionFinalProposal } from '../models/api-market-json-result-of-quotation-session-final-proposal';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfQuotationSessionFinalProposalAltDto } from '../models/api-market-json-result-of-quotation-session-final-proposal';
 
 @Injectable({ providedIn: 'root' })
 export class FinalProposalApiService extends BaseService {
@@ -23,7 +23,7 @@ export class FinalProposalApiService extends BaseService {
   }
 
   /** Path part for operation `finalProposalGetFinalProposal()` */
-  static readonly FinalProposalGetFinalProposalPath = '/bla-bla-vla/final-proposal/{tradeId}';
+  static readonly FinalProposalGetFinalProposalPath = '/market/api/v1/final-proposal/{tradeId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -31,7 +31,7 @@ export class FinalProposalApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  finalProposalGetFinalProposal$Response(params: FinalProposalGetFinalProposal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionFinalProposal>> {
+  finalProposalGetFinalProposal$Response(params: FinalProposalGetFinalProposal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionFinalProposalAltDto>> {
     return finalProposalGetFinalProposal(this.http, this.rootUrl, params, context);
   }
 
@@ -41,14 +41,14 @@ export class FinalProposalApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  finalProposalGetFinalProposal(params: FinalProposalGetFinalProposal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfQuotationSessionFinalProposal> {
+  finalProposalGetFinalProposal(params: FinalProposalGetFinalProposal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfQuotationSessionFinalProposalAltDto> {
     return this.finalProposalGetFinalProposal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionFinalProposal>): ApiMarketJsonResultOfQuotationSessionFinalProposal => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionFinalProposalAltDto>): ApiMarketJsonResultOfQuotationSessionFinalProposalAltDto => r.body)
     );
   }
 
   /** Path part for operation `finalProposalSaveFinalProposal()` */
-  static readonly FinalProposalSaveFinalProposalPath = '/bla-bla-vla/final-proposal';
+  static readonly FinalProposalSaveFinalProposalPath = '/market/api/v1/final-proposal';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -56,7 +56,7 @@ export class FinalProposalApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  finalProposalSaveFinalProposal$Response(params?: FinalProposalSaveFinalProposal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  finalProposalSaveFinalProposal$Response(params?: FinalProposalSaveFinalProposal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return finalProposalSaveFinalProposal(this.http, this.rootUrl, params, context);
   }
 
@@ -66,9 +66,9 @@ export class FinalProposalApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  finalProposalSaveFinalProposal(params?: FinalProposalSaveFinalProposal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  finalProposalSaveFinalProposal(params?: FinalProposalSaveFinalProposal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.finalProposalSaveFinalProposal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 

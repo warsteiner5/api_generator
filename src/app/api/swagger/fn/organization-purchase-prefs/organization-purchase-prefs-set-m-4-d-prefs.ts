@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 import { ApiOrganizationPurchaseSettingsPoaDto } from '../../models/api-organization-purchase-settings-poa-dto';
 
 export interface OrganizationPurchasePrefsSetM4DPrefs$Params {
       body?: ApiOrganizationPurchaseSettingsPoaDto | null
 }
 
-export function organizationPurchasePrefsSetM4DPrefs(http: HttpClient, rootUrl: string, params?: OrganizationPurchasePrefsSetM4DPrefs$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function organizationPurchasePrefsSetM4DPrefs(http: HttpClient, rootUrl: string, params?: OrganizationPurchasePrefsSetM4DPrefs$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, organizationPurchasePrefsSetM4DPrefs.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function organizationPurchasePrefsSetM4DPrefs(http: HttpClient, rootUrl: 
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-organizationPurchasePrefsSetM4DPrefs.PATH = '/bla-bla-vla/organization/purchase-settings/my/power-of-attorney';
+organizationPurchasePrefsSetM4DPrefs.PATH = '/market/api/v1/organization/purchase-settings/my/power-of-attorney';

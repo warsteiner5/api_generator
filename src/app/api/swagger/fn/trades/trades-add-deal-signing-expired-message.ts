@@ -28,4 +28,4 @@ export function tradesAddDealSigningExpiredMessage(http: HttpClient, rootUrl: st
   );
 }
 
-tradesAddDealSigningExpiredMessage.PATH = '/bla-bla-vla/trades/chat/add-deal-signing-expired-message';
+tradesAddDealSigningExpiredMessage.PATH = '/market/api/v1/trades/chat/add-deal-signing-expired-message';

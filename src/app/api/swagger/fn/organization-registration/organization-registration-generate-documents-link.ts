@@ -29,4 +29,4 @@ export function organizationRegistrationGenerateDocumentsLink(http: HttpClient, 
   );
 }
 
-organizationRegistrationGenerateDocumentsLink.PATH = '/bla-bla-vla/organization/registration/agreement/documents';
+organizationRegistrationGenerateDocumentsLink.PATH = '/market/api/v1/organization/registration/agreement/documents';

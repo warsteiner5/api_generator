@@ -1,3 +1,3 @@
-import { EntityDtoOfIntegerAlt } from './entity-dto-of-integer-alt.interface';
+import { EntityDtoOfInteger } from './entity-dto-of-integer.interface';
 
-export type CompetitiveListItemReject = EntityDtoOfIntegerAlt & { 'CompetitiveListItemId'?: number; 'ExplainMessage'?: string | null; 'FileGuid'?: string | null; };
+export type CompetitiveListItemReject = EntityDtoOfInteger & { 'CompetitiveListItemId'?: number; 'ExplainMessage'?: string | null; 'FileGuid'?: string | null; };

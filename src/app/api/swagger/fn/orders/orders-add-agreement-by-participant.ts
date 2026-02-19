@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
 import { ApiOrderAgreementAltDto } from '../../models/api-order-agreement';
 
 export interface OrdersAddAgreementByParticipant$Params {
@@ -14,7 +14,7 @@ export interface OrdersAddAgreementByParticipant$Params {
       body?: ApiOrderAgreementAltDto | null
 }
 
-export function ordersAddAgreementByParticipant(http: HttpClient, rootUrl: string, params: OrdersAddAgreementByParticipant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function ordersAddAgreementByParticipant(http: HttpClient, rootUrl: string, params: OrdersAddAgreementByParticipant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, ordersAddAgreementByParticipant.PATH, 'post');
   if (params) {
     rb.path('id', params.id, {});
@@ -26,9 +26,9 @@ export function ordersAddAgreementByParticipant(http: HttpClient, rootUrl: strin
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-ordersAddAgreementByParticipant.PATH = '/bla-bla-vla/orders/participants/{id}/agreement';
+ordersAddAgreementByParticipant.PATH = '/market/api/v1/orders/participants/{id}/agreement';

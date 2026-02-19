@@ -25,4 +25,4 @@ export function disseminationAgreementExist(http: HttpClient, rootUrl: string, p
   );
 }
 
-disseminationAgreementExist.PATH = '/bla-bla-vla/DisseminationAgreement/Exist';
+disseminationAgreementExist.PATH = '/api/DisseminationAgreement/Exist';

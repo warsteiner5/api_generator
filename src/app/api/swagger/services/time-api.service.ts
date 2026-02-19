@@ -9,7 +9,7 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfDateTime } from '../models/api-market-json-result-of-date-time';
+import { ApiMarketJsonResultOfDateTimeAltDto } from '../models/api-market-json-result-of-date-time';
 import { timeGetServerTimeUtc } from '../fn/time/time-get-server-time-utc';
 import { TimeGetServerTimeUtc$Params } from '../fn/time/time-get-server-time-utc';
 
@@ -20,7 +20,7 @@ export class TimeApiService extends BaseService {
   }
 
   /** Path part for operation `timeGetServerTimeUtc()` */
-  static readonly TimeGetServerTimeUtcPath = '/bla-bla-vla/time/now';
+  static readonly TimeGetServerTimeUtcPath = '/market/api/v1/time/now';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -28,7 +28,7 @@ export class TimeApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  timeGetServerTimeUtc$Response(params?: TimeGetServerTimeUtc$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDateTime>> {
+  timeGetServerTimeUtc$Response(params?: TimeGetServerTimeUtc$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDateTimeAltDto>> {
     return timeGetServerTimeUtc(this.http, this.rootUrl, params, context);
   }
 
@@ -38,9 +38,9 @@ export class TimeApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  timeGetServerTimeUtc(params?: TimeGetServerTimeUtc$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDateTime> {
+  timeGetServerTimeUtc(params?: TimeGetServerTimeUtc$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDateTimeAltDto> {
     return this.timeGetServerTimeUtc$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDateTime>): ApiMarketJsonResultOfDateTime => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDateTimeAltDto>): ApiMarketJsonResultOfDateTimeAltDto => r.body)
     );
   }
 

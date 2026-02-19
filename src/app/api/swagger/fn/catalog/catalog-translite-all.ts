@@ -26,4 +26,4 @@ export function catalogTransliteAll(http: HttpClient, rootUrl: string, params?: 
   );
 }
 
-catalogTransliteAll.PATH = '/bla-bla-vla/catalog/translate/all';
+catalogTransliteAll.PATH = '/market/api/v1/catalog/translate/all';

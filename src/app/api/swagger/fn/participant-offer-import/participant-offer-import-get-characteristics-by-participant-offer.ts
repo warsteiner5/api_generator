@@ -28,4 +28,4 @@ export function participantOfferImportGetCharacteristicsByParticipantOffer(http:
   );
 }
 
-participantOfferImportGetCharacteristicsByParticipantOffer.PATH = '/bla-bla-vla/offerimport/characteristics/{id}';
+participantOfferImportGetCharacteristicsByParticipantOffer.PATH = '/market/api/v1/offerimport/characteristics/{id}';

@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
-import { ApiTradeDtoWithSignatureAltDto } from '../../models/api-trade-dto-with-signature';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
+import { ApiTradeDtoWithSignature } from '../../models/api-trade-dto-with-signature';
 
 export interface TradesEditPublishedFromEis$Params {
-      body?: ApiTradeDtoWithSignatureAltDto | null
+      body?: ApiTradeDtoWithSignature | null
 }
 
-export function tradesEditPublishedFromEis(http: HttpClient, rootUrl: string, params?: TradesEditPublishedFromEis$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function tradesEditPublishedFromEis(http: HttpClient, rootUrl: string, params?: TradesEditPublishedFromEis$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesEditPublishedFromEis.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function tradesEditPublishedFromEis(http: HttpClient, rootUrl: string, pa
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-tradesEditPublishedFromEis.PATH = '/bla-bla-vla/trades/eis/editpublished';
+tradesEditPublishedFromEis.PATH = '/market/api/v1/trades/eis/editpublished';

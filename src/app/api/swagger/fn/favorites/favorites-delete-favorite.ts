@@ -33,4 +33,4 @@ export function favoritesDeleteFavorite(http: HttpClient, rootUrl: string, param
   );
 }
 
-favoritesDeleteFavorite.PATH = '/bla-bla-vla/favorite/delete';
+favoritesDeleteFavorite.PATH = '/market/api/v1/favorite/delete';

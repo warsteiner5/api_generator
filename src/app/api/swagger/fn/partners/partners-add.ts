@@ -28,4 +28,4 @@ export function partnersAdd(http: HttpClient, rootUrl: string, params: PartnersA
   );
 }
 
-partnersAdd.PATH = '/bla-bla-vla/organization/partners';
+partnersAdd.PATH = '/market/api/v1/organization/partners';

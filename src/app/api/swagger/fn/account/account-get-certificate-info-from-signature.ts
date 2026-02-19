@@ -28,4 +28,4 @@ export function accountGetCertificateInfoFromSignature(http: HttpClient, rootUrl
   );
 }
 
-accountGetCertificateInfoFromSignature.PATH = '/bla-bla-vla/Account/GetCertificateInfoFromSignature';
+accountGetCertificateInfoFromSignature.PATH = '/api/Account/GetCertificateInfoFromSignature';

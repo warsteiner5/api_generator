@@ -31,7 +31,7 @@ export class FilesApiService extends BaseService {
   }
 
   /** Path part for operation `filesDownload()` */
-  static readonly FilesDownloadPath = '/bla-bla-vla/files/{id}';
+  static readonly FilesDownloadPath = '/market/api/v1/files/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -56,7 +56,7 @@ export class FilesApiService extends BaseService {
   }
 
   /** Path part for operation `filesDownloadExternal()` */
-  static readonly FilesDownloadExternalPath = '/bla-bla-vla/files/downloadExternal';
+  static readonly FilesDownloadExternalPath = '/market/api/v1/files/downloadExternal';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -81,7 +81,7 @@ export class FilesApiService extends BaseService {
   }
 
   /** Path part for operation `filesUpload()` */
-  static readonly FilesUploadPath = '/bla-bla-vla/files';
+  static readonly FilesUploadPath = '/market/api/v1/files';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -106,7 +106,7 @@ export class FilesApiService extends BaseService {
   }
 
   /** Path part for operation `filesByUrl()` */
-  static readonly FilesByUrlPath = '/bla-bla-vla/files/uploadByUrl';
+  static readonly FilesByUrlPath = '/market/api/v1/files/uploadByUrl';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -131,7 +131,7 @@ export class FilesApiService extends BaseService {
   }
 
   /** Path part for operation `filesGetInfoForSign()` */
-  static readonly FilesGetInfoForSignPath = '/bla-bla-vla/files/info-for-sign';
+  static readonly FilesGetInfoForSignPath = '/market/api/v1/files/info-for-sign';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -156,7 +156,7 @@ export class FilesApiService extends BaseService {
   }
 
   /** Path part for operation `filesGetInfosForSign()` */
-  static readonly FilesGetInfosForSignPath = '/bla-bla-vla/files/infos-for-sign';
+  static readonly FilesGetInfosForSignPath = '/market/api/v1/files/infos-for-sign';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

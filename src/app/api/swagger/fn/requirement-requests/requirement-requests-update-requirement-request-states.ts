@@ -25,4 +25,4 @@ export function requirementRequestsUpdateRequirementRequestStates(http: HttpClie
   );
 }
 
-requirementRequestsUpdateRequirementRequestStates.PATH = '/bla-bla-vla/RequirementRequests/UpdateRequirementRequestStates';
+requirementRequestsUpdateRequirementRequestStates.PATH = '/market/api/v1/RequirementRequests/UpdateRequirementRequestStates';

@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 import { ApiUpdateSignedEmployeeDto } from '../../models/api-update-signed-employee-dto';
 
 export interface EmployeesUpdateSignedEmployee$Params {
@@ -14,7 +14,7 @@ export interface EmployeesUpdateSignedEmployee$Params {
       body?: ApiUpdateSignedEmployeeDto | null
 }
 
-export function employeesUpdateSignedEmployee(http: HttpClient, rootUrl: string, params: EmployeesUpdateSignedEmployee$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function employeesUpdateSignedEmployee(http: HttpClient, rootUrl: string, params: EmployeesUpdateSignedEmployee$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, employeesUpdateSignedEmployee.PATH, 'post');
   if (params) {
     rb.path('id', params.id, {});
@@ -26,9 +26,9 @@ export function employeesUpdateSignedEmployee(http: HttpClient, rootUrl: string,
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-employeesUpdateSignedEmployee.PATH = '/bla-bla-vla/employees/{id}/signed';
+employeesUpdateSignedEmployee.PATH = '/market/api/v1/employees/{id}/signed';

@@ -34,4 +34,4 @@ export function dashboardGetAggregationInfoByMonth(http: HttpClient, rootUrl: st
   );
 }
 
-dashboardGetAggregationInfoByMonth.PATH = '/bla-bla-vla/dashboard/agInfo/months/{guid}/{year}/{fromMonth}/{toMonth}';
+dashboardGetAggregationInfoByMonth.PATH = '/market/api/v1/dashboard/agInfo/months/{guid}/{year}/{fromMonth}/{toMonth}';

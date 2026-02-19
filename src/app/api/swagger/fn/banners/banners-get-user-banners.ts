@@ -26,4 +26,4 @@ export function bannersGetUserBanners(http: HttpClient, rootUrl: string, params?
   );
 }
 
-bannersGetUserBanners.PATH = '/bla-bla-vla/banners';
+bannersGetUserBanners.PATH = '/market/api/v1/banners';

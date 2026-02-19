@@ -26,4 +26,4 @@ export function employeesSelf(http: HttpClient, rootUrl: string, params?: Employ
   );
 }
 
-employeesSelf.PATH = '/bla-bla-vla/employees/self';
+employeesSelf.PATH = '/market/api/v1/employees/self';

@@ -30,4 +30,4 @@ export function dictionaryGetAllByParentCodeRecursive(http: HttpClient, rootUrl:
   );
 }
 
-dictionaryGetAllByParentCodeRecursive.PATH = '/bla-bla-vla/Dictionary/GetAllByParentCodeRecursive';
+dictionaryGetAllByParentCodeRecursive.PATH = '/api/Dictionary/GetAllByParentCodeRecursive';

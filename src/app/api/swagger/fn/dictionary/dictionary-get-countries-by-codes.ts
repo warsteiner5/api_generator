@@ -27,4 +27,4 @@ export function dictionaryGetCountriesByCodes(http: HttpClient, rootUrl: string,
   );
 }
 
-dictionaryGetCountriesByCodes.PATH = '/bla-bla-vla/Dictionary/GetCountriesByCodes';
+dictionaryGetCountriesByCodes.PATH = '/api/Dictionary/GetCountriesByCodes';

@@ -20,7 +20,7 @@ export class SuspensionApiService extends BaseService {
   }
 
   /** Path part for operation `suspensionGetFullTradeInfo()` */
-  static readonly SuspensionGetFullTradeInfoPath = '/bla-bla-vla/suspension/trade/{tradeId}';
+  static readonly SuspensionGetFullTradeInfoPath = '/market/api/v1/suspension/trade/{tradeId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

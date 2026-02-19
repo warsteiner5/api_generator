@@ -44,14 +44,14 @@ import { AccountsGetTransaction$Params } from '../fn/accounts/accounts-get-trans
 import { accountsGetTransactionsByAccount } from '../fn/accounts/accounts-get-transactions-by-account';
 import { AccountsGetTransactionsByAccount$Params } from '../fn/accounts/accounts-get-transactions-by-account';
 import { ApiMarketJsonResultOfBankingDetailsDto } from '../models/api-market-json-result-of-banking-details-dto';
-import { ApiMarketJsonResultOfDecimal } from '../models/api-market-json-result-of-decimal';
-import { ApiMarketJsonResultOfExternalUserInfo } from '../models/api-market-json-result-of-external-user-info';
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfDecimalAltDto } from '../models/api-market-json-result-of-decimal';
+import { ApiMarketJsonResultOfExternalUserInfoAltDto } from '../models/api-market-json-result-of-external-user-info';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
 import { ApiMarketJsonResultOfListOfAccountDto } from '../models/api-market-json-result-of-list-of-account-dto';
 import { ApiMarketJsonResultOfListOfBankingDetailsDto } from '../models/api-market-json-result-of-list-of-banking-details-dto';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfFinDocumentDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-fin-document-dto';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfTransactionShortDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-transaction-short-dto';
-import { ApiMarketJsonResultOfString } from '../models/api-market-json-result-of-string';
+import { ApiMarketJsonResultOfStringAltDto } from '../models/api-market-json-result-of-string';
 import { ApiMarketJsonResultOfTransactionDto } from '../models/api-market-json-result-of-transaction-dto';
 
 @Injectable({ providedIn: 'root' })
@@ -61,7 +61,7 @@ export class AccountsApiService extends BaseService {
   }
 
   /** Path part for operation `accountsGetMyAccounts()` */
-  static readonly AccountsGetMyAccountsPath = '/bla-bla-vla/accounts/my';
+  static readonly AccountsGetMyAccountsPath = '/market/api/v1/accounts/my';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -86,7 +86,7 @@ export class AccountsApiService extends BaseService {
   }
 
   /** Path part for operation `accountsGetLotCommissionByLot()` */
-  static readonly AccountsGetLotCommissionByLotPath = '/bla-bla-vla/accounts/lotcommission/{lotId}';
+  static readonly AccountsGetLotCommissionByLotPath = '/market/api/v1/accounts/lotcommission/{lotId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -94,7 +94,7 @@ export class AccountsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  accountsGetLotCommissionByLot$Response(params: AccountsGetLotCommissionByLot$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimal>> {
+  accountsGetLotCommissionByLot$Response(params: AccountsGetLotCommissionByLot$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>> {
     return accountsGetLotCommissionByLot(this.http, this.rootUrl, params, context);
   }
 
@@ -104,14 +104,14 @@ export class AccountsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  accountsGetLotCommissionByLot(params: AccountsGetLotCommissionByLot$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDecimal> {
+  accountsGetLotCommissionByLot(params: AccountsGetLotCommissionByLot$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDecimalAltDto> {
     return this.accountsGetLotCommissionByLot$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDecimal>): ApiMarketJsonResultOfDecimal => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>): ApiMarketJsonResultOfDecimalAltDto => r.body)
     );
   }
 
   /** Path part for operation `accountsGetLotCommissionByQuotation()` */
-  static readonly AccountsGetLotCommissionByQuotationPath = '/bla-bla-vla/accounts/lotcommission/{lotId}/quotation/{quotation}';
+  static readonly AccountsGetLotCommissionByQuotationPath = '/market/api/v1/accounts/lotcommission/{lotId}/quotation/{quotation}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -119,7 +119,7 @@ export class AccountsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  accountsGetLotCommissionByQuotation$Response(params: AccountsGetLotCommissionByQuotation$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimal>> {
+  accountsGetLotCommissionByQuotation$Response(params: AccountsGetLotCommissionByQuotation$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>> {
     return accountsGetLotCommissionByQuotation(this.http, this.rootUrl, params, context);
   }
 
@@ -129,14 +129,14 @@ export class AccountsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  accountsGetLotCommissionByQuotation(params: AccountsGetLotCommissionByQuotation$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDecimal> {
+  accountsGetLotCommissionByQuotation(params: AccountsGetLotCommissionByQuotation$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDecimalAltDto> {
     return this.accountsGetLotCommissionByQuotation$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDecimal>): ApiMarketJsonResultOfDecimal => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>): ApiMarketJsonResultOfDecimalAltDto => r.body)
     );
   }
 
   /** Path part for operation `accountsGetLotCommissionInternal()` */
-  static readonly AccountsGetLotCommissionInternalPath = '/bla-bla-vla/accounts/lotcommission/{lotId}/organization/{supplierOrganizationId}/quotation/{quotation}';
+  static readonly AccountsGetLotCommissionInternalPath = '/market/api/v1/accounts/lotcommission/{lotId}/organization/{supplierOrganizationId}/quotation/{quotation}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -144,7 +144,7 @@ export class AccountsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  accountsGetLotCommissionInternal$Response(params: AccountsGetLotCommissionInternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimal>> {
+  accountsGetLotCommissionInternal$Response(params: AccountsGetLotCommissionInternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>> {
     return accountsGetLotCommissionInternal(this.http, this.rootUrl, params, context);
   }
 
@@ -154,14 +154,14 @@ export class AccountsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  accountsGetLotCommissionInternal(params: AccountsGetLotCommissionInternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDecimal> {
+  accountsGetLotCommissionInternal(params: AccountsGetLotCommissionInternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDecimalAltDto> {
     return this.accountsGetLotCommissionInternal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDecimal>): ApiMarketJsonResultOfDecimal => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>): ApiMarketJsonResultOfDecimalAltDto => r.body)
     );
   }
 
   /** Path part for operation `accountsGetCommissionByTrade()` */
-  static readonly AccountsGetCommissionByTradePath = '/bla-bla-vla/accounts/commission/{tradeId}';
+  static readonly AccountsGetCommissionByTradePath = '/market/api/v1/accounts/commission/{tradeId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -169,7 +169,7 @@ export class AccountsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  accountsGetCommissionByTrade$Response(params: AccountsGetCommissionByTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimal>> {
+  accountsGetCommissionByTrade$Response(params: AccountsGetCommissionByTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>> {
     return accountsGetCommissionByTrade(this.http, this.rootUrl, params, context);
   }
 
@@ -179,14 +179,14 @@ export class AccountsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  accountsGetCommissionByTrade(params: AccountsGetCommissionByTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDecimal> {
+  accountsGetCommissionByTrade(params: AccountsGetCommissionByTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDecimalAltDto> {
     return this.accountsGetCommissionByTrade$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDecimal>): ApiMarketJsonResultOfDecimal => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>): ApiMarketJsonResultOfDecimalAltDto => r.body)
     );
   }
 
   /** Path part for operation `accountsGetCommissionByQuotation()` */
-  static readonly AccountsGetCommissionByQuotationPath = '/bla-bla-vla/accounts/commission/{tradeId}/quotation/{quotation}';
+  static readonly AccountsGetCommissionByQuotationPath = '/market/api/v1/accounts/commission/{tradeId}/quotation/{quotation}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -194,7 +194,7 @@ export class AccountsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  accountsGetCommissionByQuotation$Response(params: AccountsGetCommissionByQuotation$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimal>> {
+  accountsGetCommissionByQuotation$Response(params: AccountsGetCommissionByQuotation$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>> {
     return accountsGetCommissionByQuotation(this.http, this.rootUrl, params, context);
   }
 
@@ -204,14 +204,14 @@ export class AccountsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  accountsGetCommissionByQuotation(params: AccountsGetCommissionByQuotation$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDecimal> {
+  accountsGetCommissionByQuotation(params: AccountsGetCommissionByQuotation$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDecimalAltDto> {
     return this.accountsGetCommissionByQuotation$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDecimal>): ApiMarketJsonResultOfDecimal => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>): ApiMarketJsonResultOfDecimalAltDto => r.body)
     );
   }
 
   /** Path part for operation `accountsGetTransactionsByAccount()` */
-  static readonly AccountsGetTransactionsByAccountPath = '/bla-bla-vla/accounts/my/{accountNumber}/transactions';
+  static readonly AccountsGetTransactionsByAccountPath = '/market/api/v1/accounts/my/{accountNumber}/transactions';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -236,7 +236,7 @@ export class AccountsApiService extends BaseService {
   }
 
   /** Path part for operation `accountsGetTransaction()` */
-  static readonly AccountsGetTransactionPath = '/bla-bla-vla/accounts/my/{accountNumber}/transactions/{id}';
+  static readonly AccountsGetTransactionPath = '/market/api/v1/accounts/my/{accountNumber}/transactions/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -261,7 +261,7 @@ export class AccountsApiService extends BaseService {
   }
 
   /** Path part for operation `accountsExportTransactionToExcel()` */
-  static readonly AccountsExportTransactionToExcelPath = '/bla-bla-vla/accounts/my/{accountNumber}/transactions/export';
+  static readonly AccountsExportTransactionToExcelPath = '/market/api/v1/accounts/my/{accountNumber}/transactions/export';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -286,7 +286,7 @@ export class AccountsApiService extends BaseService {
   }
 
   /** Path part for operation `accountsGetAccountRefillDocument()` */
-  static readonly AccountsGetAccountRefillDocumentPath = '/bla-bla-vla/accounts/my/{accountNumber}/refill/{sum}';
+  static readonly AccountsGetAccountRefillDocumentPath = '/market/api/v1/accounts/my/{accountNumber}/refill/{sum}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -311,7 +311,7 @@ export class AccountsApiService extends BaseService {
   }
 
   /** Path part for operation `accountsGetAccountRefillHtmlDocument()` */
-  static readonly AccountsGetAccountRefillHtmlDocumentPath = '/bla-bla-vla/accounts/my/{accountNumber}/refill/{sum}/html';
+  static readonly AccountsGetAccountRefillHtmlDocumentPath = '/market/api/v1/accounts/my/{accountNumber}/refill/{sum}/html';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -319,7 +319,7 @@ export class AccountsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  accountsGetAccountRefillHtmlDocument$Response(params: AccountsGetAccountRefillHtmlDocument$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+  accountsGetAccountRefillHtmlDocument$Response(params: AccountsGetAccountRefillHtmlDocument$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
     return accountsGetAccountRefillHtmlDocument(this.http, this.rootUrl, params, context);
   }
 
@@ -329,14 +329,14 @@ export class AccountsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  accountsGetAccountRefillHtmlDocument(params: AccountsGetAccountRefillHtmlDocument$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfString> {
+  accountsGetAccountRefillHtmlDocument(params: AccountsGetAccountRefillHtmlDocument$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfStringAltDto> {
     return this.accountsGetAccountRefillHtmlDocument$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfString>): ApiMarketJsonResultOfString => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>): ApiMarketJsonResultOfStringAltDto => r.body)
     );
   }
 
   /** Path part for operation `accountsGetDocumentsByAccount()` */
-  static readonly AccountsGetDocumentsByAccountPath = '/bla-bla-vla/accounts/my/{accountNumber}/documents';
+  static readonly AccountsGetDocumentsByAccountPath = '/market/api/v1/accounts/my/{accountNumber}/documents';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -361,7 +361,7 @@ export class AccountsApiService extends BaseService {
   }
 
   /** Path part for operation `accountsGetBanksDetailsByAccount()` */
-  static readonly AccountsGetBanksDetailsByAccountPath = '/bla-bla-vla/accounts/my/{accountNumber}/bankDetails';
+  static readonly AccountsGetBanksDetailsByAccountPath = '/market/api/v1/accounts/my/{accountNumber}/bankDetails';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -386,7 +386,7 @@ export class AccountsApiService extends BaseService {
   }
 
   /** Path part for operation `accountsGetBanksDetailsListByAccount()` */
-  static readonly AccountsGetBanksDetailsListByAccountPath = '/bla-bla-vla/accounts/my/{accountNumber}/bankDetailsList';
+  static readonly AccountsGetBanksDetailsListByAccountPath = '/market/api/v1/accounts/my/{accountNumber}/bankDetailsList';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -411,7 +411,7 @@ export class AccountsApiService extends BaseService {
   }
 
   /** Path part for operation `accountsCreateBanksDetailsByAccount()` */
-  static readonly AccountsCreateBanksDetailsByAccountPath = '/bla-bla-vla/accounts/my/{accountNumber}/bankDetails/create';
+  static readonly AccountsCreateBanksDetailsByAccountPath = '/market/api/v1/accounts/my/{accountNumber}/bankDetails/create';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -419,7 +419,7 @@ export class AccountsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  accountsCreateBanksDetailsByAccount$Response(params: AccountsCreateBanksDetailsByAccount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  accountsCreateBanksDetailsByAccount$Response(params: AccountsCreateBanksDetailsByAccount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return accountsCreateBanksDetailsByAccount(this.http, this.rootUrl, params, context);
   }
 
@@ -429,14 +429,14 @@ export class AccountsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  accountsCreateBanksDetailsByAccount(params: AccountsCreateBanksDetailsByAccount$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  accountsCreateBanksDetailsByAccount(params: AccountsCreateBanksDetailsByAccount$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.accountsCreateBanksDetailsByAccount$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `accountsEditBanksDetailsByAccount()` */
-  static readonly AccountsEditBanksDetailsByAccountPath = '/bla-bla-vla/accounts/my/{accountNumber}/bankDetails/{bankingDetailsId}/edit';
+  static readonly AccountsEditBanksDetailsByAccountPath = '/market/api/v1/accounts/my/{accountNumber}/bankDetails/{bankingDetailsId}/edit';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -444,7 +444,7 @@ export class AccountsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  accountsEditBanksDetailsByAccount$Response(params: AccountsEditBanksDetailsByAccount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  accountsEditBanksDetailsByAccount$Response(params: AccountsEditBanksDetailsByAccount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return accountsEditBanksDetailsByAccount(this.http, this.rootUrl, params, context);
   }
 
@@ -454,14 +454,14 @@ export class AccountsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  accountsEditBanksDetailsByAccount(params: AccountsEditBanksDetailsByAccount$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  accountsEditBanksDetailsByAccount(params: AccountsEditBanksDetailsByAccount$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.accountsEditBanksDetailsByAccount$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `accountsGetExternalUserInfo()` */
-  static readonly AccountsGetExternalUserInfoPath = '/bla-bla-vla/accounts/externalUserInfo';
+  static readonly AccountsGetExternalUserInfoPath = '/market/api/v1/accounts/externalUserInfo';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -469,7 +469,7 @@ export class AccountsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  accountsGetExternalUserInfo$Response(params?: AccountsGetExternalUserInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfExternalUserInfo>> {
+  accountsGetExternalUserInfo$Response(params?: AccountsGetExternalUserInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfExternalUserInfoAltDto>> {
     return accountsGetExternalUserInfo(this.http, this.rootUrl, params, context);
   }
 
@@ -479,9 +479,9 @@ export class AccountsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  accountsGetExternalUserInfo(params?: AccountsGetExternalUserInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfExternalUserInfo> {
+  accountsGetExternalUserInfo(params?: AccountsGetExternalUserInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfExternalUserInfoAltDto> {
     return this.accountsGetExternalUserInfo$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfExternalUserInfo>): ApiMarketJsonResultOfExternalUserInfo => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfExternalUserInfoAltDto>): ApiMarketJsonResultOfExternalUserInfoAltDto => r.body)
     );
   }
 

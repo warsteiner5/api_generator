@@ -26,4 +26,4 @@ export function accountsGetMyAccounts(http: HttpClient, rootUrl: string, params?
   );
 }
 
-accountsGetMyAccounts.PATH = '/bla-bla-vla/accounts/my';
+accountsGetMyAccounts.PATH = '/market/api/v1/accounts/my';

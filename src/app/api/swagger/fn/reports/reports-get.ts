@@ -29,4 +29,4 @@ export function reportsGet(http: HttpClient, rootUrl: string, params?: ReportsGe
   );
 }
 
-reportsGet.PATH = '/bla-bla-vla/reports/get';
+reportsGet.PATH = '/market/api/v1/reports/get';

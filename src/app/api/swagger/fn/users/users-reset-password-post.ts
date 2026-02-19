@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfResetPasswordResult } from '../../models/api-market-json-result-of-reset-password-result';
+import { ApiMarketJsonResultOfResetPasswordResultAltDto } from '../../models/api-market-json-result-of-reset-password-result';
 import { ApiResetPasswordModelAltDto } from '../../models/api-reset-password-model';
 
 export interface UsersResetPasswordPost$Params {
       body?: ApiResetPasswordModelAltDto | null
 }
 
-export function usersResetPasswordPost(http: HttpClient, rootUrl: string, params?: UsersResetPasswordPost$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfResetPasswordResult>> {
+export function usersResetPasswordPost(http: HttpClient, rootUrl: string, params?: UsersResetPasswordPost$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfResetPasswordResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, usersResetPasswordPost.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function usersResetPasswordPost(http: HttpClient, rootUrl: string, params
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfResetPasswordResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfResetPasswordResultAltDto>;
     })
   );
 }
 
-usersResetPasswordPost.PATH = '/bla-bla-vla/users/reset-password';
+usersResetPasswordPost.PATH = '/market/api/v1/users/reset-password';

@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface RequirementRequestsReadAllItemsFromId$Params {
   requirementRequestId: number;
@@ -14,7 +14,7 @@ export interface RequirementRequestsReadAllItemsFromId$Params {
   itemId: number;
 }
 
-export function requirementRequestsReadAllItemsFromId(http: HttpClient, rootUrl: string, params: RequirementRequestsReadAllItemsFromId$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function requirementRequestsReadAllItemsFromId(http: HttpClient, rootUrl: string, params: RequirementRequestsReadAllItemsFromId$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, requirementRequestsReadAllItemsFromId.PATH, 'post');
   if (params) {
     rb.path('requirementRequestId', params.requirementRequestId, {});
@@ -27,9 +27,9 @@ export function requirementRequestsReadAllItemsFromId(http: HttpClient, rootUrl:
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-requirementRequestsReadAllItemsFromId.PATH = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{chatId}/read/{itemId}/all';
+requirementRequestsReadAllItemsFromId.PATH = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{chatId}/read/{itemId}/all';

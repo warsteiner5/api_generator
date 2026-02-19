@@ -26,4 +26,4 @@ export function tradeGetCustomerContactInfo(http: HttpClient, rootUrl: string, p
   );
 }
 
-tradeGetCustomerContactInfo.PATH = '/bla-bla-vla/Trade/GetCustomerContactInfo';
+tradeGetCustomerContactInfo.PATH = '/api/Trade/GetCustomerContactInfo';

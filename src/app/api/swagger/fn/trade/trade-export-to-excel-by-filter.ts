@@ -28,4 +28,4 @@ export function tradeExportToExcelByFilter(http: HttpClient, rootUrl: string, pa
   );
 }
 
-tradeExportToExcelByFilter.PATH = '/bla-bla-vla/Trade/ExportToExcelByFilter';
+tradeExportToExcelByFilter.PATH = '/api/Trade/ExportToExcelByFilter';

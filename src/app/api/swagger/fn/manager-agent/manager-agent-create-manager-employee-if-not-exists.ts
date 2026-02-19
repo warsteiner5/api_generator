@@ -27,4 +27,4 @@ export function managerAgentCreateManagerEmployeeIfNotExists(http: HttpClient, r
   );
 }
 
-managerAgentCreateManagerEmployeeIfNotExists.PATH = '/bla-bla-vla/managerAgent/create-employee/{organizationGuid}';
+managerAgentCreateManagerEmployeeIfNotExists.PATH = '/market/api/v1/managerAgent/create-employee/{organizationGuid}';

@@ -28,4 +28,4 @@ export function bidCreate(http: HttpClient, rootUrl: string, params?: BidCreate$
   );
 }
 
-bidCreate.PATH = '/bla-bla-vla/bid';
+bidCreate.PATH = '/market/api/v1/bid';

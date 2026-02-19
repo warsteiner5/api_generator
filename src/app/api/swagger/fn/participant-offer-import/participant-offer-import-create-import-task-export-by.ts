@@ -28,4 +28,4 @@ export function participantOfferImportCreateImportTaskExportBy(http: HttpClient,
   );
 }
 
-participantOfferImportCreateImportTaskExportBy.PATH = '/bla-bla-vla/offerimport/create/export-by';
+participantOfferImportCreateImportTaskExportBy.PATH = '/market/api/v1/offerimport/create/export-by';

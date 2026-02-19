@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfListOfMarketTradePerson } from '../../models/api-market-json-result-of-list-of-market-trade-person';
+import { ApiMarketJsonResultOfListOfMarketTradePersonAltDto } from '../../models/api-market-json-result-of-list-of-market-trade-person';
 
 export interface TradesGetCustomerSignerList$Params {
 }
 
-export function tradesGetCustomerSignerList(http: HttpClient, rootUrl: string, params?: TradesGetCustomerSignerList$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfMarketTradePerson>> {
+export function tradesGetCustomerSignerList(http: HttpClient, rootUrl: string, params?: TradesGetCustomerSignerList$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfMarketTradePersonAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesGetCustomerSignerList.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function tradesGetCustomerSignerList(http: HttpClient, rootUrl: string, p
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfListOfMarketTradePerson>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfListOfMarketTradePersonAltDto>;
     })
   );
 }
 
-tradesGetCustomerSignerList.PATH = '/bla-bla-vla/trades/deal-signer-list';
+tradesGetCustomerSignerList.PATH = '/market/api/v1/trades/deal-signer-list';

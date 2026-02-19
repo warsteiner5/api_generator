@@ -9,17 +9,17 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfBatchProcessingResult } from '../models/api-market-json-result-of-batch-processing-result';
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBatchProcessingResultAltDto } from '../models/api-market-json-result-of-batch-processing-result';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
 import { ApiMarketJsonResultOfIReadOnlyCollectionOfParticipantOfferDto } from '../models/api-market-json-result-of-i-read-only-collection-of-participant-offer-dto';
 import { ApiMarketJsonResultOfListOfOfferStatesDto } from '../models/api-market-json-result-of-list-of-offer-states-dto';
-import { ApiMarketJsonResultOfLong } from '../models/api-market-json-result-of-long';
-import { ApiMarketJsonResultOfMarketJsonVoidResult } from '../models/api-market-json-result-of-market-json-void-result';
+import { ApiMarketJsonResultOfLongAltDto } from '../models/api-market-json-result-of-long';
+import { ApiMarketJsonResultOfMarketJsonVoidResultAltDto } from '../models/api-market-json-result-of-market-json-void-result';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketOfferShortModelDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-market-offer-short-model-dto';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketParticipantOfferInfoDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-market-participant-offer-info-dto';
 import { ApiMarketJsonResultOfMarketParticipantOfferInfoDto } from '../models/api-market-json-result-of-market-participant-offer-info-dto';
 import { ApiMarketJsonResultOfParticipantOfferPublishResultDto } from '../models/api-market-json-result-of-participant-offer-publish-result-dto';
-import { ApiMarketJsonResultOfString } from '../models/api-market-json-result-of-string';
+import { ApiMarketJsonResultOfStringAltDto } from '../models/api-market-json-result-of-string';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 import { offersApprove } from '../fn/offers/offers-approve';
 import { OffersApprove$Params } from '../fn/offers/offers-approve';
@@ -80,7 +80,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersGetOfferInfo()` */
-  static readonly OffersGetOfferInfoPath = '/bla-bla-vla/offers/{id}';
+  static readonly OffersGetOfferInfoPath = '/market/api/v1/offers/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -105,7 +105,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersRemoveOffer()` */
-  static readonly OffersRemoveOfferPath = '/bla-bla-vla/offers/{id}';
+  static readonly OffersRemoveOfferPath = '/market/api/v1/offers/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -113,7 +113,7 @@ export class OffersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  offersRemoveOffer$Response(params: OffersRemoveOffer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBatchProcessingResult>> {
+  offersRemoveOffer$Response(params: OffersRemoveOffer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBatchProcessingResultAltDto>> {
     return offersRemoveOffer(this.http, this.rootUrl, params, context);
   }
 
@@ -123,14 +123,14 @@ export class OffersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  offersRemoveOffer(params: OffersRemoveOffer$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBatchProcessingResult> {
+  offersRemoveOffer(params: OffersRemoveOffer$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBatchProcessingResultAltDto> {
     return this.offersRemoveOffer$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBatchProcessingResult>): ApiMarketJsonResultOfBatchProcessingResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBatchProcessingResultAltDto>): ApiMarketJsonResultOfBatchProcessingResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `offersValidateAccessToOffer()` */
-  static readonly OffersValidateAccessToOfferPath = '/bla-bla-vla/offers/{id}/isPublicAccess';
+  static readonly OffersValidateAccessToOfferPath = '/market/api/v1/offers/{id}/isPublicAccess';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -138,7 +138,7 @@ export class OffersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  offersValidateAccessToOffer$Response(params: OffersValidateAccessToOffer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  offersValidateAccessToOffer$Response(params: OffersValidateAccessToOffer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return offersValidateAccessToOffer(this.http, this.rootUrl, params, context);
   }
 
@@ -148,14 +148,14 @@ export class OffersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  offersValidateAccessToOffer(params: OffersValidateAccessToOffer$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  offersValidateAccessToOffer(params: OffersValidateAccessToOffer$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.offersValidateAccessToOffer$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `offersCreateParticipantOfferActualizationRequest()` */
-  static readonly OffersCreateParticipantOfferActualizationRequestPath = '/bla-bla-vla/offers/{id}/actualizationRequest';
+  static readonly OffersCreateParticipantOfferActualizationRequestPath = '/market/api/v1/offers/{id}/actualizationRequest';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -163,7 +163,7 @@ export class OffersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  offersCreateParticipantOfferActualizationRequest$Response(params: OffersCreateParticipantOfferActualizationRequest$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResult>> {
+  offersCreateParticipantOfferActualizationRequest$Response(params: OffersCreateParticipantOfferActualizationRequest$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResultAltDto>> {
     return offersCreateParticipantOfferActualizationRequest(this.http, this.rootUrl, params, context);
   }
 
@@ -173,14 +173,14 @@ export class OffersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  offersCreateParticipantOfferActualizationRequest(params: OffersCreateParticipantOfferActualizationRequest$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketJsonVoidResult> {
+  offersCreateParticipantOfferActualizationRequest(params: OffersCreateParticipantOfferActualizationRequest$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketJsonVoidResultAltDto> {
     return this.offersCreateParticipantOfferActualizationRequest$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResult>): ApiMarketJsonResultOfMarketJsonVoidResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResultAltDto>): ApiMarketJsonResultOfMarketJsonVoidResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `offersChechActualizationRequestExtists()` */
-  static readonly OffersChechActualizationRequestExtistsPath = '/bla-bla-vla/offers/{id}/actualizationRequest/isExists';
+  static readonly OffersChechActualizationRequestExtistsPath = '/market/api/v1/offers/{id}/actualizationRequest/isExists';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -188,7 +188,7 @@ export class OffersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  offersChechActualizationRequestExtists$Response(params: OffersChechActualizationRequestExtists$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  offersChechActualizationRequestExtists$Response(params: OffersChechActualizationRequestExtists$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return offersChechActualizationRequestExtists(this.http, this.rootUrl, params, context);
   }
 
@@ -198,14 +198,14 @@ export class OffersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  offersChechActualizationRequestExtists(params: OffersChechActualizationRequestExtists$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  offersChechActualizationRequestExtists(params: OffersChechActualizationRequestExtists$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.offersChechActualizationRequestExtists$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `offersPublish()` */
-  static readonly OffersPublishPath = '/bla-bla-vla/offers';
+  static readonly OffersPublishPath = '/market/api/v1/offers';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -230,7 +230,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersPublishExternal()` */
-  static readonly OffersPublishExternalPath = '/bla-bla-vla/offers/publish/external';
+  static readonly OffersPublishExternalPath = '/market/api/v1/offers/publish/external';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -255,7 +255,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersConfirmExternal()` */
-  static readonly OffersConfirmExternalPath = '/bla-bla-vla/offers/confirm/external';
+  static readonly OffersConfirmExternalPath = '/market/api/v1/offers/confirm/external';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -280,7 +280,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersPublish2()` */
-  static readonly OffersPublish2Path = '/bla-bla-vla/offers/create';
+  static readonly OffersPublish2Path = '/market/api/v1/offers/create';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -305,7 +305,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersSaveAsDraft()` */
-  static readonly OffersSaveAsDraftPath = '/bla-bla-vla/offers/draft';
+  static readonly OffersSaveAsDraftPath = '/market/api/v1/offers/draft';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -313,7 +313,7 @@ export class OffersApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  offersSaveAsDraft$Response(params?: OffersSaveAsDraft$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLong>> {
+  offersSaveAsDraft$Response(params?: OffersSaveAsDraft$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>> {
     return offersSaveAsDraft(this.http, this.rootUrl, params, context);
   }
 
@@ -323,14 +323,14 @@ export class OffersApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  offersSaveAsDraft(params?: OffersSaveAsDraft$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLong> {
+  offersSaveAsDraft(params?: OffersSaveAsDraft$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLongAltDto> {
     return this.offersSaveAsDraft$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfLong>): ApiMarketJsonResultOfLong => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>): ApiMarketJsonResultOfLongAltDto => r.body)
     );
   }
 
   /** Path part for operation `offersGetOffers()` */
-  static readonly OffersGetOffersPath = '/bla-bla-vla/offers/my';
+  static readonly OffersGetOffersPath = '/market/api/v1/offers/my';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -355,7 +355,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersSearch()` */
-  static readonly OffersSearchPath = '/bla-bla-vla/offers/search';
+  static readonly OffersSearchPath = '/market/api/v1/offers/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -380,7 +380,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersUpdate()` */
-  static readonly OffersUpdatePath = '/bla-bla-vla/offers/batchUpdate';
+  static readonly OffersUpdatePath = '/market/api/v1/offers/batchUpdate';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -405,7 +405,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersCount()` */
-  static readonly OffersCountPath = '/bla-bla-vla/offers/count';
+  static readonly OffersCountPath = '/market/api/v1/offers/count';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -430,7 +430,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersApprove()` */
-  static readonly OffersApprovePath = '/bla-bla-vla/offers/approve';
+  static readonly OffersApprovePath = '/market/api/v1/offers/approve';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -455,7 +455,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersDisapprove()` */
-  static readonly OffersDisapprovePath = '/bla-bla-vla/offers/disapprove';
+  static readonly OffersDisapprovePath = '/market/api/v1/offers/disapprove';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -480,7 +480,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersModerate()` */
-  static readonly OffersModeratePath = '/bla-bla-vla/offers/moderate';
+  static readonly OffersModeratePath = '/market/api/v1/offers/moderate';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -505,7 +505,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersChangeStateOffer()` */
-  static readonly OffersChangeStateOfferPath = '/bla-bla-vla/offers/change-state';
+  static readonly OffersChangeStateOfferPath = '/market/api/v1/offers/change-state';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -530,7 +530,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersExportPriceListToExcel()` */
-  static readonly OffersExportPriceListToExcelPath = '/bla-bla-vla/offers/ExportToExcel';
+  static readonly OffersExportPriceListToExcelPath = '/market/api/v1/offers/ExportToExcel';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -555,7 +555,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersGetExcelImportTemplate()` */
-  static readonly OffersGetExcelImportTemplatePath = '/bla-bla-vla/offers/ExcelExportTemplate';
+  static readonly OffersGetExcelImportTemplatePath = '/market/api/v1/offers/ExcelExportTemplate';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -563,7 +563,7 @@ export class OffersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  offersGetExcelImportTemplate$Response(params?: OffersGetExcelImportTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+  offersGetExcelImportTemplate$Response(params?: OffersGetExcelImportTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
     return offersGetExcelImportTemplate(this.http, this.rootUrl, params, context);
   }
 
@@ -573,14 +573,14 @@ export class OffersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  offersGetExcelImportTemplate(params?: OffersGetExcelImportTemplate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfString> {
+  offersGetExcelImportTemplate(params?: OffersGetExcelImportTemplate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfStringAltDto> {
     return this.offersGetExcelImportTemplate$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfString>): ApiMarketJsonResultOfString => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>): ApiMarketJsonResultOfStringAltDto => r.body)
     );
   }
 
   /** Path part for operation `offersGetExcelImportTemplateExportBy()` */
-  static readonly OffersGetExcelImportTemplateExportByPath = '/bla-bla-vla/offers/ExcelImportTemplate/export-by';
+  static readonly OffersGetExcelImportTemplateExportByPath = '/market/api/v1/offers/ExcelImportTemplate/export-by';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -605,7 +605,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersExtendParticipantOffer()` */
-  static readonly OffersExtendParticipantOfferPath = '/bla-bla-vla/offers/extend';
+  static readonly OffersExtendParticipantOfferPath = '/market/api/v1/offers/extend';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -630,7 +630,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersRemoveParticipantOffer()` */
-  static readonly OffersRemoveParticipantOfferPath = '/bla-bla-vla/offers/remove';
+  static readonly OffersRemoveParticipantOfferPath = '/market/api/v1/offers/remove';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -655,7 +655,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersExternalSearch()` */
-  static readonly OffersExternalSearchPath = '/bla-bla-vla/offers/external-info/search';
+  static readonly OffersExternalSearchPath = '/market/api/v1/offers/external-info/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -680,7 +680,7 @@ export class OffersApiService extends BaseService {
   }
 
   /** Path part for operation `offersSendCustomerCommercialOffer()` */
-  static readonly OffersSendCustomerCommercialOfferPath = '/bla-bla-vla/offers/{id}/commercial-offer';
+  static readonly OffersSendCustomerCommercialOfferPath = '/market/api/v1/offers/{id}/commercial-offer';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

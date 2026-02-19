@@ -33,7 +33,7 @@ export class StopListItemApiService extends BaseService {
   }
 
   /** Path part for operation `stopListItemGetPaginateStopListItems()` */
-  static readonly StopListItemGetPaginateStopListItemsPath = '/bla-bla-vla/stoplistitem';
+  static readonly StopListItemGetPaginateStopListItemsPath = '/market/api/v1/stoplistitem';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -58,7 +58,7 @@ export class StopListItemApiService extends BaseService {
   }
 
   /** Path part for operation `stopListItemGetPaginateStopListItemExtetndeds()` */
-  static readonly StopListItemGetPaginateStopListItemExtetndedsPath = '/bla-bla-vla/stoplistitem/getFullInfo';
+  static readonly StopListItemGetPaginateStopListItemExtetndedsPath = '/market/api/v1/stoplistitem/getFullInfo';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -83,7 +83,7 @@ export class StopListItemApiService extends BaseService {
   }
 
   /** Path part for operation `stopListItemBanSupplier()` */
-  static readonly StopListItemBanSupplierPath = '/bla-bla-vla/stoplistitem/ban';
+  static readonly StopListItemBanSupplierPath = '/market/api/v1/stoplistitem/ban';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -108,7 +108,7 @@ export class StopListItemApiService extends BaseService {
   }
 
   /** Path part for operation `stopListItemUnbanSupplier()` */
-  static readonly StopListItemUnbanSupplierPath = '/bla-bla-vla/stoplistitem/unban';
+  static readonly StopListItemUnbanSupplierPath = '/market/api/v1/stoplistitem/unban';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -133,7 +133,7 @@ export class StopListItemApiService extends BaseService {
   }
 
   /** Path part for operation `stopListItemUnbanSupplierTotal()` */
-  static readonly StopListItemUnbanSupplierTotalPath = '/bla-bla-vla/stoplistitem/unbanTotal/{supplierId}';
+  static readonly StopListItemUnbanSupplierTotalPath = '/market/api/v1/stoplistitem/unbanTotal/{supplierId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -158,7 +158,7 @@ export class StopListItemApiService extends BaseService {
   }
 
   /** Path part for operation `stopListItemCheckIfBanned()` */
-  static readonly StopListItemCheckIfBannedPath = '/bla-bla-vla/stoplistitem/checkIfSupplierBanned/{supplierId}';
+  static readonly StopListItemCheckIfBannedPath = '/market/api/v1/stoplistitem/checkIfSupplierBanned/{supplierId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -183,7 +183,7 @@ export class StopListItemApiService extends BaseService {
   }
 
   /** Path part for operation `stopListItemCheckIfIamBanned()` */
-  static readonly StopListItemCheckIfIamBannedPath = '/bla-bla-vla/stoplistitem/checkIfBannedBy/{customerId}';
+  static readonly StopListItemCheckIfIamBannedPath = '/market/api/v1/stoplistitem/checkIfBannedBy/{customerId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

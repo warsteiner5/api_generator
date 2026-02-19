@@ -25,4 +25,4 @@ export function suggestStatus2(http: HttpClient, rootUrl: string, params?: Sugge
   );
 }
 
-suggestStatus2.PATH = '/bla-bla-vla/Suggest/detectAddressByIp';
+suggestStatus2.PATH = '/api/Suggest/detectAddressByIp';

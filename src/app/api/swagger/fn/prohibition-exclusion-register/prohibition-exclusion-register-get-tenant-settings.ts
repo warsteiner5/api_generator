@@ -25,4 +25,4 @@ export function prohibitionExclusionRegisterGetTenantSettings(http: HttpClient, 
   );
 }
 
-prohibitionExclusionRegisterGetTenantSettings.PATH = '/bla-bla-vla/ProhibitionExclusionRegister/GetTenantSettings';
+prohibitionExclusionRegisterGetTenantSettings.PATH = '/api/ProhibitionExclusionRegister/GetTenantSettings';

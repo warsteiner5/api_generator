@@ -30,4 +30,4 @@ export function orgSettingGetBoolOrgSetting(http: HttpClient, rootUrl: string, p
   );
 }
 
-orgSettingGetBoolOrgSetting.PATH = '/bla-bla-vla/OrgSetting/bool/{organizationId}/{settingName}';
+orgSettingGetBoolOrgSetting.PATH = '/api/OrgSetting/bool/{organizationId}/{settingName}';

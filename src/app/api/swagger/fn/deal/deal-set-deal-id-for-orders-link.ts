@@ -28,4 +28,4 @@ export function dealSetDealIdForOrdersLink(http: HttpClient, rootUrl: string, pa
   );
 }
 
-dealSetDealIdForOrdersLink.PATH = '/bla-bla-vla/Deal/SetDealIdForOrdersLink';
+dealSetDealIdForOrdersLink.PATH = '/api/Deal/SetDealIdForOrdersLink';

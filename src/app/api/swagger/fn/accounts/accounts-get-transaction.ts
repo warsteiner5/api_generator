@@ -30,4 +30,4 @@ export function accountsGetTransaction(http: HttpClient, rootUrl: string, params
   );
 }
 
-accountsGetTransaction.PATH = '/bla-bla-vla/accounts/my/{accountNumber}/transactions/{id}';
+accountsGetTransaction.PATH = '/market/api/v1/accounts/my/{accountNumber}/transactions/{id}';

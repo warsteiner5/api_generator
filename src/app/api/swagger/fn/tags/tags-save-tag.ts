@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
 import { ApiTagOperatorDto } from '../../models/api-tag-operator-dto';
 
 export interface TagsSaveTag$Params {
       body?: ApiTagOperatorDto | null
 }
 
-export function tagsSaveTag(http: HttpClient, rootUrl: string, params?: TagsSaveTag$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function tagsSaveTag(http: HttpClient, rootUrl: string, params?: TagsSaveTag$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, tagsSaveTag.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function tagsSaveTag(http: HttpClient, rootUrl: string, params?: TagsSave
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-tagsSaveTag.PATH = '/bla-bla-vla/tags';
+tagsSaveTag.PATH = '/market/api/v1/tags';

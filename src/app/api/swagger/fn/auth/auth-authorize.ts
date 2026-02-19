@@ -27,4 +27,4 @@ export function authAuthorize(http: HttpClient, rootUrl: string, params: AuthAut
   );
 }
 
-authAuthorize.PATH = '/bla-bla-vla/auth/authorize';
+authAuthorize.PATH = '/market/api/v1/auth/authorize';

@@ -21,7 +21,7 @@ export class ChatsApiService extends BaseService {
   }
 
   /** Path part for operation `chatsAddChatMessage()` */
-  static readonly ChatsAddChatMessagePath = '/bla-bla-vla/chats/{chatId}';
+  static readonly ChatsAddChatMessagePath = '/market/api/v1/chats/{chatId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -46,7 +46,7 @@ export class ChatsApiService extends BaseService {
   }
 
   /** Path part for operation `chatsAddChatMessageExternal()` */
-  static readonly ChatsAddChatMessageExternalPath = '/bla-bla-vla/chats/{chatId}/external';
+  static readonly ChatsAddChatMessageExternalPath = '/market/api/v1/chats/{chatId}/external';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

@@ -29,4 +29,4 @@ export function tenantsGetTenantSettingsPost(http: HttpClient, rootUrl: string, 
   );
 }
 
-tenantsGetTenantSettingsPost.PATH = '/bla-bla-vla/tenants';
+tenantsGetTenantSettingsPost.PATH = '/market/api/v1/tenants';

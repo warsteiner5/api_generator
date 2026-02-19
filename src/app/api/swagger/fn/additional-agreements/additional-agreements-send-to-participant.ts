@@ -28,4 +28,4 @@ export function additionalAgreementsSendToParticipant(http: HttpClient, rootUrl:
   );
 }
 
-additionalAgreementsSendToParticipant.PATH = '/bla-bla-vla/additionalAgreements/{id}/send-to-participant';
+additionalAgreementsSendToParticipant.PATH = '/market/api/v1/additionalAgreements/{id}/send-to-participant';

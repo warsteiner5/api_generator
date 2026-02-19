@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfIReadOnlyCollectionOfKsrValue } from '../../models/api-market-json-result-of-i-read-only-collection-of-ksr-value';
+import { ApiMarketJsonResultOfIReadOnlyCollectionOfKsrValueAltDto } from '../../models/api-market-json-result-of-i-read-only-collection-of-ksr-value';
 
 export interface DictionariesGetKsrByParentCode$Params {
   parentCode: string | null;
 }
 
-export function dictionariesGetKsrByParentCode(http: HttpClient, rootUrl: string, params: DictionariesGetKsrByParentCode$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfKsrValue>> {
+export function dictionariesGetKsrByParentCode(http: HttpClient, rootUrl: string, params: DictionariesGetKsrByParentCode$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfKsrValueAltDto>> {
   const rb = new RequestBuilder(rootUrl, dictionariesGetKsrByParentCode.PATH, 'get');
   if (params) {
     rb.path('parentCode', params.parentCode, {});
@@ -23,9 +23,9 @@ export function dictionariesGetKsrByParentCode(http: HttpClient, rootUrl: string
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfKsrValue>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfKsrValueAltDto>;
     })
   );
 }
 
-dictionariesGetKsrByParentCode.PATH = '/bla-bla-vla/dictionaries/ksr/{parentCode}';
+dictionariesGetKsrByParentCode.PATH = '/market/api/v1/dictionaries/ksr/{parentCode}';

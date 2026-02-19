@@ -28,4 +28,4 @@ export function organizationsFindOrganizationInfoByGuid(http: HttpClient, rootUr
   );
 }
 
-organizationsFindOrganizationInfoByGuid.PATH = '/bla-bla-vla/organizations/{guid}';
+organizationsFindOrganizationInfoByGuid.PATH = '/market/api/v1/organizations/{guid}';

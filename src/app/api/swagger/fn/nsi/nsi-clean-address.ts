@@ -28,4 +28,4 @@ export function nsiCleanAddress(http: HttpClient, rootUrl: string, params: NsiCl
   );
 }
 
-nsiCleanAddress.PATH = '/bla-bla-vla/nsi/address/clean';
+nsiCleanAddress.PATH = '/market/api/v1/nsi/address/clean';

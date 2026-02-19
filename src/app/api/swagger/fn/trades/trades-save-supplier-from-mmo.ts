@@ -30,4 +30,4 @@ export function tradesSaveSupplierFromMmo(http: HttpClient, rootUrl: string, par
   );
 }
 
-tradesSaveSupplierFromMmo.PATH = '/bla-bla-vla/trades/{tradeId}/save-supplier-from-mmo/{sessionGuid}';
+tradesSaveSupplierFromMmo.PATH = '/market/api/v1/trades/{tradeId}/save-supplier-from-mmo/{sessionGuid}';

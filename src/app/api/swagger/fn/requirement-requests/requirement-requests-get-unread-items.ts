@@ -30,4 +30,4 @@ export function requirementRequestsGetUnreadItems(http: HttpClient, rootUrl: str
   );
 }
 
-requirementRequestsGetUnreadItems.PATH = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{chatId}/unread/items';
+requirementRequestsGetUnreadItems.PATH = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{chatId}/unread/items';

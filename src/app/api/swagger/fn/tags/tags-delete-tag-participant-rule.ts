@@ -27,4 +27,4 @@ export function tagsDeleteTagParticipantRule(http: HttpClient, rootUrl: string, 
   );
 }
 
-tagsDeleteTagParticipantRule.PATH = '/bla-bla-vla/tags/participant-rule/{id}';
+tagsDeleteTagParticipantRule.PATH = '/market/api/v1/tags/participant-rule/{id}';

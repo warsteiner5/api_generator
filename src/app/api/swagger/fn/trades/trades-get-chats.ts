@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfDictionaryOfIntegerAndString } from '../../models/api-market-json-result-of-dictionary-of-integer-and-string';
+import { ApiMarketJsonResultOfDictionaryOfIntegerAndStringAltDto } from '../../models/api-market-json-result-of-dictionary-of-integer-and-string';
 
 export interface TradesGetChats$Params {
   id: number;
 }
 
-export function tradesGetChats(http: HttpClient, rootUrl: string, params: TradesGetChats$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndString>> {
+export function tradesGetChats(http: HttpClient, rootUrl: string, params: TradesGetChats$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndStringAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesGetChats.PATH, 'get');
   if (params) {
     rb.path('id', params.id, {});
@@ -23,9 +23,9 @@ export function tradesGetChats(http: HttpClient, rootUrl: string, params: Trades
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndString>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndStringAltDto>;
     })
   );
 }
 
-tradesGetChats.PATH = '/bla-bla-vla/trades/{id}/chats';
+tradesGetChats.PATH = '/market/api/v1/trades/{id}/chats';

@@ -28,4 +28,4 @@ export function organizationsGetCertificateInfoFromFile(http: HttpClient, rootUr
   );
 }
 
-organizationsGetCertificateInfoFromFile.PATH = '/bla-bla-vla/organizations/my/documents/{fileGuid}/signature';
+organizationsGetCertificateInfoFromFile.PATH = '/market/api/v1/organizations/my/documents/{fileGuid}/signature';

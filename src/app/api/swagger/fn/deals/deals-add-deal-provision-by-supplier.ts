@@ -31,4 +31,4 @@ export function dealsAddDealProvisionBySupplier(http: HttpClient, rootUrl: strin
   );
 }
 
-dealsAddDealProvisionBySupplier.PATH = '/bla-bla-vla/deals/{id}/participant/provision';
+dealsAddDealProvisionBySupplier.PATH = '/market/api/v1/deals/{id}/participant/provision';

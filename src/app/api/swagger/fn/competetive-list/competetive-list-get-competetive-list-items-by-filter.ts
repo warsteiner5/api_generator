@@ -29,4 +29,4 @@ export function competetiveListGetCompetetiveListItemsByFilter(http: HttpClient,
   );
 }
 
-competetiveListGetCompetetiveListItemsByFilter.PATH = '/bla-bla-vla/competetivelist';
+competetiveListGetCompetetiveListItemsByFilter.PATH = '/market/api/v1/competetivelist';

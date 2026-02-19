@@ -28,4 +28,4 @@ export function catalogGetItemsByParent(http: HttpClient, rootUrl: string, param
   );
 }
 
-catalogGetItemsByParent.PATH = '/bla-bla-vla/catalog/items/{parentId}';
+catalogGetItemsByParent.PATH = '/market/api/v1/catalog/items/{parentId}';

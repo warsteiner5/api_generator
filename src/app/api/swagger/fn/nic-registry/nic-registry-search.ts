@@ -29,4 +29,4 @@ export function nicRegistrySearch(http: HttpClient, rootUrl: string, params?: Ni
   );
 }
 
-nicRegistrySearch.PATH = '/bla-bla-vla/registry/nic/search';
+nicRegistrySearch.PATH = '/market/api/v1/registry/nic/search';

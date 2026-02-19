@@ -3,7 +3,7 @@
 import { ApiExternalDealInfoDocumentForPublishAltDto } from '../models/api-external-deal-info-document-for-publish';
 import { ApiExternalDealInfoItemForPublishAltDto } from '../models/api-external-deal-info-item-for-publish';
 import { ApiExternalDealSupplierForPublishAltDto } from '../models/api-external-deal-supplier-for-publish';
-export interface ApiExternalDealDtoForPublishAltDto {
+export interface ApiExternalDealDtoForPublish {
   DealAgreemntDate?: string | null;
   DealNumber?: string | null;
   Documents?: Array<ApiExternalDealInfoDocumentForPublishAltDto> | null;

@@ -27,4 +27,4 @@ export function tradeCanTradeBeExportedToPp(http: HttpClient, rootUrl: string, p
   );
 }
 
-tradeCanTradeBeExportedToPp.PATH = '/bla-bla-vla/Trade/{tradeId}/CanTradeBeExportedToPP';
+tradeCanTradeBeExportedToPp.PATH = '/api/Trade/{tradeId}/CanTradeBeExportedToPP';

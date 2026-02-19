@@ -28,7 +28,7 @@ export class ComplaintApiService extends BaseService {
   }
 
   /** Path part for operation `complaintCreate()` */
-  static readonly ComplaintCreatePath = '/bla-bla-vla/complaint/create';
+  static readonly ComplaintCreatePath = '/market/api/v1/complaint/create';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -53,7 +53,7 @@ export class ComplaintApiService extends BaseService {
   }
 
   /** Path part for operation `complaintComplaintTypes()` */
-  static readonly ComplaintComplaintTypesPath = '/bla-bla-vla/complaint/types';
+  static readonly ComplaintComplaintTypesPath = '/market/api/v1/complaint/types';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -78,7 +78,7 @@ export class ComplaintApiService extends BaseService {
   }
 
   /** Path part for operation `complaintGetPriceListComplaints()` */
-  static readonly ComplaintGetPriceListComplaintsPath = '/bla-bla-vla/complaint/price-list/{id}';
+  static readonly ComplaintGetPriceListComplaintsPath = '/market/api/v1/complaint/price-list/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -103,7 +103,7 @@ export class ComplaintApiService extends BaseService {
   }
 
   /** Path part for operation `complaintClose()` */
-  static readonly ComplaintClosePath = '/bla-bla-vla/complaint/close';
+  static readonly ComplaintClosePath = '/market/api/v1/complaint/close';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

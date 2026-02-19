@@ -29,4 +29,4 @@ export function documentsSaveDocument(http: HttpClient, rootUrl: string, params?
   );
 }
 
-documentsSaveDocument.PATH = '/bla-bla-vla/documents/save';
+documentsSaveDocument.PATH = '/market/api/v1/documents/save';

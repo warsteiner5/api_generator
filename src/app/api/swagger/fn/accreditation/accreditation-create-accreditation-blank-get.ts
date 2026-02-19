@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfString } from '../../models/api-market-json-result-of-string';
+import { ApiMarketJsonResultOfStringAltDto } from '../../models/api-market-json-result-of-string';
 
 export interface AccreditationCreateAccreditationBlankGet$Params {
   accountNumber: string | null;
 }
 
-export function accreditationCreateAccreditationBlankGet(http: HttpClient, rootUrl: string, params: AccreditationCreateAccreditationBlankGet$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+export function accreditationCreateAccreditationBlankGet(http: HttpClient, rootUrl: string, params: AccreditationCreateAccreditationBlankGet$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
   const rb = new RequestBuilder(rootUrl, accreditationCreateAccreditationBlankGet.PATH, 'get');
   if (params) {
     rb.path('accountNumber', params.accountNumber, {});
@@ -23,9 +23,9 @@ export function accreditationCreateAccreditationBlankGet(http: HttpClient, rootU
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfString>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>;
     })
   );
 }
 
-accreditationCreateAccreditationBlankGet.PATH = '/bla-bla-vla/Accreditation/CreateAccreditationInvoice/{accountNumber}';
+accreditationCreateAccreditationBlankGet.PATH = '/market/api/v1/Accreditation/CreateAccreditationInvoice/{accountNumber}';

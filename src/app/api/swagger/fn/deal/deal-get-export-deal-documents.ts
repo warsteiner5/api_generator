@@ -27,4 +27,4 @@ export function dealGetExportDealDocuments(http: HttpClient, rootUrl: string, pa
   );
 }
 
-dealGetExportDealDocuments.PATH = '/bla-bla-vla/Deal/GetExportDealDocuments';
+dealGetExportDealDocuments.PATH = '/api/Deal/GetExportDealDocuments';

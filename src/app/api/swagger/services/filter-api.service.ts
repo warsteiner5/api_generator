@@ -25,11 +25,11 @@ import { filterSaveFilter } from '../fn/filter/filter-save-filter';
 import { FilterSaveFilter$Params } from '../fn/filter/filter-save-filter';
 import { filterUpdateFilter } from '../fn/filter/filter-update-filter';
 import { FilterUpdateFilter$Params } from '../fn/filter/filter-update-filter';
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
-import { ApiMarketJsonResultOfFilterObject } from '../models/api-market-json-result-of-filter-object';
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
-import { ApiMarketJsonResultOfMarketPaginationResultOfListOfFilterObject } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-filter-object';
-import { ApiMarketJsonResultOfMarketSearchRawModel } from '../models/api-market-json-result-of-market-search-raw-model';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfFilterObjectAltDto } from '../models/api-market-json-result-of-filter-object';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfMarketPaginationResultOfListOfFilterObjectAltDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-filter-object';
+import { ApiMarketJsonResultOfMarketSearchRawModelAltDto } from '../models/api-market-json-result-of-market-search-raw-model';
 
 @Injectable({ providedIn: 'root' })
 export class FilterApiService extends BaseService {
@@ -38,7 +38,7 @@ export class FilterApiService extends BaseService {
   }
 
   /** Path part for operation `filterGetFilterModel()` */
-  static readonly FilterGetFilterModelPath = '/bla-bla-vla/filters/model';
+  static readonly FilterGetFilterModelPath = '/market/api/v1/filters/model';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -46,7 +46,7 @@ export class FilterApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  filterGetFilterModel$Response(params?: FilterGetFilterModel$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketSearchRawModel>> {
+  filterGetFilterModel$Response(params?: FilterGetFilterModel$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketSearchRawModelAltDto>> {
     return filterGetFilterModel(this.http, this.rootUrl, params, context);
   }
 
@@ -56,14 +56,14 @@ export class FilterApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  filterGetFilterModel(params?: FilterGetFilterModel$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketSearchRawModel> {
+  filterGetFilterModel(params?: FilterGetFilterModel$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketSearchRawModelAltDto> {
     return this.filterGetFilterModel$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketSearchRawModel>): ApiMarketJsonResultOfMarketSearchRawModel => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketSearchRawModelAltDto>): ApiMarketJsonResultOfMarketSearchRawModelAltDto => r.body)
     );
   }
 
   /** Path part for operation `filterGetFilterByGuid()` */
-  static readonly FilterGetFilterByGuidPath = '/bla-bla-vla/filters/byguid/{guid}';
+  static readonly FilterGetFilterByGuidPath = '/market/api/v1/filters/byguid/{guid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -71,7 +71,7 @@ export class FilterApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  filterGetFilterByGuid$Response(params: FilterGetFilterByGuid$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfFilterObject>> {
+  filterGetFilterByGuid$Response(params: FilterGetFilterByGuid$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfFilterObjectAltDto>> {
     return filterGetFilterByGuid(this.http, this.rootUrl, params, context);
   }
 
@@ -81,14 +81,14 @@ export class FilterApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  filterGetFilterByGuid(params: FilterGetFilterByGuid$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfFilterObject> {
+  filterGetFilterByGuid(params: FilterGetFilterByGuid$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfFilterObjectAltDto> {
     return this.filterGetFilterByGuid$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfFilterObject>): ApiMarketJsonResultOfFilterObject => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfFilterObjectAltDto>): ApiMarketJsonResultOfFilterObjectAltDto => r.body)
     );
   }
 
   /** Path part for operation `filterUpdateFilter()` */
-  static readonly FilterUpdateFilterPath = '/bla-bla-vla/filters/{id}';
+  static readonly FilterUpdateFilterPath = '/market/api/v1/filters/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -96,7 +96,7 @@ export class FilterApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  filterUpdateFilter$Response(params: FilterUpdateFilter$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  filterUpdateFilter$Response(params: FilterUpdateFilter$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return filterUpdateFilter(this.http, this.rootUrl, params, context);
   }
 
@@ -106,14 +106,14 @@ export class FilterApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  filterUpdateFilter(params: FilterUpdateFilter$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  filterUpdateFilter(params: FilterUpdateFilter$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.filterUpdateFilter$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `filterDelete()` */
-  static readonly FilterDeletePath = '/bla-bla-vla/filters/{id}';
+  static readonly FilterDeletePath = '/market/api/v1/filters/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -121,7 +121,7 @@ export class FilterApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  filterDelete$Response(params: FilterDelete$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  filterDelete$Response(params: FilterDelete$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return filterDelete(this.http, this.rootUrl, params, context);
   }
 
@@ -131,14 +131,14 @@ export class FilterApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  filterDelete(params: FilterDelete$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  filterDelete(params: FilterDelete$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.filterDelete$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `filterFindMyFilledFilters()` */
-  static readonly FilterFindMyFilledFiltersPath = '/bla-bla-vla/filters/my/filled';
+  static readonly FilterFindMyFilledFiltersPath = '/market/api/v1/filters/my/filled';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -146,7 +146,7 @@ export class FilterApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  filterFindMyFilledFilters$Response(params?: FilterFindMyFilledFilters$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfFilterObject>> {
+  filterFindMyFilledFilters$Response(params?: FilterFindMyFilledFilters$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfFilterObjectAltDto>> {
     return filterFindMyFilledFilters(this.http, this.rootUrl, params, context);
   }
 
@@ -156,14 +156,14 @@ export class FilterApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  filterFindMyFilledFilters(params?: FilterFindMyFilledFilters$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfListOfFilterObject> {
+  filterFindMyFilledFilters(params?: FilterFindMyFilledFilters$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfListOfFilterObjectAltDto> {
     return this.filterFindMyFilledFilters$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfFilterObject>): ApiMarketJsonResultOfMarketPaginationResultOfListOfFilterObject => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfFilterObjectAltDto>): ApiMarketJsonResultOfMarketPaginationResultOfListOfFilterObjectAltDto => r.body)
     );
   }
 
   /** Path part for operation `filterSaveFilter()` */
-  static readonly FilterSaveFilterPath = '/bla-bla-vla/filters/save';
+  static readonly FilterSaveFilterPath = '/market/api/v1/filters/save';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -171,7 +171,7 @@ export class FilterApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  filterSaveFilter$Response(params?: FilterSaveFilter$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  filterSaveFilter$Response(params?: FilterSaveFilter$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return filterSaveFilter(this.http, this.rootUrl, params, context);
   }
 
@@ -181,14 +181,14 @@ export class FilterApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  filterSaveFilter(params?: FilterSaveFilter$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  filterSaveFilter(params?: FilterSaveFilter$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.filterSaveFilter$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `filterGetBannerActivity()` */
-  static readonly FilterGetBannerActivityPath = '/bla-bla-vla/filters/banner/isactive';
+  static readonly FilterGetBannerActivityPath = '/market/api/v1/filters/banner/isactive';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -213,7 +213,7 @@ export class FilterApiService extends BaseService {
   }
 
   /** Path part for operation `filterDisableBanner()` */
-  static readonly FilterDisableBannerPath = '/bla-bla-vla/filters/banner/disable';
+  static readonly FilterDisableBannerPath = '/market/api/v1/filters/banner/disable';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
-import { ApiEntityDtoOfIntegerAltDto } from '../models/api-entity-dto-of-integer';
+import { ApiEntityDtoOfInteger } from '../models/api-entity-dto-of-integer';
 import { ApiInvitationMethodEnum } from '../models/api-invitation-method-enum';
-export type ApiInvitationDto = ApiEntityDtoOfIntegerAltDto & {
+export type ApiInvitationDto = ApiEntityDtoOfInteger & {
 'CreateDateTime'?: string;
 'SentDateTime'?: string | null;
 'TradeId'?: number;

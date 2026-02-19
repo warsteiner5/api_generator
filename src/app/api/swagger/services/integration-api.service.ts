@@ -23,7 +23,7 @@ export class IntegrationApiService extends BaseService {
   }
 
   /** Path part for operation `integrationImportMinpromTorg()` */
-  static readonly IntegrationImportMinpromTorgPath = '/bla-bla-vla/integration/offers';
+  static readonly IntegrationImportMinpromTorgPath = '/market/api/v1/integration/offers';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -48,7 +48,7 @@ export class IntegrationApiService extends BaseService {
   }
 
   /** Path part for operation `integrationCreateOrganization()` */
-  static readonly IntegrationCreateOrganizationPath = '/bla-bla-vla/integration/organization';
+  static readonly IntegrationCreateOrganizationPath = '/market/api/v1/integration/organization';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -73,7 +73,7 @@ export class IntegrationApiService extends BaseService {
   }
 
   /** Path part for operation `integrationCreateEmployee()` */
-  static readonly IntegrationCreateEmployeePath = '/bla-bla-vla/integration/employee';
+  static readonly IntegrationCreateEmployeePath = '/market/api/v1/integration/employee';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

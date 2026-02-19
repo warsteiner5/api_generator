@@ -31,4 +31,4 @@ export function additionalAgreementsSend(http: HttpClient, rootUrl: string, para
   );
 }
 
-additionalAgreementsSend.PATH = '/bla-bla-vla/additionalAgreements/{id}/send-to-customer';
+additionalAgreementsSend.PATH = '/market/api/v1/additionalAgreements/{id}/send-to-customer';

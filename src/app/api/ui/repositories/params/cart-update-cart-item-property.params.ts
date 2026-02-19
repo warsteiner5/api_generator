@@ -1,11 +1,11 @@
 import { CartUpdateCartItemProperty$Params } from '../../../swagger/fn/cart/cart-update-cart-item-property';
-import { ValueDtoOfStringAlt } from '../../models/value-dto-of-string-alt.interface';
-import { adaptApiValueDtoOfStringAltDto } from '../../adapters/toDto/api-value-dto-of-string.adapter';
+import { ValueDtoOfString } from '../../models/value-dto-of-string.interface';
+import { adaptApiValueDtoOfString } from '../../adapters/toDto/api-value-dto-of-string.adapter';
 
 export interface CartUpdateCartItemPropertyParams {
   cartItemid: string;
   propertyName: string;
-  body?: ValueDtoOfStringAlt;
+  body?: ValueDtoOfString;
 }
 
 export const cartUpdateCartItemPropertyParamsAdapter = {
@@ -16,7 +16,7 @@ export const cartUpdateCartItemPropertyParamsAdapter = {
     return {
       cartItemid: params.cartItemid,
       propertyName: params.propertyName,
-      body: adaptApiValueDtoOfStringAltDto(params.body),
+      body: adaptApiValueDtoOfString(params.body),
     };
   }
 };

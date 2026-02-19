@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfMarketSearchRawModel } from '../../models/api-market-json-result-of-market-search-raw-model';
+import { ApiMarketJsonResultOfMarketSearchRawModelAltDto } from '../../models/api-market-json-result-of-market-search-raw-model';
 
 export interface FilterGetFilterModel$Params {
 }
 
-export function filterGetFilterModel(http: HttpClient, rootUrl: string, params?: FilterGetFilterModel$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketSearchRawModel>> {
+export function filterGetFilterModel(http: HttpClient, rootUrl: string, params?: FilterGetFilterModel$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketSearchRawModelAltDto>> {
   const rb = new RequestBuilder(rootUrl, filterGetFilterModel.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function filterGetFilterModel(http: HttpClient, rootUrl: string, params?:
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfMarketSearchRawModel>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfMarketSearchRawModelAltDto>;
     })
   );
 }
 
-filterGetFilterModel.PATH = '/bla-bla-vla/filters/model';
+filterGetFilterModel.PATH = '/market/api/v1/filters/model';

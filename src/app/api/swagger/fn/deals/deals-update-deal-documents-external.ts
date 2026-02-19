@@ -29,4 +29,4 @@ export function dealsUpdateDealDocumentsExternal(http: HttpClient, rootUrl: stri
   );
 }
 
-dealsUpdateDealDocumentsExternal.PATH = '/bla-bla-vla/deals/customers/update_deal_documents_external';
+dealsUpdateDealDocumentsExternal.PATH = '/market/api/v1/deals/customers/update_deal_documents_external';

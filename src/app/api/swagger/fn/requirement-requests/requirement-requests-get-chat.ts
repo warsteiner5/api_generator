@@ -30,4 +30,4 @@ export function requirementRequestsGetChat(http: HttpClient, rootUrl: string, pa
   );
 }
 
-requirementRequestsGetChat.PATH = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{chatId}';
+requirementRequestsGetChat.PATH = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{chatId}';

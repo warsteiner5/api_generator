@@ -31,4 +31,4 @@ export function dealsRevokeDealBySupplier(http: HttpClient, rootUrl: string, par
   );
 }
 
-dealsRevokeDealBySupplier.PATH = '/bla-bla-vla/deals/{id}/participant/revoke';
+dealsRevokeDealBySupplier.PATH = '/market/api/v1/deals/{id}/participant/revoke';

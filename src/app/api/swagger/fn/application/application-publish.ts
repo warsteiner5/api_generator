@@ -28,4 +28,4 @@ export function applicationPublish(http: HttpClient, rootUrl: string, params?: A
   );
 }
 
-applicationPublish.PATH = '/bla-bla-vla/Trade/Application/Publish';
+applicationPublish.PATH = '/api/Trade/Application/Publish';

@@ -28,4 +28,4 @@ export function dealConcludeApprovedDealOnDemandOfCustomer(http: HttpClient, roo
   );
 }
 
-dealConcludeApprovedDealOnDemandOfCustomer.PATH = '/bla-bla-vla/Deal/ConcludeApprovedDealOnDemandOfCustomer';
+dealConcludeApprovedDealOnDemandOfCustomer.PATH = '/api/Deal/ConcludeApprovedDealOnDemandOfCustomer';

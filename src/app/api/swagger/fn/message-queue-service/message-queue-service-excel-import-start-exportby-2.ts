@@ -28,4 +28,4 @@ export function messageQueueServiceExcelImportStartExportby2(http: HttpClient, r
   );
 }
 
-messageQueueServiceExcelImportStartExportby2.PATH = '/bla-bla-vla/messageQueueService/MinPromTorgOfferImportStart';
+messageQueueServiceExcelImportStartExportby2.PATH = '/market/api/v1/messageQueueService/MinPromTorgOfferImportStart';

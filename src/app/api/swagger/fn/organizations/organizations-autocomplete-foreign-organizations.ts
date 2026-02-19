@@ -29,4 +29,4 @@ export function organizationsAutocompleteForeignOrganizations(http: HttpClient, 
   );
 }
 
-organizationsAutocompleteForeignOrganizations.PATH = '/bla-bla-vla/organizations/autocomplete/foreign';
+organizationsAutocompleteForeignOrganizations.PATH = '/market/api/v1/organizations/autocomplete/foreign';

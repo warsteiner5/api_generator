@@ -25,4 +25,4 @@ export function accountGetManageInfo(http: HttpClient, rootUrl: string, params?:
   );
 }
 
-accountGetManageInfo.PATH = '/bla-bla-vla/Account/ManageInfo';
+accountGetManageInfo.PATH = '/api/Account/ManageInfo';

@@ -25,4 +25,4 @@ export function organizationGetSettings(http: HttpClient, rootUrl: string, param
   );
 }
 
-organizationGetSettings.PATH = '/bla-bla-vla/Organization/GetSettings';
+organizationGetSettings.PATH = '/api/Organization/GetSettings';

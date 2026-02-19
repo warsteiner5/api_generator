@@ -27,4 +27,4 @@ export function participantOfferCheckOffersForOrderCreation(http: HttpClient, ro
   );
 }
 
-participantOfferCheckOffersForOrderCreation.PATH = '/bla-bla-vla/participantoffer/CheckOffersForOrderCreation';
+participantOfferCheckOffersForOrderCreation.PATH = '/api/participantoffer/CheckOffersForOrderCreation';

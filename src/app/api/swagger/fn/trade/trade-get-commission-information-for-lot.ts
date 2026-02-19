@@ -27,4 +27,4 @@ export function tradeGetCommissionInformationForLot(http: HttpClient, rootUrl: s
   );
 }
 
-tradeGetCommissionInformationForLot.PATH = '/bla-bla-vla/Trade/GetCommissionInformationForLot/{lotId}';
+tradeGetCommissionInformationForLot.PATH = '/api/Trade/GetCommissionInformationForLot/{lotId}';

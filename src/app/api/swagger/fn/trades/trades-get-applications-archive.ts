@@ -28,4 +28,4 @@ export function tradesGetApplicationsArchive(http: HttpClient, rootUrl: string, 
   );
 }
 
-tradesGetApplicationsArchive.PATH = '/bla-bla-vla/trades/{tradeId}/applications/arhive';
+tradesGetApplicationsArchive.PATH = '/market/api/v1/trades/{tradeId}/applications/arhive';

@@ -28,7 +28,7 @@ import { ParticipantOfferImportRestartImportTask$Params } from '../fn/participan
 import { participantOfferImportRestartImportTaskExportBy } from '../fn/participant-offer-import/participant-offer-import-restart-import-task-export-by';
 import { ParticipantOfferImportRestartImportTaskExportBy$Params } from '../fn/participant-offer-import/participant-offer-import-restart-import-task-export-by';
 import { ApiParticipantOfferImportTaskDto } from '../models/api-participant-offer-import-task-dto';
-import { ApiSearchResultOfParticipantOfferImportTaskGridItem } from '../models/api-search-result-of-participant-offer-import-task-grid-item';
+import { ApiSearchResultOfParticipantOfferImportTaskGridItemAltDto } from '../models/api-search-result-of-participant-offer-import-task-grid-item';
 
 @Injectable({ providedIn: 'root' })
 export class ParticipantOfferImportApiService extends BaseService {
@@ -37,7 +37,7 @@ export class ParticipantOfferImportApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferImportCreateImportTask()` */
-  static readonly ParticipantOfferImportCreateImportTaskPath = '/bla-bla-vla/offerimport/create';
+  static readonly ParticipantOfferImportCreateImportTaskPath = '/market/api/v1/offerimport/create';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -62,7 +62,7 @@ export class ParticipantOfferImportApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferImportCreateImportTaskExportBy()` */
-  static readonly ParticipantOfferImportCreateImportTaskExportByPath = '/bla-bla-vla/offerimport/create/export-by';
+  static readonly ParticipantOfferImportCreateImportTaskExportByPath = '/market/api/v1/offerimport/create/export-by';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -87,7 +87,7 @@ export class ParticipantOfferImportApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferImportRestartImportTask()` */
-  static readonly ParticipantOfferImportRestartImportTaskPath = '/bla-bla-vla/offerimport/restart/{taskId}';
+  static readonly ParticipantOfferImportRestartImportTaskPath = '/market/api/v1/offerimport/restart/{taskId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -112,7 +112,7 @@ export class ParticipantOfferImportApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferImportRestartImportTaskExportBy()` */
-  static readonly ParticipantOfferImportRestartImportTaskExportByPath = '/bla-bla-vla/offerimport/restart/export-by/{taskId}';
+  static readonly ParticipantOfferImportRestartImportTaskExportByPath = '/market/api/v1/offerimport/restart/export-by/{taskId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -137,7 +137,7 @@ export class ParticipantOfferImportApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferImportGetImportTasks()` */
-  static readonly ParticipantOfferImportGetImportTasksPath = '/bla-bla-vla/offerimport/gettasks';
+  static readonly ParticipantOfferImportGetImportTasksPath = '/market/api/v1/offerimport/gettasks';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -145,7 +145,7 @@ export class ParticipantOfferImportApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  participantOfferImportGetImportTasks$Response(params?: ParticipantOfferImportGetImportTasks$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiSearchResultOfParticipantOfferImportTaskGridItem>> {
+  participantOfferImportGetImportTasks$Response(params?: ParticipantOfferImportGetImportTasks$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiSearchResultOfParticipantOfferImportTaskGridItemAltDto>> {
     return participantOfferImportGetImportTasks(this.http, this.rootUrl, params, context);
   }
 
@@ -155,14 +155,14 @@ export class ParticipantOfferImportApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  participantOfferImportGetImportTasks(params?: ParticipantOfferImportGetImportTasks$Params, context?: HttpContext): Observable<ApiSearchResultOfParticipantOfferImportTaskGridItem> {
+  participantOfferImportGetImportTasks(params?: ParticipantOfferImportGetImportTasks$Params, context?: HttpContext): Observable<ApiSearchResultOfParticipantOfferImportTaskGridItemAltDto> {
     return this.participantOfferImportGetImportTasks$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiSearchResultOfParticipantOfferImportTaskGridItem>): ApiSearchResultOfParticipantOfferImportTaskGridItem => r.body)
+      map((r: StrictHttpResponse<ApiSearchResultOfParticipantOfferImportTaskGridItemAltDto>): ApiSearchResultOfParticipantOfferImportTaskGridItemAltDto => r.body)
     );
   }
 
   /** Path part for operation `participantOfferImportGetImportTask()` */
-  static readonly ParticipantOfferImportGetImportTaskPath = '/bla-bla-vla/offerimport/get/{id}';
+  static readonly ParticipantOfferImportGetImportTaskPath = '/market/api/v1/offerimport/get/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -187,7 +187,7 @@ export class ParticipantOfferImportApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferImportGetCharacteristicsByParticipantOffer()` */
-  static readonly ParticipantOfferImportGetCharacteristicsByParticipantOfferPath = '/bla-bla-vla/offerimport/characteristics/{id}';
+  static readonly ParticipantOfferImportGetCharacteristicsByParticipantOfferPath = '/market/api/v1/offerimport/characteristics/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -212,7 +212,7 @@ export class ParticipantOfferImportApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferImportApproveCharateristicById()` */
-  static readonly ParticipantOfferImportApproveCharateristicByIdPath = '/bla-bla-vla/offerimport/characteristics/{id}/approve';
+  static readonly ParticipantOfferImportApproveCharateristicByIdPath = '/market/api/v1/offerimport/characteristics/{id}/approve';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

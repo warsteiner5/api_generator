@@ -29,4 +29,4 @@ export function additionalAgreementGetDataToSign(http: HttpClient, rootUrl: stri
   );
 }
 
-additionalAgreementGetDataToSign.PATH = '/bla-bla-vla/AdditionalAgreement/DataToSign';
+additionalAgreementGetDataToSign.PATH = '/api/AdditionalAgreement/DataToSign';

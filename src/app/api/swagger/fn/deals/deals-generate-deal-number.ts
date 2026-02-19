@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfString } from '../../models/api-market-json-result-of-string';
+import { ApiMarketJsonResultOfStringAltDto } from '../../models/api-market-json-result-of-string';
 
 export interface DealsGenerateDealNumber$Params {
 }
 
-export function dealsGenerateDealNumber(http: HttpClient, rootUrl: string, params?: DealsGenerateDealNumber$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+export function dealsGenerateDealNumber(http: HttpClient, rootUrl: string, params?: DealsGenerateDealNumber$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
   const rb = new RequestBuilder(rootUrl, dealsGenerateDealNumber.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function dealsGenerateDealNumber(http: HttpClient, rootUrl: string, param
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfString>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>;
     })
   );
 }
 
-dealsGenerateDealNumber.PATH = '/bla-bla-vla/deals/number/generate';
+dealsGenerateDealNumber.PATH = '/market/api/v1/deals/number/generate';

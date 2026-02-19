@@ -27,4 +27,4 @@ export function tagsDeleteTag(http: HttpClient, rootUrl: string, params: TagsDel
   );
 }
 
-tagsDeleteTag.PATH = '/bla-bla-vla/tags/{id}';
+tagsDeleteTag.PATH = '/market/api/v1/tags/{id}';

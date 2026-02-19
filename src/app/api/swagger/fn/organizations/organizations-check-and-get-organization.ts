@@ -29,4 +29,4 @@ export function organizationsCheckAndGetOrganization(http: HttpClient, rootUrl: 
   );
 }
 
-organizationsCheckAndGetOrganization.PATH = '/bla-bla-vla/organizations/CheckAndGetOrganization';
+organizationsCheckAndGetOrganization.PATH = '/market/api/v1/organizations/CheckAndGetOrganization';

@@ -28,4 +28,4 @@ export function okSendReportOnEmail(http: HttpClient, rootUrl: string, params?: 
   );
 }
 
-okSendReportOnEmail.PATH = '/bla-bla-vla/okservice/sendReportToEmail';
+okSendReportOnEmail.PATH = '/market/api/v1/okservice/sendReportToEmail';

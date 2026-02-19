@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfString } from '../../models/api-market-json-result-of-string';
+import { ApiMarketJsonResultOfStringAltDto } from '../../models/api-market-json-result-of-string';
 
 export interface OffersGetExcelImportTemplate$Params {
 }
 
-export function offersGetExcelImportTemplate(http: HttpClient, rootUrl: string, params?: OffersGetExcelImportTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+export function offersGetExcelImportTemplate(http: HttpClient, rootUrl: string, params?: OffersGetExcelImportTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
   const rb = new RequestBuilder(rootUrl, offersGetExcelImportTemplate.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function offersGetExcelImportTemplate(http: HttpClient, rootUrl: string, 
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfString>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>;
     })
   );
 }
 
-offersGetExcelImportTemplate.PATH = '/bla-bla-vla/offers/ExcelExportTemplate';
+offersGetExcelImportTemplate.PATH = '/market/api/v1/offers/ExcelExportTemplate';

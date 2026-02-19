@@ -33,7 +33,7 @@ export class AvailableOperationsApiService extends BaseService {
   }
 
   /** Path part for operation `availableOperationsGetByTrade()` */
-  static readonly AvailableOperationsGetByTradePath = '/bla-bla-vla/available-operations/trade/{tradeId}';
+  static readonly AvailableOperationsGetByTradePath = '/market/api/v1/available-operations/trade/{tradeId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -58,7 +58,7 @@ export class AvailableOperationsApiService extends BaseService {
   }
 
   /** Path part for operation `availableOperationsGetByApplication()` */
-  static readonly AvailableOperationsGetByApplicationPath = '/bla-bla-vla/available-operations/trade/{tradeId}/application';
+  static readonly AvailableOperationsGetByApplicationPath = '/market/api/v1/available-operations/trade/{tradeId}/application';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -83,7 +83,7 @@ export class AvailableOperationsApiService extends BaseService {
   }
 
   /** Path part for operation `availableOperationsGetByApplication2()` */
-  static readonly AvailableOperationsGetByApplication2Path = '/bla-bla-vla/available-operations/trade/{tradeId}/application/{applicationId}';
+  static readonly AvailableOperationsGetByApplication2Path = '/market/api/v1/available-operations/trade/{tradeId}/application/{applicationId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -108,7 +108,7 @@ export class AvailableOperationsApiService extends BaseService {
   }
 
   /** Path part for operation `availableOperationsGetByDeal()` */
-  static readonly AvailableOperationsGetByDealPath = '/bla-bla-vla/available-operations/deal/{dealId}';
+  static readonly AvailableOperationsGetByDealPath = '/market/api/v1/available-operations/deal/{dealId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -133,7 +133,7 @@ export class AvailableOperationsApiService extends BaseService {
   }
 
   /** Path part for operation `availableOperationsGetByQuotationSession()` */
-  static readonly AvailableOperationsGetByQuotationSessionPath = '/bla-bla-vla/available-operations/trade/{tradeId}/quotation-session';
+  static readonly AvailableOperationsGetByQuotationSessionPath = '/market/api/v1/available-operations/trade/{tradeId}/quotation-session';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -158,7 +158,7 @@ export class AvailableOperationsApiService extends BaseService {
   }
 
   /** Path part for operation `availableOperationsGetByOrder()` */
-  static readonly AvailableOperationsGetByOrderPath = '/bla-bla-vla/available-operations/trade/{orderId}/single-supplier';
+  static readonly AvailableOperationsGetByOrderPath = '/market/api/v1/available-operations/trade/{orderId}/single-supplier';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

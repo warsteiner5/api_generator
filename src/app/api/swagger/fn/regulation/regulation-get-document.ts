@@ -28,4 +28,4 @@ export function regulationGetDocument(http: HttpClient, rootUrl: string, params:
   );
 }
 
-regulationGetDocument.PATH = '/bla-bla-vla/regulation/{id}/document';
+regulationGetDocument.PATH = '/market/api/v1/regulation/{id}/document';

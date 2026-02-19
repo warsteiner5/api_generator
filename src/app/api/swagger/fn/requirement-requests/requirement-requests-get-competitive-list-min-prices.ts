@@ -30,4 +30,4 @@ export function requirementRequestsGetCompetitiveListMinPrices(http: HttpClient,
   );
 }
 
-requirementRequestsGetCompetitiveListMinPrices.PATH = '/bla-bla-vla/RequirementRequests/CompetitiveListMinPrices/{requirementRequestId}/{kladrCode}';
+requirementRequestsGetCompetitiveListMinPrices.PATH = '/market/api/v1/RequirementRequests/CompetitiveListMinPrices/{requirementRequestId}/{kladrCode}';

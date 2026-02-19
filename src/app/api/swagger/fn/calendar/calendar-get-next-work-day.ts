@@ -7,13 +7,13 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiGetNextWorkingDateRequestAltDto } from '../../models/api-get-next-working-date-request';
-import { ApiMarketJsonResultOfDateTime } from '../../models/api-market-json-result-of-date-time';
+import { ApiMarketJsonResultOfDateTimeAltDto } from '../../models/api-market-json-result-of-date-time';
 
 export interface CalendarGetNextWorkDay$Params {
       body?: ApiGetNextWorkingDateRequestAltDto | null
 }
 
-export function calendarGetNextWorkDay(http: HttpClient, rootUrl: string, params?: CalendarGetNextWorkDay$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDateTime>> {
+export function calendarGetNextWorkDay(http: HttpClient, rootUrl: string, params?: CalendarGetNextWorkDay$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDateTimeAltDto>> {
   const rb = new RequestBuilder(rootUrl, calendarGetNextWorkDay.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function calendarGetNextWorkDay(http: HttpClient, rootUrl: string, params
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfDateTime>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfDateTimeAltDto>;
     })
   );
 }
 
-calendarGetNextWorkDay.PATH = '/bla-bla-vla/calendar/nextworkday';
+calendarGetNextWorkDay.PATH = '/market/api/v1/calendar/nextworkday';

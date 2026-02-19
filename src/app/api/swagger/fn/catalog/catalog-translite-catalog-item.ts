@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfString } from '../../models/api-market-json-result-of-string';
+import { ApiMarketJsonResultOfStringAltDto } from '../../models/api-market-json-result-of-string';
 
 export interface CatalogTransliteCatalogItem$Params {
   id: number;
 }
 
-export function catalogTransliteCatalogItem(http: HttpClient, rootUrl: string, params: CatalogTransliteCatalogItem$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+export function catalogTransliteCatalogItem(http: HttpClient, rootUrl: string, params: CatalogTransliteCatalogItem$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
   const rb = new RequestBuilder(rootUrl, catalogTransliteCatalogItem.PATH, 'get');
   if (params) {
     rb.path('id', params.id, {});
@@ -23,9 +23,9 @@ export function catalogTransliteCatalogItem(http: HttpClient, rootUrl: string, p
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfString>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>;
     })
   );
 }
 
-catalogTransliteCatalogItem.PATH = '/bla-bla-vla/catalog/translate/{id}';
+catalogTransliteCatalogItem.PATH = '/market/api/v1/catalog/translate/{id}';

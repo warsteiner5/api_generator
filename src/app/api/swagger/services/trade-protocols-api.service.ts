@@ -11,7 +11,7 @@ import { StrictHttpResponse } from '../strict-http-response';
 
 import { ApiMarketJsonResultOfDiscussionItemDtoOf } from '../models/api-market-json-result-of-discussion-item-dto-of';
 import { ApiMarketJsonResultOfIDiscussionHistoryDtoOf } from '../models/api-market-json-result-of-i-discussion-history-dto-of';
-import { ApiMarketJsonResultOfString } from '../models/api-market-json-result-of-string';
+import { ApiMarketJsonResultOfStringAltDto } from '../models/api-market-json-result-of-string';
 import { tradeProtocolsGetAutoProtocol } from '../fn/trade-protocols/trade-protocols-get-auto-protocol';
 import { TradeProtocolsGetAutoProtocol$Params } from '../fn/trade-protocols/trade-protocols-get-auto-protocol';
 import { tradeProtocolsGetDiscussionHistory } from '../fn/trade-protocols/trade-protocols-get-discussion-history';
@@ -26,7 +26,7 @@ export class TradeProtocolsApiService extends BaseService {
   }
 
   /** Path part for operation `tradeProtocolsGetProtocolsHistory()` */
-  static readonly TradeProtocolsGetProtocolsHistoryPath = '/bla-bla-vla/protocols/trades/{tradeId}/history';
+  static readonly TradeProtocolsGetProtocolsHistoryPath = '/market/api/v1/protocols/trades/{tradeId}/history';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -51,7 +51,7 @@ export class TradeProtocolsApiService extends BaseService {
   }
 
   /** Path part for operation `tradeProtocolsGetDiscussionHistory()` */
-  static readonly TradeProtocolsGetDiscussionHistoryPath = '/bla-bla-vla/protocols/trades/{tradeId}/discussion-history';
+  static readonly TradeProtocolsGetDiscussionHistoryPath = '/market/api/v1/protocols/trades/{tradeId}/discussion-history';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -76,7 +76,7 @@ export class TradeProtocolsApiService extends BaseService {
   }
 
   /** Path part for operation `tradeProtocolsGetAutoProtocol()` */
-  static readonly TradeProtocolsGetAutoProtocolPath = '/bla-bla-vla/protocols/trades/{tradeId}/auto';
+  static readonly TradeProtocolsGetAutoProtocolPath = '/market/api/v1/protocols/trades/{tradeId}/auto';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -84,7 +84,7 @@ export class TradeProtocolsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradeProtocolsGetAutoProtocol$Response(params: TradeProtocolsGetAutoProtocol$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+  tradeProtocolsGetAutoProtocol$Response(params: TradeProtocolsGetAutoProtocol$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
     return tradeProtocolsGetAutoProtocol(this.http, this.rootUrl, params, context);
   }
 
@@ -94,9 +94,9 @@ export class TradeProtocolsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradeProtocolsGetAutoProtocol(params: TradeProtocolsGetAutoProtocol$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfString> {
+  tradeProtocolsGetAutoProtocol(params: TradeProtocolsGetAutoProtocol$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfStringAltDto> {
     return this.tradeProtocolsGetAutoProtocol$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfString>): ApiMarketJsonResultOfString => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>): ApiMarketJsonResultOfStringAltDto => r.body)
     );
   }
 

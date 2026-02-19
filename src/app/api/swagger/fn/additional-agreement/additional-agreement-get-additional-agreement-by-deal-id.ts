@@ -28,4 +28,4 @@ export function additionalAgreementGetAdditionalAgreementByDealId(http: HttpClie
   );
 }
 
-additionalAgreementGetAdditionalAgreementByDealId.PATH = '/bla-bla-vla/AdditionalAgreement/GetByDealId';
+additionalAgreementGetAdditionalAgreementByDealId.PATH = '/api/AdditionalAgreement/GetByDealId';

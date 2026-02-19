@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfDateTime } from '../../models/api-market-json-result-of-date-time';
+import { ApiMarketJsonResultOfDateTimeAltDto } from '../../models/api-market-json-result-of-date-time';
 
 export interface CalendarGetImmediateTradeApplicationEndDate$Params {
 }
 
-export function calendarGetImmediateTradeApplicationEndDate(http: HttpClient, rootUrl: string, params?: CalendarGetImmediateTradeApplicationEndDate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDateTime>> {
+export function calendarGetImmediateTradeApplicationEndDate(http: HttpClient, rootUrl: string, params?: CalendarGetImmediateTradeApplicationEndDate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDateTimeAltDto>> {
   const rb = new RequestBuilder(rootUrl, calendarGetImmediateTradeApplicationEndDate.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function calendarGetImmediateTradeApplicationEndDate(http: HttpClient, ro
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfDateTime>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfDateTimeAltDto>;
     })
   );
 }
 
-calendarGetImmediateTradeApplicationEndDate.PATH = '/bla-bla-vla/calendar/immediate-trade-app-end-date';
+calendarGetImmediateTradeApplicationEndDate.PATH = '/market/api/v1/calendar/immediate-trade-app-end-date';

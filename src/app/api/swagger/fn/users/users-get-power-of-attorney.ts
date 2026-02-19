@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfFileStreamModel } from '../../models/api-market-json-result-of-file-stream-model';
+import { ApiMarketJsonResultOfFileStreamModelAltDto } from '../../models/api-market-json-result-of-file-stream-model';
 
 export interface UsersGetPowerOfAttorney$Params {
   fileId: string;
   id: string;
 }
 
-export function usersGetPowerOfAttorney(http: HttpClient, rootUrl: string, params: UsersGetPowerOfAttorney$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfFileStreamModel>> {
+export function usersGetPowerOfAttorney(http: HttpClient, rootUrl: string, params: UsersGetPowerOfAttorney$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfFileStreamModelAltDto>> {
   const rb = new RequestBuilder(rootUrl, usersGetPowerOfAttorney.PATH, 'get');
   if (params) {
     rb.path('fileId', params.fileId, {});
@@ -25,9 +25,9 @@ export function usersGetPowerOfAttorney(http: HttpClient, rootUrl: string, param
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfFileStreamModel>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfFileStreamModelAltDto>;
     })
   );
 }
 
-usersGetPowerOfAttorney.PATH = '/bla-bla-vla/users/file/{fileId}/power-of-attorney/{id}';
+usersGetPowerOfAttorney.PATH = '/market/api/v1/users/file/{fileId}/power-of-attorney/{id}';

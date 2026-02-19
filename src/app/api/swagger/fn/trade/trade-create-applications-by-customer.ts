@@ -31,4 +31,4 @@ export function tradeCreateApplicationsByCustomer(http: HttpClient, rootUrl: str
   );
 }
 
-tradeCreateApplicationsByCustomer.PATH = '/bla-bla-vla/Trade/{id}/CreateApplicationsByCustomer';
+tradeCreateApplicationsByCustomer.PATH = '/api/Trade/{id}/CreateApplicationsByCustomer';

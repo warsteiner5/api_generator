@@ -28,4 +28,4 @@ export function tagsSaveTagParticipantRule(http: HttpClient, rootUrl: string, pa
   );
 }
 
-tagsSaveTagParticipantRule.PATH = '/bla-bla-vla/tags/participant-rule';
+tagsSaveTagParticipantRule.PATH = '/market/api/v1/tags/participant-rule';

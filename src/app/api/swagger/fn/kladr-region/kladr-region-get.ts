@@ -25,4 +25,4 @@ export function kladrRegionGet(http: HttpClient, rootUrl: string, params?: Kladr
   );
 }
 
-kladrRegionGet.PATH = '/bla-bla-vla';
+kladrRegionGet.PATH = '/api';

@@ -38,7 +38,7 @@ export class RegulationApiService extends BaseService {
   }
 
   /** Path part for operation `regulationSaveDocument()` */
-  static readonly RegulationSaveDocumentPath = '/bla-bla-vla/regulation/save/document';
+  static readonly RegulationSaveDocumentPath = '/market/api/v1/regulation/save/document';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -63,7 +63,7 @@ export class RegulationApiService extends BaseService {
   }
 
   /** Path part for operation `regulationSaveDocumentType()` */
-  static readonly RegulationSaveDocumentTypePath = '/bla-bla-vla/regulation/save/type';
+  static readonly RegulationSaveDocumentTypePath = '/market/api/v1/regulation/save/type';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -88,7 +88,7 @@ export class RegulationApiService extends BaseService {
   }
 
   /** Path part for operation `regulationGetDocument()` */
-  static readonly RegulationGetDocumentPath = '/bla-bla-vla/regulation/{id}/document';
+  static readonly RegulationGetDocumentPath = '/market/api/v1/regulation/{id}/document';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -113,7 +113,7 @@ export class RegulationApiService extends BaseService {
   }
 
   /** Path part for operation `regulationGetDocumentType()` */
-  static readonly RegulationGetDocumentTypePath = '/bla-bla-vla/regulation/{id}/type';
+  static readonly RegulationGetDocumentTypePath = '/market/api/v1/regulation/{id}/type';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -138,7 +138,7 @@ export class RegulationApiService extends BaseService {
   }
 
   /** Path part for operation `regulationGetRegulationDocumentsByFilter()` */
-  static readonly RegulationGetRegulationDocumentsByFilterPath = '/bla-bla-vla/regulation/documents';
+  static readonly RegulationGetRegulationDocumentsByFilterPath = '/market/api/v1/regulation/documents';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -163,7 +163,7 @@ export class RegulationApiService extends BaseService {
   }
 
   /** Path part for operation `regulationGetRegulationDocumentTypes()` */
-  static readonly RegulationGetRegulationDocumentTypesPath = '/bla-bla-vla/regulation/types';
+  static readonly RegulationGetRegulationDocumentTypesPath = '/market/api/v1/regulation/types';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -188,7 +188,7 @@ export class RegulationApiService extends BaseService {
   }
 
   /** Path part for operation `regulationHideRegulationDocument()` */
-  static readonly RegulationHideRegulationDocumentPath = '/bla-bla-vla/regulation/{id}/document/hide';
+  static readonly RegulationHideRegulationDocumentPath = '/market/api/v1/regulation/{id}/document/hide';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -213,7 +213,7 @@ export class RegulationApiService extends BaseService {
   }
 
   /** Path part for operation `regulationHideRegulationDocumentType()` */
-  static readonly RegulationHideRegulationDocumentTypePath = '/bla-bla-vla/regulation/{id}/type/hide';
+  static readonly RegulationHideRegulationDocumentTypePath = '/market/api/v1/regulation/{id}/type/hide';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

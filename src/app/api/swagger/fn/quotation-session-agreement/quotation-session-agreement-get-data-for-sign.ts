@@ -28,4 +28,4 @@ export function quotationSessionAgreementGetDataForSign(http: HttpClient, rootUr
   );
 }
 
-quotationSessionAgreementGetDataForSign.PATH = '/bla-bla-vla/quotation-session/agreement/sign/data';
+quotationSessionAgreementGetDataForSign.PATH = '/market/api/v1/quotation-session/agreement/sign/data';

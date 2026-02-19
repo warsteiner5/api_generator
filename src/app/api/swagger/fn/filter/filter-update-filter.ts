@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
 import { ApiSaveFilterObjectAltDto } from '../../models/api-save-filter-object';
 
 export interface FilterUpdateFilter$Params {
@@ -14,7 +14,7 @@ export interface FilterUpdateFilter$Params {
       body?: ApiSaveFilterObjectAltDto | null
 }
 
-export function filterUpdateFilter(http: HttpClient, rootUrl: string, params: FilterUpdateFilter$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function filterUpdateFilter(http: HttpClient, rootUrl: string, params: FilterUpdateFilter$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, filterUpdateFilter.PATH, 'put');
   if (params) {
     rb.path('id', params.id, {});
@@ -26,9 +26,9 @@ export function filterUpdateFilter(http: HttpClient, rootUrl: string, params: Fi
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-filterUpdateFilter.PATH = '/bla-bla-vla/filters/{id}';
+filterUpdateFilter.PATH = '/market/api/v1/filters/{id}';

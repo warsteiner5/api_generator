@@ -28,4 +28,4 @@ export function externalDealGetExternalDealsForAdmin(http: HttpClient, rootUrl: 
   );
 }
 
-externalDealGetExternalDealsForAdmin.PATH = '/bla-bla-vla/externaldeal/getExternalDealsForAdmin';
+externalDealGetExternalDealsForAdmin.PATH = '/api/externaldeal/getExternalDealsForAdmin';

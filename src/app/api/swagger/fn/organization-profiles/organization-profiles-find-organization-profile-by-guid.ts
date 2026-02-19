@@ -26,4 +26,4 @@ export function organizationProfilesFindOrganizationProfileByGuid(http: HttpClie
   );
 }
 
-organizationProfilesFindOrganizationProfileByGuid.PATH = '/bla-bla-vla/organization-profiles/my';
+organizationProfilesFindOrganizationProfileByGuid.PATH = '/market/api/v1/organization-profiles/my';

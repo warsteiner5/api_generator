@@ -64,4 +64,4 @@ export function participantGetParticipants(http: HttpClient, rootUrl: string, pa
   );
 }
 
-participantGetParticipants.PATH = '/bla-bla-vla/Participants';
+participantGetParticipants.PATH = '/api/Participants';

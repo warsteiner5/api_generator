@@ -33,4 +33,4 @@ export function additionalAgreementGetAdditionalAgreementSignature(http: HttpCli
   );
 }
 
-additionalAgreementGetAdditionalAgreementSignature.PATH = '/bla-bla-vla/AdditionalAgreement/GetAdditionalAgreementSignature/{additionalAgreementId}/{fileGuid}/{participant}';
+additionalAgreementGetAdditionalAgreementSignature.PATH = '/api/AdditionalAgreement/GetAdditionalAgreementSignature/{additionalAgreementId}/{fileGuid}/{participant}';

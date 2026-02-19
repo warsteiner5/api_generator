@@ -28,4 +28,4 @@ export function dealCancelDealExternal(http: HttpClient, rootUrl: string, params
   );
 }
 
-dealCancelDealExternal.PATH = '/bla-bla-vla/Deal/CancelDeal/External';
+dealCancelDealExternal.PATH = '/api/Deal/CancelDeal/External';

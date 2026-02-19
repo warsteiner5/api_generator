@@ -47,7 +47,7 @@ export class PriceListsApiService extends BaseService {
   }
 
   /** Path part for operation `priceListsGet()` */
-  static readonly PriceListsGetPath = '/bla-bla-vla/priceLists/{id}';
+  static readonly PriceListsGetPath = '/market/api/v1/priceLists/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -72,7 +72,7 @@ export class PriceListsApiService extends BaseService {
   }
 
   /** Path part for operation `priceListsCreatePriceList()` */
-  static readonly PriceListsCreatePriceListPath = '/bla-bla-vla/priceLists/create';
+  static readonly PriceListsCreatePriceListPath = '/market/api/v1/priceLists/create';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -97,7 +97,7 @@ export class PriceListsApiService extends BaseService {
   }
 
   /** Path part for operation `priceListsCreateDefaultPriceListInternal()` */
-  static readonly PriceListsCreateDefaultPriceListInternalPath = '/bla-bla-vla/priceLists/get-or-create';
+  static readonly PriceListsCreateDefaultPriceListInternalPath = '/market/api/v1/priceLists/get-or-create';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -122,7 +122,7 @@ export class PriceListsApiService extends BaseService {
   }
 
   /** Path part for operation `priceListsManualRunPriceAutoUpdates()` */
-  static readonly PriceListsManualRunPriceAutoUpdatesPath = '/bla-bla-vla/priceLists/{id}/auto-update';
+  static readonly PriceListsManualRunPriceAutoUpdatesPath = '/market/api/v1/priceLists/{id}/auto-update';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -147,7 +147,7 @@ export class PriceListsApiService extends BaseService {
   }
 
   /** Path part for operation `priceListsManualPriceListUpdates()` */
-  static readonly PriceListsManualPriceListUpdatesPath = '/bla-bla-vla/priceLists/{priceListId}/manual-yml-url-update';
+  static readonly PriceListsManualPriceListUpdatesPath = '/market/api/v1/priceLists/{priceListId}/manual-yml-url-update';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -172,7 +172,7 @@ export class PriceListsApiService extends BaseService {
   }
 
   /** Path part for operation `priceListsCreateAutoUpdateAndImport()` */
-  static readonly PriceListsCreateAutoUpdateAndImportPath = '/bla-bla-vla/priceLists/createOrUpdateAutoUpdateSchedule';
+  static readonly PriceListsCreateAutoUpdateAndImportPath = '/market/api/v1/priceLists/createOrUpdateAutoUpdateSchedule';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -197,7 +197,7 @@ export class PriceListsApiService extends BaseService {
   }
 
   /** Path part for operation `priceListsEditPriceList()` */
-  static readonly PriceListsEditPriceListPath = '/bla-bla-vla/priceLists/edit';
+  static readonly PriceListsEditPriceListPath = '/market/api/v1/priceLists/edit';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -222,7 +222,7 @@ export class PriceListsApiService extends BaseService {
   }
 
   /** Path part for operation `priceListsGetPaginatedPriceLists()` */
-  static readonly PriceListsGetPaginatedPriceListsPath = '/bla-bla-vla/priceLists/my';
+  static readonly PriceListsGetPaginatedPriceListsPath = '/market/api/v1/priceLists/my';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -247,7 +247,7 @@ export class PriceListsApiService extends BaseService {
   }
 
   /** Path part for operation `priceListsGetAllPriceListsShortInfo()` */
-  static readonly PriceListsGetAllPriceListsShortInfoPath = '/bla-bla-vla/priceLists/all';
+  static readonly PriceListsGetAllPriceListsShortInfoPath = '/market/api/v1/priceLists/all';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -272,7 +272,7 @@ export class PriceListsApiService extends BaseService {
   }
 
   /** Path part for operation `priceListsGetActivePriceListsShortInfo()` */
-  static readonly PriceListsGetActivePriceListsShortInfoPath = '/bla-bla-vla/priceLists/active';
+  static readonly PriceListsGetActivePriceListsShortInfoPath = '/market/api/v1/priceLists/active';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -297,7 +297,7 @@ export class PriceListsApiService extends BaseService {
   }
 
   /** Path part for operation `priceListsRemovePriceList()` */
-  static readonly PriceListsRemovePriceListPath = '/bla-bla-vla/priceLists';
+  static readonly PriceListsRemovePriceListPath = '/market/api/v1/priceLists';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -322,7 +322,7 @@ export class PriceListsApiService extends BaseService {
   }
 
   /** Path part for operation `priceListsChangePriceListState()` */
-  static readonly PriceListsChangePriceListStatePath = '/bla-bla-vla/priceLists/{id}/changeState/{state}';
+  static readonly PriceListsChangePriceListStatePath = '/market/api/v1/priceLists/{id}/changeState/{state}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -347,7 +347,7 @@ export class PriceListsApiService extends BaseService {
   }
 
   /** Path part for operation `priceListsBindPriceListToOrganization()` */
-  static readonly PriceListsBindPriceListToOrganizationPath = '/bla-bla-vla/priceLists/{id}/bindPriceListToOrganization/{idOrganization}';
+  static readonly PriceListsBindPriceListToOrganizationPath = '/market/api/v1/priceLists/{id}/bindPriceListToOrganization/{idOrganization}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

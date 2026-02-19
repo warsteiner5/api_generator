@@ -27,4 +27,4 @@ export function tenantGetTenantHost(http: HttpClient, rootUrl: string, params: T
   );
 }
 
-tenantGetTenantHost.PATH = '/bla-bla-vla/Tenant/getTenantHost';
+tenantGetTenantHost.PATH = '/api/Tenant/getTenantHost';

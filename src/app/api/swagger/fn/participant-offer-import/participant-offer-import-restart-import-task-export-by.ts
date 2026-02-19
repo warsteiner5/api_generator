@@ -27,4 +27,4 @@ export function participantOfferImportRestartImportTaskExportBy(http: HttpClient
   );
 }
 
-participantOfferImportRestartImportTaskExportBy.PATH = '/bla-bla-vla/offerimport/restart/export-by/{taskId}';
+participantOfferImportRestartImportTaskExportBy.PATH = '/market/api/v1/offerimport/restart/export-by/{taskId}';

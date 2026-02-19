@@ -25,4 +25,4 @@ export function tradeGetTradeExtCustomerInfoFileTemplate(http: HttpClient, rootU
   );
 }
 
-tradeGetTradeExtCustomerInfoFileTemplate.PATH = '/bla-bla-vla/Trade/TradeExtCustomerInfoFileTemplate';
+tradeGetTradeExtCustomerInfoFileTemplate.PATH = '/api/Trade/TradeExtCustomerInfoFileTemplate';

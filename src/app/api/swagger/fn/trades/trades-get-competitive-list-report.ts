@@ -28,4 +28,4 @@ export function tradesGetCompetitiveListReport(http: HttpClient, rootUrl: string
   );
 }
 
-tradesGetCompetitiveListReport.PATH = '/bla-bla-vla/trades/{tradeId}/competitive-list/excel';
+tradesGetCompetitiveListReport.PATH = '/market/api/v1/trades/{tradeId}/competitive-list/excel';

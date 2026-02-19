@@ -27,4 +27,4 @@ export function additionalAgreementSendToParticipant(http: HttpClient, rootUrl: 
   );
 }
 
-additionalAgreementSendToParticipant.PATH = '/bla-bla-vla/AdditionalAgreement/{id}/SendToParticipant';
+additionalAgreementSendToParticipant.PATH = '/api/AdditionalAgreement/{id}/SendToParticipant';

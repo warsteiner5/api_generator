@@ -28,4 +28,4 @@ export function tradesSpeedUpPriceRequest(http: HttpClient, rootUrl: string, par
   );
 }
 
-tradesSpeedUpPriceRequest.PATH = '/bla-bla-vla/trades/speedup/{tradeId}';
+tradesSpeedUpPriceRequest.PATH = '/market/api/v1/trades/speedup/{tradeId}';

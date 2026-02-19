@@ -26,4 +26,4 @@ export function dictionariesGetRegions(http: HttpClient, rootUrl: string, params
   );
 }
 
-dictionariesGetRegions.PATH = '/bla-bla-vla/dictionaries/regions';
+dictionariesGetRegions.PATH = '/market/api/v1/dictionaries/regions';

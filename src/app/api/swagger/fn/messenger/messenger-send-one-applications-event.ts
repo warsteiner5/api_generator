@@ -26,4 +26,4 @@ export function messengerSendOneApplicationsEvent(http: HttpClient, rootUrl: str
   );
 }
 
-messengerSendOneApplicationsEvent.PATH = '/bla-bla-vla/messenger/sendOneApplicationsEvent';
+messengerSendOneApplicationsEvent.PATH = '/market/api/v1/messenger/sendOneApplicationsEvent';

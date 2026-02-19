@@ -28,4 +28,4 @@ export function offersApprove(http: HttpClient, rootUrl: string, params?: Offers
   );
 }
 
-offersApprove.PATH = '/bla-bla-vla/offers/approve';
+offersApprove.PATH = '/market/api/v1/offers/approve';

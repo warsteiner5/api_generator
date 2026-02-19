@@ -7,13 +7,13 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiForgotPasswordModelAltDto } from '../../models/api-forgot-password-model';
-import { ApiMarketJsonResultOfForgotPasswordResult } from '../../models/api-market-json-result-of-forgot-password-result';
+import { ApiMarketJsonResultOfForgotPasswordResultAltDto } from '../../models/api-market-json-result-of-forgot-password-result';
 
 export interface UsersForgotPassword$Params {
       body?: ApiForgotPasswordModelAltDto | null
 }
 
-export function usersForgotPassword(http: HttpClient, rootUrl: string, params?: UsersForgotPassword$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfForgotPasswordResult>> {
+export function usersForgotPassword(http: HttpClient, rootUrl: string, params?: UsersForgotPassword$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfForgotPasswordResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, usersForgotPassword.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function usersForgotPassword(http: HttpClient, rootUrl: string, params?: 
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfForgotPasswordResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfForgotPasswordResultAltDto>;
     })
   );
 }
 
-usersForgotPassword.PATH = '/bla-bla-vla/users/forgot-password';
+usersForgotPassword.PATH = '/market/api/v1/users/forgot-password';

@@ -30,4 +30,4 @@ export function nsiFindOrganization(http: HttpClient, rootUrl: string, params: N
   );
 }
 
-nsiFindOrganization.PATH = '/bla-bla-vla/nsi/organization/find';
+nsiFindOrganization.PATH = '/market/api/v1/nsi/organization/find';

@@ -29,4 +29,4 @@ export function reportsCanGenerateNew(http: HttpClient, rootUrl: string, params:
   );
 }
 
-reportsCanGenerateNew.PATH = '/bla-bla-vla/reports/canGenerateNew/{reportType}';
+reportsCanGenerateNew.PATH = '/market/api/v1/reports/canGenerateNew/{reportType}';

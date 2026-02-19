@@ -31,4 +31,4 @@ export function externalDealsPublish2(http: HttpClient, rootUrl: string, params:
   );
 }
 
-externalDealsPublish2.PATH = '/bla-bla-vla/external-deals/{id}/publish';
+externalDealsPublish2.PATH = '/market/api/v1/external-deals/{id}/publish';

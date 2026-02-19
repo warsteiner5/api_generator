@@ -29,4 +29,4 @@ export function tradesGetTradeRecommendations(http: HttpClient, rootUrl: string,
   );
 }
 
-tradesGetTradeRecommendations.PATH = '/bla-bla-vla/trades/recommendations';
+tradesGetTradeRecommendations.PATH = '/market/api/v1/trades/recommendations';

@@ -26,4 +26,4 @@ export function usersGetOpenPartUserShops(http: HttpClient, rootUrl: string, par
   );
 }
 
-usersGetOpenPartUserShops.PATH = '/bla-bla-vla/users/tenants';
+usersGetOpenPartUserShops.PATH = '/market/api/v1/users/tenants';

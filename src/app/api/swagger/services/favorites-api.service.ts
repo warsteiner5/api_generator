@@ -35,7 +35,7 @@ export class FavoritesApiService extends BaseService {
   }
 
   /** Path part for operation `favoritesGetFavoriteOffers()` */
-  static readonly FavoritesGetFavoriteOffersPath = '/bla-bla-vla/favorite/offers';
+  static readonly FavoritesGetFavoriteOffersPath = '/market/api/v1/favorite/offers';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -60,7 +60,7 @@ export class FavoritesApiService extends BaseService {
   }
 
   /** Path part for operation `favoritesGetFavoriteOrganizations()` */
-  static readonly FavoritesGetFavoriteOrganizationsPath = '/bla-bla-vla/favorite/organizations';
+  static readonly FavoritesGetFavoriteOrganizationsPath = '/market/api/v1/favorite/organizations';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -85,7 +85,7 @@ export class FavoritesApiService extends BaseService {
   }
 
   /** Path part for operation `favoritesGetFavoriteDeals()` */
-  static readonly FavoritesGetFavoriteDealsPath = '/bla-bla-vla/favorite/deals';
+  static readonly FavoritesGetFavoriteDealsPath = '/market/api/v1/favorite/deals';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -110,7 +110,7 @@ export class FavoritesApiService extends BaseService {
   }
 
   /** Path part for operation `favoritesAddFavorite()` */
-  static readonly FavoritesAddFavoritePath = '/bla-bla-vla/favorite/add';
+  static readonly FavoritesAddFavoritePath = '/market/api/v1/favorite/add';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -135,7 +135,7 @@ export class FavoritesApiService extends BaseService {
   }
 
   /** Path part for operation `favoritesDeleteFavorite()` */
-  static readonly FavoritesDeleteFavoritePath = '/bla-bla-vla/favorite/delete';
+  static readonly FavoritesDeleteFavoritePath = '/market/api/v1/favorite/delete';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -160,7 +160,7 @@ export class FavoritesApiService extends BaseService {
   }
 
   /** Path part for operation `favoritesClearFavorite()` */
-  static readonly FavoritesClearFavoritePath = '/bla-bla-vla/favorite/clear';
+  static readonly FavoritesClearFavoritePath = '/market/api/v1/favorite/clear';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -185,7 +185,7 @@ export class FavoritesApiService extends BaseService {
   }
 
   /** Path part for operation `favoritesGetFavoriteCount()` */
-  static readonly FavoritesGetFavoriteCountPath = '/bla-bla-vla/favorite/count';
+  static readonly FavoritesGetFavoriteCountPath = '/market/api/v1/favorite/count';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

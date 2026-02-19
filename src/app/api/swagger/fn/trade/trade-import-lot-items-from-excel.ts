@@ -29,4 +29,4 @@ export function tradeImportLotItemsFromExcel(http: HttpClient, rootUrl: string, 
   );
 }
 
-tradeImportLotItemsFromExcel.PATH = '/bla-bla-vla/Trade/importlotitems';
+tradeImportLotItemsFromExcel.PATH = '/api/Trade/importlotitems';

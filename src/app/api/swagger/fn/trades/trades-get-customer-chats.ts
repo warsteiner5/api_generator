@@ -28,4 +28,4 @@ export function tradesGetCustomerChats(http: HttpClient, rootUrl: string, params
   );
 }
 
-tradesGetCustomerChats.PATH = '/bla-bla-vla/trades/{id}/customer-chats';
+tradesGetCustomerChats.PATH = '/market/api/v1/trades/{id}/customer-chats';

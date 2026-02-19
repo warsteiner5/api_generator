@@ -26,4 +26,4 @@ export function organizationsGetOrganizationShortInfo(http: HttpClient, rootUrl:
   );
 }
 
-organizationsGetOrganizationShortInfo.PATH = '/bla-bla-vla/organizations/my/short-info';
+organizationsGetOrganizationShortInfo.PATH = '/market/api/v1/organizations/my/short-info';

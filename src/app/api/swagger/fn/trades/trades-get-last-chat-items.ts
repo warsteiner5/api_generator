@@ -32,4 +32,4 @@ export function tradesGetLastChatItems(http: HttpClient, rootUrl: string, params
   );
 }
 
-tradesGetLastChatItems.PATH = '/bla-bla-vla/trades/{id}/chat/{chatId}/{lastId}';
+tradesGetLastChatItems.PATH = '/market/api/v1/trades/{id}/chat/{chatId}/{lastId}';

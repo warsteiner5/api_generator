@@ -1,7 +1,7 @@
-import { UpdatePropertyOfStringOf } from '../../models/update-property-of-string-of.interface';
-import { ApiUpdatePropertyOfStringOf } from '../../../swagger/models/api-update-property-of-string-of';
+import { UpdatePropertyOfStringOfAlt } from '../../models/update-property-of-string-of-alt.interface';
+import { ApiUpdatePropertyOfStringOfAltDto } from '../../../swagger/models/api-update-property-of-string-of';
 
-export function adaptApiUpdatePropertyOfStringOf(source?: UpdatePropertyOfStringOf | null): ApiUpdatePropertyOfStringOf {
+export function adaptApiUpdatePropertyOfStringOfAltDto(source?: UpdatePropertyOfStringOfAlt | null): ApiUpdatePropertyOfStringOfAltDto {
   return {
     NeedUpdate: source?.needUpdate,
     Value: source?.value ?? [],

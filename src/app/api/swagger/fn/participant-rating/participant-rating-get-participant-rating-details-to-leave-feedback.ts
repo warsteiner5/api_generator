@@ -28,4 +28,4 @@ export function participantRatingGetParticipantRatingDetailsToLeaveFeedback(http
   );
 }
 
-participantRatingGetParticipantRatingDetailsToLeaveFeedback.PATH = '/bla-bla-vla/ParticipantRating/GetParticipantRatingDetailsToLeaveFeedback/{id}';
+participantRatingGetParticipantRatingDetailsToLeaveFeedback.PATH = '/api/ParticipantRating/GetParticipantRatingDetailsToLeaveFeedback/{id}';

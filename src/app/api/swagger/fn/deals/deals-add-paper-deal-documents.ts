@@ -31,4 +31,4 @@ export function dealsAddPaperDealDocuments(http: HttpClient, rootUrl: string, pa
   );
 }
 
-dealsAddPaperDealDocuments.PATH = '/bla-bla-vla/deals/{id}/paper-documents';
+dealsAddPaperDealDocuments.PATH = '/market/api/v1/deals/{id}/paper-documents';

@@ -30,4 +30,4 @@ export function availableOperationsGetByApplication2(http: HttpClient, rootUrl: 
   );
 }
 
-availableOperationsGetByApplication2.PATH = '/bla-bla-vla/available-operations/trade/{tradeId}/application/{applicationId}';
+availableOperationsGetByApplication2.PATH = '/market/api/v1/available-operations/trade/{tradeId}/application/{applicationId}';

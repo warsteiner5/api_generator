@@ -29,4 +29,4 @@ export function regulationSaveDocumentType(http: HttpClient, rootUrl: string, pa
   );
 }
 
-regulationSaveDocumentType.PATH = '/bla-bla-vla/regulation/save/type';
+regulationSaveDocumentType.PATH = '/market/api/v1/regulation/save/type';

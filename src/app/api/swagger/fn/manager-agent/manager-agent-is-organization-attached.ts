@@ -27,4 +27,4 @@ export function managerAgentIsOrganizationAttached(http: HttpClient, rootUrl: st
   );
 }
 
-managerAgentIsOrganizationAttached.PATH = '/bla-bla-vla/managerAgent/is-organisation-attached/{organizationGuid}';
+managerAgentIsOrganizationAttached.PATH = '/market/api/v1/managerAgent/is-organisation-attached/{organizationGuid}';

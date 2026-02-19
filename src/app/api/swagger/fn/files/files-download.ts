@@ -27,4 +27,4 @@ export function filesDownload(http: HttpClient, rootUrl: string, params: FilesDo
   );
 }
 
-filesDownload.PATH = '/bla-bla-vla/files/{id}';
+filesDownload.PATH = '/market/api/v1/files/{id}';

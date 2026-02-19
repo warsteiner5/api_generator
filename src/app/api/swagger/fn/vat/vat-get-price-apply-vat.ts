@@ -7,7 +7,7 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiAvailableVatTypeEnum } from '../../models/api-available-vat-type-enum';
-import { ApiMarketJsonResultOfDecimal } from '../../models/api-market-json-result-of-decimal';
+import { ApiMarketJsonResultOfDecimalAltDto } from '../../models/api-market-json-result-of-decimal';
 
 export interface VatGetPriceApplyVat$Params {
   price: number;
@@ -15,7 +15,7 @@ export interface VatGetPriceApplyVat$Params {
   getPriceWithTax: boolean;
 }
 
-export function vatGetPriceApplyVat(http: HttpClient, rootUrl: string, params: VatGetPriceApplyVat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimal>> {
+export function vatGetPriceApplyVat(http: HttpClient, rootUrl: string, params: VatGetPriceApplyVat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>> {
   const rb = new RequestBuilder(rootUrl, vatGetPriceApplyVat.PATH, 'get');
   if (params) {
     rb.path('price', params.price, {});
@@ -28,9 +28,9 @@ export function vatGetPriceApplyVat(http: HttpClient, rootUrl: string, params: V
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfDecimal>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>;
     })
   );
 }
 
-vatGetPriceApplyVat.PATH = '/bla-bla-vla/vat/{rate}/price/{price}/include/{getPriceWithTax}';
+vatGetPriceApplyVat.PATH = '/market/api/v1/vat/{rate}/price/{price}/include/{getPriceWithTax}';

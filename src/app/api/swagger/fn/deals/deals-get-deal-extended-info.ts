@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfDealExtendedInfo } from '../../models/api-market-json-result-of-deal-extended-info';
+import { ApiMarketJsonResultOfDealExtendedInfoAltDto } from '../../models/api-market-json-result-of-deal-extended-info';
 
 export interface DealsGetDealExtendedInfo$Params {
   dealId: number;
 }
 
-export function dealsGetDealExtendedInfo(http: HttpClient, rootUrl: string, params: DealsGetDealExtendedInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDealExtendedInfo>> {
+export function dealsGetDealExtendedInfo(http: HttpClient, rootUrl: string, params: DealsGetDealExtendedInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDealExtendedInfoAltDto>> {
   const rb = new RequestBuilder(rootUrl, dealsGetDealExtendedInfo.PATH, 'get');
   if (params) {
     rb.path('dealId', params.dealId, {});
@@ -23,9 +23,9 @@ export function dealsGetDealExtendedInfo(http: HttpClient, rootUrl: string, para
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfDealExtendedInfo>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfDealExtendedInfoAltDto>;
     })
   );
 }
 
-dealsGetDealExtendedInfo.PATH = '/bla-bla-vla/deals/{dealId}/ExtendedInfo';
+dealsGetDealExtendedInfo.PATH = '/market/api/v1/deals/{dealId}/ExtendedInfo';

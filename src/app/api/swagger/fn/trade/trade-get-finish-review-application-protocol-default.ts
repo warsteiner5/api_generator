@@ -28,4 +28,4 @@ export function tradeGetFinishReviewApplicationProtocolDefault(http: HttpClient,
   );
 }
 
-tradeGetFinishReviewApplicationProtocolDefault.PATH = '/bla-bla-vla/Trade/FinishReviewApplicationProtocolDefault';
+tradeGetFinishReviewApplicationProtocolDefault.PATH = '/api/Trade/FinishReviewApplicationProtocolDefault';

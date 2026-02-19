@@ -30,4 +30,4 @@ export function dictionaryGetOkpd2ValuesByCodes(http: HttpClient, rootUrl: strin
   );
 }
 
-dictionaryGetOkpd2ValuesByCodes.PATH = '/bla-bla-vla/Dictionary/GetByCodes';
+dictionaryGetOkpd2ValuesByCodes.PATH = '/api/Dictionary/GetByCodes';

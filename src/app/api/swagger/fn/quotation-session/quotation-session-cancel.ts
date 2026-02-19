@@ -29,4 +29,4 @@ export function quotationSessionCancel(http: HttpClient, rootUrl: string, params
   );
 }
 
-quotationSessionCancel.PATH = '/bla-bla-vla/quotation-session/cancel';
+quotationSessionCancel.PATH = '/market/api/v1/quotation-session/cancel';

@@ -1,4 +1,4 @@
 import { DetachedSignatureAlt } from './detached-signature-alt.interface';
-import { KeyValuePairOfGuidAndByteOf } from './key-value-pair-of-guid-and-byte-of.interface';
+import { KeyValuePairOfGuidAndByteOfAlt } from './key-value-pair-of-guid-and-byte-of-alt.interface';
 
-export type DigitalSignature = DetachedSignatureAlt & { 'FileDetachedSigns'?: Array<KeyValuePairOfGuidAndByteOf> | null; 'IsNeedCompareDtos'?: boolean; 'PowerOfAttorneyId'?: string | null; 'PowerOfAttorneyRequired'?: boolean | null; };
+export type DigitalSignature = DetachedSignatureAlt & { 'FileDetachedSigns'?: Array<KeyValuePairOfGuidAndByteOfAlt> | null; 'IsNeedCompareDtos'?: boolean; 'PowerOfAttorneyId'?: string | null; 'PowerOfAttorneyRequired'?: boolean | null; };

@@ -28,4 +28,4 @@ export function competetiveListGetEquivalentCompetetiveLists(http: HttpClient, r
   );
 }
 
-competetiveListGetEquivalentCompetetiveLists.PATH = '/bla-bla-vla/competetivelist/getEquivalentCompetetiveLists/{requirementRequestId}';
+competetiveListGetEquivalentCompetetiveLists.PATH = '/market/api/v1/competetivelist/getEquivalentCompetetiveLists/{requirementRequestId}';

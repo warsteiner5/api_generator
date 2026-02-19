@@ -28,4 +28,4 @@ export function bubblesGetTradeBubble(http: HttpClient, rootUrl: string, params:
   );
 }
 
-bubblesGetTradeBubble.PATH = '/bla-bla-vla/bubbles/trade/{tradeId}';
+bubblesGetTradeBubble.PATH = '/market/api/v1/bubbles/trade/{tradeId}';

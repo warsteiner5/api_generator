@@ -29,4 +29,4 @@ export function tradesAddMmoCreateDealSystemMessage(http: HttpClient, rootUrl: s
   );
 }
 
-tradesAddMmoCreateDealSystemMessage.PATH = '/bla-bla-vla/trades/{tradeId}/chat/AddMmoCreateDealSystemMessage/{discussionOwnerId}';
+tradesAddMmoCreateDealSystemMessage.PATH = '/market/api/v1/trades/{tradeId}/chat/AddMmoCreateDealSystemMessage/{discussionOwnerId}';

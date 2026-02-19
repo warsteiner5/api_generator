@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfTelegramUrl } from '../../models/api-market-json-result-of-telegram-url';
+import { ApiMarketJsonResultOfTelegramUrlAltDto } from '../../models/api-market-json-result-of-telegram-url';
 
 export interface MessengerConnectTelegram$Params {
 }
 
-export function messengerConnectTelegram(http: HttpClient, rootUrl: string, params?: MessengerConnectTelegram$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTelegramUrl>> {
+export function messengerConnectTelegram(http: HttpClient, rootUrl: string, params?: MessengerConnectTelegram$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTelegramUrlAltDto>> {
   const rb = new RequestBuilder(rootUrl, messengerConnectTelegram.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function messengerConnectTelegram(http: HttpClient, rootUrl: string, para
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfTelegramUrl>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfTelegramUrlAltDto>;
     })
   );
 }
 
-messengerConnectTelegram.PATH = '/bla-bla-vla/messenger/connectTelegram';
+messengerConnectTelegram.PATH = '/market/api/v1/messenger/connectTelegram';

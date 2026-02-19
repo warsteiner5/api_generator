@@ -30,4 +30,4 @@ export function tradesGetChat(http: HttpClient, rootUrl: string, params: TradesG
   );
 }
 
-tradesGetChat.PATH = '/bla-bla-vla/trades/{id}/chat/{chatId}';
+tradesGetChat.PATH = '/market/api/v1/trades/{id}/chat/{chatId}';

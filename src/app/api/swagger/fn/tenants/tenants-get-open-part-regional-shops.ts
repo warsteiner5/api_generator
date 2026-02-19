@@ -26,4 +26,4 @@ export function tenantsGetOpenPartRegionalShops(http: HttpClient, rootUrl: strin
   );
 }
 
-tenantsGetOpenPartRegionalShops.PATH = '/bla-bla-vla/tenants/regional-shops';
+tenantsGetOpenPartRegionalShops.PATH = '/market/api/v1/tenants/regional-shops';

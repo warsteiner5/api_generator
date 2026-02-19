@@ -1,7 +1,7 @@
-import { ValueDtoOfStringAlt } from '../../models/value-dto-of-string-alt.interface';
-import { ApiValueDtoOfStringAltDto } from '../../../swagger/models/api-value-dto-of-string';
+import { ValueDtoOfString } from '../../models/value-dto-of-string.interface';
+import { ApiValueDtoOfString } from '../../../swagger/models/api-value-dto-of-string';
 
-export function adaptApiValueDtoOfStringAltDto(source?: ValueDtoOfStringAlt | null): ApiValueDtoOfStringAltDto {
+export function adaptApiValueDtoOfString(source?: ValueDtoOfString | null): ApiValueDtoOfString {
   return {
     Value: source?.value,
   };

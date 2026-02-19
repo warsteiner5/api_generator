@@ -33,4 +33,4 @@ export function tradesAddChatMessage(http: HttpClient, rootUrl: string, params: 
   );
 }
 
-tradesAddChatMessage.PATH = '/bla-bla-vla/trades/{id}/chat/{chatId}';
+tradesAddChatMessage.PATH = '/market/api/v1/trades/{id}/chat/{chatId}';

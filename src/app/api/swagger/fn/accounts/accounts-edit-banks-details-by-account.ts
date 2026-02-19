@@ -7,7 +7,7 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiBankingDetailsDto } from '../../models/api-banking-details-dto';
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
 
 export interface AccountsEditBanksDetailsByAccount$Params {
   accountNumber: string | null;
@@ -15,7 +15,7 @@ export interface AccountsEditBanksDetailsByAccount$Params {
       body?: ApiBankingDetailsDto | null
 }
 
-export function accountsEditBanksDetailsByAccount(http: HttpClient, rootUrl: string, params: AccountsEditBanksDetailsByAccount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function accountsEditBanksDetailsByAccount(http: HttpClient, rootUrl: string, params: AccountsEditBanksDetailsByAccount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, accountsEditBanksDetailsByAccount.PATH, 'post');
   if (params) {
     rb.path('accountNumber', params.accountNumber, {});
@@ -28,9 +28,9 @@ export function accountsEditBanksDetailsByAccount(http: HttpClient, rootUrl: str
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-accountsEditBanksDetailsByAccount.PATH = '/bla-bla-vla/accounts/my/{accountNumber}/bankDetails/{bankingDetailsId}/edit';
+accountsEditBanksDetailsByAccount.PATH = '/market/api/v1/accounts/my/{accountNumber}/bankDetails/{bankingDetailsId}/edit';

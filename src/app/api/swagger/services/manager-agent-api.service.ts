@@ -30,7 +30,7 @@ export class ManagerAgentApiService extends BaseService {
   }
 
   /** Path part for operation `managerAgentCreateManagerEmployeeIfNotExists()` */
-  static readonly ManagerAgentCreateManagerEmployeeIfNotExistsPath = '/bla-bla-vla/managerAgent/create-employee/{organizationGuid}';
+  static readonly ManagerAgentCreateManagerEmployeeIfNotExistsPath = '/market/api/v1/managerAgent/create-employee/{organizationGuid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -55,7 +55,7 @@ export class ManagerAgentApiService extends BaseService {
   }
 
   /** Path part for operation `managerAgentDetachOrganisation()` */
-  static readonly ManagerAgentDetachOrganisationPath = '/bla-bla-vla/managerAgent/detach-organisation/{organizationGuid}';
+  static readonly ManagerAgentDetachOrganisationPath = '/market/api/v1/managerAgent/detach-organisation/{organizationGuid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -80,7 +80,7 @@ export class ManagerAgentApiService extends BaseService {
   }
 
   /** Path part for operation `managerAgentAttachOrganisation()` */
-  static readonly ManagerAgentAttachOrganisationPath = '/bla-bla-vla/managerAgent/attach-organisation/{organizationGuid}';
+  static readonly ManagerAgentAttachOrganisationPath = '/market/api/v1/managerAgent/attach-organisation/{organizationGuid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -105,7 +105,7 @@ export class ManagerAgentApiService extends BaseService {
   }
 
   /** Path part for operation `managerAgentIsOrganizationAttached()` */
-  static readonly ManagerAgentIsOrganizationAttachedPath = '/bla-bla-vla/managerAgent/is-organisation-attached/{organizationGuid}';
+  static readonly ManagerAgentIsOrganizationAttachedPath = '/market/api/v1/managerAgent/is-organisation-attached/{organizationGuid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -130,7 +130,7 @@ export class ManagerAgentApiService extends BaseService {
   }
 
   /** Path part for operation `managerAgentGetManagerPublicId()` */
-  static readonly ManagerAgentGetManagerPublicIdPath = '/bla-bla-vla/managerAgent/manager-public-id';
+  static readonly ManagerAgentGetManagerPublicIdPath = '/market/api/v1/managerAgent/manager-public-id';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -155,7 +155,7 @@ export class ManagerAgentApiService extends BaseService {
   }
 
   /** Path part for operation `managerAgentGetOrganizationsForAutocomplete()` */
-  static readonly ManagerAgentGetOrganizationsForAutocompletePath = '/bla-bla-vla/managerAgent/possible-organizations/autocomplete';
+  static readonly ManagerAgentGetOrganizationsForAutocompletePath = '/market/api/v1/managerAgent/possible-organizations/autocomplete';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

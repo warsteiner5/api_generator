@@ -27,4 +27,4 @@ export function metricAddDownloadMetric(http: HttpClient, rootUrl: string, param
   );
 }
 
-metricAddDownloadMetric.PATH = '/bla-bla-vla/Metric/AddDownloadMetric';
+metricAddDownloadMetric.PATH = '/api/Metric/AddDownloadMetric';

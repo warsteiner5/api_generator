@@ -28,4 +28,4 @@ export function inviteGetEmailsForInvite(http: HttpClient, rootUrl: string, para
   );
 }
 
-inviteGetEmailsForInvite.PATH = '/bla-bla-vla/invitation/emailParcse/{fileGuid}';
+inviteGetEmailsForInvite.PATH = '/market/api/v1/invitation/emailParcse/{fileGuid}';

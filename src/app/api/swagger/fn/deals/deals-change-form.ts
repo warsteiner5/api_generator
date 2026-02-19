@@ -29,4 +29,4 @@ export function dealsChangeForm(http: HttpClient, rootUrl: string, params?: Deal
   );
 }
 
-dealsChangeForm.PATH = '/bla-bla-vla/deals/customers/form/change';
+dealsChangeForm.PATH = '/market/api/v1/deals/customers/form/change';

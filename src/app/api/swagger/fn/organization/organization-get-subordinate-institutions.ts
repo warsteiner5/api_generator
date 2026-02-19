@@ -28,4 +28,4 @@ export function organizationGetSubordinateInstitutions(http: HttpClient, rootUrl
   );
 }
 
-organizationGetSubordinateInstitutions.PATH = '/bla-bla-vla/Organization/GetSubordinateInstitutions';
+organizationGetSubordinateInstitutions.PATH = '/api/Organization/GetSubordinateInstitutions';

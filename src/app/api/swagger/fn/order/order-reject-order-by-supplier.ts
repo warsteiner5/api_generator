@@ -28,4 +28,4 @@ export function orderRejectOrderBySupplier(http: HttpClient, rootUrl: string, pa
   );
 }
 
-orderRejectOrderBySupplier.PATH = '/bla-bla-vla/order/RejectBySupplier';
+orderRejectOrderBySupplier.PATH = '/api/order/RejectBySupplier';

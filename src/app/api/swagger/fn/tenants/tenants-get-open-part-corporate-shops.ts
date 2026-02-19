@@ -26,4 +26,4 @@ export function tenantsGetOpenPartCorporateShops(http: HttpClient, rootUrl: stri
   );
 }
 
-tenantsGetOpenPartCorporateShops.PATH = '/bla-bla-vla/tenants/corporate-shops';
+tenantsGetOpenPartCorporateShops.PATH = '/market/api/v1/tenants/corporate-shops';

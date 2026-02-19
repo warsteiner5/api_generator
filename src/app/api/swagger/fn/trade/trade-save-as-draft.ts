@@ -28,4 +28,4 @@ export function tradeSaveAsDraft(http: HttpClient, rootUrl: string, params?: Tra
   );
 }
 
-tradeSaveAsDraft.PATH = '/bla-bla-vla/Trade/SaveAsDraft';
+tradeSaveAsDraft.PATH = '/api/Trade/SaveAsDraft';

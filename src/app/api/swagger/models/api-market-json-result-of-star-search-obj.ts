@@ -2,6 +2,6 @@
 /* eslint-disable */
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 import { ApiStarSearchObjAltDto } from '../models/api-star-search-obj';
-export type ApiMarketJsonResultOfStarSearchObj = ApiMarketJsonVoidResultAltDto & {
+export type ApiMarketJsonResultOfStarSearchObjAltDto = ApiMarketJsonVoidResultAltDto & {
 'data'?: ApiStarSearchObjAltDto | null;
 };

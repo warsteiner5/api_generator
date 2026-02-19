@@ -17,7 +17,7 @@ import { logLogAction } from '../fn/log/log-log-action';
 import { LogLogAction$Params } from '../fn/log/log-log-action';
 import { logLogError } from '../fn/log/log-log-error';
 import { LogLogError$Params } from '../fn/log/log-log-error';
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketBusinessOperationLogDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-market-business-operation-log-dto';
 
 @Injectable({ providedIn: 'root' })
@@ -27,7 +27,7 @@ export class LogApiService extends BaseService {
   }
 
   /** Path part for operation `logLogAction()` */
-  static readonly LogLogActionPath = '/bla-bla-vla/log/action';
+  static readonly LogLogActionPath = '/market/api/v1/log/action';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -35,7 +35,7 @@ export class LogApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  logLogAction$Response(params?: LogLogAction$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  logLogAction$Response(params?: LogLogAction$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return logLogAction(this.http, this.rootUrl, params, context);
   }
 
@@ -45,14 +45,14 @@ export class LogApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  logLogAction(params?: LogLogAction$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  logLogAction(params?: LogLogAction$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.logLogAction$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `logLogError()` */
-  static readonly LogLogErrorPath = '/bla-bla-vla/log/error';
+  static readonly LogLogErrorPath = '/market/api/v1/log/error';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -77,7 +77,7 @@ export class LogApiService extends BaseService {
   }
 
   /** Path part for operation `logGetBusinessOperationLogHistory()` */
-  static readonly LogGetBusinessOperationLogHistoryPath = '/bla-bla-vla/log/trade/search';
+  static readonly LogGetBusinessOperationLogHistoryPath = '/market/api/v1/log/trade/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -102,7 +102,7 @@ export class LogApiService extends BaseService {
   }
 
   /** Path part for operation `logGetBusinessOperationLogHistoryExcel()` */
-  static readonly LogGetBusinessOperationLogHistoryExcelPath = '/bla-bla-vla/log/trade/export';
+  static readonly LogGetBusinessOperationLogHistoryExcelPath = '/market/api/v1/log/trade/export';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

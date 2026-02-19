@@ -25,4 +25,4 @@ export function feedbackGetPersonalDataAgreement(http: HttpClient, rootUrl: stri
   );
 }
 
-feedbackGetPersonalDataAgreement.PATH = '/bla-bla-vla/feedback/agreement';
+feedbackGetPersonalDataAgreement.PATH = '/market/api/v1/feedback/agreement';

@@ -26,4 +26,4 @@ export function tradesGetApplicationDeclaration(http: HttpClient, rootUrl: strin
   );
 }
 
-tradesGetApplicationDeclaration.PATH = '/bla-bla-vla/trades/application/declaration';
+tradesGetApplicationDeclaration.PATH = '/market/api/v1/trades/application/declaration';

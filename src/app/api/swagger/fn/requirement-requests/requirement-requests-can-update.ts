@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface RequirementRequestsCanUpdate$Params {
   id: number;
 }
 
-export function requirementRequestsCanUpdate(http: HttpClient, rootUrl: string, params: RequirementRequestsCanUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function requirementRequestsCanUpdate(http: HttpClient, rootUrl: string, params: RequirementRequestsCanUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, requirementRequestsCanUpdate.PATH, 'get');
   if (params) {
     rb.path('id', params.id, {});
@@ -23,9 +23,9 @@ export function requirementRequestsCanUpdate(http: HttpClient, rootUrl: string, 
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-requirementRequestsCanUpdate.PATH = '/bla-bla-vla/RequirementRequests/{id}/CanUpdate';
+requirementRequestsCanUpdate.PATH = '/market/api/v1/RequirementRequests/{id}/CanUpdate';

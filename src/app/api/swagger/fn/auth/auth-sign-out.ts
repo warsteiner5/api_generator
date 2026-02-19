@@ -26,4 +26,4 @@ export function authSignOut(http: HttpClient, rootUrl: string, params?: AuthSign
   );
 }
 
-authSignOut.PATH = '/bla-bla-vla/auth/signout';
+authSignOut.PATH = '/market/api/v1/auth/signout';

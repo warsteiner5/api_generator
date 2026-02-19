@@ -28,4 +28,4 @@ export function segmentsParseSegmentFormExcel(http: HttpClient, rootUrl: string,
   );
 }
 
-segmentsParseSegmentFormExcel.PATH = '/bla-bla-vla/Segment/ParseSegmentFormExcel';
+segmentsParseSegmentFormExcel.PATH = '/market/api/v1/Segment/ParseSegmentFormExcel';

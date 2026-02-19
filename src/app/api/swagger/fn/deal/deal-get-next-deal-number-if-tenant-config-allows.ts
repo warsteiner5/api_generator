@@ -25,4 +25,4 @@ export function dealGetNextDealNumberIfTenantConfigAllows(http: HttpClient, root
   );
 }
 
-dealGetNextDealNumberIfTenantConfigAllows.PATH = '/bla-bla-vla/Deal/GetNextDealNumberIfTenantConfigAllows';
+dealGetNextDealNumberIfTenantConfigAllows.PATH = '/api/Deal/GetNextDealNumberIfTenantConfigAllows';

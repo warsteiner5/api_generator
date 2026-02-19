@@ -27,4 +27,4 @@ export function participantRatingExportFeedbackToExcel(http: HttpClient, rootUrl
   );
 }
 
-participantRatingExportFeedbackToExcel.PATH = '/bla-bla-vla/ParticipantRating/ExportFeedbackToExcel';
+participantRatingExportFeedbackToExcel.PATH = '/api/ParticipantRating/ExportFeedbackToExcel';

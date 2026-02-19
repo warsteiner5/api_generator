@@ -25,4 +25,4 @@ export function reportsGenerateSupplierRegistryReport(http: HttpClient, rootUrl:
   );
 }
 
-reportsGenerateSupplierRegistryReport.PATH = '/bla-bla-vla/reports/supplier-registry';
+reportsGenerateSupplierRegistryReport.PATH = '/market/api/v1/reports/supplier-registry';

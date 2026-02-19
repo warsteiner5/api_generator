@@ -28,4 +28,4 @@ export function externalDealDeleteDocument(http: HttpClient, rootUrl: string, pa
   );
 }
 
-externalDealDeleteDocument.PATH = '/bla-bla-vla/externaldeal/DeleteDocument';
+externalDealDeleteDocument.PATH = '/api/externaldeal/DeleteDocument';

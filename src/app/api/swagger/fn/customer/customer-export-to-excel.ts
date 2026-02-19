@@ -27,4 +27,4 @@ export function customerExportToExcel(http: HttpClient, rootUrl: string, params?
   );
 }
 
-customerExportToExcel.PATH = '/bla-bla-vla/Customers/ExportToExcel';
+customerExportToExcel.PATH = '/api/Customers/ExportToExcel';

@@ -25,4 +25,4 @@ export function organizationCheckCurrentUserEds(http: HttpClient, rootUrl: strin
   );
 }
 
-organizationCheckCurrentUserEds.PATH = '/bla-bla-vla/Organization/CheckCurrentUserEds';
+organizationCheckCurrentUserEds.PATH = '/api/Organization/CheckCurrentUserEds';

@@ -27,4 +27,4 @@ export function customerGetCustomer(http: HttpClient, rootUrl: string, params: C
   );
 }
 
-customerGetCustomer.PATH = '/bla-bla-vla/Customers/{id}';
+customerGetCustomer.PATH = '/api/Customers/{id}';

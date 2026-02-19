@@ -7,13 +7,13 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiDealFilterObjectAltDto } from '../../models/api-deal-filter-object';
-import { ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfo } from '../../models/api-market-json-result-of-market-pagination-result-of-list-of-deal-info';
+import { ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfoAltDto } from '../../models/api-market-json-result-of-market-pagination-result-of-list-of-deal-info';
 
 export interface DealsGetDeals$Params {
       body?: ApiDealFilterObjectAltDto | null
 }
 
-export function dealsGetDeals(http: HttpClient, rootUrl: string, params?: DealsGetDeals$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfo>> {
+export function dealsGetDeals(http: HttpClient, rootUrl: string, params?: DealsGetDeals$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfoAltDto>> {
   const rb = new RequestBuilder(rootUrl, dealsGetDeals.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function dealsGetDeals(http: HttpClient, rootUrl: string, params?: DealsG
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfo>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfDealInfoAltDto>;
     })
   );
 }
 
-dealsGetDeals.PATH = '/bla-bla-vla/deals/my';
+dealsGetDeals.PATH = '/market/api/v1/deals/my';

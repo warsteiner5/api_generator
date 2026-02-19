@@ -32,4 +32,4 @@ export function dictionariesGetKtruByOkpd2(http: HttpClient, rootUrl: string, pa
   );
 }
 
-dictionariesGetKtruByOkpd2.PATH = '/bla-bla-vla/dictionaries/ktru';
+dictionariesGetKtruByOkpd2.PATH = '/market/api/v1/dictionaries/ktru';

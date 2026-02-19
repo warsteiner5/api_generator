@@ -28,4 +28,4 @@ export function reportsGenerateTradeRegistryReport(http: HttpClient, rootUrl: st
   );
 }
 
-reportsGenerateTradeRegistryReport.PATH = '/bla-bla-vla/reports/trade-registry';
+reportsGenerateTradeRegistryReport.PATH = '/market/api/v1/reports/trade-registry';

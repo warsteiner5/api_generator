@@ -9,7 +9,7 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiApiSearchResultOfOrderGridDtoForCustomerAltDto } from '../models/api-api-search-result-of-order-grid-dto-for-customer';
+import { ApiApiSearchResultOfOrderGridDtoForCustomer } from '../models/api-api-search-result-of-order-grid-dto-for-customer';
 import { ApiExportFilesStatusAltDto } from '../models/api-export-files-status';
 import { orderApproveOrderByParticipant } from '../fn/order/order-approve-order-by-participant';
 import { OrderApproveOrderByParticipant$Params } from '../fn/order/order-approve-order-by-participant';
@@ -64,7 +64,7 @@ export class OrderApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  orderGetOrdersForCustomer$Response(params?: OrderGetOrdersForCustomer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiApiSearchResultOfOrderGridDtoForCustomerAltDto>> {
+  orderGetOrdersForCustomer$Response(params?: OrderGetOrdersForCustomer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiApiSearchResultOfOrderGridDtoForCustomer>> {
     return orderGetOrdersForCustomer(this.http, this.rootUrl, params, context);
   }
 
@@ -74,9 +74,9 @@ export class OrderApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  orderGetOrdersForCustomer(params?: OrderGetOrdersForCustomer$Params, context?: HttpContext): Observable<ApiApiSearchResultOfOrderGridDtoForCustomerAltDto> {
+  orderGetOrdersForCustomer(params?: OrderGetOrdersForCustomer$Params, context?: HttpContext): Observable<ApiApiSearchResultOfOrderGridDtoForCustomer> {
     return this.orderGetOrdersForCustomer$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiApiSearchResultOfOrderGridDtoForCustomerAltDto>): ApiApiSearchResultOfOrderGridDtoForCustomerAltDto => r.body)
+      map((r: StrictHttpResponse<ApiApiSearchResultOfOrderGridDtoForCustomer>): ApiApiSearchResultOfOrderGridDtoForCustomer => r.body)
     );
   }
 
@@ -139,7 +139,7 @@ export class OrderApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  orderGetOrdersForOperator$Response(params?: OrderGetOrdersForOperator$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiApiSearchResultOfOrderGridDtoForCustomerAltDto>> {
+  orderGetOrdersForOperator$Response(params?: OrderGetOrdersForOperator$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiApiSearchResultOfOrderGridDtoForCustomer>> {
     return orderGetOrdersForOperator(this.http, this.rootUrl, params, context);
   }
 
@@ -149,9 +149,9 @@ export class OrderApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  orderGetOrdersForOperator(params?: OrderGetOrdersForOperator$Params, context?: HttpContext): Observable<ApiApiSearchResultOfOrderGridDtoForCustomerAltDto> {
+  orderGetOrdersForOperator(params?: OrderGetOrdersForOperator$Params, context?: HttpContext): Observable<ApiApiSearchResultOfOrderGridDtoForCustomer> {
     return this.orderGetOrdersForOperator$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiApiSearchResultOfOrderGridDtoForCustomerAltDto>): ApiApiSearchResultOfOrderGridDtoForCustomerAltDto => r.body)
+      map((r: StrictHttpResponse<ApiApiSearchResultOfOrderGridDtoForCustomer>): ApiApiSearchResultOfOrderGridDtoForCustomer => r.body)
     );
   }
 
@@ -164,7 +164,7 @@ export class OrderApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  orderGetOrdersForParticipant$Response(params?: OrderGetOrdersForParticipant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiApiSearchResultOfOrderGridDtoForCustomerAltDto>> {
+  orderGetOrdersForParticipant$Response(params?: OrderGetOrdersForParticipant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiApiSearchResultOfOrderGridDtoForCustomer>> {
     return orderGetOrdersForParticipant(this.http, this.rootUrl, params, context);
   }
 
@@ -174,9 +174,9 @@ export class OrderApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  orderGetOrdersForParticipant(params?: OrderGetOrdersForParticipant$Params, context?: HttpContext): Observable<ApiApiSearchResultOfOrderGridDtoForCustomerAltDto> {
+  orderGetOrdersForParticipant(params?: OrderGetOrdersForParticipant$Params, context?: HttpContext): Observable<ApiApiSearchResultOfOrderGridDtoForCustomer> {
     return this.orderGetOrdersForParticipant$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiApiSearchResultOfOrderGridDtoForCustomerAltDto>): ApiApiSearchResultOfOrderGridDtoForCustomerAltDto => r.body)
+      map((r: StrictHttpResponse<ApiApiSearchResultOfOrderGridDtoForCustomer>): ApiApiSearchResultOfOrderGridDtoForCustomer => r.body)
     );
   }
 

@@ -28,4 +28,4 @@ export function fileSignSignFile(http: HttpClient, rootUrl: string, params?: Fil
   );
 }
 
-fileSignSignFile.PATH = '/bla-bla-vla/FileSign/SignFile';
+fileSignSignFile.PATH = '/api/FileSign/SignFile';

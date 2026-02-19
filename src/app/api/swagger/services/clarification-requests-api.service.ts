@@ -28,7 +28,7 @@ export class ClarificationRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `clarificationRequestsGetClarificationRequests()` */
-  static readonly ClarificationRequestsGetClarificationRequestsPath = '/bla-bla-vla/trades/{tradeId}/clarification-requests';
+  static readonly ClarificationRequestsGetClarificationRequestsPath = '/market/api/v1/trades/{tradeId}/clarification-requests';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -53,7 +53,7 @@ export class ClarificationRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `clarificationRequestsCreateRequest()` */
-  static readonly ClarificationRequestsCreateRequestPath = '/bla-bla-vla/trades/{tradeId}/clarification-requests';
+  static readonly ClarificationRequestsCreateRequestPath = '/market/api/v1/trades/{tradeId}/clarification-requests';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -78,7 +78,7 @@ export class ClarificationRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `clarificationRequestsCreateResponse()` */
-  static readonly ClarificationRequestsCreateResponsePath = '/bla-bla-vla/trades/{tradeId}/clarification-requests/{clarificationRequestId}/response';
+  static readonly ClarificationRequestsCreateResponsePath = '/market/api/v1/trades/{tradeId}/clarification-requests/{clarificationRequestId}/response';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -103,7 +103,7 @@ export class ClarificationRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `clarificationRequestsGetTradeParticipantList()` */
-  static readonly ClarificationRequestsGetTradeParticipantListPath = '/bla-bla-vla/trades/{tradeId}/clarification-requests/participants';
+  static readonly ClarificationRequestsGetTradeParticipantListPath = '/market/api/v1/trades/{tradeId}/clarification-requests/participants';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

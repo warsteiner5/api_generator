@@ -9,11 +9,11 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfGuid } from '../models/api-market-json-result-of-guid';
+import { ApiMarketJsonResultOfGuidAltDto } from '../models/api-market-json-result-of-guid';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfQuotationSessionItemDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-quotation-session-item-dto';
-import { ApiMarketJsonResultOfPublishApplicationResult } from '../models/api-market-json-result-of-publish-application-result';
-import { ApiMarketJsonResultOfQuotationSession } from '../models/api-market-json-result-of-quotation-session';
-import { ApiMarketJsonResultOfQuotationSessionImportDetailsResponse } from '../models/api-market-json-result-of-quotation-session-import-details-response';
+import { ApiMarketJsonResultOfPublishApplicationResultAltDto } from '../models/api-market-json-result-of-publish-application-result';
+import { ApiMarketJsonResultOfQuotationSessionAltDto } from '../models/api-market-json-result-of-quotation-session';
+import { ApiMarketJsonResultOfQuotationSessionImportDetailsResponseAltDto } from '../models/api-market-json-result-of-quotation-session-import-details-response';
 import { ApiMarketJsonResultOfQuotationSessionViewDto } from '../models/api-market-json-result-of-quotation-session-view-dto';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 import { quotationSessionNewCancel } from '../fn/quotation-session-new/quotation-session-new-cancel';
@@ -44,7 +44,7 @@ export class QuotationSessionNewApiService extends BaseService {
   }
 
   /** Path part for operation `quotationSessionNewInit()` */
-  static readonly QuotationSessionNewInitPath = '/bla-bla-vla/quotation-session-new/init';
+  static readonly QuotationSessionNewInitPath = '/market/api/v1/quotation-session-new/init';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -52,7 +52,7 @@ export class QuotationSessionNewApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  quotationSessionNewInit$Response(params?: QuotationSessionNewInit$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfQuotationSession>> {
+  quotationSessionNewInit$Response(params?: QuotationSessionNewInit$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionAltDto>> {
     return quotationSessionNewInit(this.http, this.rootUrl, params, context);
   }
 
@@ -62,14 +62,14 @@ export class QuotationSessionNewApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  quotationSessionNewInit(params?: QuotationSessionNewInit$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfQuotationSession> {
+  quotationSessionNewInit(params?: QuotationSessionNewInit$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfQuotationSessionAltDto> {
     return this.quotationSessionNewInit$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfQuotationSession>): ApiMarketJsonResultOfQuotationSession => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionAltDto>): ApiMarketJsonResultOfQuotationSessionAltDto => r.body)
     );
   }
 
   /** Path part for operation `quotationSessionNewSaveAsDraft()` */
-  static readonly QuotationSessionNewSaveAsDraftPath = '/bla-bla-vla/quotation-session-new/draft';
+  static readonly QuotationSessionNewSaveAsDraftPath = '/market/api/v1/quotation-session-new/draft';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -77,7 +77,7 @@ export class QuotationSessionNewApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  quotationSessionNewSaveAsDraft$Response(params?: QuotationSessionNewSaveAsDraft$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuid>> {
+  quotationSessionNewSaveAsDraft$Response(params?: QuotationSessionNewSaveAsDraft$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>> {
     return quotationSessionNewSaveAsDraft(this.http, this.rootUrl, params, context);
   }
 
@@ -87,14 +87,14 @@ export class QuotationSessionNewApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  quotationSessionNewSaveAsDraft(params?: QuotationSessionNewSaveAsDraft$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfGuid> {
+  quotationSessionNewSaveAsDraft(params?: QuotationSessionNewSaveAsDraft$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfGuidAltDto> {
     return this.quotationSessionNewSaveAsDraft$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfGuid>): ApiMarketJsonResultOfGuid => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>): ApiMarketJsonResultOfGuidAltDto => r.body)
     );
   }
 
   /** Path part for operation `quotationSessionNewCreate()` */
-  static readonly QuotationSessionNewCreatePath = '/bla-bla-vla/quotation-session-new';
+  static readonly QuotationSessionNewCreatePath = '/market/api/v1/quotation-session-new';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -102,7 +102,7 @@ export class QuotationSessionNewApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  quotationSessionNewCreate$Response(params?: QuotationSessionNewCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuid>> {
+  quotationSessionNewCreate$Response(params?: QuotationSessionNewCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>> {
     return quotationSessionNewCreate(this.http, this.rootUrl, params, context);
   }
 
@@ -112,14 +112,14 @@ export class QuotationSessionNewApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  quotationSessionNewCreate(params?: QuotationSessionNewCreate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfGuid> {
+  quotationSessionNewCreate(params?: QuotationSessionNewCreate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfGuidAltDto> {
     return this.quotationSessionNewCreate$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfGuid>): ApiMarketJsonResultOfGuid => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>): ApiMarketJsonResultOfGuidAltDto => r.body)
     );
   }
 
   /** Path part for operation `quotationSessionNewEdit()` */
-  static readonly QuotationSessionNewEditPath = '/bla-bla-vla/quotation-session-new/edit/{tradeGuid}';
+  static readonly QuotationSessionNewEditPath = '/market/api/v1/quotation-session-new/edit/{tradeGuid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -127,7 +127,7 @@ export class QuotationSessionNewApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  quotationSessionNewEdit$Response(params: QuotationSessionNewEdit$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfQuotationSession>> {
+  quotationSessionNewEdit$Response(params: QuotationSessionNewEdit$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionAltDto>> {
     return quotationSessionNewEdit(this.http, this.rootUrl, params, context);
   }
 
@@ -137,14 +137,14 @@ export class QuotationSessionNewApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  quotationSessionNewEdit(params: QuotationSessionNewEdit$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfQuotationSession> {
+  quotationSessionNewEdit(params: QuotationSessionNewEdit$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfQuotationSessionAltDto> {
     return this.quotationSessionNewEdit$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfQuotationSession>): ApiMarketJsonResultOfQuotationSession => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionAltDto>): ApiMarketJsonResultOfQuotationSessionAltDto => r.body)
     );
   }
 
   /** Path part for operation `quotationSessionNewGetImportTemplateGuidByTenant()` */
-  static readonly QuotationSessionNewGetImportTemplateGuidByTenantPath = '/bla-bla-vla/quotation-session-new/import-template-guid';
+  static readonly QuotationSessionNewGetImportTemplateGuidByTenantPath = '/market/api/v1/quotation-session-new/import-template-guid';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -152,7 +152,7 @@ export class QuotationSessionNewApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  quotationSessionNewGetImportTemplateGuidByTenant$Response(params?: QuotationSessionNewGetImportTemplateGuidByTenant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuid>> {
+  quotationSessionNewGetImportTemplateGuidByTenant$Response(params?: QuotationSessionNewGetImportTemplateGuidByTenant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>> {
     return quotationSessionNewGetImportTemplateGuidByTenant(this.http, this.rootUrl, params, context);
   }
 
@@ -162,14 +162,14 @@ export class QuotationSessionNewApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  quotationSessionNewGetImportTemplateGuidByTenant(params?: QuotationSessionNewGetImportTemplateGuidByTenant$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfGuid> {
+  quotationSessionNewGetImportTemplateGuidByTenant(params?: QuotationSessionNewGetImportTemplateGuidByTenant$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfGuidAltDto> {
     return this.quotationSessionNewGetImportTemplateGuidByTenant$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfGuid>): ApiMarketJsonResultOfGuid => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>): ApiMarketJsonResultOfGuidAltDto => r.body)
     );
   }
 
   /** Path part for operation `quotationSessionNewImportDetails()` */
-  static readonly QuotationSessionNewImportDetailsPath = '/bla-bla-vla/quotation-session-new/import-details';
+  static readonly QuotationSessionNewImportDetailsPath = '/market/api/v1/quotation-session-new/import-details';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -177,7 +177,7 @@ export class QuotationSessionNewApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  quotationSessionNewImportDetails$Response(params?: QuotationSessionNewImportDetails$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionImportDetailsResponse>> {
+  quotationSessionNewImportDetails$Response(params?: QuotationSessionNewImportDetails$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionImportDetailsResponseAltDto>> {
     return quotationSessionNewImportDetails(this.http, this.rootUrl, params, context);
   }
 
@@ -187,14 +187,14 @@ export class QuotationSessionNewApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  quotationSessionNewImportDetails(params?: QuotationSessionNewImportDetails$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfQuotationSessionImportDetailsResponse> {
+  quotationSessionNewImportDetails(params?: QuotationSessionNewImportDetails$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfQuotationSessionImportDetailsResponseAltDto> {
     return this.quotationSessionNewImportDetails$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionImportDetailsResponse>): ApiMarketJsonResultOfQuotationSessionImportDetailsResponse => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionImportDetailsResponseAltDto>): ApiMarketJsonResultOfQuotationSessionImportDetailsResponseAltDto => r.body)
     );
   }
 
   /** Path part for operation `quotationSessionNewCancel()` */
-  static readonly QuotationSessionNewCancelPath = '/bla-bla-vla/quotation-session-new/cancel';
+  static readonly QuotationSessionNewCancelPath = '/market/api/v1/quotation-session-new/cancel';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -219,7 +219,7 @@ export class QuotationSessionNewApiService extends BaseService {
   }
 
   /** Path part for operation `quotationSessionNewJoin()` */
-  static readonly QuotationSessionNewJoinPath = '/bla-bla-vla/quotation-session-new/join';
+  static readonly QuotationSessionNewJoinPath = '/market/api/v1/quotation-session-new/join';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -227,7 +227,7 @@ export class QuotationSessionNewApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  quotationSessionNewJoin$Response(params?: QuotationSessionNewJoin$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResult>> {
+  quotationSessionNewJoin$Response(params?: QuotationSessionNewJoin$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResultAltDto>> {
     return quotationSessionNewJoin(this.http, this.rootUrl, params, context);
   }
 
@@ -237,14 +237,14 @@ export class QuotationSessionNewApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  quotationSessionNewJoin(params?: QuotationSessionNewJoin$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfPublishApplicationResult> {
+  quotationSessionNewJoin(params?: QuotationSessionNewJoin$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfPublishApplicationResultAltDto> {
     return this.quotationSessionNewJoin$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResult>): ApiMarketJsonResultOfPublishApplicationResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResultAltDto>): ApiMarketJsonResultOfPublishApplicationResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `quotationSessionNewGet()` */
-  static readonly QuotationSessionNewGetPath = '/bla-bla-vla/quotation-session-new/{tradeGuid}';
+  static readonly QuotationSessionNewGetPath = '/market/api/v1/quotation-session-new/{tradeGuid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -269,7 +269,7 @@ export class QuotationSessionNewApiService extends BaseService {
   }
 
   /** Path part for operation `quotationSessionNewGetItems()` */
-  static readonly QuotationSessionNewGetItemsPath = '/bla-bla-vla/quotation-session-new/{tradeGuid}/items';
+  static readonly QuotationSessionNewGetItemsPath = '/market/api/v1/quotation-session-new/{tradeGuid}/items';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

@@ -28,4 +28,4 @@ export function companyCatalogGetIndustry(http: HttpClient, rootUrl: string, par
   );
 }
 
-companyCatalogGetIndustry.PATH = '/bla-bla-vla/companies/industries';
+companyCatalogGetIndustry.PATH = '/market/api/v1/companies/industries';

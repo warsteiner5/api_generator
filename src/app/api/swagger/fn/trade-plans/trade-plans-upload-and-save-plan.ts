@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
 
 export interface TradePlansUploadAndSavePlan$Params {
   guid: string;
 }
 
-export function tradePlansUploadAndSavePlan(http: HttpClient, rootUrl: string, params: TradePlansUploadAndSavePlan$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function tradePlansUploadAndSavePlan(http: HttpClient, rootUrl: string, params: TradePlansUploadAndSavePlan$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradePlansUploadAndSavePlan.PATH, 'post');
   if (params) {
     rb.path('guid', params.guid, {});
@@ -23,9 +23,9 @@ export function tradePlansUploadAndSavePlan(http: HttpClient, rootUrl: string, p
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-tradePlansUploadAndSavePlan.PATH = '/bla-bla-vla/plans/upload/{guid}';
+tradePlansUploadAndSavePlan.PATH = '/market/api/v1/plans/upload/{guid}';

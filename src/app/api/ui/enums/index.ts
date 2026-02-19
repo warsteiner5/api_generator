@@ -86,7 +86,7 @@ export * from './national-mode-requirement-type.enum';
 export * from './notification-type.enum';
 export * from './offer-created-method.enum';
 export * from './offer-import-error.enum';
-export * from './offer-state-enum-dto-alt.enum';
+export * from './offer-state.enum';
 export * from './order-state.enum';
 export * from './org-accreditation-level.enum';
 export * from './org-setting-applicability.enum';

@@ -25,4 +25,4 @@ export function organizationsApplyHomeRegionMessage(http: HttpClient, rootUrl: s
   );
 }
 
-organizationsApplyHomeRegionMessage.PATH = '/bla-bla-vla/organizations/applyHomeRegionMessage';
+organizationsApplyHomeRegionMessage.PATH = '/market/api/v1/organizations/applyHomeRegionMessage';

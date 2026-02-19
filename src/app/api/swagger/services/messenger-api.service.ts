@@ -9,8 +9,8 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfMessengerStatus } from '../models/api-market-json-result-of-messenger-status';
-import { ApiMarketJsonResultOfTelegramUrl } from '../models/api-market-json-result-of-telegram-url';
+import { ApiMarketJsonResultOfMessengerStatusAltDto } from '../models/api-market-json-result-of-messenger-status';
+import { ApiMarketJsonResultOfTelegramUrlAltDto } from '../models/api-market-json-result-of-telegram-url';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 import { messengerConnectTelegram } from '../fn/messenger/messenger-connect-telegram';
 import { MessengerConnectTelegram$Params } from '../fn/messenger/messenger-connect-telegram';
@@ -30,7 +30,7 @@ export class MessengerApiService extends BaseService {
   }
 
   /** Path part for operation `messengerConnectTelegram()` */
-  static readonly MessengerConnectTelegramPath = '/bla-bla-vla/messenger/connectTelegram';
+  static readonly MessengerConnectTelegramPath = '/market/api/v1/messenger/connectTelegram';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -38,7 +38,7 @@ export class MessengerApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  messengerConnectTelegram$Response(params?: MessengerConnectTelegram$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTelegramUrl>> {
+  messengerConnectTelegram$Response(params?: MessengerConnectTelegram$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTelegramUrlAltDto>> {
     return messengerConnectTelegram(this.http, this.rootUrl, params, context);
   }
 
@@ -48,14 +48,14 @@ export class MessengerApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  messengerConnectTelegram(params?: MessengerConnectTelegram$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTelegramUrl> {
+  messengerConnectTelegram(params?: MessengerConnectTelegram$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTelegramUrlAltDto> {
     return this.messengerConnectTelegram$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfTelegramUrl>): ApiMarketJsonResultOfTelegramUrl => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfTelegramUrlAltDto>): ApiMarketJsonResultOfTelegramUrlAltDto => r.body)
     );
   }
 
   /** Path part for operation `messengerGetMessengerStatus()` */
-  static readonly MessengerGetMessengerStatusPath = '/bla-bla-vla/messenger/getMessengerStatus';
+  static readonly MessengerGetMessengerStatusPath = '/market/api/v1/messenger/getMessengerStatus';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -63,7 +63,7 @@ export class MessengerApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  messengerGetMessengerStatus$Response(params?: MessengerGetMessengerStatus$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMessengerStatus>> {
+  messengerGetMessengerStatus$Response(params?: MessengerGetMessengerStatus$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMessengerStatusAltDto>> {
     return messengerGetMessengerStatus(this.http, this.rootUrl, params, context);
   }
 
@@ -73,14 +73,14 @@ export class MessengerApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  messengerGetMessengerStatus(params?: MessengerGetMessengerStatus$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMessengerStatus> {
+  messengerGetMessengerStatus(params?: MessengerGetMessengerStatus$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMessengerStatusAltDto> {
     return this.messengerGetMessengerStatus$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMessengerStatus>): ApiMarketJsonResultOfMessengerStatus => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMessengerStatusAltDto>): ApiMarketJsonResultOfMessengerStatusAltDto => r.body)
     );
   }
 
   /** Path part for operation `messengerSendTradeWithApplicationsEndsEvent()` */
-  static readonly MessengerSendTradeWithApplicationsEndsEventPath = '/bla-bla-vla/messenger/sendTradeWithApplicationsEndsEvent';
+  static readonly MessengerSendTradeWithApplicationsEndsEventPath = '/market/api/v1/messenger/sendTradeWithApplicationsEndsEvent';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -105,7 +105,7 @@ export class MessengerApiService extends BaseService {
   }
 
   /** Path part for operation `messengerSendTradeWithoutApplicationsEndsEvent()` */
-  static readonly MessengerSendTradeWithoutApplicationsEndsEventPath = '/bla-bla-vla/messenger/sendTradeWithoutApplicationsEndsEvent';
+  static readonly MessengerSendTradeWithoutApplicationsEndsEventPath = '/market/api/v1/messenger/sendTradeWithoutApplicationsEndsEvent';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -130,7 +130,7 @@ export class MessengerApiService extends BaseService {
   }
 
   /** Path part for operation `messengerSendOneApplicationsEvent()` */
-  static readonly MessengerSendOneApplicationsEventPath = '/bla-bla-vla/messenger/sendOneApplicationsEvent';
+  static readonly MessengerSendOneApplicationsEventPath = '/market/api/v1/messenger/sendOneApplicationsEvent';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

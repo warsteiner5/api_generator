@@ -33,4 +33,4 @@ export function requirementRequestsGetChatItems(http: HttpClient, rootUrl: strin
   );
 }
 
-requirementRequestsGetChatItems.PATH = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{chatId}/read/items';
+requirementRequestsGetChatItems.PATH = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{chatId}/read/items';

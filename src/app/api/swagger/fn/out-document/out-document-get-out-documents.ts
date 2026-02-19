@@ -29,4 +29,4 @@ export function outDocumentGetOutDocuments(http: HttpClient, rootUrl: string, pa
   );
 }
 
-outDocumentGetOutDocuments.PATH = '/bla-bla-vla/OutDocument/GetOutDocuments';
+outDocumentGetOutDocuments.PATH = '/api/OutDocument/GetOutDocuments';

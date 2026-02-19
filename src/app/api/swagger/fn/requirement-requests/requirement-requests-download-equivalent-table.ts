@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfMemoryStream } from '../../models/api-market-json-result-of-memory-stream';
+import { ApiMarketJsonResultOfMemoryStreamAltDto } from '../../models/api-market-json-result-of-memory-stream';
 
 export interface RequirementRequestsDownloadEquivalentTable$Params {
   id: number;
 }
 
-export function requirementRequestsDownloadEquivalentTable(http: HttpClient, rootUrl: string, params: RequirementRequestsDownloadEquivalentTable$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMemoryStream>> {
+export function requirementRequestsDownloadEquivalentTable(http: HttpClient, rootUrl: string, params: RequirementRequestsDownloadEquivalentTable$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMemoryStreamAltDto>> {
   const rb = new RequestBuilder(rootUrl, requirementRequestsDownloadEquivalentTable.PATH, 'get');
   if (params) {
     rb.path('id', params.id, {});
@@ -23,9 +23,9 @@ export function requirementRequestsDownloadEquivalentTable(http: HttpClient, roo
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfMemoryStream>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfMemoryStreamAltDto>;
     })
   );
 }
 
-requirementRequestsDownloadEquivalentTable.PATH = '/bla-bla-vla/RequirementRequests/{id}/DownloadEquivalentTable';
+requirementRequestsDownloadEquivalentTable.PATH = '/market/api/v1/RequirementRequests/{id}/DownloadEquivalentTable';

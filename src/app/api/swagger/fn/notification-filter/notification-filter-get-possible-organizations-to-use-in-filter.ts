@@ -26,4 +26,4 @@ export function notificationFilterGetPossibleOrganizationsToUseInFilter(http: Ht
   );
 }
 
-notificationFilterGetPossibleOrganizationsToUseInFilter.PATH = '/bla-bla-vla/notifications/filters/my/possible-organizations';
+notificationFilterGetPossibleOrganizationsToUseInFilter.PATH = '/market/api/v1/notifications/filters/my/possible-organizations';

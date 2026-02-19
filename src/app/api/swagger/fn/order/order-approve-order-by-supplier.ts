@@ -28,4 +28,4 @@ export function orderApproveOrderBySupplier(http: HttpClient, rootUrl: string, p
   );
 }
 
-orderApproveOrderBySupplier.PATH = '/bla-bla-vla/order/ApproveBySupplier';
+orderApproveOrderBySupplier.PATH = '/api/order/ApproveBySupplier';

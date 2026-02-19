@@ -31,4 +31,4 @@ export function tariffGetLicenseReward(http: HttpClient, rootUrl: string, params
   );
 }
 
-tariffGetLicenseReward.PATH = '/bla-bla-vla/Tariff/GetLicenseReward/{tradeLotId}/{price}/{publicationDate}';
+tariffGetLicenseReward.PATH = '/api/Tariff/GetLicenseReward/{tradeLotId}/{price}/{publicationDate}';

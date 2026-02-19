@@ -28,4 +28,4 @@ export function invitationGetAutoInvitationsInfo(http: HttpClient, rootUrl: stri
   );
 }
 
-invitationGetAutoInvitationsInfo.PATH = '/bla-bla-vla/invitation/AutoInvitationsInfo/{tradeId}';
+invitationGetAutoInvitationsInfo.PATH = '/api/invitation/AutoInvitationsInfo/{tradeId}';

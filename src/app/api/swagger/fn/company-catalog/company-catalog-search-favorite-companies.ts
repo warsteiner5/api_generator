@@ -29,4 +29,4 @@ export function companyCatalogSearchFavoriteCompanies(http: HttpClient, rootUrl:
   );
 }
 
-companyCatalogSearchFavoriteCompanies.PATH = '/bla-bla-vla/companies/favorite/search';
+companyCatalogSearchFavoriteCompanies.PATH = '/market/api/v1/companies/favorite/search';

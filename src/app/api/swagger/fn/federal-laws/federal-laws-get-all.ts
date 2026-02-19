@@ -29,4 +29,4 @@ export function federalLawsGetAll(http: HttpClient, rootUrl: string, params?: Fe
   );
 }
 
-federalLawsGetAll.PATH = '/bla-bla-vla/federalLaws/GetAll';
+federalLawsGetAll.PATH = '/market/api/v1/federalLaws/GetAll';

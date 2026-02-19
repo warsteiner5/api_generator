@@ -27,4 +27,4 @@ export function nicRegistriesGetById(http: HttpClient, rootUrl: string, params: 
   );
 }
 
-nicRegistriesGetById.PATH = '/bla-bla-vla/NicRegistry/{entryId}';
+nicRegistriesGetById.PATH = '/api/NicRegistry/{entryId}';

@@ -28,4 +28,4 @@ export function dealSuggestPaperFormSigningOnDemandOfProvider(http: HttpClient, 
   );
 }
 
-dealSuggestPaperFormSigningOnDemandOfProvider.PATH = '/bla-bla-vla/Deal/SuggestPaperFormSigningOnDemandOfProvider';
+dealSuggestPaperFormSigningOnDemandOfProvider.PATH = '/api/Deal/SuggestPaperFormSigningOnDemandOfProvider';

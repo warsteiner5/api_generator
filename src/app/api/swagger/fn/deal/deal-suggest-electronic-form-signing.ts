@@ -28,4 +28,4 @@ export function dealSuggestElectronicFormSigning(http: HttpClient, rootUrl: stri
   );
 }
 
-dealSuggestElectronicFormSigning.PATH = '/bla-bla-vla/Deal/SuggestElectronicFormSigning';
+dealSuggestElectronicFormSigning.PATH = '/api/Deal/SuggestElectronicFormSigning';

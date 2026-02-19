@@ -28,4 +28,4 @@ export function participantOfferGetTemplateForExcelDocument(http: HttpClient, ro
   );
 }
 
-participantOfferGetTemplateForExcelDocument.PATH = '/bla-bla-vla/participantoffer/GetTemplateForExcelDocument/{type}';
+participantOfferGetTemplateForExcelDocument.PATH = '/api/participantoffer/GetTemplateForExcelDocument/{type}';

@@ -26,4 +26,4 @@ export function organizationsGetMyCustomerPartners(http: HttpClient, rootUrl: st
   );
 }
 
-organizationsGetMyCustomerPartners.PATH = '/bla-bla-vla/organizations/partners';
+organizationsGetMyCustomerPartners.PATH = '/market/api/v1/organizations/partners';

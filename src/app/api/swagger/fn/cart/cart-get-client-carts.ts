@@ -28,4 +28,4 @@ export function cartGetClientCarts(http: HttpClient, rootUrl: string, params?: C
   );
 }
 
-cartGetClientCarts.PATH = '/bla-bla-vla/carts';
+cartGetClientCarts.PATH = '/market/api/v1/carts';

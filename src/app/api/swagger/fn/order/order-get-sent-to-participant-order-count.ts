@@ -25,4 +25,4 @@ export function orderGetSentToParticipantOrderCount(http: HttpClient, rootUrl: s
   );
 }
 
-orderGetSentToParticipantOrderCount.PATH = '/bla-bla-vla/order/GetSentToParticipantCount';
+orderGetSentToParticipantOrderCount.PATH = '/api/order/GetSentToParticipantCount';

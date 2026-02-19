@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfString } from '../../models/api-market-json-result-of-string';
+import { ApiMarketJsonResultOfStringAltDto } from '../../models/api-market-json-result-of-string';
 
 export interface TradesGetApplicationProductsImportTemplate$Params {
   tradeId: number;
 }
 
-export function tradesGetApplicationProductsImportTemplate(http: HttpClient, rootUrl: string, params: TradesGetApplicationProductsImportTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+export function tradesGetApplicationProductsImportTemplate(http: HttpClient, rootUrl: string, params: TradesGetApplicationProductsImportTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesGetApplicationProductsImportTemplate.PATH, 'get');
   if (params) {
     rb.path('tradeId', params.tradeId, {});
@@ -23,9 +23,9 @@ export function tradesGetApplicationProductsImportTemplate(http: HttpClient, roo
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfString>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>;
     })
   );
 }
 
-tradesGetApplicationProductsImportTemplate.PATH = '/bla-bla-vla/trades/{tradeId}/application/products/import/template';
+tradesGetApplicationProductsImportTemplate.PATH = '/market/api/v1/trades/{tradeId}/application/products/import/template';

@@ -27,4 +27,4 @@ export function accountBlockUsersForOrganization(http: HttpClient, rootUrl: stri
   );
 }
 
-accountBlockUsersForOrganization.PATH = '/bla-bla-vla/Account/BlockUsersForOrganization';
+accountBlockUsersForOrganization.PATH = '/api/Account/BlockUsersForOrganization';

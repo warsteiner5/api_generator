@@ -28,4 +28,4 @@ export function tradeExtendTradeExternal(http: HttpClient, rootUrl: string, para
   );
 }
 
-tradeExtendTradeExternal.PATH = '/bla-bla-vla/Trade/extend';
+tradeExtendTradeExternal.PATH = '/api/Trade/extend';

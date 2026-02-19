@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
-import { ApiOfferStateEnumDtoAltEnum } from '../models/api-offer-state-enum-dto';
+import { ApiOfferStateEnumDto } from '../models/api-offer-state-enum-dto';
 export interface ApiOfferStatesDto {
   Count?: number;
-  State?: ApiOfferStateEnumDtoAltEnum;
+  State?: ApiOfferStateEnumDto;
 }

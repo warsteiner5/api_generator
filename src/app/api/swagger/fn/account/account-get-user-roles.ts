@@ -25,4 +25,4 @@ export function accountGetUserRoles(http: HttpClient, rootUrl: string, params?: 
   );
 }
 
-accountGetUserRoles.PATH = '/bla-bla-vla/Account/UserRoles';
+accountGetUserRoles.PATH = '/api/Account/UserRoles';

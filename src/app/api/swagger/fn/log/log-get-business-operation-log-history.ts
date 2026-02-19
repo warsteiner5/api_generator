@@ -29,4 +29,4 @@ export function logGetBusinessOperationLogHistory(http: HttpClient, rootUrl: str
   );
 }
 
-logGetBusinessOperationLogHistory.PATH = '/bla-bla-vla/log/trade/search';
+logGetBusinessOperationLogHistory.PATH = '/market/api/v1/log/trade/search';

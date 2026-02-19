@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 import { ApiOrganizationTagDto } from '../../models/api-organization-tag-dto';
 
 export interface OrganizationProfilesUpdateProfileTags$Params {
       body?: Array<ApiOrganizationTagDto> | null
 }
 
-export function organizationProfilesUpdateProfileTags(http: HttpClient, rootUrl: string, params?: OrganizationProfilesUpdateProfileTags$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function organizationProfilesUpdateProfileTags(http: HttpClient, rootUrl: string, params?: OrganizationProfilesUpdateProfileTags$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, organizationProfilesUpdateProfileTags.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function organizationProfilesUpdateProfileTags(http: HttpClient, rootUrl:
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-organizationProfilesUpdateProfileTags.PATH = '/bla-bla-vla/organization-profiles/my/tags';
+organizationProfilesUpdateProfileTags.PATH = '/market/api/v1/organization-profiles/my/tags';

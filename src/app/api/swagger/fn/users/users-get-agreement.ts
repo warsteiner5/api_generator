@@ -26,4 +26,4 @@ export function usersGetAgreement(http: HttpClient, rootUrl: string, params?: Us
   );
 }
 
-usersGetAgreement.PATH = '/bla-bla-vla/users/agreement';
+usersGetAgreement.PATH = '/market/api/v1/users/agreement';

@@ -1,9 +1,9 @@
 import { ExternalDealCreateExternalDeal$Params } from '../../../swagger/fn/external-deal/external-deal-create-external-deal';
-import { ExternalDealDtoForPublishAlt } from '../../models/external-deal-dto-for-publish-alt.interface';
-import { adaptApiExternalDealDtoForPublishAltDto } from '../../adapters/toDto/api-external-deal-dto-for-publish.adapter';
+import { ExternalDealDtoForPublish } from '../../models/external-deal-dto-for-publish.interface';
+import { adaptApiExternalDealDtoForPublish } from '../../adapters/toDto/api-external-deal-dto-for-publish.adapter';
 
 export interface ExternalDealCreateExternalDealParams {
-  body?: ExternalDealDtoForPublishAlt;
+  body?: ExternalDealDtoForPublish;
 }
 
 export const externalDealCreateExternalDealParamsAdapter = {
@@ -12,7 +12,7 @@ export const externalDealCreateExternalDealParamsAdapter = {
       return {} as ExternalDealCreateExternalDeal$Params;
     }
     return {
-      body: adaptApiExternalDealDtoForPublishAltDto(params.body),
+      body: adaptApiExternalDealDtoForPublish(params.body),
     };
   }
 };

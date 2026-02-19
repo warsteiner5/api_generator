@@ -1,6 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
-export interface ApiKeyValuePairOfGuidAndByteOf {
+export interface ApiKeyValuePairOfGuidAndByteOfAltDto {
   Key?: string;
   Value?: string | null;
 }

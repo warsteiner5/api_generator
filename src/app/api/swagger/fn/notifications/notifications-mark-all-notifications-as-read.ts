@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface NotificationsMarkAllNotificationsAsRead$Params {
 }
 
-export function notificationsMarkAllNotificationsAsRead(http: HttpClient, rootUrl: string, params?: NotificationsMarkAllNotificationsAsRead$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function notificationsMarkAllNotificationsAsRead(http: HttpClient, rootUrl: string, params?: NotificationsMarkAllNotificationsAsRead$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, notificationsMarkAllNotificationsAsRead.PATH, 'post');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function notificationsMarkAllNotificationsAsRead(http: HttpClient, rootUr
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-notificationsMarkAllNotificationsAsRead.PATH = '/bla-bla-vla/notifications/unread/mark';
+notificationsMarkAllNotificationsAsRead.PATH = '/market/api/v1/notifications/unread/mark';

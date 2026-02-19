@@ -28,4 +28,4 @@ export function dealChangeFormToPaper(http: HttpClient, rootUrl: string, params?
   );
 }
 
-dealChangeFormToPaper.PATH = '/bla-bla-vla/Deal/ChangeFormToPaper';
+dealChangeFormToPaper.PATH = '/api/Deal/ChangeFormToPaper';

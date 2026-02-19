@@ -27,4 +27,4 @@ export function notificationGetNotification(http: HttpClient, rootUrl: string, p
   );
 }
 
-notificationGetNotification.PATH = '/bla-bla-vla/Notification/GetNotification/{id}';
+notificationGetNotification.PATH = '/api/Notification/GetNotification/{id}';

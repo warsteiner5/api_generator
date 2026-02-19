@@ -28,4 +28,4 @@ export function integrationCreateEmployee(http: HttpClient, rootUrl: string, par
   );
 }
 
-integrationCreateEmployee.PATH = '/bla-bla-vla/integration/employee';
+integrationCreateEmployee.PATH = '/market/api/v1/integration/employee';

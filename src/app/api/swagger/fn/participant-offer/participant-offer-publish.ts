@@ -28,4 +28,4 @@ export function participantOfferPublish(http: HttpClient, rootUrl: string, param
   );
 }
 
-participantOfferPublish.PATH = '/bla-bla-vla/participantoffer/Publish';
+participantOfferPublish.PATH = '/api/participantoffer/Publish';

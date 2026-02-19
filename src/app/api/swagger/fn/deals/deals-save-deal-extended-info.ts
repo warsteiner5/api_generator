@@ -29,4 +29,4 @@ export function dealsSaveDealExtendedInfo(http: HttpClient, rootUrl: string, par
   );
 }
 
-dealsSaveDealExtendedInfo.PATH = '/bla-bla-vla/deals/SaveDealExtendedInfo';
+dealsSaveDealExtendedInfo.PATH = '/market/api/v1/deals/SaveDealExtendedInfo';

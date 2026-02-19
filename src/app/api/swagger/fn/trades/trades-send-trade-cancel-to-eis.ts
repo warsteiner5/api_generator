@@ -28,4 +28,4 @@ export function tradesSendTradeCancelToEis(http: HttpClient, rootUrl: string, pa
   );
 }
 
-tradesSendTradeCancelToEis.PATH = '/bla-bla-vla/trades/sendTradeCancelToEis/{tradeId}';
+tradesSendTradeCancelToEis.PATH = '/market/api/v1/trades/sendTradeCancelToEis/{tradeId}';

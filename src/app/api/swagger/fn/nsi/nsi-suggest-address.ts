@@ -30,4 +30,4 @@ export function nsiSuggestAddress(http: HttpClient, rootUrl: string, params: Nsi
   );
 }
 
-nsiSuggestAddress.PATH = '/bla-bla-vla/nsi/address/suggest';
+nsiSuggestAddress.PATH = '/market/api/v1/nsi/address/suggest';

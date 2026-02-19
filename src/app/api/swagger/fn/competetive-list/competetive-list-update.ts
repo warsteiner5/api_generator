@@ -7,14 +7,14 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiCompetitiveListItemForViewDto } from '../../models/api-competitive-list-item-for-view-dto';
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
 
 export interface CompetetiveListUpdate$Params {
   competitiveListId: number;
       body?: ApiCompetitiveListItemForViewDto | null
 }
 
-export function competetiveListUpdate(http: HttpClient, rootUrl: string, params: CompetetiveListUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function competetiveListUpdate(http: HttpClient, rootUrl: string, params: CompetetiveListUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, competetiveListUpdate.PATH, 'post');
   if (params) {
     rb.path('competitiveListId', params.competitiveListId, {});
@@ -26,9 +26,9 @@ export function competetiveListUpdate(http: HttpClient, rootUrl: string, params:
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-competetiveListUpdate.PATH = '/bla-bla-vla/competetivelist/{competitiveListId}/Update';
+competetiveListUpdate.PATH = '/market/api/v1/competetivelist/{competitiveListId}/Update';

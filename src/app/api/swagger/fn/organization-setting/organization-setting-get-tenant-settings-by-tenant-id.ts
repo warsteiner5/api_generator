@@ -28,4 +28,4 @@ export function organizationSettingGetTenantSettingsByTenantId(http: HttpClient,
   );
 }
 
-organizationSettingGetTenantSettingsByTenantId.PATH = '/bla-bla-vla/tenant-settings/{tenantId}';
+organizationSettingGetTenantSettingsByTenantId.PATH = '/market/api/v1/tenant-settings/{tenantId}';

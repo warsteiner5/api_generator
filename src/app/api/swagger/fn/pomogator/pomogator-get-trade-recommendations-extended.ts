@@ -29,4 +29,4 @@ export function pomogatorGetTradeRecommendationsExtended(http: HttpClient, rootU
   );
 }
 
-pomogatorGetTradeRecommendationsExtended.PATH = '/bla-bla-vla/pomogator/recommendationsExtended';
+pomogatorGetTradeRecommendationsExtended.PATH = '/market/api/v1/pomogator/recommendationsExtended';

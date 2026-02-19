@@ -29,4 +29,4 @@ export function organizationsUpdateAddresses(http: HttpClient, rootUrl: string, 
   );
 }
 
-organizationsUpdateAddresses.PATH = '/bla-bla-vla/organizations/my/addresses';
+organizationsUpdateAddresses.PATH = '/market/api/v1/organizations/my/addresses';

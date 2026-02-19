@@ -28,4 +28,4 @@ export function tradeProtocolsGetProtocolsHistory(http: HttpClient, rootUrl: str
   );
 }
 
-tradeProtocolsGetProtocolsHistory.PATH = '/bla-bla-vla/protocols/trades/{tradeId}/history';
+tradeProtocolsGetProtocolsHistory.PATH = '/market/api/v1/protocols/trades/{tradeId}/history';

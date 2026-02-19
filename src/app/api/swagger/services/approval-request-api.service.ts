@@ -22,8 +22,8 @@ import { ApprovalRequestRejectRequest$Params } from '../fn/approval-request/appr
 import { approvalRequestSendApprovalRequest } from '../fn/approval-request/approval-request-send-approval-request';
 import { ApprovalRequestSendApprovalRequest$Params } from '../fn/approval-request/approval-request-send-approval-request';
 import { ApiMarketJsonResultOfApprovalRequestViewDto } from '../models/api-market-json-result-of-approval-request-view-dto';
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
-import { ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItem } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-trade-with-approval-request-list-item';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItemAltDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-trade-with-approval-request-list-item';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 
 @Injectable({ providedIn: 'root' })
@@ -33,7 +33,7 @@ export class ApprovalRequestApiService extends BaseService {
   }
 
   /** Path part for operation `approvalRequestSendApprovalRequest()` */
-  static readonly ApprovalRequestSendApprovalRequestPath = '/bla-bla-vla/approval/SendApprovalRequest';
+  static readonly ApprovalRequestSendApprovalRequestPath = '/market/api/v1/approval/SendApprovalRequest';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -41,7 +41,7 @@ export class ApprovalRequestApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  approvalRequestSendApprovalRequest$Response(params?: ApprovalRequestSendApprovalRequest$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  approvalRequestSendApprovalRequest$Response(params?: ApprovalRequestSendApprovalRequest$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return approvalRequestSendApprovalRequest(this.http, this.rootUrl, params, context);
   }
 
@@ -51,14 +51,14 @@ export class ApprovalRequestApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  approvalRequestSendApprovalRequest(params?: ApprovalRequestSendApprovalRequest$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  approvalRequestSendApprovalRequest(params?: ApprovalRequestSendApprovalRequest$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.approvalRequestSendApprovalRequest$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `approvalRequestGetByEntityIdWithType()` */
-  static readonly ApprovalRequestGetByEntityIdWithTypePath = '/bla-bla-vla/approval/GetByEntityIdWithType';
+  static readonly ApprovalRequestGetByEntityIdWithTypePath = '/market/api/v1/approval/GetByEntityIdWithType';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -83,7 +83,7 @@ export class ApprovalRequestApiService extends BaseService {
   }
 
   /** Path part for operation `approvalRequestCancelRequest()` */
-  static readonly ApprovalRequestCancelRequestPath = '/bla-bla-vla/approval/Cancel';
+  static readonly ApprovalRequestCancelRequestPath = '/market/api/v1/approval/Cancel';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -108,7 +108,7 @@ export class ApprovalRequestApiService extends BaseService {
   }
 
   /** Path part for operation `approvalRequestApproveRequest()` */
-  static readonly ApprovalRequestApproveRequestPath = '/bla-bla-vla/approval/Approve';
+  static readonly ApprovalRequestApproveRequestPath = '/market/api/v1/approval/Approve';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -133,7 +133,7 @@ export class ApprovalRequestApiService extends BaseService {
   }
 
   /** Path part for operation `approvalRequestRejectRequest()` */
-  static readonly ApprovalRequestRejectRequestPath = '/bla-bla-vla/approval/Reject';
+  static readonly ApprovalRequestRejectRequestPath = '/market/api/v1/approval/Reject';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -158,7 +158,7 @@ export class ApprovalRequestApiService extends BaseService {
   }
 
   /** Path part for operation `approvalRequestGetTradesWithApprovalRequest()` */
-  static readonly ApprovalRequestGetTradesWithApprovalRequestPath = '/bla-bla-vla/approval/Trades';
+  static readonly ApprovalRequestGetTradesWithApprovalRequestPath = '/market/api/v1/approval/Trades';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -166,7 +166,7 @@ export class ApprovalRequestApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  approvalRequestGetTradesWithApprovalRequest$Response(params?: ApprovalRequestGetTradesWithApprovalRequest$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItem>> {
+  approvalRequestGetTradesWithApprovalRequest$Response(params?: ApprovalRequestGetTradesWithApprovalRequest$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItemAltDto>> {
     return approvalRequestGetTradesWithApprovalRequest(this.http, this.rootUrl, params, context);
   }
 
@@ -176,9 +176,9 @@ export class ApprovalRequestApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  approvalRequestGetTradesWithApprovalRequest(params?: ApprovalRequestGetTradesWithApprovalRequest$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItem> {
+  approvalRequestGetTradesWithApprovalRequest(params?: ApprovalRequestGetTradesWithApprovalRequest$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItemAltDto> {
     return this.approvalRequestGetTradesWithApprovalRequest$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItem>): ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItem => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItemAltDto>): ApiMarketJsonResultOfMarketPaginationResultOfListOfTradeWithApprovalRequestListItemAltDto => r.body)
     );
   }
 

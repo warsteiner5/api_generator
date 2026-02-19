@@ -31,4 +31,4 @@ export function accountLogout(http: HttpClient, rootUrl: string, params?: Accoun
   );
 }
 
-accountLogout.PATH = '/bla-bla-vla/Account/Logout';
+accountLogout.PATH = '/api/Account/Logout';

@@ -27,4 +27,4 @@ export function certificatesDownload(http: HttpClient, rootUrl: string, params: 
   );
 }
 
-certificatesDownload.PATH = '/bla-bla-vla/certificates/thumbprint/{thumbprint}/download';
+certificatesDownload.PATH = '/market/api/v1/certificates/thumbprint/{thumbprint}/download';

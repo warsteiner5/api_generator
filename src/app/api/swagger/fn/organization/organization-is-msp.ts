@@ -27,4 +27,4 @@ export function organizationIsMsp(http: HttpClient, rootUrl: string, params: Org
   );
 }
 
-organizationIsMsp.PATH = '/bla-bla-vla/Organization/{id}/IsMsp';
+organizationIsMsp.PATH = '/api/Organization/{id}/IsMsp';

@@ -1,5 +1,5 @@
 /* tslint:disable */
 /* eslint-disable */
-export interface ApiValueDtoOfBooleanAltDto {
+export interface ApiValueDtoOfBoolean {
   Value?: boolean;
 }

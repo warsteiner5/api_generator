@@ -30,4 +30,4 @@ export function tradesSaveContractSigner(http: HttpClient, rootUrl: string, para
   );
 }
 
-tradesSaveContractSigner.PATH = '/bla-bla-vla/trades/save-deal-signer/{tradeId}/{userId}';
+tradesSaveContractSigner.PATH = '/market/api/v1/trades/save-deal-signer/{tradeId}/{userId}';

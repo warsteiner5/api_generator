@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfCompletedBiddingInfo } from '../../models/api-market-json-result-of-completed-bidding-info';
+import { ApiMarketJsonResultOfCompletedBiddingInfoAltDto } from '../../models/api-market-json-result-of-completed-bidding-info';
 
 export interface BiddingDataGetInfo$Params {
   tradeId: number;
 }
 
-export function biddingDataGetInfo(http: HttpClient, rootUrl: string, params: BiddingDataGetInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCompletedBiddingInfo>> {
+export function biddingDataGetInfo(http: HttpClient, rootUrl: string, params: BiddingDataGetInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCompletedBiddingInfoAltDto>> {
   const rb = new RequestBuilder(rootUrl, biddingDataGetInfo.PATH, 'get');
   if (params) {
     rb.path('tradeId', params.tradeId, {});
@@ -23,9 +23,9 @@ export function biddingDataGetInfo(http: HttpClient, rootUrl: string, params: Bi
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfCompletedBiddingInfo>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfCompletedBiddingInfoAltDto>;
     })
   );
 }
 
-biddingDataGetInfo.PATH = '/bla-bla-vla/bidding-data/trade/{tradeId}';
+biddingDataGetInfo.PATH = '/market/api/v1/bidding-data/trade/{tradeId}';

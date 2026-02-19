@@ -28,4 +28,4 @@ export function requirementRequestsGetEquivalentTable(http: HttpClient, rootUrl:
   );
 }
 
-requirementRequestsGetEquivalentTable.PATH = '/bla-bla-vla/RequirementRequests/{id}/GetEquivalentTable';
+requirementRequestsGetEquivalentTable.PATH = '/market/api/v1/RequirementRequests/{id}/GetEquivalentTable';

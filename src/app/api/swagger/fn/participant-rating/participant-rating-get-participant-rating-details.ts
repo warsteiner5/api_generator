@@ -28,4 +28,4 @@ export function participantRatingGetParticipantRatingDetails(http: HttpClient, r
   );
 }
 
-participantRatingGetParticipantRatingDetails.PATH = '/bla-bla-vla/ParticipantRating/GetParticipantRatingDetails/{id}';
+participantRatingGetParticipantRatingDetails.PATH = '/api/ParticipantRating/GetParticipantRatingDetails/{id}';

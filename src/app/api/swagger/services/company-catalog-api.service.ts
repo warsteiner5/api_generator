@@ -31,7 +31,7 @@ export class CompanyCatalogApiService extends BaseService {
   }
 
   /** Path part for operation `companyCatalogGetIndustryGroups()` */
-  static readonly CompanyCatalogGetIndustryGroupsPath = '/bla-bla-vla/companies/industry-groups/search';
+  static readonly CompanyCatalogGetIndustryGroupsPath = '/market/api/v1/companies/industry-groups/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -56,7 +56,7 @@ export class CompanyCatalogApiService extends BaseService {
   }
 
   /** Path part for operation `companyCatalogGetIndustry()` */
-  static readonly CompanyCatalogGetIndustryPath = '/bla-bla-vla/companies/industries';
+  static readonly CompanyCatalogGetIndustryPath = '/market/api/v1/companies/industries';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -81,7 +81,7 @@ export class CompanyCatalogApiService extends BaseService {
   }
 
   /** Path part for operation `companyCatalogSearchCompanies()` */
-  static readonly CompanyCatalogSearchCompaniesPath = '/bla-bla-vla/companies/search';
+  static readonly CompanyCatalogSearchCompaniesPath = '/market/api/v1/companies/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -106,7 +106,7 @@ export class CompanyCatalogApiService extends BaseService {
   }
 
   /** Path part for operation `companyCatalogSearchFavoriteCompanies()` */
-  static readonly CompanyCatalogSearchFavoriteCompaniesPath = '/bla-bla-vla/companies/favorite/search';
+  static readonly CompanyCatalogSearchFavoriteCompaniesPath = '/market/api/v1/companies/favorite/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -131,7 +131,7 @@ export class CompanyCatalogApiService extends BaseService {
   }
 
   /** Path part for operation `companyCatalogGetOrganizationsForAutocomplete()` */
-  static readonly CompanyCatalogGetOrganizationsForAutocompletePath = '/bla-bla-vla/companies/autocomplete';
+  static readonly CompanyCatalogGetOrganizationsForAutocompletePath = '/market/api/v1/companies/autocomplete';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

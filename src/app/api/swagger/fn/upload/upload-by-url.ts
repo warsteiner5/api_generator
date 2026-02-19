@@ -28,4 +28,4 @@ export function uploadByUrl(http: HttpClient, rootUrl: string, params?: UploadBy
   );
 }
 
-uploadByUrl.PATH = '/bla-bla-vla/Upload/byUrl';
+uploadByUrl.PATH = '/api/Upload/byUrl';

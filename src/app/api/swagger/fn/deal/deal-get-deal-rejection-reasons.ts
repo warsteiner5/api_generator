@@ -28,4 +28,4 @@ export function dealGetDealRejectionReasons(http: HttpClient, rootUrl: string, p
   );
 }
 
-dealGetDealRejectionReasons.PATH = '/bla-bla-vla/Deal/GetDealRejectionReasons/{dealObject}';
+dealGetDealRejectionReasons.PATH = '/api/Deal/GetDealRejectionReasons/{dealObject}';

@@ -1,6 +1,6 @@
-import { EntityDtoBaseAlt } from '../../models/entity-dto-base-alt.interface';
-import { ApiEntityDtoBaseAltDto } from '../../../swagger/models/api-entity-dto-base';
+import { EntityDtoBase } from '../../models/entity-dto-base.interface';
+import { ApiEntityDtoBase } from '../../../swagger/models/api-entity-dto-base';
 
-export function adaptApiEntityDtoBaseAltDto(source?: EntityDtoBaseAlt | null): ApiEntityDtoBaseAltDto {
-  return (source ?? {}) as ApiEntityDtoBaseAltDto;
+export function adaptApiEntityDtoBase(source?: EntityDtoBase | null): ApiEntityDtoBase {
+  return (source ?? {}) as ApiEntityDtoBase;
 }

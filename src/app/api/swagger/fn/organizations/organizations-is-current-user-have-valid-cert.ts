@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface OrganizationsIsCurrentUserHaveValidCert$Params {
 }
 
-export function organizationsIsCurrentUserHaveValidCert(http: HttpClient, rootUrl: string, params?: OrganizationsIsCurrentUserHaveValidCert$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function organizationsIsCurrentUserHaveValidCert(http: HttpClient, rootUrl: string, params?: OrganizationsIsCurrentUserHaveValidCert$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, organizationsIsCurrentUserHaveValidCert.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function organizationsIsCurrentUserHaveValidCert(http: HttpClient, rootUr
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-organizationsIsCurrentUserHaveValidCert.PATH = '/bla-bla-vla/organizations/checkCertExists';
+organizationsIsCurrentUserHaveValidCert.PATH = '/market/api/v1/organizations/checkCertExists';

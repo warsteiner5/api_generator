@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface PomogatorGetSettingsExistFlag$Params {
 }
 
-export function pomogatorGetSettingsExistFlag(http: HttpClient, rootUrl: string, params?: PomogatorGetSettingsExistFlag$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function pomogatorGetSettingsExistFlag(http: HttpClient, rootUrl: string, params?: PomogatorGetSettingsExistFlag$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, pomogatorGetSettingsExistFlag.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function pomogatorGetSettingsExistFlag(http: HttpClient, rootUrl: string,
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-pomogatorGetSettingsExistFlag.PATH = '/bla-bla-vla/pomogator/settings/exist';
+pomogatorGetSettingsExistFlag.PATH = '/market/api/v1/pomogator/settings/exist';

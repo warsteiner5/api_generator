@@ -25,4 +25,4 @@ export function regionGet(http: HttpClient, rootUrl: string, params?: RegionGet$
   );
 }
 
-regionGet.PATH = '/bla-bla-vla/Region';
+regionGet.PATH = '/api/Region';

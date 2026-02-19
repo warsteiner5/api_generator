@@ -29,4 +29,4 @@ export function tradesSendTradeToEis(http: HttpClient, rootUrl: string, params?:
   );
 }
 
-tradesSendTradeToEis.PATH = '/bla-bla-vla/trades/send-trade-to-eis';
+tradesSendTradeToEis.PATH = '/market/api/v1/trades/send-trade-to-eis';

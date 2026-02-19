@@ -9,7 +9,7 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
 import { ApiMarketJsonResultOfListOfPartnerRequestDto } from '../models/api-market-json-result-of-list-of-partner-request-dto';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfPartnerDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-partner-dto';
 import { ApiMarketJsonResultOfPartnerOrganizationDto } from '../models/api-market-json-result-of-partner-organization-dto';
@@ -40,7 +40,7 @@ export class PartnersApiService extends BaseService {
   }
 
   /** Path part for operation `partnersSearch()` */
-  static readonly PartnersSearchPath = '/bla-bla-vla/organization/partners/search';
+  static readonly PartnersSearchPath = '/market/api/v1/organization/partners/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -65,7 +65,7 @@ export class PartnersApiService extends BaseService {
   }
 
   /** Path part for operation `partnersAdd()` */
-  static readonly PartnersAddPath = '/bla-bla-vla/organization/partners';
+  static readonly PartnersAddPath = '/market/api/v1/organization/partners';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -90,7 +90,7 @@ export class PartnersApiService extends BaseService {
   }
 
   /** Path part for operation `partnersDelete()` */
-  static readonly PartnersDeletePath = '/bla-bla-vla/organization/partners/{guid}';
+  static readonly PartnersDeletePath = '/market/api/v1/organization/partners/{guid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -115,7 +115,7 @@ export class PartnersApiService extends BaseService {
   }
 
   /** Path part for operation `partnersSendRequest()` */
-  static readonly PartnersSendRequestPath = '/bla-bla-vla/organization/partners/{guid}/request';
+  static readonly PartnersSendRequestPath = '/market/api/v1/organization/partners/{guid}/request';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -140,7 +140,7 @@ export class PartnersApiService extends BaseService {
   }
 
   /** Path part for operation `partnersAccept()` */
-  static readonly PartnersAcceptPath = '/bla-bla-vla/organization/partners/{id}/accept';
+  static readonly PartnersAcceptPath = '/market/api/v1/organization/partners/{id}/accept';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -165,7 +165,7 @@ export class PartnersApiService extends BaseService {
   }
 
   /** Path part for operation `partnersRefuse()` */
-  static readonly PartnersRefusePath = '/bla-bla-vla/organization/partners/{id}/refuse';
+  static readonly PartnersRefusePath = '/market/api/v1/organization/partners/{id}/refuse';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -190,7 +190,7 @@ export class PartnersApiService extends BaseService {
   }
 
   /** Path part for operation `partnersGetOrganizationInfoByInnAndKpp()` */
-  static readonly PartnersGetOrganizationInfoByInnAndKppPath = '/bla-bla-vla/organization/partners/info';
+  static readonly PartnersGetOrganizationInfoByInnAndKppPath = '/market/api/v1/organization/partners/info';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -215,7 +215,7 @@ export class PartnersApiService extends BaseService {
   }
 
   /** Path part for operation `partnersGetActiveRequestsCount()` */
-  static readonly PartnersGetActiveRequestsCountPath = '/bla-bla-vla/organization/partners/requests/count';
+  static readonly PartnersGetActiveRequestsCountPath = '/market/api/v1/organization/partners/requests/count';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -223,7 +223,7 @@ export class PartnersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  partnersGetActiveRequestsCount$Response(params?: PartnersGetActiveRequestsCount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  partnersGetActiveRequestsCount$Response(params?: PartnersGetActiveRequestsCount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return partnersGetActiveRequestsCount(this.http, this.rootUrl, params, context);
   }
 
@@ -233,14 +233,14 @@ export class PartnersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  partnersGetActiveRequestsCount(params?: PartnersGetActiveRequestsCount$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  partnersGetActiveRequestsCount(params?: PartnersGetActiveRequestsCount$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.partnersGetActiveRequestsCount$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `partnersGetActiveRequests()` */
-  static readonly PartnersGetActiveRequestsPath = '/bla-bla-vla/organization/partners/requests';
+  static readonly PartnersGetActiveRequestsPath = '/market/api/v1/organization/partners/requests';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

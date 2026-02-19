@@ -37,4 +37,4 @@ export function invitationGetOrganizationForInvite(http: HttpClient, rootUrl: st
   );
 }
 
-invitationGetOrganizationForInvite.PATH = '/bla-bla-vla/invitation';
+invitationGetOrganizationForInvite.PATH = '/api/invitation';

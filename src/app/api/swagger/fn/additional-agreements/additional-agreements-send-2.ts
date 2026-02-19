@@ -29,4 +29,4 @@ export function additionalAgreementsSend2(http: HttpClient, rootUrl: string, par
   );
 }
 
-additionalAgreementsSend2.PATH = '/bla-bla-vla/additionalAgreements/send';
+additionalAgreementsSend2.PATH = '/market/api/v1/additionalAgreements/send';

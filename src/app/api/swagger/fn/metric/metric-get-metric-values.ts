@@ -28,4 +28,4 @@ export function metricGetMetricValues(http: HttpClient, rootUrl: string, params?
   );
 }
 
-metricGetMetricValues.PATH = '/bla-bla-vla/Metric/GetMetricValues';
+metricGetMetricValues.PATH = '/api/Metric/GetMetricValues';

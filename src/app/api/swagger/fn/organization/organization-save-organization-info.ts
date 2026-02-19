@@ -28,4 +28,4 @@ export function organizationSaveOrganizationInfo(http: HttpClient, rootUrl: stri
   );
 }
 
-organizationSaveOrganizationInfo.PATH = '/bla-bla-vla/Organization/SaveOrganizationInfo';
+organizationSaveOrganizationInfo.PATH = '/api/Organization/SaveOrganizationInfo';

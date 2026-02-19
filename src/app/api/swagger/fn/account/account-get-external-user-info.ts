@@ -25,4 +25,4 @@ export function accountGetExternalUserInfo(http: HttpClient, rootUrl: string, pa
   );
 }
 
-accountGetExternalUserInfo.PATH = '/bla-bla-vla/Account/ExternalUserInfo';
+accountGetExternalUserInfo.PATH = '/api/Account/ExternalUserInfo';

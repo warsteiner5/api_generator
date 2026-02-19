@@ -28,4 +28,4 @@ export function cartDeleteClientCarts(http: HttpClient, rootUrl: string, params?
   );
 }
 
-cartDeleteClientCarts.PATH = '/bla-bla-vla/cart-items/to-delete';
+cartDeleteClientCarts.PATH = '/market/api/v1/cart-items/to-delete';

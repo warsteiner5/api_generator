@@ -28,4 +28,4 @@ export function availableOperationsGetByQuotationSession(http: HttpClient, rootU
   );
 }
 
-availableOperationsGetByQuotationSession.PATH = '/bla-bla-vla/available-operations/trade/{tradeId}/quotation-session';
+availableOperationsGetByQuotationSession.PATH = '/market/api/v1/available-operations/trade/{tradeId}/quotation-session';

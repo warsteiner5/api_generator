@@ -19,7 +19,7 @@ export class PermissionApiService extends BaseService {
   }
 
   /** Path part for operation `permissionGetUserToWorkGroupRoles()` */
-  static readonly PermissionGetUserToWorkGroupRolesPath = '/bla-bla-vla/permissions/UserToWorkGroupRoles/{lk}';
+  static readonly PermissionGetUserToWorkGroupRolesPath = '/market/api/v1/permissions/UserToWorkGroupRoles/{lk}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

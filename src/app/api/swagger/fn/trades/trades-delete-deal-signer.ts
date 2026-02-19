@@ -30,4 +30,4 @@ export function tradesDeleteDealSigner(http: HttpClient, rootUrl: string, params
   );
 }
 
-tradesDeleteDealSigner.PATH = '/bla-bla-vla/trades/delete-deal-signer/{tradeId}/{userId}';
+tradesDeleteDealSigner.PATH = '/market/api/v1/trades/delete-deal-signer/{tradeId}/{userId}';

@@ -28,4 +28,4 @@ export function tradesGetChatFiles(http: HttpClient, rootUrl: string, params: Tr
   );
 }
 
-tradesGetChatFiles.PATH = '/bla-bla-vla/trades/chat/{chatId}/files';
+tradesGetChatFiles.PATH = '/market/api/v1/trades/chat/{chatId}/files';

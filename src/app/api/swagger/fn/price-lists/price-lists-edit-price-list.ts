@@ -29,4 +29,4 @@ export function priceListsEditPriceList(http: HttpClient, rootUrl: string, param
   );
 }
 
-priceListsEditPriceList.PATH = '/bla-bla-vla/priceLists/edit';
+priceListsEditPriceList.PATH = '/market/api/v1/priceLists/edit';

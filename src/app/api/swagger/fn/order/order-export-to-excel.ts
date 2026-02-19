@@ -27,4 +27,4 @@ export function orderExportToExcel(http: HttpClient, rootUrl: string, params?: O
   );
 }
 
-orderExportToExcel.PATH = '/bla-bla-vla/order/exporttoexcel';
+orderExportToExcel.PATH = '/api/order/exporttoexcel';

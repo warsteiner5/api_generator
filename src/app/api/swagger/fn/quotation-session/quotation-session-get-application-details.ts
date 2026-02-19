@@ -30,4 +30,4 @@ export function quotationSessionGetApplicationDetails(http: HttpClient, rootUrl:
   );
 }
 
-quotationSessionGetApplicationDetails.PATH = '/bla-bla-vla/quotation-session/{id}/applications/{applicationId}/details';
+quotationSessionGetApplicationDetails.PATH = '/market/api/v1/quotation-session/{id}/applications/{applicationId}/details';

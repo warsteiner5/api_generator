@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfIReadOnlyCollectionOfEisDictionaryItem } from '../../models/api-market-json-result-of-i-read-only-collection-of-eis-dictionary-item';
+import { ApiMarketJsonResultOfIReadOnlyCollectionOfEisDictionaryItemAltDto } from '../../models/api-market-json-result-of-i-read-only-collection-of-eis-dictionary-item';
 
 export interface EisDataSearchProtocolTypes$Params {
   tradeId: number;
   purchaseMethodCode: number;
 }
 
-export function eisDataSearchProtocolTypes(http: HttpClient, rootUrl: string, params: EisDataSearchProtocolTypes$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfEisDictionaryItem>> {
+export function eisDataSearchProtocolTypes(http: HttpClient, rootUrl: string, params: EisDataSearchProtocolTypes$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfEisDictionaryItemAltDto>> {
   const rb = new RequestBuilder(rootUrl, eisDataSearchProtocolTypes.PATH, 'get');
   if (params) {
     rb.query('tradeId', params.tradeId, {});
@@ -25,9 +25,9 @@ export function eisDataSearchProtocolTypes(http: HttpClient, rootUrl: string, pa
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfEisDictionaryItem>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfEisDictionaryItemAltDto>;
     })
   );
 }
 
-eisDataSearchProtocolTypes.PATH = '/bla-bla-vla/eis/data/protocol-types';
+eisDataSearchProtocolTypes.PATH = '/market/api/v1/eis/data/protocol-types';

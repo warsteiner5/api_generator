@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfDecimal } from '../../models/api-market-json-result-of-decimal';
+import { ApiMarketJsonResultOfDecimalAltDto } from '../../models/api-market-json-result-of-decimal';
 
 export interface AccountsGetLotCommissionInternal$Params {
   lotId: number;
@@ -14,7 +14,7 @@ export interface AccountsGetLotCommissionInternal$Params {
   quotation: number | null;
 }
 
-export function accountsGetLotCommissionInternal(http: HttpClient, rootUrl: string, params: AccountsGetLotCommissionInternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimal>> {
+export function accountsGetLotCommissionInternal(http: HttpClient, rootUrl: string, params: AccountsGetLotCommissionInternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>> {
   const rb = new RequestBuilder(rootUrl, accountsGetLotCommissionInternal.PATH, 'get');
   if (params) {
     rb.path('lotId', params.lotId, {});
@@ -27,9 +27,9 @@ export function accountsGetLotCommissionInternal(http: HttpClient, rootUrl: stri
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfDecimal>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>;
     })
   );
 }
 
-accountsGetLotCommissionInternal.PATH = '/bla-bla-vla/accounts/lotcommission/{lotId}/organization/{supplierOrganizationId}/quotation/{quotation}';
+accountsGetLotCommissionInternal.PATH = '/market/api/v1/accounts/lotcommission/{lotId}/organization/{supplierOrganizationId}/quotation/{quotation}';

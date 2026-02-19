@@ -28,4 +28,4 @@ export function nsiSuggestBank(http: HttpClient, rootUrl: string, params: NsiSug
   );
 }
 
-nsiSuggestBank.PATH = '/bla-bla-vla/nsi/bank/suggest';
+nsiSuggestBank.PATH = '/market/api/v1/nsi/bank/suggest';

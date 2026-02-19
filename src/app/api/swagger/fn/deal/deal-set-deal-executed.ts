@@ -27,4 +27,4 @@ export function dealSetDealExecuted(http: HttpClient, rootUrl: string, params: D
   );
 }
 
-dealSetDealExecuted.PATH = '/bla-bla-vla/Deal/Executed/{id}';
+dealSetDealExecuted.PATH = '/api/Deal/Executed/{id}';

@@ -25,7 +25,7 @@ export class MetricsApiService extends BaseService {
   }
 
   /** Path part for operation `metricsGetMetricValues()` */
-  static readonly MetricsGetMetricValuesPath = '/bla-bla-vla/metrics/values';
+  static readonly MetricsGetMetricValuesPath = '/market/api/v1/metrics/values';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -50,7 +50,7 @@ export class MetricsApiService extends BaseService {
   }
 
   /** Path part for operation `metricsGetDetailMetrics()` */
-  static readonly MetricsGetDetailMetricsPath = '/bla-bla-vla/metrics/details';
+  static readonly MetricsGetDetailMetricsPath = '/market/api/v1/metrics/details';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -75,7 +75,7 @@ export class MetricsApiService extends BaseService {
   }
 
   /** Path part for operation `metricsExportMetricDetailsToExcel()` */
-  static readonly MetricsExportMetricDetailsToExcelPath = '/bla-bla-vla/metrics/details/excel';
+  static readonly MetricsExportMetricDetailsToExcelPath = '/market/api/v1/metrics/details/excel';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

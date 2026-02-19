@@ -6,10 +6,10 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiExternalDealDtoForPublishAltDto } from '../../models/api-external-deal-dto-for-publish';
+import { ApiExternalDealDtoForPublish } from '../../models/api-external-deal-dto-for-publish';
 
 export interface ExternalDealCreateExternalDeal$Params {
-      body?: ApiExternalDealDtoForPublishAltDto | null
+      body?: ApiExternalDealDtoForPublish | null
 }
 
 export function externalDealCreateExternalDeal(http: HttpClient, rootUrl: string, params?: ExternalDealCreateExternalDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<Blob>> {
@@ -28,4 +28,4 @@ export function externalDealCreateExternalDeal(http: HttpClient, rootUrl: string
   );
 }
 
-externalDealCreateExternalDeal.PATH = '/bla-bla-vla/externaldeal/createexternaldeal';
+externalDealCreateExternalDeal.PATH = '/api/externaldeal/createexternaldeal';

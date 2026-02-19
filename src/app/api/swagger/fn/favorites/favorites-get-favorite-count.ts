@@ -26,4 +26,4 @@ export function favoritesGetFavoriteCount(http: HttpClient, rootUrl: string, par
   );
 }
 
-favoritesGetFavoriteCount.PATH = '/bla-bla-vla/favorite/count';
+favoritesGetFavoriteCount.PATH = '/market/api/v1/favorite/count';

@@ -25,4 +25,4 @@ export function uploadGet(http: HttpClient, rootUrl: string, params?: UploadGet$
   );
 }
 
-uploadGet.PATH = '/bla-bla-vla/Upload';
+uploadGet.PATH = '/api/Upload';

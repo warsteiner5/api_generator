@@ -9,8 +9,8 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfNicRegistryGridDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-nic-registry-grid-dto';
 import { ApiMarketJsonResultOfNicRegistryEntryDto } from '../models/api-market-json-result-of-nic-registry-entry-dto';
 import { ApiMarketJsonResultOfNicRegistryTradeInfoDto } from '../models/api-market-json-result-of-nic-registry-trade-info-dto';
@@ -36,7 +36,7 @@ export class NicRegistryApiService extends BaseService {
   }
 
   /** Path part for operation `nicRegistrySearch()` */
-  static readonly NicRegistrySearchPath = '/bla-bla-vla/registry/nic/search';
+  static readonly NicRegistrySearchPath = '/market/api/v1/registry/nic/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -61,7 +61,7 @@ export class NicRegistryApiService extends BaseService {
   }
 
   /** Path part for operation `nicRegistryGetById()` */
-  static readonly NicRegistryGetByIdPath = '/bla-bla-vla/registry/nic/{entryId}';
+  static readonly NicRegistryGetByIdPath = '/market/api/v1/registry/nic/{entryId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -86,7 +86,7 @@ export class NicRegistryApiService extends BaseService {
   }
 
   /** Path part for operation `nicRegistryGetModelForCreate()` */
-  static readonly NicRegistryGetModelForCreatePath = '/bla-bla-vla/registry/nic/empty';
+  static readonly NicRegistryGetModelForCreatePath = '/market/api/v1/registry/nic/empty';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -111,7 +111,7 @@ export class NicRegistryApiService extends BaseService {
   }
 
   /** Path part for operation `nicRegistrySave()` */
-  static readonly NicRegistrySavePath = '/bla-bla-vla/registry/nic/save';
+  static readonly NicRegistrySavePath = '/market/api/v1/registry/nic/save';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -119,7 +119,7 @@ export class NicRegistryApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  nicRegistrySave$Response(params?: NicRegistrySave$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  nicRegistrySave$Response(params?: NicRegistrySave$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return nicRegistrySave(this.http, this.rootUrl, params, context);
   }
 
@@ -129,14 +129,14 @@ export class NicRegistryApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  nicRegistrySave(params?: NicRegistrySave$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  nicRegistrySave(params?: NicRegistrySave$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.nicRegistrySave$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `nicRegistryDelete()` */
-  static readonly NicRegistryDeletePath = '/bla-bla-vla/registry/nic/{entryId}/delete';
+  static readonly NicRegistryDeletePath = '/market/api/v1/registry/nic/{entryId}/delete';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -144,7 +144,7 @@ export class NicRegistryApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  nicRegistryDelete$Response(params: NicRegistryDelete$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  nicRegistryDelete$Response(params: NicRegistryDelete$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return nicRegistryDelete(this.http, this.rootUrl, params, context);
   }
 
@@ -154,14 +154,14 @@ export class NicRegistryApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  nicRegistryDelete(params: NicRegistryDelete$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  nicRegistryDelete(params: NicRegistryDelete$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.nicRegistryDelete$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `nicRegistryFindMyTrade()` */
-  static readonly NicRegistryFindMyTradePath = '/bla-bla-vla/registry/nic/trade/{tradeNumber}';
+  static readonly NicRegistryFindMyTradePath = '/market/api/v1/registry/nic/trade/{tradeNumber}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -186,7 +186,7 @@ export class NicRegistryApiService extends BaseService {
   }
 
   /** Path part for operation `nicRegistryGetAgreementForCurrentUser()` */
-  static readonly NicRegistryGetAgreementForCurrentUserPath = '/bla-bla-vla/registry/nic/agreement';
+  static readonly NicRegistryGetAgreementForCurrentUserPath = '/market/api/v1/registry/nic/agreement';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

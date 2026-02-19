@@ -30,4 +30,4 @@ export function eisDataGetPlanPositionDetails(http: HttpClient, rootUrl: string,
   );
 }
 
-eisDataGetPlanPositionDetails.PATH = '/bla-bla-vla/eis/data/plans/{planRegistrationNumber}/positions/{positionNumber}/details';
+eisDataGetPlanPositionDetails.PATH = '/market/api/v1/eis/data/plans/{planRegistrationNumber}/positions/{positionNumber}/details';

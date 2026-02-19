@@ -25,4 +25,4 @@ export function organizationNeedEds(http: HttpClient, rootUrl: string, params?: 
   );
 }
 
-organizationNeedEds.PATH = '/bla-bla-vla/Organization/NeedEds';
+organizationNeedEds.PATH = '/api/Organization/NeedEds';

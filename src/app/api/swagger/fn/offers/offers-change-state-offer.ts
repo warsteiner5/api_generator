@@ -29,4 +29,4 @@ export function offersChangeStateOffer(http: HttpClient, rootUrl: string, params
   );
 }
 
-offersChangeStateOffer.PATH = '/bla-bla-vla/offers/change-state';
+offersChangeStateOffer.PATH = '/market/api/v1/offers/change-state';

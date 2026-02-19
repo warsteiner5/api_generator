@@ -26,4 +26,4 @@ export function usersGetUserWorkGroups(http: HttpClient, rootUrl: string, params
   );
 }
 
-usersGetUserWorkGroups.PATH = '/bla-bla-vla/users/work-groups';
+usersGetUserWorkGroups.PATH = '/market/api/v1/users/work-groups';

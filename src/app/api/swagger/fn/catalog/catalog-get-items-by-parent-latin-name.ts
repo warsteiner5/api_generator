@@ -28,4 +28,4 @@ export function catalogGetItemsByParentLatinName(http: HttpClient, rootUrl: stri
   );
 }
 
-catalogGetItemsByParentLatinName.PATH = '/bla-bla-vla/catalog/items/transliterated/{parentTransliterate}';
+catalogGetItemsByParentLatinName.PATH = '/market/api/v1/catalog/items/transliterated/{parentTransliterate}';

@@ -27,4 +27,4 @@ export function tradeGetOldId(http: HttpClient, rootUrl: string, params: TradeGe
   );
 }
 
-tradeGetOldId.PATH = '/bla-bla-vla/Trade/GetOldId';
+tradeGetOldId.PATH = '/api/Trade/GetOldId';

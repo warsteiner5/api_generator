@@ -9,7 +9,7 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
 import { ApiMarketJsonResultOfListOfCharacteristicDto } from '../models/api-market-json-result-of-list-of-characteristic-dto';
 import { ApiMarketJsonResultOfListOfSegmentSearchResultDto } from '../models/api-market-json-result-of-list-of-segment-search-result-dto';
 import { ApiMarketJsonResultOfSegmentDto } from '../models/api-market-json-result-of-segment-dto';
@@ -34,7 +34,7 @@ export class SegmentsApiService extends BaseService {
   }
 
   /** Path part for operation `segmentsSearch()` */
-  static readonly SegmentsSearchPath = '/bla-bla-vla/Segment/Search';
+  static readonly SegmentsSearchPath = '/market/api/v1/Segment/Search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -59,7 +59,7 @@ export class SegmentsApiService extends BaseService {
   }
 
   /** Path part for operation `segmentsGetByName()` */
-  static readonly SegmentsGetByNamePath = '/bla-bla-vla/Segment/GetByName';
+  static readonly SegmentsGetByNamePath = '/market/api/v1/Segment/GetByName';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -84,7 +84,7 @@ export class SegmentsApiService extends BaseService {
   }
 
   /** Path part for operation `segmentsCreate()` */
-  static readonly SegmentsCreatePath = '/bla-bla-vla/Segment';
+  static readonly SegmentsCreatePath = '/market/api/v1/Segment';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -92,7 +92,7 @@ export class SegmentsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  segmentsCreate$Response(params?: SegmentsCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  segmentsCreate$Response(params?: SegmentsCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return segmentsCreate(this.http, this.rootUrl, params, context);
   }
 
@@ -102,14 +102,14 @@ export class SegmentsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  segmentsCreate(params?: SegmentsCreate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  segmentsCreate(params?: SegmentsCreate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.segmentsCreate$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `segmentsGetById()` */
-  static readonly SegmentsGetByIdPath = '/bla-bla-vla/Segment/{id}';
+  static readonly SegmentsGetByIdPath = '/market/api/v1/Segment/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -134,7 +134,7 @@ export class SegmentsApiService extends BaseService {
   }
 
   /** Path part for operation `segmentsActivateSegment()` */
-  static readonly SegmentsActivateSegmentPath = '/bla-bla-vla/Segment/ActivateSegment';
+  static readonly SegmentsActivateSegmentPath = '/market/api/v1/Segment/ActivateSegment';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -159,7 +159,7 @@ export class SegmentsApiService extends BaseService {
   }
 
   /** Path part for operation `segmentsParseSegmentFormExcel()` */
-  static readonly SegmentsParseSegmentFormExcelPath = '/bla-bla-vla/Segment/ParseSegmentFormExcel';
+  static readonly SegmentsParseSegmentFormExcelPath = '/market/api/v1/Segment/ParseSegmentFormExcel';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

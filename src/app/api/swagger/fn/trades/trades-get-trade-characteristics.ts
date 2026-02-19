@@ -28,4 +28,4 @@ export function tradesGetTradeCharacteristics(http: HttpClient, rootUrl: string,
   );
 }
 
-tradesGetTradeCharacteristics.PATH = '/bla-bla-vla/trades/{id}/characteristics';
+tradesGetTradeCharacteristics.PATH = '/market/api/v1/trades/{id}/characteristics';

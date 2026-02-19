@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfDecimal } from '../../models/api-market-json-result-of-decimal';
+import { ApiMarketJsonResultOfDecimalAltDto } from '../../models/api-market-json-result-of-decimal';
 
 export interface AccountsGetLotCommissionByLot$Params {
   lotId: number;
 }
 
-export function accountsGetLotCommissionByLot(http: HttpClient, rootUrl: string, params: AccountsGetLotCommissionByLot$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimal>> {
+export function accountsGetLotCommissionByLot(http: HttpClient, rootUrl: string, params: AccountsGetLotCommissionByLot$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>> {
   const rb = new RequestBuilder(rootUrl, accountsGetLotCommissionByLot.PATH, 'get');
   if (params) {
     rb.path('lotId', params.lotId, {});
@@ -23,9 +23,9 @@ export function accountsGetLotCommissionByLot(http: HttpClient, rootUrl: string,
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfDecimal>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>;
     })
   );
 }
 
-accountsGetLotCommissionByLot.PATH = '/bla-bla-vla/accounts/lotcommission/{lotId}';
+accountsGetLotCommissionByLot.PATH = '/market/api/v1/accounts/lotcommission/{lotId}';

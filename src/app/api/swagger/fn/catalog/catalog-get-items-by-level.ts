@@ -28,4 +28,4 @@ export function catalogGetItemsByLevel(http: HttpClient, rootUrl: string, params
   );
 }
 
-catalogGetItemsByLevel.PATH = '/bla-bla-vla/catalog/lvl/{level}';
+catalogGetItemsByLevel.PATH = '/market/api/v1/catalog/lvl/{level}';

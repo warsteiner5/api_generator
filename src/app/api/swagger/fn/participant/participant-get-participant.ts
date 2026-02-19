@@ -27,4 +27,4 @@ export function participantGetParticipant(http: HttpClient, rootUrl: string, par
   );
 }
 
-participantGetParticipant.PATH = '/bla-bla-vla/Participants/{id}';
+participantGetParticipant.PATH = '/api/Participants/{id}';

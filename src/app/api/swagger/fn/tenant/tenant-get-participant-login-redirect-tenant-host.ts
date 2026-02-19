@@ -25,4 +25,4 @@ export function tenantGetParticipantLoginRedirectTenantHost(http: HttpClient, ro
   );
 }
 
-tenantGetParticipantLoginRedirectTenantHost.PATH = '/bla-bla-vla/Tenant/participantLoginRedirectHost';
+tenantGetParticipantLoginRedirectTenantHost.PATH = '/api/Tenant/participantLoginRedirectHost';

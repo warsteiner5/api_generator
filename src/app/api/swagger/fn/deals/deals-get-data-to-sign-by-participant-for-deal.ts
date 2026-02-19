@@ -29,4 +29,4 @@ export function dealsGetDataToSignByParticipantForDeal(http: HttpClient, rootUrl
   );
 }
 
-dealsGetDataToSignByParticipantForDeal.PATH = '/bla-bla-vla/deals/participants/data_to_sign';
+dealsGetDataToSignByParticipantForDeal.PATH = '/market/api/v1/deals/participants/data_to_sign';

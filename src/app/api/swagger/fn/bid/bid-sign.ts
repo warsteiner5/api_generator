@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfSignBidResponse } from '../../models/api-market-json-result-of-sign-bid-response';
+import { ApiMarketJsonResultOfSignBidResponseAltDto } from '../../models/api-market-json-result-of-sign-bid-response';
 import { ApiSignBidRequestAltDto } from '../../models/api-sign-bid-request';
 
 export interface BidSign$Params {
       body?: ApiSignBidRequestAltDto | null
 }
 
-export function bidSign(http: HttpClient, rootUrl: string, params?: BidSign$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSignBidResponse>> {
+export function bidSign(http: HttpClient, rootUrl: string, params?: BidSign$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSignBidResponseAltDto>> {
   const rb = new RequestBuilder(rootUrl, bidSign.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function bidSign(http: HttpClient, rootUrl: string, params?: BidSign$Para
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfSignBidResponse>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfSignBidResponseAltDto>;
     })
   );
 }
 
-bidSign.PATH = '/bla-bla-vla/bid/sign';
+bidSign.PATH = '/market/api/v1/bid/sign';

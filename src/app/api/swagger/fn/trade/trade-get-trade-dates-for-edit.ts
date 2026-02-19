@@ -28,4 +28,4 @@ export function tradeGetTradeDatesForEdit(http: HttpClient, rootUrl: string, par
   );
 }
 
-tradeGetTradeDatesForEdit.PATH = '/bla-bla-vla/Trade/{id}/GetTradeDatesForEdit';
+tradeGetTradeDatesForEdit.PATH = '/api/Trade/{id}/GetTradeDatesForEdit';

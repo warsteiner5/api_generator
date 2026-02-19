@@ -28,4 +28,4 @@ export function requirementRequestsGetChatFiles(http: HttpClient, rootUrl: strin
   );
 }
 
-requirementRequestsGetChatFiles.PATH = '/bla-bla-vla/RequirementRequests/chat/{chatId}/files';
+requirementRequestsGetChatFiles.PATH = '/market/api/v1/RequirementRequests/chat/{chatId}/files';

@@ -28,4 +28,4 @@ export function notificationsSendPreliminaryOfferRequestsToSupplier(http: HttpCl
   );
 }
 
-notificationsSendPreliminaryOfferRequestsToSupplier.PATH = '/bla-bla-vla/notifications/send-preliminary-offer-requests';
+notificationsSendPreliminaryOfferRequestsToSupplier.PATH = '/market/api/v1/notifications/send-preliminary-offer-requests';

@@ -26,4 +26,4 @@ export function nicRegistriesGetModelForCreate(http: HttpClient, rootUrl: string
   );
 }
 
-nicRegistriesGetModelForCreate.PATH = '/bla-bla-vla/NicRegistry/empty';
+nicRegistriesGetModelForCreate.PATH = '/api/NicRegistry/empty';

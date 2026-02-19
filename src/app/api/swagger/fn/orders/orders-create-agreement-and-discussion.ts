@@ -27,4 +27,4 @@ export function ordersCreateAgreementAndDiscussion(http: HttpClient, rootUrl: st
   );
 }
 
-ordersCreateAgreementAndDiscussion.PATH = '/bla-bla-vla/orders/{orderId}/CreateAgreementAndDiscussion';
+ordersCreateAgreementAndDiscussion.PATH = '/market/api/v1/orders/{orderId}/CreateAgreementAndDiscussion';

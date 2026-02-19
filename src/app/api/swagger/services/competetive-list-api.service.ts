@@ -47,12 +47,12 @@ import { competetiveListRemoveParticipantOfferFromCompetitiveListItem } from '..
 import { CompetetiveListRemoveParticipantOfferFromCompetitiveListItem$Params } from '../fn/competetive-list/competetive-list-remove-participant-offer-from-competitive-list-item';
 import { competetiveListUpdate } from '../fn/competetive-list/competetive-list-update';
 import { CompetetiveListUpdate$Params } from '../fn/competetive-list/competetive-list-update';
-import { ApiMarketJsonResultOfAcceptedPriceListsExtendedResult } from '../models/api-market-json-result-of-accepted-price-lists-extended-result';
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfAcceptedPriceListsExtendedResultAltDto } from '../models/api-market-json-result-of-accepted-price-lists-extended-result';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
 import { ApiMarketJsonResultOfCompetitiveListItemForParticipantOfferTemplateDto } from '../models/api-market-json-result-of-competitive-list-item-for-participant-offer-template-dto';
 import { ApiMarketJsonResultOfCompetitiveListItemForViewDto } from '../models/api-market-json-result-of-competitive-list-item-for-view-dto';
-import { ApiMarketJsonResultOfCompetitiveListItemStateEnum } from '../models/api-market-json-result-of-competitive-list-item-state-enum';
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfCompetitiveListItemStateEnumAltDto } from '../models/api-market-json-result-of-competitive-list-item-state-enum';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
 import { ApiMarketJsonResultOfListOfCompetitiveListItemDto } from '../models/api-market-json-result-of-list-of-competitive-list-item-dto';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfAcceptedPriceListInfoDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-accepted-price-list-info-dto';
 import { ApiMarketJsonResultOfRequirementRequestOfferPricesInfoDto } from '../models/api-market-json-result-of-requirement-request-offer-prices-info-dto';
@@ -65,7 +65,7 @@ export class CompetetiveListApiService extends BaseService {
   }
 
   /** Path part for operation `competetiveListPublish()` */
-  static readonly CompetetiveListPublishPath = '/bla-bla-vla/competetivelist/Publish';
+  static readonly CompetetiveListPublishPath = '/market/api/v1/competetivelist/Publish';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -73,7 +73,7 @@ export class CompetetiveListApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  competetiveListPublish$Response(params?: CompetetiveListPublish$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  competetiveListPublish$Response(params?: CompetetiveListPublish$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return competetiveListPublish(this.http, this.rootUrl, params, context);
   }
 
@@ -83,14 +83,14 @@ export class CompetetiveListApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  competetiveListPublish(params?: CompetetiveListPublish$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  competetiveListPublish(params?: CompetetiveListPublish$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.competetiveListPublish$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `competetiveListCanPublish()` */
-  static readonly CompetetiveListCanPublishPath = '/bla-bla-vla/competetivelist/CanPublish/{requirementRequestId}';
+  static readonly CompetetiveListCanPublishPath = '/market/api/v1/competetivelist/CanPublish/{requirementRequestId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -98,7 +98,7 @@ export class CompetetiveListApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  competetiveListCanPublish$Response(params: CompetetiveListCanPublish$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  competetiveListCanPublish$Response(params: CompetetiveListCanPublish$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return competetiveListCanPublish(this.http, this.rootUrl, params, context);
   }
 
@@ -108,14 +108,14 @@ export class CompetetiveListApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  competetiveListCanPublish(params: CompetetiveListCanPublish$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  competetiveListCanPublish(params: CompetetiveListCanPublish$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.competetiveListCanPublish$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `competetiveListCanUpdateCompetetiveListItem()` */
-  static readonly CompetetiveListCanUpdateCompetetiveListItemPath = '/bla-bla-vla/competetivelist/{competitiveListId}/CanUpdate';
+  static readonly CompetetiveListCanUpdateCompetetiveListItemPath = '/market/api/v1/competetivelist/{competitiveListId}/CanUpdate';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -123,7 +123,7 @@ export class CompetetiveListApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  competetiveListCanUpdateCompetetiveListItem$Response(params: CompetetiveListCanUpdateCompetetiveListItem$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  competetiveListCanUpdateCompetetiveListItem$Response(params: CompetetiveListCanUpdateCompetetiveListItem$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return competetiveListCanUpdateCompetetiveListItem(this.http, this.rootUrl, params, context);
   }
 
@@ -133,14 +133,14 @@ export class CompetetiveListApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  competetiveListCanUpdateCompetetiveListItem(params: CompetetiveListCanUpdateCompetetiveListItem$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  competetiveListCanUpdateCompetetiveListItem(params: CompetetiveListCanUpdateCompetetiveListItem$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.competetiveListCanUpdateCompetetiveListItem$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `competetiveListGetCompetetiveListItemState()` */
-  static readonly CompetetiveListGetCompetetiveListItemStatePath = '/bla-bla-vla/competetivelist/{competitiveListId}/GetState';
+  static readonly CompetetiveListGetCompetetiveListItemStatePath = '/market/api/v1/competetivelist/{competitiveListId}/GetState';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -148,7 +148,7 @@ export class CompetetiveListApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  competetiveListGetCompetetiveListItemState$Response(params: CompetetiveListGetCompetetiveListItemState$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCompetitiveListItemStateEnum>> {
+  competetiveListGetCompetetiveListItemState$Response(params: CompetetiveListGetCompetetiveListItemState$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCompetitiveListItemStateEnumAltDto>> {
     return competetiveListGetCompetetiveListItemState(this.http, this.rootUrl, params, context);
   }
 
@@ -158,14 +158,14 @@ export class CompetetiveListApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  competetiveListGetCompetetiveListItemState(params: CompetetiveListGetCompetetiveListItemState$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfCompetitiveListItemStateEnum> {
+  competetiveListGetCompetetiveListItemState(params: CompetetiveListGetCompetetiveListItemState$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfCompetitiveListItemStateEnumAltDto> {
     return this.competetiveListGetCompetetiveListItemState$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfCompetitiveListItemStateEnum>): ApiMarketJsonResultOfCompetitiveListItemStateEnum => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfCompetitiveListItemStateEnumAltDto>): ApiMarketJsonResultOfCompetitiveListItemStateEnumAltDto => r.body)
     );
   }
 
   /** Path part for operation `competetiveListUpdate()` */
-  static readonly CompetetiveListUpdatePath = '/bla-bla-vla/competetivelist/{competitiveListId}/Update';
+  static readonly CompetetiveListUpdatePath = '/market/api/v1/competetivelist/{competitiveListId}/Update';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -173,7 +173,7 @@ export class CompetetiveListApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  competetiveListUpdate$Response(params: CompetetiveListUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  competetiveListUpdate$Response(params: CompetetiveListUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return competetiveListUpdate(this.http, this.rootUrl, params, context);
   }
 
@@ -183,14 +183,14 @@ export class CompetetiveListApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  competetiveListUpdate(params: CompetetiveListUpdate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  competetiveListUpdate(params: CompetetiveListUpdate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.competetiveListUpdate$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `competetiveListGetCompetetiveListItemsById()` */
-  static readonly CompetetiveListGetCompetetiveListItemsByIdPath = '/bla-bla-vla/competetivelist/{competitiveListId}/Get';
+  static readonly CompetetiveListGetCompetetiveListItemsByIdPath = '/market/api/v1/competetivelist/{competitiveListId}/Get';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -215,7 +215,7 @@ export class CompetetiveListApiService extends BaseService {
   }
 
   /** Path part for operation `competetiveListGetCompetetiveListItemsByTradeId()` */
-  static readonly CompetetiveListGetCompetetiveListItemsByTradeIdPath = '/bla-bla-vla/competetivelist/{tradeId}';
+  static readonly CompetetiveListGetCompetetiveListItemsByTradeIdPath = '/market/api/v1/competetivelist/{tradeId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -240,7 +240,7 @@ export class CompetetiveListApiService extends BaseService {
   }
 
   /** Path part for operation `competetiveListGetCompetetiveListItemsByRequirementRequestId()` */
-  static readonly CompetetiveListGetCompetetiveListItemsByRequirementRequestIdPath = '/bla-bla-vla/competetivelist/byRequirementRequestId/{requirementRequestId}';
+  static readonly CompetetiveListGetCompetetiveListItemsByRequirementRequestIdPath = '/market/api/v1/competetivelist/byRequirementRequestId/{requirementRequestId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -265,7 +265,7 @@ export class CompetetiveListApiService extends BaseService {
   }
 
   /** Path part for operation `competetiveListGetCompetetiveListItemsByFilter()` */
-  static readonly CompetetiveListGetCompetetiveListItemsByFilterPath = '/bla-bla-vla/competetivelist';
+  static readonly CompetetiveListGetCompetetiveListItemsByFilterPath = '/market/api/v1/competetivelist';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -290,7 +290,7 @@ export class CompetetiveListApiService extends BaseService {
   }
 
   /** Path part for operation `competetiveListApproveCompetetiveListItem()` */
-  static readonly CompetetiveListApproveCompetetiveListItemPath = '/bla-bla-vla/competetivelist/{id}/approve';
+  static readonly CompetetiveListApproveCompetetiveListItemPath = '/market/api/v1/competetivelist/{id}/approve';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -315,7 +315,7 @@ export class CompetetiveListApiService extends BaseService {
   }
 
   /** Path part for operation `competetiveListRejectCompetetiveListItem()` */
-  static readonly CompetetiveListRejectCompetetiveListItemPath = '/bla-bla-vla/competetivelist/{id}/reject';
+  static readonly CompetetiveListRejectCompetetiveListItemPath = '/market/api/v1/competetivelist/{id}/reject';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -340,7 +340,7 @@ export class CompetetiveListApiService extends BaseService {
   }
 
   /** Path part for operation `competetiveListRejectCompetetiveListItemWithExplain()` */
-  static readonly CompetetiveListRejectCompetetiveListItemWithExplainPath = '/bla-bla-vla/competetivelist/reject';
+  static readonly CompetetiveListRejectCompetetiveListItemWithExplainPath = '/market/api/v1/competetivelist/reject';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -365,7 +365,7 @@ export class CompetetiveListApiService extends BaseService {
   }
 
   /** Path part for operation `competetiveListGetAcceptedPriceLists()` */
-  static readonly CompetetiveListGetAcceptedPriceListsPath = '/bla-bla-vla/competetivelist/acceptedPriceLists';
+  static readonly CompetetiveListGetAcceptedPriceListsPath = '/market/api/v1/competetivelist/acceptedPriceLists';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -390,7 +390,7 @@ export class CompetetiveListApiService extends BaseService {
   }
 
   /** Path part for operation `competetiveListCanAddOrSetParticipantOffer()` */
-  static readonly CompetetiveListCanAddOrSetParticipantOfferPath = '/bla-bla-vla/competetivelist/{competitiveListId}/CanAddOrSetParticipantOffer';
+  static readonly CompetetiveListCanAddOrSetParticipantOfferPath = '/market/api/v1/competetivelist/{competitiveListId}/CanAddOrSetParticipantOffer';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -398,7 +398,7 @@ export class CompetetiveListApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  competetiveListCanAddOrSetParticipantOffer$Response(params: CompetetiveListCanAddOrSetParticipantOffer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  competetiveListCanAddOrSetParticipantOffer$Response(params: CompetetiveListCanAddOrSetParticipantOffer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return competetiveListCanAddOrSetParticipantOffer(this.http, this.rootUrl, params, context);
   }
 
@@ -408,14 +408,14 @@ export class CompetetiveListApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  competetiveListCanAddOrSetParticipantOffer(params: CompetetiveListCanAddOrSetParticipantOffer$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  competetiveListCanAddOrSetParticipantOffer(params: CompetetiveListCanAddOrSetParticipantOffer$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.competetiveListCanAddOrSetParticipantOffer$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `competetiveListAddParticipantOfferToCompetitiveListItem()` */
-  static readonly CompetetiveListAddParticipantOfferToCompetitiveListItemPath = '/bla-bla-vla/competetivelist/attachPriceList';
+  static readonly CompetetiveListAddParticipantOfferToCompetitiveListItemPath = '/market/api/v1/competetivelist/attachPriceList';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -440,7 +440,7 @@ export class CompetetiveListApiService extends BaseService {
   }
 
   /** Path part for operation `competetiveListRemoveParticipantOfferFromCompetitiveListItem()` */
-  static readonly CompetetiveListRemoveParticipantOfferFromCompetitiveListItemPath = '/bla-bla-vla/competetivelist/detachPriceList';
+  static readonly CompetetiveListRemoveParticipantOfferFromCompetitiveListItemPath = '/market/api/v1/competetivelist/detachPriceList';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -465,7 +465,7 @@ export class CompetetiveListApiService extends BaseService {
   }
 
   /** Path part for operation `competetiveListGetEquivalentCompetetiveLists()` */
-  static readonly CompetetiveListGetEquivalentCompetetiveListsPath = '/bla-bla-vla/competetivelist/getEquivalentCompetetiveLists/{requirementRequestId}';
+  static readonly CompetetiveListGetEquivalentCompetetiveListsPath = '/market/api/v1/competetivelist/getEquivalentCompetetiveLists/{requirementRequestId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -490,7 +490,7 @@ export class CompetetiveListApiService extends BaseService {
   }
 
   /** Path part for operation `competetiveListGetCompetitiveListItemForParticipantOfferTemplate()` */
-  static readonly CompetetiveListGetCompetitiveListItemForParticipantOfferTemplatePath = '/bla-bla-vla/competetivelist/GetCompetitiveListItemForParticipantOfferTemplate/{id}';
+  static readonly CompetetiveListGetCompetitiveListItemForParticipantOfferTemplatePath = '/market/api/v1/competetivelist/GetCompetitiveListItemForParticipantOfferTemplate/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -515,7 +515,7 @@ export class CompetetiveListApiService extends BaseService {
   }
 
   /** Path part for operation `competetiveListGetAcceptedPriceListsInfo()` */
-  static readonly CompetetiveListGetAcceptedPriceListsInfoPath = '/bla-bla-vla/competetivelist/acceptedPriceListsNewFlow';
+  static readonly CompetetiveListGetAcceptedPriceListsInfoPath = '/market/api/v1/competetivelist/acceptedPriceListsNewFlow';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -523,7 +523,7 @@ export class CompetetiveListApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  competetiveListGetAcceptedPriceListsInfo$Response(params?: CompetetiveListGetAcceptedPriceListsInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfAcceptedPriceListsExtendedResult>> {
+  competetiveListGetAcceptedPriceListsInfo$Response(params?: CompetetiveListGetAcceptedPriceListsInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfAcceptedPriceListsExtendedResultAltDto>> {
     return competetiveListGetAcceptedPriceListsInfo(this.http, this.rootUrl, params, context);
   }
 
@@ -533,9 +533,9 @@ export class CompetetiveListApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  competetiveListGetAcceptedPriceListsInfo(params?: CompetetiveListGetAcceptedPriceListsInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfAcceptedPriceListsExtendedResult> {
+  competetiveListGetAcceptedPriceListsInfo(params?: CompetetiveListGetAcceptedPriceListsInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfAcceptedPriceListsExtendedResultAltDto> {
     return this.competetiveListGetAcceptedPriceListsInfo$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfAcceptedPriceListsExtendedResult>): ApiMarketJsonResultOfAcceptedPriceListsExtendedResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfAcceptedPriceListsExtendedResultAltDto>): ApiMarketJsonResultOfAcceptedPriceListsExtendedResultAltDto => r.body)
     );
   }
 

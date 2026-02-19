@@ -9,8 +9,8 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfNicRegistryGridDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-nic-registry-grid-dto';
 import { ApiMarketJsonResultOfNicRegistryEntryDto } from '../models/api-market-json-result-of-nic-registry-entry-dto';
 import { ApiMarketJsonResultOfNicRegistryTradeInfoDto } from '../models/api-market-json-result-of-nic-registry-trade-info-dto';
@@ -119,7 +119,7 @@ export class NicRegistriesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  nicRegistriesSave$Response(params?: NicRegistriesSave$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  nicRegistriesSave$Response(params?: NicRegistriesSave$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return nicRegistriesSave(this.http, this.rootUrl, params, context);
   }
 
@@ -129,9 +129,9 @@ export class NicRegistriesApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  nicRegistriesSave(params?: NicRegistriesSave$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  nicRegistriesSave(params?: NicRegistriesSave$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.nicRegistriesSave$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
@@ -144,7 +144,7 @@ export class NicRegistriesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  nicRegistriesDelete$Response(params: NicRegistriesDelete$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  nicRegistriesDelete$Response(params: NicRegistriesDelete$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return nicRegistriesDelete(this.http, this.rootUrl, params, context);
   }
 
@@ -154,9 +154,9 @@ export class NicRegistriesApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  nicRegistriesDelete(params: NicRegistriesDelete$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  nicRegistriesDelete(params: NicRegistriesDelete$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.nicRegistriesDelete$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 

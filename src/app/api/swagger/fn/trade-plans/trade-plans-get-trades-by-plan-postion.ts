@@ -31,4 +31,4 @@ export function tradePlansGetTradesByPlanPostion(http: HttpClient, rootUrl: stri
   );
 }
 
-tradePlansGetTradesByPlanPostion.PATH = '/bla-bla-vla/plans/search/{planPositionId}';
+tradePlansGetTradesByPlanPostion.PATH = '/market/api/v1/plans/search/{planPositionId}';

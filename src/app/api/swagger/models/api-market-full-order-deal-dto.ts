@@ -10,6 +10,7 @@ export type ApiMarketFullOrderDealDto = ApiMarketFullDealDto & {
 'ContractIsAcceptedByCustomer'?: boolean;
 'DealPositions'?: Array<ApiMarketDealPositionDto> | null;
 'TradePrice'?: number | null;
+'DealPrice'?: number;
 'IsDifferencesProtocolAllowed'?: boolean;
 'IsDealPaperFormAllowed'?: boolean;
 };

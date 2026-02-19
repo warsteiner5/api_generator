@@ -7,13 +7,13 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiBlockFinanceDto } from '../../models/api-block-finance-dto';
-import { ApiMarketJsonResultOfPublishApplicationResult } from '../../models/api-market-json-result-of-publish-application-result';
+import { ApiMarketJsonResultOfPublishApplicationResultAltDto } from '../../models/api-market-json-result-of-publish-application-result';
 
 export interface TradesBlockFinance$Params {
       body?: ApiBlockFinanceDto | null
 }
 
-export function tradesBlockFinance(http: HttpClient, rootUrl: string, params?: TradesBlockFinance$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResult>> {
+export function tradesBlockFinance(http: HttpClient, rootUrl: string, params?: TradesBlockFinance$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesBlockFinance.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function tradesBlockFinance(http: HttpClient, rootUrl: string, params?: T
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResultAltDto>;
     })
   );
 }
 
-tradesBlockFinance.PATH = '/bla-bla-vla/trades/applications/block-finance';
+tradesBlockFinance.PATH = '/market/api/v1/trades/applications/block-finance';

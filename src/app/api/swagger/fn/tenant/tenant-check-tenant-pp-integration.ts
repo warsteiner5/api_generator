@@ -27,4 +27,4 @@ export function tenantCheckTenantPpIntegration(http: HttpClient, rootUrl: string
   );
 }
 
-tenantCheckTenantPpIntegration.PATH = '/bla-bla-vla/Tenant/checkTenantPPIntegration';
+tenantCheckTenantPpIntegration.PATH = '/api/Tenant/checkTenantPPIntegration';

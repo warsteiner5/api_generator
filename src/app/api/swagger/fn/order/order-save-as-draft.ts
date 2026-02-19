@@ -28,4 +28,4 @@ export function orderSaveAsDraft(http: HttpClient, rootUrl: string, params?: Ord
   );
 }
 
-orderSaveAsDraft.PATH = '/bla-bla-vla/order/SaveAsDraft';
+orderSaveAsDraft.PATH = '/api/order/SaveAsDraft';

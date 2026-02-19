@@ -28,4 +28,4 @@ export function tradeFinishReviewApplication(http: HttpClient, rootUrl: string, 
   );
 }
 
-tradeFinishReviewApplication.PATH = '/bla-bla-vla/Trade/FinishReviewApplication';
+tradeFinishReviewApplication.PATH = '/api/Trade/FinishReviewApplication';

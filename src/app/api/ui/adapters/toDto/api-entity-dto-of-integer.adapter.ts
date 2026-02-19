@@ -1,7 +1,7 @@
-import { EntityDtoOfIntegerAlt } from '../../models/entity-dto-of-integer-alt.interface';
-import { ApiEntityDtoOfIntegerAltDto } from '../../../swagger/models/api-entity-dto-of-integer';
+import { EntityDtoOfInteger } from '../../models/entity-dto-of-integer.interface';
+import { ApiEntityDtoOfInteger } from '../../../swagger/models/api-entity-dto-of-integer';
 
-export function adaptApiEntityDtoOfIntegerAltDto(source?: EntityDtoOfIntegerAlt | null): ApiEntityDtoOfIntegerAltDto {
+export function adaptApiEntityDtoOfInteger(source?: EntityDtoOfInteger | null): ApiEntityDtoOfInteger {
   return {
     Id: source?.id,
   };

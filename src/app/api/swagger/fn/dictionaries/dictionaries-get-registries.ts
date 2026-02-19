@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfIReadOnlyCollectionOfDictionaryItem } from '../../models/api-market-json-result-of-i-read-only-collection-of-dictionary-item';
+import { ApiMarketJsonResultOfIReadOnlyCollectionOfDictionaryItemAltDto } from '../../models/api-market-json-result-of-i-read-only-collection-of-dictionary-item';
 
 export interface DictionariesGetRegistries$Params {
   countryCode: string | null;
 }
 
-export function dictionariesGetRegistries(http: HttpClient, rootUrl: string, params: DictionariesGetRegistries$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfDictionaryItem>> {
+export function dictionariesGetRegistries(http: HttpClient, rootUrl: string, params: DictionariesGetRegistries$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfDictionaryItemAltDto>> {
   const rb = new RequestBuilder(rootUrl, dictionariesGetRegistries.PATH, 'get');
   if (params) {
     rb.path('countryCode', params.countryCode, {});
@@ -23,9 +23,9 @@ export function dictionariesGetRegistries(http: HttpClient, rootUrl: string, par
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfDictionaryItem>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfDictionaryItemAltDto>;
     })
   );
 }
 
-dictionariesGetRegistries.PATH = '/bla-bla-vla/dictionaries/registries/country/{countryCode}';
+dictionariesGetRegistries.PATH = '/market/api/v1/dictionaries/registries/country/{countryCode}';

@@ -31,4 +31,4 @@ export function externalDealsReplace(http: HttpClient, rootUrl: string, params: 
   );
 }
 
-externalDealsReplace.PATH = '/bla-bla-vla/external-deals/{id}';
+externalDealsReplace.PATH = '/market/api/v1/external-deals/{id}';

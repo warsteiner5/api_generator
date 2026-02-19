@@ -28,4 +28,4 @@ export function segmentsActivateSegment(http: HttpClient, rootUrl: string, param
   );
 }
 
-segmentsActivateSegment.PATH = '/bla-bla-vla/Segment/ActivateSegment';
+segmentsActivateSegment.PATH = '/market/api/v1/Segment/ActivateSegment';

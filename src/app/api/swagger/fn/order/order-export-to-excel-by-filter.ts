@@ -29,4 +29,4 @@ export function orderExportToExcelByFilter(http: HttpClient, rootUrl: string, pa
   );
 }
 
-orderExportToExcelByFilter.PATH = '/bla-bla-vla/order/ExportToExcelByFilter';
+orderExportToExcelByFilter.PATH = '/api/order/ExportToExcelByFilter';

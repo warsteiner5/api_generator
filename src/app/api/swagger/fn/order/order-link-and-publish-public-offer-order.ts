@@ -28,4 +28,4 @@ export function orderLinkAndPublishPublicOfferOrder(http: HttpClient, rootUrl: s
   );
 }
 
-orderLinkAndPublishPublicOfferOrder.PATH = '/bla-bla-vla/order/LinkAndPublishPublicOfferOrder';
+orderLinkAndPublishPublicOfferOrder.PATH = '/api/order/LinkAndPublishPublicOfferOrder';

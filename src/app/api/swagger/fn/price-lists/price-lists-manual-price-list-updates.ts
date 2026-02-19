@@ -31,4 +31,4 @@ export function priceListsManualPriceListUpdates(http: HttpClient, rootUrl: stri
   );
 }
 
-priceListsManualPriceListUpdates.PATH = '/bla-bla-vla/priceLists/{priceListId}/manual-yml-url-update';
+priceListsManualPriceListUpdates.PATH = '/market/api/v1/priceLists/{priceListId}/manual-yml-url-update';

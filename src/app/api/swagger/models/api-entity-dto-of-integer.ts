@@ -1,5 +1,5 @@
 /* tslint:disable */
 /* eslint-disable */
-export interface ApiEntityDtoOfIntegerAltDto {
+export interface ApiEntityDtoOfInteger {
   Id?: number;
 }

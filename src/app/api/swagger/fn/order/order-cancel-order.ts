@@ -27,4 +27,4 @@ export function orderCancelOrder(http: HttpClient, rootUrl: string, params: Orde
   );
 }
 
-orderCancelOrder.PATH = '/bla-bla-vla/order/{orderId}/CancelOrder';
+orderCancelOrder.PATH = '/api/order/{orderId}/CancelOrder';

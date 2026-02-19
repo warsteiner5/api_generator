@@ -7,14 +7,14 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiLotPositionPricesAltDto } from '../../models/api-lot-position-prices';
-import { ApiMarketJsonResultOfLotPrice } from '../../models/api-market-json-result-of-lot-price';
+import { ApiMarketJsonResultOfLotPriceAltDto } from '../../models/api-market-json-result-of-lot-price';
 
 export interface VatCalculateSumFromPositionsApplyVat$Params {
   isPriceWithoutVat: boolean;
       body?: Array<ApiLotPositionPricesAltDto> | null
 }
 
-export function vatCalculateSumFromPositionsApplyVat(http: HttpClient, rootUrl: string, params: VatCalculateSumFromPositionsApplyVat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLotPrice>> {
+export function vatCalculateSumFromPositionsApplyVat(http: HttpClient, rootUrl: string, params: VatCalculateSumFromPositionsApplyVat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLotPriceAltDto>> {
   const rb = new RequestBuilder(rootUrl, vatCalculateSumFromPositionsApplyVat.PATH, 'post');
   if (params) {
     rb.path('isPriceWithoutVat', params.isPriceWithoutVat, {});
@@ -26,9 +26,9 @@ export function vatCalculateSumFromPositionsApplyVat(http: HttpClient, rootUrl: 
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfLotPrice>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfLotPriceAltDto>;
     })
   );
 }
 
-vatCalculateSumFromPositionsApplyVat.PATH = '/bla-bla-vla/vat/sum/include/{isPriceWithoutVat}';
+vatCalculateSumFromPositionsApplyVat.PATH = '/market/api/v1/vat/sum/include/{isPriceWithoutVat}';

@@ -28,4 +28,4 @@ export function tradeGetFullTradeInfo(http: HttpClient, rootUrl: string, params:
   );
 }
 
-tradeGetFullTradeInfo.PATH = '/bla-bla-vla/Trade/{id}/GetFullTradeInfo';
+tradeGetFullTradeInfo.PATH = '/api/Trade/{id}/GetFullTradeInfo';

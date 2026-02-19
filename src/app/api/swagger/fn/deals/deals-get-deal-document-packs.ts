@@ -31,4 +31,4 @@ export function dealsGetDealDocumentPacks(http: HttpClient, rootUrl: string, par
   );
 }
 
-dealsGetDealDocumentPacks.PATH = '/bla-bla-vla/deals/{id}/document-packs';
+dealsGetDealDocumentPacks.PATH = '/market/api/v1/deals/{id}/document-packs';

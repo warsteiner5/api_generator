@@ -11,12 +11,12 @@ import { StrictHttpResponse } from '../strict-http-response';
 
 import { ApiMarketJsonResultOfExternalLotItemsParticipantOffersInfoDtoOf } from '../models/api-market-json-result-of-external-lot-items-participant-offers-info-dto-of';
 import { ApiMarketJsonResultOfGetParticipantOffersByTradeResponseDto } from '../models/api-market-json-result-of-get-participant-offers-by-trade-response-dto';
-import { ApiMarketJsonResultOfGuid } from '../models/api-market-json-result-of-guid';
-import { ApiMarketJsonResultOfImportExcelApplicationSpecificationsResult } from '../models/api-market-json-result-of-import-excel-application-specifications-result';
-import { ApiMarketJsonResultOfImportExcelParticipantOfferToTradeResult } from '../models/api-market-json-result-of-import-excel-participant-offer-to-trade-result';
+import { ApiMarketJsonResultOfGuidAltDto } from '../models/api-market-json-result-of-guid';
+import { ApiMarketJsonResultOfImportExcelApplicationSpecificationsResultAltDto } from '../models/api-market-json-result-of-import-excel-application-specifications-result';
+import { ApiMarketJsonResultOfImportExcelParticipantOfferToTradeResultAltDto } from '../models/api-market-json-result-of-import-excel-participant-offer-to-trade-result';
 import { ApiMarketJsonResultOfListOfParticipantOfferShortInfoDto } from '../models/api-market-json-result-of-list-of-participant-offer-short-info-dto';
 import { ApiMarketJsonResultOfLotItemsParticipantOffersInfoDtoOf } from '../models/api-market-json-result-of-lot-items-participant-offers-info-dto-of';
-import { ApiMarketJsonResultOfMarketJsonVoidResult } from '../models/api-market-json-result-of-market-json-void-result';
+import { ApiMarketJsonResultOfMarketJsonVoidResultAltDto } from '../models/api-market-json-result-of-market-json-void-result';
 import { ApiMarketJsonResultOfParticipantOfferShortInfoDtoOf } from '../models/api-market-json-result-of-participant-offer-short-info-dto-of';
 import { participantOfferToTradeCreateParticipantOffersToTrade } from '../fn/participant-offer-to-trade/participant-offer-to-trade-create-participant-offers-to-trade';
 import { ParticipantOfferToTradeCreateParticipantOffersToTrade$Params } from '../fn/participant-offer-to-trade/participant-offer-to-trade-create-participant-offers-to-trade';
@@ -56,7 +56,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferToTradeGetOffersByTradeId()` */
-  static readonly ParticipantOfferToTradeGetOffersByTradeIdPath = '/bla-bla-vla/offerToTrade/participantOffersByTradeId/{id}';
+  static readonly ParticipantOfferToTradeGetOffersByTradeIdPath = '/market/api/v1/offerToTrade/participantOffersByTradeId/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -81,7 +81,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferToTradeGetParticipantOffersByTradeId()` */
-  static readonly ParticipantOfferToTradeGetParticipantOffersByTradeIdPath = '/bla-bla-vla/offerToTrade/{tradeId}/organization/{organizationId}';
+  static readonly ParticipantOfferToTradeGetParticipantOffersByTradeIdPath = '/market/api/v1/offerToTrade/{tradeId}/organization/{organizationId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -106,7 +106,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferToTradeGetOffersByLotItemId()` */
-  static readonly ParticipantOfferToTradeGetOffersByLotItemIdPath = '/bla-bla-vla/offerToTrade/participantOffersByLotItemId/{id}';
+  static readonly ParticipantOfferToTradeGetOffersByLotItemIdPath = '/market/api/v1/offerToTrade/participantOffersByLotItemId/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -131,7 +131,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferToTradeCreateParticipantOfferToTradeLotItem()` */
-  static readonly ParticipantOfferToTradeCreateParticipantOfferToTradeLotItemPath = '/bla-bla-vla/offerToTrade/createParticipantOfferToTrade';
+  static readonly ParticipantOfferToTradeCreateParticipantOfferToTradeLotItemPath = '/market/api/v1/offerToTrade/createParticipantOfferToTrade';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -141,7 +141,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
    *
    * @deprecated
    */
-  participantOfferToTradeCreateParticipantOfferToTradeLotItem$Response(params?: ParticipantOfferToTradeCreateParticipantOfferToTradeLotItem$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResult>> {
+  participantOfferToTradeCreateParticipantOfferToTradeLotItem$Response(params?: ParticipantOfferToTradeCreateParticipantOfferToTradeLotItem$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResultAltDto>> {
     return participantOfferToTradeCreateParticipantOfferToTradeLotItem(this.http, this.rootUrl, params, context);
   }
 
@@ -153,14 +153,14 @@ export class ParticipantOfferToTradeApiService extends BaseService {
    *
    * @deprecated
    */
-  participantOfferToTradeCreateParticipantOfferToTradeLotItem(params?: ParticipantOfferToTradeCreateParticipantOfferToTradeLotItem$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketJsonVoidResult> {
+  participantOfferToTradeCreateParticipantOfferToTradeLotItem(params?: ParticipantOfferToTradeCreateParticipantOfferToTradeLotItem$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketJsonVoidResultAltDto> {
     return this.participantOfferToTradeCreateParticipantOfferToTradeLotItem$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResult>): ApiMarketJsonResultOfMarketJsonVoidResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResultAltDto>): ApiMarketJsonResultOfMarketJsonVoidResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `participantOfferToTradeCreateParticipantOffersToTrade()` */
-  static readonly ParticipantOfferToTradeCreateParticipantOffersToTradePath = '/bla-bla-vla/offerToTrade/{tradeId}/items/create';
+  static readonly ParticipantOfferToTradeCreateParticipantOffersToTradePath = '/market/api/v1/offerToTrade/{tradeId}/items/create';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -168,7 +168,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  participantOfferToTradeCreateParticipantOffersToTrade$Response(params: ParticipantOfferToTradeCreateParticipantOffersToTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResult>> {
+  participantOfferToTradeCreateParticipantOffersToTrade$Response(params: ParticipantOfferToTradeCreateParticipantOffersToTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResultAltDto>> {
     return participantOfferToTradeCreateParticipantOffersToTrade(this.http, this.rootUrl, params, context);
   }
 
@@ -178,14 +178,14 @@ export class ParticipantOfferToTradeApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  participantOfferToTradeCreateParticipantOffersToTrade(params: ParticipantOfferToTradeCreateParticipantOffersToTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketJsonVoidResult> {
+  participantOfferToTradeCreateParticipantOffersToTrade(params: ParticipantOfferToTradeCreateParticipantOffersToTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketJsonVoidResultAltDto> {
     return this.participantOfferToTradeCreateParticipantOffersToTrade$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResult>): ApiMarketJsonResultOfMarketJsonVoidResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResultAltDto>): ApiMarketJsonResultOfMarketJsonVoidResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `participantOfferToTradeGetLotItemsShortOffersInfo()` */
-  static readonly ParticipantOfferToTradeGetLotItemsShortOffersInfoPath = '/bla-bla-vla/offerToTrade/{tradeId}/participant-offers/short-info';
+  static readonly ParticipantOfferToTradeGetLotItemsShortOffersInfoPath = '/market/api/v1/offerToTrade/{tradeId}/participant-offers/short-info';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -210,7 +210,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferToTradeGetExternalLotItemsShortOffersInfo()` */
-  static readonly ParticipantOfferToTradeGetExternalLotItemsShortOffersInfoPath = '/bla-bla-vla/offerToTrade/{tradeId}/participant-offers/external/short-info';
+  static readonly ParticipantOfferToTradeGetExternalLotItemsShortOffersInfoPath = '/market/api/v1/offerToTrade/{tradeId}/participant-offers/external/short-info';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -235,7 +235,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferToTradeGetLotItemsFullOffersInfo()` */
-  static readonly ParticipantOfferToTradeGetLotItemsFullOffersInfoPath = '/bla-bla-vla/offerToTrade/{tradeId}/participant-offers/full-info';
+  static readonly ParticipantOfferToTradeGetLotItemsFullOffersInfoPath = '/market/api/v1/offerToTrade/{tradeId}/participant-offers/full-info';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -260,7 +260,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferToTradeGetExternalLotItemsFullOffersInfo()` */
-  static readonly ParticipantOfferToTradeGetExternalLotItemsFullOffersInfoPath = '/bla-bla-vla/offerToTrade/{tradeId}/participant-offers/external/full-info';
+  static readonly ParticipantOfferToTradeGetExternalLotItemsFullOffersInfoPath = '/market/api/v1/offerToTrade/{tradeId}/participant-offers/external/full-info';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -285,7 +285,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferToTradeGetImportByExcelTemplate()` */
-  static readonly ParticipantOfferToTradeGetImportByExcelTemplatePath = '/bla-bla-vla/offerToTrade/participant-offers/excel/import/template';
+  static readonly ParticipantOfferToTradeGetImportByExcelTemplatePath = '/market/api/v1/offerToTrade/participant-offers/excel/import/template';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -310,7 +310,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferToTradeGetExcelImportTemplateForTrade()` */
-  static readonly ParticipantOfferToTradeGetExcelImportTemplateForTradePath = '/bla-bla-vla/offerToTrade/participant-offers/trade/{tradeId}/excel/import/template';
+  static readonly ParticipantOfferToTradeGetExcelImportTemplateForTradePath = '/market/api/v1/offerToTrade/participant-offers/trade/{tradeId}/excel/import/template';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -335,7 +335,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferToTradeImportByExcel()` */
-  static readonly ParticipantOfferToTradeImportByExcelPath = '/bla-bla-vla/offerToTrade/participant-offers/trade/{tradeId}/excel/import/{importFileGuid}';
+  static readonly ParticipantOfferToTradeImportByExcelPath = '/market/api/v1/offerToTrade/participant-offers/trade/{tradeId}/excel/import/{importFileGuid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -343,7 +343,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  participantOfferToTradeImportByExcel$Response(params: ParticipantOfferToTradeImportByExcel$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfImportExcelParticipantOfferToTradeResult>> {
+  participantOfferToTradeImportByExcel$Response(params: ParticipantOfferToTradeImportByExcel$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfImportExcelParticipantOfferToTradeResultAltDto>> {
     return participantOfferToTradeImportByExcel(this.http, this.rootUrl, params, context);
   }
 
@@ -353,14 +353,14 @@ export class ParticipantOfferToTradeApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  participantOfferToTradeImportByExcel(params: ParticipantOfferToTradeImportByExcel$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfImportExcelParticipantOfferToTradeResult> {
+  participantOfferToTradeImportByExcel(params: ParticipantOfferToTradeImportByExcel$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfImportExcelParticipantOfferToTradeResultAltDto> {
     return this.participantOfferToTradeImportByExcel$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfImportExcelParticipantOfferToTradeResult>): ApiMarketJsonResultOfImportExcelParticipantOfferToTradeResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfImportExcelParticipantOfferToTradeResultAltDto>): ApiMarketJsonResultOfImportExcelParticipantOfferToTradeResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `participantOfferToTradeGetSuitableParticipantOffersExcelReport()` */
-  static readonly ParticipantOfferToTradeGetSuitableParticipantOffersExcelReportPath = '/bla-bla-vla/offerToTrade/{tradeId}/participant-offers/suitable/report/excel';
+  static readonly ParticipantOfferToTradeGetSuitableParticipantOffersExcelReportPath = '/market/api/v1/offerToTrade/{tradeId}/participant-offers/suitable/report/excel';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -385,7 +385,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
   }
 
   /** Path part for operation `participantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate()` */
-  static readonly ParticipantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplatePath = '/bla-bla-vla/offerToTrade/{tradeId}/participant-offers/excel/import/specifications/template';
+  static readonly ParticipantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplatePath = '/market/api/v1/offerToTrade/{tradeId}/participant-offers/excel/import/specifications/template';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -393,7 +393,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  participantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate$Response(params: ParticipantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuid>> {
+  participantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate$Response(params: ParticipantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>> {
     return participantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate(this.http, this.rootUrl, params, context);
   }
 
@@ -403,14 +403,14 @@ export class ParticipantOfferToTradeApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  participantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate(params: ParticipantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfGuid> {
+  participantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate(params: ParticipantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfGuidAltDto> {
     return this.participantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfGuid>): ApiMarketJsonResultOfGuid => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>): ApiMarketJsonResultOfGuidAltDto => r.body)
     );
   }
 
   /** Path part for operation `participantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel()` */
-  static readonly ParticipantOfferToTradeImportTradeLotApplicationSpecificationsFromExcelPath = '/bla-bla-vla/offerToTrade/{tradeId}/participant-offers/excel/import/specifications/{fileGuid}';
+  static readonly ParticipantOfferToTradeImportTradeLotApplicationSpecificationsFromExcelPath = '/market/api/v1/offerToTrade/{tradeId}/participant-offers/excel/import/specifications/{fileGuid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -418,7 +418,7 @@ export class ParticipantOfferToTradeApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  participantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel$Response(params: ParticipantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfImportExcelApplicationSpecificationsResult>> {
+  participantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel$Response(params: ParticipantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfImportExcelApplicationSpecificationsResultAltDto>> {
     return participantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel(this.http, this.rootUrl, params, context);
   }
 
@@ -428,9 +428,9 @@ export class ParticipantOfferToTradeApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  participantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel(params: ParticipantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfImportExcelApplicationSpecificationsResult> {
+  participantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel(params: ParticipantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfImportExcelApplicationSpecificationsResultAltDto> {
     return this.participantOfferToTradeImportTradeLotApplicationSpecificationsFromExcel$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfImportExcelApplicationSpecificationsResult>): ApiMarketJsonResultOfImportExcelApplicationSpecificationsResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfImportExcelApplicationSpecificationsResultAltDto>): ApiMarketJsonResultOfImportExcelApplicationSpecificationsResultAltDto => r.body)
     );
   }
 

@@ -25,4 +25,4 @@ export function okeiGet(http: HttpClient, rootUrl: string, params?: OkeiGet$Para
   );
 }
 
-okeiGet.PATH = '/bla-bla-vla/Okei';
+okeiGet.PATH = '/api/Okei';

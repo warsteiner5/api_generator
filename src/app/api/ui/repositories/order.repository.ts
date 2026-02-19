@@ -1,7 +1,7 @@
-import { adaptApiSearchResultOfOrderGridDtoForCustomerAltToUI } from '../adapters/toUI/api-search-result-of-order-grid-dto-for-customer-alt.adapter';
+import { adaptApiSearchResultOfOrderGridDtoForCustomerToUI } from '../adapters/toUI/api-search-result-of-order-grid-dto-for-customer.adapter';
 import { adaptExportFilesStatusAltToUI } from '../adapters/toUI/export-files-status-alt.adapter';
 import { adaptOrderViewToUI } from '../adapters/toUI/order-view.adapter';
-import { ApiSearchResultOfOrderGridDtoForCustomerAlt } from '../models/api-search-result-of-order-grid-dto-for-customer-alt.interface';
+import { ApiSearchResultOfOrderGridDtoForCustomer } from '../models/api-search-result-of-order-grid-dto-for-customer.interface';
 import { ExportFilesStatusAlt } from '../models/export-files-status-alt.interface';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
@@ -65,21 +65,21 @@ export class OrderRepository {
     );
   }
 
-  orderGetOrdersForCustomer(params?: OrderGetOrdersForCustomerParams): Observable<ApiSearchResultOfOrderGridDtoForCustomerAlt> {
+  orderGetOrdersForCustomer(params?: OrderGetOrdersForCustomerParams): Observable<ApiSearchResultOfOrderGridDtoForCustomer> {
     return this._api.orderGetOrdersForCustomer(orderGetOrdersForCustomerParamsAdapter.adapt(params)).pipe(
-      map((res) => adaptApiSearchResultOfOrderGridDtoForCustomerAltToUI(res))
+      map((res) => adaptApiSearchResultOfOrderGridDtoForCustomerToUI(res))
     );
   }
 
-  orderGetOrdersForOperator(params?: OrderGetOrdersForOperatorParams): Observable<ApiSearchResultOfOrderGridDtoForCustomerAlt> {
+  orderGetOrdersForOperator(params?: OrderGetOrdersForOperatorParams): Observable<ApiSearchResultOfOrderGridDtoForCustomer> {
     return this._api.orderGetOrdersForOperator(orderGetOrdersForOperatorParamsAdapter.adapt(params)).pipe(
-      map((res) => adaptApiSearchResultOfOrderGridDtoForCustomerAltToUI(res))
+      map((res) => adaptApiSearchResultOfOrderGridDtoForCustomerToUI(res))
     );
   }
 
-  orderGetOrdersForParticipant(params?: OrderGetOrdersForParticipantParams): Observable<ApiSearchResultOfOrderGridDtoForCustomerAlt> {
+  orderGetOrdersForParticipant(params?: OrderGetOrdersForParticipantParams): Observable<ApiSearchResultOfOrderGridDtoForCustomer> {
     return this._api.orderGetOrdersForParticipant(orderGetOrdersForParticipantParamsAdapter.adapt(params)).pipe(
-      map((res) => adaptApiSearchResultOfOrderGridDtoForCustomerAltToUI(res))
+      map((res) => adaptApiSearchResultOfOrderGridDtoForCustomerToUI(res))
     );
   }
 

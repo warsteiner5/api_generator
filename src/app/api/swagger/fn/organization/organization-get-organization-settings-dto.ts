@@ -27,4 +27,4 @@ export function organizationGetOrganizationSettingsDto(http: HttpClient, rootUrl
   );
 }
 
-organizationGetOrganizationSettingsDto.PATH = '/bla-bla-vla/Organization/GetOrganizationSettingsDto';
+organizationGetOrganizationSettingsDto.PATH = '/api/Organization/GetOrganizationSettingsDto';

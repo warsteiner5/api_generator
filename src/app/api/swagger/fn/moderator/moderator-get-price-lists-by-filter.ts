@@ -29,4 +29,4 @@ export function moderatorGetPriceListsByFilter(http: HttpClient, rootUrl: string
   );
 }
 
-moderatorGetPriceListsByFilter.PATH = '/bla-bla-vla/moderator/pricelists';
+moderatorGetPriceListsByFilter.PATH = '/market/api/v1/moderator/pricelists';

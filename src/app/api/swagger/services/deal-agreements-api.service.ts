@@ -25,7 +25,7 @@ import { DealAgreementsGetAgreementHistory$Params } from '../fn/deal-agreements/
 import { dealAgreementsGetLastAgreementHistory } from '../fn/deal-agreements/deal-agreements-get-last-agreement-history';
 import { DealAgreementsGetLastAgreementHistory$Params } from '../fn/deal-agreements/deal-agreements-get-last-agreement-history';
 import { ApiMarketJsonResultOfDealAgreementHistoryDto } from '../models/api-market-json-result-of-deal-agreement-history-dto';
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
 import { ApiMarketJsonResultOfListOfDealAgreementHistoryDto } from '../models/api-market-json-result-of-list-of-deal-agreement-history-dto';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 
@@ -36,7 +36,7 @@ export class DealAgreementsApiService extends BaseService {
   }
 
   /** Path part for operation `dealAgreementsGetAgreementHistory()` */
-  static readonly DealAgreementsGetAgreementHistoryPath = '/bla-bla-vla/deals/{dealId}/agreements/history';
+  static readonly DealAgreementsGetAgreementHistoryPath = '/market/api/v1/deals/{dealId}/agreements/history';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -61,7 +61,7 @@ export class DealAgreementsApiService extends BaseService {
   }
 
   /** Path part for operation `dealAgreementsGetLastAgreementHistory()` */
-  static readonly DealAgreementsGetLastAgreementHistoryPath = '/bla-bla-vla/deals/{dealId}/agreements/last';
+  static readonly DealAgreementsGetLastAgreementHistoryPath = '/market/api/v1/deals/{dealId}/agreements/last';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -86,7 +86,7 @@ export class DealAgreementsApiService extends BaseService {
   }
 
   /** Path part for operation `dealAgreementsAddDealAgreementHistory()` */
-  static readonly DealAgreementsAddDealAgreementHistoryPath = '/bla-bla-vla/deals/{dealId}/agreements/initial/history';
+  static readonly DealAgreementsAddDealAgreementHistoryPath = '/market/api/v1/deals/{dealId}/agreements/initial/history';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -111,7 +111,7 @@ export class DealAgreementsApiService extends BaseService {
   }
 
   /** Path part for operation `dealAgreementsAddAgreementByParticipant()` */
-  static readonly DealAgreementsAddAgreementByParticipantPath = '/bla-bla-vla/deals/{dealId}/agreements/participants';
+  static readonly DealAgreementsAddAgreementByParticipantPath = '/market/api/v1/deals/{dealId}/agreements/participants';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -119,7 +119,7 @@ export class DealAgreementsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealAgreementsAddAgreementByParticipant$Response(params: DealAgreementsAddAgreementByParticipant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  dealAgreementsAddAgreementByParticipant$Response(params: DealAgreementsAddAgreementByParticipant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return dealAgreementsAddAgreementByParticipant(this.http, this.rootUrl, params, context);
   }
 
@@ -129,14 +129,14 @@ export class DealAgreementsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealAgreementsAddAgreementByParticipant(params: DealAgreementsAddAgreementByParticipant$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  dealAgreementsAddAgreementByParticipant(params: DealAgreementsAddAgreementByParticipant$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.dealAgreementsAddAgreementByParticipant$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealAgreementsAddAgreementByCustomer()` */
-  static readonly DealAgreementsAddAgreementByCustomerPath = '/bla-bla-vla/deals/{dealId}/agreements/customers';
+  static readonly DealAgreementsAddAgreementByCustomerPath = '/market/api/v1/deals/{dealId}/agreements/customers';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -144,7 +144,7 @@ export class DealAgreementsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealAgreementsAddAgreementByCustomer$Response(params: DealAgreementsAddAgreementByCustomer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  dealAgreementsAddAgreementByCustomer$Response(params: DealAgreementsAddAgreementByCustomer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return dealAgreementsAddAgreementByCustomer(this.http, this.rootUrl, params, context);
   }
 
@@ -154,14 +154,14 @@ export class DealAgreementsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  dealAgreementsAddAgreementByCustomer(params: DealAgreementsAddAgreementByCustomer$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  dealAgreementsAddAgreementByCustomer(params: DealAgreementsAddAgreementByCustomer$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.dealAgreementsAddAgreementByCustomer$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `dealAgreementsApproveAgreementByCustomer()` */
-  static readonly DealAgreementsApproveAgreementByCustomerPath = '/bla-bla-vla/deals/{dealId}/agreements/{agreementId}/customers/approve';
+  static readonly DealAgreementsApproveAgreementByCustomerPath = '/market/api/v1/deals/{dealId}/agreements/{agreementId}/customers/approve';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -186,7 +186,7 @@ export class DealAgreementsApiService extends BaseService {
   }
 
   /** Path part for operation `dealAgreementsApproveAgreementByParticipant()` */
-  static readonly DealAgreementsApproveAgreementByParticipantPath = '/bla-bla-vla/deals/{dealId}/agreements/{agreementId}/participants/approve';
+  static readonly DealAgreementsApproveAgreementByParticipantPath = '/market/api/v1/deals/{dealId}/agreements/{agreementId}/participants/approve';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

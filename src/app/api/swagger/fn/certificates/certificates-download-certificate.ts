@@ -32,4 +32,4 @@ export function certificatesDownloadCertificate(http: HttpClient, rootUrl: strin
   );
 }
 
-certificatesDownloadCertificate.PATH = '/bla-bla-vla/certificates/deals/{dealId}/sides/{contractSide}/files/{fileGuid}';
+certificatesDownloadCertificate.PATH = '/market/api/v1/certificates/deals/{dealId}/sides/{contractSide}/files/{fileGuid}';

@@ -35,7 +35,7 @@ export class ExternalDealsApiService extends BaseService {
   }
 
   /** Path part for operation `externalDealsGetExternalDeal()` */
-  static readonly ExternalDealsGetExternalDealPath = '/bla-bla-vla/external-deals/{id}';
+  static readonly ExternalDealsGetExternalDealPath = '/market/api/v1/external-deals/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -60,7 +60,7 @@ export class ExternalDealsApiService extends BaseService {
   }
 
   /** Path part for operation `externalDealsReplace()` */
-  static readonly ExternalDealsReplacePath = '/bla-bla-vla/external-deals/{id}';
+  static readonly ExternalDealsReplacePath = '/market/api/v1/external-deals/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -85,7 +85,7 @@ export class ExternalDealsApiService extends BaseService {
   }
 
   /** Path part for operation `externalDealsDeleteExternalDeal()` */
-  static readonly ExternalDealsDeleteExternalDealPath = '/bla-bla-vla/external-deals/{id}';
+  static readonly ExternalDealsDeleteExternalDealPath = '/market/api/v1/external-deals/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -110,7 +110,7 @@ export class ExternalDealsApiService extends BaseService {
   }
 
   /** Path part for operation `externalDealsCreateExternalDeal()` */
-  static readonly ExternalDealsCreateExternalDealPath = '/bla-bla-vla/external-deals';
+  static readonly ExternalDealsCreateExternalDealPath = '/market/api/v1/external-deals';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -135,7 +135,7 @@ export class ExternalDealsApiService extends BaseService {
   }
 
   /** Path part for operation `externalDealsGetExternalDealTrade()` */
-  static readonly ExternalDealsGetExternalDealTradePath = '/bla-bla-vla/external-deals/trade/{tradeId}';
+  static readonly ExternalDealsGetExternalDealTradePath = '/market/api/v1/external-deals/trade/{tradeId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -160,7 +160,7 @@ export class ExternalDealsApiService extends BaseService {
   }
 
   /** Path part for operation `externalDealsPublish()` */
-  static readonly ExternalDealsPublishPath = '/bla-bla-vla/external-deals/publish';
+  static readonly ExternalDealsPublishPath = '/market/api/v1/external-deals/publish';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -185,7 +185,7 @@ export class ExternalDealsApiService extends BaseService {
   }
 
   /** Path part for operation `externalDealsPublish2()` */
-  static readonly ExternalDealsPublish2Path = '/bla-bla-vla/external-deals/{id}/publish';
+  static readonly ExternalDealsPublish2Path = '/market/api/v1/external-deals/{id}/publish';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

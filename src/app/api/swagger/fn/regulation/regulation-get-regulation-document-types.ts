@@ -28,4 +28,4 @@ export function regulationGetRegulationDocumentTypes(http: HttpClient, rootUrl: 
   );
 }
 
-regulationGetRegulationDocumentTypes.PATH = '/bla-bla-vla/regulation/types';
+regulationGetRegulationDocumentTypes.PATH = '/market/api/v1/regulation/types';

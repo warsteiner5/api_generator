@@ -32,4 +32,4 @@ export function organizationSettingGetOrgSettings(http: HttpClient, rootUrl: str
   );
 }
 
-organizationSettingGetOrgSettings.PATH = '/bla-bla-vla/tradeBusinessFlow/{tradeBusinessFlow}/org/{orgGuid}/tenant/{tenantId}';
+organizationSettingGetOrgSettings.PATH = '/market/api/v1/tradeBusinessFlow/{tradeBusinessFlow}/org/{orgGuid}/tenant/{tenantId}';

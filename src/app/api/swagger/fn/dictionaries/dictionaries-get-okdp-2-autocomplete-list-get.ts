@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfListOfOkpd2Value } from '../../models/api-market-json-result-of-list-of-okpd-2-value';
+import { ApiMarketJsonResultOfListOfOkpd2ValueAltDto } from '../../models/api-market-json-result-of-list-of-okpd-2-value';
 
 export interface DictionariesGetOkdp2AutocompleteListGet$Params {
   searchValue: string | null;
   maxReturnCount: number | null;
 }
 
-export function dictionariesGetOkdp2AutocompleteListGet(http: HttpClient, rootUrl: string, params: DictionariesGetOkdp2AutocompleteListGet$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfOkpd2Value>> {
+export function dictionariesGetOkdp2AutocompleteListGet(http: HttpClient, rootUrl: string, params: DictionariesGetOkdp2AutocompleteListGet$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfOkpd2ValueAltDto>> {
   const rb = new RequestBuilder(rootUrl, dictionariesGetOkdp2AutocompleteListGet.PATH, 'get');
   if (params) {
     rb.path('searchValue', params.searchValue, {});
@@ -25,9 +25,9 @@ export function dictionariesGetOkdp2AutocompleteListGet(http: HttpClient, rootUr
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfListOfOkpd2Value>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfListOfOkpd2ValueAltDto>;
     })
   );
 }
 
-dictionariesGetOkdp2AutocompleteListGet.PATH = '/bla-bla-vla/dictionaries/okpd2/autocomplete/{searchValue}/maxReturnCount/{maxReturnCount}';
+dictionariesGetOkdp2AutocompleteListGet.PATH = '/market/api/v1/dictionaries/okpd2/autocomplete/{searchValue}/maxReturnCount/{maxReturnCount}';

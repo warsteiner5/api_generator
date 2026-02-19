@@ -28,4 +28,4 @@ export function participantOfferToTradeGetOffersByLotItemId(http: HttpClient, ro
   );
 }
 
-participantOfferToTradeGetOffersByLotItemId.PATH = '/bla-bla-vla/offerToTrade/participantOffersByLotItemId/{id}';
+participantOfferToTradeGetOffersByLotItemId.PATH = '/market/api/v1/offerToTrade/participantOffersByLotItemId/{id}';

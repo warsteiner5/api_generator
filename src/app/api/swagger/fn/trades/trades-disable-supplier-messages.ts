@@ -27,4 +27,4 @@ export function tradesDisableSupplierMessages(http: HttpClient, rootUrl: string,
   );
 }
 
-tradesDisableSupplierMessages.PATH = '/bla-bla-vla/trades/chat/{chatId}/disable-supplier-messages';
+tradesDisableSupplierMessages.PATH = '/market/api/v1/trades/chat/{chatId}/disable-supplier-messages';

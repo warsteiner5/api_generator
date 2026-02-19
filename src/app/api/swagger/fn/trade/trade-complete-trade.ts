@@ -27,4 +27,4 @@ export function tradeCompleteTrade(http: HttpClient, rootUrl: string, params: Tr
   );
 }
 
-tradeCompleteTrade.PATH = '/bla-bla-vla/Trade/{tradeId}/complete';
+tradeCompleteTrade.PATH = '/api/Trade/{tradeId}/complete';

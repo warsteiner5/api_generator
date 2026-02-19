@@ -27,4 +27,4 @@ export function notificationMarkNotificationsAsRead(http: HttpClient, rootUrl: s
   );
 }
 
-notificationMarkNotificationsAsRead.PATH = '/bla-bla-vla/Notification/MarkNotificationsAsRead';
+notificationMarkNotificationsAsRead.PATH = '/api/Notification/MarkNotificationsAsRead';

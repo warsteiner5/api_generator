@@ -28,4 +28,4 @@ export function offersRemoveParticipantOffer(http: HttpClient, rootUrl: string, 
   );
 }
 
-offersRemoveParticipantOffer.PATH = '/bla-bla-vla/offers/remove';
+offersRemoveParticipantOffer.PATH = '/market/api/v1/offers/remove';

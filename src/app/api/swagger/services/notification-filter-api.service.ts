@@ -20,7 +20,7 @@ export class NotificationFilterApiService extends BaseService {
   }
 
   /** Path part for operation `notificationFilterGetPossibleOrganizationsToUseInFilter()` */
-  static readonly NotificationFilterGetPossibleOrganizationsToUseInFilterPath = '/bla-bla-vla/notifications/filters/my/possible-organizations';
+  static readonly NotificationFilterGetPossibleOrganizationsToUseInFilterPath = '/market/api/v1/notifications/filters/my/possible-organizations';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

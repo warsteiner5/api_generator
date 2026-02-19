@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfMarketJsonVoidResult } from '../../models/api-market-json-result-of-market-json-void-result';
+import { ApiMarketJsonResultOfMarketJsonVoidResultAltDto } from '../../models/api-market-json-result-of-market-json-void-result';
 
 export interface OffersCreateParticipantOfferActualizationRequest$Params {
   id: number;
 }
 
-export function offersCreateParticipantOfferActualizationRequest(http: HttpClient, rootUrl: string, params: OffersCreateParticipantOfferActualizationRequest$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResult>> {
+export function offersCreateParticipantOfferActualizationRequest(http: HttpClient, rootUrl: string, params: OffersCreateParticipantOfferActualizationRequest$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, offersCreateParticipantOfferActualizationRequest.PATH, 'get');
   if (params) {
     rb.path('id', params.id, {});
@@ -23,9 +23,9 @@ export function offersCreateParticipantOfferActualizationRequest(http: HttpClien
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResultAltDto>;
     })
   );
 }
 
-offersCreateParticipantOfferActualizationRequest.PATH = '/bla-bla-vla/offers/{id}/actualizationRequest';
+offersCreateParticipantOfferActualizationRequest.PATH = '/market/api/v1/offers/{id}/actualizationRequest';

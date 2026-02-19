@@ -29,4 +29,4 @@ export function applicationParticipantApplications(http: HttpClient, rootUrl: st
   );
 }
 
-applicationParticipantApplications.PATH = '/bla-bla-vla/ParticipantApplications';
+applicationParticipantApplications.PATH = '/api/ParticipantApplications';

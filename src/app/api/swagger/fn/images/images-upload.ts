@@ -25,4 +25,4 @@ export function imagesUpload(http: HttpClient, rootUrl: string, params?: ImagesU
   );
 }
 
-imagesUpload.PATH = '/bla-bla-vla/images';
+imagesUpload.PATH = '/market/api/v1/images';

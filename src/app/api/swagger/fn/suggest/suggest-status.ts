@@ -25,4 +25,4 @@ export function suggestStatus(http: HttpClient, rootUrl: string, params?: Sugges
   );
 }
 
-suggestStatus.PATH = '/bla-bla-vla/Suggest/Status';
+suggestStatus.PATH = '/api/Suggest/Status';

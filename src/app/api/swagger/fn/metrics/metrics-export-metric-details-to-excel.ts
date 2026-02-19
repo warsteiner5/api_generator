@@ -30,4 +30,4 @@ export function metricsExportMetricDetailsToExcel(http: HttpClient, rootUrl: str
   );
 }
 
-metricsExportMetricDetailsToExcel.PATH = '/bla-bla-vla/metrics/details/excel';
+metricsExportMetricDetailsToExcel.PATH = '/market/api/v1/metrics/details/excel';

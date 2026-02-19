@@ -27,4 +27,4 @@ export function accountRedirectByTenantId(http: HttpClient, rootUrl: string, par
   );
 }
 
-accountRedirectByTenantId.PATH = '/bla-bla-vla/Account/RedirectByTenantId';
+accountRedirectByTenantId.PATH = '/api/Account/RedirectByTenantId';

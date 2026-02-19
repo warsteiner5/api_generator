@@ -28,4 +28,4 @@ export function participantOfferImportApproveCharateristicById(http: HttpClient,
   );
 }
 
-participantOfferImportApproveCharateristicById.PATH = '/bla-bla-vla/offerimport/characteristics/{id}/approve';
+participantOfferImportApproveCharateristicById.PATH = '/market/api/v1/offerimport/characteristics/{id}/approve';

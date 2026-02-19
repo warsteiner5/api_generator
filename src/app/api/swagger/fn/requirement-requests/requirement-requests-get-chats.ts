@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfListOfIdName } from '../../models/api-market-json-result-of-list-of-id-name';
+import { ApiMarketJsonResultOfListOfIdNameAltDto } from '../../models/api-market-json-result-of-list-of-id-name';
 
 export interface RequirementRequestsGetChats$Params {
   requirementRequestId: number;
 }
 
-export function requirementRequestsGetChats(http: HttpClient, rootUrl: string, params: RequirementRequestsGetChats$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfIdName>> {
+export function requirementRequestsGetChats(http: HttpClient, rootUrl: string, params: RequirementRequestsGetChats$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfIdNameAltDto>> {
   const rb = new RequestBuilder(rootUrl, requirementRequestsGetChats.PATH, 'get');
   if (params) {
     rb.path('requirementRequestId', params.requirementRequestId, {});
@@ -23,9 +23,9 @@ export function requirementRequestsGetChats(http: HttpClient, rootUrl: string, p
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfListOfIdName>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfListOfIdNameAltDto>;
     })
   );
 }
 
-requirementRequestsGetChats.PATH = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chats';
+requirementRequestsGetChats.PATH = '/market/api/v1/RequirementRequests/{requirementRequestId}/chats';

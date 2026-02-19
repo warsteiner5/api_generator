@@ -27,4 +27,4 @@ export function tradePrepareDataForTradeCreate(http: HttpClient, rootUrl: string
   );
 }
 
-tradePrepareDataForTradeCreate.PATH = '/bla-bla-vla/Trade/PrepareDataForTradeCreate';
+tradePrepareDataForTradeCreate.PATH = '/api/Trade/PrepareDataForTradeCreate';

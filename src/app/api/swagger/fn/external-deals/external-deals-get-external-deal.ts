@@ -28,4 +28,4 @@ export function externalDealsGetExternalDeal(http: HttpClient, rootUrl: string, 
   );
 }
 
-externalDealsGetExternalDeal.PATH = '/bla-bla-vla/external-deals/{id}';
+externalDealsGetExternalDeal.PATH = '/market/api/v1/external-deals/{id}';

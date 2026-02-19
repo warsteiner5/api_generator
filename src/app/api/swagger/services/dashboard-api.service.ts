@@ -29,7 +29,7 @@ export class DashboardApiService extends BaseService {
   }
 
   /** Path part for operation `dashboardGetAggregationInfo()` */
-  static readonly DashboardGetAggregationInfoPath = '/bla-bla-vla/dashboard/agInfo';
+  static readonly DashboardGetAggregationInfoPath = '/market/api/v1/dashboard/agInfo';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -54,7 +54,7 @@ export class DashboardApiService extends BaseService {
   }
 
   /** Path part for operation `dashboardGetAggregationInfoByStatus()` */
-  static readonly DashboardGetAggregationInfoByStatusPath = '/bla-bla-vla/dashboard/agInfo/{guid}';
+  static readonly DashboardGetAggregationInfoByStatusPath = '/market/api/v1/dashboard/agInfo/{guid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -79,7 +79,7 @@ export class DashboardApiService extends BaseService {
   }
 
   /** Path part for operation `dashboardGetAggregationInfoByStatusForUser()` */
-  static readonly DashboardGetAggregationInfoByStatusForUserPath = '/bla-bla-vla/dashboard/agInfo/user/{guid}';
+  static readonly DashboardGetAggregationInfoByStatusForUserPath = '/market/api/v1/dashboard/agInfo/user/{guid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -104,7 +104,7 @@ export class DashboardApiService extends BaseService {
   }
 
   /** Path part for operation `dashboardGetAggregationInfoByMonth()` */
-  static readonly DashboardGetAggregationInfoByMonthPath = '/bla-bla-vla/dashboard/agInfo/months/{guid}/{year}/{fromMonth}/{toMonth}';
+  static readonly DashboardGetAggregationInfoByMonthPath = '/market/api/v1/dashboard/agInfo/months/{guid}/{year}/{fromMonth}/{toMonth}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -129,7 +129,7 @@ export class DashboardApiService extends BaseService {
   }
 
   /** Path part for operation `dashboardGetAggregationInfoByDaysInMonth()` */
-  static readonly DashboardGetAggregationInfoByDaysInMonthPath = '/bla-bla-vla/dashboard/agInfo/date/{guid}/{year}/{month}';
+  static readonly DashboardGetAggregationInfoByDaysInMonthPath = '/market/api/v1/dashboard/agInfo/date/{guid}/{year}/{month}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

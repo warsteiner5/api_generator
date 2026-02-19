@@ -27,4 +27,4 @@ export function participantOfferCommercialPrintForm(http: HttpClient, rootUrl: s
   );
 }
 
-participantOfferCommercialPrintForm.PATH = '/bla-bla-vla/participantoffer/CommercialPrintForm/{id}';
+participantOfferCommercialPrintForm.PATH = '/api/participantoffer/CommercialPrintForm/{id}';

@@ -10,20 +10,20 @@ import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
 import { ApiDiscussionFileDto } from '../models/api-discussion-file-dto';
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
-import { ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo } from '../models/api-market-json-result-of-dictionary-of-integer-and-list-of-read-item-info';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto } from '../models/api-market-json-result-of-dictionary-of-integer-and-list-of-read-item-info';
 import { ApiMarketJsonResultOfDiscussionDto } from '../models/api-market-json-result-of-discussion-dto';
 import { ApiMarketJsonResultOfDiscussionItemDto } from '../models/api-market-json-result-of-discussion-item-dto';
 import { ApiMarketJsonResultOfEquivalentTableDto } from '../models/api-market-json-result-of-equivalent-table-dto';
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
 import { ApiMarketJsonResultOfListOfCharacteristicDto } from '../models/api-market-json-result-of-list-of-characteristic-dto';
 import { ApiMarketJsonResultOfListOfCompetitiveListMinPriceDto } from '../models/api-market-json-result-of-list-of-competitive-list-min-price-dto';
 import { ApiMarketJsonResultOfListOfDiscussionDto } from '../models/api-market-json-result-of-list-of-discussion-dto';
 import { ApiMarketJsonResultOfListOfDiscussionItemDto } from '../models/api-market-json-result-of-list-of-discussion-item-dto';
-import { ApiMarketJsonResultOfListOfIdName } from '../models/api-market-json-result-of-list-of-id-name';
+import { ApiMarketJsonResultOfListOfIdNameAltDto } from '../models/api-market-json-result-of-list-of-id-name';
 import { ApiMarketJsonResultOfListOfParticipantOfferItemDto } from '../models/api-market-json-result-of-list-of-participant-offer-item-dto';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfRequirementRequestsSearchResultDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-requirement-requests-search-result-dto';
-import { ApiMarketJsonResultOfMemoryStream } from '../models/api-market-json-result-of-memory-stream';
+import { ApiMarketJsonResultOfMemoryStreamAltDto } from '../models/api-market-json-result-of-memory-stream';
 import { ApiMarketJsonResultOfOffersTableDto } from '../models/api-market-json-result-of-offers-table-dto';
 import { ApiMarketJsonResultOfRequirementRequestForViewDto } from '../models/api-market-json-result-of-requirement-request-for-view-dto';
 import { requirementRequestsAddChatMessage } from '../fn/requirement-requests/requirement-requests-add-chat-message';
@@ -101,7 +101,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsGetRequirementRequestCharacteristicTableByFilter()` */
-  static readonly RequirementRequestsGetRequirementRequestCharacteristicTableByFilterPath = '/bla-bla-vla/RequirementRequests/getcharacteristictable';
+  static readonly RequirementRequestsGetRequirementRequestCharacteristicTableByFilterPath = '/market/api/v1/RequirementRequests/getcharacteristictable';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -126,7 +126,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsSearch()` */
-  static readonly RequirementRequestsSearchPath = '/bla-bla-vla/RequirementRequests/search';
+  static readonly RequirementRequestsSearchPath = '/market/api/v1/RequirementRequests/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -151,7 +151,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsPublicSearch()` */
-  static readonly RequirementRequestsPublicSearchPath = '/bla-bla-vla/RequirementRequests/PublicSearch';
+  static readonly RequirementRequestsPublicSearchPath = '/market/api/v1/RequirementRequests/PublicSearch';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -176,7 +176,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsSaveAsDraft()` */
-  static readonly RequirementRequestsSaveAsDraftPath = '/bla-bla-vla/RequirementRequests/SaveAsDraft';
+  static readonly RequirementRequestsSaveAsDraftPath = '/market/api/v1/RequirementRequests/SaveAsDraft';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -184,7 +184,7 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  requirementRequestsSaveAsDraft$Response(params?: RequirementRequestsSaveAsDraft$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  requirementRequestsSaveAsDraft$Response(params?: RequirementRequestsSaveAsDraft$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return requirementRequestsSaveAsDraft(this.http, this.rootUrl, params, context);
   }
 
@@ -194,14 +194,14 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  requirementRequestsSaveAsDraft(params?: RequirementRequestsSaveAsDraft$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  requirementRequestsSaveAsDraft(params?: RequirementRequestsSaveAsDraft$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.requirementRequestsSaveAsDraft$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `requirementRequestsPublish()` */
-  static readonly RequirementRequestsPublishPath = '/bla-bla-vla/RequirementRequests/Publish';
+  static readonly RequirementRequestsPublishPath = '/market/api/v1/RequirementRequests/Publish';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -209,7 +209,7 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  requirementRequestsPublish$Response(params?: RequirementRequestsPublish$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  requirementRequestsPublish$Response(params?: RequirementRequestsPublish$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return requirementRequestsPublish(this.http, this.rootUrl, params, context);
   }
 
@@ -219,14 +219,14 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  requirementRequestsPublish(params?: RequirementRequestsPublish$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  requirementRequestsPublish(params?: RequirementRequestsPublish$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.requirementRequestsPublish$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `requirementRequestsCanUpdate()` */
-  static readonly RequirementRequestsCanUpdatePath = '/bla-bla-vla/RequirementRequests/{id}/CanUpdate';
+  static readonly RequirementRequestsCanUpdatePath = '/market/api/v1/RequirementRequests/{id}/CanUpdate';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -234,7 +234,7 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsCanUpdate$Response(params: RequirementRequestsCanUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  requirementRequestsCanUpdate$Response(params: RequirementRequestsCanUpdate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return requirementRequestsCanUpdate(this.http, this.rootUrl, params, context);
   }
 
@@ -244,14 +244,14 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsCanUpdate(params: RequirementRequestsCanUpdate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  requirementRequestsCanUpdate(params: RequirementRequestsCanUpdate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.requirementRequestsCanUpdate$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `requirementRequestsGetForView()` */
-  static readonly RequirementRequestsGetForViewPath = '/bla-bla-vla/RequirementRequests/{id}';
+  static readonly RequirementRequestsGetForViewPath = '/market/api/v1/RequirementRequests/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -276,7 +276,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsCancelRequirementRequest()` */
-  static readonly RequirementRequestsCancelRequirementRequestPath = '/bla-bla-vla/RequirementRequests/{id}/Cancel';
+  static readonly RequirementRequestsCancelRequirementRequestPath = '/market/api/v1/RequirementRequests/{id}/Cancel';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -301,7 +301,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsUpdateRequirementRequestStates()` */
-  static readonly RequirementRequestsUpdateRequirementRequestStatesPath = '/bla-bla-vla/RequirementRequests/UpdateRequirementRequestStates';
+  static readonly RequirementRequestsUpdateRequirementRequestStatesPath = '/market/api/v1/RequirementRequests/UpdateRequirementRequestStates';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -326,7 +326,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsIsEquivalentTableExist()` */
-  static readonly RequirementRequestsIsEquivalentTableExistPath = '/bla-bla-vla/RequirementRequests/{id}/IsEquivalentTableExist';
+  static readonly RequirementRequestsIsEquivalentTableExistPath = '/market/api/v1/RequirementRequests/{id}/IsEquivalentTableExist';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -334,7 +334,7 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsIsEquivalentTableExist$Response(params: RequirementRequestsIsEquivalentTableExist$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  requirementRequestsIsEquivalentTableExist$Response(params: RequirementRequestsIsEquivalentTableExist$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return requirementRequestsIsEquivalentTableExist(this.http, this.rootUrl, params, context);
   }
 
@@ -344,14 +344,14 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsIsEquivalentTableExist(params: RequirementRequestsIsEquivalentTableExist$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  requirementRequestsIsEquivalentTableExist(params: RequirementRequestsIsEquivalentTableExist$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.requirementRequestsIsEquivalentTableExist$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `requirementRequestsCreateEquivalentTable()` */
-  static readonly RequirementRequestsCreateEquivalentTablePath = '/bla-bla-vla/RequirementRequests/{id}/CreateEquivalentTable';
+  static readonly RequirementRequestsCreateEquivalentTablePath = '/market/api/v1/RequirementRequests/{id}/CreateEquivalentTable';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -359,7 +359,7 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsCreateEquivalentTable$Response(params: RequirementRequestsCreateEquivalentTable$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  requirementRequestsCreateEquivalentTable$Response(params: RequirementRequestsCreateEquivalentTable$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return requirementRequestsCreateEquivalentTable(this.http, this.rootUrl, params, context);
   }
 
@@ -369,14 +369,14 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsCreateEquivalentTable(params: RequirementRequestsCreateEquivalentTable$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  requirementRequestsCreateEquivalentTable(params: RequirementRequestsCreateEquivalentTable$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.requirementRequestsCreateEquivalentTable$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `requirementRequestsUpdateEquivalentTable()` */
-  static readonly RequirementRequestsUpdateEquivalentTablePath = '/bla-bla-vla/RequirementRequests/{id}/UpdateEquivalentTable';
+  static readonly RequirementRequestsUpdateEquivalentTablePath = '/market/api/v1/RequirementRequests/{id}/UpdateEquivalentTable';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -384,7 +384,7 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsUpdateEquivalentTable$Response(params: RequirementRequestsUpdateEquivalentTable$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  requirementRequestsUpdateEquivalentTable$Response(params: RequirementRequestsUpdateEquivalentTable$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return requirementRequestsUpdateEquivalentTable(this.http, this.rootUrl, params, context);
   }
 
@@ -394,14 +394,14 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsUpdateEquivalentTable(params: RequirementRequestsUpdateEquivalentTable$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  requirementRequestsUpdateEquivalentTable(params: RequirementRequestsUpdateEquivalentTable$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.requirementRequestsUpdateEquivalentTable$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `requirementRequestsGetEquivalentTable()` */
-  static readonly RequirementRequestsGetEquivalentTablePath = '/bla-bla-vla/RequirementRequests/{id}/GetEquivalentTable';
+  static readonly RequirementRequestsGetEquivalentTablePath = '/market/api/v1/RequirementRequests/{id}/GetEquivalentTable';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -426,7 +426,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsDownloadEquivalentTable()` */
-  static readonly RequirementRequestsDownloadEquivalentTablePath = '/bla-bla-vla/RequirementRequests/{id}/DownloadEquivalentTable';
+  static readonly RequirementRequestsDownloadEquivalentTablePath = '/market/api/v1/RequirementRequests/{id}/DownloadEquivalentTable';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -434,7 +434,7 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsDownloadEquivalentTable$Response(params: RequirementRequestsDownloadEquivalentTable$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMemoryStream>> {
+  requirementRequestsDownloadEquivalentTable$Response(params: RequirementRequestsDownloadEquivalentTable$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMemoryStreamAltDto>> {
     return requirementRequestsDownloadEquivalentTable(this.http, this.rootUrl, params, context);
   }
 
@@ -444,14 +444,14 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsDownloadEquivalentTable(params: RequirementRequestsDownloadEquivalentTable$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMemoryStream> {
+  requirementRequestsDownloadEquivalentTable(params: RequirementRequestsDownloadEquivalentTable$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMemoryStreamAltDto> {
     return this.requirementRequestsDownloadEquivalentTable$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMemoryStream>): ApiMarketJsonResultOfMemoryStream => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMemoryStreamAltDto>): ApiMarketJsonResultOfMemoryStreamAltDto => r.body)
     );
   }
 
   /** Path part for operation `requirementRequestsDownloadComparisonProtocol()` */
-  static readonly RequirementRequestsDownloadComparisonProtocolPath = '/bla-bla-vla/RequirementRequests/{id}/DownloadComparisonProtocol';
+  static readonly RequirementRequestsDownloadComparisonProtocolPath = '/market/api/v1/RequirementRequests/{id}/DownloadComparisonProtocol';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -459,7 +459,7 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsDownloadComparisonProtocol$Response(params: RequirementRequestsDownloadComparisonProtocol$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMemoryStream>> {
+  requirementRequestsDownloadComparisonProtocol$Response(params: RequirementRequestsDownloadComparisonProtocol$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMemoryStreamAltDto>> {
     return requirementRequestsDownloadComparisonProtocol(this.http, this.rootUrl, params, context);
   }
 
@@ -469,14 +469,14 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsDownloadComparisonProtocol(params: RequirementRequestsDownloadComparisonProtocol$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMemoryStream> {
+  requirementRequestsDownloadComparisonProtocol(params: RequirementRequestsDownloadComparisonProtocol$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMemoryStreamAltDto> {
     return this.requirementRequestsDownloadComparisonProtocol$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMemoryStream>): ApiMarketJsonResultOfMemoryStream => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMemoryStreamAltDto>): ApiMarketJsonResultOfMemoryStreamAltDto => r.body)
     );
   }
 
   /** Path part for operation `requirementRequestsDownloadComparisonProtocolForCompetitiveList()` */
-  static readonly RequirementRequestsDownloadComparisonProtocolForCompetitiveListPath = '/bla-bla-vla/RequirementRequests/{id}/CompetitiveList/{competitiveListId}/DownloadComparisonProtocolForCompetitiveList';
+  static readonly RequirementRequestsDownloadComparisonProtocolForCompetitiveListPath = '/market/api/v1/RequirementRequests/{id}/CompetitiveList/{competitiveListId}/DownloadComparisonProtocolForCompetitiveList';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -484,7 +484,7 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsDownloadComparisonProtocolForCompetitiveList$Response(params: RequirementRequestsDownloadComparisonProtocolForCompetitiveList$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMemoryStream>> {
+  requirementRequestsDownloadComparisonProtocolForCompetitiveList$Response(params: RequirementRequestsDownloadComparisonProtocolForCompetitiveList$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMemoryStreamAltDto>> {
     return requirementRequestsDownloadComparisonProtocolForCompetitiveList(this.http, this.rootUrl, params, context);
   }
 
@@ -494,14 +494,14 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsDownloadComparisonProtocolForCompetitiveList(params: RequirementRequestsDownloadComparisonProtocolForCompetitiveList$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMemoryStream> {
+  requirementRequestsDownloadComparisonProtocolForCompetitiveList(params: RequirementRequestsDownloadComparisonProtocolForCompetitiveList$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMemoryStreamAltDto> {
     return this.requirementRequestsDownloadComparisonProtocolForCompetitiveList$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMemoryStream>): ApiMarketJsonResultOfMemoryStream => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMemoryStreamAltDto>): ApiMarketJsonResultOfMemoryStreamAltDto => r.body)
     );
   }
 
   /** Path part for operation `requirementRequestsGetPriceLists()` */
-  static readonly RequirementRequestsGetPriceListsPath = '/bla-bla-vla/RequirementRequests/getpriceLists/{requirementRequestId}';
+  static readonly RequirementRequestsGetPriceListsPath = '/market/api/v1/RequirementRequests/getpriceLists/{requirementRequestId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -526,7 +526,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsApproveRequirementRequestCharacteristic()` */
-  static readonly RequirementRequestsApproveRequirementRequestCharacteristicPath = '/bla-bla-vla/RequirementRequests/approve_requirement_request_characteristic/{characteristicId}';
+  static readonly RequirementRequestsApproveRequirementRequestCharacteristicPath = '/market/api/v1/RequirementRequests/approve_requirement_request_characteristic/{characteristicId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -551,7 +551,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsRejectRequirementRequestCharacteristic()` */
-  static readonly RequirementRequestsRejectRequirementRequestCharacteristicPath = '/bla-bla-vla/RequirementRequests/reject_requirement_request_characteristic/{characteristicId}';
+  static readonly RequirementRequestsRejectRequirementRequestCharacteristicPath = '/market/api/v1/RequirementRequests/reject_requirement_request_characteristic/{characteristicId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -576,7 +576,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsGetCharacteristics()` */
-  static readonly RequirementRequestsGetCharacteristicsPath = '/bla-bla-vla/RequirementRequests/get_characteristics/{characteristicIds}';
+  static readonly RequirementRequestsGetCharacteristicsPath = '/market/api/v1/RequirementRequests/get_characteristics/{characteristicIds}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -601,7 +601,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsGetChat()` */
-  static readonly RequirementRequestsGetChatPath = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{chatId}';
+  static readonly RequirementRequestsGetChatPath = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{chatId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -626,7 +626,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsAddChatMessage()` */
-  static readonly RequirementRequestsAddChatMessagePath = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{chatId}';
+  static readonly RequirementRequestsAddChatMessagePath = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{chatId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -651,7 +651,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsGetChatItems()` */
-  static readonly RequirementRequestsGetChatItemsPath = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{chatId}/read/items';
+  static readonly RequirementRequestsGetChatItemsPath = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{chatId}/read/items';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -676,7 +676,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsGetReadItemInfo()` */
-  static readonly RequirementRequestsGetReadItemInfoPath = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{itemId}/who';
+  static readonly RequirementRequestsGetReadItemInfoPath = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{itemId}/who';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -684,7 +684,7 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsGetReadItemInfo$Response(params: RequirementRequestsGetReadItemInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo>> {
+  requirementRequestsGetReadItemInfo$Response(params: RequirementRequestsGetReadItemInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto>> {
     return requirementRequestsGetReadItemInfo(this.http, this.rootUrl, params, context);
   }
 
@@ -694,14 +694,14 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsGetReadItemInfo(params: RequirementRequestsGetReadItemInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo> {
+  requirementRequestsGetReadItemInfo(params: RequirementRequestsGetReadItemInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto> {
     return this.requirementRequestsGetReadItemInfo$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo>): ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto>): ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto => r.body)
     );
   }
 
   /** Path part for operation `requirementRequestsGetUnreadItems()` */
-  static readonly RequirementRequestsGetUnreadItemsPath = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{chatId}/unread/items';
+  static readonly RequirementRequestsGetUnreadItemsPath = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{chatId}/unread/items';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -726,7 +726,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsGetUnreadItemsCount()` */
-  static readonly RequirementRequestsGetUnreadItemsCountPath = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{chatId}/unread/count';
+  static readonly RequirementRequestsGetUnreadItemsCountPath = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{chatId}/unread/count';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -734,7 +734,7 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsGetUnreadItemsCount$Response(params: RequirementRequestsGetUnreadItemsCount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  requirementRequestsGetUnreadItemsCount$Response(params: RequirementRequestsGetUnreadItemsCount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return requirementRequestsGetUnreadItemsCount(this.http, this.rootUrl, params, context);
   }
 
@@ -744,14 +744,14 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsGetUnreadItemsCount(params: RequirementRequestsGetUnreadItemsCount$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  requirementRequestsGetUnreadItemsCount(params: RequirementRequestsGetUnreadItemsCount$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.requirementRequestsGetUnreadItemsCount$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `requirementRequestsReadChatItemByIds()` */
-  static readonly RequirementRequestsReadChatItemByIdsPath = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{chatId}/read';
+  static readonly RequirementRequestsReadChatItemByIdsPath = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{chatId}/read';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -759,7 +759,7 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  requirementRequestsReadChatItemByIds$Response(params: RequirementRequestsReadChatItemByIds$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  requirementRequestsReadChatItemByIds$Response(params: RequirementRequestsReadChatItemByIds$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return requirementRequestsReadChatItemByIds(this.http, this.rootUrl, params, context);
   }
 
@@ -769,14 +769,14 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  requirementRequestsReadChatItemByIds(params: RequirementRequestsReadChatItemByIds$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  requirementRequestsReadChatItemByIds(params: RequirementRequestsReadChatItemByIds$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.requirementRequestsReadChatItemByIds$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `requirementRequestsReadAllItemsFromId()` */
-  static readonly RequirementRequestsReadAllItemsFromIdPath = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{chatId}/read/{itemId}/all';
+  static readonly RequirementRequestsReadAllItemsFromIdPath = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{chatId}/read/{itemId}/all';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -784,7 +784,7 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsReadAllItemsFromId$Response(params: RequirementRequestsReadAllItemsFromId$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  requirementRequestsReadAllItemsFromId$Response(params: RequirementRequestsReadAllItemsFromId$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return requirementRequestsReadAllItemsFromId(this.http, this.rootUrl, params, context);
   }
 
@@ -794,14 +794,14 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsReadAllItemsFromId(params: RequirementRequestsReadAllItemsFromId$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  requirementRequestsReadAllItemsFromId(params: RequirementRequestsReadAllItemsFromId$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.requirementRequestsReadAllItemsFromId$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `requirementRequestsGetLastChatItems()` */
-  static readonly RequirementRequestsGetLastChatItemsPath = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{chatId}/{lastId}';
+  static readonly RequirementRequestsGetLastChatItemsPath = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{chatId}/{lastId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -826,7 +826,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsGetChats()` */
-  static readonly RequirementRequestsGetChatsPath = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chats';
+  static readonly RequirementRequestsGetChatsPath = '/market/api/v1/RequirementRequests/{requirementRequestId}/chats';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -834,7 +834,7 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsGetChats$Response(params: RequirementRequestsGetChats$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfIdName>> {
+  requirementRequestsGetChats$Response(params: RequirementRequestsGetChats$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfIdNameAltDto>> {
     return requirementRequestsGetChats(this.http, this.rootUrl, params, context);
   }
 
@@ -844,14 +844,14 @@ export class RequirementRequestsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  requirementRequestsGetChats(params: RequirementRequestsGetChats$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfListOfIdName> {
+  requirementRequestsGetChats(params: RequirementRequestsGetChats$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfListOfIdNameAltDto> {
     return this.requirementRequestsGetChats$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfListOfIdName>): ApiMarketJsonResultOfListOfIdName => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfListOfIdNameAltDto>): ApiMarketJsonResultOfListOfIdNameAltDto => r.body)
     );
   }
 
   /** Path part for operation `requirementRequestsGetChatFiles()` */
-  static readonly RequirementRequestsGetChatFilesPath = '/bla-bla-vla/RequirementRequests/chat/{chatId}/files';
+  static readonly RequirementRequestsGetChatFilesPath = '/market/api/v1/RequirementRequests/chat/{chatId}/files';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -876,7 +876,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsGetCompetitiveListMinPrices()` */
-  static readonly RequirementRequestsGetCompetitiveListMinPricesPath = '/bla-bla-vla/RequirementRequests/CompetitiveListMinPrices/{requirementRequestId}/{kladrCode}';
+  static readonly RequirementRequestsGetCompetitiveListMinPricesPath = '/market/api/v1/RequirementRequests/CompetitiveListMinPrices/{requirementRequestId}/{kladrCode}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -901,7 +901,7 @@ export class RequirementRequestsApiService extends BaseService {
   }
 
   /** Path part for operation `requirementRequestsGetRequirementRequestsByOffer()` */
-  static readonly RequirementRequestsGetRequirementRequestsByOfferPath = '/bla-bla-vla/RequirementRequests/byOffer/{participantOfferId}';
+  static readonly RequirementRequestsGetRequirementRequestsByOfferPath = '/market/api/v1/RequirementRequests/byOffer/{participantOfferId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
 
 export interface NotificationsGetNewNotificationsCount$Params {
 }
 
-export function notificationsGetNewNotificationsCount(http: HttpClient, rootUrl: string, params?: NotificationsGetNewNotificationsCount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function notificationsGetNewNotificationsCount(http: HttpClient, rootUrl: string, params?: NotificationsGetNewNotificationsCount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, notificationsGetNewNotificationsCount.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function notificationsGetNewNotificationsCount(http: HttpClient, rootUrl:
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-notificationsGetNewNotificationsCount.PATH = '/bla-bla-vla/notifications/unread/count';
+notificationsGetNewNotificationsCount.PATH = '/market/api/v1/notifications/unread/count';

@@ -28,4 +28,4 @@ export function segmentsGetById(http: HttpClient, rootUrl: string, params: Segme
   );
 }
 
-segmentsGetById.PATH = '/bla-bla-vla/Segment/{id}';
+segmentsGetById.PATH = '/market/api/v1/Segment/{id}';

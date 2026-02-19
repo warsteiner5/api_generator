@@ -28,4 +28,4 @@ export function tradesPrepareTradeFromPlanLots(http: HttpClient, rootUrl: string
   );
 }
 
-tradesPrepareTradeFromPlanLots.PATH = '/bla-bla-vla/trades/prepare-from-plan/{marketPlanLotId}';
+tradesPrepareTradeFromPlanLots.PATH = '/market/api/v1/trades/prepare-from-plan/{marketPlanLotId}';

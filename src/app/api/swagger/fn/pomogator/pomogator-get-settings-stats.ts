@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfSettingsStatsResult } from '../../models/api-market-json-result-of-settings-stats-result';
+import { ApiMarketJsonResultOfSettingsStatsResultAltDto } from '../../models/api-market-json-result-of-settings-stats-result';
 
 export interface PomogatorGetSettingsStats$Params {
 }
 
-export function pomogatorGetSettingsStats(http: HttpClient, rootUrl: string, params?: PomogatorGetSettingsStats$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSettingsStatsResult>> {
+export function pomogatorGetSettingsStats(http: HttpClient, rootUrl: string, params?: PomogatorGetSettingsStats$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSettingsStatsResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, pomogatorGetSettingsStats.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function pomogatorGetSettingsStats(http: HttpClient, rootUrl: string, par
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfSettingsStatsResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfSettingsStatsResultAltDto>;
     })
   );
 }
 
-pomogatorGetSettingsStats.PATH = '/bla-bla-vla/pomogator/settings/stats';
+pomogatorGetSettingsStats.PATH = '/market/api/v1/pomogator/settings/stats';

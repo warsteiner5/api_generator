@@ -28,4 +28,4 @@ export function priceListsCreateDefaultPriceListInternal(http: HttpClient, rootU
   );
 }
 
-priceListsCreateDefaultPriceListInternal.PATH = '/bla-bla-vla/priceLists/get-or-create';
+priceListsCreateDefaultPriceListInternal.PATH = '/market/api/v1/priceLists/get-or-create';

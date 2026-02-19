@@ -29,4 +29,4 @@ export function tradeGetExpiringTradesInfoForCustomer(http: HttpClient, rootUrl:
   );
 }
 
-tradeGetExpiringTradesInfoForCustomer.PATH = '/bla-bla-vla/Trade/GetExpiringTradesInfoForCustomer';
+tradeGetExpiringTradesInfoForCustomer.PATH = '/api/Trade/GetExpiringTradesInfoForCustomer';

@@ -30,4 +30,4 @@ export function outDocumentGetOutDocument(http: HttpClient, rootUrl: string, par
   );
 }
 
-outDocumentGetOutDocument.PATH = '/bla-bla-vla/OutDocument/GetOutDocument/{id}/{externalSystemId}';
+outDocumentGetOutDocument.PATH = '/api/OutDocument/GetOutDocument/{id}/{externalSystemId}';

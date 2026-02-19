@@ -30,4 +30,4 @@ export function dictionaryGetByCode(http: HttpClient, rootUrl: string, params?: 
   );
 }
 
-dictionaryGetByCode.PATH = '/bla-bla-vla/Dictionary/GetByCode';
+dictionaryGetByCode.PATH = '/api/Dictionary/GetByCode';

@@ -26,4 +26,4 @@ export function organizationsGetOrganizationFz223Info(http: HttpClient, rootUrl:
   );
 }
 
-organizationsGetOrganizationFz223Info.PATH = '/bla-bla-vla/organizations/fz223/info';
+organizationsGetOrganizationFz223Info.PATH = '/market/api/v1/organizations/fz223/info';

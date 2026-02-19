@@ -29,4 +29,4 @@ export function tradesRetradingUpdate(http: HttpClient, rootUrl: string, params?
   );
 }
 
-tradesRetradingUpdate.PATH = '/bla-bla-vla/trades/application/RetradingUpdate';
+tradesRetradingUpdate.PATH = '/market/api/v1/trades/application/RetradingUpdate';

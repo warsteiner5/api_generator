@@ -28,4 +28,4 @@ export function dictionariesGetOkopfByCode(http: HttpClient, rootUrl: string, pa
   );
 }
 
-dictionariesGetOkopfByCode.PATH = '/bla-bla-vla/dictionaries/okopf/{code}';
+dictionariesGetOkopfByCode.PATH = '/market/api/v1/dictionaries/okopf/{code}';

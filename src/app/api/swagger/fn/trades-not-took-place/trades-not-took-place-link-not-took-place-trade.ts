@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface TradesNotTookPlaceLinkNotTookPlaceTrade$Params {
   tradeId: number;
   childTradeId: number;
 }
 
-export function tradesNotTookPlaceLinkNotTookPlaceTrade(http: HttpClient, rootUrl: string, params: TradesNotTookPlaceLinkNotTookPlaceTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function tradesNotTookPlaceLinkNotTookPlaceTrade(http: HttpClient, rootUrl: string, params: TradesNotTookPlaceLinkNotTookPlaceTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesNotTookPlaceLinkNotTookPlaceTrade.PATH, 'post');
   if (params) {
     rb.path('tradeId', params.tradeId, {});
@@ -25,9 +25,9 @@ export function tradesNotTookPlaceLinkNotTookPlaceTrade(http: HttpClient, rootUr
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-tradesNotTookPlaceLinkNotTookPlaceTrade.PATH = '/bla-bla-vla/trades/nottookplace/{tradeId}/link/{childTradeId}';
+tradesNotTookPlaceLinkNotTookPlaceTrade.PATH = '/market/api/v1/trades/nottookplace/{tradeId}/link/{childTradeId}';

@@ -3,7 +3,7 @@ import { UpdateDataModelAlt } from '../../models/update-data-model-alt.interface
 import { adaptUpdatePropertyOfBooleanAltToUI } from './update-property-of-boolean-alt.adapter';
 import { adaptUpdatePropertyOfNullableDecimalAltToUI } from './update-property-of-nullable-decimal-alt.adapter';
 import { adaptUpdatePropertyOfStringAltToUI } from './update-property-of-string-alt.adapter';
-import { adaptUpdatePropertyOfStringOfToUI } from './update-property-of-string-of.adapter';
+import { adaptUpdatePropertyOfStringOfAltToUI } from './update-property-of-string-of-alt.adapter';
 
 export function adaptUpdateDataModelAltToUI(source?: ApiUpdateDataModelAltDto | null): UpdateDataModelAlt {
   return {
@@ -12,12 +12,12 @@ export function adaptUpdateDataModelAltToUI(source?: ApiUpdateDataModelAltDto | 
     isRemoved: adaptUpdatePropertyOfBooleanAltToUI(source?.IsRemoved),
     isVisible: adaptUpdatePropertyOfBooleanAltToUI(source?.IsVisible),
     okeiCode: adaptUpdatePropertyOfStringAltToUI(source?.OkeiCode),
-    okpd2Codes: adaptUpdatePropertyOfStringOfToUI(source?.Okpd2Codes),
+    okpd2Codes: adaptUpdatePropertyOfStringOfAltToUI(source?.Okpd2Codes),
     price: adaptUpdatePropertyOfNullableDecimalAltToUI(source?.Price),
     productDescription: adaptUpdatePropertyOfStringAltToUI(source?.ProductDescription),
     productName: adaptUpdatePropertyOfStringAltToUI(source?.ProductName),
     quantity: adaptUpdatePropertyOfNullableDecimalAltToUI(source?.Quantity),
-    regionCodes: adaptUpdatePropertyOfStringOfToUI(source?.RegionCodes),
+    regionCodes: adaptUpdatePropertyOfStringOfAltToUI(source?.RegionCodes),
     regionalProductSignChecked: adaptUpdatePropertyOfBooleanAltToUI(source?.RegionalProductSignChecked),
   };
 }

@@ -27,4 +27,4 @@ export function managerAgentAttachOrganisation(http: HttpClient, rootUrl: string
   );
 }
 
-managerAgentAttachOrganisation.PATH = '/bla-bla-vla/managerAgent/attach-organisation/{organizationGuid}';
+managerAgentAttachOrganisation.PATH = '/market/api/v1/managerAgent/attach-organisation/{organizationGuid}';

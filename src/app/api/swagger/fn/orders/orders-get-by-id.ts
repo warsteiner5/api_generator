@@ -28,4 +28,4 @@ export function ordersGetById(http: HttpClient, rootUrl: string, params: OrdersG
   );
 }
 
-ordersGetById.PATH = '/bla-bla-vla/orders/{id}';
+ordersGetById.PATH = '/market/api/v1/orders/{id}';

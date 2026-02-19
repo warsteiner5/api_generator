@@ -15,7 +15,7 @@ import { ApiMarketJsonResultOfListOfApplicationRejectionReasonDto } from '../mod
 import { ApiMarketJsonResultOfListOfDealRejectionReasonDto } from '../models/api-market-json-result-of-list-of-deal-rejection-reason-dto';
 import { ApiMarketJsonResultOfOpenPartCorporateShopDtoOf } from '../models/api-market-json-result-of-open-part-corporate-shop-dto-of';
 import { ApiMarketJsonResultOfOpenPartDistrictDtoOf } from '../models/api-market-json-result-of-open-part-district-dto-of';
-import { ApiMarketJsonResultOfString } from '../models/api-market-json-result-of-string';
+import { ApiMarketJsonResultOfStringAltDto } from '../models/api-market-json-result-of-string';
 import { ApiMarketJsonResultOfTenantSettingDto } from '../models/api-market-json-result-of-tenant-setting-dto';
 import { tenantsGetCreateExternalDealFormTemplateSettings } from '../fn/tenants/tenants-get-create-external-deal-form-template-settings';
 import { TenantsGetCreateExternalDealFormTemplateSettings$Params } from '../fn/tenants/tenants-get-create-external-deal-form-template-settings';
@@ -53,7 +53,7 @@ export class TenantsApiService extends BaseService {
   }
 
   /** Path part for operation `tenantsGetTenantSettingsGet()` */
-  static readonly TenantsGetTenantSettingsGetPath = '/bla-bla-vla/tenants/{id}';
+  static readonly TenantsGetTenantSettingsGetPath = '/market/api/v1/tenants/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -78,7 +78,7 @@ export class TenantsApiService extends BaseService {
   }
 
   /** Path part for operation `tenantsGetTenantSettingsPost()` */
-  static readonly TenantsGetTenantSettingsPostPath = '/bla-bla-vla/tenants';
+  static readonly TenantsGetTenantSettingsPostPath = '/market/api/v1/tenants';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -103,7 +103,7 @@ export class TenantsApiService extends BaseService {
   }
 
   /** Path part for operation `tenantsSearchByTenantFlowType()` */
-  static readonly TenantsSearchByTenantFlowTypePath = '/bla-bla-vla/tenants/search/{flowType}';
+  static readonly TenantsSearchByTenantFlowTypePath = '/market/api/v1/tenants/search/{flowType}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -111,7 +111,7 @@ export class TenantsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tenantsSearchByTenantFlowType$Response(params: TenantsSearchByTenantFlowType$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+  tenantsSearchByTenantFlowType$Response(params: TenantsSearchByTenantFlowType$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
     return tenantsSearchByTenantFlowType(this.http, this.rootUrl, params, context);
   }
 
@@ -121,14 +121,14 @@ export class TenantsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tenantsSearchByTenantFlowType(params: TenantsSearchByTenantFlowType$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfString> {
+  tenantsSearchByTenantFlowType(params: TenantsSearchByTenantFlowType$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfStringAltDto> {
     return this.tenantsSearchByTenantFlowType$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfString>): ApiMarketJsonResultOfString => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>): ApiMarketJsonResultOfStringAltDto => r.body)
     );
   }
 
   /** Path part for operation `tenantsGetCreateTradeFormTemplateSettings()` */
-  static readonly TenantsGetCreateTradeFormTemplateSettingsPath = '/bla-bla-vla/tenants/trade-template';
+  static readonly TenantsGetCreateTradeFormTemplateSettingsPath = '/market/api/v1/tenants/trade-template';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -153,7 +153,7 @@ export class TenantsApiService extends BaseService {
   }
 
   /** Path part for operation `tenantsGetCreateOrderFormTemplateSettings()` */
-  static readonly TenantsGetCreateOrderFormTemplateSettingsPath = '/bla-bla-vla/tenants/order-template';
+  static readonly TenantsGetCreateOrderFormTemplateSettingsPath = '/market/api/v1/tenants/order-template';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -178,7 +178,7 @@ export class TenantsApiService extends BaseService {
   }
 
   /** Path part for operation `tenantsGetOrderAcceptFormTemplateSettings()` */
-  static readonly TenantsGetOrderAcceptFormTemplateSettingsPath = '/bla-bla-vla/tenants/order-accept-template';
+  static readonly TenantsGetOrderAcceptFormTemplateSettingsPath = '/market/api/v1/tenants/order-accept-template';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -203,7 +203,7 @@ export class TenantsApiService extends BaseService {
   }
 
   /** Path part for operation `tenantsGetCreateExternalDealFormTemplateSettings()` */
-  static readonly TenantsGetCreateExternalDealFormTemplateSettingsPath = '/bla-bla-vla/tenants/external-deal-template';
+  static readonly TenantsGetCreateExternalDealFormTemplateSettingsPath = '/market/api/v1/tenants/external-deal-template';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -228,7 +228,7 @@ export class TenantsApiService extends BaseService {
   }
 
   /** Path part for operation `tenantsGetCreatePriceListFormTemplateSettings()` */
-  static readonly TenantsGetCreatePriceListFormTemplateSettingsPath = '/bla-bla-vla/tenants/price-list-template';
+  static readonly TenantsGetCreatePriceListFormTemplateSettingsPath = '/market/api/v1/tenants/price-list-template';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -253,7 +253,7 @@ export class TenantsApiService extends BaseService {
   }
 
   /** Path part for operation `tenantsGetGlobalMarketTenantId()` */
-  static readonly TenantsGetGlobalMarketTenantIdPath = '/bla-bla-vla/tenants/globalMarketId';
+  static readonly TenantsGetGlobalMarketTenantIdPath = '/market/api/v1/tenants/globalMarketId';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -278,7 +278,7 @@ export class TenantsApiService extends BaseService {
   }
 
   /** Path part for operation `tenantsGetOpenPartCorporateShops()` */
-  static readonly TenantsGetOpenPartCorporateShopsPath = '/bla-bla-vla/tenants/corporate-shops';
+  static readonly TenantsGetOpenPartCorporateShopsPath = '/market/api/v1/tenants/corporate-shops';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -303,7 +303,7 @@ export class TenantsApiService extends BaseService {
   }
 
   /** Path part for operation `tenantsGetOpenPartRegionalShops()` */
-  static readonly TenantsGetOpenPartRegionalShopsPath = '/bla-bla-vla/tenants/regional-shops';
+  static readonly TenantsGetOpenPartRegionalShopsPath = '/market/api/v1/tenants/regional-shops';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -328,7 +328,7 @@ export class TenantsApiService extends BaseService {
   }
 
   /** Path part for operation `tenantsGetInformSupplierData()` */
-  static readonly TenantsGetInformSupplierDataPath = '/bla-bla-vla/tenants/inform-supplier-data/{tenantId}';
+  static readonly TenantsGetInformSupplierDataPath = '/market/api/v1/tenants/inform-supplier-data/{tenantId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -353,7 +353,7 @@ export class TenantsApiService extends BaseService {
   }
 
   /** Path part for operation `tenantsGetDealRejectReasons()` */
-  static readonly TenantsGetDealRejectReasonsPath = '/bla-bla-vla/tenants/GetDealRejectReasons';
+  static readonly TenantsGetDealRejectReasonsPath = '/market/api/v1/tenants/GetDealRejectReasons';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -378,7 +378,7 @@ export class TenantsApiService extends BaseService {
   }
 
   /** Path part for operation `tenantsGetMarketRejectReasons()` */
-  static readonly TenantsGetMarketRejectReasonsPath = '/bla-bla-vla/tenants/GetApplicationRejectReasons';
+  static readonly TenantsGetMarketRejectReasonsPath = '/market/api/v1/tenants/GetApplicationRejectReasons';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

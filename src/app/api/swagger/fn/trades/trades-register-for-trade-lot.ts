@@ -28,4 +28,4 @@ export function tradesRegisterForTradeLot(http: HttpClient, rootUrl: string, par
   );
 }
 
-tradesRegisterForTradeLot.PATH = '/bla-bla-vla/trades/registerForTradeLot/{id}';
+tradesRegisterForTradeLot.PATH = '/market/api/v1/trades/registerForTradeLot/{id}';

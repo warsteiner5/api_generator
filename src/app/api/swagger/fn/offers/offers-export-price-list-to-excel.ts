@@ -28,4 +28,4 @@ export function offersExportPriceListToExcel(http: HttpClient, rootUrl: string, 
   );
 }
 
-offersExportPriceListToExcel.PATH = '/bla-bla-vla/offers/ExportToExcel';
+offersExportPriceListToExcel.PATH = '/market/api/v1/offers/ExportToExcel';

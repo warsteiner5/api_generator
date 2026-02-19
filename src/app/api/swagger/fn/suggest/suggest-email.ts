@@ -25,4 +25,4 @@ export function suggestEmail(http: HttpClient, rootUrl: string, params?: Suggest
   );
 }
 
-suggestEmail.PATH = '/bla-bla-vla/Suggest/Suggest/email';
+suggestEmail.PATH = '/api/Suggest/Suggest/email';

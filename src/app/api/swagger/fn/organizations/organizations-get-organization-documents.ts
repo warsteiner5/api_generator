@@ -26,4 +26,4 @@ export function organizationsGetOrganizationDocuments(http: HttpClient, rootUrl:
   );
 }
 
-organizationsGetOrganizationDocuments.PATH = '/bla-bla-vla/organizations/self/documents';
+organizationsGetOrganizationDocuments.PATH = '/market/api/v1/organizations/self/documents';

@@ -31,4 +31,4 @@ export function employeesUpdate(http: HttpClient, rootUrl: string, params: Emplo
   );
 }
 
-employeesUpdate.PATH = '/bla-bla-vla/employees/{id}';
+employeesUpdate.PATH = '/market/api/v1/employees/{id}';

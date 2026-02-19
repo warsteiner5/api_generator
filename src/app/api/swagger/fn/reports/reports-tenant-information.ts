@@ -26,4 +26,4 @@ export function reportsTenantInformation(http: HttpClient, rootUrl: string, para
   );
 }
 
-reportsTenantInformation.PATH = '/bla-bla-vla/reports/statistic/deals';
+reportsTenantInformation.PATH = '/market/api/v1/reports/statistic/deals';

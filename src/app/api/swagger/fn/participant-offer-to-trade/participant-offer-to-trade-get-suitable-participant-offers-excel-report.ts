@@ -27,4 +27,4 @@ export function participantOfferToTradeGetSuitableParticipantOffersExcelReport(h
   );
 }
 
-participantOfferToTradeGetSuitableParticipantOffersExcelReport.PATH = '/bla-bla-vla/offerToTrade/{tradeId}/participant-offers/suitable/report/excel';
+participantOfferToTradeGetSuitableParticipantOffersExcelReport.PATH = '/market/api/v1/offerToTrade/{tradeId}/participant-offers/suitable/report/excel';

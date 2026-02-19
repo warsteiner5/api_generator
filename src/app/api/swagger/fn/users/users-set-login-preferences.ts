@@ -29,4 +29,4 @@ export function usersSetLoginPreferences(http: HttpClient, rootUrl: string, para
   );
 }
 
-usersSetLoginPreferences.PATH = '/bla-bla-vla/users/login/preferences';
+usersSetLoginPreferences.PATH = '/market/api/v1/users/login/preferences';

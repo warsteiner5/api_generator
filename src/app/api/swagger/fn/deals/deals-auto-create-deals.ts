@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfIReadOnlyCollectionOfInteger } from '../../models/api-market-json-result-of-i-read-only-collection-of-integer';
+import { ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto } from '../../models/api-market-json-result-of-i-read-only-collection-of-integer';
 
 export interface DealsAutoCreateDeals$Params {
   tradeLotId: number;
 }
 
-export function dealsAutoCreateDeals(http: HttpClient, rootUrl: string, params: DealsAutoCreateDeals$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfInteger>> {
+export function dealsAutoCreateDeals(http: HttpClient, rootUrl: string, params: DealsAutoCreateDeals$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, dealsAutoCreateDeals.PATH, 'post');
   if (params) {
     rb.path('tradeLotId', params.tradeLotId, {});
@@ -23,9 +23,9 @@ export function dealsAutoCreateDeals(http: HttpClient, rootUrl: string, params: 
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfIntegerAltDto>;
     })
   );
 }
 
-dealsAutoCreateDeals.PATH = '/bla-bla-vla/deals/create/lot/{tradeLotId}';
+dealsAutoCreateDeals.PATH = '/market/api/v1/deals/create/lot/{tradeLotId}';

@@ -20,7 +20,7 @@ export class OrganizationAgreementApiService extends BaseService {
   }
 
   /** Path part for operation `organizationAgreementSetCatalogAgreement()` */
-  static readonly OrganizationAgreementSetCatalogAgreementPath = '/bla-bla-vla/organization-agreements/catalog-agreement/approve';
+  static readonly OrganizationAgreementSetCatalogAgreementPath = '/market/api/v1/organization-agreements/catalog-agreement/approve';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

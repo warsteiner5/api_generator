@@ -34,4 +34,4 @@ export function dictionaryGetAllByCode(http: HttpClient, rootUrl: string, params
   );
 }
 
-dictionaryGetAllByCode.PATH = '/bla-bla-vla/Dictionary/GetAllByCode';
+dictionaryGetAllByCode.PATH = '/api/Dictionary/GetAllByCode';

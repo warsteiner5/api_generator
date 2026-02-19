@@ -29,4 +29,4 @@ export function additionalAgreementGetDataForAdditionalAgreementDocumentSignedBy
   );
 }
 
-additionalAgreementGetDataForAdditionalAgreementDocumentSignedByCustomer.PATH = '/bla-bla-vla/AdditionalAgreement/GetDataForDocumentSignedByCustomer';
+additionalAgreementGetDataForAdditionalAgreementDocumentSignedByCustomer.PATH = '/api/AdditionalAgreement/GetDataForDocumentSignedByCustomer';

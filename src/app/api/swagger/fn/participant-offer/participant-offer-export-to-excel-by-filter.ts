@@ -28,4 +28,4 @@ export function participantOfferExportToExcelByFilter(http: HttpClient, rootUrl:
   );
 }
 
-participantOfferExportToExcelByFilter.PATH = '/bla-bla-vla/participantoffer/ExportToExcelByFilter';
+participantOfferExportToExcelByFilter.PATH = '/api/participantoffer/ExportToExcelByFilter';

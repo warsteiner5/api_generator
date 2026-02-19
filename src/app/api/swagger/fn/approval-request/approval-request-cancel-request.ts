@@ -29,4 +29,4 @@ export function approvalRequestCancelRequest(http: HttpClient, rootUrl: string, 
   );
 }
 
-approvalRequestCancelRequest.PATH = '/bla-bla-vla/approval/Cancel';
+approvalRequestCancelRequest.PATH = '/market/api/v1/approval/Cancel';

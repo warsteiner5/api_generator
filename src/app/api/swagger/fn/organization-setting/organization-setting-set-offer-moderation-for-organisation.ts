@@ -29,4 +29,4 @@ export function organizationSettingSetOfferModerationForOrganisation(http: HttpC
   );
 }
 
-organizationSettingSetOfferModerationForOrganisation.PATH = '/bla-bla-vla/organization-settings/set-offer-moderation';
+organizationSettingSetOfferModerationForOrganisation.PATH = '/market/api/v1/organization-settings/set-offer-moderation';

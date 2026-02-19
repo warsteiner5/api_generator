@@ -25,4 +25,4 @@ export function nicRegistryGetAgreementForCurrentUser(http: HttpClient, rootUrl:
   );
 }
 
-nicRegistryGetAgreementForCurrentUser.PATH = '/bla-bla-vla/registry/nic/agreement';
+nicRegistryGetAgreementForCurrentUser.PATH = '/market/api/v1/registry/nic/agreement';

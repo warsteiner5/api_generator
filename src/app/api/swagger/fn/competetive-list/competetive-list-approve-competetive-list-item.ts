@@ -28,4 +28,4 @@ export function competetiveListApproveCompetetiveListItem(http: HttpClient, root
   );
 }
 
-competetiveListApproveCompetetiveListItem.PATH = '/bla-bla-vla/competetivelist/{id}/approve';
+competetiveListApproveCompetetiveListItem.PATH = '/market/api/v1/competetivelist/{id}/approve';

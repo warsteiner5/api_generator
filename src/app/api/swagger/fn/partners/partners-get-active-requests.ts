@@ -26,4 +26,4 @@ export function partnersGetActiveRequests(http: HttpClient, rootUrl: string, par
   );
 }
 
-partnersGetActiveRequests.PATH = '/bla-bla-vla/organization/partners/requests';
+partnersGetActiveRequests.PATH = '/market/api/v1/organization/partners/requests';

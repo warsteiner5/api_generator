@@ -23,7 +23,7 @@ export class OrganizationRegistrationApiService extends BaseService {
   }
 
   /** Path part for operation `organizationRegistrationRegister()` */
-  static readonly OrganizationRegistrationRegisterPath = '/bla-bla-vla/organization/registration';
+  static readonly OrganizationRegistrationRegisterPath = '/market/api/v1/organization/registration';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -48,7 +48,7 @@ export class OrganizationRegistrationApiService extends BaseService {
   }
 
   /** Path part for operation `organizationRegistrationGenerateDocumentsLink()` */
-  static readonly OrganizationRegistrationGenerateDocumentsLinkPath = '/bla-bla-vla/organization/registration/agreement/documents';
+  static readonly OrganizationRegistrationGenerateDocumentsLinkPath = '/market/api/v1/organization/registration/agreement/documents';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

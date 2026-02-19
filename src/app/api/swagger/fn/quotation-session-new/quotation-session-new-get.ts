@@ -28,4 +28,4 @@ export function quotationSessionNewGet(http: HttpClient, rootUrl: string, params
   );
 }
 
-quotationSessionNewGet.PATH = '/bla-bla-vla/quotation-session-new/{tradeGuid}';
+quotationSessionNewGet.PATH = '/market/api/v1/quotation-session-new/{tradeGuid}';

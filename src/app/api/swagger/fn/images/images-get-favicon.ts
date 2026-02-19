@@ -25,4 +25,4 @@ export function imagesGetFavicon(http: HttpClient, rootUrl: string, params?: Ima
   );
 }
 
-imagesGetFavicon.PATH = '/bla-bla-vla/images/favicon';
+imagesGetFavicon.PATH = '/market/api/v1/images/favicon';

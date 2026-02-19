@@ -28,4 +28,4 @@ export function dealApproveCustomerDeal(http: HttpClient, rootUrl: string, param
   );
 }
 
-dealApproveCustomerDeal.PATH = '/bla-bla-vla/Deal/ApproveCustomerDeal';
+dealApproveCustomerDeal.PATH = '/api/Deal/ApproveCustomerDeal';

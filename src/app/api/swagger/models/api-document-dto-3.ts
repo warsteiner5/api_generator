@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
-import { ApiEntityDtoBaseAltDto } from '../models/api-entity-dto-base';
+import { ApiEntityDtoBase } from '../models/api-entity-dto-base';
 import { ApiTradeDocumentTypeEnum } from '../models/api-trade-document-type-enum';
-export type ApiDocumentDto3 = ApiEntityDtoBaseAltDto & {
+export type ApiDocumentDto3 = ApiEntityDtoBase & {
 '_isAccreditationString'?: string | null;
 'Name'?: string | null;
 'FileGuid'?: string;

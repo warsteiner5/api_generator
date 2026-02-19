@@ -28,4 +28,4 @@ export function catalogGetItem(http: HttpClient, rootUrl: string, params: Catalo
   );
 }
 
-catalogGetItem.PATH = '/bla-bla-vla/catalog/item/{id}';
+catalogGetItem.PATH = '/market/api/v1/catalog/item/{id}';

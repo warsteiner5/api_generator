@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo } from '../../models/api-market-json-result-of-dictionary-of-integer-and-list-of-read-item-info';
+import { ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto } from '../../models/api-market-json-result-of-dictionary-of-integer-and-list-of-read-item-info';
 
 export interface TradesGetReadItemInfo$Params {
   id: number;
   itemId: number;
 }
 
-export function tradesGetReadItemInfo(http: HttpClient, rootUrl: string, params: TradesGetReadItemInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo>> {
+export function tradesGetReadItemInfo(http: HttpClient, rootUrl: string, params: TradesGetReadItemInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesGetReadItemInfo.PATH, 'get');
   if (params) {
     rb.path('id', params.id, {});
@@ -25,9 +25,9 @@ export function tradesGetReadItemInfo(http: HttpClient, rootUrl: string, params:
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto>;
     })
   );
 }
 
-tradesGetReadItemInfo.PATH = '/bla-bla-vla/trades/{id}/chat/{itemId}/who';
+tradesGetReadItemInfo.PATH = '/market/api/v1/trades/{id}/chat/{itemId}/who';

@@ -27,4 +27,4 @@ export function mikIntegrationSentForParticipantApprove(http: HttpClient, rootUr
   );
 }
 
-mikIntegrationSentForParticipantApprove.PATH = '/bla-bla-vla/mikIntegration/tenant/{tenantId}/isActiveIntegration';
+mikIntegrationSentForParticipantApprove.PATH = '/api/mikIntegration/tenant/{tenantId}/isActiveIntegration';

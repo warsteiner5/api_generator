@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfListOfInteger } from '../../models/api-market-json-result-of-list-of-integer';
+import { ApiMarketJsonResultOfListOfIntegerAltDto } from '../../models/api-market-json-result-of-list-of-integer';
 
 export interface TradesGetTenderTenant$Params {
   id: number;
 }
 
-export function tradesGetTenderTenant(http: HttpClient, rootUrl: string, params: TradesGetTenderTenant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfInteger>> {
+export function tradesGetTenderTenant(http: HttpClient, rootUrl: string, params: TradesGetTenderTenant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfListOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesGetTenderTenant.PATH, 'get');
   if (params) {
     rb.path('id', params.id, {});
@@ -23,9 +23,9 @@ export function tradesGetTenderTenant(http: HttpClient, rootUrl: string, params:
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfListOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfListOfIntegerAltDto>;
     })
   );
 }
 
-tradesGetTenderTenant.PATH = '/bla-bla-vla/trades/{id}/tenants';
+tradesGetTenderTenant.PATH = '/market/api/v1/trades/{id}/tenants';

@@ -9,11 +9,12 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "generate": "plop",
+    "generate:ui:prepare-swagger-models": "tsx tools/generators/ui/prepare-swagger-models.ts",
     "generate:ui:enums": "tsx tools/generators/ui/generate-enums.ts",
     "generate:ui:models": "tsx tools/generators/ui/generate-models.ts",
     "generate:ui:adapters": "tsx tools/generators/ui/generate-adapters.ts",
     "generate:ui:repositories": "tsx tools/generators/ui/generate-repositories.ts",
-    "generate:ui": "npm run generate:ui:enums && npm run generate:ui:models && npm run generate:ui:adapters && npm run generate:ui:repositories"
+    "generate:ui": "npm run generate:ui:prepare-swagger-models && npm run generate:ui:enums && npm run generate:ui:models && npm run generate:ui:adapters && npm run generate:ui:repositories"
   },
   "dependencies": {
     "@angular/animations": "^17.3.0",

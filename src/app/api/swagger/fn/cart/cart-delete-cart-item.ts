@@ -27,4 +27,4 @@ export function cartDeleteCartItem(http: HttpClient, rootUrl: string, params: Ca
   );
 }
 
-cartDeleteCartItem.PATH = '/bla-bla-vla/cart-items/{id}';
+cartDeleteCartItem.PATH = '/market/api/v1/cart-items/{id}';

@@ -9,15 +9,15 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
 import { ApiMarketJsonResultOfEmployeeAgreementDto } from '../models/api-market-json-result-of-employee-agreement-dto';
-import { ApiMarketJsonResultOfFileStreamModel } from '../models/api-market-json-result-of-file-stream-model';
-import { ApiMarketJsonResultOfForgotPasswordResult } from '../models/api-market-json-result-of-forgot-password-result';
+import { ApiMarketJsonResultOfFileStreamModelAltDto } from '../models/api-market-json-result-of-file-stream-model';
+import { ApiMarketJsonResultOfForgotPasswordResultAltDto } from '../models/api-market-json-result-of-forgot-password-result';
 import { ApiMarketJsonResultOfListOfPowerOfAttorneyInfoDto } from '../models/api-market-json-result-of-list-of-power-of-attorney-info-dto';
-import { ApiMarketJsonResultOfLoginPreferenceModel } from '../models/api-market-json-result-of-login-preference-model';
+import { ApiMarketJsonResultOfLoginPreferenceModelAltDto } from '../models/api-market-json-result-of-login-preference-model';
 import { ApiMarketJsonResultOfMarketUserProfileDto } from '../models/api-market-json-result-of-market-user-profile-dto';
 import { ApiMarketJsonResultOfOpenPartUserShopDtoOf } from '../models/api-market-json-result-of-open-part-user-shop-dto-of';
-import { ApiMarketJsonResultOfResetPasswordResult } from '../models/api-market-json-result-of-reset-password-result';
+import { ApiMarketJsonResultOfResetPasswordResultAltDto } from '../models/api-market-json-result-of-reset-password-result';
 import { ApiMarketJsonResultOfWorkGroupDtoOf } from '../models/api-market-json-result-of-work-group-dto-of';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 import { usersAccessAllow } from '../fn/users/users-access-allow';
@@ -62,7 +62,7 @@ export class UsersApiService extends BaseService {
   }
 
   /** Path part for operation `usersGetExternalUserInfo()` */
-  static readonly UsersGetExternalUserInfoPath = '/bla-bla-vla/users/profile';
+  static readonly UsersGetExternalUserInfoPath = '/market/api/v1/users/profile';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -87,7 +87,7 @@ export class UsersApiService extends BaseService {
   }
 
   /** Path part for operation `usersAccessAllow()` */
-  static readonly UsersAccessAllowPath = '/bla-bla-vla/users/allow';
+  static readonly UsersAccessAllowPath = '/market/api/v1/users/allow';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -95,7 +95,7 @@ export class UsersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  usersAccessAllow$Response(params: UsersAccessAllow$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  usersAccessAllow$Response(params: UsersAccessAllow$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return usersAccessAllow(this.http, this.rootUrl, params, context);
   }
 
@@ -105,14 +105,14 @@ export class UsersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  usersAccessAllow(params: UsersAccessAllow$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  usersAccessAllow(params: UsersAccessAllow$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.usersAccessAllow$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `usersGetAgreement()` */
-  static readonly UsersGetAgreementPath = '/bla-bla-vla/users/agreement';
+  static readonly UsersGetAgreementPath = '/market/api/v1/users/agreement';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -137,7 +137,7 @@ export class UsersApiService extends BaseService {
   }
 
   /** Path part for operation `usersAllowAgreements()` */
-  static readonly UsersAllowAgreementsPath = '/bla-bla-vla/users/agreement/allow';
+  static readonly UsersAllowAgreementsPath = '/market/api/v1/users/agreement/allow';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -145,7 +145,7 @@ export class UsersApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  usersAllowAgreements$Response(params?: UsersAllowAgreements$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  usersAllowAgreements$Response(params?: UsersAllowAgreements$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return usersAllowAgreements(this.http, this.rootUrl, params, context);
   }
 
@@ -155,14 +155,14 @@ export class UsersApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  usersAllowAgreements(params?: UsersAllowAgreements$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  usersAllowAgreements(params?: UsersAllowAgreements$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.usersAllowAgreements$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `usersAccessRejected()` */
-  static readonly UsersAccessRejectedPath = '/bla-bla-vla/users/reject';
+  static readonly UsersAccessRejectedPath = '/market/api/v1/users/reject';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -170,7 +170,7 @@ export class UsersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  usersAccessRejected$Response(params: UsersAccessRejected$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  usersAccessRejected$Response(params: UsersAccessRejected$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return usersAccessRejected(this.http, this.rootUrl, params, context);
   }
 
@@ -180,14 +180,14 @@ export class UsersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  usersAccessRejected(params: UsersAccessRejected$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  usersAccessRejected(params: UsersAccessRejected$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.usersAccessRejected$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `usersMakeOrganizationSmp()` */
-  static readonly UsersMakeOrganizationSmpPath = '/bla-bla-vla/users/makeSmp';
+  static readonly UsersMakeOrganizationSmpPath = '/market/api/v1/users/makeSmp';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -212,7 +212,7 @@ export class UsersApiService extends BaseService {
   }
 
   /** Path part for operation `usersGetUserWorkGroups()` */
-  static readonly UsersGetUserWorkGroupsPath = '/bla-bla-vla/users/work-groups';
+  static readonly UsersGetUserWorkGroupsPath = '/market/api/v1/users/work-groups';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -237,7 +237,7 @@ export class UsersApiService extends BaseService {
   }
 
   /** Path part for operation `usersGetPowersOfAttorneyByCert()` */
-  static readonly UsersGetPowersOfAttorneyByCertPath = '/bla-bla-vla/users/powers-of-attorney';
+  static readonly UsersGetPowersOfAttorneyByCertPath = '/market/api/v1/users/powers-of-attorney';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -262,7 +262,7 @@ export class UsersApiService extends BaseService {
   }
 
   /** Path part for operation `usersGetPowerOfAttorney()` */
-  static readonly UsersGetPowerOfAttorneyPath = '/bla-bla-vla/users/file/{fileId}/power-of-attorney/{id}';
+  static readonly UsersGetPowerOfAttorneyPath = '/market/api/v1/users/file/{fileId}/power-of-attorney/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -270,7 +270,7 @@ export class UsersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  usersGetPowerOfAttorney$Response(params: UsersGetPowerOfAttorney$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfFileStreamModel>> {
+  usersGetPowerOfAttorney$Response(params: UsersGetPowerOfAttorney$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfFileStreamModelAltDto>> {
     return usersGetPowerOfAttorney(this.http, this.rootUrl, params, context);
   }
 
@@ -280,14 +280,14 @@ export class UsersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  usersGetPowerOfAttorney(params: UsersGetPowerOfAttorney$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfFileStreamModel> {
+  usersGetPowerOfAttorney(params: UsersGetPowerOfAttorney$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfFileStreamModelAltDto> {
     return this.usersGetPowerOfAttorney$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfFileStreamModel>): ApiMarketJsonResultOfFileStreamModel => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfFileStreamModelAltDto>): ApiMarketJsonResultOfFileStreamModelAltDto => r.body)
     );
   }
 
   /** Path part for operation `usersForgotPassword()` */
-  static readonly UsersForgotPasswordPath = '/bla-bla-vla/users/forgot-password';
+  static readonly UsersForgotPasswordPath = '/market/api/v1/users/forgot-password';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -295,7 +295,7 @@ export class UsersApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  usersForgotPassword$Response(params?: UsersForgotPassword$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfForgotPasswordResult>> {
+  usersForgotPassword$Response(params?: UsersForgotPassword$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfForgotPasswordResultAltDto>> {
     return usersForgotPassword(this.http, this.rootUrl, params, context);
   }
 
@@ -305,14 +305,14 @@ export class UsersApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  usersForgotPassword(params?: UsersForgotPassword$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfForgotPasswordResult> {
+  usersForgotPassword(params?: UsersForgotPassword$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfForgotPasswordResultAltDto> {
     return this.usersForgotPassword$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfForgotPasswordResult>): ApiMarketJsonResultOfForgotPasswordResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfForgotPasswordResultAltDto>): ApiMarketJsonResultOfForgotPasswordResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `usersResetPasswordPost()` */
-  static readonly UsersResetPasswordPostPath = '/bla-bla-vla/users/reset-password';
+  static readonly UsersResetPasswordPostPath = '/market/api/v1/users/reset-password';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -320,7 +320,7 @@ export class UsersApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  usersResetPasswordPost$Response(params?: UsersResetPasswordPost$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfResetPasswordResult>> {
+  usersResetPasswordPost$Response(params?: UsersResetPasswordPost$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfResetPasswordResultAltDto>> {
     return usersResetPasswordPost(this.http, this.rootUrl, params, context);
   }
 
@@ -330,14 +330,14 @@ export class UsersApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  usersResetPasswordPost(params?: UsersResetPasswordPost$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfResetPasswordResult> {
+  usersResetPasswordPost(params?: UsersResetPasswordPost$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfResetPasswordResultAltDto> {
     return this.usersResetPasswordPost$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfResetPasswordResult>): ApiMarketJsonResultOfResetPasswordResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfResetPasswordResultAltDto>): ApiMarketJsonResultOfResetPasswordResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `usersChangePassword()` */
-  static readonly UsersChangePasswordPath = '/bla-bla-vla/users/change-password';
+  static readonly UsersChangePasswordPath = '/market/api/v1/users/change-password';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -362,7 +362,7 @@ export class UsersApiService extends BaseService {
   }
 
   /** Path part for operation `usersResetPasswordGet()` */
-  static readonly UsersResetPasswordGetPath = '/bla-bla-vla/users/{login}/exists';
+  static readonly UsersResetPasswordGetPath = '/market/api/v1/users/{login}/exists';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -370,7 +370,7 @@ export class UsersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  usersResetPasswordGet$Response(params: UsersResetPasswordGet$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  usersResetPasswordGet$Response(params: UsersResetPasswordGet$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return usersResetPasswordGet(this.http, this.rootUrl, params, context);
   }
 
@@ -380,14 +380,14 @@ export class UsersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  usersResetPasswordGet(params: UsersResetPasswordGet$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  usersResetPasswordGet(params: UsersResetPasswordGet$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.usersResetPasswordGet$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `usersGetOpenPartUserShops()` */
-  static readonly UsersGetOpenPartUserShopsPath = '/bla-bla-vla/users/tenants';
+  static readonly UsersGetOpenPartUserShopsPath = '/market/api/v1/users/tenants';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -412,7 +412,7 @@ export class UsersApiService extends BaseService {
   }
 
   /** Path part for operation `usersGetLoginPreferences()` */
-  static readonly UsersGetLoginPreferencesPath = '/bla-bla-vla/users/login/preferences';
+  static readonly UsersGetLoginPreferencesPath = '/market/api/v1/users/login/preferences';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -420,7 +420,7 @@ export class UsersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  usersGetLoginPreferences$Response(params?: UsersGetLoginPreferences$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLoginPreferenceModel>> {
+  usersGetLoginPreferences$Response(params?: UsersGetLoginPreferences$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLoginPreferenceModelAltDto>> {
     return usersGetLoginPreferences(this.http, this.rootUrl, params, context);
   }
 
@@ -430,14 +430,14 @@ export class UsersApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  usersGetLoginPreferences(params?: UsersGetLoginPreferences$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLoginPreferenceModel> {
+  usersGetLoginPreferences(params?: UsersGetLoginPreferences$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLoginPreferenceModelAltDto> {
     return this.usersGetLoginPreferences$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfLoginPreferenceModel>): ApiMarketJsonResultOfLoginPreferenceModel => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfLoginPreferenceModelAltDto>): ApiMarketJsonResultOfLoginPreferenceModelAltDto => r.body)
     );
   }
 
   /** Path part for operation `usersSetLoginPreferences()` */
-  static readonly UsersSetLoginPreferencesPath = '/bla-bla-vla/users/login/preferences';
+  static readonly UsersSetLoginPreferencesPath = '/market/api/v1/users/login/preferences';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -462,7 +462,7 @@ export class UsersApiService extends BaseService {
   }
 
   /** Path part for operation `usersRemoveLoginPreferences()` */
-  static readonly UsersRemoveLoginPreferencesPath = '/bla-bla-vla/users/login/preferences';
+  static readonly UsersRemoveLoginPreferencesPath = '/market/api/v1/users/login/preferences';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

@@ -29,4 +29,4 @@ export function additionalAgreementsReject(http: HttpClient, rootUrl: string, pa
   );
 }
 
-additionalAgreementsReject.PATH = '/bla-bla-vla/additionalAgreements/reject';
+additionalAgreementsReject.PATH = '/market/api/v1/additionalAgreements/reject';

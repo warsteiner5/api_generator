@@ -9,7 +9,7 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfMarketSearchResultDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-market-search-result-dto';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfTradePlanLotMarketDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-trade-plan-lot-market-dto';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfTradePlanMarketShortDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-trade-plan-market-short-dto';
@@ -39,7 +39,7 @@ export class TradePlansApiService extends BaseService {
   }
 
   /** Path part for operation `tradePlansUploadAndSavePlan()` */
-  static readonly TradePlansUploadAndSavePlanPath = '/bla-bla-vla/plans/upload/{guid}';
+  static readonly TradePlansUploadAndSavePlanPath = '/market/api/v1/plans/upload/{guid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -47,7 +47,7 @@ export class TradePlansApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradePlansUploadAndSavePlan$Response(params: TradePlansUploadAndSavePlan$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  tradePlansUploadAndSavePlan$Response(params: TradePlansUploadAndSavePlan$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return tradePlansUploadAndSavePlan(this.http, this.rootUrl, params, context);
   }
 
@@ -57,14 +57,14 @@ export class TradePlansApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradePlansUploadAndSavePlan(params: TradePlansUploadAndSavePlan$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  tradePlansUploadAndSavePlan(params: TradePlansUploadAndSavePlan$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.tradePlansUploadAndSavePlan$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradePlansGetArchivePlans()` */
-  static readonly TradePlansGetArchivePlansPath = '/bla-bla-vla/plans/archive';
+  static readonly TradePlansGetArchivePlansPath = '/market/api/v1/plans/archive';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -89,7 +89,7 @@ export class TradePlansApiService extends BaseService {
   }
 
   /** Path part for operation `tradePlansGetPlanShortDetails()` */
-  static readonly TradePlansGetPlanShortDetailsPath = '/bla-bla-vla/plans/{id}';
+  static readonly TradePlansGetPlanShortDetailsPath = '/market/api/v1/plans/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -114,7 +114,7 @@ export class TradePlansApiService extends BaseService {
   }
 
   /** Path part for operation `tradePlansGetPaginatePublicPlanLots()` */
-  static readonly TradePlansGetPaginatePublicPlanLotsPath = '/bla-bla-vla/plans/publicLots';
+  static readonly TradePlansGetPaginatePublicPlanLotsPath = '/market/api/v1/plans/publicLots';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -139,7 +139,7 @@ export class TradePlansApiService extends BaseService {
   }
 
   /** Path part for operation `tradePlansGetPaginatePlanLots()` */
-  static readonly TradePlansGetPaginatePlanLotsPath = '/bla-bla-vla/plans/{id}/lots';
+  static readonly TradePlansGetPaginatePlanLotsPath = '/market/api/v1/plans/{id}/lots';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -164,7 +164,7 @@ export class TradePlansApiService extends BaseService {
   }
 
   /** Path part for operation `tradePlansGetTradesByPlanPostion()` */
-  static readonly TradePlansGetTradesByPlanPostionPath = '/bla-bla-vla/plans/search/{planPositionId}';
+  static readonly TradePlansGetTradesByPlanPostionPath = '/market/api/v1/plans/search/{planPositionId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -189,7 +189,7 @@ export class TradePlansApiService extends BaseService {
   }
 
   /** Path part for operation `tradePlansGetActualPlan()` */
-  static readonly TradePlansGetActualPlanPath = '/bla-bla-vla/plans';
+  static readonly TradePlansGetActualPlanPath = '/market/api/v1/plans';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -214,7 +214,7 @@ export class TradePlansApiService extends BaseService {
   }
 
   /** Path part for operation `tradePlansPlanPositionToTradesLinkNotActual()` */
-  static readonly TradePlansPlanPositionToTradesLinkNotActualPath = '/bla-bla-vla/plans/position-to-trade-link/{tradeId}/not-actual';
+  static readonly TradePlansPlanPositionToTradesLinkNotActualPath = '/market/api/v1/plans/position-to-trade-link/{tradeId}/not-actual';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

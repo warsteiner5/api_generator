@@ -27,4 +27,4 @@ export function tradeCheckAndGetTradeExtCustomerInfo(http: HttpClient, rootUrl: 
   );
 }
 
-tradeCheckAndGetTradeExtCustomerInfo.PATH = '/bla-bla-vla/Trade/{fileGuid}/CheckAndGetTradeExtCustomerInfo';
+tradeCheckAndGetTradeExtCustomerInfo.PATH = '/api/Trade/{fileGuid}/CheckAndGetTradeExtCustomerInfo';

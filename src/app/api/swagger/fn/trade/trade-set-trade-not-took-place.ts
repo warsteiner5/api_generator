@@ -27,4 +27,4 @@ export function tradeSetTradeNotTookPlace(http: HttpClient, rootUrl: string, par
   );
 }
 
-tradeSetTradeNotTookPlace.PATH = '/bla-bla-vla/Trade/setnottookplace';
+tradeSetTradeNotTookPlace.PATH = '/api/Trade/setnottookplace';

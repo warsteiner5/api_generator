@@ -28,4 +28,4 @@ export function tradeExportToExcel(http: HttpClient, rootUrl: string, params?: T
   );
 }
 
-tradeExportToExcel.PATH = '/bla-bla-vla/Trade/ExportToExcel';
+tradeExportToExcel.PATH = '/api/Trade/ExportToExcel';

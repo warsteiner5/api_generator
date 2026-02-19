@@ -28,4 +28,4 @@ export function regulationHideRegulationDocument(http: HttpClient, rootUrl: stri
   );
 }
 
-regulationHideRegulationDocument.PATH = '/bla-bla-vla/regulation/{id}/document/hide';
+regulationHideRegulationDocument.PATH = '/market/api/v1/regulation/{id}/document/hide';

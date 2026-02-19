@@ -26,4 +26,4 @@ export function dictionariesGetAllOkeiCodes(http: HttpClient, rootUrl: string, p
   );
 }
 
-dictionariesGetAllOkeiCodes.PATH = '/bla-bla-vla/dictionaries/okei';
+dictionariesGetAllOkeiCodes.PATH = '/market/api/v1/dictionaries/okei';

@@ -29,4 +29,4 @@ export function dealsGetExportDealDocumentsFile(http: HttpClient, rootUrl: strin
   );
 }
 
-dealsGetExportDealDocumentsFile.PATH = '/bla-bla-vla/deals/export_documents/file';
+dealsGetExportDealDocumentsFile.PATH = '/market/api/v1/deals/export_documents/file';

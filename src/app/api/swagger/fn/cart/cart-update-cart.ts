@@ -30,4 +30,4 @@ export function cartUpdateCart(http: HttpClient, rootUrl: string, params: CartUp
   );
 }
 
-cartUpdateCart.PATH = '/bla-bla-vla/carts/{id}';
+cartUpdateCart.PATH = '/market/api/v1/carts/{id}';

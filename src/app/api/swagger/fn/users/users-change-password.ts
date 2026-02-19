@@ -29,4 +29,4 @@ export function usersChangePassword(http: HttpClient, rootUrl: string, params?: 
   );
 }
 
-usersChangePassword.PATH = '/bla-bla-vla/users/change-password';
+usersChangePassword.PATH = '/market/api/v1/users/change-password';

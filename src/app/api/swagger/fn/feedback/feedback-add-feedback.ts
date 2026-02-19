@@ -29,4 +29,4 @@ export function feedbackAddFeedback(http: HttpClient, rootUrl: string, params?: 
   );
 }
 
-feedbackAddFeedback.PATH = '/bla-bla-vla/feedback/submit';
+feedbackAddFeedback.PATH = '/market/api/v1/feedback/submit';

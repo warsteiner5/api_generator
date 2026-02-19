@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 import { ApiUserActionLogDto } from '../../models/api-user-action-log-dto';
 
 export interface LogLogAction$Params {
       body?: ApiUserActionLogDto | null
 }
 
-export function logLogAction(http: HttpClient, rootUrl: string, params?: LogLogAction$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function logLogAction(http: HttpClient, rootUrl: string, params?: LogLogAction$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, logLogAction.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function logLogAction(http: HttpClient, rootUrl: string, params?: LogLogA
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-logLogAction.PATH = '/bla-bla-vla/log/action';
+logLogAction.PATH = '/market/api/v1/log/action';

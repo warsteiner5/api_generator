@@ -11,7 +11,7 @@ import { StrictHttpResponse } from '../strict-http-response';
 
 import { biddingGetInfo } from '../fn/bidding/bidding-get-info';
 import { BiddingGetInfo$Params } from '../fn/bidding/bidding-get-info';
-import { ApiMarketJsonResultOfBiddingInfo } from '../models/api-market-json-result-of-bidding-info';
+import { ApiMarketJsonResultOfBiddingInfoAltDto } from '../models/api-market-json-result-of-bidding-info';
 
 @Injectable({ providedIn: 'root' })
 export class BiddingApiService extends BaseService {
@@ -20,7 +20,7 @@ export class BiddingApiService extends BaseService {
   }
 
   /** Path part for operation `biddingGetInfo()` */
-  static readonly BiddingGetInfoPath = '/bla-bla-vla/bidding/trade/{tradeId}';
+  static readonly BiddingGetInfoPath = '/market/api/v1/bidding/trade/{tradeId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -28,7 +28,7 @@ export class BiddingApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  biddingGetInfo$Response(params: BiddingGetInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBiddingInfo>> {
+  biddingGetInfo$Response(params: BiddingGetInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBiddingInfoAltDto>> {
     return biddingGetInfo(this.http, this.rootUrl, params, context);
   }
 
@@ -38,9 +38,9 @@ export class BiddingApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  biddingGetInfo(params: BiddingGetInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBiddingInfo> {
+  biddingGetInfo(params: BiddingGetInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBiddingInfoAltDto> {
     return this.biddingGetInfo$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBiddingInfo>): ApiMarketJsonResultOfBiddingInfo => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBiddingInfoAltDto>): ApiMarketJsonResultOfBiddingInfoAltDto => r.body)
     );
   }
 

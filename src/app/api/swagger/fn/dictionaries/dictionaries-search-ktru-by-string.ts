@@ -32,4 +32,4 @@ export function dictionariesSearchKtruByString(http: HttpClient, rootUrl: string
   );
 }
 
-dictionariesSearchKtruByString.PATH = '/bla-bla-vla/dictionaries/ktru/search';
+dictionariesSearchKtruByString.PATH = '/market/api/v1/dictionaries/ktru/search';

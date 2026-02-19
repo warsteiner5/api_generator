@@ -28,4 +28,4 @@ export function offersExtendParticipantOffer(http: HttpClient, rootUrl: string, 
   );
 }
 
-offersExtendParticipantOffer.PATH = '/bla-bla-vla/offers/extend';
+offersExtendParticipantOffer.PATH = '/market/api/v1/offers/extend';

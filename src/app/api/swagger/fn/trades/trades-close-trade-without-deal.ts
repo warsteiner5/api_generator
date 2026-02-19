@@ -28,4 +28,4 @@ export function tradesCloseTradeWithoutDeal(http: HttpClient, rootUrl: string, p
   );
 }
 
-tradesCloseTradeWithoutDeal.PATH = '/bla-bla-vla/trades/{id}/close';
+tradesCloseTradeWithoutDeal.PATH = '/market/api/v1/trades/{id}/close';

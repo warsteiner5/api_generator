@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface FilterDelete$Params {
   id: number;
 }
 
-export function filterDelete(http: HttpClient, rootUrl: string, params: FilterDelete$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function filterDelete(http: HttpClient, rootUrl: string, params: FilterDelete$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, filterDelete.PATH, 'delete');
   if (params) {
     rb.path('id', params.id, {});
@@ -23,9 +23,9 @@ export function filterDelete(http: HttpClient, rootUrl: string, params: FilterDe
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-filterDelete.PATH = '/bla-bla-vla/filters/{id}';
+filterDelete.PATH = '/market/api/v1/filters/{id}';

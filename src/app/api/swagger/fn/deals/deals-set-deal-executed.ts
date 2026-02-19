@@ -28,4 +28,4 @@ export function dealsSetDealExecuted(http: HttpClient, rootUrl: string, params: 
   );
 }
 
-dealsSetDealExecuted.PATH = '/bla-bla-vla/deals/{id}/customers/execute';
+dealsSetDealExecuted.PATH = '/market/api/v1/deals/{id}/customers/execute';

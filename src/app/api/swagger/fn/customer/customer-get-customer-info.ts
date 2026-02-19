@@ -27,4 +27,4 @@ export function customerGetCustomerInfo(http: HttpClient, rootUrl: string, param
   );
 }
 
-customerGetCustomerInfo.PATH = '/bla-bla-vla/CustomerInfo/{id}';
+customerGetCustomerInfo.PATH = '/api/CustomerInfo/{id}';

@@ -29,4 +29,4 @@ export function tradeGetTradesForParticipant(http: HttpClient, rootUrl: string, 
   );
 }
 
-tradeGetTradesForParticipant.PATH = '/bla-bla-vla/Trade/GetTradesForParticipant';
+tradeGetTradesForParticipant.PATH = '/api/Trade/GetTradesForParticipant';

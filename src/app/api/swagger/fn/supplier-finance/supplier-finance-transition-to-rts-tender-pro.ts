@@ -27,4 +27,4 @@ export function supplierFinanceTransitionToRtsTenderPro(http: HttpClient, rootUr
   );
 }
 
-supplierFinanceTransitionToRtsTenderPro.PATH = '/bla-bla-vla/supplier-finance/redirect/pro';
+supplierFinanceTransitionToRtsTenderPro.PATH = '/market/api/v1/supplier-finance/redirect/pro';

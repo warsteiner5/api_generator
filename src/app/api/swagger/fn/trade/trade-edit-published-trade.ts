@@ -28,4 +28,4 @@ export function tradeEditPublishedTrade(http: HttpClient, rootUrl: string, param
   );
 }
 
-tradeEditPublishedTrade.PATH = '/bla-bla-vla/Trade/EditPublishedTrade';
+tradeEditPublishedTrade.PATH = '/api/Trade/EditPublishedTrade';

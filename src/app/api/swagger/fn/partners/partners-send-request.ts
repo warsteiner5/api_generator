@@ -28,4 +28,4 @@ export function partnersSendRequest(http: HttpClient, rootUrl: string, params: P
   );
 }
 
-partnersSendRequest.PATH = '/bla-bla-vla/organization/partners/{guid}/request';
+partnersSendRequest.PATH = '/market/api/v1/organization/partners/{guid}/request';

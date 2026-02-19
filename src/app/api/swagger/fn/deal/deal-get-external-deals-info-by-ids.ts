@@ -29,4 +29,4 @@ export function dealGetExternalDealsInfoByIds(http: HttpClient, rootUrl: string,
   );
 }
 
-dealGetExternalDealsInfoByIds.PATH = '/bla-bla-vla/Deal/GetExternalDealsInfoByIds';
+dealGetExternalDealsInfoByIds.PATH = '/api/Deal/GetExternalDealsInfoByIds';

@@ -27,4 +27,4 @@ export function competetiveListRejectCompetetiveListItem(http: HttpClient, rootU
   );
 }
 
-competetiveListRejectCompetetiveListItem.PATH = '/bla-bla-vla/competetivelist/{id}/reject';
+competetiveListRejectCompetetiveListItem.PATH = '/market/api/v1/competetivelist/{id}/reject';

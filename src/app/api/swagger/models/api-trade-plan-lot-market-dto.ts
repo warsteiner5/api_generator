@@ -1,9 +1,9 @@
 /* tslint:disable */
 /* eslint-disable */
-import { ApiBaseContractDtoWithIdAndRowVersionOfIntegerAndIntegerAltDto } from '../models/api-base-contract-dto-with-id-and-row-version-of-integer-and-integer';
+import { ApiBaseContractDtoWithIdAndRowVersionOfIntegerAndInteger } from '../models/api-base-contract-dto-with-id-and-row-version-of-integer-and-integer';
 import { ApiPurchasePlanKindAltEnum } from '../models/api-purchase-plan-kind';
 import { ApiTradePlanLotItemMarketDto } from '../models/api-trade-plan-lot-item-market-dto';
-export type ApiTradePlanLotMarketDto = ApiBaseContractDtoWithIdAndRowVersionOfIntegerAndIntegerAltDto & {
+export type ApiTradePlanLotMarketDto = ApiBaseContractDtoWithIdAndRowVersionOfIntegerAndInteger & {
 'OrderNumber'?: string | null;
 'Subject'?: string | null;
 'StartingPrice'?: number | null;

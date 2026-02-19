@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfLoginPreferenceModel } from '../../models/api-market-json-result-of-login-preference-model';
+import { ApiMarketJsonResultOfLoginPreferenceModelAltDto } from '../../models/api-market-json-result-of-login-preference-model';
 
 export interface UsersGetLoginPreferences$Params {
 }
 
-export function usersGetLoginPreferences(http: HttpClient, rootUrl: string, params?: UsersGetLoginPreferences$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLoginPreferenceModel>> {
+export function usersGetLoginPreferences(http: HttpClient, rootUrl: string, params?: UsersGetLoginPreferences$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLoginPreferenceModelAltDto>> {
   const rb = new RequestBuilder(rootUrl, usersGetLoginPreferences.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function usersGetLoginPreferences(http: HttpClient, rootUrl: string, para
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfLoginPreferenceModel>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfLoginPreferenceModelAltDto>;
     })
   );
 }
 
-usersGetLoginPreferences.PATH = '/bla-bla-vla/users/login/preferences';
+usersGetLoginPreferences.PATH = '/market/api/v1/users/login/preferences';

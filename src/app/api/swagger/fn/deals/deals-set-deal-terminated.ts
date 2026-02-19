@@ -31,4 +31,4 @@ export function dealsSetDealTerminated(http: HttpClient, rootUrl: string, params
   );
 }
 
-dealsSetDealTerminated.PATH = '/bla-bla-vla/deals/{dealId}/customers/terminate';
+dealsSetDealTerminated.PATH = '/market/api/v1/deals/{dealId}/customers/terminate';

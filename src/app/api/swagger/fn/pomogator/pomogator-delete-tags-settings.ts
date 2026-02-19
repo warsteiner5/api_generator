@@ -29,4 +29,4 @@ export function pomogatorDeleteTagsSettings(http: HttpClient, rootUrl: string, p
   );
 }
 
-pomogatorDeleteTagsSettings.PATH = '/bla-bla-vla/pomogator/deleteTagsSettings';
+pomogatorDeleteTagsSettings.PATH = '/market/api/v1/pomogator/deleteTagsSettings';

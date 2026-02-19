@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfQuotationSessionImportDetailsResponse } from '../../models/api-market-json-result-of-quotation-session-import-details-response';
+import { ApiMarketJsonResultOfQuotationSessionImportDetailsResponseAltDto } from '../../models/api-market-json-result-of-quotation-session-import-details-response';
 import { ApiQuotationSessionImportDetailsRequestAltDto } from '../../models/api-quotation-session-import-details-request';
 
 export interface QuotationSessionNewImportDetails$Params {
       body?: ApiQuotationSessionImportDetailsRequestAltDto | null
 }
 
-export function quotationSessionNewImportDetails(http: HttpClient, rootUrl: string, params?: QuotationSessionNewImportDetails$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionImportDetailsResponse>> {
+export function quotationSessionNewImportDetails(http: HttpClient, rootUrl: string, params?: QuotationSessionNewImportDetails$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionImportDetailsResponseAltDto>> {
   const rb = new RequestBuilder(rootUrl, quotationSessionNewImportDetails.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function quotationSessionNewImportDetails(http: HttpClient, rootUrl: stri
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionImportDetailsResponse>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionImportDetailsResponseAltDto>;
     })
   );
 }
 
-quotationSessionNewImportDetails.PATH = '/bla-bla-vla/quotation-session-new/import-details';
+quotationSessionNewImportDetails.PATH = '/market/api/v1/quotation-session-new/import-details';

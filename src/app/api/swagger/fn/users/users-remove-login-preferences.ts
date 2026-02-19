@@ -26,4 +26,4 @@ export function usersRemoveLoginPreferences(http: HttpClient, rootUrl: string, p
   );
 }
 
-usersRemoveLoginPreferences.PATH = '/bla-bla-vla/users/login/preferences';
+usersRemoveLoginPreferences.PATH = '/market/api/v1/users/login/preferences';

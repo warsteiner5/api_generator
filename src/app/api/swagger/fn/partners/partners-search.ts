@@ -29,4 +29,4 @@ export function partnersSearch(http: HttpClient, rootUrl: string, params?: Partn
   );
 }
 
-partnersSearch.PATH = '/bla-bla-vla/organization/partners/search';
+partnersSearch.PATH = '/market/api/v1/organization/partners/search';

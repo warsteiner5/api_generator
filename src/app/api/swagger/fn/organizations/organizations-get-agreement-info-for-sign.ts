@@ -29,4 +29,4 @@ export function organizationsGetAgreementInfoForSign(http: HttpClient, rootUrl: 
   );
 }
 
-organizationsGetAgreementInfoForSign.PATH = '/bla-bla-vla/organizations/agreement-info-sign';
+organizationsGetAgreementInfoForSign.PATH = '/market/api/v1/organizations/agreement-info-sign';

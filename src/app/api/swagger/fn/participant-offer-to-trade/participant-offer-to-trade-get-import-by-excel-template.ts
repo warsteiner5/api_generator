@@ -25,4 +25,4 @@ export function participantOfferToTradeGetImportByExcelTemplate(http: HttpClient
   );
 }
 
-participantOfferToTradeGetImportByExcelTemplate.PATH = '/bla-bla-vla/offerToTrade/participant-offers/excel/import/template';
+participantOfferToTradeGetImportByExcelTemplate.PATH = '/market/api/v1/offerToTrade/participant-offers/excel/import/template';

@@ -29,4 +29,4 @@ export function offersModerate(http: HttpClient, rootUrl: string, params?: Offer
   );
 }
 
-offersModerate.PATH = '/bla-bla-vla/offers/moderate';
+offersModerate.PATH = '/market/api/v1/offers/moderate';

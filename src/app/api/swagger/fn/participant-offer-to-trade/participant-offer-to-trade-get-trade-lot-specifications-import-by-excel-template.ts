@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfGuid } from '../../models/api-market-json-result-of-guid';
+import { ApiMarketJsonResultOfGuidAltDto } from '../../models/api-market-json-result-of-guid';
 
 export interface ParticipantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate$Params {
   tradeId: number;
 }
 
-export function participantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate(http: HttpClient, rootUrl: string, params: ParticipantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuid>> {
+export function participantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate(http: HttpClient, rootUrl: string, params: ParticipantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>> {
   const rb = new RequestBuilder(rootUrl, participantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate.PATH, 'get');
   if (params) {
     rb.path('tradeId', params.tradeId, {});
@@ -23,9 +23,9 @@ export function participantOfferToTradeGetTradeLotSpecificationsImportByExcelTem
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfGuid>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfGuidAltDto>;
     })
   );
 }
 
-participantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate.PATH = '/bla-bla-vla/offerToTrade/{tradeId}/participant-offers/excel/import/specifications/template';
+participantOfferToTradeGetTradeLotSpecificationsImportByExcelTemplate.PATH = '/market/api/v1/offerToTrade/{tradeId}/participant-offers/excel/import/specifications/template';

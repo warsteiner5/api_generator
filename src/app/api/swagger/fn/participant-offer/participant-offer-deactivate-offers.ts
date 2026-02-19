@@ -27,4 +27,4 @@ export function participantOfferDeactivateOffers(http: HttpClient, rootUrl: stri
   );
 }
 
-participantOfferDeactivateOffers.PATH = '/bla-bla-vla/participantoffer/DeactivateOffers';
+participantOfferDeactivateOffers.PATH = '/api/participantoffer/DeactivateOffers';

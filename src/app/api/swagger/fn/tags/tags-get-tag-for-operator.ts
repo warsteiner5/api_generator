@@ -28,4 +28,4 @@ export function tagsGetTagForOperator(http: HttpClient, rootUrl: string, params:
   );
 }
 
-tagsGetTagForOperator.PATH = '/bla-bla-vla/tags/{id}/operator';
+tagsGetTagForOperator.PATH = '/market/api/v1/tags/{id}/operator';

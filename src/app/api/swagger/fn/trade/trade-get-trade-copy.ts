@@ -28,4 +28,4 @@ export function tradeGetTradeCopy(http: HttpClient, rootUrl: string, params: Tra
   );
 }
 
-tradeGetTradeCopy.PATH = '/bla-bla-vla/Trade/Copy/{id}';
+tradeGetTradeCopy.PATH = '/api/Trade/Copy/{id}';

@@ -26,4 +26,4 @@ export function organizationsGetCurrentOrganizationInfo(http: HttpClient, rootUr
   );
 }
 
-organizationsGetCurrentOrganizationInfo.PATH = '/bla-bla-vla/organizations/self';
+organizationsGetCurrentOrganizationInfo.PATH = '/market/api/v1/organizations/self';

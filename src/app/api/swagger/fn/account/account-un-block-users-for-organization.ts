@@ -27,4 +27,4 @@ export function accountUnBlockUsersForOrganization(http: HttpClient, rootUrl: st
   );
 }
 
-accountUnBlockUsersForOrganization.PATH = '/bla-bla-vla/Account/UnBlockUsersForOrganization';
+accountUnBlockUsersForOrganization.PATH = '/api/Account/UnBlockUsersForOrganization';

@@ -30,4 +30,4 @@ export function priceListsBindPriceListToOrganization(http: HttpClient, rootUrl:
   );
 }
 
-priceListsBindPriceListToOrganization.PATH = '/bla-bla-vla/priceLists/{id}/bindPriceListToOrganization/{idOrganization}';
+priceListsBindPriceListToOrganization.PATH = '/market/api/v1/priceLists/{id}/bindPriceListToOrganization/{idOrganization}';

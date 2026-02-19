@@ -33,4 +33,4 @@ export function requirementRequestsAddChatMessage(http: HttpClient, rootUrl: str
   );
 }
 
-requirementRequestsAddChatMessage.PATH = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{chatId}';
+requirementRequestsAddChatMessage.PATH = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{chatId}';

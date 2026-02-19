@@ -28,4 +28,4 @@ export function applicationSaveUpdateApplication(http: HttpClient, rootUrl: stri
   );
 }
 
-applicationSaveUpdateApplication.PATH = '/bla-bla-vla/Trade/Application/SaveUpdateApplication';
+applicationSaveUpdateApplication.PATH = '/api/Trade/Application/SaveUpdateApplication';

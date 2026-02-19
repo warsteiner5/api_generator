@@ -7,13 +7,13 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiKsrFilterAltDto } from '../../models/api-ksr-filter';
-import { ApiMarketJsonResultOfIReadOnlyCollectionOfKsrValue } from '../../models/api-market-json-result-of-i-read-only-collection-of-ksr-value';
+import { ApiMarketJsonResultOfIReadOnlyCollectionOfKsrValueAltDto } from '../../models/api-market-json-result-of-i-read-only-collection-of-ksr-value';
 
 export interface DictionariesGetKsrAutocompleteListPost$Params {
       body?: ApiKsrFilterAltDto | null
 }
 
-export function dictionariesGetKsrAutocompleteListPost(http: HttpClient, rootUrl: string, params?: DictionariesGetKsrAutocompleteListPost$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfKsrValue>> {
+export function dictionariesGetKsrAutocompleteListPost(http: HttpClient, rootUrl: string, params?: DictionariesGetKsrAutocompleteListPost$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfKsrValueAltDto>> {
   const rb = new RequestBuilder(rootUrl, dictionariesGetKsrAutocompleteListPost.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function dictionariesGetKsrAutocompleteListPost(http: HttpClient, rootUrl
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfKsrValue>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfKsrValueAltDto>;
     })
   );
 }
 
-dictionariesGetKsrAutocompleteListPost.PATH = '/bla-bla-vla/dictionaries/ksr/autocomplete';
+dictionariesGetKsrAutocompleteListPost.PATH = '/market/api/v1/dictionaries/ksr/autocomplete';

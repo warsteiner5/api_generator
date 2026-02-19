@@ -25,4 +25,4 @@ export function organizationsGetOrganizationWorkGroups(http: HttpClient, rootUrl
   );
 }
 
-organizationsGetOrganizationWorkGroups.PATH = '/bla-bla-vla/organizations/work-groups';
+organizationsGetOrganizationWorkGroups.PATH = '/market/api/v1/organizations/work-groups';

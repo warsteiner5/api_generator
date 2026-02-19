@@ -26,4 +26,4 @@ export function tenantsGetCreateTradeFormTemplateSettings(http: HttpClient, root
   );
 }
 
-tenantsGetCreateTradeFormTemplateSettings.PATH = '/bla-bla-vla/tenants/trade-template';
+tenantsGetCreateTradeFormTemplateSettings.PATH = '/market/api/v1/tenants/trade-template';

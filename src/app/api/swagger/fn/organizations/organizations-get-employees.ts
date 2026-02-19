@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfMarketEmployeeShortInfo } from '../../models/api-market-json-result-of-market-employee-short-info';
+import { ApiMarketJsonResultOfMarketEmployeeShortInfoAltDto } from '../../models/api-market-json-result-of-market-employee-short-info';
 
 export interface OrganizationsGetEmployees$Params {
 }
 
-export function organizationsGetEmployees(http: HttpClient, rootUrl: string, params?: OrganizationsGetEmployees$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketEmployeeShortInfo>> {
+export function organizationsGetEmployees(http: HttpClient, rootUrl: string, params?: OrganizationsGetEmployees$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketEmployeeShortInfoAltDto>> {
   const rb = new RequestBuilder(rootUrl, organizationsGetEmployees.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function organizationsGetEmployees(http: HttpClient, rootUrl: string, par
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfMarketEmployeeShortInfo>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfMarketEmployeeShortInfoAltDto>;
     })
   );
 }
 
-organizationsGetEmployees.PATH = '/bla-bla-vla/organizations/employees';
+organizationsGetEmployees.PATH = '/market/api/v1/organizations/employees';

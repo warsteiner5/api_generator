@@ -28,4 +28,4 @@ export function externalDealGetExternalDealCardForOperator(http: HttpClient, roo
   );
 }
 
-externalDealGetExternalDealCardForOperator.PATH = '/bla-bla-vla/externaldeal/GetExternalDealCardForOperator/{dealId}';
+externalDealGetExternalDealCardForOperator.PATH = '/api/externaldeal/GetExternalDealCardForOperator/{dealId}';

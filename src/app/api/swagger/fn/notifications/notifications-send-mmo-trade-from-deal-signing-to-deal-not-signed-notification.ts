@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface NotificationsSendMmoTradeFromDealSigningToDealNotSignedNotification$Params {
   tradeId: number;
   dealId: number;
 }
 
-export function notificationsSendMmoTradeFromDealSigningToDealNotSignedNotification(http: HttpClient, rootUrl: string, params: NotificationsSendMmoTradeFromDealSigningToDealNotSignedNotification$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function notificationsSendMmoTradeFromDealSigningToDealNotSignedNotification(http: HttpClient, rootUrl: string, params: NotificationsSendMmoTradeFromDealSigningToDealNotSignedNotification$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, notificationsSendMmoTradeFromDealSigningToDealNotSignedNotification.PATH, 'post');
   if (params) {
     rb.path('tradeId', params.tradeId, {});
@@ -25,9 +25,9 @@ export function notificationsSendMmoTradeFromDealSigningToDealNotSignedNotificat
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-notificationsSendMmoTradeFromDealSigningToDealNotSignedNotification.PATH = '/bla-bla-vla/notifications/{tradeId}/{dealId}/SendMmoTradeFromDealSigningToDealNotSigned';
+notificationsSendMmoTradeFromDealSigningToDealNotSignedNotification.PATH = '/market/api/v1/notifications/{tradeId}/{dealId}/SendMmoTradeFromDealSigningToDealNotSigned';

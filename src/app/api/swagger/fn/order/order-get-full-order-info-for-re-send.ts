@@ -28,4 +28,4 @@ export function orderGetFullOrderInfoForReSend(http: HttpClient, rootUrl: string
   );
 }
 
-orderGetFullOrderInfoForReSend.PATH = '/bla-bla-vla/order/{id}/GetFullOrderInfoForReSend';
+orderGetFullOrderInfoForReSend.PATH = '/api/order/{id}/GetFullOrderInfoForReSend';

@@ -27,4 +27,4 @@ export function rolesDeleteRole(http: HttpClient, rootUrl: string, params: Roles
   );
 }
 
-rolesDeleteRole.PATH = '/bla-bla-vla/security/roles/{id}';
+rolesDeleteRole.PATH = '/market/api/v1/security/roles/{id}';

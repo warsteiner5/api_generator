@@ -24,7 +24,7 @@ export class ModeratorApiService extends BaseService {
   }
 
   /** Path part for operation `moderatorGetPriceListsByFilter()` */
-  static readonly ModeratorGetPriceListsByFilterPath = '/bla-bla-vla/moderator/pricelists';
+  static readonly ModeratorGetPriceListsByFilterPath = '/market/api/v1/moderator/pricelists';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -49,7 +49,7 @@ export class ModeratorApiService extends BaseService {
   }
 
   /** Path part for operation `moderatorStart()` */
-  static readonly ModeratorStartPath = '/bla-bla-vla/moderator/{id}/start';
+  static readonly ModeratorStartPath = '/market/api/v1/moderator/{id}/start';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -74,7 +74,7 @@ export class ModeratorApiService extends BaseService {
   }
 
   /** Path part for operation `moderatorStop()` */
-  static readonly ModeratorStopPath = '/bla-bla-vla/moderator/{id}/stop';
+  static readonly ModeratorStopPath = '/market/api/v1/moderator/{id}/stop';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

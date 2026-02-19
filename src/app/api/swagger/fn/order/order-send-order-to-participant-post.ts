@@ -28,4 +28,4 @@ export function orderSendOrderToParticipantPost(http: HttpClient, rootUrl: strin
   );
 }
 
-orderSendOrderToParticipantPost.PATH = '/bla-bla-vla/order/SendToParticipant';
+orderSendOrderToParticipantPost.PATH = '/api/order/SendToParticipant';

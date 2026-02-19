@@ -29,4 +29,4 @@ export function externalDealUploadDocuments(http: HttpClient, rootUrl: string, p
   );
 }
 
-externalDealUploadDocuments.PATH = '/bla-bla-vla/externaldeal/UploadDocuments';
+externalDealUploadDocuments.PATH = '/api/externaldeal/UploadDocuments';

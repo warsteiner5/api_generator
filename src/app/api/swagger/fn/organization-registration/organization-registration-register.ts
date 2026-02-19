@@ -29,4 +29,4 @@ export function organizationRegistrationRegister(http: HttpClient, rootUrl: stri
   );
 }
 
-organizationRegistrationRegister.PATH = '/bla-bla-vla/organization/registration';
+organizationRegistrationRegister.PATH = '/market/api/v1/organization/registration';

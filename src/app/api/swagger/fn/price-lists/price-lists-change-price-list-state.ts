@@ -30,4 +30,4 @@ export function priceListsChangePriceListState(http: HttpClient, rootUrl: string
   );
 }
 
-priceListsChangePriceListState.PATH = '/bla-bla-vla/priceLists/{id}/changeState/{state}';
+priceListsChangePriceListState.PATH = '/market/api/v1/priceLists/{id}/changeState/{state}';

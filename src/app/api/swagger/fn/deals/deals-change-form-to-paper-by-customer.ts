@@ -31,4 +31,4 @@ export function dealsChangeFormToPaperByCustomer(http: HttpClient, rootUrl: stri
   );
 }
 
-dealsChangeFormToPaperByCustomer.PATH = '/bla-bla-vla/deals/{id}/customer/form/change/paper';
+dealsChangeFormToPaperByCustomer.PATH = '/market/api/v1/deals/{id}/customer/form/change/paper';

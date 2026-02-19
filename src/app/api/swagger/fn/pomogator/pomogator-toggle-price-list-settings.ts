@@ -29,4 +29,4 @@ export function pomogatorTogglePriceListSettings(http: HttpClient, rootUrl: stri
   );
 }
 
-pomogatorTogglePriceListSettings.PATH = '/bla-bla-vla/pomogator/togglePriceListSettings';
+pomogatorTogglePriceListSettings.PATH = '/market/api/v1/pomogator/togglePriceListSettings';

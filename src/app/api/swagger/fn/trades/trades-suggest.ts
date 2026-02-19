@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfStarSuggestObjectOf } from '../../models/api-market-json-result-of-star-suggest-object-of';
+import { ApiMarketJsonResultOfStarSuggestObjectOfAltDto } from '../../models/api-market-json-result-of-star-suggest-object-of';
 
 export interface TradesSuggest$Params {
   input: string | null;
 }
 
-export function tradesSuggest(http: HttpClient, rootUrl: string, params: TradesSuggest$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStarSuggestObjectOf>> {
+export function tradesSuggest(http: HttpClient, rootUrl: string, params: TradesSuggest$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStarSuggestObjectOfAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesSuggest.PATH, 'get');
   if (params) {
     rb.query('input', params.input, {});
@@ -23,9 +23,9 @@ export function tradesSuggest(http: HttpClient, rootUrl: string, params: TradesS
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfStarSuggestObjectOf>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfStarSuggestObjectOfAltDto>;
     })
   );
 }
 
-tradesSuggest.PATH = '/bla-bla-vla/trades/suggest';
+tradesSuggest.PATH = '/market/api/v1/trades/suggest';

@@ -20,7 +20,7 @@ export class ExportByUsersApiService extends BaseService {
   }
 
   /** Path part for operation `exportByUsersGetUserCounters()` */
-  static readonly ExportByUsersGetUserCountersPath = '/bla-bla-vla/export-by/users/counters';
+  static readonly ExportByUsersGetUserCountersPath = '/market/api/v1/export-by/users/counters';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

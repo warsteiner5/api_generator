@@ -28,4 +28,4 @@ export function offersUpdate(http: HttpClient, rootUrl: string, params?: OffersU
   );
 }
 
-offersUpdate.PATH = '/bla-bla-vla/offers/batchUpdate';
+offersUpdate.PATH = '/market/api/v1/offers/batchUpdate';

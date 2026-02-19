@@ -25,4 +25,4 @@ export function participantOfferLoadDataFromExcelDocument(http: HttpClient, root
   );
 }
 
-participantOfferLoadDataFromExcelDocument.PATH = '/bla-bla-vla/participantoffer/LoadDataFromExcelDocument';
+participantOfferLoadDataFromExcelDocument.PATH = '/api/participantoffer/LoadDataFromExcelDocument';

@@ -28,4 +28,4 @@ export function tradesNotTookPlaceSetLapsed(http: HttpClient, rootUrl: string, p
   );
 }
 
-tradesNotTookPlaceSetLapsed.PATH = '/bla-bla-vla/trades/nottookplace/{tradeId}/setLapsed';
+tradesNotTookPlaceSetLapsed.PATH = '/market/api/v1/trades/nottookplace/{tradeId}/setLapsed';

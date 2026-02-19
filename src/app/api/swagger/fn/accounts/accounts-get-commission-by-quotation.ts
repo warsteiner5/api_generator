@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfDecimal } from '../../models/api-market-json-result-of-decimal';
+import { ApiMarketJsonResultOfDecimalAltDto } from '../../models/api-market-json-result-of-decimal';
 
 export interface AccountsGetCommissionByQuotation$Params {
   tradeId: number;
   quotation: number;
 }
 
-export function accountsGetCommissionByQuotation(http: HttpClient, rootUrl: string, params: AccountsGetCommissionByQuotation$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimal>> {
+export function accountsGetCommissionByQuotation(http: HttpClient, rootUrl: string, params: AccountsGetCommissionByQuotation$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>> {
   const rb = new RequestBuilder(rootUrl, accountsGetCommissionByQuotation.PATH, 'get');
   if (params) {
     rb.path('tradeId', params.tradeId, {});
@@ -25,9 +25,9 @@ export function accountsGetCommissionByQuotation(http: HttpClient, rootUrl: stri
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfDecimal>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>;
     })
   );
 }
 
-accountsGetCommissionByQuotation.PATH = '/bla-bla-vla/accounts/commission/{tradeId}/quotation/{quotation}';
+accountsGetCommissionByQuotation.PATH = '/market/api/v1/accounts/commission/{tradeId}/quotation/{quotation}';

@@ -28,4 +28,4 @@ export function tradePlansGetPlanShortDetails(http: HttpClient, rootUrl: string,
   );
 }
 
-tradePlansGetPlanShortDetails.PATH = '/bla-bla-vla/plans/{id}';
+tradePlansGetPlanShortDetails.PATH = '/market/api/v1/plans/{id}';

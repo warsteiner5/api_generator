@@ -30,4 +30,4 @@ export function additionalAgreementSendForApprove(http: HttpClient, rootUrl: str
   );
 }
 
-additionalAgreementSendForApprove.PATH = '/bla-bla-vla/AdditionalAgreement/{id}/SendToCustomer';
+additionalAgreementSendForApprove.PATH = '/api/AdditionalAgreement/{id}/SendToCustomer';

@@ -28,4 +28,4 @@ export function dealAgreementsGetLastAgreementHistory(http: HttpClient, rootUrl:
   );
 }
 
-dealAgreementsGetLastAgreementHistory.PATH = '/bla-bla-vla/deals/{dealId}/agreements/last';
+dealAgreementsGetLastAgreementHistory.PATH = '/market/api/v1/deals/{dealId}/agreements/last';

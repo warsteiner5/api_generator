@@ -28,4 +28,4 @@ export function reportGetSupplierListReportGuidByTradeId(http: HttpClient, rootU
   );
 }
 
-reportGetSupplierListReportGuidByTradeId.PATH = '/bla-bla-vla/reports/{tradeId}/suppliersListReportGuid';
+reportGetSupplierListReportGuidByTradeId.PATH = '/api/reports/{tradeId}/suppliersListReportGuid';

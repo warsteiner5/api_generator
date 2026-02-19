@@ -27,4 +27,4 @@ export function participantOfferGetOfferInfo(http: HttpClient, rootUrl: string, 
   );
 }
 
-participantOfferGetOfferInfo.PATH = '/bla-bla-vla/participantoffer/{offerId}/GetOfferInfo';
+participantOfferGetOfferInfo.PATH = '/api/participantoffer/{offerId}/GetOfferInfo';

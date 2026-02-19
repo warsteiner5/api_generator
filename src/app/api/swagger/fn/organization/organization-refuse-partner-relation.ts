@@ -27,4 +27,4 @@ export function organizationRefusePartnerRelation(http: HttpClient, rootUrl: str
   );
 }
 
-organizationRefusePartnerRelation.PATH = '/bla-bla-vla/Organization/RefusePartnerRelation';
+organizationRefusePartnerRelation.PATH = '/api/Organization/RefusePartnerRelation';

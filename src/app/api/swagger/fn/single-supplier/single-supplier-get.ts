@@ -28,4 +28,4 @@ export function singleSupplierGet(http: HttpClient, rootUrl: string, params: Sin
   );
 }
 
-singleSupplierGet.PATH = '/bla-bla-vla/single-supplier/{id}';
+singleSupplierGet.PATH = '/market/api/v1/single-supplier/{id}';

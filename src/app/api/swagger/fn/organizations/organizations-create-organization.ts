@@ -28,4 +28,4 @@ export function organizationsCreateOrganization(http: HttpClient, rootUrl: strin
   );
 }
 
-organizationsCreateOrganization.PATH = '/bla-bla-vla/organizations/CreateOrganization';
+organizationsCreateOrganization.PATH = '/market/api/v1/organizations/CreateOrganization';

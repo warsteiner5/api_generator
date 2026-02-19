@@ -27,4 +27,4 @@ export function participantOfferExportToExcel(http: HttpClient, rootUrl: string,
   );
 }
 
-participantOfferExportToExcel.PATH = '/bla-bla-vla/participantoffer/exporttoexcel';
+participantOfferExportToExcel.PATH = '/api/participantoffer/exporttoexcel';

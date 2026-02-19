@@ -30,4 +30,4 @@ export function accountsExportTransactionToExcel(http: HttpClient, rootUrl: stri
   );
 }
 
-accountsExportTransactionToExcel.PATH = '/bla-bla-vla/accounts/my/{accountNumber}/transactions/export';
+accountsExportTransactionToExcel.PATH = '/market/api/v1/accounts/my/{accountNumber}/transactions/export';

@@ -27,4 +27,4 @@ export function organizationsGetVCard(http: HttpClient, rootUrl: string, params:
   );
 }
 
-organizationsGetVCard.PATH = '/bla-bla-vla/organizations/{guid}/vcard';
+organizationsGetVCard.PATH = '/market/api/v1/organizations/{guid}/vcard';

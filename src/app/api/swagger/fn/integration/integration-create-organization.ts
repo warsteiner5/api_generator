@@ -28,4 +28,4 @@ export function integrationCreateOrganization(http: HttpClient, rootUrl: string,
   );
 }
 
-integrationCreateOrganization.PATH = '/bla-bla-vla/integration/organization';
+integrationCreateOrganization.PATH = '/market/api/v1/integration/organization';

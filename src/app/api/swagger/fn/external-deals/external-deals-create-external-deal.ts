@@ -29,4 +29,4 @@ export function externalDealsCreateExternalDeal(http: HttpClient, rootUrl: strin
   );
 }
 
-externalDealsCreateExternalDeal.PATH = '/bla-bla-vla/external-deals';
+externalDealsCreateExternalDeal.PATH = '/market/api/v1/external-deals';

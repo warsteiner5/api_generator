@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import { ApiBidInfoAltDto } from '../models/api-bid-info';
-export interface ApiMarketPaginationResultOfBidInfoOf {
+export interface ApiMarketPaginationResultOfBidInfoOfAltDto {
   currentPage?: number;
   items?: Array<ApiBidInfoAltDto> | null;
   total?: number;

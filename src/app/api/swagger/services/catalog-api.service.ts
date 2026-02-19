@@ -27,10 +27,10 @@ import { catalogTransliteCatalogItem } from '../fn/catalog/catalog-translite-cat
 import { CatalogTransliteCatalogItem$Params } from '../fn/catalog/catalog-translite-catalog-item';
 import { catalogUploadCatalog } from '../fn/catalog/catalog-upload-catalog';
 import { CatalogUploadCatalog$Params } from '../fn/catalog/catalog-upload-catalog';
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
 import { ApiMarketJsonResultOfCatalogItemDto } from '../models/api-market-json-result-of-catalog-item-dto';
 import { ApiMarketJsonResultOfListOfTreeNodeDto } from '../models/api-market-json-result-of-list-of-tree-node-dto';
-import { ApiMarketJsonResultOfString } from '../models/api-market-json-result-of-string';
+import { ApiMarketJsonResultOfStringAltDto } from '../models/api-market-json-result-of-string';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 
 @Injectable({ providedIn: 'root' })
@@ -40,7 +40,7 @@ export class CatalogApiService extends BaseService {
   }
 
   /** Path part for operation `catalogGetItemsByParent()` */
-  static readonly CatalogGetItemsByParentPath = '/bla-bla-vla/catalog/items/{parentId}';
+  static readonly CatalogGetItemsByParentPath = '/market/api/v1/catalog/items/{parentId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -65,7 +65,7 @@ export class CatalogApiService extends BaseService {
   }
 
   /** Path part for operation `catalogGetItem()` */
-  static readonly CatalogGetItemPath = '/bla-bla-vla/catalog/item/{id}';
+  static readonly CatalogGetItemPath = '/market/api/v1/catalog/item/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -90,7 +90,7 @@ export class CatalogApiService extends BaseService {
   }
 
   /** Path part for operation `catalogGetItemsByParentLatinName()` */
-  static readonly CatalogGetItemsByParentLatinNamePath = '/bla-bla-vla/catalog/items/transliterated/{parentTransliterate}';
+  static readonly CatalogGetItemsByParentLatinNamePath = '/market/api/v1/catalog/items/transliterated/{parentTransliterate}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -115,7 +115,7 @@ export class CatalogApiService extends BaseService {
   }
 
   /** Path part for operation `catalogGetItemByLatinName()` */
-  static readonly CatalogGetItemByLatinNamePath = '/bla-bla-vla/catalog/item/transliterated/{transliteratedValue}';
+  static readonly CatalogGetItemByLatinNamePath = '/market/api/v1/catalog/item/transliterated/{transliteratedValue}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -140,7 +140,7 @@ export class CatalogApiService extends BaseService {
   }
 
   /** Path part for operation `catalogGetItemsByLevel()` */
-  static readonly CatalogGetItemsByLevelPath = '/bla-bla-vla/catalog/lvl/{level}';
+  static readonly CatalogGetItemsByLevelPath = '/market/api/v1/catalog/lvl/{level}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -165,7 +165,7 @@ export class CatalogApiService extends BaseService {
   }
 
   /** Path part for operation `catalogUploadCatalog()` */
-  static readonly CatalogUploadCatalogPath = '/bla-bla-vla/catalog/uploadCatalog';
+  static readonly CatalogUploadCatalogPath = '/market/api/v1/catalog/uploadCatalog';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -173,7 +173,7 @@ export class CatalogApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  catalogUploadCatalog$Response(params?: CatalogUploadCatalog$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  catalogUploadCatalog$Response(params?: CatalogUploadCatalog$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return catalogUploadCatalog(this.http, this.rootUrl, params, context);
   }
 
@@ -183,14 +183,14 @@ export class CatalogApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  catalogUploadCatalog(params?: CatalogUploadCatalog$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  catalogUploadCatalog(params?: CatalogUploadCatalog$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.catalogUploadCatalog$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `catalogTransliteCatalogItem()` */
-  static readonly CatalogTransliteCatalogItemPath = '/bla-bla-vla/catalog/translate/{id}';
+  static readonly CatalogTransliteCatalogItemPath = '/market/api/v1/catalog/translate/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -198,7 +198,7 @@ export class CatalogApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  catalogTransliteCatalogItem$Response(params: CatalogTransliteCatalogItem$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+  catalogTransliteCatalogItem$Response(params: CatalogTransliteCatalogItem$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
     return catalogTransliteCatalogItem(this.http, this.rootUrl, params, context);
   }
 
@@ -208,14 +208,14 @@ export class CatalogApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  catalogTransliteCatalogItem(params: CatalogTransliteCatalogItem$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfString> {
+  catalogTransliteCatalogItem(params: CatalogTransliteCatalogItem$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfStringAltDto> {
     return this.catalogTransliteCatalogItem$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfString>): ApiMarketJsonResultOfString => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>): ApiMarketJsonResultOfStringAltDto => r.body)
     );
   }
 
   /** Path part for operation `catalogTransliteAllEmpty()` */
-  static readonly CatalogTransliteAllEmptyPath = '/bla-bla-vla/catalog/translate/allempty';
+  static readonly CatalogTransliteAllEmptyPath = '/market/api/v1/catalog/translate/allempty';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -240,7 +240,7 @@ export class CatalogApiService extends BaseService {
   }
 
   /** Path part for operation `catalogTransliteAll()` */
-  static readonly CatalogTransliteAllPath = '/bla-bla-vla/catalog/translate/all';
+  static readonly CatalogTransliteAllPath = '/market/api/v1/catalog/translate/all';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

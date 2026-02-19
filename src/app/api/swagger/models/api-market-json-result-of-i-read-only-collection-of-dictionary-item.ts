@@ -2,6 +2,6 @@
 /* eslint-disable */
 import { ApiDictionaryItemAltDto } from '../models/api-dictionary-item';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
-export type ApiMarketJsonResultOfIReadOnlyCollectionOfDictionaryItem = ApiMarketJsonVoidResultAltDto & {
+export type ApiMarketJsonResultOfIReadOnlyCollectionOfDictionaryItemAltDto = ApiMarketJsonVoidResultAltDto & {
 'data'?: Array<ApiDictionaryItemAltDto> | null;
 };

@@ -27,4 +27,4 @@ export function tradeGetParticipantInfoArchive(http: HttpClient, rootUrl: string
   );
 }
 
-tradeGetParticipantInfoArchive.PATH = '/bla-bla-vla/Trade/GetParticipantInfoArchive';
+tradeGetParticipantInfoArchive.PATH = '/api/Trade/GetParticipantInfoArchive';

@@ -28,4 +28,4 @@ export function dealSignDealOutsideEShop(http: HttpClient, rootUrl: string, para
   );
 }
 
-dealSignDealOutsideEShop.PATH = '/bla-bla-vla/Deal/SignDealOutsideEShop';
+dealSignDealOutsideEShop.PATH = '/api/Deal/SignDealOutsideEShop';

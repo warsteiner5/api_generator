@@ -28,4 +28,4 @@ export function tradesGetFiles(http: HttpClient, rootUrl: string, params: Trades
   );
 }
 
-tradesGetFiles.PATH = '/bla-bla-vla/trades/{tradeId}/files';
+tradesGetFiles.PATH = '/market/api/v1/trades/{tradeId}/files';

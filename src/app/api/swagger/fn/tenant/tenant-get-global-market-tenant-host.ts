@@ -25,4 +25,4 @@ export function tenantGetGlobalMarketTenantHost(http: HttpClient, rootUrl: strin
   );
 }
 
-tenantGetGlobalMarketTenantHost.PATH = '/bla-bla-vla/Tenant/getGlobalMarketTenantHost';
+tenantGetGlobalMarketTenantHost.PATH = '/api/Tenant/getGlobalMarketTenantHost';

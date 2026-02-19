@@ -25,4 +25,4 @@ export function organizationsIsCurrentOrganizationSmsp(http: HttpClient, rootUrl
   );
 }
 
-organizationsIsCurrentOrganizationSmsp.PATH = '/bla-bla-vla/organizations/IsSmsp';
+organizationsIsCurrentOrganizationSmsp.PATH = '/market/api/v1/organizations/IsSmsp';

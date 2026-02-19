@@ -29,4 +29,4 @@ export function offersPublishExternal(http: HttpClient, rootUrl: string, params?
   );
 }
 
-offersPublishExternal.PATH = '/bla-bla-vla/offers/publish/external';
+offersPublishExternal.PATH = '/market/api/v1/offers/publish/external';

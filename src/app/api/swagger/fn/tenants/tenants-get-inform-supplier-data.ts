@@ -28,4 +28,4 @@ export function tenantsGetInformSupplierData(http: HttpClient, rootUrl: string, 
   );
 }
 
-tenantsGetInformSupplierData.PATH = '/bla-bla-vla/tenants/inform-supplier-data/{tenantId}';
+tenantsGetInformSupplierData.PATH = '/market/api/v1/tenants/inform-supplier-data/{tenantId}';

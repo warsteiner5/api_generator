@@ -27,4 +27,4 @@ export function moderatorStop(http: HttpClient, rootUrl: string, params: Moderat
   );
 }
 
-moderatorStop.PATH = '/bla-bla-vla/moderator/{id}/stop';
+moderatorStop.PATH = '/market/api/v1/moderator/{id}/stop';

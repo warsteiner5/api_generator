@@ -25,4 +25,4 @@ export function organizationGetOrganizationInfo(http: HttpClient, rootUrl: strin
   );
 }
 
-organizationGetOrganizationInfo.PATH = '/bla-bla-vla/Organization/GetOrganizationInfo';
+organizationGetOrganizationInfo.PATH = '/api/Organization/GetOrganizationInfo';

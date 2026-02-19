@@ -29,4 +29,4 @@ export function tradePlansGetArchivePlans(http: HttpClient, rootUrl: string, par
   );
 }
 
-tradePlansGetArchivePlans.PATH = '/bla-bla-vla/plans/archive';
+tradePlansGetArchivePlans.PATH = '/market/api/v1/plans/archive';

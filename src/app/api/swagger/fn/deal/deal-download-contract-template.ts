@@ -29,4 +29,4 @@ export function dealDownloadContractTemplate(http: HttpClient, rootUrl: string, 
   );
 }
 
-dealDownloadContractTemplate.PATH = '/bla-bla-vla/Deal/{dealId}/application/{applicationId}/download/contract-template';
+dealDownloadContractTemplate.PATH = '/api/Deal/{dealId}/application/{applicationId}/download/contract-template';

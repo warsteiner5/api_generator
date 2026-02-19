@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfTradePublishResult } from '../../models/api-market-json-result-of-trade-publish-result';
+import { ApiMarketJsonResultOfTradePublishResultAltDto } from '../../models/api-market-json-result-of-trade-publish-result';
 
 export interface TradesNotTookPlaceRepublish$Params {
   tradeId: number;
 }
 
-export function tradesNotTookPlaceRepublish(http: HttpClient, rootUrl: string, params: TradesNotTookPlaceRepublish$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>> {
+export function tradesNotTookPlaceRepublish(http: HttpClient, rootUrl: string, params: TradesNotTookPlaceRepublish$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesNotTookPlaceRepublish.PATH, 'post');
   if (params) {
     rb.path('tradeId', params.tradeId, {});
@@ -23,9 +23,9 @@ export function tradesNotTookPlaceRepublish(http: HttpClient, rootUrl: string, p
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>;
     })
   );
 }
 
-tradesNotTookPlaceRepublish.PATH = '/bla-bla-vla/trades/nottookplace/republish/{tradeId}';
+tradesNotTookPlaceRepublish.PATH = '/market/api/v1/trades/nottookplace/republish/{tradeId}';

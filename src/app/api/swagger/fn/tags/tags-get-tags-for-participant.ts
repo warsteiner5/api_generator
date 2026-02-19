@@ -26,4 +26,4 @@ export function tagsGetTagsForParticipant(http: HttpClient, rootUrl: string, par
   );
 }
 
-tagsGetTagsForParticipant.PATH = '/bla-bla-vla/tags/settings';
+tagsGetTagsForParticipant.PATH = '/market/api/v1/tags/settings';

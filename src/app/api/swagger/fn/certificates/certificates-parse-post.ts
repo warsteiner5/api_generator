@@ -30,4 +30,4 @@ export function certificatesParsePost(http: HttpClient, rootUrl: string, params:
   );
 }
 
-certificatesParsePost.PATH = '/bla-bla-vla/certificates/parse';
+certificatesParsePost.PATH = '/market/api/v1/certificates/parse';

@@ -28,4 +28,4 @@ export function dealsGetCountDownTime(http: HttpClient, rootUrl: string, params:
   );
 }
 
-dealsGetCountDownTime.PATH = '/bla-bla-vla/deals/{dealId}/countdown-time';
+dealsGetCountDownTime.PATH = '/market/api/v1/deals/{dealId}/countdown-time';

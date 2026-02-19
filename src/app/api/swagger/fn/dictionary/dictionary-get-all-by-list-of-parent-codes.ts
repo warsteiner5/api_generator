@@ -30,4 +30,4 @@ export function dictionaryGetAllByListOfParentCodes(http: HttpClient, rootUrl: s
   );
 }
 
-dictionaryGetAllByListOfParentCodes.PATH = '/bla-bla-vla/Dictionary/GetAllByListOfParentCodes';
+dictionaryGetAllByListOfParentCodes.PATH = '/api/Dictionary/GetAllByListOfParentCodes';

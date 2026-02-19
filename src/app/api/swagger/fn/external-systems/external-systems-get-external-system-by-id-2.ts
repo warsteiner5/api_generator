@@ -27,4 +27,4 @@ export function externalSystemsGetExternalSystemById2(http: HttpClient, rootUrl:
   );
 }
 
-externalSystemsGetExternalSystemById2.PATH = '/bla-bla-vla/ExternalSystems/{id}';
+externalSystemsGetExternalSystemById2.PATH = '/api/ExternalSystems/{id}';

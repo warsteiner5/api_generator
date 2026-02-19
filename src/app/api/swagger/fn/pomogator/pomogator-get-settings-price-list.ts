@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfPriceListItem } from '../../models/api-market-json-result-of-price-list-item';
+import { ApiMarketJsonResultOfPriceListItemAltDto } from '../../models/api-market-json-result-of-price-list-item';
 
 export interface PomogatorGetSettingsPriceList$Params {
   id: number;
 }
 
-export function pomogatorGetSettingsPriceList(http: HttpClient, rootUrl: string, params: PomogatorGetSettingsPriceList$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPriceListItem>> {
+export function pomogatorGetSettingsPriceList(http: HttpClient, rootUrl: string, params: PomogatorGetSettingsPriceList$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPriceListItemAltDto>> {
   const rb = new RequestBuilder(rootUrl, pomogatorGetSettingsPriceList.PATH, 'get');
   if (params) {
     rb.path('id', params.id, {});
@@ -23,9 +23,9 @@ export function pomogatorGetSettingsPriceList(http: HttpClient, rootUrl: string,
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfPriceListItem>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfPriceListItemAltDto>;
     })
   );
 }
 
-pomogatorGetSettingsPriceList.PATH = '/bla-bla-vla/pomogator/settings/price-lists/{id}';
+pomogatorGetSettingsPriceList.PATH = '/market/api/v1/pomogator/settings/price-lists/{id}';

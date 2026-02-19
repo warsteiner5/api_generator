@@ -29,4 +29,4 @@ export function dealsSendDealToEis(http: HttpClient, rootUrl: string, params?: D
   );
 }
 
-dealsSendDealToEis.PATH = '/bla-bla-vla/deals/send_to_eis';
+dealsSendDealToEis.PATH = '/market/api/v1/deals/send_to_eis';

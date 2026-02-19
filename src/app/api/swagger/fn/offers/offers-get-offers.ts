@@ -29,4 +29,4 @@ export function offersGetOffers(http: HttpClient, rootUrl: string, params?: Offe
   );
 }
 
-offersGetOffers.PATH = '/bla-bla-vla/offers/my';
+offersGetOffers.PATH = '/market/api/v1/offers/my';

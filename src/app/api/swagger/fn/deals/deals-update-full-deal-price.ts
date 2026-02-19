@@ -29,4 +29,4 @@ export function dealsUpdateFullDealPrice(http: HttpClient, rootUrl: string, para
   );
 }
 
-dealsUpdateFullDealPrice.PATH = '/bla-bla-vla/deals/price/change';
+dealsUpdateFullDealPrice.PATH = '/market/api/v1/deals/price/change';

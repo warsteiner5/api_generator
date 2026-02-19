@@ -29,4 +29,4 @@ export function prohibitionExclusionRegisterGetOrganizationSettings(http: HttpCl
   );
 }
 
-prohibitionExclusionRegisterGetOrganizationSettings.PATH = '/bla-bla-vla/ProhibitionExclusionRegister/GetOrgSettings';
+prohibitionExclusionRegisterGetOrganizationSettings.PATH = '/api/ProhibitionExclusionRegister/GetOrgSettings';

@@ -29,4 +29,4 @@ export function dealGetActualDocumentInfoRequest(http: HttpClient, rootUrl: stri
   );
 }
 
-dealGetActualDocumentInfoRequest.PATH = '/bla-bla-vla/Deal/GetActualDocumentInfo';
+dealGetActualDocumentInfoRequest.PATH = '/api/Deal/GetActualDocumentInfo';

@@ -28,4 +28,4 @@ export function filesByUrl(http: HttpClient, rootUrl: string, params?: FilesByUr
   );
 }
 
-filesByUrl.PATH = '/bla-bla-vla/files/uploadByUrl';
+filesByUrl.PATH = '/market/api/v1/files/uploadByUrl';

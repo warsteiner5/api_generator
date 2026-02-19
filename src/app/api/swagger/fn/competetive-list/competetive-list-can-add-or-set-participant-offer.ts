@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface CompetetiveListCanAddOrSetParticipantOffer$Params {
   competitiveListId: number;
 }
 
-export function competetiveListCanAddOrSetParticipantOffer(http: HttpClient, rootUrl: string, params: CompetetiveListCanAddOrSetParticipantOffer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function competetiveListCanAddOrSetParticipantOffer(http: HttpClient, rootUrl: string, params: CompetetiveListCanAddOrSetParticipantOffer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, competetiveListCanAddOrSetParticipantOffer.PATH, 'get');
   if (params) {
     rb.path('competitiveListId', params.competitiveListId, {});
@@ -23,9 +23,9 @@ export function competetiveListCanAddOrSetParticipantOffer(http: HttpClient, roo
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-competetiveListCanAddOrSetParticipantOffer.PATH = '/bla-bla-vla/competetivelist/{competitiveListId}/CanAddOrSetParticipantOffer';
+competetiveListCanAddOrSetParticipantOffer.PATH = '/market/api/v1/competetivelist/{competitiveListId}/CanAddOrSetParticipantOffer';

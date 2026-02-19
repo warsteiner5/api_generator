@@ -1,11 +1,11 @@
-import { ApiSearchResultOfOrderGridDtoForCustomerAlt } from '../../models/api-search-result-of-order-grid-dto-for-customer-alt.interface';
-import { ApiApiSearchResultOfOrderGridDtoForCustomerAltDto } from '../../../swagger/models/api-api-search-result-of-order-grid-dto-for-customer';
-import { adaptApiOrderGridDtoForCustomerAltDto } from './api-order-grid-dto-for-customer.adapter';
+import { ApiSearchResultOfOrderGridDtoForCustomer } from '../../models/api-search-result-of-order-grid-dto-for-customer.interface';
+import { ApiApiSearchResultOfOrderGridDtoForCustomer } from '../../../swagger/models/api-api-search-result-of-order-grid-dto-for-customer';
+import { adaptApiOrderGridDtoForCustomer } from './api-order-grid-dto-for-customer.adapter';
 
-export function adaptApiApiSearchResultOfOrderGridDtoForCustomerAltDto(source?: ApiSearchResultOfOrderGridDtoForCustomerAlt | null): ApiApiSearchResultOfOrderGridDtoForCustomerAltDto {
+export function adaptApiApiSearchResultOfOrderGridDtoForCustomer(source?: ApiSearchResultOfOrderGridDtoForCustomer | null): ApiApiSearchResultOfOrderGridDtoForCustomer {
   return {
     currpage: source?.currpage,
-    invdata: (source?.invdata ?? []).map((item) => adaptApiOrderGridDtoForCustomerAltDto(item)),
+    invdata: (source?.invdata ?? []).map((item) => adaptApiOrderGridDtoForCustomer(item)),
     showTotal: source?.showTotal,
     totalpages: source?.totalpages,
     totalrecords: source?.totalrecords,

@@ -31,4 +31,4 @@ export function accountGetExternalLogin(http: HttpClient, rootUrl: string, param
   );
 }
 
-accountGetExternalLogin.PATH = '/bla-bla-vla/Account/ExternalLogin';
+accountGetExternalLogin.PATH = '/api/Account/ExternalLogin';

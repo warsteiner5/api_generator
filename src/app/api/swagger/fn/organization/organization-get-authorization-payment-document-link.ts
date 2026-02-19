@@ -25,4 +25,4 @@ export function organizationGetAuthorizationPaymentDocumentLink(http: HttpClient
   );
 }
 
-organizationGetAuthorizationPaymentDocumentLink.PATH = '/bla-bla-vla/Organization/GetAuthorizationPaymentDocumentLink';
+organizationGetAuthorizationPaymentDocumentLink.PATH = '/api/Organization/GetAuthorizationPaymentDocumentLink';

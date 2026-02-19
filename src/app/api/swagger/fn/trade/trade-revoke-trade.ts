@@ -30,4 +30,4 @@ export function tradeRevokeTrade(http: HttpClient, rootUrl: string, params: Trad
   );
 }
 
-tradeRevokeTrade.PATH = '/bla-bla-vla/Trade/{id}/RevokeTrade';
+tradeRevokeTrade.PATH = '/api/Trade/{id}/RevokeTrade';

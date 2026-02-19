@@ -29,4 +29,4 @@ export function priceListsGetPaginatedPriceLists(http: HttpClient, rootUrl: stri
   );
 }
 
-priceListsGetPaginatedPriceLists.PATH = '/bla-bla-vla/priceLists/my';
+priceListsGetPaginatedPriceLists.PATH = '/market/api/v1/priceLists/my';

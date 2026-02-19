@@ -29,4 +29,4 @@ export function fileSignGetInfosForSign(http: HttpClient, rootUrl: string, param
   );
 }
 
-fileSignGetInfosForSign.PATH = '/bla-bla-vla/FileSign/GetInfosForSign';
+fileSignGetInfosForSign.PATH = '/api/FileSign/GetInfosForSign';

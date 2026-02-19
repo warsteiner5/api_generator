@@ -28,4 +28,4 @@ export function additionalAgreementsGetFullAdditionalAgreementData(http: HttpCli
   );
 }
 
-additionalAgreementsGetFullAdditionalAgreementData.PATH = '/bla-bla-vla/additionalAgreements/get-by-deal-id/{dealId}';
+additionalAgreementsGetFullAdditionalAgreementData.PATH = '/market/api/v1/additionalAgreements/get-by-deal-id/{dealId}';

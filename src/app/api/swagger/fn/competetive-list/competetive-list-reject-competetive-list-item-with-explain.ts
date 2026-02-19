@@ -29,4 +29,4 @@ export function competetiveListRejectCompetetiveListItemWithExplain(http: HttpCl
   );
 }
 
-competetiveListRejectCompetetiveListItemWithExplain.PATH = '/bla-bla-vla/competetivelist/reject';
+competetiveListRejectCompetetiveListItemWithExplain.PATH = '/market/api/v1/competetivelist/reject';

@@ -7,13 +7,13 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiCreateSegmentRequestAltDto } from '../../models/api-create-segment-request';
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
 
 export interface SegmentsCreate$Params {
       body?: ApiCreateSegmentRequestAltDto | null
 }
 
-export function segmentsCreate(http: HttpClient, rootUrl: string, params?: SegmentsCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function segmentsCreate(http: HttpClient, rootUrl: string, params?: SegmentsCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, segmentsCreate.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function segmentsCreate(http: HttpClient, rootUrl: string, params?: Segme
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-segmentsCreate.PATH = '/bla-bla-vla/Segment';
+segmentsCreate.PATH = '/market/api/v1/Segment';

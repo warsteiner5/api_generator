@@ -28,4 +28,4 @@ export function requirementRequestsGetCharacteristics(http: HttpClient, rootUrl:
   );
 }
 
-requirementRequestsGetCharacteristics.PATH = '/bla-bla-vla/RequirementRequests/get_characteristics/{characteristicIds}';
+requirementRequestsGetCharacteristics.PATH = '/market/api/v1/RequirementRequests/get_characteristics/{characteristicIds}';

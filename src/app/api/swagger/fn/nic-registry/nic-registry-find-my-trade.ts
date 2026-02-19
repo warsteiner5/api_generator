@@ -28,4 +28,4 @@ export function nicRegistryFindMyTrade(http: HttpClient, rootUrl: string, params
   );
 }
 
-nicRegistryFindMyTrade.PATH = '/bla-bla-vla/registry/nic/trade/{tradeNumber}';
+nicRegistryFindMyTrade.PATH = '/market/api/v1/registry/nic/trade/{tradeNumber}';

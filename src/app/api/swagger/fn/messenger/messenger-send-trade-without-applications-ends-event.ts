@@ -26,4 +26,4 @@ export function messengerSendTradeWithoutApplicationsEndsEvent(http: HttpClient,
   );
 }
 
-messengerSendTradeWithoutApplicationsEndsEvent.PATH = '/bla-bla-vla/messenger/sendTradeWithoutApplicationsEndsEvent';
+messengerSendTradeWithoutApplicationsEndsEvent.PATH = '/market/api/v1/messenger/sendTradeWithoutApplicationsEndsEvent';

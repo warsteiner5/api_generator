@@ -28,4 +28,4 @@ export function complaintClose(http: HttpClient, rootUrl: string, params?: Compl
   );
 }
 
-complaintClose.PATH = '/bla-bla-vla/complaint/close';
+complaintClose.PATH = '/market/api/v1/complaint/close';

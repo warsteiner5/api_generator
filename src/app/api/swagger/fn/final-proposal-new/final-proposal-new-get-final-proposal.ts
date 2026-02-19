@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfQuotationSessionFinalProposal } from '../../models/api-market-json-result-of-quotation-session-final-proposal';
+import { ApiMarketJsonResultOfQuotationSessionFinalProposalAltDto } from '../../models/api-market-json-result-of-quotation-session-final-proposal';
 
 export interface FinalProposalNewGetFinalProposal$Params {
   tradeGuid: string;
 }
 
-export function finalProposalNewGetFinalProposal(http: HttpClient, rootUrl: string, params: FinalProposalNewGetFinalProposal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionFinalProposal>> {
+export function finalProposalNewGetFinalProposal(http: HttpClient, rootUrl: string, params: FinalProposalNewGetFinalProposal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionFinalProposalAltDto>> {
   const rb = new RequestBuilder(rootUrl, finalProposalNewGetFinalProposal.PATH, 'get');
   if (params) {
     rb.path('tradeGuid', params.tradeGuid, {});
@@ -23,9 +23,9 @@ export function finalProposalNewGetFinalProposal(http: HttpClient, rootUrl: stri
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionFinalProposal>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfQuotationSessionFinalProposalAltDto>;
     })
   );
 }
 
-finalProposalNewGetFinalProposal.PATH = '/bla-bla-vla/final-proposal-new/{tradeGuid}';
+finalProposalNewGetFinalProposal.PATH = '/market/api/v1/final-proposal-new/{tradeGuid}';

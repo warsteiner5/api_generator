@@ -3,7 +3,7 @@ import { ApiUpdateDataModelAltDto } from '../../../swagger/models/api-update-dat
 import { adaptApiUpdatePropertyOfBooleanAltDto } from './api-update-property-of-boolean.adapter';
 import { adaptApiUpdatePropertyOfNullableDecimalAltDto } from './api-update-property-of-nullable-decimal.adapter';
 import { adaptApiUpdatePropertyOfStringAltDto } from './api-update-property-of-string.adapter';
-import { adaptApiUpdatePropertyOfStringOf } from './api-update-property-of-string-of.adapter';
+import { adaptApiUpdatePropertyOfStringOfAltDto } from './api-update-property-of-string-of.adapter';
 
 export function adaptApiUpdateDataModelAltDto(source?: UpdateDataModelAlt | null): ApiUpdateDataModelAltDto {
   return {
@@ -12,12 +12,12 @@ export function adaptApiUpdateDataModelAltDto(source?: UpdateDataModelAlt | null
     IsRemoved: adaptApiUpdatePropertyOfBooleanAltDto(source?.isRemoved),
     IsVisible: adaptApiUpdatePropertyOfBooleanAltDto(source?.isVisible),
     OkeiCode: adaptApiUpdatePropertyOfStringAltDto(source?.okeiCode),
-    Okpd2Codes: adaptApiUpdatePropertyOfStringOf(source?.okpd2Codes),
+    Okpd2Codes: adaptApiUpdatePropertyOfStringOfAltDto(source?.okpd2Codes),
     Price: adaptApiUpdatePropertyOfNullableDecimalAltDto(source?.price),
     ProductDescription: adaptApiUpdatePropertyOfStringAltDto(source?.productDescription),
     ProductName: adaptApiUpdatePropertyOfStringAltDto(source?.productName),
     Quantity: adaptApiUpdatePropertyOfNullableDecimalAltDto(source?.quantity),
-    RegionCodes: adaptApiUpdatePropertyOfStringOf(source?.regionCodes),
+    RegionCodes: adaptApiUpdatePropertyOfStringOfAltDto(source?.regionCodes),
     RegionalProductSignChecked: adaptApiUpdatePropertyOfBooleanAltDto(source?.regionalProductSignChecked),
   };
 }

@@ -28,4 +28,4 @@ export function requirementRequestsGetRequirementRequestsByOffer(http: HttpClien
   );
 }
 
-requirementRequestsGetRequirementRequestsByOffer.PATH = '/bla-bla-vla/RequirementRequests/byOffer/{participantOfferId}';
+requirementRequestsGetRequirementRequestsByOffer.PATH = '/market/api/v1/RequirementRequests/byOffer/{participantOfferId}';

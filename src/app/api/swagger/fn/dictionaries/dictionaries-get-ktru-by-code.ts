@@ -30,4 +30,4 @@ export function dictionariesGetKtruByCode(http: HttpClient, rootUrl: string, par
   );
 }
 
-dictionariesGetKtruByCode.PATH = '/bla-bla-vla/dictionaries/ktru/{code}/{version}';
+dictionariesGetKtruByCode.PATH = '/market/api/v1/dictionaries/ktru/{code}/{version}';

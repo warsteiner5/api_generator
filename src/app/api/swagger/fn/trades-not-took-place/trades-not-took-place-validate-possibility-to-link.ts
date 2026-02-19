@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfNotTookPlaceLinkValidationResult } from '../../models/api-market-json-result-of-not-took-place-link-validation-result';
+import { ApiMarketJsonResultOfNotTookPlaceLinkValidationResultAltDto } from '../../models/api-market-json-result-of-not-took-place-link-validation-result';
 
 export interface TradesNotTookPlaceValidatePossibilityToLink$Params {
   childTradeId: number;
 }
 
-export function tradesNotTookPlaceValidatePossibilityToLink(http: HttpClient, rootUrl: string, params: TradesNotTookPlaceValidatePossibilityToLink$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfNotTookPlaceLinkValidationResult>> {
+export function tradesNotTookPlaceValidatePossibilityToLink(http: HttpClient, rootUrl: string, params: TradesNotTookPlaceValidatePossibilityToLink$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfNotTookPlaceLinkValidationResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesNotTookPlaceValidatePossibilityToLink.PATH, 'get');
   if (params) {
     rb.path('childTradeId', params.childTradeId, {});
@@ -23,9 +23,9 @@ export function tradesNotTookPlaceValidatePossibilityToLink(http: HttpClient, ro
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfNotTookPlaceLinkValidationResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfNotTookPlaceLinkValidationResultAltDto>;
     })
   );
 }
 
-tradesNotTookPlaceValidatePossibilityToLink.PATH = '/bla-bla-vla/trades/nottookplace/link/{childTradeId}/validate';
+tradesNotTookPlaceValidatePossibilityToLink.PATH = '/market/api/v1/trades/nottookplace/link/{childTradeId}/validate';

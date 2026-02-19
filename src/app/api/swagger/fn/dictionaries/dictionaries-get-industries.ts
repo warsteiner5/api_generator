@@ -26,4 +26,4 @@ export function dictionariesGetIndustries(http: HttpClient, rootUrl: string, par
   );
 }
 
-dictionariesGetIndustries.PATH = '/bla-bla-vla/dictionaries/industries';
+dictionariesGetIndustries.PATH = '/market/api/v1/dictionaries/industries';

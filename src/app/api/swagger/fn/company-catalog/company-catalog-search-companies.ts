@@ -29,4 +29,4 @@ export function companyCatalogSearchCompanies(http: HttpClient, rootUrl: string,
   );
 }
 
-companyCatalogSearchCompanies.PATH = '/bla-bla-vla/companies/search';
+companyCatalogSearchCompanies.PATH = '/market/api/v1/companies/search';

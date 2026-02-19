@@ -25,4 +25,4 @@ export function organizationCheckOrgHasEtpAgreement(http: HttpClient, rootUrl: s
   );
 }
 
-organizationCheckOrgHasEtpAgreement.PATH = '/bla-bla-vla/Organization/CheckOrgHasEtpAgreement';
+organizationCheckOrgHasEtpAgreement.PATH = '/api/Organization/CheckOrgHasEtpAgreement';

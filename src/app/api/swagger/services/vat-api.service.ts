@@ -9,8 +9,8 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfDecimal } from '../models/api-market-json-result-of-decimal';
-import { ApiMarketJsonResultOfLotPrice } from '../models/api-market-json-result-of-lot-price';
+import { ApiMarketJsonResultOfDecimalAltDto } from '../models/api-market-json-result-of-decimal';
+import { ApiMarketJsonResultOfLotPriceAltDto } from '../models/api-market-json-result-of-lot-price';
 import { vatCalculateSumApplyVat } from '../fn/vat/vat-calculate-sum-apply-vat';
 import { VatCalculateSumApplyVat$Params } from '../fn/vat/vat-calculate-sum-apply-vat';
 import { vatCalculateSumFromPositionsApplyVat } from '../fn/vat/vat-calculate-sum-from-positions-apply-vat';
@@ -25,7 +25,7 @@ export class VatApiService extends BaseService {
   }
 
   /** Path part for operation `vatGetPriceApplyVat()` */
-  static readonly VatGetPriceApplyVatPath = '/bla-bla-vla/vat/{rate}/price/{price}/include/{getPriceWithTax}';
+  static readonly VatGetPriceApplyVatPath = '/market/api/v1/vat/{rate}/price/{price}/include/{getPriceWithTax}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -33,7 +33,7 @@ export class VatApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  vatGetPriceApplyVat$Response(params: VatGetPriceApplyVat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimal>> {
+  vatGetPriceApplyVat$Response(params: VatGetPriceApplyVat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>> {
     return vatGetPriceApplyVat(this.http, this.rootUrl, params, context);
   }
 
@@ -43,14 +43,14 @@ export class VatApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  vatGetPriceApplyVat(params: VatGetPriceApplyVat$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDecimal> {
+  vatGetPriceApplyVat(params: VatGetPriceApplyVat$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDecimalAltDto> {
     return this.vatGetPriceApplyVat$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDecimal>): ApiMarketJsonResultOfDecimal => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>): ApiMarketJsonResultOfDecimalAltDto => r.body)
     );
   }
 
   /** Path part for operation `vatCalculateSumFromPositionsApplyVat()` */
-  static readonly VatCalculateSumFromPositionsApplyVatPath = '/bla-bla-vla/vat/sum/include/{isPriceWithoutVat}';
+  static readonly VatCalculateSumFromPositionsApplyVatPath = '/market/api/v1/vat/sum/include/{isPriceWithoutVat}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -58,7 +58,7 @@ export class VatApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  vatCalculateSumFromPositionsApplyVat$Response(params: VatCalculateSumFromPositionsApplyVat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLotPrice>> {
+  vatCalculateSumFromPositionsApplyVat$Response(params: VatCalculateSumFromPositionsApplyVat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLotPriceAltDto>> {
     return vatCalculateSumFromPositionsApplyVat(this.http, this.rootUrl, params, context);
   }
 
@@ -68,14 +68,14 @@ export class VatApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  vatCalculateSumFromPositionsApplyVat(params: VatCalculateSumFromPositionsApplyVat$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLotPrice> {
+  vatCalculateSumFromPositionsApplyVat(params: VatCalculateSumFromPositionsApplyVat$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLotPriceAltDto> {
     return this.vatCalculateSumFromPositionsApplyVat$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfLotPrice>): ApiMarketJsonResultOfLotPrice => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfLotPriceAltDto>): ApiMarketJsonResultOfLotPriceAltDto => r.body)
     );
   }
 
   /** Path part for operation `vatCalculateSumApplyVat()` */
-  static readonly VatCalculateSumApplyVatPath = '/bla-bla-vla/vat/sum/{isPriceWithoutVat}';
+  static readonly VatCalculateSumApplyVatPath = '/market/api/v1/vat/sum/{isPriceWithoutVat}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -83,7 +83,7 @@ export class VatApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  vatCalculateSumApplyVat$Response(params: VatCalculateSumApplyVat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLotPrice>> {
+  vatCalculateSumApplyVat$Response(params: VatCalculateSumApplyVat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLotPriceAltDto>> {
     return vatCalculateSumApplyVat(this.http, this.rootUrl, params, context);
   }
 
@@ -93,9 +93,9 @@ export class VatApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  vatCalculateSumApplyVat(params: VatCalculateSumApplyVat$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLotPrice> {
+  vatCalculateSumApplyVat(params: VatCalculateSumApplyVat$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLotPriceAltDto> {
     return this.vatCalculateSumApplyVat$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfLotPrice>): ApiMarketJsonResultOfLotPrice => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfLotPriceAltDto>): ApiMarketJsonResultOfLotPriceAltDto => r.body)
     );
   }
 

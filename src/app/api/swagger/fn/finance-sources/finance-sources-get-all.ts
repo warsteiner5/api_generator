@@ -26,4 +26,4 @@ export function financeSourcesGetAll(http: HttpClient, rootUrl: string, params?:
   );
 }
 
-financeSourcesGetAll.PATH = '/bla-bla-vla/financeSources/GetAll';
+financeSourcesGetAll.PATH = '/market/api/v1/financeSources/GetAll';

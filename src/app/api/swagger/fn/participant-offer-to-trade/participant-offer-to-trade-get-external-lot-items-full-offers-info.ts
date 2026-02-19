@@ -28,4 +28,4 @@ export function participantOfferToTradeGetExternalLotItemsFullOffersInfo(http: H
   );
 }
 
-participantOfferToTradeGetExternalLotItemsFullOffersInfo.PATH = '/bla-bla-vla/offerToTrade/{tradeId}/participant-offers/external/full-info';
+participantOfferToTradeGetExternalLotItemsFullOffersInfo.PATH = '/market/api/v1/offerToTrade/{tradeId}/participant-offers/external/full-info';

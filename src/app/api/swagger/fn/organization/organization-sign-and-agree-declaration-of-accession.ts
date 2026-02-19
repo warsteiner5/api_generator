@@ -28,4 +28,4 @@ export function organizationSignAndAgreeDeclarationOfAccession(http: HttpClient,
   );
 }
 
-organizationSignAndAgreeDeclarationOfAccession.PATH = '/bla-bla-vla/Organization/SignAndAgreeDeclarationOfAccession';
+organizationSignAndAgreeDeclarationOfAccession.PATH = '/api/Organization/SignAndAgreeDeclarationOfAccession';

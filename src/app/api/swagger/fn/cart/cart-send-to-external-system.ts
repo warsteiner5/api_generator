@@ -28,4 +28,4 @@ export function cartSendToExternalSystem(http: HttpClient, rootUrl: string, para
   );
 }
 
-cartSendToExternalSystem.PATH = '/bla-bla-vla/carts/to-external-system';
+cartSendToExternalSystem.PATH = '/market/api/v1/carts/to-external-system';

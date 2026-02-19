@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface TradesReadChatItemByIds$Params {
   id: number;
@@ -14,7 +14,7 @@ export interface TradesReadChatItemByIds$Params {
       body?: Array<number> | null
 }
 
-export function tradesReadChatItemByIds(http: HttpClient, rootUrl: string, params: TradesReadChatItemByIds$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function tradesReadChatItemByIds(http: HttpClient, rootUrl: string, params: TradesReadChatItemByIds$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesReadChatItemByIds.PATH, 'post');
   if (params) {
     rb.path('id', params.id, {});
@@ -27,9 +27,9 @@ export function tradesReadChatItemByIds(http: HttpClient, rootUrl: string, param
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-tradesReadChatItemByIds.PATH = '/bla-bla-vla/trades/{id}/chat/{chatId}/read';
+tradesReadChatItemByIds.PATH = '/market/api/v1/trades/{id}/chat/{chatId}/read';

@@ -27,4 +27,4 @@ export function participantOfferGetParticipantOfferForEdit(http: HttpClient, roo
   );
 }
 
-participantOfferGetParticipantOfferForEdit.PATH = '/bla-bla-vla/participantoffer/{id}/GetParticipantOfferForEdit';
+participantOfferGetParticipantOfferForEdit.PATH = '/api/participantoffer/{id}/GetParticipantOfferForEdit';

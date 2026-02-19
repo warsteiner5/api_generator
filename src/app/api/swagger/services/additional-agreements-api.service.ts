@@ -34,7 +34,7 @@ import { AdditionalAgreementsSignExternal$Params } from '../fn/additional-agreem
 import { ApiMarketJsonResultOfAdditionalAgreementHashToSignDto } from '../models/api-market-json-result-of-additional-agreement-hash-to-sign-dto';
 import { ApiMarketJsonResultOfCertificateViewModelDto } from '../models/api-market-json-result-of-certificate-view-model-dto';
 import { ApiMarketJsonResultOfIListOfAdditionalAgreementDto } from '../models/api-market-json-result-of-i-list-of-additional-agreement-dto';
-import { ApiMarketJsonResultOfLong } from '../models/api-market-json-result-of-long';
+import { ApiMarketJsonResultOfLongAltDto } from '../models/api-market-json-result-of-long';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 
 @Injectable({ providedIn: 'root' })
@@ -44,7 +44,7 @@ export class AdditionalAgreementsApiService extends BaseService {
   }
 
   /** Path part for operation `additionalAgreementsCreate()` */
-  static readonly AdditionalAgreementsCreatePath = '/bla-bla-vla/additionalAgreements/create';
+  static readonly AdditionalAgreementsCreatePath = '/market/api/v1/additionalAgreements/create';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -52,7 +52,7 @@ export class AdditionalAgreementsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  additionalAgreementsCreate$Response(params?: AdditionalAgreementsCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLong>> {
+  additionalAgreementsCreate$Response(params?: AdditionalAgreementsCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>> {
     return additionalAgreementsCreate(this.http, this.rootUrl, params, context);
   }
 
@@ -62,14 +62,14 @@ export class AdditionalAgreementsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  additionalAgreementsCreate(params?: AdditionalAgreementsCreate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLong> {
+  additionalAgreementsCreate(params?: AdditionalAgreementsCreate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLongAltDto> {
     return this.additionalAgreementsCreate$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfLong>): ApiMarketJsonResultOfLong => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>): ApiMarketJsonResultOfLongAltDto => r.body)
     );
   }
 
   /** Path part for operation `additionalAgreementsSend()` */
-  static readonly AdditionalAgreementsSendPath = '/bla-bla-vla/additionalAgreements/{id}/send-to-customer';
+  static readonly AdditionalAgreementsSendPath = '/market/api/v1/additionalAgreements/{id}/send-to-customer';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -94,7 +94,7 @@ export class AdditionalAgreementsApiService extends BaseService {
   }
 
   /** Path part for operation `additionalAgreementsSendToParticipant()` */
-  static readonly AdditionalAgreementsSendToParticipantPath = '/bla-bla-vla/additionalAgreements/{id}/send-to-participant';
+  static readonly AdditionalAgreementsSendToParticipantPath = '/market/api/v1/additionalAgreements/{id}/send-to-participant';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -119,7 +119,7 @@ export class AdditionalAgreementsApiService extends BaseService {
   }
 
   /** Path part for operation `additionalAgreementsSend2()` */
-  static readonly AdditionalAgreementsSend2Path = '/bla-bla-vla/additionalAgreements/send';
+  static readonly AdditionalAgreementsSend2Path = '/market/api/v1/additionalAgreements/send';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -144,7 +144,7 @@ export class AdditionalAgreementsApiService extends BaseService {
   }
 
   /** Path part for operation `additionalAgreementsSign()` */
-  static readonly AdditionalAgreementsSignPath = '/bla-bla-vla/additionalAgreements/sign';
+  static readonly AdditionalAgreementsSignPath = '/market/api/v1/additionalAgreements/sign';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -169,7 +169,7 @@ export class AdditionalAgreementsApiService extends BaseService {
   }
 
   /** Path part for operation `additionalAgreementsSignExternal()` */
-  static readonly AdditionalAgreementsSignExternalPath = '/bla-bla-vla/additionalAgreements/sign-external';
+  static readonly AdditionalAgreementsSignExternalPath = '/market/api/v1/additionalAgreements/sign-external';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -194,7 +194,7 @@ export class AdditionalAgreementsApiService extends BaseService {
   }
 
   /** Path part for operation `additionalAgreementsReject()` */
-  static readonly AdditionalAgreementsRejectPath = '/bla-bla-vla/additionalAgreements/reject';
+  static readonly AdditionalAgreementsRejectPath = '/market/api/v1/additionalAgreements/reject';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -219,7 +219,7 @@ export class AdditionalAgreementsApiService extends BaseService {
   }
 
   /** Path part for operation `additionalAgreementsRejectExternal()` */
-  static readonly AdditionalAgreementsRejectExternalPath = '/bla-bla-vla/additionalAgreements/reject-external';
+  static readonly AdditionalAgreementsRejectExternalPath = '/market/api/v1/additionalAgreements/reject-external';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -244,7 +244,7 @@ export class AdditionalAgreementsApiService extends BaseService {
   }
 
   /** Path part for operation `additionalAgreementsGetFullAdditionalAgreementData()` */
-  static readonly AdditionalAgreementsGetFullAdditionalAgreementDataPath = '/bla-bla-vla/additionalAgreements/get-by-deal-id/{dealId}';
+  static readonly AdditionalAgreementsGetFullAdditionalAgreementDataPath = '/market/api/v1/additionalAgreements/get-by-deal-id/{dealId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -269,7 +269,7 @@ export class AdditionalAgreementsApiService extends BaseService {
   }
 
   /** Path part for operation `additionalAgreementsGetDataToSign()` */
-  static readonly AdditionalAgreementsGetDataToSignPath = '/bla-bla-vla/additionalAgreements/data-to-sign';
+  static readonly AdditionalAgreementsGetDataToSignPath = '/market/api/v1/additionalAgreements/data-to-sign';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -294,7 +294,7 @@ export class AdditionalAgreementsApiService extends BaseService {
   }
 
   /** Path part for operation `additionalAgreementsGetDocumentFileDigitalSignature()` */
-  static readonly AdditionalAgreementsGetDocumentFileDigitalSignaturePath = '/bla-bla-vla/additionalAgreements/file-digital-signature';
+  static readonly AdditionalAgreementsGetDocumentFileDigitalSignaturePath = '/market/api/v1/additionalAgreements/file-digital-signature';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

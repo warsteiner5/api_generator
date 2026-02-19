@@ -27,4 +27,4 @@ export function cartExportCartItemsToExcel(http: HttpClient, rootUrl: string, pa
   );
 }
 
-cartExportCartItemsToExcel.PATH = '/bla-bla-vla/carts/{cartId}/export-excel';
+cartExportCartItemsToExcel.PATH = '/market/api/v1/carts/{cartId}/export-excel';

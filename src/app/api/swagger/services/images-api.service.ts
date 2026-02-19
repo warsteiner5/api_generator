@@ -23,7 +23,7 @@ export class ImagesApiService extends BaseService {
   }
 
   /** Path part for operation `imagesCompressImages()` */
-  static readonly ImagesCompressImagesPath = '/bla-bla-vla/images/compress';
+  static readonly ImagesCompressImagesPath = '/market/api/v1/images/compress';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -48,7 +48,7 @@ export class ImagesApiService extends BaseService {
   }
 
   /** Path part for operation `imagesUpload()` */
-  static readonly ImagesUploadPath = '/bla-bla-vla/images';
+  static readonly ImagesUploadPath = '/market/api/v1/images';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -73,7 +73,7 @@ export class ImagesApiService extends BaseService {
   }
 
   /** Path part for operation `imagesGetFavicon()` */
-  static readonly ImagesGetFaviconPath = '/bla-bla-vla/images/favicon';
+  static readonly ImagesGetFaviconPath = '/market/api/v1/images/favicon';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

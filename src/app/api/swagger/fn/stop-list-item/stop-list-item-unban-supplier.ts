@@ -29,4 +29,4 @@ export function stopListItemUnbanSupplier(http: HttpClient, rootUrl: string, par
   );
 }
 
-stopListItemUnbanSupplier.PATH = '/bla-bla-vla/stoplistitem/unban';
+stopListItemUnbanSupplier.PATH = '/market/api/v1/stoplistitem/unban';

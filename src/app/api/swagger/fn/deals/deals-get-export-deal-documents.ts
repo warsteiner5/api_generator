@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfNullableGuid } from '../../models/api-market-json-result-of-nullable-guid';
+import { ApiMarketJsonResultOfNullableGuidAltDto } from '../../models/api-market-json-result-of-nullable-guid';
 
 export interface DealsGetExportDealDocuments$Params {
   id: number;
   tradeId: number;
 }
 
-export function dealsGetExportDealDocuments(http: HttpClient, rootUrl: string, params: DealsGetExportDealDocuments$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfNullableGuid>> {
+export function dealsGetExportDealDocuments(http: HttpClient, rootUrl: string, params: DealsGetExportDealDocuments$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfNullableGuidAltDto>> {
   const rb = new RequestBuilder(rootUrl, dealsGetExportDealDocuments.PATH, 'get');
   if (params) {
     rb.query('id', params.id, {});
@@ -25,9 +25,9 @@ export function dealsGetExportDealDocuments(http: HttpClient, rootUrl: string, p
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfNullableGuid>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfNullableGuidAltDto>;
     })
   );
 }
 
-dealsGetExportDealDocuments.PATH = '/bla-bla-vla/deals/export_documents';
+dealsGetExportDealDocuments.PATH = '/market/api/v1/deals/export_documents';

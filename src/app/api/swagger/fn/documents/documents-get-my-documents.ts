@@ -29,4 +29,4 @@ export function documentsGetMyDocuments(http: HttpClient, rootUrl: string, param
   );
 }
 
-documentsGetMyDocuments.PATH = '/bla-bla-vla/documents/my';
+documentsGetMyDocuments.PATH = '/market/api/v1/documents/my';

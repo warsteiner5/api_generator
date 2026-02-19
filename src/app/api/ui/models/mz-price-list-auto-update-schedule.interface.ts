@@ -1,3 +1,3 @@
-import { BaseDtoWithCreateAndModificationDatesOfIntegerAlt } from './base-dto-with-create-and-modification-dates-of-integer-alt.interface';
+import { BaseDtoWithCreateAndModificationDatesOfInteger } from './base-dto-with-create-and-modification-dates-of-integer.interface';
 
-export type MzPriceListAutoUpdateSchedule = BaseDtoWithCreateAndModificationDatesOfIntegerAlt & { 'PriceListId'?: number; 'CronExpr'?: string | null; 'NextUpdateStart'?: string; 'AutoUpdateScheduleState'?: number; 'ExpirationDate'?: string | null; 'FailAttemptsCount'?: number; };
+export type MzPriceListAutoUpdateSchedule = BaseDtoWithCreateAndModificationDatesOfInteger & { 'PriceListId'?: number; 'CronExpr'?: string | null; 'NextUpdateStart'?: string; 'AutoUpdateScheduleState'?: number; 'ExpirationDate'?: string | null; 'FailAttemptsCount'?: number; };

@@ -9,9 +9,9 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
-import { ApiMarketJsonResultOfMarketPaginationResultOfListOfNotificationInfo } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-notification-info';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfMarketPaginationResultOfListOfNotificationInfoAltDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-notification-info';
 import { ApiMarketJsonResultOfNotificationDto } from '../models/api-market-json-result-of-notification-dto';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 import { notificationsGetNewNotificationsCount } from '../fn/notifications/notifications-get-new-notifications-count';
@@ -46,7 +46,7 @@ export class NotificationsApiService extends BaseService {
   }
 
   /** Path part for operation `notificationsGetNotifications()` */
-  static readonly NotificationsGetNotificationsPath = '/bla-bla-vla/notifications/my';
+  static readonly NotificationsGetNotificationsPath = '/market/api/v1/notifications/my';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -54,7 +54,7 @@ export class NotificationsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  notificationsGetNotifications$Response(params?: NotificationsGetNotifications$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfNotificationInfo>> {
+  notificationsGetNotifications$Response(params?: NotificationsGetNotifications$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfNotificationInfoAltDto>> {
     return notificationsGetNotifications(this.http, this.rootUrl, params, context);
   }
 
@@ -64,14 +64,14 @@ export class NotificationsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  notificationsGetNotifications(params?: NotificationsGetNotifications$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfListOfNotificationInfo> {
+  notificationsGetNotifications(params?: NotificationsGetNotifications$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketPaginationResultOfListOfNotificationInfoAltDto> {
     return this.notificationsGetNotifications$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfNotificationInfo>): ApiMarketJsonResultOfMarketPaginationResultOfListOfNotificationInfo => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfListOfNotificationInfoAltDto>): ApiMarketJsonResultOfMarketPaginationResultOfListOfNotificationInfoAltDto => r.body)
     );
   }
 
   /** Path part for operation `notificationsGetNotification()` */
-  static readonly NotificationsGetNotificationPath = '/bla-bla-vla/notifications/{id}';
+  static readonly NotificationsGetNotificationPath = '/market/api/v1/notifications/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -96,7 +96,7 @@ export class NotificationsApiService extends BaseService {
   }
 
   /** Path part for operation `notificationsGetNewNotificationsCount()` */
-  static readonly NotificationsGetNewNotificationsCountPath = '/bla-bla-vla/notifications/unread/count';
+  static readonly NotificationsGetNewNotificationsCountPath = '/market/api/v1/notifications/unread/count';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -104,7 +104,7 @@ export class NotificationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  notificationsGetNewNotificationsCount$Response(params?: NotificationsGetNewNotificationsCount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  notificationsGetNewNotificationsCount$Response(params?: NotificationsGetNewNotificationsCount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return notificationsGetNewNotificationsCount(this.http, this.rootUrl, params, context);
   }
 
@@ -114,14 +114,14 @@ export class NotificationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  notificationsGetNewNotificationsCount(params?: NotificationsGetNewNotificationsCount$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  notificationsGetNewNotificationsCount(params?: NotificationsGetNewNotificationsCount$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.notificationsGetNewNotificationsCount$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `notificationsGetNotificationsCount()` */
-  static readonly NotificationsGetNotificationsCountPath = '/bla-bla-vla/notifications/count';
+  static readonly NotificationsGetNotificationsCountPath = '/market/api/v1/notifications/count';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -129,7 +129,7 @@ export class NotificationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  notificationsGetNotificationsCount$Response(params?: NotificationsGetNotificationsCount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  notificationsGetNotificationsCount$Response(params?: NotificationsGetNotificationsCount$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return notificationsGetNotificationsCount(this.http, this.rootUrl, params, context);
   }
 
@@ -139,14 +139,14 @@ export class NotificationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  notificationsGetNotificationsCount(params?: NotificationsGetNotificationsCount$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  notificationsGetNotificationsCount(params?: NotificationsGetNotificationsCount$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.notificationsGetNotificationsCount$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `notificationsMarkAllNotificationsAsRead()` */
-  static readonly NotificationsMarkAllNotificationsAsReadPath = '/bla-bla-vla/notifications/unread/mark';
+  static readonly NotificationsMarkAllNotificationsAsReadPath = '/market/api/v1/notifications/unread/mark';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -154,7 +154,7 @@ export class NotificationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  notificationsMarkAllNotificationsAsRead$Response(params?: NotificationsMarkAllNotificationsAsRead$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  notificationsMarkAllNotificationsAsRead$Response(params?: NotificationsMarkAllNotificationsAsRead$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return notificationsMarkAllNotificationsAsRead(this.http, this.rootUrl, params, context);
   }
 
@@ -164,14 +164,14 @@ export class NotificationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  notificationsMarkAllNotificationsAsRead(params?: NotificationsMarkAllNotificationsAsRead$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  notificationsMarkAllNotificationsAsRead(params?: NotificationsMarkAllNotificationsAsRead$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.notificationsMarkAllNotificationsAsRead$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `notificationsSendParticipantOfferTermsEndNotifications()` */
-  static readonly NotificationsSendParticipantOfferTermsEndNotificationsPath = '/bla-bla-vla/notifications/sendOfferEndTermsNotifications';
+  static readonly NotificationsSendParticipantOfferTermsEndNotificationsPath = '/market/api/v1/notifications/sendOfferEndTermsNotifications';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -196,7 +196,7 @@ export class NotificationsApiService extends BaseService {
   }
 
   /** Path part for operation `notificationsSendApplicatonEndDateNotificationForMmo()` */
-  static readonly NotificationsSendApplicatonEndDateNotificationForMmoPath = '/bla-bla-vla/notifications/{tradeId}/send-application-end-date-mmo';
+  static readonly NotificationsSendApplicatonEndDateNotificationForMmoPath = '/market/api/v1/notifications/{tradeId}/send-application-end-date-mmo';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -204,7 +204,7 @@ export class NotificationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  notificationsSendApplicatonEndDateNotificationForMmo$Response(params: NotificationsSendApplicatonEndDateNotificationForMmo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  notificationsSendApplicatonEndDateNotificationForMmo$Response(params: NotificationsSendApplicatonEndDateNotificationForMmo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return notificationsSendApplicatonEndDateNotificationForMmo(this.http, this.rootUrl, params, context);
   }
 
@@ -214,14 +214,14 @@ export class NotificationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  notificationsSendApplicatonEndDateNotificationForMmo(params: NotificationsSendApplicatonEndDateNotificationForMmo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  notificationsSendApplicatonEndDateNotificationForMmo(params: NotificationsSendApplicatonEndDateNotificationForMmo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.notificationsSendApplicatonEndDateNotificationForMmo$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `notificationsSendDealWarningNotificationForMmo()` */
-  static readonly NotificationsSendDealWarningNotificationForMmoPath = '/bla-bla-vla/notifications/{tradeId}/{dealId}/send-deal-warn-mmo';
+  static readonly NotificationsSendDealWarningNotificationForMmoPath = '/market/api/v1/notifications/{tradeId}/{dealId}/send-deal-warn-mmo';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -229,7 +229,7 @@ export class NotificationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  notificationsSendDealWarningNotificationForMmo$Response(params: NotificationsSendDealWarningNotificationForMmo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  notificationsSendDealWarningNotificationForMmo$Response(params: NotificationsSendDealWarningNotificationForMmo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return notificationsSendDealWarningNotificationForMmo(this.http, this.rootUrl, params, context);
   }
 
@@ -239,14 +239,14 @@ export class NotificationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  notificationsSendDealWarningNotificationForMmo(params: NotificationsSendDealWarningNotificationForMmo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  notificationsSendDealWarningNotificationForMmo(params: NotificationsSendDealWarningNotificationForMmo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.notificationsSendDealWarningNotificationForMmo$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `notificationsSendDealSigningExpiredNotification()` */
-  static readonly NotificationsSendDealSigningExpiredNotificationPath = '/bla-bla-vla/notifications/send-deal-signing-expired';
+  static readonly NotificationsSendDealSigningExpiredNotificationPath = '/market/api/v1/notifications/send-deal-signing-expired';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -254,7 +254,7 @@ export class NotificationsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  notificationsSendDealSigningExpiredNotification$Response(params?: NotificationsSendDealSigningExpiredNotification$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  notificationsSendDealSigningExpiredNotification$Response(params?: NotificationsSendDealSigningExpiredNotification$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return notificationsSendDealSigningExpiredNotification(this.http, this.rootUrl, params, context);
   }
 
@@ -264,14 +264,14 @@ export class NotificationsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  notificationsSendDealSigningExpiredNotification(params?: NotificationsSendDealSigningExpiredNotification$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  notificationsSendDealSigningExpiredNotification(params?: NotificationsSendDealSigningExpiredNotification$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.notificationsSendDealSigningExpiredNotification$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `notificationsSendMmoTradeFromDealSigningToDealNotSignedNotification()` */
-  static readonly NotificationsSendMmoTradeFromDealSigningToDealNotSignedNotificationPath = '/bla-bla-vla/notifications/{tradeId}/{dealId}/SendMmoTradeFromDealSigningToDealNotSigned';
+  static readonly NotificationsSendMmoTradeFromDealSigningToDealNotSignedNotificationPath = '/market/api/v1/notifications/{tradeId}/{dealId}/SendMmoTradeFromDealSigningToDealNotSigned';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -279,7 +279,7 @@ export class NotificationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  notificationsSendMmoTradeFromDealSigningToDealNotSignedNotification$Response(params: NotificationsSendMmoTradeFromDealSigningToDealNotSignedNotification$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  notificationsSendMmoTradeFromDealSigningToDealNotSignedNotification$Response(params: NotificationsSendMmoTradeFromDealSigningToDealNotSignedNotification$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return notificationsSendMmoTradeFromDealSigningToDealNotSignedNotification(this.http, this.rootUrl, params, context);
   }
 
@@ -289,14 +289,14 @@ export class NotificationsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  notificationsSendMmoTradeFromDealSigningToDealNotSignedNotification(params: NotificationsSendMmoTradeFromDealSigningToDealNotSignedNotification$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  notificationsSendMmoTradeFromDealSigningToDealNotSignedNotification(params: NotificationsSendMmoTradeFromDealSigningToDealNotSignedNotification$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.notificationsSendMmoTradeFromDealSigningToDealNotSignedNotification$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `notificationsSendFirstRedirectFromZmoToMarketNotification()` */
-  static readonly NotificationsSendFirstRedirectFromZmoToMarketNotificationPath = '/bla-bla-vla/notifications/send-first-redirect-from-zmo-to-market';
+  static readonly NotificationsSendFirstRedirectFromZmoToMarketNotificationPath = '/market/api/v1/notifications/send-first-redirect-from-zmo-to-market';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -321,7 +321,7 @@ export class NotificationsApiService extends BaseService {
   }
 
   /** Path part for operation `notificationsSendPreliminaryOfferRequestsToSupplier()` */
-  static readonly NotificationsSendPreliminaryOfferRequestsToSupplierPath = '/bla-bla-vla/notifications/send-preliminary-offer-requests';
+  static readonly NotificationsSendPreliminaryOfferRequestsToSupplierPath = '/market/api/v1/notifications/send-preliminary-offer-requests';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

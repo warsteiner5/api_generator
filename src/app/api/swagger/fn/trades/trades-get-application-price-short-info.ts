@@ -28,4 +28,4 @@ export function tradesGetApplicationPriceShortInfo(http: HttpClient, rootUrl: st
   );
 }
 
-tradesGetApplicationPriceShortInfo.PATH = '/bla-bla-vla/trades/application/{applicationId}/price';
+tradesGetApplicationPriceShortInfo.PATH = '/market/api/v1/trades/application/{applicationId}/price';

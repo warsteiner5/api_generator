@@ -9,8 +9,8 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
-import { ApiMarketJsonResultOfMarketOrganizationSettings } from '../models/api-market-json-result-of-market-organization-settings';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfMarketOrganizationSettingsAltDto } from '../models/api-market-json-result-of-market-organization-settings';
 import { organizationPurchasePrefsGetPurchaseSettings } from '../fn/organization-purchase-prefs/organization-purchase-prefs-get-purchase-settings';
 import { OrganizationPurchasePrefsGetPurchaseSettings$Params } from '../fn/organization-purchase-prefs/organization-purchase-prefs-get-purchase-settings';
 import { organizationPurchasePrefsSetEisPrefs } from '../fn/organization-purchase-prefs/organization-purchase-prefs-set-eis-prefs';
@@ -31,7 +31,7 @@ export class OrganizationPurchasePrefsApiService extends BaseService {
   }
 
   /** Path part for operation `organizationPurchasePrefsGetPurchaseSettings()` */
-  static readonly OrganizationPurchasePrefsGetPurchaseSettingsPath = '/bla-bla-vla/organization/purchase-settings/my';
+  static readonly OrganizationPurchasePrefsGetPurchaseSettingsPath = '/market/api/v1/organization/purchase-settings/my';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -39,7 +39,7 @@ export class OrganizationPurchasePrefsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  organizationPurchasePrefsGetPurchaseSettings$Response(params?: OrganizationPurchasePrefsGetPurchaseSettings$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketOrganizationSettings>> {
+  organizationPurchasePrefsGetPurchaseSettings$Response(params?: OrganizationPurchasePrefsGetPurchaseSettings$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketOrganizationSettingsAltDto>> {
     return organizationPurchasePrefsGetPurchaseSettings(this.http, this.rootUrl, params, context);
   }
 
@@ -49,14 +49,14 @@ export class OrganizationPurchasePrefsApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  organizationPurchasePrefsGetPurchaseSettings(params?: OrganizationPurchasePrefsGetPurchaseSettings$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketOrganizationSettings> {
+  organizationPurchasePrefsGetPurchaseSettings(params?: OrganizationPurchasePrefsGetPurchaseSettings$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfMarketOrganizationSettingsAltDto> {
     return this.organizationPurchasePrefsGetPurchaseSettings$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketOrganizationSettings>): ApiMarketJsonResultOfMarketOrganizationSettings => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfMarketOrganizationSettingsAltDto>): ApiMarketJsonResultOfMarketOrganizationSettingsAltDto => r.body)
     );
   }
 
   /** Path part for operation `organizationPurchasePrefsSetEisPrefs()` */
-  static readonly OrganizationPurchasePrefsSetEisPrefsPath = '/bla-bla-vla/organization/purchase-settings/my/eis';
+  static readonly OrganizationPurchasePrefsSetEisPrefsPath = '/market/api/v1/organization/purchase-settings/my/eis';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -64,7 +64,7 @@ export class OrganizationPurchasePrefsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  organizationPurchasePrefsSetEisPrefs$Response(params?: OrganizationPurchasePrefsSetEisPrefs$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  organizationPurchasePrefsSetEisPrefs$Response(params?: OrganizationPurchasePrefsSetEisPrefs$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return organizationPurchasePrefsSetEisPrefs(this.http, this.rootUrl, params, context);
   }
 
@@ -74,14 +74,14 @@ export class OrganizationPurchasePrefsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  organizationPurchasePrefsSetEisPrefs(params?: OrganizationPurchasePrefsSetEisPrefs$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  organizationPurchasePrefsSetEisPrefs(params?: OrganizationPurchasePrefsSetEisPrefs$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.organizationPurchasePrefsSetEisPrefs$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `organizationPurchasePrefsSetM4DPrefs()` */
-  static readonly OrganizationPurchasePrefsSetM4DPrefsPath = '/bla-bla-vla/organization/purchase-settings/my/power-of-attorney';
+  static readonly OrganizationPurchasePrefsSetM4DPrefsPath = '/market/api/v1/organization/purchase-settings/my/power-of-attorney';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -89,7 +89,7 @@ export class OrganizationPurchasePrefsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  organizationPurchasePrefsSetM4DPrefs$Response(params?: OrganizationPurchasePrefsSetM4DPrefs$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  organizationPurchasePrefsSetM4DPrefs$Response(params?: OrganizationPurchasePrefsSetM4DPrefs$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return organizationPurchasePrefsSetM4DPrefs(this.http, this.rootUrl, params, context);
   }
 
@@ -99,14 +99,14 @@ export class OrganizationPurchasePrefsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  organizationPurchasePrefsSetM4DPrefs(params?: OrganizationPurchasePrefsSetM4DPrefs$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  organizationPurchasePrefsSetM4DPrefs(params?: OrganizationPurchasePrefsSetM4DPrefs$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.organizationPurchasePrefsSetM4DPrefs$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `organizationPurchasePrefsSetOtherPrefs()` */
-  static readonly OrganizationPurchasePrefsSetOtherPrefsPath = '/bla-bla-vla/organization/purchase-settings/my/other';
+  static readonly OrganizationPurchasePrefsSetOtherPrefsPath = '/market/api/v1/organization/purchase-settings/my/other';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -114,7 +114,7 @@ export class OrganizationPurchasePrefsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  organizationPurchasePrefsSetOtherPrefs$Response(params?: OrganizationPurchasePrefsSetOtherPrefs$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  organizationPurchasePrefsSetOtherPrefs$Response(params?: OrganizationPurchasePrefsSetOtherPrefs$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return organizationPurchasePrefsSetOtherPrefs(this.http, this.rootUrl, params, context);
   }
 
@@ -124,14 +124,14 @@ export class OrganizationPurchasePrefsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  organizationPurchasePrefsSetOtherPrefs(params?: OrganizationPurchasePrefsSetOtherPrefs$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  organizationPurchasePrefsSetOtherPrefs(params?: OrganizationPurchasePrefsSetOtherPrefs$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.organizationPurchasePrefsSetOtherPrefs$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `organizationPurchasePrefsSetHideApplicationData()` */
-  static readonly OrganizationPurchasePrefsSetHideApplicationDataPath = '/bla-bla-vla/organization/purchase-settings/my/hide-application';
+  static readonly OrganizationPurchasePrefsSetHideApplicationDataPath = '/market/api/v1/organization/purchase-settings/my/hide-application';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -139,7 +139,7 @@ export class OrganizationPurchasePrefsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  organizationPurchasePrefsSetHideApplicationData$Response(params?: OrganizationPurchasePrefsSetHideApplicationData$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  organizationPurchasePrefsSetHideApplicationData$Response(params?: OrganizationPurchasePrefsSetHideApplicationData$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return organizationPurchasePrefsSetHideApplicationData(this.http, this.rootUrl, params, context);
   }
 
@@ -149,14 +149,14 @@ export class OrganizationPurchasePrefsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  organizationPurchasePrefsSetHideApplicationData(params?: OrganizationPurchasePrefsSetHideApplicationData$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  organizationPurchasePrefsSetHideApplicationData(params?: OrganizationPurchasePrefsSetHideApplicationData$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.organizationPurchasePrefsSetHideApplicationData$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `organizationPurchasePrefsSetSignatureStampFormat()` */
-  static readonly OrganizationPurchasePrefsSetSignatureStampFormatPath = '/bla-bla-vla/organization/purchase-settings/my/signature-stamp-format';
+  static readonly OrganizationPurchasePrefsSetSignatureStampFormatPath = '/market/api/v1/organization/purchase-settings/my/signature-stamp-format';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -164,7 +164,7 @@ export class OrganizationPurchasePrefsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  organizationPurchasePrefsSetSignatureStampFormat$Response(params?: OrganizationPurchasePrefsSetSignatureStampFormat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  organizationPurchasePrefsSetSignatureStampFormat$Response(params?: OrganizationPurchasePrefsSetSignatureStampFormat$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return organizationPurchasePrefsSetSignatureStampFormat(this.http, this.rootUrl, params, context);
   }
 
@@ -174,9 +174,9 @@ export class OrganizationPurchasePrefsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  organizationPurchasePrefsSetSignatureStampFormat(params?: OrganizationPurchasePrefsSetSignatureStampFormat$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  organizationPurchasePrefsSetSignatureStampFormat(params?: OrganizationPurchasePrefsSetSignatureStampFormat$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.organizationPurchasePrefsSetSignatureStampFormat$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 

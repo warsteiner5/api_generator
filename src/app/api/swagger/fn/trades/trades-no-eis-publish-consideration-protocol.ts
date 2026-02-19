@@ -30,4 +30,4 @@ export function tradesNoEisPublishConsiderationProtocol(http: HttpClient, rootUr
   );
 }
 
-tradesNoEisPublishConsiderationProtocol.PATH = '/bla-bla-vla/trades/{id}/customer-comission-protocol/no-eis-publish';
+tradesNoEisPublishConsiderationProtocol.PATH = '/market/api/v1/trades/{id}/customer-comission-protocol/no-eis-publish';

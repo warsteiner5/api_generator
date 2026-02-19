@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfIReadOnlyCollectionOfKsrCategory } from '../../models/api-market-json-result-of-i-read-only-collection-of-ksr-category';
+import { ApiMarketJsonResultOfIReadOnlyCollectionOfKsrCategoryAltDto } from '../../models/api-market-json-result-of-i-read-only-collection-of-ksr-category';
 
 export interface DictionariesGetKsrMainCategories$Params {
 }
 
-export function dictionariesGetKsrMainCategories(http: HttpClient, rootUrl: string, params?: DictionariesGetKsrMainCategories$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfKsrCategory>> {
+export function dictionariesGetKsrMainCategories(http: HttpClient, rootUrl: string, params?: DictionariesGetKsrMainCategories$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfKsrCategoryAltDto>> {
   const rb = new RequestBuilder(rootUrl, dictionariesGetKsrMainCategories.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function dictionariesGetKsrMainCategories(http: HttpClient, rootUrl: stri
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfKsrCategory>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIReadOnlyCollectionOfKsrCategoryAltDto>;
     })
   );
 }
 
-dictionariesGetKsrMainCategories.PATH = '/bla-bla-vla/dictionaries/ksr/groups';
+dictionariesGetKsrMainCategories.PATH = '/market/api/v1/dictionaries/ksr/groups';

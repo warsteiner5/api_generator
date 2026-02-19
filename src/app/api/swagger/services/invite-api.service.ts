@@ -20,7 +20,7 @@ export class InviteApiService extends BaseService {
   }
 
   /** Path part for operation `inviteGetEmailsForInvite()` */
-  static readonly InviteGetEmailsForInvitePath = '/bla-bla-vla/invitation/emailParcse/{fileGuid}';
+  static readonly InviteGetEmailsForInvitePath = '/market/api/v1/invitation/emailParcse/{fileGuid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

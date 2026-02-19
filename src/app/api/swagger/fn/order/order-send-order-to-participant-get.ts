@@ -27,4 +27,4 @@ export function orderSendOrderToParticipantGet(http: HttpClient, rootUrl: string
   );
 }
 
-orderSendOrderToParticipantGet.PATH = '/bla-bla-vla/order/{orderId}/SendToParticipantById';
+orderSendOrderToParticipantGet.PATH = '/api/order/{orderId}/SendToParticipantById';

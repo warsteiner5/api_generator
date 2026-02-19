@@ -27,4 +27,4 @@ export function participantOfferGenerateCommercialPrintForms(http: HttpClient, r
   );
 }
 
-participantOfferGenerateCommercialPrintForms.PATH = '/bla-bla-vla/participantoffer/GenerateCommercialPrintForms';
+participantOfferGenerateCommercialPrintForms.PATH = '/api/participantoffer/GenerateCommercialPrintForms';

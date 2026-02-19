@@ -27,4 +27,4 @@ export function messageQueueServiceExcelImportStartExportby(http: HttpClient, ro
   );
 }
 
-messageQueueServiceExcelImportStartExportby.PATH = '/bla-bla-vla/messageQueueService/ExcelImportStartExportby/{taskId}';
+messageQueueServiceExcelImportStartExportby.PATH = '/market/api/v1/messageQueueService/ExcelImportStartExportby/{taskId}';

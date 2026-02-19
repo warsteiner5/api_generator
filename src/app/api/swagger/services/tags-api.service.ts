@@ -9,7 +9,7 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfInteger } from '../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../models/api-market-json-result-of-integer';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfTagOperatorViewDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-tag-operator-view-dto';
 import { ApiMarketJsonResultOfMarketPaginationResultOfListOfTagParticipantViewDto } from '../models/api-market-json-result-of-market-pagination-result-of-list-of-tag-participant-view-dto';
 import { ApiMarketJsonResultOfTagOperatorViewDto } from '../models/api-market-json-result-of-tag-operator-view-dto';
@@ -44,7 +44,7 @@ export class TagsApiService extends BaseService {
   }
 
   /** Path part for operation `tagsGetTagsForCurrentTenant()` */
-  static readonly TagsGetTagsForCurrentTenantPath = '/bla-bla-vla/tags';
+  static readonly TagsGetTagsForCurrentTenantPath = '/market/api/v1/tags';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -69,7 +69,7 @@ export class TagsApiService extends BaseService {
   }
 
   /** Path part for operation `tagsSaveTag()` */
-  static readonly TagsSaveTagPath = '/bla-bla-vla/tags';
+  static readonly TagsSaveTagPath = '/market/api/v1/tags';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -77,7 +77,7 @@ export class TagsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tagsSaveTag$Response(params?: TagsSaveTag$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+  tagsSaveTag$Response(params?: TagsSaveTag$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
     return tagsSaveTag(this.http, this.rootUrl, params, context);
   }
 
@@ -87,14 +87,14 @@ export class TagsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tagsSaveTag(params?: TagsSaveTag$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfInteger> {
+  tagsSaveTag(params?: TagsSaveTag$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfIntegerAltDto> {
     return this.tagsSaveTag$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfInteger>): ApiMarketJsonResultOfInteger => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>): ApiMarketJsonResultOfIntegerAltDto => r.body)
     );
   }
 
   /** Path part for operation `tagsGetTagsForOperator()` */
-  static readonly TagsGetTagsForOperatorPath = '/bla-bla-vla/tags/operator';
+  static readonly TagsGetTagsForOperatorPath = '/market/api/v1/tags/operator';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -119,7 +119,7 @@ export class TagsApiService extends BaseService {
   }
 
   /** Path part for operation `tagsGetTagForOperator()` */
-  static readonly TagsGetTagForOperatorPath = '/bla-bla-vla/tags/{id}/operator';
+  static readonly TagsGetTagForOperatorPath = '/market/api/v1/tags/{id}/operator';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -144,7 +144,7 @@ export class TagsApiService extends BaseService {
   }
 
   /** Path part for operation `tagsDeleteTag()` */
-  static readonly TagsDeleteTagPath = '/bla-bla-vla/tags/{id}';
+  static readonly TagsDeleteTagPath = '/market/api/v1/tags/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -169,7 +169,7 @@ export class TagsApiService extends BaseService {
   }
 
   /** Path part for operation `tagsSaveTagParticipantRule()` */
-  static readonly TagsSaveTagParticipantRulePath = '/bla-bla-vla/tags/participant-rule';
+  static readonly TagsSaveTagParticipantRulePath = '/market/api/v1/tags/participant-rule';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -194,7 +194,7 @@ export class TagsApiService extends BaseService {
   }
 
   /** Path part for operation `tagsDeleteTagParticipantRule()` */
-  static readonly TagsDeleteTagParticipantRulePath = '/bla-bla-vla/tags/participant-rule/{id}';
+  static readonly TagsDeleteTagParticipantRulePath = '/market/api/v1/tags/participant-rule/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -219,7 +219,7 @@ export class TagsApiService extends BaseService {
   }
 
   /** Path part for operation `tagsSaveTagParticipantOfferRule()` */
-  static readonly TagsSaveTagParticipantOfferRulePath = '/bla-bla-vla/tags/participant-offer-rule';
+  static readonly TagsSaveTagParticipantOfferRulePath = '/market/api/v1/tags/participant-offer-rule';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -244,7 +244,7 @@ export class TagsApiService extends BaseService {
   }
 
   /** Path part for operation `tagsDeleteTagParticipantOfferRule()` */
-  static readonly TagsDeleteTagParticipantOfferRulePath = '/bla-bla-vla/tags/participant-offer-rule/{id}';
+  static readonly TagsDeleteTagParticipantOfferRulePath = '/market/api/v1/tags/participant-offer-rule/{id}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -269,7 +269,7 @@ export class TagsApiService extends BaseService {
   }
 
   /** Path part for operation `tagsGetTagsForParticipant()` */
-  static readonly TagsGetTagsForParticipantPath = '/bla-bla-vla/tags/settings';
+  static readonly TagsGetTagsForParticipantPath = '/market/api/v1/tags/settings';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -294,7 +294,7 @@ export class TagsApiService extends BaseService {
   }
 
   /** Path part for operation `tagsSaveSettings()` */
-  static readonly TagsSaveSettingsPath = '/bla-bla-vla/tags/settings';
+  static readonly TagsSaveSettingsPath = '/market/api/v1/tags/settings';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

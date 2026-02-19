@@ -29,4 +29,4 @@ export function employeesSearch(http: HttpClient, rootUrl: string, params?: Empl
   );
 }
 
-employeesSearch.PATH = '/bla-bla-vla/employees/search';
+employeesSearch.PATH = '/market/api/v1/employees/search';

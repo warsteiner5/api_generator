@@ -2,6 +2,6 @@
 /* eslint-disable */
 import { ApiKsrValueAltDto } from '../models/api-ksr-value';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
-export type ApiMarketJsonResultOfIReadOnlyCollectionOfKsrValue = ApiMarketJsonVoidResultAltDto & {
+export type ApiMarketJsonResultOfIReadOnlyCollectionOfKsrValueAltDto = ApiMarketJsonVoidResultAltDto & {
 'data'?: Array<ApiKsrValueAltDto> | null;
 };

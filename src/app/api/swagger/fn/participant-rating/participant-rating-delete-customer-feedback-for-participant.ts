@@ -28,4 +28,4 @@ export function participantRatingDeleteCustomerFeedbackForParticipant(http: Http
   );
 }
 
-participantRatingDeleteCustomerFeedbackForParticipant.PATH = '/bla-bla-vla/ParticipantRating/DeleteCustomerFeedbackForParticipant';
+participantRatingDeleteCustomerFeedbackForParticipant.PATH = '/api/ParticipantRating/DeleteCustomerFeedbackForParticipant';

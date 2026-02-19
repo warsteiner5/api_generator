@@ -26,4 +26,4 @@ export function organizationsSaveAgreement2323(http: HttpClient, rootUrl: string
   );
 }
 
-organizationsSaveAgreement2323.PATH = '/bla-bla-vla/organizations/save-agreement-2323';
+organizationsSaveAgreement2323.PATH = '/market/api/v1/organizations/save-agreement-2323';

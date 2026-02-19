@@ -7,14 +7,14 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiDigitalSignatureDto } from '../../models/api-digital-signature-dto';
-import { ApiMarketJsonResultOfTradePublishResult } from '../../models/api-market-json-result-of-trade-publish-result';
+import { ApiMarketJsonResultOfTradePublishResultAltDto } from '../../models/api-market-json-result-of-trade-publish-result';
 
 export interface TradesPublishById$Params {
   id: number;
       body?: ApiDigitalSignatureDto | null
 }
 
-export function tradesPublishById(http: HttpClient, rootUrl: string, params: TradesPublishById$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>> {
+export function tradesPublishById(http: HttpClient, rootUrl: string, params: TradesPublishById$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesPublishById.PATH, 'get');
   if (params) {
     rb.path('id', params.id, {});
@@ -26,9 +26,9 @@ export function tradesPublishById(http: HttpClient, rootUrl: string, params: Tra
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>;
     })
   );
 }
 
-tradesPublishById.PATH = '/bla-bla-vla/trades/publish/{id}';
+tradesPublishById.PATH = '/market/api/v1/trades/publish/{id}';

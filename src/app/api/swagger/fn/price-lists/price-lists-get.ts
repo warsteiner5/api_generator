@@ -28,4 +28,4 @@ export function priceListsGet(http: HttpClient, rootUrl: string, params: PriceLi
   );
 }
 
-priceListsGet.PATH = '/bla-bla-vla/priceLists/{id}';
+priceListsGet.PATH = '/market/api/v1/priceLists/{id}';

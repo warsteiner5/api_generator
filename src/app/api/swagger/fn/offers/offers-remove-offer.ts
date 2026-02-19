@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBatchProcessingResult } from '../../models/api-market-json-result-of-batch-processing-result';
+import { ApiMarketJsonResultOfBatchProcessingResultAltDto } from '../../models/api-market-json-result-of-batch-processing-result';
 
 export interface OffersRemoveOffer$Params {
   id: number;
 }
 
-export function offersRemoveOffer(http: HttpClient, rootUrl: string, params: OffersRemoveOffer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBatchProcessingResult>> {
+export function offersRemoveOffer(http: HttpClient, rootUrl: string, params: OffersRemoveOffer$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBatchProcessingResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, offersRemoveOffer.PATH, 'delete');
   if (params) {
     rb.path('id', params.id, {});
@@ -23,9 +23,9 @@ export function offersRemoveOffer(http: HttpClient, rootUrl: string, params: Off
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBatchProcessingResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBatchProcessingResultAltDto>;
     })
   );
 }
 
-offersRemoveOffer.PATH = '/bla-bla-vla/offers/{id}';
+offersRemoveOffer.PATH = '/market/api/v1/offers/{id}';

@@ -29,4 +29,4 @@ export function organizationsGetOrganizationsByFilter(http: HttpClient, rootUrl:
   );
 }
 
-organizationsGetOrganizationsByFilter.PATH = '/bla-bla-vla/organizations/filtered';
+organizationsGetOrganizationsByFilter.PATH = '/market/api/v1/organizations/filtered';

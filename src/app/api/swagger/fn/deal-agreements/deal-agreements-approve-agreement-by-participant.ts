@@ -30,4 +30,4 @@ export function dealAgreementsApproveAgreementByParticipant(http: HttpClient, ro
   );
 }
 
-dealAgreementsApproveAgreementByParticipant.PATH = '/bla-bla-vla/deals/{dealId}/agreements/{agreementId}/participants/approve';
+dealAgreementsApproveAgreementByParticipant.PATH = '/market/api/v1/deals/{dealId}/agreements/{agreementId}/participants/approve';

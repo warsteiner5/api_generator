@@ -28,4 +28,4 @@ export function participantOfferSaveAsDraft(http: HttpClient, rootUrl: string, p
   );
 }
 
-participantOfferSaveAsDraft.PATH = '/bla-bla-vla/participantoffer/SaveAsDraft';
+participantOfferSaveAsDraft.PATH = '/api/participantoffer/SaveAsDraft';

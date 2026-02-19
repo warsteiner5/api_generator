@@ -28,4 +28,4 @@ export function additionalAgreementSign(http: HttpClient, rootUrl: string, param
   );
 }
 
-additionalAgreementSign.PATH = '/bla-bla-vla/AdditionalAgreement/Sign';
+additionalAgreementSign.PATH = '/api/AdditionalAgreement/Sign';

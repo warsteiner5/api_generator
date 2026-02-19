@@ -28,4 +28,4 @@ export function dictionariesGetCategory(http: HttpClient, rootUrl: string, param
   );
 }
 
-dictionariesGetCategory.PATH = '/bla-bla-vla/dictionaries/category/{code}';
+dictionariesGetCategory.PATH = '/market/api/v1/dictionaries/category/{code}';

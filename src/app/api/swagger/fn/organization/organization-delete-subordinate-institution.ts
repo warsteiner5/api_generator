@@ -27,4 +27,4 @@ export function organizationDeleteSubordinateInstitution(http: HttpClient, rootU
   );
 }
 
-organizationDeleteSubordinateInstitution.PATH = '/bla-bla-vla/Organization/DeleteSubordinateInstitution';
+organizationDeleteSubordinateInstitution.PATH = '/api/Organization/DeleteSubordinateInstitution';

@@ -28,4 +28,4 @@ export function organizationsGetOrganizationDocuments2(http: HttpClient, rootUrl
   );
 }
 
-organizationsGetOrganizationDocuments2.PATH = '/bla-bla-vla/organizations/documents/{guid}';
+organizationsGetOrganizationDocuments2.PATH = '/market/api/v1/organizations/documents/{guid}';

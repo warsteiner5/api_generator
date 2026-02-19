@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 import { ApiSignatureForDealDto } from '../../models/api-signature-for-deal-dto';
 
 export interface DealsConcludeApprovedExternalDeal$Params {
@@ -16,7 +16,7 @@ export interface DealsConcludeApprovedExternalDeal$Params {
       body?: ApiSignatureForDealDto | null
 }
 
-export function dealsConcludeApprovedExternalDeal(http: HttpClient, rootUrl: string, params: DealsConcludeApprovedExternalDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function dealsConcludeApprovedExternalDeal(http: HttpClient, rootUrl: string, params: DealsConcludeApprovedExternalDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, dealsConcludeApprovedExternalDeal.PATH, 'post');
   if (params) {
     rb.path('dealId', params.dealId, {});
@@ -30,9 +30,9 @@ export function dealsConcludeApprovedExternalDeal(http: HttpClient, rootUrl: str
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-dealsConcludeApprovedExternalDeal.PATH = '/bla-bla-vla/deals/{dealId}/customers/{organizationId}/users/{userId}/conclude/external';
+dealsConcludeApprovedExternalDeal.PATH = '/market/api/v1/deals/{dealId}/customers/{organizationId}/users/{userId}/conclude/external';

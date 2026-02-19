@@ -28,4 +28,4 @@ export function tradesGetSpecificationsByParticipants(http: HttpClient, rootUrl:
   );
 }
 
-tradesGetSpecificationsByParticipants.PATH = '/bla-bla-vla/trades/{tradeId}/specifications-by-participants-archive';
+tradesGetSpecificationsByParticipants.PATH = '/market/api/v1/trades/{tradeId}/specifications-by-participants-archive';

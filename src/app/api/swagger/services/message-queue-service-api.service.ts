@@ -31,7 +31,7 @@ export class MessageQueueServiceApiService extends BaseService {
   }
 
   /** Path part for operation `messageQueueServiceLogSearchAction()` */
-  static readonly MessageQueueServiceLogSearchActionPath = '/bla-bla-vla/messageQueueService/fksMarketSearch';
+  static readonly MessageQueueServiceLogSearchActionPath = '/market/api/v1/messageQueueService/fksMarketSearch';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -56,7 +56,7 @@ export class MessageQueueServiceApiService extends BaseService {
   }
 
   /** Path part for operation `messageQueueServiceLogUserAction()` */
-  static readonly MessageQueueServiceLogUserActionPath = '/bla-bla-vla/messageQueueService/FksMarketUser';
+  static readonly MessageQueueServiceLogUserActionPath = '/market/api/v1/messageQueueService/FksMarketUser';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -81,7 +81,7 @@ export class MessageQueueServiceApiService extends BaseService {
   }
 
   /** Path part for operation `messageQueueServiceLogUserBatchAction()` */
-  static readonly MessageQueueServiceLogUserBatchActionPath = '/bla-bla-vla/messageQueueService/FksMarketUserBatch';
+  static readonly MessageQueueServiceLogUserBatchActionPath = '/market/api/v1/messageQueueService/FksMarketUserBatch';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -106,7 +106,7 @@ export class MessageQueueServiceApiService extends BaseService {
   }
 
   /** Path part for operation `messageQueueServiceOfferImportProcess()` */
-  static readonly MessageQueueServiceOfferImportProcessPath = '/bla-bla-vla/messageQueueService/OfferImportEnd/{taskId}';
+  static readonly MessageQueueServiceOfferImportProcessPath = '/market/api/v1/messageQueueService/OfferImportEnd/{taskId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -131,7 +131,7 @@ export class MessageQueueServiceApiService extends BaseService {
   }
 
   /** Path part for operation `messageQueueServiceExcelImportStart()` */
-  static readonly MessageQueueServiceExcelImportStartPath = '/bla-bla-vla/messageQueueService/ExcelImportStart/{taskId}';
+  static readonly MessageQueueServiceExcelImportStartPath = '/market/api/v1/messageQueueService/ExcelImportStart/{taskId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -156,7 +156,7 @@ export class MessageQueueServiceApiService extends BaseService {
   }
 
   /** Path part for operation `messageQueueServiceExcelImportStartExportby()` */
-  static readonly MessageQueueServiceExcelImportStartExportbyPath = '/bla-bla-vla/messageQueueService/ExcelImportStartExportby/{taskId}';
+  static readonly MessageQueueServiceExcelImportStartExportbyPath = '/market/api/v1/messageQueueService/ExcelImportStartExportby/{taskId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -181,7 +181,7 @@ export class MessageQueueServiceApiService extends BaseService {
   }
 
   /** Path part for operation `messageQueueServiceExcelImportStartExportby2()` */
-  static readonly MessageQueueServiceExcelImportStartExportby2Path = '/bla-bla-vla/messageQueueService/MinPromTorgOfferImportStart';
+  static readonly MessageQueueServiceExcelImportStartExportby2Path = '/market/api/v1/messageQueueService/MinPromTorgOfferImportStart';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

@@ -29,4 +29,4 @@ export function dealsGetDeals2(http: HttpClient, rootUrl: string, params?: Deals
   );
 }
 
-dealsGetDeals2.PATH = '/bla-bla-vla/deals/search';
+dealsGetDeals2.PATH = '/market/api/v1/deals/search';

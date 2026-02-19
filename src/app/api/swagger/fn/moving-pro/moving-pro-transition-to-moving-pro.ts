@@ -37,4 +37,4 @@ export function movingProTransitionToMovingPro(http: HttpClient, rootUrl: string
   );
 }
 
-movingProTransitionToMovingPro.PATH = '/bla-bla-vla/moving-pro/transition';
+movingProTransitionToMovingPro.PATH = '/market/api/v1/moving-pro/transition';

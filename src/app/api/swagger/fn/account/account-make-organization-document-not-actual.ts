@@ -27,4 +27,4 @@ export function accountMakeOrganizationDocumentNotActual(http: HttpClient, rootU
   );
 }
 
-accountMakeOrganizationDocumentNotActual.PATH = '/bla-bla-vla/Account/MakeOrganizationDocumentNotActual';
+accountMakeOrganizationDocumentNotActual.PATH = '/api/Account/MakeOrganizationDocumentNotActual';

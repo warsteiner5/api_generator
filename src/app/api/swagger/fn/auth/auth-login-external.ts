@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfSignInResult } from '../../models/api-market-json-result-of-sign-in-result';
+import { ApiMarketJsonResultOfSignInResultAltDto } from '../../models/api-market-json-result-of-sign-in-result';
 import { ApiSignInModelAltDto } from '../../models/api-sign-in-model';
 
 export interface AuthLoginExternal$Params {
@@ -14,7 +14,7 @@ export interface AuthLoginExternal$Params {
       body?: ApiSignInModelAltDto | null
 }
 
-export function authLoginExternal(http: HttpClient, rootUrl: string, params: AuthLoginExternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSignInResult>> {
+export function authLoginExternal(http: HttpClient, rootUrl: string, params: AuthLoginExternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSignInResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, authLoginExternal.PATH, 'post');
   if (params) {
     rb.path('externalSystemIdentityKey', params.externalSystemIdentityKey, {});
@@ -26,9 +26,9 @@ export function authLoginExternal(http: HttpClient, rootUrl: string, params: Aut
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfSignInResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfSignInResultAltDto>;
     })
   );
 }
 
-authLoginExternal.PATH = '/bla-bla-vla/auth/login/external/{ExternalSystemIdentityKey}';
+authLoginExternal.PATH = '/market/api/v1/auth/login/external/{ExternalSystemIdentityKey}';

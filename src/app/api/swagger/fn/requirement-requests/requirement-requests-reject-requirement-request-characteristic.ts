@@ -27,4 +27,4 @@ export function requirementRequestsRejectRequirementRequestCharacteristic(http: 
   );
 }
 
-requirementRequestsRejectRequirementRequestCharacteristic.PATH = '/bla-bla-vla/RequirementRequests/reject_requirement_request_characteristic/{characteristicId}';
+requirementRequestsRejectRequirementRequestCharacteristic.PATH = '/market/api/v1/RequirementRequests/reject_requirement_request_characteristic/{characteristicId}';

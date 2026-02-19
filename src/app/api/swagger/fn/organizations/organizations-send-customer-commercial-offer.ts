@@ -31,4 +31,4 @@ export function organizationsSendCustomerCommercialOffer(http: HttpClient, rootU
   );
 }
 
-organizationsSendCustomerCommercialOffer.PATH = '/bla-bla-vla/organizations/{guid}/commercial-offer';
+organizationsSendCustomerCommercialOffer.PATH = '/market/api/v1/organizations/{guid}/commercial-offer';

@@ -25,4 +25,4 @@ export function organizationCheckAuthorizationPayment(http: HttpClient, rootUrl:
   );
 }
 
-organizationCheckAuthorizationPayment.PATH = '/bla-bla-vla/Organization/CheckAuthorizationPayment';
+organizationCheckAuthorizationPayment.PATH = '/api/Organization/CheckAuthorizationPayment';

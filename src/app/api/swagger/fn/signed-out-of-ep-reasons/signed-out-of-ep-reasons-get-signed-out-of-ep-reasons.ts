@@ -27,4 +27,4 @@ export function signedOutOfEpReasonsGetSignedOutOfEpReasons(http: HttpClient, ro
   );
 }
 
-signedOutOfEpReasonsGetSignedOutOfEpReasons.PATH = '/bla-bla-vla/signedoutofepreasons';
+signedOutOfEpReasonsGetSignedOutOfEpReasons.PATH = '/api/signedoutofepreasons';

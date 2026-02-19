@@ -28,4 +28,4 @@ export function dealsGetTradeAndDealDiscussionHistory(http: HttpClient, rootUrl:
   );
 }
 
-dealsGetTradeAndDealDiscussionHistory.PATH = '/bla-bla-vla/deals/{dealId}/discussion-history';
+dealsGetTradeAndDealDiscussionHistory.PATH = '/market/api/v1/deals/{dealId}/discussion-history';

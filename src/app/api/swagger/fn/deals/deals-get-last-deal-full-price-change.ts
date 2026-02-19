@@ -28,4 +28,4 @@ export function dealsGetLastDealFullPriceChange(http: HttpClient, rootUrl: strin
   );
 }
 
-dealsGetLastDealFullPriceChange.PATH = '/bla-bla-vla/deals/price/lastPriceChange';
+dealsGetLastDealFullPriceChange.PATH = '/market/api/v1/deals/price/lastPriceChange';

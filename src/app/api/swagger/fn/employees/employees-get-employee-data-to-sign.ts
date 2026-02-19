@@ -31,4 +31,4 @@ export function employeesGetEmployeeDataToSign(http: HttpClient, rootUrl: string
   );
 }
 
-employeesGetEmployeeDataToSign.PATH = '/bla-bla-vla/employees/{id}/data-to-sign';
+employeesGetEmployeeDataToSign.PATH = '/market/api/v1/employees/{id}/data-to-sign';

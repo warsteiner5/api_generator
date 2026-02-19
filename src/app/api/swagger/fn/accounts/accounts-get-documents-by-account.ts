@@ -31,4 +31,4 @@ export function accountsGetDocumentsByAccount(http: HttpClient, rootUrl: string,
   );
 }
 
-accountsGetDocumentsByAccount.PATH = '/bla-bla-vla/accounts/my/{accountNumber}/documents';
+accountsGetDocumentsByAccount.PATH = '/market/api/v1/accounts/my/{accountNumber}/documents';

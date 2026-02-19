@@ -28,4 +28,4 @@ export function quotationSessionSpeedUp(http: HttpClient, rootUrl: string, param
   );
 }
 
-quotationSessionSpeedUp.PATH = '/bla-bla-vla/quotation-session/{id}/speedup';
+quotationSessionSpeedUp.PATH = '/market/api/v1/quotation-session/{id}/speedup';

@@ -28,4 +28,4 @@ export function availableOperationsGetByOrder(http: HttpClient, rootUrl: string,
   );
 }
 
-availableOperationsGetByOrder.PATH = '/bla-bla-vla/available-operations/trade/{orderId}/single-supplier';
+availableOperationsGetByOrder.PATH = '/market/api/v1/available-operations/trade/{orderId}/single-supplier';

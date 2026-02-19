@@ -28,4 +28,4 @@ export function dealSentForSignByParticipant(http: HttpClient, rootUrl: string, 
   );
 }
 
-dealSentForSignByParticipant.PATH = '/bla-bla-vla/Deal/SentForSignByParticipant';
+dealSentForSignByParticipant.PATH = '/api/Deal/SentForSignByParticipant';

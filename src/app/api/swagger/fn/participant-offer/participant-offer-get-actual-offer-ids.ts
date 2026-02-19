@@ -28,4 +28,4 @@ export function participantOfferGetActualOfferIds(http: HttpClient, rootUrl: str
   );
 }
 
-participantOfferGetActualOfferIds.PATH = '/bla-bla-vla/participantoffer/actual-offer-ids';
+participantOfferGetActualOfferIds.PATH = '/api/participantoffer/actual-offer-ids';

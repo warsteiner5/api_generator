@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfExternalUserInfo } from '../../models/api-market-json-result-of-external-user-info';
+import { ApiMarketJsonResultOfExternalUserInfoAltDto } from '../../models/api-market-json-result-of-external-user-info';
 
 export interface AccountsGetExternalUserInfo$Params {
 }
 
-export function accountsGetExternalUserInfo(http: HttpClient, rootUrl: string, params?: AccountsGetExternalUserInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfExternalUserInfo>> {
+export function accountsGetExternalUserInfo(http: HttpClient, rootUrl: string, params?: AccountsGetExternalUserInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfExternalUserInfoAltDto>> {
   const rb = new RequestBuilder(rootUrl, accountsGetExternalUserInfo.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function accountsGetExternalUserInfo(http: HttpClient, rootUrl: string, p
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfExternalUserInfo>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfExternalUserInfoAltDto>;
     })
   );
 }
 
-accountsGetExternalUserInfo.PATH = '/bla-bla-vla/accounts/externalUserInfo';
+accountsGetExternalUserInfo.PATH = '/market/api/v1/accounts/externalUserInfo';

@@ -27,4 +27,4 @@ export function accountMakeUsersOrgAdminForOrganization(http: HttpClient, rootUr
   );
 }
 
-accountMakeUsersOrgAdminForOrganization.PATH = '/bla-bla-vla/Account/MakeUsersOrgAdminForOrganization';
+accountMakeUsersOrgAdminForOrganization.PATH = '/api/Account/MakeUsersOrgAdminForOrganization';

@@ -27,4 +27,4 @@ export function permissionGetUserToWorkGroupRoles(http: HttpClient, rootUrl: str
   );
 }
 
-permissionGetUserToWorkGroupRoles.PATH = '/bla-bla-vla/permissions/UserToWorkGroupRoles/{lk}';
+permissionGetUserToWorkGroupRoles.PATH = '/market/api/v1/permissions/UserToWorkGroupRoles/{lk}';

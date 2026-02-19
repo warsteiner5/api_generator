@@ -28,4 +28,4 @@ export function participantOfferPriceListsForAnonymous(http: HttpClient, rootUrl
   );
 }
 
-participantOfferPriceListsForAnonymous.PATH = '/bla-bla-vla/participantoffer/pricelistsforanonymous';
+participantOfferPriceListsForAnonymous.PATH = '/api/participantoffer/pricelistsforanonymous';

@@ -29,4 +29,4 @@ export function additionalAgreementsGetDocumentFileDigitalSignature(http: HttpCl
   );
 }
 
-additionalAgreementsGetDocumentFileDigitalSignature.PATH = '/bla-bla-vla/additionalAgreements/file-digital-signature';
+additionalAgreementsGetDocumentFileDigitalSignature.PATH = '/market/api/v1/additionalAgreements/file-digital-signature';

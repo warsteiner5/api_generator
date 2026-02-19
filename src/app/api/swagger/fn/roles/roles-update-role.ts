@@ -30,4 +30,4 @@ export function rolesUpdateRole(http: HttpClient, rootUrl: string, params: Roles
   );
 }
 
-rolesUpdateRole.PATH = '/bla-bla-vla/security/roles/{id}';
+rolesUpdateRole.PATH = '/market/api/v1/security/roles/{id}';

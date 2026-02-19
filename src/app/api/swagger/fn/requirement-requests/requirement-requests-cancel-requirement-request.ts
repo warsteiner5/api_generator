@@ -27,4 +27,4 @@ export function requirementRequestsCancelRequirementRequest(http: HttpClient, ro
   );
 }
 
-requirementRequestsCancelRequirementRequest.PATH = '/bla-bla-vla/RequirementRequests/{id}/Cancel';
+requirementRequestsCancelRequirementRequest.PATH = '/market/api/v1/RequirementRequests/{id}/Cancel';

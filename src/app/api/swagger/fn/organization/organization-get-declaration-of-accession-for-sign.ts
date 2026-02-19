@@ -28,4 +28,4 @@ export function organizationGetDeclarationOfAccessionForSign(http: HttpClient, r
   );
 }
 
-organizationGetDeclarationOfAccessionForSign.PATH = '/bla-bla-vla/Organization/GetDeclarationOfAccessionForSign';
+organizationGetDeclarationOfAccessionForSign.PATH = '/api/Organization/GetDeclarationOfAccessionForSign';

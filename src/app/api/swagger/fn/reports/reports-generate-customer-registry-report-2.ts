@@ -29,4 +29,4 @@ export function reportsGenerateCustomerRegistryReport2(http: HttpClient, rootUrl
   );
 }
 
-reportsGenerateCustomerRegistryReport2.PATH = '/bla-bla-vla/reports/customer-registry/search';
+reportsGenerateCustomerRegistryReport2.PATH = '/market/api/v1/reports/customer-registry/search';

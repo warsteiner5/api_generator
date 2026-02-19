@@ -20,7 +20,7 @@ export class FinanceSourcesApiService extends BaseService {
   }
 
   /** Path part for operation `financeSourcesGetAll()` */
-  static readonly FinanceSourcesGetAllPath = '/bla-bla-vla/financeSources/GetAll';
+  static readonly FinanceSourcesGetAllPath = '/market/api/v1/financeSources/GetAll';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

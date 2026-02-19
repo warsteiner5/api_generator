@@ -29,4 +29,4 @@ export function tradeGetTradesForAnonymous(http: HttpClient, rootUrl: string, pa
   );
 }
 
-tradeGetTradesForAnonymous.PATH = '/bla-bla-vla/Trade/GetTradesForAnonymous';
+tradeGetTradesForAnonymous.PATH = '/api/Trade/GetTradesForAnonymous';

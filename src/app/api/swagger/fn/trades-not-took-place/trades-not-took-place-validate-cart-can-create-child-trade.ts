@@ -7,13 +7,13 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiCanCreateFromNotTookPlaceTradeValidationDto } from '../../models/api-can-create-from-not-took-place-trade-validation-dto';
-import { ApiMarketJsonResultOfCanCreateChildTradeValidationResult } from '../../models/api-market-json-result-of-can-create-child-trade-validation-result';
+import { ApiMarketJsonResultOfCanCreateChildTradeValidationResultAltDto } from '../../models/api-market-json-result-of-can-create-child-trade-validation-result';
 
 export interface TradesNotTookPlaceValidateCartCanCreateChildTrade$Params {
       body?: ApiCanCreateFromNotTookPlaceTradeValidationDto | null
 }
 
-export function tradesNotTookPlaceValidateCartCanCreateChildTrade(http: HttpClient, rootUrl: string, params?: TradesNotTookPlaceValidateCartCanCreateChildTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCanCreateChildTradeValidationResult>> {
+export function tradesNotTookPlaceValidateCartCanCreateChildTrade(http: HttpClient, rootUrl: string, params?: TradesNotTookPlaceValidateCartCanCreateChildTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCanCreateChildTradeValidationResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesNotTookPlaceValidateCartCanCreateChildTrade.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function tradesNotTookPlaceValidateCartCanCreateChildTrade(http: HttpClie
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfCanCreateChildTradeValidationResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfCanCreateChildTradeValidationResultAltDto>;
     })
   );
 }
 
-tradesNotTookPlaceValidateCartCanCreateChildTrade.PATH = '/bla-bla-vla/trades/nottookplace/cart/canCreateChild';
+tradesNotTookPlaceValidateCartCanCreateChildTrade.PATH = '/market/api/v1/trades/nottookplace/cart/canCreateChild';

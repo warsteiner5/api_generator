@@ -25,4 +25,4 @@ export function notificationsSendFirstRedirectFromZmoToMarketNotification(http: 
   );
 }
 
-notificationsSendFirstRedirectFromZmoToMarketNotification.PATH = '/bla-bla-vla/notifications/send-first-redirect-from-zmo-to-market';
+notificationsSendFirstRedirectFromZmoToMarketNotification.PATH = '/market/api/v1/notifications/send-first-redirect-from-zmo-to-market';

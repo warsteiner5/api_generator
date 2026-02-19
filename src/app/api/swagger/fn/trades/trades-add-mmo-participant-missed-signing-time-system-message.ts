@@ -29,4 +29,4 @@ export function tradesAddMmoParticipantMissedSigningTimeSystemMessage(http: Http
   );
 }
 
-tradesAddMmoParticipantMissedSigningTimeSystemMessage.PATH = '/bla-bla-vla/trades/{tradeId}/chat/MmoParticipantMissedSigningTimeSystemMessage/{discussionOwnerId}';
+tradesAddMmoParticipantMissedSigningTimeSystemMessage.PATH = '/market/api/v1/trades/{tradeId}/chat/MmoParticipantMissedSigningTimeSystemMessage/{discussionOwnerId}';

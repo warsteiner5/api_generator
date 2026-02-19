@@ -29,4 +29,4 @@ export function priceListsCreatePriceList(http: HttpClient, rootUrl: string, par
   );
 }
 
-priceListsCreatePriceList.PATH = '/bla-bla-vla/priceLists/create';
+priceListsCreatePriceList.PATH = '/market/api/v1/priceLists/create';

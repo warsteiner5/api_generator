@@ -32,4 +32,4 @@ export function requirementRequestsGetLastChatItems(http: HttpClient, rootUrl: s
   );
 }
 
-requirementRequestsGetLastChatItems.PATH = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{chatId}/{lastId}';
+requirementRequestsGetLastChatItems.PATH = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{chatId}/{lastId}';

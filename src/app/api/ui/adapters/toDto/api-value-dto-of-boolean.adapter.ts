@@ -1,7 +1,7 @@
-import { ValueDtoOfBooleanAlt } from '../../models/value-dto-of-boolean-alt.interface';
-import { ApiValueDtoOfBooleanAltDto } from '../../../swagger/models/api-value-dto-of-boolean';
+import { ValueDtoOfBoolean } from '../../models/value-dto-of-boolean.interface';
+import { ApiValueDtoOfBoolean } from '../../../swagger/models/api-value-dto-of-boolean';
 
-export function adaptApiValueDtoOfBooleanAltDto(source?: ValueDtoOfBooleanAlt | null): ApiValueDtoOfBooleanAltDto {
+export function adaptApiValueDtoOfBoolean(source?: ValueDtoOfBoolean | null): ApiValueDtoOfBoolean {
   return {
     Value: source?.value,
   };

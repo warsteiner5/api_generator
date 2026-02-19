@@ -1,6 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
-export type ApiMarketJsonResultOfMarketJsonVoidResult = ApiMarketJsonVoidResultAltDto & {
+export type ApiMarketJsonResultOfMarketJsonVoidResultAltDto = ApiMarketJsonVoidResultAltDto & {
 'data'?: ApiMarketJsonVoidResultAltDto | null;
 };

@@ -28,4 +28,4 @@ export function nicRegistryGetById(http: HttpClient, rootUrl: string, params: Ni
   );
 }
 
-nicRegistryGetById.PATH = '/bla-bla-vla/registry/nic/{entryId}';
+nicRegistryGetById.PATH = '/market/api/v1/registry/nic/{entryId}';

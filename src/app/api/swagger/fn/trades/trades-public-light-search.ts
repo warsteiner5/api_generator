@@ -31,4 +31,4 @@ export function tradesPublicLightSearch(http: HttpClient, rootUrl: string, param
   );
 }
 
-tradesPublicLightSearch.PATH = '/bla-bla-vla/trades/public-light-search';
+tradesPublicLightSearch.PATH = '/market/api/v1/trades/public-light-search';

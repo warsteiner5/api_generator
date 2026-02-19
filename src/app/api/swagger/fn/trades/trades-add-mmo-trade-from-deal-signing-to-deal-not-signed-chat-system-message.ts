@@ -29,4 +29,4 @@ export function tradesAddMmoTradeFromDealSigningToDealNotSignedChatSystemMessage
   );
 }
 
-tradesAddMmoTradeFromDealSigningToDealNotSignedChatSystemMessage.PATH = '/bla-bla-vla/trades/{tradeId}/chat/MmoTradeFromDealSigningToDealNotSignedChatSystemMessage/{dealId}';
+tradesAddMmoTradeFromDealSigningToDealNotSignedChatSystemMessage.PATH = '/market/api/v1/trades/{tradeId}/chat/MmoTradeFromDealSigningToDealNotSignedChatSystemMessage/{dealId}';

@@ -25,4 +25,4 @@ export function disseminationAgreementGetPdf(http: HttpClient, rootUrl: string, 
   );
 }
 
-disseminationAgreementGetPdf.PATH = '/bla-bla-vla/DisseminationAgreement/pdf';
+disseminationAgreementGetPdf.PATH = '/api/DisseminationAgreement/pdf';

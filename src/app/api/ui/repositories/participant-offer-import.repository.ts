@@ -1,6 +1,6 @@
 import { adaptCharacteristicToUI } from '../adapters/toUI/characteristic.adapter';
 import { adaptParticipantOfferImportTaskToUI } from '../adapters/toUI/participant-offer-import-task.adapter';
-import { adaptSearchResultOfParticipantOfferImportTaskGridItemToUI } from '../adapters/toUI/search-result-of-participant-offer-import-task-grid-item.adapter';
+import { adaptSearchResultOfParticipantOfferImportTaskGridItemAltToUI } from '../adapters/toUI/search-result-of-participant-offer-import-task-grid-item-alt.adapter';
 import { Characteristic } from '../models/characteristic.interface';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
@@ -15,7 +15,7 @@ import { ParticipantOfferImportGetImportTasksParams, participantOfferImportGetIm
 import { ParticipantOfferImportRestartImportTaskExportByParams, participantOfferImportRestartImportTaskExportByParamsAdapter } from './params/participant-offer-import-restart-import-task-export-by.params';
 import { ParticipantOfferImportRestartImportTaskParams, participantOfferImportRestartImportTaskParamsAdapter } from './params/participant-offer-import-restart-import-task.params';
 import { ParticipantOfferImportTask } from '../models/participant-offer-import-task.interface';
-import { SearchResultOfParticipantOfferImportTaskGridItem } from '../models/search-result-of-participant-offer-import-task-grid-item.interface';
+import { SearchResultOfParticipantOfferImportTaskGridItemAlt } from '../models/search-result-of-participant-offer-import-task-grid-item-alt.interface';
 
 @Injectable({ providedIn: 'root' })
 export class ParticipantOfferImportRepository {
@@ -47,9 +47,9 @@ export class ParticipantOfferImportRepository {
     );
   }
 
-  participantOfferImportGetImportTasks(params?: ParticipantOfferImportGetImportTasksParams): Observable<SearchResultOfParticipantOfferImportTaskGridItem> {
+  participantOfferImportGetImportTasks(params?: ParticipantOfferImportGetImportTasksParams): Observable<SearchResultOfParticipantOfferImportTaskGridItemAlt> {
     return this._api.participantOfferImportGetImportTasks(participantOfferImportGetImportTasksParamsAdapter.adapt(params)).pipe(
-      map((res) => adaptSearchResultOfParticipantOfferImportTaskGridItemToUI(res))
+      map((res) => adaptSearchResultOfParticipantOfferImportTaskGridItemAltToUI(res))
     );
   }
 

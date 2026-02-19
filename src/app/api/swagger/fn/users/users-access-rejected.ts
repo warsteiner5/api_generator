@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface UsersAccessRejected$Params {
   regulationType: number;
 }
 
-export function usersAccessRejected(http: HttpClient, rootUrl: string, params: UsersAccessRejected$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function usersAccessRejected(http: HttpClient, rootUrl: string, params: UsersAccessRejected$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, usersAccessRejected.PATH, 'get');
   if (params) {
     rb.query('regulationType', params.regulationType, {});
@@ -23,9 +23,9 @@ export function usersAccessRejected(http: HttpClient, rootUrl: string, params: U
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-usersAccessRejected.PATH = '/bla-bla-vla/users/reject';
+usersAccessRejected.PATH = '/market/api/v1/users/reject';

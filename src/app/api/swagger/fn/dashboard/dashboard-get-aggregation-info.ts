@@ -26,4 +26,4 @@ export function dashboardGetAggregationInfo(http: HttpClient, rootUrl: string, p
   );
 }
 
-dashboardGetAggregationInfo.PATH = '/bla-bla-vla/dashboard/agInfo';
+dashboardGetAggregationInfo.PATH = '/market/api/v1/dashboard/agInfo';

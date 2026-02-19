@@ -26,4 +26,4 @@ export function fileV2DownloadPicturesForOffers(http: HttpClient, rootUrl: strin
   );
 }
 
-fileV2DownloadPicturesForOffers.PATH = '/bla-bla-vla/v2/FileController/DownloadPicturesForOffers';
+fileV2DownloadPicturesForOffers.PATH = '/api/v2/FileController/DownloadPicturesForOffers';

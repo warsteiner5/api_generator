@@ -30,4 +30,4 @@ export function tradesPublishConsiderationProtocol(http: HttpClient, rootUrl: st
   );
 }
 
-tradesPublishConsiderationProtocol.PATH = '/bla-bla-vla/trades/{id}/customer-comission-protocol/publish';
+tradesPublishConsiderationProtocol.PATH = '/market/api/v1/trades/{id}/customer-comission-protocol/publish';

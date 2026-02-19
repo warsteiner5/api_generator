@@ -28,4 +28,4 @@ export function messageQueueServiceLogUserBatchAction(http: HttpClient, rootUrl:
   );
 }
 
-messageQueueServiceLogUserBatchAction.PATH = '/bla-bla-vla/messageQueueService/FksMarketUserBatch';
+messageQueueServiceLogUserBatchAction.PATH = '/market/api/v1/messageQueueService/FksMarketUserBatch';

@@ -28,4 +28,4 @@ export function requirementRequestsGetPriceLists(http: HttpClient, rootUrl: stri
   );
 }
 
-requirementRequestsGetPriceLists.PATH = '/bla-bla-vla/RequirementRequests/getpriceLists/{requirementRequestId}';
+requirementRequestsGetPriceLists.PATH = '/market/api/v1/RequirementRequests/getpriceLists/{requirementRequestId}';

@@ -25,4 +25,4 @@ export function notificationGetNewNotificationsCount(http: HttpClient, rootUrl: 
   );
 }
 
-notificationGetNewNotificationsCount.PATH = '/bla-bla-vla/Notification/GetNewNotificationsCount';
+notificationGetNewNotificationsCount.PATH = '/api/Notification/GetNewNotificationsCount';

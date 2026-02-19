@@ -28,4 +28,4 @@ export function offersPublish2(http: HttpClient, rootUrl: string, params?: Offer
   );
 }
 
-offersPublish2.PATH = '/bla-bla-vla/offers/create';
+offersPublish2.PATH = '/market/api/v1/offers/create';

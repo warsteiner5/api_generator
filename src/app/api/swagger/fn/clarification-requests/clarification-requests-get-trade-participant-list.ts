@@ -28,4 +28,4 @@ export function clarificationRequestsGetTradeParticipantList(http: HttpClient, r
   );
 }
 
-clarificationRequestsGetTradeParticipantList.PATH = '/bla-bla-vla/trades/{tradeId}/clarification-requests/participants';
+clarificationRequestsGetTradeParticipantList.PATH = '/market/api/v1/trades/{tradeId}/clarification-requests/participants';

@@ -25,4 +25,4 @@ export function filterGetBannerActivity(http: HttpClient, rootUrl: string, param
   );
 }
 
-filterGetBannerActivity.PATH = '/bla-bla-vla/filters/banner/isactive';
+filterGetBannerActivity.PATH = '/market/api/v1/filters/banner/isactive';

@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfString } from '../../models/api-market-json-result-of-string';
+import { ApiMarketJsonResultOfStringAltDto } from '../../models/api-market-json-result-of-string';
 
 export interface AuthRedirectCallback$Params {
 }
 
-export function authRedirectCallback(http: HttpClient, rootUrl: string, params?: AuthRedirectCallback$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+export function authRedirectCallback(http: HttpClient, rootUrl: string, params?: AuthRedirectCallback$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
   const rb = new RequestBuilder(rootUrl, authRedirectCallback.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function authRedirectCallback(http: HttpClient, rootUrl: string, params?:
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfString>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>;
     })
   );
 }
 
-authRedirectCallback.PATH = '/bla-bla-vla/auth/sso/callback';
+authRedirectCallback.PATH = '/market/api/v1/auth/sso/callback';

@@ -28,4 +28,4 @@ export function dashboardGetAggregationInfoByStatusForUser(http: HttpClient, roo
   );
 }
 
-dashboardGetAggregationInfoByStatusForUser.PATH = '/bla-bla-vla/dashboard/agInfo/user/{guid}';
+dashboardGetAggregationInfoByStatusForUser.PATH = '/market/api/v1/dashboard/agInfo/user/{guid}';

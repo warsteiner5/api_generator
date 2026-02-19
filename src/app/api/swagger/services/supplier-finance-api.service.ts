@@ -19,7 +19,7 @@ export class SupplierFinanceApiService extends BaseService {
   }
 
   /** Path part for operation `supplierFinanceTransitionToRtsTenderPro()` */
-  static readonly SupplierFinanceTransitionToRtsTenderProPath = '/bla-bla-vla/supplier-finance/redirect/pro';
+  static readonly SupplierFinanceTransitionToRtsTenderProPath = '/market/api/v1/supplier-finance/redirect/pro';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

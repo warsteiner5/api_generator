@@ -27,4 +27,4 @@ export function externalSystemsGetExternalSystemById(http: HttpClient, rootUrl: 
   );
 }
 
-externalSystemsGetExternalSystemById.PATH = '/bla-bla-vla/ExternalSystems/identity/{key}';
+externalSystemsGetExternalSystemById.PATH = '/api/ExternalSystems/identity/{key}';

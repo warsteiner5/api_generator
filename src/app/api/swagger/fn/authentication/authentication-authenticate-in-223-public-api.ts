@@ -29,4 +29,4 @@ export function authenticationAuthenticateIn223PublicApi(http: HttpClient, rootU
   );
 }
 
-authenticationAuthenticateIn223PublicApi.PATH = '/bla-bla-vla/Authentication/AuthenticateIn223PublicApi';
+authenticationAuthenticateIn223PublicApi.PATH = '/api/Authentication/AuthenticateIn223PublicApi';

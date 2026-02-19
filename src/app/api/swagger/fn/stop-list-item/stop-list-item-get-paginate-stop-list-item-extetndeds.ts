@@ -29,4 +29,4 @@ export function stopListItemGetPaginateStopListItemExtetndeds(http: HttpClient, 
   );
 }
 
-stopListItemGetPaginateStopListItemExtetndeds.PATH = '/bla-bla-vla/stoplistitem/getFullInfo';
+stopListItemGetPaginateStopListItemExtetndeds.PATH = '/market/api/v1/stoplistitem/getFullInfo';

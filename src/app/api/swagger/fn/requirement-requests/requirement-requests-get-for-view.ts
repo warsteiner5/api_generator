@@ -28,4 +28,4 @@ export function requirementRequestsGetForView(http: HttpClient, rootUrl: string,
   );
 }
 
-requirementRequestsGetForView.PATH = '/bla-bla-vla/RequirementRequests/{id}';
+requirementRequestsGetForView.PATH = '/market/api/v1/RequirementRequests/{id}';

@@ -30,4 +30,4 @@ export function tradesGetApplicationInfo(http: HttpClient, rootUrl: string, para
   );
 }
 
-tradesGetApplicationInfo.PATH = '/bla-bla-vla/trades/{id}/applications/{applicationId}';
+tradesGetApplicationInfo.PATH = '/market/api/v1/trades/{id}/applications/{applicationId}';

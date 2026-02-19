@@ -29,4 +29,4 @@ export function customerGetOrganizations(http: HttpClient, rootUrl: string, para
   );
 }
 
-customerGetOrganizations.PATH = '/bla-bla-vla/Organizations';
+customerGetOrganizations.PATH = '/api/Organizations';

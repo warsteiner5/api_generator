@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfPublishApplicationResult } from '../../models/api-market-json-result-of-publish-application-result';
+import { ApiMarketJsonResultOfPublishApplicationResultAltDto } from '../../models/api-market-json-result-of-publish-application-result';
 import { ApiOrderApproveDto } from '../../models/api-order-approve-dto';
 
 export interface OrdersApproveAgreementByParticipant$Params {
       body?: ApiOrderApproveDto | null
 }
 
-export function ordersApproveAgreementByParticipant(http: HttpClient, rootUrl: string, params?: OrdersApproveAgreementByParticipant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResult>> {
+export function ordersApproveAgreementByParticipant(http: HttpClient, rootUrl: string, params?: OrdersApproveAgreementByParticipant$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, ordersApproveAgreementByParticipant.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function ordersApproveAgreementByParticipant(http: HttpClient, rootUrl: s
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResultAltDto>;
     })
   );
 }
 
-ordersApproveAgreementByParticipant.PATH = '/bla-bla-vla/orders/participants/approve';
+ordersApproveAgreementByParticipant.PATH = '/market/api/v1/orders/participants/approve';

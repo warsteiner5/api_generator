@@ -25,4 +25,4 @@ export function suggestBank(http: HttpClient, rootUrl: string, params?: SuggestB
   );
 }
 
-suggestBank.PATH = '/bla-bla-vla/Suggest/Suggest/Bank';
+suggestBank.PATH = '/api/Suggest/Suggest/Bank';

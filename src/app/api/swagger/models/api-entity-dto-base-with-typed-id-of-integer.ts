@@ -1,6 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
-export interface ApiEntityDtoBaseWithTypedIdOfIntegerAltDto {
+export interface ApiEntityDtoBaseWithTypedIdOfInteger {
   ID?: number;
   RowVersion?: number;
 }

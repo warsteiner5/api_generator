@@ -28,4 +28,4 @@ export function participantOfferValidateAndGenerateCommercialPrintForm(http: Htt
   );
 }
 
-participantOfferValidateAndGenerateCommercialPrintForm.PATH = '/bla-bla-vla/participantoffer/ValidateAndGenerateCommercialPrintForm';
+participantOfferValidateAndGenerateCommercialPrintForm.PATH = '/api/participantoffer/ValidateAndGenerateCommercialPrintForm';

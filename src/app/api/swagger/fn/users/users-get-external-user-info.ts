@@ -26,4 +26,4 @@ export function usersGetExternalUserInfo(http: HttpClient, rootUrl: string, para
   );
 }
 
-usersGetExternalUserInfo.PATH = '/bla-bla-vla/users/profile';
+usersGetExternalUserInfo.PATH = '/market/api/v1/users/profile';

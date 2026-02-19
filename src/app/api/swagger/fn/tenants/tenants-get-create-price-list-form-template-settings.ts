@@ -26,4 +26,4 @@ export function tenantsGetCreatePriceListFormTemplateSettings(http: HttpClient, 
   );
 }
 
-tenantsGetCreatePriceListFormTemplateSettings.PATH = '/bla-bla-vla/tenants/price-list-template';
+tenantsGetCreatePriceListFormTemplateSettings.PATH = '/market/api/v1/tenants/price-list-template';

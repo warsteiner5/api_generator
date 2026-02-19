@@ -28,4 +28,4 @@ export function employeesBlock(http: HttpClient, rootUrl: string, params: Employ
   );
 }
 
-employeesBlock.PATH = '/bla-bla-vla/employees/{id}/block';
+employeesBlock.PATH = '/market/api/v1/employees/{id}/block';

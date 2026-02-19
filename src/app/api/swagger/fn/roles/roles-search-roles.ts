@@ -29,4 +29,4 @@ export function rolesSearchRoles(http: HttpClient, rootUrl: string, params?: Rol
   );
 }
 
-rolesSearchRoles.PATH = '/bla-bla-vla/security/roles/search';
+rolesSearchRoles.PATH = '/market/api/v1/security/roles/search';

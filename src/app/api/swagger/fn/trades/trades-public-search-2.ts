@@ -29,4 +29,4 @@ export function tradesPublicSearch2(http: HttpClient, rootUrl: string, params?: 
   );
 }
 
-tradesPublicSearch2.PATH = '/bla-bla-vla/trades/publicsearch2';
+tradesPublicSearch2.PATH = '/market/api/v1/trades/publicsearch2';

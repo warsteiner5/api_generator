@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
-import { ApiBaseContractDtoWithIdAndRowVersionOfIntegerAndIntegerAltDto } from '../models/api-base-contract-dto-with-id-and-row-version-of-integer-and-integer';
+import { ApiBaseContractDtoWithIdAndRowVersionOfIntegerAndInteger } from '../models/api-base-contract-dto-with-id-and-row-version-of-integer-and-integer';
 import { ApiTradePlanItemOkpd2MarketDto } from '../models/api-trade-plan-item-okpd-2-market-dto';
-export type ApiTradePlanLotItemMarketDto = ApiBaseContractDtoWithIdAndRowVersionOfIntegerAndIntegerAltDto & {
+export type ApiTradePlanLotItemMarketDto = ApiBaseContractDtoWithIdAndRowVersionOfIntegerAndInteger & {
 'Name'?: string | null;
 'Okato'?: string | null;
 'RegionName'?: string | null;

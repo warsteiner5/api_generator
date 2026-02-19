@@ -28,4 +28,4 @@ export function tradesGetConsiderationProtocol(http: HttpClient, rootUrl: string
   );
 }
 
-tradesGetConsiderationProtocol.PATH = '/bla-bla-vla/trades/{id}/customer-comission-protocol';
+tradesGetConsiderationProtocol.PATH = '/market/api/v1/trades/{id}/customer-comission-protocol';

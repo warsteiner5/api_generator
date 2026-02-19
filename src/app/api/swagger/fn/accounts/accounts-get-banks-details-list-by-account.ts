@@ -28,4 +28,4 @@ export function accountsGetBanksDetailsListByAccount(http: HttpClient, rootUrl: 
   );
 }
 
-accountsGetBanksDetailsListByAccount.PATH = '/bla-bla-vla/accounts/my/{accountNumber}/bankDetailsList';
+accountsGetBanksDetailsListByAccount.PATH = '/market/api/v1/accounts/my/{accountNumber}/bankDetailsList';

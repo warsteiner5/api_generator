@@ -30,4 +30,4 @@ export function tradesCreateCustomerComissionProtocol(http: HttpClient, rootUrl:
   );
 }
 
-tradesCreateCustomerComissionProtocol.PATH = '/bla-bla-vla/trades/{id}/customer-comission-protocol/create';
+tradesCreateCustomerComissionProtocol.PATH = '/market/api/v1/trades/{id}/customer-comission-protocol/create';

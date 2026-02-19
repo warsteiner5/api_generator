@@ -1,5 +1,5 @@
 /* tslint:disable */
 /* eslint-disable */
-export interface ApiValueDtoOfStringAltDto {
+export interface ApiValueDtoOfString {
   Value?: string | null;
 }

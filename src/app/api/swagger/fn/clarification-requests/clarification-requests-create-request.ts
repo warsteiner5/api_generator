@@ -31,4 +31,4 @@ export function clarificationRequestsCreateRequest(http: HttpClient, rootUrl: st
   );
 }
 
-clarificationRequestsCreateRequest.PATH = '/bla-bla-vla/trades/{tradeId}/clarification-requests';
+clarificationRequestsCreateRequest.PATH = '/market/api/v1/trades/{tradeId}/clarification-requests';

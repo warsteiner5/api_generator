@@ -28,4 +28,4 @@ export function nsiSearchCountry(http: HttpClient, rootUrl: string, params: NsiS
   );
 }
 
-nsiSearchCountry.PATH = '/bla-bla-vla/nsi/searchCountry';
+nsiSearchCountry.PATH = '/market/api/v1/nsi/searchCountry';

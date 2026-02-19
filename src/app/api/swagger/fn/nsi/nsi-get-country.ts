@@ -26,4 +26,4 @@ export function nsiGetCountry(http: HttpClient, rootUrl: string, params?: NsiGet
   );
 }
 
-nsiGetCountry.PATH = '/bla-bla-vla/nsi/getCountry';
+nsiGetCountry.PATH = '/market/api/v1/nsi/getCountry';

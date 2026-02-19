@@ -161,9 +161,14 @@ function buildReturnMappingPlan(
   adapterImports: Map<string, string>
 ): ReturnMappingPlan {
   const entity = getEntityByTypeText(swaggerTypeText, context);
+  const isMarketJsonVoidResult =
+    entity?.swaggerName === 'ApiMarketJsonVoidResultDto' ||
+    entity?.swaggerName === 'ApiMarketJsonVoidResultAltDto' ||
+    entity?.localName === 'MarketJsonVoidResult' ||
+    entity?.localName === 'MarketJsonVoidResultAlt';
 
   if (entity?.kind === 'type') {
-    if (entity.swaggerName === 'ApiMarketJsonVoidResultAltDto' || entity.localName === 'MarketJsonVoidResultAlt') {
+    if (isMarketJsonVoidResult) {
       return {
         uiType: 'void',
         expression: 'void 0',
@@ -185,10 +190,7 @@ function buildReturnMappingPlan(
   }
 
   if (entity?.kind === 'interface') {
-    if (
-      entity.swaggerName === 'ApiMarketJsonVoidResultAltDto' ||
-      entity.localName === 'MarketJsonVoidResultAlt'
-    ) {
+    if (isMarketJsonVoidResult) {
       return {
         uiType: 'void',
         expression: 'void 0',

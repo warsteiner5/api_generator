@@ -29,4 +29,4 @@ export function pomogatorDeletePriceListSettings(http: HttpClient, rootUrl: stri
   );
 }
 
-pomogatorDeletePriceListSettings.PATH = '/bla-bla-vla/pomogator/deletePriceListSettings';
+pomogatorDeletePriceListSettings.PATH = '/market/api/v1/pomogator/deletePriceListSettings';

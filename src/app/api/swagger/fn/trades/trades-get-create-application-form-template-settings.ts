@@ -28,4 +28,4 @@ export function tradesGetCreateApplicationFormTemplateSettings(http: HttpClient,
   );
 }
 
-tradesGetCreateApplicationFormTemplateSettings.PATH = '/bla-bla-vla/trades/{tradeId}/application-template';
+tradesGetCreateApplicationFormTemplateSettings.PATH = '/market/api/v1/trades/{tradeId}/application-template';

@@ -22,7 +22,7 @@ export class FeedbackApiService extends BaseService {
   }
 
   /** Path part for operation `feedbackAddFeedback()` */
-  static readonly FeedbackAddFeedbackPath = '/bla-bla-vla/feedback/submit';
+  static readonly FeedbackAddFeedbackPath = '/market/api/v1/feedback/submit';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -47,7 +47,7 @@ export class FeedbackApiService extends BaseService {
   }
 
   /** Path part for operation `feedbackGetPersonalDataAgreement()` */
-  static readonly FeedbackGetPersonalDataAgreementPath = '/bla-bla-vla/feedback/agreement';
+  static readonly FeedbackGetPersonalDataAgreementPath = '/market/api/v1/feedback/agreement';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

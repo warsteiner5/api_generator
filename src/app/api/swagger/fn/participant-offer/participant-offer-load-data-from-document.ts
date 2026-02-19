@@ -29,4 +29,4 @@ export function participantOfferLoadDataFromDocument(http: HttpClient, rootUrl: 
   );
 }
 
-participantOfferLoadDataFromDocument.PATH = '/bla-bla-vla/participantoffer/LoadDataFromDocument';
+participantOfferLoadDataFromDocument.PATH = '/api/participantoffer/LoadDataFromDocument';

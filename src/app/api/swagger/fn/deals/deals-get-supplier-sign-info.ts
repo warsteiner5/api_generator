@@ -33,4 +33,4 @@ export function dealsGetSupplierSignInfo(http: HttpClient, rootUrl: string, para
   );
 }
 
-dealsGetSupplierSignInfo.PATH = '/bla-bla-vla/deals/supplier_sign_info';
+dealsGetSupplierSignInfo.PATH = '/market/api/v1/deals/supplier_sign_info';

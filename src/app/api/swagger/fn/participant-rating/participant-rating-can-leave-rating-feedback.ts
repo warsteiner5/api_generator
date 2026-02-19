@@ -28,4 +28,4 @@ export function participantRatingCanLeaveRatingFeedback(http: HttpClient, rootUr
   );
 }
 
-participantRatingCanLeaveRatingFeedback.PATH = '/bla-bla-vla/ParticipantRating/CanLeaveRatingFeedback';
+participantRatingCanLeaveRatingFeedback.PATH = '/api/ParticipantRating/CanLeaveRatingFeedback';

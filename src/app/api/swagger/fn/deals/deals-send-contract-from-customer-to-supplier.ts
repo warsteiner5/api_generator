@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfInteger } from '../../models/api-market-json-result-of-integer';
+import { ApiMarketJsonResultOfIntegerAltDto } from '../../models/api-market-json-result-of-integer';
 import { ApiSendContractFromCustomerToSupplierRequestAltDto } from '../../models/api-send-contract-from-customer-to-supplier-request';
 
 export interface DealsSendContractFromCustomerToSupplier$Params {
@@ -14,7 +14,7 @@ export interface DealsSendContractFromCustomerToSupplier$Params {
       body?: ApiSendContractFromCustomerToSupplierRequestAltDto | null
 }
 
-export function dealsSendContractFromCustomerToSupplier(http: HttpClient, rootUrl: string, params: DealsSendContractFromCustomerToSupplier$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfInteger>> {
+export function dealsSendContractFromCustomerToSupplier(http: HttpClient, rootUrl: string, params: DealsSendContractFromCustomerToSupplier$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>> {
   const rb = new RequestBuilder(rootUrl, dealsSendContractFromCustomerToSupplier.PATH, 'post');
   if (params) {
     rb.path('id', params.id, {});
@@ -26,9 +26,9 @@ export function dealsSendContractFromCustomerToSupplier(http: HttpClient, rootUr
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfInteger>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfIntegerAltDto>;
     })
   );
 }
 
-dealsSendContractFromCustomerToSupplier.PATH = '/bla-bla-vla/deals/{id}/customer/send';
+dealsSendContractFromCustomerToSupplier.PATH = '/market/api/v1/deals/{id}/customer/send';

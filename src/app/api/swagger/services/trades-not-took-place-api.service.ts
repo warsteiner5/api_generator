@@ -9,10 +9,10 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
-import { ApiMarketJsonResultOfCanCreateChildTradeValidationResult } from '../models/api-market-json-result-of-can-create-child-trade-validation-result';
-import { ApiMarketJsonResultOfNotTookPlaceLinkValidationResult } from '../models/api-market-json-result-of-not-took-place-link-validation-result';
-import { ApiMarketJsonResultOfTradePublishResult } from '../models/api-market-json-result-of-trade-publish-result';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfCanCreateChildTradeValidationResultAltDto } from '../models/api-market-json-result-of-can-create-child-trade-validation-result';
+import { ApiMarketJsonResultOfNotTookPlaceLinkValidationResultAltDto } from '../models/api-market-json-result-of-not-took-place-link-validation-result';
+import { ApiMarketJsonResultOfTradePublishResultAltDto } from '../models/api-market-json-result-of-trade-publish-result';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 import { tradesNotTookPlaceLinkNotTookPlaceTrade } from '../fn/trades-not-took-place/trades-not-took-place-link-not-took-place-trade';
 import { TradesNotTookPlaceLinkNotTookPlaceTrade$Params } from '../fn/trades-not-took-place/trades-not-took-place-link-not-took-place-trade';
@@ -34,7 +34,7 @@ export class TradesNotTookPlaceApiService extends BaseService {
   }
 
   /** Path part for operation `tradesNotTookPlaceRepublish()` */
-  static readonly TradesNotTookPlaceRepublishPath = '/bla-bla-vla/trades/nottookplace/republish/{tradeId}';
+  static readonly TradesNotTookPlaceRepublishPath = '/market/api/v1/trades/nottookplace/republish/{tradeId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -42,7 +42,7 @@ export class TradesNotTookPlaceApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesNotTookPlaceRepublish$Response(params: TradesNotTookPlaceRepublish$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>> {
+  tradesNotTookPlaceRepublish$Response(params: TradesNotTookPlaceRepublish$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>> {
     return tradesNotTookPlaceRepublish(this.http, this.rootUrl, params, context);
   }
 
@@ -52,14 +52,14 @@ export class TradesNotTookPlaceApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesNotTookPlaceRepublish(params: TradesNotTookPlaceRepublish$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTradePublishResult> {
+  tradesNotTookPlaceRepublish(params: TradesNotTookPlaceRepublish$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfTradePublishResultAltDto> {
     return this.tradesNotTookPlaceRepublish$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>): ApiMarketJsonResultOfTradePublishResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>): ApiMarketJsonResultOfTradePublishResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesNotTookPlaceLinkNotTookPlaceTrade()` */
-  static readonly TradesNotTookPlaceLinkNotTookPlaceTradePath = '/bla-bla-vla/trades/nottookplace/{tradeId}/link/{childTradeId}';
+  static readonly TradesNotTookPlaceLinkNotTookPlaceTradePath = '/market/api/v1/trades/nottookplace/{tradeId}/link/{childTradeId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -67,7 +67,7 @@ export class TradesNotTookPlaceApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesNotTookPlaceLinkNotTookPlaceTrade$Response(params: TradesNotTookPlaceLinkNotTookPlaceTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  tradesNotTookPlaceLinkNotTookPlaceTrade$Response(params: TradesNotTookPlaceLinkNotTookPlaceTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return tradesNotTookPlaceLinkNotTookPlaceTrade(this.http, this.rootUrl, params, context);
   }
 
@@ -77,14 +77,14 @@ export class TradesNotTookPlaceApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesNotTookPlaceLinkNotTookPlaceTrade(params: TradesNotTookPlaceLinkNotTookPlaceTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  tradesNotTookPlaceLinkNotTookPlaceTrade(params: TradesNotTookPlaceLinkNotTookPlaceTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.tradesNotTookPlaceLinkNotTookPlaceTrade$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesNotTookPlaceValidatePossibilityToLink()` */
-  static readonly TradesNotTookPlaceValidatePossibilityToLinkPath = '/bla-bla-vla/trades/nottookplace/link/{childTradeId}/validate';
+  static readonly TradesNotTookPlaceValidatePossibilityToLinkPath = '/market/api/v1/trades/nottookplace/link/{childTradeId}/validate';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -92,7 +92,7 @@ export class TradesNotTookPlaceApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesNotTookPlaceValidatePossibilityToLink$Response(params: TradesNotTookPlaceValidatePossibilityToLink$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfNotTookPlaceLinkValidationResult>> {
+  tradesNotTookPlaceValidatePossibilityToLink$Response(params: TradesNotTookPlaceValidatePossibilityToLink$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfNotTookPlaceLinkValidationResultAltDto>> {
     return tradesNotTookPlaceValidatePossibilityToLink(this.http, this.rootUrl, params, context);
   }
 
@@ -102,14 +102,14 @@ export class TradesNotTookPlaceApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  tradesNotTookPlaceValidatePossibilityToLink(params: TradesNotTookPlaceValidatePossibilityToLink$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfNotTookPlaceLinkValidationResult> {
+  tradesNotTookPlaceValidatePossibilityToLink(params: TradesNotTookPlaceValidatePossibilityToLink$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfNotTookPlaceLinkValidationResultAltDto> {
     return this.tradesNotTookPlaceValidatePossibilityToLink$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfNotTookPlaceLinkValidationResult>): ApiMarketJsonResultOfNotTookPlaceLinkValidationResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfNotTookPlaceLinkValidationResultAltDto>): ApiMarketJsonResultOfNotTookPlaceLinkValidationResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesNotTookPlaceValidateCanCreateChildTrade()` */
-  static readonly TradesNotTookPlaceValidateCanCreateChildTradePath = '/bla-bla-vla/trades/nottookplace/canCreateChild';
+  static readonly TradesNotTookPlaceValidateCanCreateChildTradePath = '/market/api/v1/trades/nottookplace/canCreateChild';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -117,7 +117,7 @@ export class TradesNotTookPlaceApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesNotTookPlaceValidateCanCreateChildTrade$Response(params?: TradesNotTookPlaceValidateCanCreateChildTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCanCreateChildTradeValidationResult>> {
+  tradesNotTookPlaceValidateCanCreateChildTrade$Response(params?: TradesNotTookPlaceValidateCanCreateChildTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCanCreateChildTradeValidationResultAltDto>> {
     return tradesNotTookPlaceValidateCanCreateChildTrade(this.http, this.rootUrl, params, context);
   }
 
@@ -127,14 +127,14 @@ export class TradesNotTookPlaceApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesNotTookPlaceValidateCanCreateChildTrade(params?: TradesNotTookPlaceValidateCanCreateChildTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfCanCreateChildTradeValidationResult> {
+  tradesNotTookPlaceValidateCanCreateChildTrade(params?: TradesNotTookPlaceValidateCanCreateChildTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfCanCreateChildTradeValidationResultAltDto> {
     return this.tradesNotTookPlaceValidateCanCreateChildTrade$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfCanCreateChildTradeValidationResult>): ApiMarketJsonResultOfCanCreateChildTradeValidationResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfCanCreateChildTradeValidationResultAltDto>): ApiMarketJsonResultOfCanCreateChildTradeValidationResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesNotTookPlaceValidateCartCanCreateChildTrade()` */
-  static readonly TradesNotTookPlaceValidateCartCanCreateChildTradePath = '/bla-bla-vla/trades/nottookplace/cart/canCreateChild';
+  static readonly TradesNotTookPlaceValidateCartCanCreateChildTradePath = '/market/api/v1/trades/nottookplace/cart/canCreateChild';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -142,7 +142,7 @@ export class TradesNotTookPlaceApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesNotTookPlaceValidateCartCanCreateChildTrade$Response(params?: TradesNotTookPlaceValidateCartCanCreateChildTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCanCreateChildTradeValidationResult>> {
+  tradesNotTookPlaceValidateCartCanCreateChildTrade$Response(params?: TradesNotTookPlaceValidateCartCanCreateChildTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCanCreateChildTradeValidationResultAltDto>> {
     return tradesNotTookPlaceValidateCartCanCreateChildTrade(this.http, this.rootUrl, params, context);
   }
 
@@ -152,14 +152,14 @@ export class TradesNotTookPlaceApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  tradesNotTookPlaceValidateCartCanCreateChildTrade(params?: TradesNotTookPlaceValidateCartCanCreateChildTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfCanCreateChildTradeValidationResult> {
+  tradesNotTookPlaceValidateCartCanCreateChildTrade(params?: TradesNotTookPlaceValidateCartCanCreateChildTrade$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfCanCreateChildTradeValidationResultAltDto> {
     return this.tradesNotTookPlaceValidateCartCanCreateChildTrade$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfCanCreateChildTradeValidationResult>): ApiMarketJsonResultOfCanCreateChildTradeValidationResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfCanCreateChildTradeValidationResultAltDto>): ApiMarketJsonResultOfCanCreateChildTradeValidationResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `tradesNotTookPlaceSetLapsed()` */
-  static readonly TradesNotTookPlaceSetLapsedPath = '/bla-bla-vla/trades/nottookplace/{tradeId}/setLapsed';
+  static readonly TradesNotTookPlaceSetLapsedPath = '/market/api/v1/trades/nottookplace/{tradeId}/setLapsed';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

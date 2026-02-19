@@ -28,4 +28,4 @@ export function accountCheckOrganizationExists(http: HttpClient, rootUrl: string
   );
 }
 
-accountCheckOrganizationExists.PATH = '/bla-bla-vla/Account/CheckOrganizationExists';
+accountCheckOrganizationExists.PATH = '/api/Account/CheckOrganizationExists';

@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfFilterObject } from '../../models/api-market-json-result-of-filter-object';
+import { ApiMarketJsonResultOfFilterObjectAltDto } from '../../models/api-market-json-result-of-filter-object';
 
 export interface FilterGetFilterByGuid$Params {
   guid: string;
 }
 
-export function filterGetFilterByGuid(http: HttpClient, rootUrl: string, params: FilterGetFilterByGuid$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfFilterObject>> {
+export function filterGetFilterByGuid(http: HttpClient, rootUrl: string, params: FilterGetFilterByGuid$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfFilterObjectAltDto>> {
   const rb = new RequestBuilder(rootUrl, filterGetFilterByGuid.PATH, 'get');
   if (params) {
     rb.path('guid', params.guid, {});
@@ -23,9 +23,9 @@ export function filterGetFilterByGuid(http: HttpClient, rootUrl: string, params:
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfFilterObject>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfFilterObjectAltDto>;
     })
   );
 }
 
-filterGetFilterByGuid.PATH = '/bla-bla-vla/filters/byguid/{guid}';
+filterGetFilterByGuid.PATH = '/market/api/v1/filters/byguid/{guid}';

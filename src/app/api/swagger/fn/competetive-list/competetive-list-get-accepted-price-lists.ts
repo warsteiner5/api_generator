@@ -29,4 +29,4 @@ export function competetiveListGetAcceptedPriceLists(http: HttpClient, rootUrl: 
   );
 }
 
-competetiveListGetAcceptedPriceLists.PATH = '/bla-bla-vla/competetivelist/acceptedPriceLists';
+competetiveListGetAcceptedPriceLists.PATH = '/market/api/v1/competetivelist/acceptedPriceLists';

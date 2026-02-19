@@ -27,4 +27,4 @@ export function externalDealDelete(http: HttpClient, rootUrl: string, params: Ex
   );
 }
 
-externalDealDelete.PATH = '/bla-bla-vla/externaldeal/{id}';
+externalDealDelete.PATH = '/api/externaldeal/{id}';

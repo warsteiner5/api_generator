@@ -28,4 +28,4 @@ export function prohibitionExclusionRegisterCreateOrganizationSetting(http: Http
   );
 }
 
-prohibitionExclusionRegisterCreateOrganizationSetting.PATH = '/bla-bla-vla/ProhibitionExclusionRegister/AddNewSetting';
+prohibitionExclusionRegisterCreateOrganizationSetting.PATH = '/api/ProhibitionExclusionRegister/AddNewSetting';

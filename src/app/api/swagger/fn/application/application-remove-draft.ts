@@ -27,4 +27,4 @@ export function applicationRemoveDraft(http: HttpClient, rootUrl: string, params
   );
 }
 
-applicationRemoveDraft.PATH = '/bla-bla-vla/Trade/Application/{applicationid}';
+applicationRemoveDraft.PATH = '/api/Trade/Application/{applicationid}';

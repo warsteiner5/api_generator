@@ -29,4 +29,4 @@ export function pomogatorSetRegionsForAllTags(http: HttpClient, rootUrl: string,
   );
 }
 
-pomogatorSetRegionsForAllTags.PATH = '/bla-bla-vla/pomogator/setRegionsForAllTags';
+pomogatorSetRegionsForAllTags.PATH = '/market/api/v1/pomogator/setRegionsForAllTags';

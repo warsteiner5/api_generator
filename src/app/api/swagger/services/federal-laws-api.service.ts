@@ -20,7 +20,7 @@ export class FederalLawsApiService extends BaseService {
   }
 
   /** Path part for operation `federalLawsGetAll()` */
-  static readonly FederalLawsGetAllPath = '/bla-bla-vla/federalLaws/GetAll';
+  static readonly FederalLawsGetAllPath = '/market/api/v1/federalLaws/GetAll';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

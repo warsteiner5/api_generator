@@ -27,4 +27,4 @@ export function tradesEnableSupplierMessages(http: HttpClient, rootUrl: string, 
   );
 }
 
-tradesEnableSupplierMessages.PATH = '/bla-bla-vla/trades/chat/{chatId}/enable-supplier-messages';
+tradesEnableSupplierMessages.PATH = '/market/api/v1/trades/chat/{chatId}/enable-supplier-messages';

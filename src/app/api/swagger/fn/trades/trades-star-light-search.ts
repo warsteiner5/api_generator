@@ -29,4 +29,4 @@ export function tradesStarLightSearch(http: HttpClient, rootUrl: string, params?
   );
 }
 
-tradesStarLightSearch.PATH = '/bla-bla-vla/trades/star-light-search';
+tradesStarLightSearch.PATH = '/market/api/v1/trades/star-light-search';

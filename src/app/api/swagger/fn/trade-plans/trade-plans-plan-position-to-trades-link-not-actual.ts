@@ -28,4 +28,4 @@ export function tradePlansPlanPositionToTradesLinkNotActual(http: HttpClient, ro
   );
 }
 
-tradePlansPlanPositionToTradesLinkNotActual.PATH = '/bla-bla-vla/plans/position-to-trade-link/{tradeId}/not-actual';
+tradePlansPlanPositionToTradesLinkNotActual.PATH = '/market/api/v1/plans/position-to-trade-link/{tradeId}/not-actual';

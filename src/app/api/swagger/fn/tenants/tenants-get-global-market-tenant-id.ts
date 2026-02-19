@@ -25,4 +25,4 @@ export function tenantsGetGlobalMarketTenantId(http: HttpClient, rootUrl: string
   );
 }
 
-tenantsGetGlobalMarketTenantId.PATH = '/bla-bla-vla/tenants/globalMarketId';
+tenantsGetGlobalMarketTenantId.PATH = '/market/api/v1/tenants/globalMarketId';

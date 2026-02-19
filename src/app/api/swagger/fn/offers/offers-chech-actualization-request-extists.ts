@@ -6,13 +6,13 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface OffersChechActualizationRequestExtists$Params {
   id: number;
 }
 
-export function offersChechActualizationRequestExtists(http: HttpClient, rootUrl: string, params: OffersChechActualizationRequestExtists$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function offersChechActualizationRequestExtists(http: HttpClient, rootUrl: string, params: OffersChechActualizationRequestExtists$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, offersChechActualizationRequestExtists.PATH, 'get');
   if (params) {
     rb.path('id', params.id, {});
@@ -23,9 +23,9 @@ export function offersChechActualizationRequestExtists(http: HttpClient, rootUrl
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-offersChechActualizationRequestExtists.PATH = '/bla-bla-vla/offers/{id}/actualizationRequest/isExists';
+offersChechActualizationRequestExtists.PATH = '/market/api/v1/offers/{id}/actualizationRequest/isExists';

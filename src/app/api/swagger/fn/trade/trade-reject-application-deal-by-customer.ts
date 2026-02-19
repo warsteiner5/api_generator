@@ -28,4 +28,4 @@ export function tradeRejectApplicationDealByCustomer(http: HttpClient, rootUrl: 
   );
 }
 
-tradeRejectApplicationDealByCustomer.PATH = '/bla-bla-vla/Trade/RejectApplicationDealByCustomer';
+tradeRejectApplicationDealByCustomer.PATH = '/api/Trade/RejectApplicationDealByCustomer';

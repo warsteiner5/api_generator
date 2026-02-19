@@ -7,14 +7,14 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiFinishReviewApplicationDto } from '../../models/api-finish-review-application-dto';
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface TradesFinishReviewApplication$Params {
   id: number;
       body?: ApiFinishReviewApplicationDto | null
 }
 
-export function tradesFinishReviewApplication(http: HttpClient, rootUrl: string, params: TradesFinishReviewApplication$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function tradesFinishReviewApplication(http: HttpClient, rootUrl: string, params: TradesFinishReviewApplication$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesFinishReviewApplication.PATH, 'post');
   if (params) {
     rb.path('id', params.id, {});
@@ -26,9 +26,9 @@ export function tradesFinishReviewApplication(http: HttpClient, rootUrl: string,
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-tradesFinishReviewApplication.PATH = '/bla-bla-vla/trades/{id}/applications/review/finish';
+tradesFinishReviewApplication.PATH = '/market/api/v1/trades/{id}/applications/review/finish';

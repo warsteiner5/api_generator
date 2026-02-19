@@ -28,4 +28,4 @@ export function competetiveListGetCompetitiveListItemForParticipantOfferTemplate
   );
 }
 
-competetiveListGetCompetitiveListItemForParticipantOfferTemplate.PATH = '/bla-bla-vla/competetivelist/GetCompetitiveListItemForParticipantOfferTemplate/{id}';
+competetiveListGetCompetitiveListItemForParticipantOfferTemplate.PATH = '/market/api/v1/competetivelist/GetCompetitiveListItemForParticipantOfferTemplate/{id}';

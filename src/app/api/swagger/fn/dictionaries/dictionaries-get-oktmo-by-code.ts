@@ -28,4 +28,4 @@ export function dictionariesGetOktmoByCode(http: HttpClient, rootUrl: string, pa
   );
 }
 
-dictionariesGetOktmoByCode.PATH = '/bla-bla-vla/dictionaries/oktmo/{code}';
+dictionariesGetOktmoByCode.PATH = '/market/api/v1/dictionaries/oktmo/{code}';

@@ -27,4 +27,4 @@ export function accountMakeUsersNotOrgAdminForOrganization(http: HttpClient, roo
   );
 }
 
-accountMakeUsersNotOrgAdminForOrganization.PATH = '/bla-bla-vla/Account/MakeUsersNotOrgAdminForOrganization';
+accountMakeUsersNotOrgAdminForOrganization.PATH = '/api/Account/MakeUsersNotOrgAdminForOrganization';

@@ -28,4 +28,4 @@ export function dealSentForParticipantApproveExternal(http: HttpClient, rootUrl:
   );
 }
 
-dealSentForParticipantApproveExternal.PATH = '/bla-bla-vla/Deal/SentForParticipantApprove/external';
+dealSentForParticipantApproveExternal.PATH = '/api/Deal/SentForParticipantApprove/external';

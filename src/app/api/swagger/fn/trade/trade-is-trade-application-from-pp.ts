@@ -27,4 +27,4 @@ export function tradeIsTradeApplicationFromPp(http: HttpClient, rootUrl: string,
   );
 }
 
-tradeIsTradeApplicationFromPp.PATH = '/bla-bla-vla/Trade/IsTradeApplicationFromPP';
+tradeIsTradeApplicationFromPp.PATH = '/api/Trade/IsTradeApplicationFromPP';

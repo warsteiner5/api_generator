@@ -29,4 +29,4 @@ export function tradesExternalSearch(http: HttpClient, rootUrl: string, params?:
   );
 }
 
-tradesExternalSearch.PATH = '/bla-bla-vla/trades/external/search';
+tradesExternalSearch.PATH = '/market/api/v1/trades/external/search';

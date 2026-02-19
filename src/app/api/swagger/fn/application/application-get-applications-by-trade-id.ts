@@ -28,4 +28,4 @@ export function applicationGetApplicationsByTradeId(http: HttpClient, rootUrl: s
   );
 }
 
-applicationGetApplicationsByTradeId.PATH = '/bla-bla-vla/GetApplicationsByTradeId/{id}';
+applicationGetApplicationsByTradeId.PATH = '/api/GetApplicationsByTradeId/{id}';

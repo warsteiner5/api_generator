@@ -6,7 +6,7 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOf } from '../../models/api-market-json-result-of-market-pagination-result-of-bid-info-of';
+import { ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOfAltDto } from '../../models/api-market-json-result-of-market-pagination-result-of-bid-info-of';
 
 export interface BidGetBids$Params {
   tradeId: number;
@@ -14,7 +14,7 @@ export interface BidGetBids$Params {
   pageSize: number;
 }
 
-export function bidGetBids(http: HttpClient, rootUrl: string, params: BidGetBids$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOf>> {
+export function bidGetBids(http: HttpClient, rootUrl: string, params: BidGetBids$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOfAltDto>> {
   const rb = new RequestBuilder(rootUrl, bidGetBids.PATH, 'get');
   if (params) {
     rb.path('tradeId', params.tradeId, {});
@@ -27,9 +27,9 @@ export function bidGetBids(http: HttpClient, rootUrl: string, params: BidGetBids
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOf>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfMarketPaginationResultOfBidInfoOfAltDto>;
     })
   );
 }
 
-bidGetBids.PATH = '/bla-bla-vla/bid/trade/{tradeId}';
+bidGetBids.PATH = '/market/api/v1/bid/trade/{tradeId}';

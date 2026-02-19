@@ -7,14 +7,14 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiApplicationDto2 } from '../../models/api-application-dto-2';
-import { ApiMarketJsonResultOfCardPaymentAvailability } from '../../models/api-market-json-result-of-card-payment-availability';
+import { ApiMarketJsonResultOfCardPaymentAvailabilityAltDto } from '../../models/api-market-json-result-of-card-payment-availability';
 
 export interface TradesGetCardPaymentAvailability$Params {
   tradeId: number;
       body?: ApiApplicationDto2 | null
 }
 
-export function tradesGetCardPaymentAvailability(http: HttpClient, rootUrl: string, params: TradesGetCardPaymentAvailability$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCardPaymentAvailability>> {
+export function tradesGetCardPaymentAvailability(http: HttpClient, rootUrl: string, params: TradesGetCardPaymentAvailability$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCardPaymentAvailabilityAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesGetCardPaymentAvailability.PATH, 'post');
   if (params) {
     rb.path('tradeId', params.tradeId, {});
@@ -26,9 +26,9 @@ export function tradesGetCardPaymentAvailability(http: HttpClient, rootUrl: stri
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfCardPaymentAvailability>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfCardPaymentAvailabilityAltDto>;
     })
   );
 }
 
-tradesGetCardPaymentAvailability.PATH = '/bla-bla-vla/trades/{tradeId}/application/card-payment/available';
+tradesGetCardPaymentAvailability.PATH = '/market/api/v1/trades/{tradeId}/application/card-payment/available';

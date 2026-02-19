@@ -28,4 +28,4 @@ export function accountGetAllUsersForOrganization(http: HttpClient, rootUrl: str
   );
 }
 
-accountGetAllUsersForOrganization.PATH = '/bla-bla-vla/Account/GetAllUsersForOrganization';
+accountGetAllUsersForOrganization.PATH = '/api/Account/GetAllUsersForOrganization';

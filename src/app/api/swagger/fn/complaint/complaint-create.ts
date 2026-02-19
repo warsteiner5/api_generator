@@ -29,4 +29,4 @@ export function complaintCreate(http: HttpClient, rootUrl: string, params?: Comp
   );
 }
 
-complaintCreate.PATH = '/bla-bla-vla/complaint/create';
+complaintCreate.PATH = '/market/api/v1/complaint/create';

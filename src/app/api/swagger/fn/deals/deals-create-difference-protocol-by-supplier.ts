@@ -31,4 +31,4 @@ export function dealsCreateDifferenceProtocolBySupplier(http: HttpClient, rootUr
   );
 }
 
-dealsCreateDifferenceProtocolBySupplier.PATH = '/bla-bla-vla/deals/{id}/participant/difference-protocol';
+dealsCreateDifferenceProtocolBySupplier.PATH = '/market/api/v1/deals/{id}/participant/difference-protocol';

@@ -11,7 +11,7 @@ import { StrictHttpResponse } from '../strict-http-response';
 
 import { itemCalculateSum } from '../fn/item/item-calculate-sum';
 import { ItemCalculateSum$Params } from '../fn/item/item-calculate-sum';
-import { ApiMarketJsonResultOfDecimal } from '../models/api-market-json-result-of-decimal';
+import { ApiMarketJsonResultOfDecimalAltDto } from '../models/api-market-json-result-of-decimal';
 
 @Injectable({ providedIn: 'root' })
 export class ItemApiService extends BaseService {
@@ -20,7 +20,7 @@ export class ItemApiService extends BaseService {
   }
 
   /** Path part for operation `itemCalculateSum()` */
-  static readonly ItemCalculateSumPath = '/bla-bla-vla/item/sum';
+  static readonly ItemCalculateSumPath = '/market/api/v1/item/sum';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -28,7 +28,7 @@ export class ItemApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  itemCalculateSum$Response(params?: ItemCalculateSum$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimal>> {
+  itemCalculateSum$Response(params?: ItemCalculateSum$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>> {
     return itemCalculateSum(this.http, this.rootUrl, params, context);
   }
 
@@ -38,9 +38,9 @@ export class ItemApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  itemCalculateSum(params?: ItemCalculateSum$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDecimal> {
+  itemCalculateSum(params?: ItemCalculateSum$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDecimalAltDto> {
     return this.itemCalculateSum$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDecimal>): ApiMarketJsonResultOfDecimal => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>): ApiMarketJsonResultOfDecimalAltDto => r.body)
     );
   }
 

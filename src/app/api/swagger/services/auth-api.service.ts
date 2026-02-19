@@ -29,12 +29,12 @@ import { authVerifyCertificate } from '../fn/auth/auth-verify-certificate';
 import { AuthVerifyCertificate$Params } from '../fn/auth/auth-verify-certificate';
 import { authVerifyLoginPassword } from '../fn/auth/auth-verify-login-password';
 import { AuthVerifyLoginPassword$Params } from '../fn/auth/auth-verify-login-password';
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
-import { ApiMarketJsonResultOfCertificateVerifyResult } from '../models/api-market-json-result-of-certificate-verify-result';
-import { ApiMarketJsonResultOfExternalUserInfo } from '../models/api-market-json-result-of-external-user-info';
-import { ApiMarketJsonResultOfLoginVerifyResult } from '../models/api-market-json-result-of-login-verify-result';
-import { ApiMarketJsonResultOfSignInResult } from '../models/api-market-json-result-of-sign-in-result';
-import { ApiMarketJsonResultOfString } from '../models/api-market-json-result-of-string';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfCertificateVerifyResultAltDto } from '../models/api-market-json-result-of-certificate-verify-result';
+import { ApiMarketJsonResultOfExternalUserInfoAltDto } from '../models/api-market-json-result-of-external-user-info';
+import { ApiMarketJsonResultOfLoginVerifyResultAltDto } from '../models/api-market-json-result-of-login-verify-result';
+import { ApiMarketJsonResultOfSignInResultAltDto } from '../models/api-market-json-result-of-sign-in-result';
+import { ApiMarketJsonResultOfStringAltDto } from '../models/api-market-json-result-of-string';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
 
 @Injectable({ providedIn: 'root' })
@@ -44,7 +44,7 @@ export class AuthApiService extends BaseService {
   }
 
   /** Path part for operation `authIsMarketLoginEnabled()` */
-  static readonly AuthIsMarketLoginEnabledPath = '/bla-bla-vla/auth/enabled';
+  static readonly AuthIsMarketLoginEnabledPath = '/market/api/v1/auth/enabled';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -52,7 +52,7 @@ export class AuthApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  authIsMarketLoginEnabled$Response(params?: AuthIsMarketLoginEnabled$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  authIsMarketLoginEnabled$Response(params?: AuthIsMarketLoginEnabled$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return authIsMarketLoginEnabled(this.http, this.rootUrl, params, context);
   }
 
@@ -62,14 +62,14 @@ export class AuthApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  authIsMarketLoginEnabled(params?: AuthIsMarketLoginEnabled$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  authIsMarketLoginEnabled(params?: AuthIsMarketLoginEnabled$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.authIsMarketLoginEnabled$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `authAuthorize()` */
-  static readonly AuthAuthorizePath = '/bla-bla-vla/auth/authorize';
+  static readonly AuthAuthorizePath = '/market/api/v1/auth/authorize';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -94,7 +94,7 @@ export class AuthApiService extends BaseService {
   }
 
   /** Path part for operation `authLogin()` */
-  static readonly AuthLoginPath = '/bla-bla-vla/auth/login';
+  static readonly AuthLoginPath = '/market/api/v1/auth/login';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -102,7 +102,7 @@ export class AuthApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  authLogin$Response(params?: AuthLogin$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSignInResult>> {
+  authLogin$Response(params?: AuthLogin$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSignInResultAltDto>> {
     return authLogin(this.http, this.rootUrl, params, context);
   }
 
@@ -112,14 +112,14 @@ export class AuthApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  authLogin(params?: AuthLogin$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSignInResult> {
+  authLogin(params?: AuthLogin$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSignInResultAltDto> {
     return this.authLogin$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfSignInResult>): ApiMarketJsonResultOfSignInResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfSignInResultAltDto>): ApiMarketJsonResultOfSignInResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `authLoginExternal()` */
-  static readonly AuthLoginExternalPath = '/bla-bla-vla/auth/login/external/{ExternalSystemIdentityKey}';
+  static readonly AuthLoginExternalPath = '/market/api/v1/auth/login/external/{ExternalSystemIdentityKey}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -127,7 +127,7 @@ export class AuthApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  authLoginExternal$Response(params: AuthLoginExternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSignInResult>> {
+  authLoginExternal$Response(params: AuthLoginExternal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfSignInResultAltDto>> {
     return authLoginExternal(this.http, this.rootUrl, params, context);
   }
 
@@ -137,14 +137,14 @@ export class AuthApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  authLoginExternal(params: AuthLoginExternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSignInResult> {
+  authLoginExternal(params: AuthLoginExternal$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfSignInResultAltDto> {
     return this.authLoginExternal$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfSignInResult>): ApiMarketJsonResultOfSignInResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfSignInResultAltDto>): ApiMarketJsonResultOfSignInResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `authSignOut()` */
-  static readonly AuthSignOutPath = '/bla-bla-vla/auth/signout';
+  static readonly AuthSignOutPath = '/market/api/v1/auth/signout';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -169,7 +169,7 @@ export class AuthApiService extends BaseService {
   }
 
   /** Path part for operation `authGetSsoRedirectUrl()` */
-  static readonly AuthGetSsoRedirectUrlPath = '/bla-bla-vla/auth/sso/redirect';
+  static readonly AuthGetSsoRedirectUrlPath = '/market/api/v1/auth/sso/redirect';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -177,7 +177,7 @@ export class AuthApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  authGetSsoRedirectUrl$Response(params: AuthGetSsoRedirectUrl$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+  authGetSsoRedirectUrl$Response(params: AuthGetSsoRedirectUrl$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
     return authGetSsoRedirectUrl(this.http, this.rootUrl, params, context);
   }
 
@@ -187,14 +187,14 @@ export class AuthApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  authGetSsoRedirectUrl(params: AuthGetSsoRedirectUrl$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfString> {
+  authGetSsoRedirectUrl(params: AuthGetSsoRedirectUrl$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfStringAltDto> {
     return this.authGetSsoRedirectUrl$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfString>): ApiMarketJsonResultOfString => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>): ApiMarketJsonResultOfStringAltDto => r.body)
     );
   }
 
   /** Path part for operation `authRedirectCallback()` */
-  static readonly AuthRedirectCallbackPath = '/bla-bla-vla/auth/sso/callback';
+  static readonly AuthRedirectCallbackPath = '/market/api/v1/auth/sso/callback';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -202,7 +202,7 @@ export class AuthApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  authRedirectCallback$Response(params?: AuthRedirectCallback$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfString>> {
+  authRedirectCallback$Response(params?: AuthRedirectCallback$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>> {
     return authRedirectCallback(this.http, this.rootUrl, params, context);
   }
 
@@ -212,14 +212,14 @@ export class AuthApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  authRedirectCallback(params?: AuthRedirectCallback$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfString> {
+  authRedirectCallback(params?: AuthRedirectCallback$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfStringAltDto> {
     return this.authRedirectCallback$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfString>): ApiMarketJsonResultOfString => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfStringAltDto>): ApiMarketJsonResultOfStringAltDto => r.body)
     );
   }
 
   /** Path part for operation `authVerifyCertificate()` */
-  static readonly AuthVerifyCertificatePath = '/bla-bla-vla/auth/certificate/verify';
+  static readonly AuthVerifyCertificatePath = '/market/api/v1/auth/certificate/verify';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -227,7 +227,7 @@ export class AuthApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  authVerifyCertificate$Response(params?: AuthVerifyCertificate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCertificateVerifyResult>> {
+  authVerifyCertificate$Response(params?: AuthVerifyCertificate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCertificateVerifyResultAltDto>> {
     return authVerifyCertificate(this.http, this.rootUrl, params, context);
   }
 
@@ -237,14 +237,14 @@ export class AuthApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  authVerifyCertificate(params?: AuthVerifyCertificate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfCertificateVerifyResult> {
+  authVerifyCertificate(params?: AuthVerifyCertificate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfCertificateVerifyResultAltDto> {
     return this.authVerifyCertificate$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfCertificateVerifyResult>): ApiMarketJsonResultOfCertificateVerifyResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfCertificateVerifyResultAltDto>): ApiMarketJsonResultOfCertificateVerifyResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `authVerifyLoginPassword()` */
-  static readonly AuthVerifyLoginPasswordPath = '/bla-bla-vla/auth/login/verify';
+  static readonly AuthVerifyLoginPasswordPath = '/market/api/v1/auth/login/verify';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -252,7 +252,7 @@ export class AuthApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  authVerifyLoginPassword$Response(params?: AuthVerifyLoginPassword$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLoginVerifyResult>> {
+  authVerifyLoginPassword$Response(params?: AuthVerifyLoginPassword$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLoginVerifyResultAltDto>> {
     return authVerifyLoginPassword(this.http, this.rootUrl, params, context);
   }
 
@@ -262,14 +262,14 @@ export class AuthApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  authVerifyLoginPassword(params?: AuthVerifyLoginPassword$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLoginVerifyResult> {
+  authVerifyLoginPassword(params?: AuthVerifyLoginPassword$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfLoginVerifyResultAltDto> {
     return this.authVerifyLoginPassword$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfLoginVerifyResult>): ApiMarketJsonResultOfLoginVerifyResult => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfLoginVerifyResultAltDto>): ApiMarketJsonResultOfLoginVerifyResultAltDto => r.body)
     );
   }
 
   /** Path part for operation `authGetExternalUserInfo()` */
-  static readonly AuthGetExternalUserInfoPath = '/bla-bla-vla/auth/externalUserInfo';
+  static readonly AuthGetExternalUserInfoPath = '/market/api/v1/auth/externalUserInfo';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -277,7 +277,7 @@ export class AuthApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  authGetExternalUserInfo$Response(params?: AuthGetExternalUserInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfExternalUserInfo>> {
+  authGetExternalUserInfo$Response(params?: AuthGetExternalUserInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfExternalUserInfoAltDto>> {
     return authGetExternalUserInfo(this.http, this.rootUrl, params, context);
   }
 
@@ -287,9 +287,9 @@ export class AuthApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  authGetExternalUserInfo(params?: AuthGetExternalUserInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfExternalUserInfo> {
+  authGetExternalUserInfo(params?: AuthGetExternalUserInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfExternalUserInfoAltDto> {
     return this.authGetExternalUserInfo$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfExternalUserInfo>): ApiMarketJsonResultOfExternalUserInfo => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfExternalUserInfoAltDto>): ApiMarketJsonResultOfExternalUserInfoAltDto => r.body)
     );
   }
 

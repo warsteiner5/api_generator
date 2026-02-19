@@ -27,4 +27,4 @@ export function tradesGetArchiveDocuments(http: HttpClient, rootUrl: string, par
   );
 }
 
-tradesGetArchiveDocuments.PATH = '/bla-bla-vla/trades/application/{applicationId}/documents/archive';
+tradesGetArchiveDocuments.PATH = '/market/api/v1/trades/application/{applicationId}/documents/archive';

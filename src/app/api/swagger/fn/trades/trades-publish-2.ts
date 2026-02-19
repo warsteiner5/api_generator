@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfTradePublishResult } from '../../models/api-market-json-result-of-trade-publish-result';
-import { ApiTradeDtoWithSignatureAltDto } from '../../models/api-trade-dto-with-signature';
+import { ApiMarketJsonResultOfTradePublishResultAltDto } from '../../models/api-market-json-result-of-trade-publish-result';
+import { ApiTradeDtoWithSignature } from '../../models/api-trade-dto-with-signature';
 
 export interface TradesPublish2$Params {
-      body?: ApiTradeDtoWithSignatureAltDto | null
+      body?: ApiTradeDtoWithSignature | null
 }
 
-export function tradesPublish2(http: HttpClient, rootUrl: string, params?: TradesPublish2$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>> {
+export function tradesPublish2(http: HttpClient, rootUrl: string, params?: TradesPublish2$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesPublish2.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function tradesPublish2(http: HttpClient, rootUrl: string, params?: Trade
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfTradePublishResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfTradePublishResultAltDto>;
     })
   );
 }
 
-tradesPublish2.PATH = '/bla-bla-vla/trades';
+tradesPublish2.PATH = '/market/api/v1/trades';

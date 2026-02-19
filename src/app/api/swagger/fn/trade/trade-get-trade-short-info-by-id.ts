@@ -28,4 +28,4 @@ export function tradeGetTradeShortInfoById(http: HttpClient, rootUrl: string, pa
   );
 }
 
-tradeGetTradeShortInfoById.PATH = '/bla-bla-vla/Trade/{id}/GetTradeShortInfoById';
+tradeGetTradeShortInfoById.PATH = '/api/Trade/{id}/GetTradeShortInfoById';

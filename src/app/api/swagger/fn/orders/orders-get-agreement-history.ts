@@ -28,4 +28,4 @@ export function ordersGetAgreementHistory(http: HttpClient, rootUrl: string, par
   );
 }
 
-ordersGetAgreementHistory.PATH = '/bla-bla-vla/orders/{id}/agreement/history';
+ordersGetAgreementHistory.PATH = '/market/api/v1/orders/{id}/agreement/history';

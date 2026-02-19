@@ -28,4 +28,4 @@ export function tenantsGetDealRejectReasons(http: HttpClient, rootUrl: string, p
   );
 }
 
-tenantsGetDealRejectReasons.PATH = '/bla-bla-vla/tenants/GetDealRejectReasons';
+tenantsGetDealRejectReasons.PATH = '/market/api/v1/tenants/GetDealRejectReasons';

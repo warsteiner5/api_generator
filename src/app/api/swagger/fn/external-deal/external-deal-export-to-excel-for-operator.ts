@@ -27,4 +27,4 @@ export function externalDealExportToExcelForOperator(http: HttpClient, rootUrl: 
   );
 }
 
-externalDealExportToExcelForOperator.PATH = '/bla-bla-vla/externaldeal/exportToExcelForOperator';
+externalDealExportToExcelForOperator.PATH = '/api/externaldeal/exportToExcelForOperator';

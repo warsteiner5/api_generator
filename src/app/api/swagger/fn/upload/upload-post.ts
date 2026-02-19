@@ -25,4 +25,4 @@ export function uploadPost(http: HttpClient, rootUrl: string, params?: UploadPos
   );
 }
 
-uploadPost.PATH = '/bla-bla-vla/Upload';
+uploadPost.PATH = '/api/Upload';

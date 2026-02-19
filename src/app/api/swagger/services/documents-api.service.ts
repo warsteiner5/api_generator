@@ -25,7 +25,7 @@ export class DocumentsApiService extends BaseService {
   }
 
   /** Path part for operation `documentsGetMyDocuments()` */
-  static readonly DocumentsGetMyDocumentsPath = '/bla-bla-vla/documents/my';
+  static readonly DocumentsGetMyDocumentsPath = '/market/api/v1/documents/my';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -50,7 +50,7 @@ export class DocumentsApiService extends BaseService {
   }
 
   /** Path part for operation `documentsSaveDocument()` */
-  static readonly DocumentsSaveDocumentPath = '/bla-bla-vla/documents/save';
+  static readonly DocumentsSaveDocumentPath = '/market/api/v1/documents/save';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -75,7 +75,7 @@ export class DocumentsApiService extends BaseService {
   }
 
   /** Path part for operation `documentsDeleteDocument()` */
-  static readonly DocumentsDeleteDocumentPath = '/bla-bla-vla/documents/delete';
+  static readonly DocumentsDeleteDocumentPath = '/market/api/v1/documents/delete';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

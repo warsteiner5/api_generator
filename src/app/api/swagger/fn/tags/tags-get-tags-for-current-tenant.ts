@@ -26,4 +26,4 @@ export function tagsGetTagsForCurrentTenant(http: HttpClient, rootUrl: string, p
   );
 }
 
-tagsGetTagsForCurrentTenant.PATH = '/bla-bla-vla/tags';
+tagsGetTagsForCurrentTenant.PATH = '/market/api/v1/tags';

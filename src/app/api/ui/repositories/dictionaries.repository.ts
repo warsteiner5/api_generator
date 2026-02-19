@@ -2,7 +2,7 @@ import { adaptCategoryToUI } from '../adapters/toUI/category.adapter';
 import { adaptCategoryWithChildrenToUI } from '../adapters/toUI/category-with-children.adapter';
 import { adaptDictionaryItemAltToUI } from '../adapters/toUI/dictionary-item-alt.adapter';
 import { adaptIndustryToUI } from '../adapters/toUI/industry.adapter';
-import { adaptKeyValuePairOfStringAndStringToUI } from '../adapters/toUI/key-value-pair-of-string-and-string.adapter';
+import { adaptKeyValuePairOfStringAndStringAltToUI } from '../adapters/toUI/key-value-pair-of-string-and-string-alt.adapter';
 import { adaptKsrCategoryAltToUI } from '../adapters/toUI/ksr-category-alt.adapter';
 import { adaptKsrValueAltToUI } from '../adapters/toUI/ksr-value-alt.adapter';
 import { adaptKtruToUI } from '../adapters/toUI/ktru.adapter';
@@ -52,7 +52,7 @@ import { DictionariesSearchKtruByStringParams, dictionariesSearchKtruByStringPar
 import { DictionaryItemAlt } from '../models/dictionary-item-alt.interface';
 import { Industry } from '../models/industry.interface';
 import { Injectable, inject } from '@angular/core';
-import { KeyValuePairOfStringAndString } from '../models/key-value-pair-of-string-and-string.interface';
+import { KeyValuePairOfStringAndStringAlt } from '../models/key-value-pair-of-string-and-string-alt.interface';
 import { KsrCategoryAlt } from '../models/ksr-category-alt.interface';
 import { KsrValueAlt } from '../models/ksr-value-alt.interface';
 import { Ktru } from '../models/ktru.interface';
@@ -102,21 +102,21 @@ export class DictionariesRepository {
     );
   }
 
-  dictionariesGetKladrRegionListGet(params?: DictionariesGetKladrRegionListGetParams): Observable<KeyValuePairOfStringAndString[]> {
+  dictionariesGetKladrRegionListGet(params?: DictionariesGetKladrRegionListGetParams): Observable<KeyValuePairOfStringAndStringAlt[]> {
     return this._api.dictionariesGetKladrRegionListGet(dictionariesGetKladrRegionListGetParamsAdapter.adapt(params)).pipe(
-      map((res) => (res?.data ?? []).map((item) => adaptKeyValuePairOfStringAndStringToUI(item)))
+      map((res) => (res?.data ?? []).map((item) => adaptKeyValuePairOfStringAndStringAltToUI(item)))
     );
   }
 
-  dictionariesGetKladrRegionListGet2(params: DictionariesGetKladrRegionListGet2Params): Observable<KeyValuePairOfStringAndString[]> {
+  dictionariesGetKladrRegionListGet2(params: DictionariesGetKladrRegionListGet2Params): Observable<KeyValuePairOfStringAndStringAlt[]> {
     return this._api.dictionariesGetKladrRegionListGet2(dictionariesGetKladrRegionListGet2ParamsAdapter.adapt(params)).pipe(
-      map((res) => (res?.data ?? []).map((item) => adaptKeyValuePairOfStringAndStringToUI(item)))
+      map((res) => (res?.data ?? []).map((item) => adaptKeyValuePairOfStringAndStringAltToUI(item)))
     );
   }
 
-  dictionariesGetKladrRegionListPost(params?: DictionariesGetKladrRegionListPostParams): Observable<KeyValuePairOfStringAndString[]> {
+  dictionariesGetKladrRegionListPost(params?: DictionariesGetKladrRegionListPostParams): Observable<KeyValuePairOfStringAndStringAlt[]> {
     return this._api.dictionariesGetKladrRegionListPost(dictionariesGetKladrRegionListPostParamsAdapter.adapt(params)).pipe(
-      map((res) => (res?.data ?? []).map((item) => adaptKeyValuePairOfStringAndStringToUI(item)))
+      map((res) => (res?.data ?? []).map((item) => adaptKeyValuePairOfStringAndStringAltToUI(item)))
     );
   }
 

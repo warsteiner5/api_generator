@@ -25,4 +25,4 @@ export function uploadPut(http: HttpClient, rootUrl: string, params?: UploadPut$
   );
 }
 
-uploadPut.PATH = '/bla-bla-vla/Upload';
+uploadPut.PATH = '/api/Upload';

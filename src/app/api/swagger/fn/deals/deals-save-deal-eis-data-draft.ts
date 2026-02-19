@@ -29,4 +29,4 @@ export function dealsSaveDealEisDataDraft(http: HttpClient, rootUrl: string, par
   );
 }
 
-dealsSaveDealEisDataDraft.PATH = '/bla-bla-vla/deals/save/eis/draft';
+dealsSaveDealEisDataDraft.PATH = '/market/api/v1/deals/save/eis/draft';

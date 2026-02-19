@@ -7,7 +7,7 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiDealInfoForCancellationAltDto } from '../../models/api-deal-info-for-cancellation';
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface DealsCancelExternalDeal$Params {
   dealId: number;
@@ -16,7 +16,7 @@ export interface DealsCancelExternalDeal$Params {
       body?: ApiDealInfoForCancellationAltDto | null
 }
 
-export function dealsCancelExternalDeal(http: HttpClient, rootUrl: string, params: DealsCancelExternalDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function dealsCancelExternalDeal(http: HttpClient, rootUrl: string, params: DealsCancelExternalDeal$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, dealsCancelExternalDeal.PATH, 'post');
   if (params) {
     rb.path('dealId', params.dealId, {});
@@ -30,9 +30,9 @@ export function dealsCancelExternalDeal(http: HttpClient, rootUrl: string, param
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-dealsCancelExternalDeal.PATH = '/bla-bla-vla/deals/{dealId}/customers/{organizationId}/users/{userId}/cancel/external';
+dealsCancelExternalDeal.PATH = '/market/api/v1/deals/{dealId}/customers/{organizationId}/users/{userId}/cancel/external';

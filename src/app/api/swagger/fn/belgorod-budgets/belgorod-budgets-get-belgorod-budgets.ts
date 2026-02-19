@@ -29,4 +29,4 @@ export function belgorodBudgetsGetBelgorodBudgets(http: HttpClient, rootUrl: str
   );
 }
 
-belgorodBudgetsGetBelgorodBudgets.PATH = '/bla-bla-vla/belgorodbudgets';
+belgorodBudgetsGetBelgorodBudgets.PATH = '/api/belgorodbudgets';

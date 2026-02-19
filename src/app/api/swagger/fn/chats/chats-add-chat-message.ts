@@ -30,4 +30,4 @@ export function chatsAddChatMessage(http: HttpClient, rootUrl: string, params: C
   );
 }
 
-chatsAddChatMessage.PATH = '/bla-bla-vla/chats/{chatId}';
+chatsAddChatMessage.PATH = '/market/api/v1/chats/{chatId}';

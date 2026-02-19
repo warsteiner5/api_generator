@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfMessengerStatus } from '../../models/api-market-json-result-of-messenger-status';
+import { ApiMarketJsonResultOfMessengerStatusAltDto } from '../../models/api-market-json-result-of-messenger-status';
 
 export interface MessengerGetMessengerStatus$Params {
 }
 
-export function messengerGetMessengerStatus(http: HttpClient, rootUrl: string, params?: MessengerGetMessengerStatus$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMessengerStatus>> {
+export function messengerGetMessengerStatus(http: HttpClient, rootUrl: string, params?: MessengerGetMessengerStatus$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMessengerStatusAltDto>> {
   const rb = new RequestBuilder(rootUrl, messengerGetMessengerStatus.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function messengerGetMessengerStatus(http: HttpClient, rootUrl: string, p
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfMessengerStatus>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfMessengerStatusAltDto>;
     })
   );
 }
 
-messengerGetMessengerStatus.PATH = '/bla-bla-vla/messenger/getMessengerStatus';
+messengerGetMessengerStatus.PATH = '/market/api/v1/messenger/getMessengerStatus';

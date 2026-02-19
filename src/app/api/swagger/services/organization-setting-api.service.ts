@@ -26,7 +26,7 @@ export class OrganizationSettingApiService extends BaseService {
   }
 
   /** Path part for operation `organizationSettingGetOrgSettings()` */
-  static readonly OrganizationSettingGetOrgSettingsPath = '/bla-bla-vla/tradeBusinessFlow/{tradeBusinessFlow}/org/{orgGuid}/tenant/{tenantId}';
+  static readonly OrganizationSettingGetOrgSettingsPath = '/market/api/v1/tradeBusinessFlow/{tradeBusinessFlow}/org/{orgGuid}/tenant/{tenantId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -51,7 +51,7 @@ export class OrganizationSettingApiService extends BaseService {
   }
 
   /** Path part for operation `organizationSettingGetTenantSettingsByTenantId()` */
-  static readonly OrganizationSettingGetTenantSettingsByTenantIdPath = '/bla-bla-vla/tenant-settings/{tenantId}';
+  static readonly OrganizationSettingGetTenantSettingsByTenantIdPath = '/market/api/v1/tenant-settings/{tenantId}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -76,7 +76,7 @@ export class OrganizationSettingApiService extends BaseService {
   }
 
   /** Path part for operation `organizationSettingIsOfferModerationEnableForOrganisation()` */
-  static readonly OrganizationSettingIsOfferModerationEnableForOrganisationPath = '/bla-bla-vla/organization-settings/is-offer-moderation-enabled';
+  static readonly OrganizationSettingIsOfferModerationEnableForOrganisationPath = '/market/api/v1/organization-settings/is-offer-moderation-enabled';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -101,7 +101,7 @@ export class OrganizationSettingApiService extends BaseService {
   }
 
   /** Path part for operation `organizationSettingSetOfferModerationForOrganisation()` */
-  static readonly OrganizationSettingSetOfferModerationForOrganisationPath = '/bla-bla-vla/organization-settings/set-offer-moderation';
+  static readonly OrganizationSettingSetOfferModerationForOrganisationPath = '/market/api/v1/organization-settings/set-offer-moderation';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

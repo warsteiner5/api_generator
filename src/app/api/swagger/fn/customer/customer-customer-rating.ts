@@ -27,4 +27,4 @@ export function customerCustomerRating(http: HttpClient, rootUrl: string, params
   );
 }
 
-customerCustomerRating.PATH = '/bla-bla-vla/Customers/{id}/RaitingInfo';
+customerCustomerRating.PATH = '/api/Customers/{id}/RaitingInfo';

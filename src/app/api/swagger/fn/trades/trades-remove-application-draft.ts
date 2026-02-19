@@ -28,4 +28,4 @@ export function tradesRemoveApplicationDraft(http: HttpClient, rootUrl: string, 
   );
 }
 
-tradesRemoveApplicationDraft.PATH = '/bla-bla-vla/trades/applications/{applicationId}';
+tradesRemoveApplicationDraft.PATH = '/market/api/v1/trades/applications/{applicationId}';

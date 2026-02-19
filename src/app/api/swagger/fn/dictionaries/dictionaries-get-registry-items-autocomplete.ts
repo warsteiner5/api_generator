@@ -33,4 +33,4 @@ export function dictionariesGetRegistryItemsAutocomplete(http: HttpClient, rootU
   );
 }
 
-dictionariesGetRegistryItemsAutocomplete.PATH = '/bla-bla-vla/dictionaries/registries/{type}/autocomplete/{searchValue}/maxReturnCount/{maxReturnCount}';
+dictionariesGetRegistryItemsAutocomplete.PATH = '/market/api/v1/dictionaries/registries/{type}/autocomplete/{searchValue}/maxReturnCount/{maxReturnCount}';

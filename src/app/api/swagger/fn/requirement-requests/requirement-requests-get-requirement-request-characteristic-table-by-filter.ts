@@ -29,4 +29,4 @@ export function requirementRequestsGetRequirementRequestCharacteristicTableByFil
   );
 }
 
-requirementRequestsGetRequirementRequestCharacteristicTableByFilter.PATH = '/bla-bla-vla/RequirementRequests/getcharacteristictable';
+requirementRequestsGetRequirementRequestCharacteristicTableByFilter.PATH = '/market/api/v1/RequirementRequests/getcharacteristictable';

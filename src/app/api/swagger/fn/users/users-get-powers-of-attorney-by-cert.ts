@@ -29,4 +29,4 @@ export function usersGetPowersOfAttorneyByCert(http: HttpClient, rootUrl: string
   );
 }
 
-usersGetPowersOfAttorneyByCert.PATH = '/bla-bla-vla/users/powers-of-attorney';
+usersGetPowersOfAttorneyByCert.PATH = '/market/api/v1/users/powers-of-attorney';

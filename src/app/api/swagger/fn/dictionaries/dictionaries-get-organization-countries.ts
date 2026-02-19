@@ -26,4 +26,4 @@ export function dictionariesGetOrganizationCountries(http: HttpClient, rootUrl: 
   );
 }
 
-dictionariesGetOrganizationCountries.PATH = '/bla-bla-vla/dictionaries/countries';
+dictionariesGetOrganizationCountries.PATH = '/market/api/v1/dictionaries/countries';

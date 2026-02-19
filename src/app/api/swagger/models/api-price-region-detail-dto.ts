@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
-import { ApiEntityDtoOfIntegerAltDto } from '../models/api-entity-dto-of-integer';
+import { ApiEntityDtoOfInteger } from '../models/api-entity-dto-of-integer';
 import { ApiPriceTypesEnum } from '../models/api-price-types-enum';
-export type ApiPriceRegionDetailDto = ApiEntityDtoOfIntegerAltDto & {
+export type ApiPriceRegionDetailDto = ApiEntityDtoOfInteger & {
 'UnitPrice'?: number | null;
 'Quantity'?: number | null;
 'MinQuantity'?: number | null;

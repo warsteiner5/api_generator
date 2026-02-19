@@ -6,14 +6,14 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo } from '../../models/api-market-json-result-of-dictionary-of-integer-and-list-of-read-item-info';
+import { ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto } from '../../models/api-market-json-result-of-dictionary-of-integer-and-list-of-read-item-info';
 
 export interface RequirementRequestsGetReadItemInfo$Params {
   requirementRequestId: number;
   itemId: number;
 }
 
-export function requirementRequestsGetReadItemInfo(http: HttpClient, rootUrl: string, params: RequirementRequestsGetReadItemInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo>> {
+export function requirementRequestsGetReadItemInfo(http: HttpClient, rootUrl: string, params: RequirementRequestsGetReadItemInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto>> {
   const rb = new RequestBuilder(rootUrl, requirementRequestsGetReadItemInfo.PATH, 'get');
   if (params) {
     rb.path('requirementRequestId', params.requirementRequestId, {});
@@ -25,9 +25,9 @@ export function requirementRequestsGetReadItemInfo(http: HttpClient, rootUrl: st
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfo>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfDictionaryOfIntegerAndListOfReadItemInfoAltDto>;
     })
   );
 }
 
-requirementRequestsGetReadItemInfo.PATH = '/bla-bla-vla/RequirementRequests/{requirementRequestId}/chat/{itemId}/who';
+requirementRequestsGetReadItemInfo.PATH = '/market/api/v1/RequirementRequests/{requirementRequestId}/chat/{itemId}/who';

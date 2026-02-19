@@ -28,4 +28,4 @@ export function nsiSuggestOrganization(http: HttpClient, rootUrl: string, params
   );
 }
 
-nsiSuggestOrganization.PATH = '/bla-bla-vla/nsi/organization/suggest';
+nsiSuggestOrganization.PATH = '/market/api/v1/nsi/organization/suggest';

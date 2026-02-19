@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiMarketJsonResultOfBoolean } from '../../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../../models/api-market-json-result-of-boolean';
 
 export interface AuthIsMarketLoginEnabled$Params {
 }
 
-export function authIsMarketLoginEnabled(http: HttpClient, rootUrl: string, params?: AuthIsMarketLoginEnabled$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+export function authIsMarketLoginEnabled(http: HttpClient, rootUrl: string, params?: AuthIsMarketLoginEnabled$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
   const rb = new RequestBuilder(rootUrl, authIsMarketLoginEnabled.PATH, 'get');
   if (params) {
   }
@@ -21,9 +21,9 @@ export function authIsMarketLoginEnabled(http: HttpClient, rootUrl: string, para
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfBoolean>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>;
     })
   );
 }
 
-authIsMarketLoginEnabled.PATH = '/bla-bla-vla/auth/enabled';
+authIsMarketLoginEnabled.PATH = '/market/api/v1/auth/enabled';

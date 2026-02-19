@@ -26,4 +26,4 @@ export function organizationsGetOrganizationsForCurrentUser(http: HttpClient, ro
   );
 }
 
-organizationsGetOrganizationsForCurrentUser.PATH = '/bla-bla-vla/organizations/getOrganizationsForCurrentUser';
+organizationsGetOrganizationsForCurrentUser.PATH = '/market/api/v1/organizations/getOrganizationsForCurrentUser';

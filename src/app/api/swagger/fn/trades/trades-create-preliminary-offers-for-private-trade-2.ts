@@ -29,4 +29,4 @@ export function tradesCreatePreliminaryOffersForPrivateTrade2(http: HttpClient, 
   );
 }
 
-tradesCreatePreliminaryOffersForPrivateTrade2.PATH = '/bla-bla-vla/trades/preliminary-offer/tofillingappstate';
+tradesCreatePreliminaryOffersForPrivateTrade2.PATH = '/market/api/v1/trades/preliminary-offer/tofillingappstate';

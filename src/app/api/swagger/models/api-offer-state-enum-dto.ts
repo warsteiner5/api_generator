@@ -1,6 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
-export enum ApiOfferStateEnumDtoAltEnum {
+export enum ApiOfferStateEnumDto {
   All = 0,
   Draft = 1,
   Active = 20,

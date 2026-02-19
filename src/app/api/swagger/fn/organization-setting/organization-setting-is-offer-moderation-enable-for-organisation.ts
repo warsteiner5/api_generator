@@ -27,4 +27,4 @@ export function organizationSettingIsOfferModerationEnableForOrganisation(http: 
   );
 }
 
-organizationSettingIsOfferModerationEnableForOrganisation.PATH = '/bla-bla-vla/organization-settings/is-offer-moderation-enabled';
+organizationSettingIsOfferModerationEnableForOrganisation.PATH = '/market/api/v1/organization-settings/is-offer-moderation-enabled';

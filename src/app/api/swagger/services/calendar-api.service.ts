@@ -15,7 +15,7 @@ import { calendarGetNextWorkDay } from '../fn/calendar/calendar-get-next-work-da
 import { CalendarGetNextWorkDay$Params } from '../fn/calendar/calendar-get-next-work-day';
 import { calendarGetNextWorkDayWithTime } from '../fn/calendar/calendar-get-next-work-day-with-time';
 import { CalendarGetNextWorkDayWithTime$Params } from '../fn/calendar/calendar-get-next-work-day-with-time';
-import { ApiMarketJsonResultOfDateTime } from '../models/api-market-json-result-of-date-time';
+import { ApiMarketJsonResultOfDateTimeAltDto } from '../models/api-market-json-result-of-date-time';
 
 @Injectable({ providedIn: 'root' })
 export class CalendarApiService extends BaseService {
@@ -24,7 +24,7 @@ export class CalendarApiService extends BaseService {
   }
 
   /** Path part for operation `calendarGetNextWorkDay()` */
-  static readonly CalendarGetNextWorkDayPath = '/bla-bla-vla/calendar/nextworkday';
+  static readonly CalendarGetNextWorkDayPath = '/market/api/v1/calendar/nextworkday';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -32,7 +32,7 @@ export class CalendarApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  calendarGetNextWorkDay$Response(params?: CalendarGetNextWorkDay$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDateTime>> {
+  calendarGetNextWorkDay$Response(params?: CalendarGetNextWorkDay$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDateTimeAltDto>> {
     return calendarGetNextWorkDay(this.http, this.rootUrl, params, context);
   }
 
@@ -42,14 +42,14 @@ export class CalendarApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  calendarGetNextWorkDay(params?: CalendarGetNextWorkDay$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDateTime> {
+  calendarGetNextWorkDay(params?: CalendarGetNextWorkDay$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDateTimeAltDto> {
     return this.calendarGetNextWorkDay$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDateTime>): ApiMarketJsonResultOfDateTime => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDateTimeAltDto>): ApiMarketJsonResultOfDateTimeAltDto => r.body)
     );
   }
 
   /** Path part for operation `calendarGetNextWorkDayWithTime()` */
-  static readonly CalendarGetNextWorkDayWithTimePath = '/bla-bla-vla/calendar/nextworkdaywithtime';
+  static readonly CalendarGetNextWorkDayWithTimePath = '/market/api/v1/calendar/nextworkdaywithtime';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -57,7 +57,7 @@ export class CalendarApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  calendarGetNextWorkDayWithTime$Response(params?: CalendarGetNextWorkDayWithTime$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDateTime>> {
+  calendarGetNextWorkDayWithTime$Response(params?: CalendarGetNextWorkDayWithTime$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDateTimeAltDto>> {
     return calendarGetNextWorkDayWithTime(this.http, this.rootUrl, params, context);
   }
 
@@ -67,14 +67,14 @@ export class CalendarApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  calendarGetNextWorkDayWithTime(params?: CalendarGetNextWorkDayWithTime$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDateTime> {
+  calendarGetNextWorkDayWithTime(params?: CalendarGetNextWorkDayWithTime$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDateTimeAltDto> {
     return this.calendarGetNextWorkDayWithTime$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDateTime>): ApiMarketJsonResultOfDateTime => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDateTimeAltDto>): ApiMarketJsonResultOfDateTimeAltDto => r.body)
     );
   }
 
   /** Path part for operation `calendarGetImmediateTradeApplicationEndDate()` */
-  static readonly CalendarGetImmediateTradeApplicationEndDatePath = '/bla-bla-vla/calendar/immediate-trade-app-end-date';
+  static readonly CalendarGetImmediateTradeApplicationEndDatePath = '/market/api/v1/calendar/immediate-trade-app-end-date';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -82,7 +82,7 @@ export class CalendarApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  calendarGetImmediateTradeApplicationEndDate$Response(params?: CalendarGetImmediateTradeApplicationEndDate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDateTime>> {
+  calendarGetImmediateTradeApplicationEndDate$Response(params?: CalendarGetImmediateTradeApplicationEndDate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDateTimeAltDto>> {
     return calendarGetImmediateTradeApplicationEndDate(this.http, this.rootUrl, params, context);
   }
 
@@ -92,9 +92,9 @@ export class CalendarApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  calendarGetImmediateTradeApplicationEndDate(params?: CalendarGetImmediateTradeApplicationEndDate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDateTime> {
+  calendarGetImmediateTradeApplicationEndDate(params?: CalendarGetImmediateTradeApplicationEndDate$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfDateTimeAltDto> {
     return this.calendarGetImmediateTradeApplicationEndDate$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfDateTime>): ApiMarketJsonResultOfDateTime => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfDateTimeAltDto>): ApiMarketJsonResultOfDateTimeAltDto => r.body)
     );
   }
 

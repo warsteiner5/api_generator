@@ -2,6 +2,6 @@
 /* eslint-disable */
 import { ApiFileStreamModelAltDto } from '../models/api-file-stream-model';
 import { ApiMarketJsonVoidResultAltDto } from '../models/api-market-json-void-result';
-export type ApiMarketJsonResultOfFileStreamModel = ApiMarketJsonVoidResultAltDto & {
+export type ApiMarketJsonResultOfFileStreamModelAltDto = ApiMarketJsonVoidResultAltDto & {
 'data'?: ApiFileStreamModelAltDto | null;
 };

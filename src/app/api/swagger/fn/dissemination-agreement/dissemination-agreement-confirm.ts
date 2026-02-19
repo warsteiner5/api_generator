@@ -25,4 +25,4 @@ export function disseminationAgreementConfirm(http: HttpClient, rootUrl: string,
   );
 }
 
-disseminationAgreementConfirm.PATH = '/bla-bla-vla/DisseminationAgreement/Confirm';
+disseminationAgreementConfirm.PATH = '/api/DisseminationAgreement/Confirm';

@@ -31,4 +31,4 @@ export function tradePrepareOrganizationForTradeCreate(http: HttpClient, rootUrl
   );
 }
 
-tradePrepareOrganizationForTradeCreate.PATH = '/bla-bla-vla/Trade/PrepareOrganizationForTradeCreate';
+tradePrepareOrganizationForTradeCreate.PATH = '/api/Trade/PrepareOrganizationForTradeCreate';

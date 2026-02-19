@@ -28,4 +28,4 @@ export function dealGetActiveDealForTrade(http: HttpClient, rootUrl: string, par
   );
 }
 
-dealGetActiveDealForTrade.PATH = '/bla-bla-vla/Deal/GetActiveDealForTrade/{id}';
+dealGetActiveDealForTrade.PATH = '/api/Deal/GetActiveDealForTrade/{id}';

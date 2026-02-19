@@ -28,4 +28,4 @@ export function employeesUnblock(http: HttpClient, rootUrl: string, params: Empl
   );
 }
 
-employeesUnblock.PATH = '/bla-bla-vla/employees/{id}/unblock';
+employeesUnblock.PATH = '/market/api/v1/employees/{id}/unblock';

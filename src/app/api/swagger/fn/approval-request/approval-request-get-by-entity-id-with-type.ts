@@ -29,4 +29,4 @@ export function approvalRequestGetByEntityIdWithType(http: HttpClient, rootUrl: 
   );
 }
 
-approvalRequestGetByEntityIdWithType.PATH = '/bla-bla-vla/approval/GetByEntityIdWithType';
+approvalRequestGetByEntityIdWithType.PATH = '/market/api/v1/approval/GetByEntityIdWithType';

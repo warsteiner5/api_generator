@@ -28,4 +28,4 @@ export function quotationSessionGetApplications(http: HttpClient, rootUrl: strin
   );
 }
 
-quotationSessionGetApplications.PATH = '/bla-bla-vla/quotation-session/{id}/applications/short';
+quotationSessionGetApplications.PATH = '/market/api/v1/quotation-session/{id}/applications/short';

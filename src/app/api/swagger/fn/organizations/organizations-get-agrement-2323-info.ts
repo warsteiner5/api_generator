@@ -26,4 +26,4 @@ export function organizationsGetAgrement2323Info(http: HttpClient, rootUrl: stri
   );
 }
 
-organizationsGetAgrement2323Info.PATH = '/bla-bla-vla/organizations/self/2323Info';
+organizationsGetAgrement2323Info.PATH = '/market/api/v1/organizations/self/2323Info';

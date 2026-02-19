@@ -29,4 +29,4 @@ export function approvalRequestApproveRequest(http: HttpClient, rootUrl: string,
   );
 }
 
-approvalRequestApproveRequest.PATH = '/bla-bla-vla/approval/Approve';
+approvalRequestApproveRequest.PATH = '/market/api/v1/approval/Approve';

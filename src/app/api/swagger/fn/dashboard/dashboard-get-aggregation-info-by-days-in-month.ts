@@ -32,4 +32,4 @@ export function dashboardGetAggregationInfoByDaysInMonth(http: HttpClient, rootU
   );
 }
 
-dashboardGetAggregationInfoByDaysInMonth.PATH = '/bla-bla-vla/dashboard/agInfo/date/{guid}/{year}/{month}';
+dashboardGetAggregationInfoByDaysInMonth.PATH = '/market/api/v1/dashboard/agInfo/date/{guid}/{year}/{month}';

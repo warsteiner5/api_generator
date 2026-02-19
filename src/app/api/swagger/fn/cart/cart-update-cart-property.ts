@@ -6,12 +6,12 @@ import { filter, map } from 'rxjs/operators';
 import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
-import { ApiValueDtoOfStringAltDto } from '../../models/api-value-dto-of-string';
+import { ApiValueDtoOfString } from '../../models/api-value-dto-of-string';
 
 export interface CartUpdateCartProperty$Params {
   id: string;
   propertyName: string | null;
-      body?: ApiValueDtoOfStringAltDto | null
+      body?: ApiValueDtoOfString | null
 }
 
 export function cartUpdateCartProperty(http: HttpClient, rootUrl: string, params: CartUpdateCartProperty$Params, context?: HttpContext): Observable<StrictHttpResponse<Blob>> {
@@ -32,4 +32,4 @@ export function cartUpdateCartProperty(http: HttpClient, rootUrl: string, params
   );
 }
 
-cartUpdateCartProperty.PATH = '/bla-bla-vla/carts/{id}/{propertyName}';
+cartUpdateCartProperty.PATH = '/market/api/v1/carts/{id}/{propertyName}';

@@ -1,21 +1,21 @@
-import { OfferStateEnumDtoAltEnum } from '../../enums/offer-state-enum-dto-alt.enum';
-import { ApiOfferStateEnumDtoAltEnum } from '../../../swagger/models/api-offer-state-enum-dto';
+import { OfferStateEnum } from '../../enums/offer-state.enum';
+import { ApiOfferStateEnumDto } from '../../../swagger/models/api-offer-state-enum-dto';
 
-export function adaptApiOfferStateEnumDtoAltEnum(source?: OfferStateEnumDtoAltEnum | null): ApiOfferStateEnumDtoAltEnum {
+export function adaptApiOfferStateEnumDto(source?: OfferStateEnum | null): ApiOfferStateEnumDto {
   switch (source) {
-    case OfferStateEnumDtoAltEnum.All:
-      return ApiOfferStateEnumDtoAltEnum.All;
-    case OfferStateEnumDtoAltEnum.Draft:
-      return ApiOfferStateEnumDtoAltEnum.Draft;
-    case OfferStateEnumDtoAltEnum.Active:
-      return ApiOfferStateEnumDtoAltEnum.Active;
-    case OfferStateEnumDtoAltEnum.NotActive:
-      return ApiOfferStateEnumDtoAltEnum.NotActive;
-    case OfferStateEnumDtoAltEnum.WaitingForApprove:
-      return ApiOfferStateEnumDtoAltEnum.WaitingForApprove;
-    case OfferStateEnumDtoAltEnum.Valid:
-      return ApiOfferStateEnumDtoAltEnum.Valid;
+    case OfferStateEnum.All:
+      return ApiOfferStateEnumDto.All;
+    case OfferStateEnum.Draft:
+      return ApiOfferStateEnumDto.Draft;
+    case OfferStateEnum.Active:
+      return ApiOfferStateEnumDto.Active;
+    case OfferStateEnum.NotActive:
+      return ApiOfferStateEnumDto.NotActive;
+    case OfferStateEnum.WaitingForApprove:
+      return ApiOfferStateEnumDto.WaitingForApprove;
+    case OfferStateEnum.Valid:
+      return ApiOfferStateEnumDto.Valid;
     default:
-      throw new Error(`Enum value is not defined: OfferStateEnumDtoAltEnum=${String(source)}`);
+      throw new Error(`Enum value is not defined: OfferStateEnum=${String(source)}`);
   }
 }

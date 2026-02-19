@@ -31,4 +31,4 @@ export function bannersGetBannerSettings(http: HttpClient, rootUrl: string, para
   );
 }
 
-bannersGetBannerSettings.PATH = '/bla-bla-vla/banners/settings';
+bannersGetBannerSettings.PATH = '/market/api/v1/banners/settings';

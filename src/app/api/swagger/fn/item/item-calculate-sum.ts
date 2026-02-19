@@ -7,13 +7,13 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiCalculateSumRequestAltDto } from '../../models/api-calculate-sum-request';
-import { ApiMarketJsonResultOfDecimal } from '../../models/api-market-json-result-of-decimal';
+import { ApiMarketJsonResultOfDecimalAltDto } from '../../models/api-market-json-result-of-decimal';
 
 export interface ItemCalculateSum$Params {
       body?: ApiCalculateSumRequestAltDto | null
 }
 
-export function itemCalculateSum(http: HttpClient, rootUrl: string, params?: ItemCalculateSum$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimal>> {
+export function itemCalculateSum(http: HttpClient, rootUrl: string, params?: ItemCalculateSum$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>> {
   const rb = new RequestBuilder(rootUrl, itemCalculateSum.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function itemCalculateSum(http: HttpClient, rootUrl: string, params?: Ite
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfDecimal>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfDecimalAltDto>;
     })
   );
 }
 
-itemCalculateSum.PATH = '/bla-bla-vla/item/sum';
+itemCalculateSum.PATH = '/market/api/v1/item/sum';

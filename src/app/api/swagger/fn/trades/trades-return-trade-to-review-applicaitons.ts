@@ -27,4 +27,4 @@ export function tradesReturnTradeToReviewApplicaitons(http: HttpClient, rootUrl:
   );
 }
 
-tradesReturnTradeToReviewApplicaitons.PATH = '/bla-bla-vla/trades/{tradeId}/review-applications/return';
+tradesReturnTradeToReviewApplicaitons.PATH = '/market/api/v1/trades/{tradeId}/review-applications/return';

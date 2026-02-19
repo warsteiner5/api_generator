@@ -28,4 +28,4 @@ export function employeesGet(http: HttpClient, rootUrl: string, params: Employee
   );
 }
 
-employeesGet.PATH = '/bla-bla-vla/employees/{id}';
+employeesGet.PATH = '/market/api/v1/employees/{id}';

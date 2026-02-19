@@ -28,4 +28,4 @@ export function organizationUpdateSettings(http: HttpClient, rootUrl: string, pa
   );
 }
 
-organizationUpdateSettings.PATH = '/bla-bla-vla/Organization/UpdateSettings';
+organizationUpdateSettings.PATH = '/api/Organization/UpdateSettings';

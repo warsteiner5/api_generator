@@ -28,4 +28,4 @@ export function priceListsCreateAutoUpdateAndImport(http: HttpClient, rootUrl: s
   );
 }
 
-priceListsCreateAutoUpdateAndImport.PATH = '/bla-bla-vla/priceLists/createOrUpdateAutoUpdateSchedule';
+priceListsCreateAutoUpdateAndImport.PATH = '/market/api/v1/priceLists/createOrUpdateAutoUpdateSchedule';

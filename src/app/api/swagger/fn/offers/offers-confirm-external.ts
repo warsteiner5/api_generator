@@ -28,4 +28,4 @@ export function offersConfirmExternal(http: HttpClient, rootUrl: string, params?
   );
 }
 
-offersConfirmExternal.PATH = '/bla-bla-vla/offers/confirm/external';
+offersConfirmExternal.PATH = '/market/api/v1/offers/confirm/external';

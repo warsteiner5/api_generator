@@ -26,7 +26,7 @@ export class CertificatesApiService extends BaseService {
   }
 
   /** Path part for operation `certificatesParsePost()` */
-  static readonly CertificatesParsePostPath = '/bla-bla-vla/certificates/parse';
+  static readonly CertificatesParsePostPath = '/market/api/v1/certificates/parse';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -51,7 +51,7 @@ export class CertificatesApiService extends BaseService {
   }
 
   /** Path part for operation `certificatesParseGet()` */
-  static readonly CertificatesParseGetPath = '/bla-bla-vla/certificates/parse/{fileGuid}';
+  static readonly CertificatesParseGetPath = '/market/api/v1/certificates/parse/{fileGuid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -76,7 +76,7 @@ export class CertificatesApiService extends BaseService {
   }
 
   /** Path part for operation `certificatesDownload()` */
-  static readonly CertificatesDownloadPath = '/bla-bla-vla/certificates/thumbprint/{thumbprint}/download';
+  static readonly CertificatesDownloadPath = '/market/api/v1/certificates/thumbprint/{thumbprint}/download';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -101,7 +101,7 @@ export class CertificatesApiService extends BaseService {
   }
 
   /** Path part for operation `certificatesDownloadCertificate()` */
-  static readonly CertificatesDownloadCertificatePath = '/bla-bla-vla/certificates/deals/{dealId}/sides/{contractSide}/files/{fileGuid}';
+  static readonly CertificatesDownloadCertificatePath = '/market/api/v1/certificates/deals/{dealId}/sides/{contractSide}/files/{fileGuid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

@@ -25,4 +25,4 @@ export function dictionaryGetCountries(http: HttpClient, rootUrl: string, params
   );
 }
 
-dictionaryGetCountries.PATH = '/bla-bla-vla/Dictionary/GetCountries';
+dictionaryGetCountries.PATH = '/api/Dictionary/GetCountries';

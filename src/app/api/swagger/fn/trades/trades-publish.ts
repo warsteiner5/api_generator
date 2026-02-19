@@ -7,13 +7,13 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiApplicationDto2 } from '../../models/api-application-dto-2';
-import { ApiMarketJsonResultOfPublishApplicationResult } from '../../models/api-market-json-result-of-publish-application-result';
+import { ApiMarketJsonResultOfPublishApplicationResultAltDto } from '../../models/api-market-json-result-of-publish-application-result';
 
 export interface TradesPublish$Params {
       body?: ApiApplicationDto2 | null
 }
 
-export function tradesPublish(http: HttpClient, rootUrl: string, params?: TradesPublish$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResult>> {
+export function tradesPublish(http: HttpClient, rootUrl: string, params?: TradesPublish$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, tradesPublish.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function tradesPublish(http: HttpClient, rootUrl: string, params?: Trades
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfPublishApplicationResultAltDto>;
     })
   );
 }
 
-tradesPublish.PATH = '/bla-bla-vla/trades/applications/publish';
+tradesPublish.PATH = '/market/api/v1/trades/applications/publish';

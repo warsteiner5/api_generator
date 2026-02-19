@@ -28,4 +28,4 @@ export function reportGenerateSupplierReport(http: HttpClient, rootUrl: string, 
   );
 }
 
-reportGenerateSupplierReport.PATH = '/bla-bla-vla/reports/supplier';
+reportGenerateSupplierReport.PATH = '/api/reports/supplier';

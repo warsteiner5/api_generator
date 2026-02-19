@@ -7,14 +7,14 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiCreateParticipantOffersToTradeDto } from '../../models/api-create-participant-offers-to-trade-dto';
-import { ApiMarketJsonResultOfMarketJsonVoidResult } from '../../models/api-market-json-result-of-market-json-void-result';
+import { ApiMarketJsonResultOfMarketJsonVoidResultAltDto } from '../../models/api-market-json-result-of-market-json-void-result';
 
 export interface ParticipantOfferToTradeCreateParticipantOffersToTrade$Params {
   tradeId: number;
       body?: ApiCreateParticipantOffersToTradeDto | null
 }
 
-export function participantOfferToTradeCreateParticipantOffersToTrade(http: HttpClient, rootUrl: string, params: ParticipantOfferToTradeCreateParticipantOffersToTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResult>> {
+export function participantOfferToTradeCreateParticipantOffersToTrade(http: HttpClient, rootUrl: string, params: ParticipantOfferToTradeCreateParticipantOffersToTrade$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResultAltDto>> {
   const rb = new RequestBuilder(rootUrl, participantOfferToTradeCreateParticipantOffersToTrade.PATH, 'post');
   if (params) {
     rb.path('tradeId', params.tradeId, {});
@@ -26,9 +26,9 @@ export function participantOfferToTradeCreateParticipantOffersToTrade(http: Http
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResult>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfMarketJsonVoidResultAltDto>;
     })
   );
 }
 
-participantOfferToTradeCreateParticipantOffersToTrade.PATH = '/bla-bla-vla/offerToTrade/{tradeId}/items/create';
+participantOfferToTradeCreateParticipantOffersToTrade.PATH = '/market/api/v1/offerToTrade/{tradeId}/items/create';

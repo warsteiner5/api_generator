@@ -32,4 +32,4 @@ export function quotationSessionGetItems(http: HttpClient, rootUrl: string, para
   );
 }
 
-quotationSessionGetItems.PATH = '/bla-bla-vla/quotation-session/{id}/items';
+quotationSessionGetItems.PATH = '/market/api/v1/quotation-session/{id}/items';

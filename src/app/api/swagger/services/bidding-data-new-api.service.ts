@@ -11,7 +11,7 @@ import { StrictHttpResponse } from '../strict-http-response';
 
 import { biddingDataNewGetInfo } from '../fn/bidding-data-new/bidding-data-new-get-info';
 import { BiddingDataNewGetInfo$Params } from '../fn/bidding-data-new/bidding-data-new-get-info';
-import { ApiMarketJsonResultOfCompletedBiddingInfo } from '../models/api-market-json-result-of-completed-bidding-info';
+import { ApiMarketJsonResultOfCompletedBiddingInfoAltDto } from '../models/api-market-json-result-of-completed-bidding-info';
 
 @Injectable({ providedIn: 'root' })
 export class BiddingDataNewApiService extends BaseService {
@@ -20,7 +20,7 @@ export class BiddingDataNewApiService extends BaseService {
   }
 
   /** Path part for operation `biddingDataNewGetInfo()` */
-  static readonly BiddingDataNewGetInfoPath = '/bla-bla-vla/bidding-data-new/trade/{tradeGuid}';
+  static readonly BiddingDataNewGetInfoPath = '/market/api/v1/bidding-data-new/trade/{tradeGuid}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -28,7 +28,7 @@ export class BiddingDataNewApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  biddingDataNewGetInfo$Response(params: BiddingDataNewGetInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCompletedBiddingInfo>> {
+  biddingDataNewGetInfo$Response(params: BiddingDataNewGetInfo$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfCompletedBiddingInfoAltDto>> {
     return biddingDataNewGetInfo(this.http, this.rootUrl, params, context);
   }
 
@@ -38,9 +38,9 @@ export class BiddingDataNewApiService extends BaseService {
    *
    * This method doesn't expect any request body.
    */
-  biddingDataNewGetInfo(params: BiddingDataNewGetInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfCompletedBiddingInfo> {
+  biddingDataNewGetInfo(params: BiddingDataNewGetInfo$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfCompletedBiddingInfoAltDto> {
     return this.biddingDataNewGetInfo$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfCompletedBiddingInfo>): ApiMarketJsonResultOfCompletedBiddingInfo => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfCompletedBiddingInfoAltDto>): ApiMarketJsonResultOfCompletedBiddingInfoAltDto => r.body)
     );
   }
 

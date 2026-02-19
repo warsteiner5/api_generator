@@ -28,4 +28,4 @@ export function integrationImportMinpromTorg(http: HttpClient, rootUrl: string, 
   );
 }
 
-integrationImportMinpromTorg.PATH = '/bla-bla-vla/integration/offers';
+integrationImportMinpromTorg.PATH = '/market/api/v1/integration/offers';

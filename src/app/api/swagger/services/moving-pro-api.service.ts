@@ -19,7 +19,7 @@ export class MovingProApiService extends BaseService {
   }
 
   /** Path part for operation `movingProTransitionToMovingPro()` */
-  static readonly MovingProTransitionToMovingProPath = '/bla-bla-vla/moving-pro/transition';
+  static readonly MovingProTransitionToMovingProPath = '/market/api/v1/moving-pro/transition';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

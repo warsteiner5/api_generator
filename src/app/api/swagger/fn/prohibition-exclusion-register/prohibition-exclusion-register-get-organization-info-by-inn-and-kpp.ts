@@ -30,4 +30,4 @@ export function prohibitionExclusionRegisterGetOrganizationInfoByInnAndKpp(http:
   );
 }
 
-prohibitionExclusionRegisterGetOrganizationInfoByInnAndKpp.PATH = '/bla-bla-vla/ProhibitionExclusionRegister/GetOrgInfoByInnKpp';
+prohibitionExclusionRegisterGetOrganizationInfoByInnAndKpp.PATH = '/api/ProhibitionExclusionRegister/GetOrgInfoByInnKpp';

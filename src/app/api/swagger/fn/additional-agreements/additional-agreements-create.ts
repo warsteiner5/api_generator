@@ -7,13 +7,13 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 import { ApiCreateAdditionalAgreementDto } from '../../models/api-create-additional-agreement-dto';
-import { ApiMarketJsonResultOfLong } from '../../models/api-market-json-result-of-long';
+import { ApiMarketJsonResultOfLongAltDto } from '../../models/api-market-json-result-of-long';
 
 export interface AdditionalAgreementsCreate$Params {
       body?: ApiCreateAdditionalAgreementDto | null
 }
 
-export function additionalAgreementsCreate(http: HttpClient, rootUrl: string, params?: AdditionalAgreementsCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLong>> {
+export function additionalAgreementsCreate(http: HttpClient, rootUrl: string, params?: AdditionalAgreementsCreate$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>> {
   const rb = new RequestBuilder(rootUrl, additionalAgreementsCreate.PATH, 'post');
   if (params) {
     rb.body(params.body, 'application/json');
@@ -24,9 +24,9 @@ export function additionalAgreementsCreate(http: HttpClient, rootUrl: string, pa
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
-      return r as StrictHttpResponse<ApiMarketJsonResultOfLong>;
+      return r as StrictHttpResponse<ApiMarketJsonResultOfLongAltDto>;
     })
   );
 }
 
-additionalAgreementsCreate.PATH = '/bla-bla-vla/additionalAgreements/create';
+additionalAgreementsCreate.PATH = '/market/api/v1/additionalAgreements/create';

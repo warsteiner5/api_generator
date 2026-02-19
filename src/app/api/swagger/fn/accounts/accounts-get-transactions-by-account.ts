@@ -31,4 +31,4 @@ export function accountsGetTransactionsByAccount(http: HttpClient, rootUrl: stri
   );
 }
 
-accountsGetTransactionsByAccount.PATH = '/bla-bla-vla/accounts/my/{accountNumber}/transactions';
+accountsGetTransactionsByAccount.PATH = '/market/api/v1/accounts/my/{accountNumber}/transactions';

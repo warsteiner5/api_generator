@@ -9,7 +9,7 @@ import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
 import { StrictHttpResponse } from '../strict-http-response';
 
-import { ApiMarketJsonResultOfBoolean } from '../models/api-market-json-result-of-boolean';
+import { ApiMarketJsonResultOfBooleanAltDto } from '../models/api-market-json-result-of-boolean';
 import { ApiMarketJsonResultOfCheckForAvailableGenerateReportResultDto } from '../models/api-market-json-result-of-check-for-available-generate-report-result-dto';
 import { ApiMarketJsonResultOfListOfCategoryTenantReportResultDto } from '../models/api-market-json-result-of-list-of-category-tenant-report-result-dto';
 import { ApiMarketJsonResultOfListOfTenantInformationReportResultDto } from '../models/api-market-json-result-of-list-of-tenant-information-report-result-dto';
@@ -45,7 +45,7 @@ export class ReportsApiService extends BaseService {
   }
 
   /** Path part for operation `reportsGet()` */
-  static readonly ReportsGetPath = '/bla-bla-vla/reports/get';
+  static readonly ReportsGetPath = '/market/api/v1/reports/get';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -70,7 +70,7 @@ export class ReportsApiService extends BaseService {
   }
 
   /** Path part for operation `reportsGeneratePurchaseReport()` */
-  static readonly ReportsGeneratePurchaseReportPath = '/bla-bla-vla/reports/purchase';
+  static readonly ReportsGeneratePurchaseReportPath = '/market/api/v1/reports/purchase';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -78,7 +78,7 @@ export class ReportsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  reportsGeneratePurchaseReport$Response(params?: ReportsGeneratePurchaseReport$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBoolean>> {
+  reportsGeneratePurchaseReport$Response(params?: ReportsGeneratePurchaseReport$Params, context?: HttpContext): Observable<StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>> {
     return reportsGeneratePurchaseReport(this.http, this.rootUrl, params, context);
   }
 
@@ -88,14 +88,14 @@ export class ReportsApiService extends BaseService {
    *
    * This method sends `application/json` and handles request body of type `application/json`.
    */
-  reportsGeneratePurchaseReport(params?: ReportsGeneratePurchaseReport$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBoolean> {
+  reportsGeneratePurchaseReport(params?: ReportsGeneratePurchaseReport$Params, context?: HttpContext): Observable<ApiMarketJsonResultOfBooleanAltDto> {
     return this.reportsGeneratePurchaseReport$Response(params, context).pipe(
-      map((r: StrictHttpResponse<ApiMarketJsonResultOfBoolean>): ApiMarketJsonResultOfBoolean => r.body)
+      map((r: StrictHttpResponse<ApiMarketJsonResultOfBooleanAltDto>): ApiMarketJsonResultOfBooleanAltDto => r.body)
     );
   }
 
   /** Path part for operation `reportsCanGenerateNew()` */
-  static readonly ReportsCanGenerateNewPath = '/bla-bla-vla/reports/canGenerateNew/{reportType}';
+  static readonly ReportsCanGenerateNewPath = '/market/api/v1/reports/canGenerateNew/{reportType}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -120,7 +120,7 @@ export class ReportsApiService extends BaseService {
   }
 
   /** Path part for operation `reportsTenantInformation()` */
-  static readonly ReportsTenantInformationPath = '/bla-bla-vla/reports/statistic/deals';
+  static readonly ReportsTenantInformationPath = '/market/api/v1/reports/statistic/deals';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -145,7 +145,7 @@ export class ReportsApiService extends BaseService {
   }
 
   /** Path part for operation `reportsCategoryTenant()` */
-  static readonly ReportsCategoryTenantPath = '/bla-bla-vla/reports/statistic/priceLists';
+  static readonly ReportsCategoryTenantPath = '/market/api/v1/reports/statistic/priceLists';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -170,7 +170,7 @@ export class ReportsApiService extends BaseService {
   }
 
   /** Path part for operation `reportsGenerateTradeRegistryReport()` */
-  static readonly ReportsGenerateTradeRegistryReportPath = '/bla-bla-vla/reports/trade-registry';
+  static readonly ReportsGenerateTradeRegistryReportPath = '/market/api/v1/reports/trade-registry';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -195,7 +195,7 @@ export class ReportsApiService extends BaseService {
   }
 
   /** Path part for operation `reportsGenerateSupplierRegistryReport()` */
-  static readonly ReportsGenerateSupplierRegistryReportPath = '/bla-bla-vla/reports/supplier-registry';
+  static readonly ReportsGenerateSupplierRegistryReportPath = '/market/api/v1/reports/supplier-registry';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -220,7 +220,7 @@ export class ReportsApiService extends BaseService {
   }
 
   /** Path part for operation `reportsGenerateCustomerRegistryReport()` */
-  static readonly ReportsGenerateCustomerRegistryReportPath = '/bla-bla-vla/reports/customer-registry';
+  static readonly ReportsGenerateCustomerRegistryReportPath = '/market/api/v1/reports/customer-registry';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -245,7 +245,7 @@ export class ReportsApiService extends BaseService {
   }
 
   /** Path part for operation `reportsGenerateTradeRegistryReport2()` */
-  static readonly ReportsGenerateTradeRegistryReport2Path = '/bla-bla-vla/reports/trade-registry/search';
+  static readonly ReportsGenerateTradeRegistryReport2Path = '/market/api/v1/reports/trade-registry/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -270,7 +270,7 @@ export class ReportsApiService extends BaseService {
   }
 
   /** Path part for operation `reportsGenerateSupplierRegistryReport2()` */
-  static readonly ReportsGenerateSupplierRegistryReport2Path = '/bla-bla-vla/reports/supplier-registry/search';
+  static readonly ReportsGenerateSupplierRegistryReport2Path = '/market/api/v1/reports/supplier-registry/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -295,7 +295,7 @@ export class ReportsApiService extends BaseService {
   }
 
   /** Path part for operation `reportsGenerateCustomerRegistryReport2()` */
-  static readonly ReportsGenerateCustomerRegistryReport2Path = '/bla-bla-vla/reports/customer-registry/search';
+  static readonly ReportsGenerateCustomerRegistryReport2Path = '/market/api/v1/reports/customer-registry/search';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.

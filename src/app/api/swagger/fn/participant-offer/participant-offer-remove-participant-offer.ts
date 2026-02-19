@@ -27,4 +27,4 @@ export function participantOfferRemoveParticipantOffer(http: HttpClient, rootUrl
   );
 }
 
-participantOfferRemoveParticipantOffer.PATH = '/bla-bla-vla/participantoffer/Remove';
+participantOfferRemoveParticipantOffer.PATH = '/api/participantoffer/Remove';

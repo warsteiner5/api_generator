@@ -25,4 +25,4 @@ export function organizationGenerateDeclarationOfAccession(http: HttpClient, roo
   );
 }
 
-organizationGenerateDeclarationOfAccession.PATH = '/bla-bla-vla/Organization/GenerateDeclarationOfAccession';
+organizationGenerateDeclarationOfAccession.PATH = '/api/Organization/GenerateDeclarationOfAccession';
