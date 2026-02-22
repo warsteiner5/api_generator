@@ -1,6 +1,7 @@
 import { DocumentChangeEnum } from '../enums/document-change.enum';
 import { DocumentTypeEnum } from '../enums/document-type.enum';
 
+// @ts-ignore
 export interface DealDocument {
   documentChange: DocumentChangeEnum;
   documentType: DocumentTypeEnum;

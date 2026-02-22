@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface TenantOrganizationSettingsInfoAlt {
   allowTradeCreate: boolean;
   allowTradeUpdate: boolean;

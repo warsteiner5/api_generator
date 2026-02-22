@@ -1,5 +1,6 @@
 import { DealStateEnum } from '../enums/deal-state.enum';
 
+// @ts-ignore
 export interface HmaoExternalDealInfo {
   conclusionDate: string;
   contractSignDate: string;

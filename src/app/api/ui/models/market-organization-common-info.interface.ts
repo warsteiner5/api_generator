@@ -3,6 +3,7 @@ import { MarketOrganizationCommonBank } from './market-organization-common-bank.
 import { MarketOrganizationCommonBaseInfoAlt } from './market-organization-common-base-info-alt.interface';
 import { MarketOrganizationCommonDocuments } from './market-organization-common-documents.interface';
 
+// @ts-ignore
 export interface MarketOrganizationCommonInfo {
   addresses: MarketOrganizationCommonAddress;
   bankRequisites: MarketOrganizationCommonBank;

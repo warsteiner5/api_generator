@@ -1,5 +1,6 @@
 import { StandartAlt } from './standart-alt.interface';
 
+// @ts-ignore
 export interface PurchaseObjectCardAlt {
   additionalInfo: string;
   hasNotActualStandart: boolean;

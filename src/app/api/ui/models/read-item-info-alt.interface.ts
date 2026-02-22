@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ReadItemInfoAlt {
   firstName: string;
   lastName: string;

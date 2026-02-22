@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface OkServiceBriefReport {
   color: string;
   inn: string;

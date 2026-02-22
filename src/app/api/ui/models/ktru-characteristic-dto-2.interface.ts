@@ -1,5 +1,6 @@
 import { KtruCharacteristicValue } from './ktru-characteristic-value.interface';
 
+// @ts-ignore
 export interface KtruCharacteristicDto2 {
   characteristicChoiceTypeId: number;
   characteristicKindId: number;

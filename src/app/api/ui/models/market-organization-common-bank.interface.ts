@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface MarketOrganizationCommonBank {
   bankAddress: string;
   bankName: string;

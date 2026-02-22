@@ -1,14 +1,13 @@
 import { EmployeesSelf$Params } from '../../../swagger/fn/employees/employees-self';
 
+// @ts-ignore
 export interface EmployeesSelfParams {
 }
 
-export const employeesSelfParamsAdapter = {
-  adapt(params?: EmployeesSelfParams): EmployeesSelf$Params {
-    if (!params) {
-      return {} as EmployeesSelf$Params;
-    }
-    return {
-    };
+export function employeesSelfAdapter(params?: EmployeesSelfParams): EmployeesSelf$Params {
+  if (!params) {
+    return {} as EmployeesSelf$Params;
   }
-};
+  return {
+  };
+}

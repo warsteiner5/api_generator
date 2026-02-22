@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ParticipantOfferShortInfo {
   id: number;
   lotItemId: number;

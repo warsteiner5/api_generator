@@ -2,6 +2,7 @@ import { CharacteristicListValues } from './characteristic-list-values.interface
 import { CharacteristicOperationEnum } from '../enums/characteristic-operation.enum';
 import { CharacteristicTypeEnum } from '../enums/characteristic-type.enum';
 
+// @ts-ignore
 export interface SupplierCharacteristicForView {
   isApproved: boolean;
   list: CharacteristicListValues[];

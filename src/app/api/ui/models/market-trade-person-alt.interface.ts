@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface MarketTradePersonAlt {
   contactEmail: string;
   id: number;

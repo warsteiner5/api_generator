@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface LinkAndPublishPublicOfferOrderModelAlt {
   isCustomPrice: boolean;
   isNewTrade: boolean;

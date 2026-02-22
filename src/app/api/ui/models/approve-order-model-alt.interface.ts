@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ApproveOrderModelAlt {
   accountNumber: string;
   comment: string;

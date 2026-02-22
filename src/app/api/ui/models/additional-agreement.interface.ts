@@ -3,6 +3,7 @@ import { AdditionalAgreementFormEnum } from '../enums/additional-agreement-form.
 import { AdditionalAgreementInitiatorEnum } from '../enums/additional-agreement-initiator.enum';
 import { AdditionalAgreementStateEnum } from '../enums/additional-agreement-state.enum';
 
+// @ts-ignore
 export interface AdditionalAgreement {
   conclusionDate: string;
   createDate: string;

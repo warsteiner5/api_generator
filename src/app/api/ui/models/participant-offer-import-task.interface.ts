@@ -3,6 +3,7 @@ import { ParticipantOfferStateEnum } from '../enums/participant-offer-state.enum
 import { PriceListImportTypeEnum } from '../enums/price-list-import-type.enum';
 import { TaskStatusEnum } from '../enums/task-status.enum';
 
+// @ts-ignore
 export interface ParticipantOfferImportTask {
   createDate: string;
   errorMessage: string;

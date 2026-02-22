@@ -31,6 +31,7 @@ import { TradeViewFormOptions } from './trade-view-form-options.interface';
 import { VatRateStateEnum } from '../enums/vat-rate-state.enum';
 import { ZmoFinanceSourceEnum } from '../enums/zmo-finance-source.enum';
 
+// @ts-ignore
 export interface MarketTradeView {
   additionalRequirements: AdditionalRequirementDto2[];
   allowApplicationReject: boolean;

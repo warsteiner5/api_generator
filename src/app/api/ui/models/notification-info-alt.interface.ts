@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface NotificationInfoAlt {
   createdOn: string;
   id: number;

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface LogUserActionMessage {
   entityId: number;
   isManager: boolean;

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface MarketPartnerOrganization {
   id: number;
   inn: string;

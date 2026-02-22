@@ -19,6 +19,7 @@ import { TradeStateEnum } from '../enums/trade-state.enum';
 import { VatRateStateEnum } from '../enums/vat-rate-state.enum';
 import { ZmoFinanceSourceEnum } from '../enums/zmo-finance-source.enum';
 
+// @ts-ignore
 export interface TradeDto2 {
   additionalInfo: string;
   additionalRequirements: AdditionalRequirementDto2[];

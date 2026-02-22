@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface MarketOrganizationShortInfo {
   address: string;
   email: string;

@@ -1,3 +1,6 @@
 import { FilesStatusAlt } from './files-status-alt.interface';
 
-export type ExportFilesStatusAlt = FilesStatusAlt & { 'recordsCount'?: number; };
+// @ts-ignore
+export interface ExportFilesStatusAlt extends FilesStatusAlt {
+  recordsCount: number;
+}

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface Certificate {
   dateFrom: string;
   dateTo: string;

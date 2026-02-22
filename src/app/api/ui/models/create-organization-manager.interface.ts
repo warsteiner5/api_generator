@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface CreateOrganizationManager {
   firstName: string;
   lastName: string;

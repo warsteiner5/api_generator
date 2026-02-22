@@ -1,6 +1,7 @@
 import { EisDictionaryItemAlt } from './eis-dictionary-item-alt.interface';
 import { TypeObjectPurchaseEnum } from '../enums/type-object-purchase.enum';
 
+// @ts-ignore
 export interface TradePlan223PositionItem {
   additionalInfo: string;
   count: number;

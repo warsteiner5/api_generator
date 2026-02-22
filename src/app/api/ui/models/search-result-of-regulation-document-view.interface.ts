@@ -1,5 +1,6 @@
 import { RegulationDocumentView } from './regulation-document-view.interface';
 
+// @ts-ignore
 export interface SearchResultOfRegulationDocumentView {
   currentPage: number;
   infos: RegulationDocumentView[];

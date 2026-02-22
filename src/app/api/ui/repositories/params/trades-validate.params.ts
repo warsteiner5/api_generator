@@ -1,18 +1,17 @@
 import { ApplicationDto2 } from '../../models/application-dto-2.interface';
 import { TradesValidate$Params } from '../../../swagger/fn/trades/trades-validate';
-import { adaptApiApplicationDto2 } from '../../adapters/toDto/api-application-dto-2.adapter';
+import { apiApplicationDto2Adapter } from '../../adapters/models/api-application-dto-2.adapter';
 
+// @ts-ignore
 export interface TradesValidateParams {
   body?: ApplicationDto2;
 }
 
-export const tradesValidateParamsAdapter = {
-  adapt(params?: TradesValidateParams): TradesValidate$Params {
-    if (!params) {
-      return {} as TradesValidate$Params;
-    }
-    return {
-      body: adaptApiApplicationDto2(params.body),
-    };
+export function tradesValidateAdapter(params?: TradesValidateParams): TradesValidate$Params {
+  if (!params) {
+    return {} as TradesValidate$Params;
   }
-};
+  return {
+      body: apiApplicationDto2Adapter(params.body),
+  };
+}

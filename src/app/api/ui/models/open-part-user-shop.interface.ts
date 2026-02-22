@@ -1,5 +1,6 @@
 import { TenantFlowTypeAltEnum } from '../enums/tenant-flow-type-alt.enum';
 
+// @ts-ignore
 export interface OpenPartUserShop {
   imageId: string;
   imageSrc: string;

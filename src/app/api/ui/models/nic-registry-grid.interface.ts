@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface NicRegistryGrid {
   contractDate: string;
   contractNumber: string;

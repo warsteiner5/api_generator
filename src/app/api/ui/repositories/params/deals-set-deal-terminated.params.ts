@@ -1,20 +1,19 @@
 import { DealsSetDealTerminated$Params } from '../../../swagger/fn/deals/deals-set-deal-terminated';
 import { DealTerminateModelAlt } from '../../models/deal-terminate-model-alt.interface';
-import { adaptApiDealTerminateModelAltDto } from '../../adapters/toDto/api-deal-terminate-model.adapter';
+import { apiDealTerminateModelAltDtoAdapter } from '../../adapters/models/api-deal-terminate-model.adapter';
 
+// @ts-ignore
 export interface DealsSetDealTerminatedParams {
   dealId: number;
   body?: DealTerminateModelAlt;
 }
 
-export const dealsSetDealTerminatedParamsAdapter = {
-  adapt(params?: DealsSetDealTerminatedParams): DealsSetDealTerminated$Params {
-    if (!params) {
-      return {} as DealsSetDealTerminated$Params;
-    }
-    return {
-      dealId: params.dealId,
-      body: adaptApiDealTerminateModelAltDto(params.body),
-    };
+export function dealsSetDealTerminatedAdapter(params?: DealsSetDealTerminatedParams): DealsSetDealTerminated$Params {
+  if (!params) {
+    return {} as DealsSetDealTerminated$Params;
   }
-};
+  return {
+      dealId: params.dealId,
+      body: apiDealTerminateModelAltDtoAdapter(params.body),
+  };
+}

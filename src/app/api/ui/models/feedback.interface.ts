@@ -1,6 +1,7 @@
 import { FeedBackOrganizationRoleEnum } from '../enums/feed-back-organization-role.enum';
 import { HumanometrOptionsAlt } from './humanometr-options-alt.interface';
 
+// @ts-ignore
 export interface Feedback {
   content: string;
   email: string;

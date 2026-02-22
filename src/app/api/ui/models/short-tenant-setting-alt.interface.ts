@@ -1,6 +1,7 @@
 import { TenantFlowTypeAltEnum } from '../enums/tenant-flow-type-alt.enum';
 import { TradeLotApplicationDocumentTypeEnum } from '../enums/trade-lot-application-document-type.enum';
 
+// @ts-ignore
 export interface ShortTenantSettingAlt {
   isChatEnable: boolean;
   isDocumentAttachRequired: boolean;

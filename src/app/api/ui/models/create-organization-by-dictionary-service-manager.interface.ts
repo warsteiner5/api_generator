@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface CreateOrganizationByDictionaryServiceManager {
   email: string;
   firstName: string;

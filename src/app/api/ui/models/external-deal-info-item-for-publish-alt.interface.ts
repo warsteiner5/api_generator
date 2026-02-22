@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ExternalDealInfoItemForPublishAlt {
   name: string;
   okeiCode: string;

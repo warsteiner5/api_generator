@@ -1,5 +1,6 @@
 import { PurchaseObjectCardAlt } from './purchase-object-card-alt.interface';
 
+// @ts-ignore
 export interface StarSearchObjItemAlt {
   additionalNumbers: string[];
   attachmentSearchResultInfo: string;

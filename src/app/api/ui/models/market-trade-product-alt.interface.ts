@@ -6,6 +6,7 @@ import { NationalModeRequirementTypeEnum } from '../enums/national-mode-requirem
 import { Okpd2CodeMarket } from './okpd-2-code-market.interface';
 import { TruTypeEnum } from '../enums/tru-type.enum';
 
+// @ts-ignore
 export interface MarketTradeProductAlt {
   canEditKtruInfo: boolean;
   classificatorCode: string;

@@ -1,5 +1,6 @@
 import { SuggestDtoOfOrganizationAddress } from './suggest-dto-of-organization-address.interface';
 
+// @ts-ignore
 export interface OrganizationSuggest {
   address: SuggestDtoOfOrganizationAddress;
   fullName: string;

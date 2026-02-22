@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface OkeiShort {
   code: string;
   fullName: string;

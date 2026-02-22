@@ -1,5 +1,6 @@
 import { Document } from './document.interface';
 
+// @ts-ignore
 export interface Notification {
   attachedDocuments: Document[];
   createdOn: string;

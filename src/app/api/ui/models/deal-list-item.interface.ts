@@ -2,6 +2,7 @@ import { DealObjectEnum } from '../enums/deal-object.enum';
 import { PurchaseMethodTypeEnum } from '../enums/purchase-method-type.enum';
 import { TradeBusinessFlowEnum } from '../enums/trade-business-flow.enum';
 
+// @ts-ignore
 export interface DealListItem {
   additionalAgreementConclusionDate: string;
   additionalAgreementStateId: number;

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface Account {
   applicationId: number;
   availableSum: number;

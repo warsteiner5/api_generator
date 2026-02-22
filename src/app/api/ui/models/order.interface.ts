@@ -9,6 +9,7 @@ import { TradeBusinessFlowEnum } from '../enums/trade-business-flow.enum';
 import { TradeExtCustomerInfoExcel } from './trade-ext-customer-info-excel.interface';
 import { ZmoFinanceSourceEnum } from '../enums/zmo-finance-source.enum';
 
+// @ts-ignore
 export interface Order {
   additionalRequirements: AdditionalRequirement[];
   businessFlowType: TradeBusinessFlowEnum;

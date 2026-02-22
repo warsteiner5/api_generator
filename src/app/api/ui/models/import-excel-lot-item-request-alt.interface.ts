@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ImportExcelLotItemRequestAlt {
   fileGuid: string;
   isManualEnterPriceForEachProduct: boolean;

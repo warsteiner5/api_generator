@@ -2,6 +2,7 @@ import { TagObjectEnum } from '../enums/tag-object.enum';
 import { TagParticipantOfferRuleListView } from './tag-participant-offer-rule-list-view.interface';
 import { TagParticipantRuleListView } from './tag-participant-rule-list-view.interface';
 
+// @ts-ignore
 export interface TagOperatorView {
   code: string;
   description: string;

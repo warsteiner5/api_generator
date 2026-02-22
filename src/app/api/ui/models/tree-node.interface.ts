@@ -1,3 +1,6 @@
 import { TreeNodeItem } from './tree-node-item.interface';
 
-export type TreeNode = TreeNodeItem & { 'ParentId'?: number | null; };
+// @ts-ignore
+export interface TreeNode extends TreeNodeItem {
+  parentId: number;
+}

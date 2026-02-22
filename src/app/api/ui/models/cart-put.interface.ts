@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface CartPut {
   deliveryAddress: string;
   deliveryTime: string;

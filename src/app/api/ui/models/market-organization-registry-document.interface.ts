@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface MarketOrganizationRegistryDocument {
   createDate: string;
   customType: string;

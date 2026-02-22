@@ -1,6 +1,7 @@
 import { EquivalentTableCharacteristic } from './equivalent-table-characteristic.interface';
 import { EquivalentTableCompetitiveListItem } from './equivalent-table-competitive-list-item.interface';
 
+// @ts-ignore
 export interface EquivalentTable {
   additionalSuppliersInformation: EquivalentTableCompetitiveListItem[];
   characteristics: EquivalentTableCharacteristic[];

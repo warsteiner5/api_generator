@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface FileInfoForSign {
   fileDataToSign: string;
   fileGuid: string;

@@ -1,5 +1,6 @@
 import { FileSignatureInfoAlt } from './file-signature-info-alt.interface';
 
+// @ts-ignore
 export interface FileInfoAlt {
   comment: string;
   compressed: boolean;

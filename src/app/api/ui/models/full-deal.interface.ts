@@ -10,6 +10,7 @@ import { DealStateEnum } from '../enums/deal-state.enum';
 import { OrganizationCountryAltEnum } from '../enums/organization-country-alt.enum';
 import { PartisipantInfoForDealOutSideEShopAlt } from './partisipant-info-for-deal-out-side-e-shop-alt.interface';
 
+// @ts-ignore
 export interface FullDeal {
   additionalAgreements: AdditionalAgreement[];
   allowPaperDealForm: boolean;

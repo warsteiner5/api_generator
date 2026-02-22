@@ -10,6 +10,7 @@ import { TradeBiddingTypeEnum } from '../enums/trade-bidding-type.enum';
 import { TradeLotCustomer } from './trade-lot-customer.interface';
 import { ZmoFinanceSourceEnum } from '../enums/zmo-finance-source.enum';
 
+// @ts-ignore
 export interface TradeLot {
   applicationAmountExtra: string;
   applicationGuaranteeType: ApplicationGuaranteeTypeEnum;

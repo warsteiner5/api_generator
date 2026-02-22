@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface OutDocument {
   actionDate: string;
   beginDate: string;

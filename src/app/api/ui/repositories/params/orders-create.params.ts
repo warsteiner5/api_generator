@@ -1,18 +1,17 @@
 import { OrderAlt } from '../../models/order-alt.interface';
 import { OrdersCreate$Params } from '../../../swagger/fn/orders/orders-create';
-import { adaptApiOrderAltDto } from '../../adapters/toDto/api-order.adapter';
+import { apiOrderAltDtoAdapter } from '../../adapters/models/api-order.adapter';
 
+// @ts-ignore
 export interface OrdersCreateParams {
   body?: OrderAlt;
 }
 
-export const ordersCreateParamsAdapter = {
-  adapt(params?: OrdersCreateParams): OrdersCreate$Params {
-    if (!params) {
-      return {} as OrdersCreate$Params;
-    }
-    return {
-      body: adaptApiOrderAltDto(params.body),
-    };
+export function ordersCreateAdapter(params?: OrdersCreateParams): OrdersCreate$Params {
+  if (!params) {
+    return {} as OrdersCreate$Params;
   }
-};
+  return {
+      body: apiOrderAltDtoAdapter(params.body),
+  };
+}

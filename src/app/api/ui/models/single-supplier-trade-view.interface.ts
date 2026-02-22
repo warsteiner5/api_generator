@@ -1,3 +1,4 @@
+import { AdditionalRequirementDto2 } from './additional-requirement-dto-2.interface';
 import { DealStateEnum } from '../enums/deal-state.enum';
 import { DeliveryMethodAltEnum } from '../enums/delivery-method-alt.enum';
 import { M4DDealSignRequiredEnum } from '../enums/m-4-d-deal-sign-required.enum';
@@ -5,7 +6,9 @@ import { MarketDealStateEnum } from '../enums/market-deal-state.enum';
 import { SingleSupplierTradeProductAlt } from './single-supplier-trade-product-alt.interface';
 import { TradeBusinessFlowEnum } from '../enums/trade-business-flow.enum';
 
+// @ts-ignore
 export interface SingleSupplierTradeView {
+  additionalRequirements: AdditionalRequirementDto2[];
   businessFlowType: TradeBusinessFlowEnum;
   customerFullName: string;
   customerGuid: string;

@@ -1,14 +1,13 @@
 import { FilterGetFilterModel$Params } from '../../../swagger/fn/filter/filter-get-filter-model';
 
+// @ts-ignore
 export interface FilterGetFilterModelParams {
 }
 
-export const filterGetFilterModelParamsAdapter = {
-  adapt(params?: FilterGetFilterModelParams): FilterGetFilterModel$Params {
-    if (!params) {
-      return {} as FilterGetFilterModel$Params;
-    }
-    return {
-    };
+export function filterGetFilterModelAdapter(params?: FilterGetFilterModelParams): FilterGetFilterModel$Params {
+  if (!params) {
+    return {} as FilterGetFilterModel$Params;
   }
-};
+  return {
+  };
+}

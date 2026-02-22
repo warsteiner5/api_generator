@@ -3,6 +3,7 @@ import { CompetitiveListItemDocument } from './competitive-list-item-document.in
 import { PriceRegionDetail } from './price-region-detail.interface';
 import { SupplierCharacteristicForView } from './supplier-characteristic-for-view.interface';
 
+// @ts-ignore
 export interface CompetitiveListItemForView {
   characteristicsValues: CharacteristicValues[];
   comment: string;

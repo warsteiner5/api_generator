@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ExpiringTradesInfoForCustomerAlt {
   countOfExpiringTrades: number;
   daysForNoticeBeforeArchive: number;

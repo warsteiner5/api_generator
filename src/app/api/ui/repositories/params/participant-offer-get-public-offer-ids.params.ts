@@ -1,18 +1,17 @@
 import { ParticipantOfferGetPublicOfferIds$Params } from '../../../swagger/fn/participant-offer/participant-offer-get-public-offer-ids';
 import { PublicOffersParamAlt } from '../../models/public-offers-param-alt.interface';
-import { adaptApiPublicOffersParamAltDto } from '../../adapters/toDto/api-public-offers-param.adapter';
+import { apiPublicOffersParamAltDtoAdapter } from '../../adapters/models/api-public-offers-param.adapter';
 
+// @ts-ignore
 export interface ParticipantOfferGetPublicOfferIdsParams {
   body?: PublicOffersParamAlt;
 }
 
-export const participantOfferGetPublicOfferIdsParamsAdapter = {
-  adapt(params?: ParticipantOfferGetPublicOfferIdsParams): ParticipantOfferGetPublicOfferIds$Params {
-    if (!params) {
-      return {} as ParticipantOfferGetPublicOfferIds$Params;
-    }
-    return {
-      body: adaptApiPublicOffersParamAltDto(params.body),
-    };
+export function participantOfferGetPublicOfferIdsAdapter(params?: ParticipantOfferGetPublicOfferIdsParams): ParticipantOfferGetPublicOfferIds$Params {
+  if (!params) {
+    return {} as ParticipantOfferGetPublicOfferIds$Params;
   }
-};
+  return {
+      body: apiPublicOffersParamAltDtoAdapter(params.body),
+  };
+}

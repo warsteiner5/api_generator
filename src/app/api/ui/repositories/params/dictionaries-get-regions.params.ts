@@ -1,14 +1,13 @@
 import { DictionariesGetRegions$Params } from '../../../swagger/fn/dictionaries/dictionaries-get-regions';
 
+// @ts-ignore
 export interface DictionariesGetRegionsParams {
 }
 
-export const dictionariesGetRegionsParamsAdapter = {
-  adapt(params?: DictionariesGetRegionsParams): DictionariesGetRegions$Params {
-    if (!params) {
-      return {} as DictionariesGetRegions$Params;
-    }
-    return {
-    };
+export function dictionariesGetRegionsAdapter(params?: DictionariesGetRegionsParams): DictionariesGetRegions$Params {
+  if (!params) {
+    return {} as DictionariesGetRegions$Params;
   }
-};
+  return {
+  };
+}

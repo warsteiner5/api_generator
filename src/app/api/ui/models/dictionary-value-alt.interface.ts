@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface DictionaryValueAlt {
   code: string;
   description: string;

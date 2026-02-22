@@ -1,18 +1,17 @@
 import { AdditionalAgreementCreate$Params } from '../../../swagger/fn/additional-agreement/additional-agreement-create';
 import { CreateAdditionalAgreement } from '../../models/create-additional-agreement.interface';
-import { adaptApiCreateAdditionalAgreementDto } from '../../adapters/toDto/api-create-additional-agreement-dto.adapter';
+import { apiCreateAdditionalAgreementDtoAdapter } from '../../adapters/models/api-create-additional-agreement-dto.adapter';
 
+// @ts-ignore
 export interface AdditionalAgreementCreateParams {
   body?: CreateAdditionalAgreement;
 }
 
-export const additionalAgreementCreateParamsAdapter = {
-  adapt(params?: AdditionalAgreementCreateParams): AdditionalAgreementCreate$Params {
-    if (!params) {
-      return {} as AdditionalAgreementCreate$Params;
-    }
-    return {
-      body: adaptApiCreateAdditionalAgreementDto(params.body),
-    };
+export function additionalAgreementCreateAdapter(params?: AdditionalAgreementCreateParams): AdditionalAgreementCreate$Params {
+  if (!params) {
+    return {} as AdditionalAgreementCreate$Params;
   }
-};
+  return {
+      body: apiCreateAdditionalAgreementDtoAdapter(params.body),
+  };
+}

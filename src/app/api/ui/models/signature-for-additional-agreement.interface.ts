@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface SignatureForAdditionalAgreement {
   powerOfAttorneyId: string;
   powerOfAttorneyRequired: boolean;

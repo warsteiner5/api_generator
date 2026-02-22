@@ -2,6 +2,7 @@ import { AddressDto2 } from './address-dto-2.interface';
 import { Manager } from './manager.interface';
 import { Phone } from './phone.interface';
 
+// @ts-ignore
 export interface Organization {
   address: string;
   addressInfo: AddressDto2;

@@ -1,14 +1,13 @@
 import { ImagesUpload$Params } from '../../../swagger/fn/images/images-upload';
 
+// @ts-ignore
 export interface ImagesUploadParams {
 }
 
-export const imagesUploadParamsAdapter = {
-  adapt(params?: ImagesUploadParams): ImagesUpload$Params {
-    if (!params) {
-      return {} as ImagesUpload$Params;
-    }
-    return {
-    };
+export function imagesUploadAdapter(params?: ImagesUploadParams): ImagesUpload$Params {
+  if (!params) {
+    return {} as ImagesUpload$Params;
   }
-};
+  return {
+  };
+}

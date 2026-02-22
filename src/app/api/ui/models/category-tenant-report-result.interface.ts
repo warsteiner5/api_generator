@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface CategoryTenantReportResult {
   countPositionPriceList: number;
   idCategory: number;

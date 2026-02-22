@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ImportExcelProductRequestAlt {
   fileGuid: string;
   isManualEnterPriceForEachProduct: boolean;

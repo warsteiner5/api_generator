@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface QuestionAnswer {
   isDeleted: boolean;
   optionText: string;

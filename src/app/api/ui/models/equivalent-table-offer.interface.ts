@@ -1,5 +1,6 @@
 import { EquivalentTablePriceRegionDetail } from './equivalent-table-price-region-detail.interface';
 
+// @ts-ignore
 export interface EquivalentTableOffer {
   id: number;
   minQuantity: number;

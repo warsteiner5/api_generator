@@ -1,14 +1,13 @@
 import { BannersGetUserBanners$Params } from '../../../swagger/fn/banners/banners-get-user-banners';
 
+// @ts-ignore
 export interface BannersGetUserBannersParams {
 }
 
-export const bannersGetUserBannersParamsAdapter = {
-  adapt(params?: BannersGetUserBannersParams): BannersGetUserBanners$Params {
-    if (!params) {
-      return {} as BannersGetUserBanners$Params;
-    }
-    return {
-    };
+export function bannersGetUserBannersAdapter(params?: BannersGetUserBannersParams): BannersGetUserBanners$Params {
+  if (!params) {
+    return {} as BannersGetUserBanners$Params;
   }
-};
+  return {
+  };
+}

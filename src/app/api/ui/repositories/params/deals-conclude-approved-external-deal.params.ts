@@ -1,7 +1,8 @@
 import { DealsConcludeApprovedExternalDeal$Params } from '../../../swagger/fn/deals/deals-conclude-approved-external-deal';
 import { SignatureForDeal } from '../../models/signature-for-deal.interface';
-import { adaptApiSignatureForDealDto } from '../../adapters/toDto/api-signature-for-deal-dto.adapter';
+import { apiSignatureForDealDtoAdapter } from '../../adapters/models/api-signature-for-deal-dto.adapter';
 
+// @ts-ignore
 export interface DealsConcludeApprovedExternalDealParams {
   dealId: number;
   organizationId: number;
@@ -9,16 +10,14 @@ export interface DealsConcludeApprovedExternalDealParams {
   body?: SignatureForDeal;
 }
 
-export const dealsConcludeApprovedExternalDealParamsAdapter = {
-  adapt(params?: DealsConcludeApprovedExternalDealParams): DealsConcludeApprovedExternalDeal$Params {
-    if (!params) {
-      return {} as DealsConcludeApprovedExternalDeal$Params;
-    }
-    return {
+export function dealsConcludeApprovedExternalDealAdapter(params?: DealsConcludeApprovedExternalDealParams): DealsConcludeApprovedExternalDeal$Params {
+  if (!params) {
+    return {} as DealsConcludeApprovedExternalDeal$Params;
+  }
+  return {
       dealId: params.dealId,
       organizationId: params.organizationId,
       userId: params.userId,
-      body: adaptApiSignatureForDealDto(params.body),
-    };
-  }
-};
+      body: apiSignatureForDealDtoAdapter(params.body),
+  };
+}

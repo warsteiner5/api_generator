@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface DeliveryRegionInfo {
   id: number;
   kladrCode: string;

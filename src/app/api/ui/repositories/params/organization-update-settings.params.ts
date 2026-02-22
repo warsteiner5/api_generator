@@ -1,18 +1,17 @@
 import { OrganizationSettings } from '../../models/organization-settings.interface';
 import { OrganizationUpdateSettings$Params } from '../../../swagger/fn/organization/organization-update-settings';
-import { adaptApiOrganizationSettingsDto } from '../../adapters/toDto/api-organization-settings-dto.adapter';
+import { apiOrganizationSettingsDtoAdapter } from '../../adapters/models/api-organization-settings-dto.adapter';
 
+// @ts-ignore
 export interface OrganizationUpdateSettingsParams {
   body?: OrganizationSettings;
 }
 
-export const organizationUpdateSettingsParamsAdapter = {
-  adapt(params?: OrganizationUpdateSettingsParams): OrganizationUpdateSettings$Params {
-    if (!params) {
-      return {} as OrganizationUpdateSettings$Params;
-    }
-    return {
-      body: adaptApiOrganizationSettingsDto(params.body),
-    };
+export function organizationUpdateSettingsAdapter(params?: OrganizationUpdateSettingsParams): OrganizationUpdateSettings$Params {
+  if (!params) {
+    return {} as OrganizationUpdateSettings$Params;
   }
-};
+  return {
+      body: apiOrganizationSettingsDtoAdapter(params.body),
+  };
+}

@@ -24,6 +24,7 @@ import { UsedClassificatorTypeEnum } from '../enums/used-classificator-type.enum
 import { VatRateStateEnum } from '../enums/vat-rate-state.enum';
 import { YmlParam } from './yml-param.interface';
 
+// @ts-ignore
 export interface MarketParticipantOfferInfo {
   actions: ParticipantOfferActions;
   barCode: string;

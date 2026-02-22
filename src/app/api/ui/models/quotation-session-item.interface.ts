@@ -1,6 +1,7 @@
 import { KtruCharacteristic } from './ktru-characteristic.interface';
 import { TruTypeEnum2 } from '../enums/tru-type-enum-2.enum';
 
+// @ts-ignore
 export interface QuotationSessionItem {
   description: string;
   id: number;

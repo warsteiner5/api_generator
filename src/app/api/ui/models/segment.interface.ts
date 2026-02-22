@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface Segment {
   characteristicsCount: number;
   equivalentsCount: number;

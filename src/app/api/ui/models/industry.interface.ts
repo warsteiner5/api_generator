@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface Industry {
   children: Industry[];
   companyCount: number;

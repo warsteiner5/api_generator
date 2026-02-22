@@ -1,14 +1,13 @@
 import { DealsGenerateDealNumber$Params } from '../../../swagger/fn/deals/deals-generate-deal-number';
 
+// @ts-ignore
 export interface DealsGenerateDealNumberParams {
 }
 
-export const dealsGenerateDealNumberParamsAdapter = {
-  adapt(params?: DealsGenerateDealNumberParams): DealsGenerateDealNumber$Params {
-    if (!params) {
-      return {} as DealsGenerateDealNumber$Params;
-    }
-    return {
-    };
+export function dealsGenerateDealNumberAdapter(params?: DealsGenerateDealNumberParams): DealsGenerateDealNumber$Params {
+  if (!params) {
+    return {} as DealsGenerateDealNumber$Params;
   }
-};
+  return {
+  };
+}

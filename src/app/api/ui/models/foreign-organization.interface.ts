@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ForeignOrganization {
   contactPerson: string;
   email: string;

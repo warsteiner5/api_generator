@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface Address {
   area: string;
   city: string;

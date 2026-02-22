@@ -1,5 +1,6 @@
 import { NationalModeRequirementTypeEnum } from '../enums/national-mode-requirement-type.enum';
 
+// @ts-ignore
 export interface ImportExcelLotItemAlt {
   justificationForNonUseNationalModeAdditionalInfo: string;
   name: string;

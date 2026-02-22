@@ -1,3 +1,6 @@
 import { OfferGeneratedPrintForm } from './offer-generated-print-form.interface';
 
-export type OfferSignedPrintForm = OfferGeneratedPrintForm & { 'Signature'?: string | null; };
+// @ts-ignore
+export interface OfferSignedPrintForm extends OfferGeneratedPrintForm {
+  signature: string;
+}

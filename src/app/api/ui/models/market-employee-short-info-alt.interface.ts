@@ -1,5 +1,6 @@
 import { Address } from './address.interface';
 
+// @ts-ignore
 export interface MarketEmployeeShortInfoAlt {
   address: Address;
   email: string;

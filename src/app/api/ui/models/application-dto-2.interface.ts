@@ -13,6 +13,7 @@ import { TradeBusinessFlowEnum } from '../enums/trade-business-flow.enum';
 import { TradeStateEnum } from '../enums/trade-state.enum';
 import { VatRateStateEnum } from '../enums/vat-rate-state.enum';
 
+// @ts-ignore
 export interface ApplicationDto2 {
   accountNumber: string;
   additionalServices: AdditionalService[];

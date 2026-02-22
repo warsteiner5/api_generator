@@ -2,6 +2,7 @@ import { BaseFieldAlt } from './base-field-alt.interface';
 import { DayOfWeekAltEnum } from '../enums/day-of-week-alt.enum';
 import { DayPeriodEnum } from '../enums/day-period.enum';
 
+// @ts-ignore
 export interface SaveFilterObjectAlt {
   dayPeriod: DayPeriodEnum;
   daysOfWeek: DayOfWeekAltEnum[];

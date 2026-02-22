@@ -7,6 +7,7 @@ import { MarketApplicationItemDetailAlt } from './market-application-item-detail
 import { MeetsRequirementsEnum } from '../enums/meets-requirements.enum';
 import { ParticipantInfo } from './participant-info.interface';
 
+// @ts-ignore
 export interface MarketApplicationDetailAlt {
   applicationSource: ApplicationSourceEnum;
   applicationState: ApplicationStateEnum;

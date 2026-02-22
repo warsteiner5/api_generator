@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface PriceListInfoAlt {
   count: number;
   id: number;

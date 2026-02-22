@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface CharacteristicListValues {
   okeiCode: string;
   okeiDescription: string;

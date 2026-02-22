@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface UpdateSignedEmployee {
   employeeId: number;
   signatureForEmployeeFilesObject: { [key: string]: string; };

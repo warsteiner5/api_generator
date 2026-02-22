@@ -1,5 +1,6 @@
 import { TruTypeEnum2 } from '../enums/tru-type-enum-2.enum';
 
+// @ts-ignore
 export interface ExternalDealTradeProduct {
   lotItemId: number;
   name: string;

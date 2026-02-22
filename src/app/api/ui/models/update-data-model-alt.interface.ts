@@ -3,6 +3,7 @@ import { UpdatePropertyOfNullableDecimalAlt } from './update-property-of-nullabl
 import { UpdatePropertyOfStringAlt } from './update-property-of-string-alt.interface';
 import { UpdatePropertyOfStringOfAlt } from './update-property-of-string-of-alt.interface';
 
+// @ts-ignore
 export interface UpdateDataModelAlt {
   categoryId: UpdatePropertyOfStringAlt;
   countryCode: UpdatePropertyOfStringAlt;

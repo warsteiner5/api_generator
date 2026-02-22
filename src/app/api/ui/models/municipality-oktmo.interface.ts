@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface MunicipalityOktmo {
   actual: boolean;
   code: string;

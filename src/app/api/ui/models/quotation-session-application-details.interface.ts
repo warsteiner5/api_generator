@@ -5,4 +5,11 @@ import { QuotationSessionApplicationDocument } from './quotation-session-applica
 import { QuotationSessionApplicationDtoParticipantInfo } from './quotation-session-application-dto-participant-info.interface';
 import { QuotationSessionApplicationProduct } from './quotation-session-application-product.interface';
 
-export type QuotationSessionApplicationDetails = BaseQuotationSessionApplication & { 'ParticipantInfo'?: QuotationSessionApplicationDtoParticipantInfo | null; 'Conditions'?: QuotationSessionApplicationConditions | null; 'ApplicationDocuments'?: Array<QuotationSessionApplicationDocument> | null; 'OrganizationRegistryDocuments'?: Array<QuotationSessionApplicationDocument> | null; 'Products'?: Array<QuotationSessionApplicationProduct> | null; };
+// @ts-ignore
+export interface QuotationSessionApplicationDetails extends BaseQuotationSessionApplication {
+  participantInfo: QuotationSessionApplicationDtoParticipantInfo;
+  conditions: QuotationSessionApplicationConditions;
+  applicationDocuments: QuotationSessionApplicationDocument[];
+  organizationRegistryDocuments: QuotationSessionApplicationDocument[];
+  products: QuotationSessionApplicationProduct[];
+}

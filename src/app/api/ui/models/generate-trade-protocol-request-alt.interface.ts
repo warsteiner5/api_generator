@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface GenerateTradeProtocolRequestAlt {
   dealId: number;
   fromZmo: boolean;

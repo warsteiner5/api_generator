@@ -1,3 +1,9 @@
 import { MarketPublishParticipantOffer } from './market-publish-participant-offer.interface';
 
-export type ExternalPublishParticipantOffer = MarketPublishParticipantOffer & { 'IsChanged'?: boolean; 'IsCreatedByManager'?: boolean; 'TenantId'?: number; 'UserId'?: number; };
+// @ts-ignore
+export interface ExternalPublishParticipantOffer extends MarketPublishParticipantOffer {
+  isChanged: boolean;
+  isCreatedByManager: boolean;
+  tenantId: number;
+  userId: number;
+}

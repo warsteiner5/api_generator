@@ -1,18 +1,17 @@
 import { ComplaintClose$Params } from '../../../swagger/fn/complaint/complaint-close';
 import { ComplaintCloseAlt } from '../../models/complaint-close-alt.interface';
-import { adaptApiComplaintCloseAltDto } from '../../adapters/toDto/api-complaint-close.adapter';
+import { apiComplaintCloseAltDtoAdapter } from '../../adapters/models/api-complaint-close.adapter';
 
+// @ts-ignore
 export interface ComplaintCloseParams {
   body?: ComplaintCloseAlt;
 }
 
-export const complaintCloseParamsAdapter = {
-  adapt(params?: ComplaintCloseParams): ComplaintClose$Params {
-    if (!params) {
-      return {} as ComplaintClose$Params;
-    }
-    return {
-      body: adaptApiComplaintCloseAltDto(params.body),
-    };
+export function complaintCloseAdapter(params?: ComplaintCloseParams): ComplaintClose$Params {
+  if (!params) {
+    return {} as ComplaintClose$Params;
   }
-};
+  return {
+      body: apiComplaintCloseAltDtoAdapter(params.body),
+  };
+}

@@ -1,16 +1,15 @@
 import { CertificatesDownload$Params } from '../../../swagger/fn/certificates/certificates-download';
 
+// @ts-ignore
 export interface CertificatesDownloadParams {
   thumbprint: string;
 }
 
-export const certificatesDownloadParamsAdapter = {
-  adapt(params?: CertificatesDownloadParams): CertificatesDownload$Params {
-    if (!params) {
-      return {} as CertificatesDownload$Params;
-    }
-    return {
-      thumbprint: params.thumbprint,
-    };
+export function certificatesDownloadAdapter(params?: CertificatesDownloadParams): CertificatesDownload$Params {
+  if (!params) {
+    return {} as CertificatesDownload$Params;
   }
-};
+  return {
+      thumbprint: params.thumbprint,
+  };
+}

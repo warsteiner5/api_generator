@@ -8,6 +8,7 @@ import { QuotationSessionDetailAlt } from './quotation-session-detail-alt.interf
 import { VatRateStateEnum } from '../enums/vat-rate-state.enum';
 import { ZmoFinanceSourceEnum } from '../enums/zmo-finance-source.enum';
 
+// @ts-ignore
 export interface QuotationSessionAlt {
   autoProlongation: number;
   bidStepInfo: string;

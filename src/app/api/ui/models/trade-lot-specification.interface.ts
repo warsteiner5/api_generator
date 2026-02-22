@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface TradeLotSpecification {
   cost: number;
   count: number;

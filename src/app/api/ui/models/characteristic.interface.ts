@@ -4,6 +4,7 @@ import { CharacteristicOperationEnum } from '../enums/characteristic-operation.e
 import { CharacteristicTypeEnum } from '../enums/characteristic-type.enum';
 import { CharacteristicValues } from './characteristic-values.interface';
 
+// @ts-ignore
 export interface Characteristic {
   approvementStatus: CharacteristicApprovementStatusEnum;
   id: number;

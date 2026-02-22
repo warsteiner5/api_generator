@@ -6,6 +6,7 @@ import { PurchaseMethodTypeEnum } from '../enums/purchase-method-type.enum';
 import { RetradingTypeEnum } from '../enums/retrading-type.enum';
 import { TradeBusinessFlowEnum } from '../enums/trade-business-flow.enum';
 
+// @ts-ignore
 export interface MarketDealAlt {
   approvalRequestState: ApprovalRequestStateEnum;
   auctionEndDate: string;

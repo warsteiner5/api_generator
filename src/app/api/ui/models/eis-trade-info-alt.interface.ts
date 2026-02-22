@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface EisTradeInfoAlt {
   applicationRequestOrder: string;
   isEmergency: boolean;

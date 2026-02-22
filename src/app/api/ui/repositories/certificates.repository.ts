@@ -1,35 +1,35 @@
-import { adaptParsedCertificateToUI } from '../adapters/toUI/parsed-certificate.adapter';
 import { CertificatesApiService } from '../../swagger/services/certificates-api.service';
-import { CertificatesDownloadCertificateParams, certificatesDownloadCertificateParamsAdapter } from './params/certificates-download-certificate.params';
-import { CertificatesDownloadParams, certificatesDownloadParamsAdapter } from './params/certificates-download.params';
-import { CertificatesParseGetParams, certificatesParseGetParamsAdapter } from './params/certificates-parse-get.params';
-import { CertificatesParsePostParams, certificatesParsePostParamsAdapter } from './params/certificates-parse-post.params';
+import { CertificatesDownloadCertificateParams, certificatesDownloadCertificateAdapter } from './params/certificates-download-certificate.params';
+import { CertificatesDownloadParams, certificatesDownloadAdapter } from './params/certificates-download.params';
+import { CertificatesParseGetParams, certificatesParseGetAdapter } from './params/certificates-parse-get.params';
+import { CertificatesParsePostParams, certificatesParsePostAdapter } from './params/certificates-parse-post.params';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { ParsedCertificate } from '../models/parsed-certificate.interface';
+import { parsedCertificateAdapter } from '../adapters/models/parsed-certificate.adapter';
 
 @Injectable({ providedIn: 'root' })
 export class CertificatesRepository {
   private readonly _api = inject(CertificatesApiService);
 
   certificatesDownload(params: CertificatesDownloadParams): Observable<Blob> {
-    return this._api.certificatesDownload(certificatesDownloadParamsAdapter.adapt(params));
+    return this._api.certificatesDownload(certificatesDownloadAdapter(params));
   }
 
   certificatesDownloadCertificate(params: CertificatesDownloadCertificateParams): Observable<Blob> {
-    return this._api.certificatesDownloadCertificate(certificatesDownloadCertificateParamsAdapter.adapt(params));
+    return this._api.certificatesDownloadCertificate(certificatesDownloadCertificateAdapter(params));
   }
 
   certificatesParseGet(params: CertificatesParseGetParams): Observable<ParsedCertificate> {
-    return this._api.certificatesParseGet(certificatesParseGetParamsAdapter.adapt(params)).pipe(
-      map((res) => adaptParsedCertificateToUI(res?.data))
+    return this._api.certificatesParseGet(certificatesParseGetAdapter(params)).pipe(
+      map((res) => parsedCertificateAdapter(res?.data))
     );
   }
 
   certificatesParsePost(params: CertificatesParsePostParams): Observable<ParsedCertificate> {
-    return this._api.certificatesParsePost(certificatesParsePostParamsAdapter.adapt(params)).pipe(
-      map((res) => adaptParsedCertificateToUI(res?.data))
+    return this._api.certificatesParsePost(certificatesParsePostAdapter(params)).pipe(
+      map((res) => parsedCertificateAdapter(res?.data))
     );
   }
 

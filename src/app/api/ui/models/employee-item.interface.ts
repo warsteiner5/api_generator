@@ -1,5 +1,6 @@
 import { EmployeeRole } from './employee-role.interface';
 
+// @ts-ignore
 export interface EmployeeItem {
   customerEmail: string;
   firstName: string;

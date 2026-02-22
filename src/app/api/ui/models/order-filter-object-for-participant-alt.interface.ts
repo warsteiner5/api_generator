@@ -1,3 +1,6 @@
 import { OrderFilterObjectAlt } from './order-filter-object-alt.interface';
 
-export type OrderFilterObjectForParticipantAlt = OrderFilterObjectAlt & { 'CustomerNameOrInn'?: string | null; };
+// @ts-ignore
+export interface OrderFilterObjectForParticipantAlt extends OrderFilterObjectAlt {
+  customerNameOrInn: string;
+}

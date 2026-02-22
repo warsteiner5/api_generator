@@ -2,6 +2,7 @@ import { ExternalDealCardDocument } from './external-deal-card-document.interfac
 import { ExternalDealCardLotItem } from './external-deal-card-lot-item.interface';
 import { ExternalDealCardSupplier } from './external-deal-card-supplier.interface';
 
+// @ts-ignore
 export interface ExternalDealCard {
   currencyCode: string;
   dealAgreemntDate: string;

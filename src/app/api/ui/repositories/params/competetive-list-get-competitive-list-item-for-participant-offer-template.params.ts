@@ -1,16 +1,15 @@
 import { CompetetiveListGetCompetitiveListItemForParticipantOfferTemplate$Params } from '../../../swagger/fn/competetive-list/competetive-list-get-competitive-list-item-for-participant-offer-template';
 
+// @ts-ignore
 export interface CompetetiveListGetCompetitiveListItemForParticipantOfferTemplateParams {
   id: number;
 }
 
-export const competetiveListGetCompetitiveListItemForParticipantOfferTemplateParamsAdapter = {
-  adapt(params?: CompetetiveListGetCompetitiveListItemForParticipantOfferTemplateParams): CompetetiveListGetCompetitiveListItemForParticipantOfferTemplate$Params {
-    if (!params) {
-      return {} as CompetetiveListGetCompetitiveListItemForParticipantOfferTemplate$Params;
-    }
-    return {
-      id: params.id,
-    };
+export function competetiveListGetCompetitiveListItemForParticipantOfferTemplateAdapter(params?: CompetetiveListGetCompetitiveListItemForParticipantOfferTemplateParams): CompetetiveListGetCompetitiveListItemForParticipantOfferTemplate$Params {
+  if (!params) {
+    return {} as CompetetiveListGetCompetitiveListItemForParticipantOfferTemplate$Params;
   }
-};
+  return {
+      id: params.id,
+  };
+}

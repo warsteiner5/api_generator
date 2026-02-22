@@ -1,18 +1,17 @@
 import { DealExportToExcelByFilter$Params } from '../../../swagger/fn/deal/deal-export-to-excel-by-filter';
 import { DealFilterObjectAlt } from '../../models/deal-filter-object-alt.interface';
-import { adaptApiDealFilterObjectAltDto } from '../../adapters/toDto/api-deal-filter-object.adapter';
+import { apiDealFilterObjectAltDtoAdapter } from '../../adapters/models/api-deal-filter-object.adapter';
 
+// @ts-ignore
 export interface DealExportToExcelByFilterParams {
   body?: DealFilterObjectAlt;
 }
 
-export const dealExportToExcelByFilterParamsAdapter = {
-  adapt(params?: DealExportToExcelByFilterParams): DealExportToExcelByFilter$Params {
-    if (!params) {
-      return {} as DealExportToExcelByFilter$Params;
-    }
-    return {
-      body: adaptApiDealFilterObjectAltDto(params.body),
-    };
+export function dealExportToExcelByFilterAdapter(params?: DealExportToExcelByFilterParams): DealExportToExcelByFilter$Params {
+  if (!params) {
+    return {} as DealExportToExcelByFilter$Params;
   }
-};
+  return {
+      body: apiDealFilterObjectAltDtoAdapter(params.body),
+  };
+}

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface EmployeeRole {
   description: string;
   id: number;

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface Registry {
   name: string;
   points: number;

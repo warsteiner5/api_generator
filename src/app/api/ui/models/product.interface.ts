@@ -5,6 +5,7 @@ import { Okpd2Code } from './okpd-2-code.interface';
 import { TruTypeEnum } from '../enums/tru-type.enum';
 import { UsedClassificatorTypeEnum } from '../enums/used-classificator-type.enum';
 
+// @ts-ignore
 export interface Product {
   canEditKtruInfo: boolean;
   classificatorCode: string;

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface TradeAvailableOperations {
   isCreateClarificationRequestAllowed: boolean;
   isFinishReviewApplicationAllowed: boolean;

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface DoNotConcludeDealRequest {
   applicationId: number;
   lotId: number;

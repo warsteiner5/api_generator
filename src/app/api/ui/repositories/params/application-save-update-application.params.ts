@@ -1,18 +1,17 @@
 import { Application } from '../../models/application.interface';
 import { ApplicationSaveUpdateApplication$Params } from '../../../swagger/fn/application/application-save-update-application';
-import { adaptApiApplicationDto } from '../../adapters/toDto/api-application-dto.adapter';
+import { apiApplicationDtoAdapter } from '../../adapters/models/api-application-dto.adapter';
 
+// @ts-ignore
 export interface ApplicationSaveUpdateApplicationParams {
   body?: Application;
 }
 
-export const applicationSaveUpdateApplicationParamsAdapter = {
-  adapt(params?: ApplicationSaveUpdateApplicationParams): ApplicationSaveUpdateApplication$Params {
-    if (!params) {
-      return {} as ApplicationSaveUpdateApplication$Params;
-    }
-    return {
-      body: adaptApiApplicationDto(params.body),
-    };
+export function applicationSaveUpdateApplicationAdapter(params?: ApplicationSaveUpdateApplicationParams): ApplicationSaveUpdateApplication$Params {
+  if (!params) {
+    return {} as ApplicationSaveUpdateApplication$Params;
   }
-};
+  return {
+      body: apiApplicationDtoAdapter(params.body),
+  };
+}

@@ -1,6 +1,7 @@
 import { LotStateEnum } from '../enums/lot-state.enum';
 import { TradeStateEnum } from '../enums/trade-state.enum';
 
+// @ts-ignore
 export interface TradeInfoForParticipantAlt {
   applicationsCount: number;
   customerFullName: string;

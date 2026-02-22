@@ -2,6 +2,7 @@ import { ApplicationClarificationRequestResponse } from './application-clarifica
 import { CommonClarificationRequestStateEnum } from '../enums/common-clarification-request-state.enum';
 import { DocumentDto2 } from './document-dto-2.interface';
 
+// @ts-ignore
 export interface ClarificationRequestListItem {
   createDate: string;
   documents: DocumentDto2[];

@@ -1,6 +1,7 @@
 import { BankInfo } from './bank-info.interface';
 import { OrganizationTypeEnum } from '../enums/organization-type.enum';
 
+// @ts-ignore
 export interface ExternalDealSupplier {
   bankInfo: BankInfo;
   contactEmail: string;

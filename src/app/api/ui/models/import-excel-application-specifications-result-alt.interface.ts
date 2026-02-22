@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ImportExcelApplicationSpecificationsResultAlt {
   errorText: string;
   errorsFileUrl: string;

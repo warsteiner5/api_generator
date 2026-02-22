@@ -3,6 +3,7 @@ import { ApplicationDocumentDto2 } from './application-document-dto-2.interface'
 import { ContactInfo } from './contact-info.interface';
 import { QuotationSessionFinalProposalItemAlt } from './quotation-session-final-proposal-item-alt.interface';
 
+// @ts-ignore
 export interface QuotationSessionFinalProposalNewAlt {
   additionalServices: AdditionalService[];
   applicationDocuments: ApplicationDocumentDto2[];

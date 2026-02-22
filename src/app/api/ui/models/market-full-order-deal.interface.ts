@@ -2,4 +2,15 @@ import { MarketDealPosition } from './market-deal-position.interface';
 import { MarketFullDeal } from './market-full-deal.interface';
 import { OrderStateEnum } from '../enums/order-state.enum';
 
-export type MarketFullOrderDeal = MarketFullDeal & { 'OrderState'?: OrderStateEnum; 'MainPictureId'?: string | null; 'OfferId'?: number; 'ContractIsAcceptedByCustomer'?: boolean; 'DealPositions'?: Array<MarketDealPosition> | null; 'TradePrice'?: number | null; 'DealPrice'?: number; 'IsDifferencesProtocolAllowed'?: boolean; 'IsDealPaperFormAllowed'?: boolean; };
+// @ts-ignore
+export interface MarketFullOrderDeal extends MarketFullDeal {
+  orderState: OrderStateEnum;
+  mainPictureId: string;
+  offerId: number;
+  contractIsAcceptedByCustomer: boolean;
+  dealPositions: MarketDealPosition[];
+  tradePrice: number;
+  dealPrice: number;
+  isDifferencesProtocolAllowed: boolean;
+  isDealPaperFormAllowed: boolean;
+}

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface TenantInformationReportResult {
   countTrade: number;
   lotPrice: string;

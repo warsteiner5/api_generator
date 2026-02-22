@@ -2,6 +2,7 @@ import { ExternalSystemToSendCart } from './external-system-to-send-cart.interfa
 import { OrgAccreditationLevel } from './org-accreditation-level.interface';
 import { OrganizationTypeEnum } from '../enums/organization-type.enum';
 
+// @ts-ignore
 export interface MarketProfileOrganizationInfo {
   externalSystemsToSendCart: ExternalSystemToSendCart[];
   guid: string;

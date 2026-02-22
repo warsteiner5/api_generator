@@ -1,6 +1,7 @@
 import { CharacteristicListValues } from './characteristic-list-values.interface';
 import { CharacteristicTypeEnum } from '../enums/characteristic-type.enum';
 
+// @ts-ignore
 export interface CharacteristicValues {
   characteristicId: number;
   comment: string;

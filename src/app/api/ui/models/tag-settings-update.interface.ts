@@ -1,3 +1,9 @@
 import { TagSettingsAdd } from './tag-settings-add.interface';
 
-export type TagSettingsUpdate = TagSettingsAdd & { 'SettingsId'?: string | null; 'PriceFrom'?: number | null; 'PriceTo'?: number | null; 'Regions'?: Array<string> | null; };
+// @ts-ignore
+export interface TagSettingsUpdate extends TagSettingsAdd {
+  settingsId: string;
+  priceFrom: number;
+  priceTo: number;
+  regions: string[];
+}

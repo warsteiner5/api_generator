@@ -14,6 +14,7 @@ import { OrganizationTypeEnum } from '../enums/organization-type.enum';
 import { Restrictions } from './restrictions.interface';
 import { TagView } from './tag-view.interface';
 
+// @ts-ignore
 export interface MarketOrganizationFullInfo {
   activityInfo: OrganizationActivityInfo;
   bankInfos: OrganizationBankInfo[];

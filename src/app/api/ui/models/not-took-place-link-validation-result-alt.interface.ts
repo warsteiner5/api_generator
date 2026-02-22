@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface NotTookPlaceLinkValidationResultAlt {
   errorMessage: string;
   hasError: boolean;

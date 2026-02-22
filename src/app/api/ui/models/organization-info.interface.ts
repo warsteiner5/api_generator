@@ -3,6 +3,7 @@ import { BankInfo } from './bank-info.interface';
 import { OrganizationCountryAltEnum } from '../enums/organization-country-alt.enum';
 import { OrganizationTypeEnum } from '../enums/organization-type.enum';
 
+// @ts-ignore
 export interface OrganizationInfo {
   address: Address;
   bankInfo: BankInfo;

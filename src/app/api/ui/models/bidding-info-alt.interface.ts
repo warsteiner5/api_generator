@@ -1,5 +1,6 @@
 import { BiddingStatusAltEnum } from '../enums/bidding-status-alt.enum';
 
+// @ts-ignore
 export interface BiddingInfoAlt {
   bestBid: number;
   endDate: string;

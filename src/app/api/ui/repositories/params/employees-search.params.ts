@@ -1,18 +1,17 @@
 import { EmployeesSearch$Params } from '../../../swagger/fn/employees/employees-search';
 import { SearchObjectAlt } from '../../models/search-object-alt.interface';
-import { adaptApiSearchObjectAltDto } from '../../adapters/toDto/api-search-object.adapter';
+import { apiSearchObjectAltDtoAdapter } from '../../adapters/models/api-search-object.adapter';
 
+// @ts-ignore
 export interface EmployeesSearchParams {
   body?: SearchObjectAlt;
 }
 
-export const employeesSearchParamsAdapter = {
-  adapt(params?: EmployeesSearchParams): EmployeesSearch$Params {
-    if (!params) {
-      return {} as EmployeesSearch$Params;
-    }
-    return {
-      body: adaptApiSearchObjectAltDto(params.body),
-    };
+export function employeesSearchAdapter(params?: EmployeesSearchParams): EmployeesSearch$Params {
+  if (!params) {
+    return {} as EmployeesSearch$Params;
   }
-};
+  return {
+      body: apiSearchObjectAltDtoAdapter(params.body),
+  };
+}

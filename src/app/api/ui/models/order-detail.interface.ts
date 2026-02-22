@@ -3,6 +3,7 @@ import { TruTypeEnum } from '../enums/tru-type.enum';
 import { UsedClassificatorTypeEnum } from '../enums/used-classificator-type.enum';
 import { VatRateStateEnum } from '../enums/vat-rate-state.enum';
 
+// @ts-ignore
 export interface OrderDetail {
   classificatorCode: string;
   classificatorDescription: string;

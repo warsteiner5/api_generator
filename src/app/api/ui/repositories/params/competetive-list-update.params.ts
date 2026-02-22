@@ -1,20 +1,19 @@
 import { CompetetiveListUpdate$Params } from '../../../swagger/fn/competetive-list/competetive-list-update';
 import { CompetitiveListItemForView } from '../../models/competitive-list-item-for-view.interface';
-import { adaptApiCompetitiveListItemForViewDto } from '../../adapters/toDto/api-competitive-list-item-for-view-dto.adapter';
+import { apiCompetitiveListItemForViewDtoAdapter } from '../../adapters/models/api-competitive-list-item-for-view-dto.adapter';
 
+// @ts-ignore
 export interface CompetetiveListUpdateParams {
   competitiveListId: number;
   body?: CompetitiveListItemForView;
 }
 
-export const competetiveListUpdateParamsAdapter = {
-  adapt(params?: CompetetiveListUpdateParams): CompetetiveListUpdate$Params {
-    if (!params) {
-      return {} as CompetetiveListUpdate$Params;
-    }
-    return {
-      competitiveListId: params.competitiveListId,
-      body: adaptApiCompetitiveListItemForViewDto(params.body),
-    };
+export function competetiveListUpdateAdapter(params?: CompetetiveListUpdateParams): CompetetiveListUpdate$Params {
+  if (!params) {
+    return {} as CompetetiveListUpdate$Params;
   }
-};
+  return {
+      competitiveListId: params.competitiveListId,
+      body: apiCompetitiveListItemForViewDtoAdapter(params.body),
+  };
+}

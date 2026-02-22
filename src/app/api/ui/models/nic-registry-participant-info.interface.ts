@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface NicRegistryParticipantInfo {
   contractDate: string;
   contractNumber: string;

@@ -1,22 +1,21 @@
 import { DictionariesGetRegistryItemsAutocomplete$Params } from '../../../swagger/fn/dictionaries/dictionaries-get-registry-items-autocomplete';
 import { ManufacturerCountryRegistryTypeEnum } from '../../enums/manufacturer-country-registry-type.enum';
-import { adaptApiManufacturerCountryRegistryTypeEnum } from '../../adapters/toDto/api-manufacturer-country-registry-type-enum.adapter';
+import { apiManufacturerCountryRegistryTypeEnumAdapter } from '../../adapters/enums/api-manufacturer-country-registry-type-enum.adapter';
 
+// @ts-ignore
 export interface DictionariesGetRegistryItemsAutocompleteParams {
   type: ManufacturerCountryRegistryTypeEnum;
   searchValue: string;
   maxReturnCount: number;
 }
 
-export const dictionariesGetRegistryItemsAutocompleteParamsAdapter = {
-  adapt(params?: DictionariesGetRegistryItemsAutocompleteParams): DictionariesGetRegistryItemsAutocomplete$Params {
-    if (!params) {
-      return {} as DictionariesGetRegistryItemsAutocomplete$Params;
-    }
-    return {
-      type: adaptApiManufacturerCountryRegistryTypeEnum(params.type),
+export function dictionariesGetRegistryItemsAutocompleteAdapter(params?: DictionariesGetRegistryItemsAutocompleteParams): DictionariesGetRegistryItemsAutocomplete$Params {
+  if (!params) {
+    return {} as DictionariesGetRegistryItemsAutocomplete$Params;
+  }
+  return {
+      type: apiManufacturerCountryRegistryTypeEnumAdapter(params.type),
       searchValue: params.searchValue,
       maxReturnCount: params.maxReturnCount,
-    };
-  }
-};
+  };
+}

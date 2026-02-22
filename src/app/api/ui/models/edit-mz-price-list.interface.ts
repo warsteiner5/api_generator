@@ -1,6 +1,7 @@
 import { DeliveryRegionInfo } from './delivery-region-info.interface';
 import { PriceListStateEnum } from '../enums/price-list-state.enum';
 
+// @ts-ignore
 export interface EditMzPriceList {
   autoUpdateScheduleState: number;
   belongedToTenantId: number;

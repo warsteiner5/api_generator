@@ -1,5 +1,6 @@
 import { ParticipantOfferToTradeOperationTypeAltEnum } from '../enums/participant-offer-to-trade-operation-type-alt.enum';
 
+// @ts-ignore
 export interface LinkOfferToLotItem {
   createdOn: string;
   lastModificationDate: string;

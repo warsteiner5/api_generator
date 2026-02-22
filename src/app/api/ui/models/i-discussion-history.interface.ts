@@ -1,6 +1,7 @@
 import { DiscussionItemTypeEnum } from '../enums/discussion-item-type.enum';
 import { IDiscussionHistoryDocument } from './i-discussion-history-document.interface';
 
+// @ts-ignore
 export interface IDiscussionHistory {
   dateTime: string;
   discussionItemType: DiscussionItemTypeEnum;

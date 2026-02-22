@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface DealSigningExpiredMessageParametersAlt {
   discussionOwnerId: number;
   isWinner: boolean;

@@ -1,5 +1,6 @@
 import { CartItem } from './cart-item.interface';
 
+// @ts-ignore
 export interface Cart {
   businessOperatorId: number;
   clientSessionId: string;

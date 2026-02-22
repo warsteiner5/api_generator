@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface FileContentModelAlt {
   content: string;
   contentType: string;

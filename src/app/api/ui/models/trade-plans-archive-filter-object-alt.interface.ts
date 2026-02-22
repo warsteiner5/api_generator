@@ -1,3 +1,5 @@
 import { BaseFilterObjectAlt } from './base-filter-object-alt.interface';
 
-export type TradePlansArchiveFilterObjectAlt = BaseFilterObjectAlt & { };
+// @ts-ignore
+export interface TradePlansArchiveFilterObjectAlt extends BaseFilterObjectAlt {
+}

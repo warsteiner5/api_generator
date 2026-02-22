@@ -1,14 +1,13 @@
 import { ReportsGenerateCustomerRegistryReport$Params } from '../../../swagger/fn/reports/reports-generate-customer-registry-report';
 
+// @ts-ignore
 export interface ReportsGenerateCustomerRegistryReportParams {
 }
 
-export const reportsGenerateCustomerRegistryReportParamsAdapter = {
-  adapt(params?: ReportsGenerateCustomerRegistryReportParams): ReportsGenerateCustomerRegistryReport$Params {
-    if (!params) {
-      return {} as ReportsGenerateCustomerRegistryReport$Params;
-    }
-    return {
-    };
+export function reportsGenerateCustomerRegistryReportAdapter(params?: ReportsGenerateCustomerRegistryReportParams): ReportsGenerateCustomerRegistryReport$Params {
+  if (!params) {
+    return {} as ReportsGenerateCustomerRegistryReport$Params;
   }
-};
+  return {
+  };
+}

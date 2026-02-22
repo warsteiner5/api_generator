@@ -1,3 +1,7 @@
 import { BaseFilterObjectAlt } from './base-filter-object-alt.interface';
 
-export type AcceptedPriceListFilter = BaseFilterObjectAlt & { 'TradeId'?: number; 'DeliveryKladrRegionCode'?: string | null; };
+// @ts-ignore
+export interface AcceptedPriceListFilter extends BaseFilterObjectAlt {
+  tradeId: number;
+  deliveryKladrRegionCode: string;
+}

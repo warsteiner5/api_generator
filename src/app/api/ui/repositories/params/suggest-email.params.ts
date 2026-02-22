@@ -1,14 +1,13 @@
 import { SuggestEmail$Params } from '../../../swagger/fn/suggest/suggest-email';
 
+// @ts-ignore
 export interface SuggestEmailParams {
 }
 
-export const suggestEmailParamsAdapter = {
-  adapt(params?: SuggestEmailParams): SuggestEmail$Params {
-    if (!params) {
-      return {} as SuggestEmail$Params;
-    }
-    return {
-    };
+export function suggestEmailAdapter(params?: SuggestEmailParams): SuggestEmail$Params {
+  if (!params) {
+    return {} as SuggestEmail$Params;
   }
-};
+  return {
+  };
+}

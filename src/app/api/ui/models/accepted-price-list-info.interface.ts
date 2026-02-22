@@ -2,6 +2,7 @@ import { MarketDealStateEnum } from '../enums/market-deal-state.enum';
 import { PriceRegionDetail } from './price-region-detail.interface';
 import { VatRateStateEnum } from '../enums/vat-rate-state.enum';
 
+// @ts-ignore
 export interface AcceptedPriceListInfo {
   customerName: string;
   duringDays: number;

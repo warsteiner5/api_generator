@@ -3,6 +3,7 @@ import { MarketOrganizationContact } from './market-organization-contact.interfa
 import { MarketOrganizationStatisticAlt } from './market-organization-statistic-alt.interface';
 import { RegionKladr } from './region-kladr.interface';
 
+// @ts-ignore
 export interface OrganizationActivityInfo {
   administrators: MarketOrganizationAdministrator[];
   bestPriceListsIds: number[];

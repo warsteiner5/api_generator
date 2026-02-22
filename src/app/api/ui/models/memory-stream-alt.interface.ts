@@ -1,3 +1,11 @@
 import { StreamAlt } from './stream-alt.interface';
 
-export type MemoryStreamAlt = StreamAlt & { 'CanRead'?: boolean; 'CanSeek'?: boolean; 'CanWrite'?: boolean; 'Capacity'?: number; 'Length'?: number; 'Position'?: number; };
+// @ts-ignore
+export interface MemoryStreamAlt extends StreamAlt {
+  canRead: boolean;
+  canSeek: boolean;
+  canWrite: boolean;
+  capacity: number;
+  length: number;
+  position: number;
+}

@@ -2,6 +2,7 @@ import { CompetitiveListItemDocument } from './competitive-list-item-document.in
 import { CompetitiveListItemStateEnum } from '../enums/competitive-list-item-state.enum';
 import { PriceRegionDetail } from './price-region-detail.interface';
 
+// @ts-ignore
 export interface OffersTableCompetitiveListItem {
   comment: string;
   competitiveListItemId: number;

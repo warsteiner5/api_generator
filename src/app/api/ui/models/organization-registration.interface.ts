@@ -2,6 +2,7 @@ import { OrganizationRegistrationAddress } from './organization-registration-add
 import { OrganizationRegistrationCommon } from './organization-registration-common.interface';
 import { OrganizationRegistrationEmployee } from './organization-registration-employee.interface';
 
+// @ts-ignore
 export interface OrganizationRegistration {
   addressInfo: OrganizationRegistrationAddress;
   employeeInfo: OrganizationRegistrationEmployee;

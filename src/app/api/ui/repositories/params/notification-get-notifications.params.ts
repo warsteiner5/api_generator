@@ -1,18 +1,17 @@
 import { NotificationFilterObjectAlt } from '../../models/notification-filter-object-alt.interface';
 import { NotificationGetNotifications$Params } from '../../../swagger/fn/notification/notification-get-notifications';
-import { adaptApiNotificationFilterObjectAltDto } from '../../adapters/toDto/api-notification-filter-object.adapter';
+import { apiNotificationFilterObjectAltDtoAdapter } from '../../adapters/models/api-notification-filter-object.adapter';
 
+// @ts-ignore
 export interface NotificationGetNotificationsParams {
   body?: NotificationFilterObjectAlt;
 }
 
-export const notificationGetNotificationsParamsAdapter = {
-  adapt(params?: NotificationGetNotificationsParams): NotificationGetNotifications$Params {
-    if (!params) {
-      return {} as NotificationGetNotifications$Params;
-    }
-    return {
-      body: adaptApiNotificationFilterObjectAltDto(params.body),
-    };
+export function notificationGetNotificationsAdapter(params?: NotificationGetNotificationsParams): NotificationGetNotifications$Params {
+  if (!params) {
+    return {} as NotificationGetNotifications$Params;
   }
-};
+  return {
+      body: apiNotificationFilterObjectAltDtoAdapter(params.body),
+  };
+}

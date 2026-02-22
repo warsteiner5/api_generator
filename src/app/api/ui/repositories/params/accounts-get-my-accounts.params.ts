@@ -1,14 +1,13 @@
 import { AccountsGetMyAccounts$Params } from '../../../swagger/fn/accounts/accounts-get-my-accounts';
 
+// @ts-ignore
 export interface AccountsGetMyAccountsParams {
 }
 
-export const accountsGetMyAccountsParamsAdapter = {
-  adapt(params?: AccountsGetMyAccountsParams): AccountsGetMyAccounts$Params {
-    if (!params) {
-      return {} as AccountsGetMyAccounts$Params;
-    }
-    return {
-    };
+export function accountsGetMyAccountsAdapter(params?: AccountsGetMyAccountsParams): AccountsGetMyAccounts$Params {
+  if (!params) {
+    return {} as AccountsGetMyAccounts$Params;
   }
-};
+  return {
+  };
+}

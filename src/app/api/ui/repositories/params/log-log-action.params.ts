@@ -1,18 +1,17 @@
 import { LogLogAction$Params } from '../../../swagger/fn/log/log-log-action';
 import { UserActionLog } from '../../models/user-action-log.interface';
-import { adaptApiUserActionLogDto } from '../../adapters/toDto/api-user-action-log-dto.adapter';
+import { apiUserActionLogDtoAdapter } from '../../adapters/models/api-user-action-log-dto.adapter';
 
+// @ts-ignore
 export interface LogLogActionParams {
   body?: UserActionLog;
 }
 
-export const logLogActionParamsAdapter = {
-  adapt(params?: LogLogActionParams): LogLogAction$Params {
-    if (!params) {
-      return {} as LogLogAction$Params;
-    }
-    return {
-      body: adaptApiUserActionLogDto(params.body),
-    };
+export function logLogActionAdapter(params?: LogLogActionParams): LogLogAction$Params {
+  if (!params) {
+    return {} as LogLogAction$Params;
   }
-};
+  return {
+      body: apiUserActionLogDtoAdapter(params.body),
+  };
+}

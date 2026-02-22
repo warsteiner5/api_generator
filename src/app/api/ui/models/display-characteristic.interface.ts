@@ -1,5 +1,6 @@
 import { CharacteristicSourceEnum } from '../enums/characteristic-source.enum';
 
+// @ts-ignore
 export interface DisplayCharacteristic {
   characteristicSource: CharacteristicSourceEnum;
   id: number;

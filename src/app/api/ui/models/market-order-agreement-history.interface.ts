@@ -4,6 +4,7 @@ import { DeliveryMethodAltEnum } from '../enums/delivery-method-alt.enum';
 import { MarketOrderAdditionalService } from './market-order-additional-service.interface';
 import { MarketOrderChangeDetail } from './market-order-change-detail.interface';
 
+// @ts-ignore
 export interface MarketOrderAgreementHistory {
   additionalServices: MarketOrderAdditionalService[];
   agreementState: DealAgreementHistoryStateEnum;

@@ -4,6 +4,7 @@ import { EmployeeWorkGroup } from './employee-work-group.interface';
 import { File } from './file.interface';
 import { MessageDeliveryTypeAltEnum } from '../enums/message-delivery-type-alt.enum';
 
+// @ts-ignore
 export interface Employee {
   adsNotificationsAgreement: File;
   certificates: Certificate[];

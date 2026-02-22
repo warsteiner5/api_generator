@@ -1,5 +1,6 @@
 import { LotSaveResultAlt } from './lot-save-result-alt.interface';
 
+// @ts-ignore
 export interface TradePublishResultAlt {
   applicationEndDateShiftedForImmediateTrade: boolean;
   lots: LotSaveResultAlt[];

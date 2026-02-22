@@ -1,18 +1,17 @@
 import { DictionariesGetOkdp2AutocompleteListPost$Params } from '../../../swagger/fn/dictionaries/dictionaries-get-okdp-2-autocomplete-list-post';
 import { Okpd2FilterAlt } from '../../models/okpd-2-filter-alt.interface';
-import { adaptApiOkpd2FilterAltDto } from '../../adapters/toDto/api-okpd-2-filter.adapter';
+import { apiOkpd2FilterAltDtoAdapter } from '../../adapters/models/api-okpd-2-filter.adapter';
 
+// @ts-ignore
 export interface DictionariesGetOkdp2AutocompleteListPostParams {
   body?: Okpd2FilterAlt;
 }
 
-export const dictionariesGetOkdp2AutocompleteListPostParamsAdapter = {
-  adapt(params?: DictionariesGetOkdp2AutocompleteListPostParams): DictionariesGetOkdp2AutocompleteListPost$Params {
-    if (!params) {
-      return {} as DictionariesGetOkdp2AutocompleteListPost$Params;
-    }
-    return {
-      body: adaptApiOkpd2FilterAltDto(params.body),
-    };
+export function dictionariesGetOkdp2AutocompleteListPostAdapter(params?: DictionariesGetOkdp2AutocompleteListPostParams): DictionariesGetOkdp2AutocompleteListPost$Params {
+  if (!params) {
+    return {} as DictionariesGetOkdp2AutocompleteListPost$Params;
   }
-};
+  return {
+      body: apiOkpd2FilterAltDtoAdapter(params.body),
+  };
+}

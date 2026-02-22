@@ -1,0 +1,105 @@
+import { MarketSearchResult } from '../../models/market-search-result.interface';
+import { ApiMarketSearchResultDto } from '../../../swagger/models/api-market-search-result-dto';
+import { apiCountryDtoAdapter } from './api-country-dto.adapter';
+import { apiDictionaryItemAltDtoAdapter } from './api-dictionary-item.adapter';
+import { apiMarketDealStateEnumAdapter } from '../enums/api-market-deal-state-enum.adapter';
+import { apiOrganizationCountryAltEnumAdapter } from '../enums/api-organization-country.adapter';
+import { apiParticipantOfferSourceEnumAdapter } from '../enums/api-participant-offer-source-enum.adapter';
+import { apiParticipantOfferStateEnumAdapter } from '../enums/api-participant-offer-state-enum.adapter';
+import { apiPriceListStateEnumAdapter } from '../enums/api-price-list-state-enum.adapter';
+import { apiPurchaseMethodTypeEnumAdapter } from '../enums/api-purchase-method-type-enum.adapter';
+import { apiRegionKladrDtoAdapter } from './api-region-kladr-dto.adapter';
+import { apiRetradingTypeEnumAdapter } from '../enums/api-retrading-type-enum.adapter';
+import { apiTagViewDtoAdapter } from './api-tag-view-dto.adapter';
+import { apiTradeBusinessFlowEnumAdapter } from '../enums/api-trade-business-flow-enum.adapter';
+import { apiVatRateStateEnumAdapter } from '../enums/api-vat-rate-state-enum.adapter';
+
+export const apiMarketSearchResultDtoAdapter = (source?: MarketSearchResult | null): ApiMarketSearchResultDto => {
+  return {
+    ApplicationsCount: source?.applicationsCount,
+    AuctionEndDate: source?.auctionEndDate,
+    BarCode: source?.barCode,
+    BidsCount: source?.bidsCount,
+    BusinessFlowType: source?.businessFlowType === null ? undefined : apiTradeBusinessFlowEnumAdapter(source?.businessFlowType),
+    Country: source?.country === null ? undefined : apiCountryDtoAdapter(source?.country),
+    CurrencyCode: source?.currencyCode,
+    CustomerExternalOrganizationId: source?.customerExternalOrganizationId,
+    CustomerGuid: source?.customerGuid,
+    CustomerId: source?.customerId,
+    CustomerName: source?.customerName,
+    CustomerSource: source?.customerSource,
+    DeliveryKladrRegionName: source?.deliveryKladrRegionName,
+    DeliveryKladrs: source?.deliveryKladrs?.map((item) => apiDictionaryItemAltDtoAdapter(item)),
+    DiscussionId: source?.discussionId,
+    DuringDays: source?.duringDays,
+    ExternalId: source?.externalId,
+    ExternalSystemId: source?.externalSystemId,
+    FillingApplicationEndDate: source?.fillingApplicationEndDate,
+    Hosts: source?.hosts,
+    Id: source?.id,
+    IsAnyApplicationExists: source?.isAnyApplicationExists,
+    IsContractSigningSuspended: source?.isContractSigningSuspended,
+    IsCustomerAcceptByOkeiOffers: source?.isCustomerAcceptByOkeiOffers,
+    IsCustomerAcceptOnlyManualOffers: source?.isCustomerAcceptOnlyManualOffers,
+    IsExternal: source?.isExternal,
+    IsFavorite: source?.isFavorite,
+    IsForOnlySmb: source?.isForOnlySmb,
+    IsFoundMatchHighlightlInInnerScope: source?.isFoundMatchHighlightlInInnerScope,
+    IsFromManufacturer: source?.isFromManufacturer,
+    IsImmediate: source?.isImmediate,
+    IsImportPhaseout: source?.isImportPhaseout,
+    IsPhysicalPerson: source?.isPhysicalPerson,
+    IsRetradingEnabled: source?.isRetradingEnabled,
+    IsSmallBusinessEntity: source?.isSmallBusinessEntity,
+    IsSuspended: source?.isSuspended,
+    IsUnitBidding: source?.isUnitBidding,
+    LastModificationDate: source?.lastModificationDate,
+    LotId: source?.lotId,
+    LotItemsCount: source?.lotItemsCount,
+    MinQuantity: source?.minQuantity,
+    Name: source?.name,
+    NameWithHighlight: source?.nameWithHighlight,
+    OfferTerms: source?.offerTerms,
+    OkeiCode: source?.okeiCode,
+    Okpd2Code: source?.okpd2Code,
+    Okpd2Description: source?.okpd2Description,
+    OnlyOneRetradingBidAllowed: source?.onlyOneRetradingBidAllowed,
+    OrganizationCountry: source?.organizationCountry === null ? undefined : apiOrganizationCountryAltEnumAdapter(source?.organizationCountry),
+    OrganizerExternalOrganizationId: source?.organizerExternalOrganizationId,
+    OrganizerGuid: source?.organizerGuid,
+    OrganizerId: source?.organizerId,
+    OrganizerName: source?.organizerName,
+    Participant: source?.participant,
+    ParticipantOfferSource: source?.participantOfferSource === null ? undefined : apiParticipantOfferSourceEnumAdapter(source?.participantOfferSource),
+    ParticipantOfferState: source?.participantOfferState === null ? undefined : apiParticipantOfferStateEnumAdapter(source?.participantOfferState),
+    PictureGuid: source?.pictureGuid,
+    PlanNumber: source?.planNumber,
+    PlanPositionNumber: source?.planPositionNumber,
+    Price: source?.price,
+    PriceListId: source?.priceListId,
+    PriceListState: source?.priceListState === null ? undefined : apiPriceListStateEnumAdapter(source?.priceListState),
+    ProductDescription: source?.productDescription,
+    PublicationDate: source?.publicationDate,
+    PurchaseMethodType: source?.purchaseMethodType === null ? undefined : apiPurchaseMethodTypeEnumAdapter(source?.purchaseMethodType),
+    Quantity: source?.quantity,
+    RegionalProductSignTenantId: source?.regionalProductSignTenantId,
+    Regions: source?.regions?.map((item) => apiRegionKladrDtoAdapter(item)),
+    RetradingEndDate: source?.retradingEndDate,
+    RetradingStartDate: source?.retradingStartDate,
+    RetradingType: source?.retradingType === null ? undefined : apiRetradingTypeEnumAdapter(source?.retradingType),
+    SellerCode: source?.sellerCode,
+    ShortOkeiName: source?.shortOkeiName,
+    ShouldRedirectToAnotherTenant: source?.shouldRedirectToAnotherTenant,
+    State: source?.state === null ? undefined : apiMarketDealStateEnumAdapter(source?.state),
+    StateString: source?.stateString,
+    Tags: source?.tags?.map((item) => apiTagViewDtoAdapter(item)),
+    TradeNumber: source?.tradeNumber,
+    UniqueId: source?.uniqueId,
+    UnitPrice: source?.unitPrice,
+    UnitPriceInCurrency: source?.unitPriceInCurrency,
+    VatRate: source?.vatRate,
+    VatRateDescription: source?.vatRateDescription,
+    VatRateState: source?.vatRateState === null ? undefined : apiVatRateStateEnumAdapter(source?.vatRateState),
+    VendorCode: source?.vendorCode,
+  };
+}

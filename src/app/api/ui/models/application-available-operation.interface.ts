@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ApplicationAvailableOperation {
   isApplicationClarificationResponseAllowed: boolean;
   isApproveAllowed: boolean;

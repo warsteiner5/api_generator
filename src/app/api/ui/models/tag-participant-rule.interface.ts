@@ -1,5 +1,6 @@
 import { TagParticipantRuleTypeEnum } from '../enums/tag-participant-rule-type.enum';
 
+// @ts-ignore
 export interface TagParticipantRule {
   id: number;
   isIncluded: boolean;

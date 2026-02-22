@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface SignatureObject {
   data: string;
   isDetached: boolean;

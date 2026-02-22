@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ParticipantOfferInfo {
   id: number;
   organizationGuid: string;

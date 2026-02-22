@@ -1,5 +1,6 @@
 import { ApplicationItem } from './application-item.interface';
 
+// @ts-ignore
 export interface ApplicationRetradingUpdate {
   applicationItems: ApplicationItem[];
   id: number;

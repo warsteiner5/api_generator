@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface SaveRegulationDocumentType {
   code: string;
   id: number;

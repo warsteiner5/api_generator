@@ -1,6 +1,7 @@
 import { Okpd2Market } from './okpd-2-market.interface';
 import { ParticipantOfferStateEnum } from '../enums/participant-offer-state.enum';
 
+// @ts-ignore
 export interface ParticipantOfferDto2 {
   id: number;
   imageUrl: string;

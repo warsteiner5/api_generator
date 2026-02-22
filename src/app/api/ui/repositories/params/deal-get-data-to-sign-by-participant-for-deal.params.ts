@@ -1,18 +1,17 @@
 import { DealGetDataToSignByParticipantForDeal$Params } from '../../../swagger/fn/deal/deal-get-data-to-sign-by-participant-for-deal';
 import { DealInfoRequest } from '../../models/deal-info-request.interface';
-import { adaptApiDealInfoRequestDto } from '../../adapters/toDto/api-deal-info-request-dto.adapter';
+import { apiDealInfoRequestDtoAdapter } from '../../adapters/models/api-deal-info-request-dto.adapter';
 
+// @ts-ignore
 export interface DealGetDataToSignByParticipantForDealParams {
   body?: DealInfoRequest;
 }
 
-export const dealGetDataToSignByParticipantForDealParamsAdapter = {
-  adapt(params?: DealGetDataToSignByParticipantForDealParams): DealGetDataToSignByParticipantForDeal$Params {
-    if (!params) {
-      return {} as DealGetDataToSignByParticipantForDeal$Params;
-    }
-    return {
-      body: adaptApiDealInfoRequestDto(params.body),
-    };
+export function dealGetDataToSignByParticipantForDealAdapter(params?: DealGetDataToSignByParticipantForDealParams): DealGetDataToSignByParticipantForDeal$Params {
+  if (!params) {
+    return {} as DealGetDataToSignByParticipantForDeal$Params;
   }
-};
+  return {
+      body: apiDealInfoRequestDtoAdapter(params.body),
+  };
+}

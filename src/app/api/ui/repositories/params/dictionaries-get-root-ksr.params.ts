@@ -1,14 +1,13 @@
 import { DictionariesGetRootKsr$Params } from '../../../swagger/fn/dictionaries/dictionaries-get-root-ksr';
 
+// @ts-ignore
 export interface DictionariesGetRootKsrParams {
 }
 
-export const dictionariesGetRootKsrParamsAdapter = {
-  adapt(params?: DictionariesGetRootKsrParams): DictionariesGetRootKsr$Params {
-    if (!params) {
-      return {} as DictionariesGetRootKsr$Params;
-    }
-    return {
-    };
+export function dictionariesGetRootKsrAdapter(params?: DictionariesGetRootKsrParams): DictionariesGetRootKsr$Params {
+  if (!params) {
+    return {} as DictionariesGetRootKsr$Params;
   }
-};
+  return {
+  };
+}

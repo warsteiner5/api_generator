@@ -2,6 +2,7 @@ import { ApprovalRequestHistoryView } from './approval-request-history-view.inte
 import { ApprovalRequestStateEnum } from '../enums/approval-request-state.enum';
 import { MarketEntityTypeEnum } from '../enums/market-entity-type.enum';
 
+// @ts-ignore
 export interface ApprovalRequestView {
   entityId: number;
   entityType: MarketEntityTypeEnum;

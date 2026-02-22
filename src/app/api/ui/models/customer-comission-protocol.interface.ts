@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface CustomerComissionProtocol {
   considerationPlace: string;
   missedContest: boolean;

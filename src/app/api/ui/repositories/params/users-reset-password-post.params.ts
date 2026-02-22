@@ -1,18 +1,17 @@
 import { ResetPasswordModelAlt } from '../../models/reset-password-model-alt.interface';
 import { UsersResetPasswordPost$Params } from '../../../swagger/fn/users/users-reset-password-post';
-import { adaptApiResetPasswordModelAltDto } from '../../adapters/toDto/api-reset-password-model.adapter';
+import { apiResetPasswordModelAltDtoAdapter } from '../../adapters/models/api-reset-password-model.adapter';
 
+// @ts-ignore
 export interface UsersResetPasswordPostParams {
   body?: ResetPasswordModelAlt;
 }
 
-export const usersResetPasswordPostParamsAdapter = {
-  adapt(params?: UsersResetPasswordPostParams): UsersResetPasswordPost$Params {
-    if (!params) {
-      return {} as UsersResetPasswordPost$Params;
-    }
-    return {
-      body: adaptApiResetPasswordModelAltDto(params.body),
-    };
+export function usersResetPasswordPostAdapter(params?: UsersResetPasswordPostParams): UsersResetPasswordPost$Params {
+  if (!params) {
+    return {} as UsersResetPasswordPost$Params;
   }
-};
+  return {
+      body: apiResetPasswordModelAltDtoAdapter(params.body),
+  };
+}

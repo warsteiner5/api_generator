@@ -1,18 +1,17 @@
 import { RequirementRequestsSearch$Params } from '../../../swagger/fn/requirement-requests/requirement-requests-search';
 import { RequirementRequestsSearchFilterAlt } from '../../models/requirement-requests-search-filter-alt.interface';
-import { adaptApiRequirementRequestsSearchFilterAltDto } from '../../adapters/toDto/api-requirement-requests-search-filter.adapter';
+import { apiRequirementRequestsSearchFilterAltDtoAdapter } from '../../adapters/models/api-requirement-requests-search-filter.adapter';
 
+// @ts-ignore
 export interface RequirementRequestsSearchParams {
   body?: RequirementRequestsSearchFilterAlt;
 }
 
-export const requirementRequestsSearchParamsAdapter = {
-  adapt(params?: RequirementRequestsSearchParams): RequirementRequestsSearch$Params {
-    if (!params) {
-      return {} as RequirementRequestsSearch$Params;
-    }
-    return {
-      body: adaptApiRequirementRequestsSearchFilterAltDto(params.body),
-    };
+export function requirementRequestsSearchAdapter(params?: RequirementRequestsSearchParams): RequirementRequestsSearch$Params {
+  if (!params) {
+    return {} as RequirementRequestsSearch$Params;
   }
-};
+  return {
+      body: apiRequirementRequestsSearchFilterAltDtoAdapter(params.body),
+  };
+}

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface RegulationDocumentTypeView {
   code: string;
   id: number;

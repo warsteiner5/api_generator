@@ -5,4 +5,25 @@ import { ParticipantOfferImportTask } from './participant-offer-import-task.inte
 import { PriceListStateEnum } from '../enums/price-list-state.enum';
 import { PriceListTypeEnum } from '../enums/price-list-type.enum';
 
-export type MzPriceList = BaseDtoWithCreateAndModificationDatesOfInteger & { 'ExternalId'?: string | null; 'Type'?: PriceListTypeEnum; 'Name'?: string | null; 'Company'?: string | null; 'Url'?: string | null; 'ParticipantOffersCount'?: number; 'LastImportTask'?: ParticipantOfferImportTask | null; 'AutoUpdateSchedule'?: MzPriceListAutoUpdateSchedule | null; 'State'?: PriceListStateEnum; 'IsHidden'?: boolean; 'OrganizationId'?: number; 'BelongedToTenantId'?: number | null; 'CreatedUserId'?: number | null; 'NotificationEmail'?: string | null; 'DeliveryRegionInfos'?: Array<DeliveryRegionInfo> | null; 'IsDefault'?: boolean | null; 'IsRemoved'?: boolean; 'OnModeration'?: boolean; 'IsExportProduct'?: boolean; };
+// @ts-ignore
+export interface MzPriceList extends BaseDtoWithCreateAndModificationDatesOfInteger {
+  externalId: string;
+  type: PriceListTypeEnum;
+  name: string;
+  company: string;
+  url: string;
+  participantOffersCount: number;
+  lastImportTask: ParticipantOfferImportTask;
+  autoUpdateSchedule: MzPriceListAutoUpdateSchedule;
+  state: PriceListStateEnum;
+  isHidden: boolean;
+  organizationId: number;
+  belongedToTenantId: number;
+  createdUserId: number;
+  notificationEmail: string;
+  deliveryRegionInfos: DeliveryRegionInfo[];
+  isDefault: boolean;
+  isRemoved: boolean;
+  onModeration: boolean;
+  isExportProduct: boolean;
+}

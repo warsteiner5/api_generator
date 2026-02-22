@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface DiscussionTitle {
   applicationId: number;
   discussionId: number;

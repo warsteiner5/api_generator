@@ -1,6 +1,7 @@
 import { ApplicationReview } from './application-review.interface';
 import { TradeDocument } from './trade-document.interface';
 
+// @ts-ignore
 export interface FinishReviewApplication {
   applicationReviews: ApplicationReview[];
   checkIfLotStateDealSigning: boolean;

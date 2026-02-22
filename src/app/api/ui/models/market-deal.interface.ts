@@ -2,6 +2,7 @@ import { DealFormEnum } from '../enums/deal-form.enum';
 import { DealStateEnum } from '../enums/deal-state.enum';
 import { DocumentAlt } from './document-alt.interface';
 
+// @ts-ignore
 export interface MarketDeal {
   applicationPrice: number;
   customerGuid: string;

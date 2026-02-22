@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ExternalFieldValueAlt {
   apiCode: string;
   id: number;

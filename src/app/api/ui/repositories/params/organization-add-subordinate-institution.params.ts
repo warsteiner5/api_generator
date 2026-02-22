@@ -1,18 +1,17 @@
 import { OrganizationAddSubordinateInstitution$Params } from '../../../swagger/fn/organization/organization-add-subordinate-institution';
 import { SubordinateInstitutionRequestAlt } from '../../models/subordinate-institution-request-alt.interface';
-import { adaptApiSubordinateInstitutionRequestAltDto } from '../../adapters/toDto/api-subordinate-institution-request.adapter';
+import { apiSubordinateInstitutionRequestAltDtoAdapter } from '../../adapters/models/api-subordinate-institution-request.adapter';
 
+// @ts-ignore
 export interface OrganizationAddSubordinateInstitutionParams {
   body?: SubordinateInstitutionRequestAlt;
 }
 
-export const organizationAddSubordinateInstitutionParamsAdapter = {
-  adapt(params?: OrganizationAddSubordinateInstitutionParams): OrganizationAddSubordinateInstitution$Params {
-    if (!params) {
-      return {} as OrganizationAddSubordinateInstitution$Params;
-    }
-    return {
-      body: adaptApiSubordinateInstitutionRequestAltDto(params.body),
-    };
+export function organizationAddSubordinateInstitutionAdapter(params?: OrganizationAddSubordinateInstitutionParams): OrganizationAddSubordinateInstitution$Params {
+  if (!params) {
+    return {} as OrganizationAddSubordinateInstitution$Params;
   }
-};
+  return {
+      body: apiSubordinateInstitutionRequestAltDtoAdapter(params.body),
+  };
+}

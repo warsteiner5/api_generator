@@ -3,6 +3,7 @@ import { Okpd2CodeMarket } from './okpd-2-code-market.interface';
 import { QuotationSessionKtruCharacteristicAlt } from './quotation-session-ktru-characteristic-alt.interface';
 import { TruTypeEnum } from '../enums/tru-type.enum';
 
+// @ts-ignore
 export interface QuotationSessionDetailAlt {
   classificatorCode: string;
   classificatorDescription: string;

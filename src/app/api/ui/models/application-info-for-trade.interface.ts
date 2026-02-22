@@ -6,6 +6,7 @@ import { OrganizationCountryAltEnum } from '../enums/organization-country-alt.en
 import { TradeView } from './trade-view.interface';
 import { VatRateStateEnum } from '../enums/vat-rate-state.enum';
 
+// @ts-ignore
 export interface ApplicationInfoForTrade {
   ableToSignDeal: boolean;
   applicationSource: ApplicationSourceEnum;

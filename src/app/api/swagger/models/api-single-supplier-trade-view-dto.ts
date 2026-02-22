@@ -1,5 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
+import { ApiAdditionalRequirementDto2 } from '../models/api-additional-requirement-dto-2';
 import { ApiDealStateEnum } from '../models/api-deal-state-enum';
 import { ApiDeliveryMethodAltEnum } from '../models/api-delivery-method';
 import { ApiM4DDealSignRequiredEnum } from '../models/api-m-4-d-deal-sign-required-enum';
@@ -7,6 +8,7 @@ import { ApiMarketDealStateEnum } from '../models/api-market-deal-state-enum';
 import { ApiSingleSupplierTradeProductAltDto } from '../models/api-single-supplier-trade-product';
 import { ApiTradeBusinessFlowEnum } from '../models/api-trade-business-flow-enum';
 export interface ApiSingleSupplierTradeViewDto {
+  AdditionalRequirements?: Array<ApiAdditionalRequirementDto2> | null;
   BusinessFlowType?: ApiTradeBusinessFlowEnum;
   CustomerFullName?: string | null;
   CustomerGuid?: string;

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface MarketOrganizationContact {
   firstName: string;
   id: number;

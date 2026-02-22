@@ -1,5 +1,6 @@
 import { TruTypeEnum } from '../enums/tru-type.enum';
 
+// @ts-ignore
 export interface OrderDetailAlt {
   cartItemId: string;
   deliveryPlace: string;

@@ -1,18 +1,17 @@
 import { PomogatorUpdatePriceListSettings$Params } from '../../../swagger/fn/pomogator/pomogator-update-price-list-settings';
 import { PriceListSettingsUpdate } from '../../models/price-list-settings-update.interface';
-import { adaptApiPriceListSettingsUpdateDto } from '../../adapters/toDto/api-price-list-settings-update-dto.adapter';
+import { apiPriceListSettingsUpdateDtoAdapter } from '../../adapters/models/api-price-list-settings-update-dto.adapter';
 
+// @ts-ignore
 export interface PomogatorUpdatePriceListSettingsParams {
   body?: PriceListSettingsUpdate;
 }
 
-export const pomogatorUpdatePriceListSettingsParamsAdapter = {
-  adapt(params?: PomogatorUpdatePriceListSettingsParams): PomogatorUpdatePriceListSettings$Params {
-    if (!params) {
-      return {} as PomogatorUpdatePriceListSettings$Params;
-    }
-    return {
-      body: adaptApiPriceListSettingsUpdateDto(params.body),
-    };
+export function pomogatorUpdatePriceListSettingsAdapter(params?: PomogatorUpdatePriceListSettingsParams): PomogatorUpdatePriceListSettings$Params {
+  if (!params) {
+    return {} as PomogatorUpdatePriceListSettings$Params;
   }
-};
+  return {
+      body: apiPriceListSettingsUpdateDtoAdapter(params.body),
+  };
+}

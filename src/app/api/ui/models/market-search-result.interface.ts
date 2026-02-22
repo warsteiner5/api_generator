@@ -12,6 +12,7 @@ import { TagView } from './tag-view.interface';
 import { TradeBusinessFlowEnum } from '../enums/trade-business-flow.enum';
 import { VatRateStateEnum } from '../enums/vat-rate-state.enum';
 
+// @ts-ignore
 export interface MarketSearchResult {
   applicationsCount: number;
   auctionEndDate: string;

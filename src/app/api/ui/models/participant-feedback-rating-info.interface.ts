@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ParticipantFeedbackRatingInfo {
   canRate: boolean;
   feedbacksCount: number;

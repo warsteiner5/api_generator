@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface Manager {
   firstName: string;
   inn: string;

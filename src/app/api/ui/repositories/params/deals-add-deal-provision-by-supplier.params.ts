@@ -1,20 +1,19 @@
 import { DealsAddDealProvisionBySupplier$Params } from '../../../swagger/fn/deals/deals-add-deal-provision-by-supplier';
 import { SupplierAddDealProvisionRequestAlt } from '../../models/supplier-add-deal-provision-request-alt.interface';
-import { adaptApiSupplierAddDealProvisionRequestAltDto } from '../../adapters/toDto/api-supplier-add-deal-provision-request.adapter';
+import { apiSupplierAddDealProvisionRequestAltDtoAdapter } from '../../adapters/models/api-supplier-add-deal-provision-request.adapter';
 
+// @ts-ignore
 export interface DealsAddDealProvisionBySupplierParams {
   id: number;
   body?: SupplierAddDealProvisionRequestAlt;
 }
 
-export const dealsAddDealProvisionBySupplierParamsAdapter = {
-  adapt(params?: DealsAddDealProvisionBySupplierParams): DealsAddDealProvisionBySupplier$Params {
-    if (!params) {
-      return {} as DealsAddDealProvisionBySupplier$Params;
-    }
-    return {
-      id: params.id,
-      body: adaptApiSupplierAddDealProvisionRequestAltDto(params.body),
-    };
+export function dealsAddDealProvisionBySupplierAdapter(params?: DealsAddDealProvisionBySupplierParams): DealsAddDealProvisionBySupplier$Params {
+  if (!params) {
+    return {} as DealsAddDealProvisionBySupplier$Params;
   }
-};
+  return {
+      id: params.id,
+      body: apiSupplierAddDealProvisionRequestAltDtoAdapter(params.body),
+  };
+}

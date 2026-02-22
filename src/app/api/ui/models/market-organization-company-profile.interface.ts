@@ -6,6 +6,7 @@ import { MarketOrganizationProfileProducts } from './market-organization-profile
 import { OrganizationProfileSectionInfoAlt } from './organization-profile-section-info-alt.interface';
 import { TagView } from './tag-view.interface';
 
+// @ts-ignore
 export interface MarketOrganizationCompanyProfile {
   contacts: MarketOrganizationProfileContacts;
   deliveryRegions: string[];

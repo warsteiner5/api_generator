@@ -1,3 +1,5 @@
 import { SafeHandleZeroOrMinusOneIsInvalidAlt } from './safe-handle-zero-or-minus-one-is-invalid-alt.interface';
 
-export type SafeCertContextHandle2Alt = SafeHandleZeroOrMinusOneIsInvalidAlt & { };
+// @ts-ignore
+export interface SafeCertContextHandle2Alt extends SafeHandleZeroOrMinusOneIsInvalidAlt {
+}

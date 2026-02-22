@@ -1,18 +1,17 @@
 import { ComplaintCreate$Params } from '../../../swagger/fn/complaint/complaint-create';
 import { ParticipantOfferComplaintCreateRequestAlt } from '../../models/participant-offer-complaint-create-request-alt.interface';
-import { adaptApiParticipantOfferComplaintCreateRequestAltDto } from '../../adapters/toDto/api-participant-offer-complaint-create-request.adapter';
+import { apiParticipantOfferComplaintCreateRequestAltDtoAdapter } from '../../adapters/models/api-participant-offer-complaint-create-request.adapter';
 
+// @ts-ignore
 export interface ComplaintCreateParams {
   body?: ParticipantOfferComplaintCreateRequestAlt;
 }
 
-export const complaintCreateParamsAdapter = {
-  adapt(params?: ComplaintCreateParams): ComplaintCreate$Params {
-    if (!params) {
-      return {} as ComplaintCreate$Params;
-    }
-    return {
-      body: adaptApiParticipantOfferComplaintCreateRequestAltDto(params.body),
-    };
+export function complaintCreateAdapter(params?: ComplaintCreateParams): ComplaintCreate$Params {
+  if (!params) {
+    return {} as ComplaintCreate$Params;
   }
-};
+  return {
+      body: apiParticipantOfferComplaintCreateRequestAltDtoAdapter(params.body),
+  };
+}

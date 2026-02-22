@@ -1,18 +1,17 @@
 import { PomogatorGetSettingsTags$Params } from '../../../swagger/fn/pomogator/pomogator-get-settings-tags';
 import { SearchObjectAlt } from '../../models/search-object-alt.interface';
-import { adaptApiSearchObjectAltDto } from '../../adapters/toDto/api-search-object.adapter';
+import { apiSearchObjectAltDtoAdapter } from '../../adapters/models/api-search-object.adapter';
 
+// @ts-ignore
 export interface PomogatorGetSettingsTagsParams {
   body?: SearchObjectAlt;
 }
 
-export const pomogatorGetSettingsTagsParamsAdapter = {
-  adapt(params?: PomogatorGetSettingsTagsParams): PomogatorGetSettingsTags$Params {
-    if (!params) {
-      return {} as PomogatorGetSettingsTags$Params;
-    }
-    return {
-      body: adaptApiSearchObjectAltDto(params.body),
-    };
+export function pomogatorGetSettingsTagsAdapter(params?: PomogatorGetSettingsTagsParams): PomogatorGetSettingsTags$Params {
+  if (!params) {
+    return {} as PomogatorGetSettingsTags$Params;
   }
-};
+  return {
+      body: apiSearchObjectAltDtoAdapter(params.body),
+  };
+}

@@ -3,6 +3,7 @@ import { OrganizationCountryAltEnum } from '../enums/organization-country-alt.en
 import { OrganizationStatusAltEnum } from '../enums/organization-status-alt.enum';
 import { OrganizationTypeEnum } from '../enums/organization-type.enum';
 
+// @ts-ignore
 export interface OrganizationForAutocomplete {
   address: AddressForOrganizationAutocomplete;
   contactPerson: string;

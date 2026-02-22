@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ExternalDealCardLotItem {
   id: number;
   name: string;

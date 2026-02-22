@@ -1,4 +1,23 @@
 import { EntityDtoBase } from './entity-dto-base.interface';
 import { TradeDocumentTypeEnum } from '../enums/trade-document-type.enum';
 
-export type DocumentDto3 = EntityDtoBase & { '_isAccreditationString'?: string | null; 'Name'?: string | null; 'FileGuid'?: string; 'FileName'?: string | null; 'UserFio'?: string | null; 'Tag'?: number; 'TradeDocumentType'?: TradeDocumentTypeEnum | null; 'Type'?: string | null; 'isAccreditationString'?: string | null; 'DocumentContent'?: string | null; 'ChangeDate'?: string | null; 'SoapHash'?: string | null; 'Base64Hash'?: string | null; 'Signature'?: string | null; 'UploadDate'?: string | null; 'Size'?: number | null; 'FromLastRevision'?: boolean | null; };
+// @ts-ignore
+export interface DocumentDto3 extends EntityDtoBase {
+  isaccreditationstring: string;
+  name: string;
+  fileGuid: string;
+  fileName: string;
+  userFio: string;
+  tag: number;
+  tradeDocumentType: TradeDocumentTypeEnum;
+  type: string;
+  isAccreditationString: string;
+  documentContent: string;
+  changeDate: string;
+  soapHash: string;
+  base64Hash: string;
+  signature: string;
+  uploadDate: string;
+  size: number;
+  fromLastRevision: boolean;
+}

@@ -1,18 +1,17 @@
 import { OrganizationGetSubordinateInstitutions$Params } from '../../../swagger/fn/organization/organization-get-subordinate-institutions';
 import { PartnersFilterAlt } from '../../models/partners-filter-alt.interface';
-import { adaptApiPartnersFilterAltDto } from '../../adapters/toDto/api-partners-filter.adapter';
+import { apiPartnersFilterAltDtoAdapter } from '../../adapters/models/api-partners-filter.adapter';
 
+// @ts-ignore
 export interface OrganizationGetSubordinateInstitutionsParams {
   body?: PartnersFilterAlt;
 }
 
-export const organizationGetSubordinateInstitutionsParamsAdapter = {
-  adapt(params?: OrganizationGetSubordinateInstitutionsParams): OrganizationGetSubordinateInstitutions$Params {
-    if (!params) {
-      return {} as OrganizationGetSubordinateInstitutions$Params;
-    }
-    return {
-      body: adaptApiPartnersFilterAltDto(params.body),
-    };
+export function organizationGetSubordinateInstitutionsAdapter(params?: OrganizationGetSubordinateInstitutionsParams): OrganizationGetSubordinateInstitutions$Params {
+  if (!params) {
+    return {} as OrganizationGetSubordinateInstitutions$Params;
   }
-};
+  return {
+      body: apiPartnersFilterAltDtoAdapter(params.body),
+  };
+}

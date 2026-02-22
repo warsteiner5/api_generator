@@ -1,5 +1,6 @@
 import { CartItemDocument } from './cart-item-document.interface';
 
+// @ts-ignore
 export interface CartItem {
   comment: string;
   createdOn: string;

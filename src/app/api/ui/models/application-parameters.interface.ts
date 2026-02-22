@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ApplicationParameters {
   applicationExists: boolean;
   countApplications: number;

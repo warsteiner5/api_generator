@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface FederalLaw {
   code: string;
   description: string;

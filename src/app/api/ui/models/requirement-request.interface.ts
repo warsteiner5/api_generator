@@ -7,6 +7,7 @@ import { PriceRegionDetail } from './price-region-detail.interface';
 import { RequirementRequestDocument } from './requirement-request-document.interface';
 import { RequirementRequestStateEnum } from '../enums/requirement-request-state.enum';
 
+// @ts-ignore
 export interface RequirementRequest {
   category: CatalogItem;
   categoryId: number;

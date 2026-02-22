@@ -1,16 +1,15 @@
 import { OrderRemoveDraft$Params } from '../../../swagger/fn/order/order-remove-draft';
 
+// @ts-ignore
 export interface OrderRemoveDraftParams {
   id: number;
 }
 
-export const orderRemoveDraftParamsAdapter = {
-  adapt(params?: OrderRemoveDraftParams): OrderRemoveDraft$Params {
-    if (!params) {
-      return {} as OrderRemoveDraft$Params;
-    }
-    return {
-      id: params.id,
-    };
+export function orderRemoveDraftAdapter(params?: OrderRemoveDraftParams): OrderRemoveDraft$Params {
+  if (!params) {
+    return {} as OrderRemoveDraft$Params;
   }
-};
+  return {
+      id: params.id,
+  };
+}

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface PrivateDocument {
   documentType: number;
   fileGuid: string;

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface OrganizationWithAddressShortInfo {
   fullName: string;
   id: number;

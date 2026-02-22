@@ -1,18 +1,17 @@
 import { DealsRejectChangeFormToPaper$Params } from '../../../swagger/fn/deals/deals-reject-change-form-to-paper';
 import { RejectChangeFormToPaper } from '../../models/reject-change-form-to-paper.interface';
-import { adaptApiRejectChangeFormToPaperDto } from '../../adapters/toDto/api-reject-change-form-to-paper-dto.adapter';
+import { apiRejectChangeFormToPaperDtoAdapter } from '../../adapters/models/api-reject-change-form-to-paper-dto.adapter';
 
+// @ts-ignore
 export interface DealsRejectChangeFormToPaperParams {
   body?: RejectChangeFormToPaper;
 }
 
-export const dealsRejectChangeFormToPaperParamsAdapter = {
-  adapt(params?: DealsRejectChangeFormToPaperParams): DealsRejectChangeFormToPaper$Params {
-    if (!params) {
-      return {} as DealsRejectChangeFormToPaper$Params;
-    }
-    return {
-      body: adaptApiRejectChangeFormToPaperDto(params.body),
-    };
+export function dealsRejectChangeFormToPaperAdapter(params?: DealsRejectChangeFormToPaperParams): DealsRejectChangeFormToPaper$Params {
+  if (!params) {
+    return {} as DealsRejectChangeFormToPaper$Params;
   }
-};
+  return {
+      body: apiRejectChangeFormToPaperDtoAdapter(params.body),
+  };
+}

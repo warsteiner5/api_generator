@@ -1,5 +1,6 @@
 import { OrganizationCountryAltEnum } from '../enums/organization-country-alt.enum';
 
+// @ts-ignore
 export interface QuotationSessionApplicationDtoParticipantInfo {
   address: string;
   country: OrganizationCountryAltEnum;

@@ -7,8 +7,8 @@ export const UI_BASE_DIR = path.resolve('src/app/api/ui');
 export const UI_ENUMS_DIR = path.join(UI_BASE_DIR, 'enums');
 export const UI_MODELS_DIR = path.join(UI_BASE_DIR, 'models');
 export const UI_ADAPTERS_DIR = path.join(UI_BASE_DIR, 'adapters');
-export const UI_ADAPTERS_TO_UI_DIR = path.join(UI_ADAPTERS_DIR, 'toUI');
-export const UI_ADAPTERS_TO_DTO_DIR = path.join(UI_ADAPTERS_DIR, 'toDto');
+export const UI_ADAPTERS_ENUMS_DIR = path.join(UI_ADAPTERS_DIR, 'enums');
+export const UI_ADAPTERS_MODELS_DIR = path.join(UI_ADAPTERS_DIR, 'models');
 
 export type EntityKind = 'enum' | 'interface' | 'type';
 
@@ -28,6 +28,7 @@ export interface EnumEntityMeta {
 export interface InterfacePropertyMeta {
   name: string;
   typeText: string;
+  optional: boolean;
 }
 
 export interface InterfaceEntityMeta {
@@ -440,7 +441,8 @@ export async function collectEntitiesContext(): Promise<EntitiesContext> {
         sourceFileBase,
         properties: interfaceDeclaration.getProperties().map((property) => ({
           name: property.getName(),
-          typeText: property.getTypeNode()?.getText() ?? 'unknown'
+          typeText: property.getTypeNode()?.getText() ?? 'unknown',
+          optional: property.hasQuestionToken()
         }))
       });
     }

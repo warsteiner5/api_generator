@@ -1,3 +1,10 @@
 import { BaseFilterAlt } from './base-filter-alt.interface';
 
-export type OrganizationForAutocompleteFilterAlt = BaseFilterAlt & { 'IsCustomer'?: boolean | null; 'IsSupplier'?: boolean | null; 'Inn'?: string | null; 'Name'?: string | null; 'Kladr'?: string | null; };
+// @ts-ignore
+export interface OrganizationForAutocompleteFilterAlt extends BaseFilterAlt {
+  isCustomer: boolean;
+  isSupplier: boolean;
+  inn: string;
+  name: string;
+  kladr: string;
+}

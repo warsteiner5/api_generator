@@ -1,14 +1,13 @@
 import { TradesGetCustomerSignerList$Params } from '../../../swagger/fn/trades/trades-get-customer-signer-list';
 
+// @ts-ignore
 export interface TradesGetCustomerSignerListParams {
 }
 
-export const tradesGetCustomerSignerListParamsAdapter = {
-  adapt(params?: TradesGetCustomerSignerListParams): TradesGetCustomerSignerList$Params {
-    if (!params) {
-      return {} as TradesGetCustomerSignerList$Params;
-    }
-    return {
-    };
+export function tradesGetCustomerSignerListAdapter(params?: TradesGetCustomerSignerListParams): TradesGetCustomerSignerList$Params {
+  if (!params) {
+    return {} as TradesGetCustomerSignerList$Params;
   }
-};
+  return {
+  };
+}

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface BaseFilterAlt {
   itemsPerPage: number;
   page: number;

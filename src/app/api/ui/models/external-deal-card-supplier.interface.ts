@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ExternalDealCardSupplier {
   email: string;
   fullAddress: string;

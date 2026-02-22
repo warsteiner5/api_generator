@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface MetricDetail {
   actionCount: number;
   id: number;

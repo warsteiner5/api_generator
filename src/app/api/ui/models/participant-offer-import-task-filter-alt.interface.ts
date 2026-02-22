@@ -1,3 +1,9 @@
 import { BaseFilterObjectAlt } from './base-filter-object-alt.interface';
 
-export type ParticipantOfferImportTaskFilterAlt = BaseFilterObjectAlt & { 'PriceListId'?: number | null; 'FileName'?: string | null; 'CreateDateFrom'?: string | null; 'CreateDateTo'?: string | null; };
+// @ts-ignore
+export interface ParticipantOfferImportTaskFilterAlt extends BaseFilterObjectAlt {
+  priceListId: number;
+  fileName: string;
+  createDateFrom: string;
+  createDateTo: string;
+}

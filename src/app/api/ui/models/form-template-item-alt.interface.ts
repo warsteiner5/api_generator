@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface FormTemplateItemAlt {
   defaultValue: string;
   isEnabled: boolean;

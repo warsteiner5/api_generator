@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ReturnTradeToFillingAppRequestAlt {
   fillingApplicationEndDate: string;
   planedDealSignDate: string;

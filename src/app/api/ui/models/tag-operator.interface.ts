@@ -1,5 +1,6 @@
 import { TagObjectEnum } from '../enums/tag-object.enum';
 
+// @ts-ignore
 export interface TagOperator {
   code: string;
   description: string;

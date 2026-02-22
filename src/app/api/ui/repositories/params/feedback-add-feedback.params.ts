@@ -1,18 +1,17 @@
 import { Feedback } from '../../models/feedback.interface';
 import { FeedbackAddFeedback$Params } from '../../../swagger/fn/feedback/feedback-add-feedback';
-import { adaptApiFeedbackDto } from '../../adapters/toDto/api-feedback-dto.adapter';
+import { apiFeedbackDtoAdapter } from '../../adapters/models/api-feedback-dto.adapter';
 
+// @ts-ignore
 export interface FeedbackAddFeedbackParams {
   body?: Feedback;
 }
 
-export const feedbackAddFeedbackParamsAdapter = {
-  adapt(params?: FeedbackAddFeedbackParams): FeedbackAddFeedback$Params {
-    if (!params) {
-      return {} as FeedbackAddFeedback$Params;
-    }
-    return {
-      body: adaptApiFeedbackDto(params.body),
-    };
+export function feedbackAddFeedbackAdapter(params?: FeedbackAddFeedbackParams): FeedbackAddFeedback$Params {
+  if (!params) {
+    return {} as FeedbackAddFeedback$Params;
   }
-};
+  return {
+      body: apiFeedbackDtoAdapter(params.body),
+  };
+}

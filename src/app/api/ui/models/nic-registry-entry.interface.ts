@@ -1,5 +1,6 @@
 import { NicRegistryParticipantInfo } from './nic-registry-participant-info.interface';
 
+// @ts-ignore
 export interface NicRegistryEntry {
   contractDate: string;
   contractNumber: string;

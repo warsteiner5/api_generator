@@ -1,6 +1,7 @@
 import { ApplicationStateEnum2 } from '../enums/application-state-enum-2.enum';
 import { LotStateEnum } from '../enums/lot-state.enum';
 
+// @ts-ignore
 export interface ApplicationInfoAlt {
   applicationSource: string;
   currentTenantHost: string;

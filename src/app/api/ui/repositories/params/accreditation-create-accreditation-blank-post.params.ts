@@ -1,18 +1,17 @@
 import { AccreditationCreateAccreditationBlankPost$Params } from '../../../swagger/fn/accreditation/accreditation-create-accreditation-blank-post';
 import { CreateAccreditationPaymentPrintFormRequestAlt } from '../../models/create-accreditation-payment-print-form-request-alt.interface';
-import { adaptApiCreateAccreditationPaymentPrintFormRequestAltDto } from '../../adapters/toDto/api-create-accreditation-payment-print-form-request.adapter';
+import { apiCreateAccreditationPaymentPrintFormRequestAltDtoAdapter } from '../../adapters/models/api-create-accreditation-payment-print-form-request.adapter';
 
+// @ts-ignore
 export interface AccreditationCreateAccreditationBlankPostParams {
   body?: CreateAccreditationPaymentPrintFormRequestAlt;
 }
 
-export const accreditationCreateAccreditationBlankPostParamsAdapter = {
-  adapt(params?: AccreditationCreateAccreditationBlankPostParams): AccreditationCreateAccreditationBlankPost$Params {
-    if (!params) {
-      return {} as AccreditationCreateAccreditationBlankPost$Params;
-    }
-    return {
-      body: adaptApiCreateAccreditationPaymentPrintFormRequestAltDto(params.body),
-    };
+export function accreditationCreateAccreditationBlankPostAdapter(params?: AccreditationCreateAccreditationBlankPostParams): AccreditationCreateAccreditationBlankPost$Params {
+  if (!params) {
+    return {} as AccreditationCreateAccreditationBlankPost$Params;
   }
-};
+  return {
+      body: apiCreateAccreditationPaymentPrintFormRequestAltDtoAdapter(params.body),
+  };
+}

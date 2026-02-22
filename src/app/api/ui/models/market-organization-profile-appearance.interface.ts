@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface MarketOrganizationProfileAppearance {
   coverGuid: string;
   description: string;

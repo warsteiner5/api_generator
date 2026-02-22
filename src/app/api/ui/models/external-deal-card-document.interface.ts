@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ExternalDealCardDocument {
   fileName: string;
   guidId: string;

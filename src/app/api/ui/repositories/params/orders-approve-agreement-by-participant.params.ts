@@ -1,18 +1,17 @@
 import { OrderApprove } from '../../models/order-approve.interface';
 import { OrdersApproveAgreementByParticipant$Params } from '../../../swagger/fn/orders/orders-approve-agreement-by-participant';
-import { adaptApiOrderApproveDto } from '../../adapters/toDto/api-order-approve-dto.adapter';
+import { apiOrderApproveDtoAdapter } from '../../adapters/models/api-order-approve-dto.adapter';
 
+// @ts-ignore
 export interface OrdersApproveAgreementByParticipantParams {
   body?: OrderApprove;
 }
 
-export const ordersApproveAgreementByParticipantParamsAdapter = {
-  adapt(params?: OrdersApproveAgreementByParticipantParams): OrdersApproveAgreementByParticipant$Params {
-    if (!params) {
-      return {} as OrdersApproveAgreementByParticipant$Params;
-    }
-    return {
-      body: adaptApiOrderApproveDto(params.body),
-    };
+export function ordersApproveAgreementByParticipantAdapter(params?: OrdersApproveAgreementByParticipantParams): OrdersApproveAgreementByParticipant$Params {
+  if (!params) {
+    return {} as OrdersApproveAgreementByParticipant$Params;
   }
-};
+  return {
+      body: apiOrderApproveDtoAdapter(params.body),
+  };
+}

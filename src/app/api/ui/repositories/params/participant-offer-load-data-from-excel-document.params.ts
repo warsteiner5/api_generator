@@ -1,14 +1,13 @@
 import { ParticipantOfferLoadDataFromExcelDocument$Params } from '../../../swagger/fn/participant-offer/participant-offer-load-data-from-excel-document';
 
+// @ts-ignore
 export interface ParticipantOfferLoadDataFromExcelDocumentParams {
 }
 
-export const participantOfferLoadDataFromExcelDocumentParamsAdapter = {
-  adapt(params?: ParticipantOfferLoadDataFromExcelDocumentParams): ParticipantOfferLoadDataFromExcelDocument$Params {
-    if (!params) {
-      return {} as ParticipantOfferLoadDataFromExcelDocument$Params;
-    }
-    return {
-    };
+export function participantOfferLoadDataFromExcelDocumentAdapter(params?: ParticipantOfferLoadDataFromExcelDocumentParams): ParticipantOfferLoadDataFromExcelDocument$Params {
+  if (!params) {
+    return {} as ParticipantOfferLoadDataFromExcelDocument$Params;
   }
-};
+  return {
+  };
+}

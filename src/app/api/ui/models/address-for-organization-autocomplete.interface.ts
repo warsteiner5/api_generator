@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface AddressForOrganizationAutocomplete {
   fullAddress: string;
   fullPostAddress: string;

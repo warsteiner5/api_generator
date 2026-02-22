@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface EisIntegrationDataAlt {
   dealNumber: string;
   dealUrl: string;

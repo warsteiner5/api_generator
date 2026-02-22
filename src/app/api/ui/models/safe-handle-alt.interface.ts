@@ -1,3 +1,6 @@
 import { CriticalFinalizerObjectAlt } from './critical-finalizer-object-alt.interface';
 
-export type SafeHandleAlt = CriticalFinalizerObjectAlt & { 'IsClosed'?: boolean; };
+// @ts-ignore
+export interface SafeHandleAlt extends CriticalFinalizerObjectAlt {
+  isClosed: boolean;
+}

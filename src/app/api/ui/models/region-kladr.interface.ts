@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface RegionKladr {
   code: string;
   index: string;

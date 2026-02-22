@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface Partner {
   guid: string;
   id: number;

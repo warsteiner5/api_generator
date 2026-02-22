@@ -4,6 +4,7 @@ import { TariffInfo } from './tariff-info.interface';
 import { TenantRoleEnum } from '../enums/tenant-role.enum';
 import { UserInOrganizationAlt } from './user-in-organization-alt.interface';
 
+// @ts-ignore
 export interface MarketUserProfile {
   currentCertExpireDate: string;
   email: string;

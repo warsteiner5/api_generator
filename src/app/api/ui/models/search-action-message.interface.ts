@@ -3,6 +3,7 @@ import { FilterSourceTypeEnum } from '../enums/filter-source-type.enum';
 import { MarketSearchActionEnum } from '../enums/market-search-action.enum';
 import { SearchActionResults } from './search-action-results.interface';
 
+// @ts-ignore
 export interface SearchActionMessage {
   filterParameters: FilterParameter[];
   filterSource: FilterSourceTypeEnum;

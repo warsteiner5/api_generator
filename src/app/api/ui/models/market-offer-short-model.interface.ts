@@ -4,6 +4,7 @@ import { Okpd2 } from './okpd-2.interface';
 import { ParticipantOfferStateEnum } from '../enums/participant-offer-state.enum';
 import { RegionKladr } from './region-kladr.interface';
 
+// @ts-ignore
 export interface MarketOfferShortModel {
   category: B2BCategory;
   countryCode: string;

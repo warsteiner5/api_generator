@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ExternalLoginViewModelAlt {
   authenticationType: string;
   caption: string;

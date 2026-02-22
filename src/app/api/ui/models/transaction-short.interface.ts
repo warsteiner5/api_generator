@@ -1,6 +1,7 @@
 import { TransactionStateAlt } from './transaction-state-alt.interface';
 import { TransactionTypeAlt } from './transaction-type-alt.interface';
 
+// @ts-ignore
 export interface TransactionShort {
   actionTime: string;
   comment: string;

@@ -1,18 +1,17 @@
 import { ApproveOrderBySupplierModelAlt } from '../../models/approve-order-by-supplier-model-alt.interface';
 import { OrderApproveOrderBySupplier$Params } from '../../../swagger/fn/order/order-approve-order-by-supplier';
-import { adaptApiApproveOrderBySupplierModelAltDto } from '../../adapters/toDto/api-approve-order-by-supplier-model.adapter';
+import { apiApproveOrderBySupplierModelAltDtoAdapter } from '../../adapters/models/api-approve-order-by-supplier-model.adapter';
 
+// @ts-ignore
 export interface OrderApproveOrderBySupplierParams {
   body?: ApproveOrderBySupplierModelAlt;
 }
 
-export const orderApproveOrderBySupplierParamsAdapter = {
-  adapt(params?: OrderApproveOrderBySupplierParams): OrderApproveOrderBySupplier$Params {
-    if (!params) {
-      return {} as OrderApproveOrderBySupplier$Params;
-    }
-    return {
-      body: adaptApiApproveOrderBySupplierModelAltDto(params.body),
-    };
+export function orderApproveOrderBySupplierAdapter(params?: OrderApproveOrderBySupplierParams): OrderApproveOrderBySupplier$Params {
+  if (!params) {
+    return {} as OrderApproveOrderBySupplier$Params;
   }
-};
+  return {
+      body: apiApproveOrderBySupplierModelAltDtoAdapter(params.body),
+  };
+}

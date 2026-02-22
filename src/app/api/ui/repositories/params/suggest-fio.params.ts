@@ -1,14 +1,13 @@
 import { SuggestFio$Params } from '../../../swagger/fn/suggest/suggest-fio';
 
+// @ts-ignore
 export interface SuggestFioParams {
 }
 
-export const suggestFioParamsAdapter = {
-  adapt(params?: SuggestFioParams): SuggestFio$Params {
-    if (!params) {
-      return {} as SuggestFio$Params;
-    }
-    return {
-    };
+export function suggestFioAdapter(params?: SuggestFioParams): SuggestFio$Params {
+  if (!params) {
+    return {} as SuggestFio$Params;
   }
-};
+  return {
+  };
+}

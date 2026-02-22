@@ -1,6 +1,7 @@
 import { ManufacturerCountryRegistryTypeEnum } from '../enums/manufacturer-country-registry-type.enum';
 import { VatRateStateEnum } from '../enums/vat-rate-state.enum';
 
+// @ts-ignore
 export interface ImportExcelParticipantOffer {
   country: string;
   countryCode: string;

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface FavoriteCountInfo {
   offerCount: number;
   orderCount: number;

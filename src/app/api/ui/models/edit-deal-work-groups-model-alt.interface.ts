@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface EditDealWorkGroupsModelAlt {
   dealId: number;
   tradeId: number;

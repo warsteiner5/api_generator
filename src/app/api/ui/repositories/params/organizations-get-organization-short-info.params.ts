@@ -1,14 +1,13 @@
 import { OrganizationsGetOrganizationShortInfo$Params } from '../../../swagger/fn/organizations/organizations-get-organization-short-info';
 
+// @ts-ignore
 export interface OrganizationsGetOrganizationShortInfoParams {
 }
 
-export const organizationsGetOrganizationShortInfoParamsAdapter = {
-  adapt(params?: OrganizationsGetOrganizationShortInfoParams): OrganizationsGetOrganizationShortInfo$Params {
-    if (!params) {
-      return {} as OrganizationsGetOrganizationShortInfo$Params;
-    }
-    return {
-    };
+export function organizationsGetOrganizationShortInfoAdapter(params?: OrganizationsGetOrganizationShortInfoParams): OrganizationsGetOrganizationShortInfo$Params {
+  if (!params) {
+    return {} as OrganizationsGetOrganizationShortInfo$Params;
   }
-};
+  return {
+  };
+}

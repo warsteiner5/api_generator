@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ContactInfo {
   contactInfoEmail: string;
   contactInfoFax: string;

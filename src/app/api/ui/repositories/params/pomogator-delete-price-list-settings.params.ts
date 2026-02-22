@@ -1,18 +1,17 @@
 import { PomogatorDeletePriceListSettings$Params } from '../../../swagger/fn/pomogator/pomogator-delete-price-list-settings';
 import { PriceListSettingsDelete } from '../../models/price-list-settings-delete.interface';
-import { adaptApiPriceListSettingsDeleteDto } from '../../adapters/toDto/api-price-list-settings-delete-dto.adapter';
+import { apiPriceListSettingsDeleteDtoAdapter } from '../../adapters/models/api-price-list-settings-delete-dto.adapter';
 
+// @ts-ignore
 export interface PomogatorDeletePriceListSettingsParams {
   body?: PriceListSettingsDelete;
 }
 
-export const pomogatorDeletePriceListSettingsParamsAdapter = {
-  adapt(params?: PomogatorDeletePriceListSettingsParams): PomogatorDeletePriceListSettings$Params {
-    if (!params) {
-      return {} as PomogatorDeletePriceListSettings$Params;
-    }
-    return {
-      body: adaptApiPriceListSettingsDeleteDto(params.body),
-    };
+export function pomogatorDeletePriceListSettingsAdapter(params?: PomogatorDeletePriceListSettingsParams): PomogatorDeletePriceListSettings$Params {
+  if (!params) {
+    return {} as PomogatorDeletePriceListSettings$Params;
   }
-};
+  return {
+      body: apiPriceListSettingsDeleteDtoAdapter(params.body),
+  };
+}

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface SideFilterStructure {
   isCategoryEnabled: boolean;
   isDeliveryRegionsEnabled: boolean;

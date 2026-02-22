@@ -2,6 +2,7 @@ import { HideApplicationSettingsForCustomer } from './hide-application-settings-
 import { HideApplicationSettingsForOpenPart } from './hide-application-settings-for-open-part.interface';
 import { HideApplicationSettingsForParticipant } from './hide-application-settings-for-participant.interface';
 
+// @ts-ignore
 export interface HideApplicationSettings {
   hideApplicationSettingsForCustomer: HideApplicationSettingsForCustomer;
   hideApplicationSettingsForOpenPart: HideApplicationSettingsForOpenPart;

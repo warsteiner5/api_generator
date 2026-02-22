@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface RatingQuestionOption {
   id: number;
   isDeleted: boolean;

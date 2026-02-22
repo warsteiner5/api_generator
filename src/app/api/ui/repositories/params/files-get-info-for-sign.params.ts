@@ -1,18 +1,17 @@
 import { FilesGetInfoForSign$Params } from '../../../swagger/fn/files/files-get-info-for-sign';
 import { GetFileInfoForSign } from '../../models/get-file-info-for-sign.interface';
-import { adaptApiGetFileInfoForSignDto } from '../../adapters/toDto/api-get-file-info-for-sign-dto.adapter';
+import { apiGetFileInfoForSignDtoAdapter } from '../../adapters/models/api-get-file-info-for-sign-dto.adapter';
 
+// @ts-ignore
 export interface FilesGetInfoForSignParams {
   body?: GetFileInfoForSign;
 }
 
-export const filesGetInfoForSignParamsAdapter = {
-  adapt(params?: FilesGetInfoForSignParams): FilesGetInfoForSign$Params {
-    if (!params) {
-      return {} as FilesGetInfoForSign$Params;
-    }
-    return {
-      body: adaptApiGetFileInfoForSignDto(params.body),
-    };
+export function filesGetInfoForSignAdapter(params?: FilesGetInfoForSignParams): FilesGetInfoForSign$Params {
+  if (!params) {
+    return {} as FilesGetInfoForSign$Params;
   }
-};
+  return {
+      body: apiGetFileInfoForSignDtoAdapter(params.body),
+  };
+}

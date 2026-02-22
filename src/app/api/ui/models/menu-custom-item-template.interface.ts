@@ -1,6 +1,7 @@
 import { ActionTypeEnum } from '../enums/action-type.enum';
 import { CustomItemScopeEnum } from '../enums/custom-item-scope.enum';
 
+// @ts-ignore
 export interface MenuCustomItemTemplate {
   autoTestId: string;
   children: MenuCustomItemTemplate[];

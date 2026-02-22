@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface FilesStatusAlt {
   deleteType: string;
   deleteUrl: string;

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface NicRegistryAddEdit {
   contractDate: string;
   contractNumber: string;

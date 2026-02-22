@@ -1,22 +1,21 @@
 import { ItemIdAmountAlt } from '../../models/item-id-amount-alt.interface';
 import { RequirementRequestsGetChatItems$Params } from '../../../swagger/fn/requirement-requests/requirement-requests-get-chat-items';
-import { adaptApiItemIdAmountAltDto } from '../../adapters/toDto/api-item-id-amount.adapter';
+import { apiItemIdAmountAltDtoAdapter } from '../../adapters/models/api-item-id-amount.adapter';
 
+// @ts-ignore
 export interface RequirementRequestsGetChatItemsParams {
   requirementRequestId: number;
   chatId: number;
   body?: ItemIdAmountAlt;
 }
 
-export const requirementRequestsGetChatItemsParamsAdapter = {
-  adapt(params?: RequirementRequestsGetChatItemsParams): RequirementRequestsGetChatItems$Params {
-    if (!params) {
-      return {} as RequirementRequestsGetChatItems$Params;
-    }
-    return {
+export function requirementRequestsGetChatItemsAdapter(params?: RequirementRequestsGetChatItemsParams): RequirementRequestsGetChatItems$Params {
+  if (!params) {
+    return {} as RequirementRequestsGetChatItems$Params;
+  }
+  return {
       requirementRequestId: params.requirementRequestId,
       chatId: params.chatId,
-      body: adaptApiItemIdAmountAltDto(params.body),
-    };
-  }
-};
+      body: apiItemIdAmountAltDtoAdapter(params.body),
+  };
+}

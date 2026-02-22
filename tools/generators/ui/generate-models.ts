@@ -8,6 +8,7 @@ import {
   getModelFileBase,
   isExcludedMarketJsonResult,
   normalizeTypeText,
+  splitTopLevel,
   toCamelCaseProperty,
   UI_MODELS_DIR,
   writeManagedDirectory
@@ -71,6 +72,7 @@ async function generateModels(): Promise<void> {
       contentLines.push(...importLines, '');
     }
 
+    contentLines.push('// @ts-ignore');
     contentLines.push(`export interface ${interfaceEntity.localName} {`);
     if (propertyLines.length) {
       contentLines.push(...propertyLines);
@@ -102,7 +104,51 @@ async function generateModels(): Promise<void> {
     if (importLines.length) {
       contentLines.push(...importLines, '');
     }
-    contentLines.push(`export type ${typeEntity.localName} = ${normalizedType};`);
+    const intersectionParts = splitTopLevel(normalizedType, '&')
+      .map((part) => part.trim())
+      .filter(Boolean);
+
+    const isObjectLiteral = (value: string) => value.startsWith('{') && value.endsWith('}');
+    const literalParts = intersectionParts.filter(isObjectLiteral);
+    const extendsParts = intersectionParts.filter((part) => !isObjectLiteral(part));
+
+    const propertyLines: string[] = [];
+    for (const literalPart of literalParts) {
+      const literalContent = literalPart.slice(1, -1).trim();
+      if (!literalContent) {
+        continue;
+      }
+      for (const fragment of splitTopLevel(literalContent, ';')) {
+        const trimmed = fragment.trim();
+        if (!trimmed) {
+          continue;
+        }
+
+        const colonParts = splitTopLevel(trimmed, ':');
+        if (colonParts.length < 2) {
+          continue;
+        }
+
+        const rawName = colonParts[0].trim();
+        const rawType = colonParts.slice(1).join(':').trim();
+        const nameMatch = rawName.match(/^['"]?([^'"]+)['"]?\??$/);
+        const propertyName = toCamelCaseProperty(nameMatch?.[1] ?? rawName);
+        if (!propertyName) {
+          continue;
+        }
+
+        const normalizedPropertyType = normalizeTypeText(rawType, context.bySwaggerName);
+        propertyLines.push(`  ${propertyName}: ${normalizedPropertyType};`);
+      }
+    }
+
+    const extendsClause = extendsParts.length ? ` extends ${extendsParts.join(', ')}` : '';
+    contentLines.push('// @ts-ignore');
+    contentLines.push(`export interface ${typeEntity.localName}${extendsClause} {`);
+    if (propertyLines.length) {
+      contentLines.push(...propertyLines);
+    }
+    contentLines.push('}');
 
     files.set(fileName, `${contentLines.join('\n')}\n`);
     exportsForIndex.push(`./${fileBase}.interface`);

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface QuotationSessionCancellationRequestNewAlt {
   cancellationReason: string;
   rejectionDate: string;

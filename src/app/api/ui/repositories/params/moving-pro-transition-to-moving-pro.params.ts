@@ -1,5 +1,6 @@
 import { MovingProTransitionToMovingPro$Params } from '../../../swagger/fn/moving-pro/moving-pro-transition-to-moving-pro';
 
+// @ts-ignore
 export interface MovingProTransitionToMovingProParams {
   entityId?: number;
   sourceKladrCode?: string;
@@ -9,18 +10,16 @@ export interface MovingProTransitionToMovingProParams {
   organizationId?: number;
 }
 
-export const movingProTransitionToMovingProParamsAdapter = {
-  adapt(params?: MovingProTransitionToMovingProParams): MovingProTransitionToMovingPro$Params {
-    if (!params) {
-      return {} as MovingProTransitionToMovingPro$Params;
-    }
-    return {
+export function movingProTransitionToMovingProAdapter(params?: MovingProTransitionToMovingProParams): MovingProTransitionToMovingPro$Params {
+  if (!params) {
+    return {} as MovingProTransitionToMovingPro$Params;
+  }
+  return {
       EntityId: params.entityId,
       SourceKladrCode: params.sourceKladrCode,
       DestinationKladrCode: params.destinationKladrCode,
       OperationId: params.operationId,
       UserId: params.userId,
       OrganizationId: params.organizationId,
-    };
-  }
-};
+  };
+}

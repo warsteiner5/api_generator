@@ -1,14 +1,13 @@
 import { TradePlansGetActualPlan$Params } from '../../../swagger/fn/trade-plans/trade-plans-get-actual-plan';
 
+// @ts-ignore
 export interface TradePlansGetActualPlanParams {
 }
 
-export const tradePlansGetActualPlanParamsAdapter = {
-  adapt(params?: TradePlansGetActualPlanParams): TradePlansGetActualPlan$Params {
-    if (!params) {
-      return {} as TradePlansGetActualPlan$Params;
-    }
-    return {
-    };
+export function tradePlansGetActualPlanAdapter(params?: TradePlansGetActualPlanParams): TradePlansGetActualPlan$Params {
+  if (!params) {
+    return {} as TradePlansGetActualPlan$Params;
   }
-};
+  return {
+  };
+}

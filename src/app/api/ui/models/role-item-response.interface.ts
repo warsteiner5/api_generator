@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface RoleItemResponse {
   canChangeActivity: boolean;
   canDelete: boolean;

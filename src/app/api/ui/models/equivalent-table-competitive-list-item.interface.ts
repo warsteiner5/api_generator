@@ -1,5 +1,6 @@
 import { EquivalentTableOffer } from './equivalent-table-offer.interface';
 
+// @ts-ignore
 export interface EquivalentTableCompetitiveListItem {
   comment: string;
   competitiveListItemId: number;

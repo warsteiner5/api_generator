@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface MarketOrganizationAdministrator {
   firstName: string;
   lastName: string;

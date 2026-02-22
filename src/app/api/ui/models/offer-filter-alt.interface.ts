@@ -4,4 +4,45 @@ import { ParticipantOfferStateEnum } from '../enums/participant-offer-state.enum
 import { ParticipantOfferTypeEnum } from '../enums/participant-offer-type.enum';
 import { UsedClassificatorTypeEnum } from '../enums/used-classificator-type.enum';
 
-export type OfferFilterAlt = BaseFilterObjectAlt & { 'ProductName'?: string | null; 'SubProductName'?: string | null; 'UsedClassificator'?: UsedClassificatorTypeEnum | null; 'ClassificatorCodes'?: Array<string> | null; 'PriceFrom'?: number | null; 'PriceTo'?: number | null; 'OfferTermsFrom'?: string | null; 'OfferTermsTo'?: string | null; 'OfferState'?: ParticipantOfferStateEnum | null; 'ParticipantInn'?: string | null; 'ParticipantName'?: string | null; 'OfferType'?: ParticipantOfferTypeEnum; 'PublishDateFrom'?: string | null; 'PublishDateTo'?: string | null; 'IsPublicOffer'?: boolean | null; 'OnlyWithoutPictures'?: boolean; 'ParticipantOfferSource'?: ParticipantOfferSourceEnum | null; 'OnlyMyOffers'?: boolean | null; 'ItemInStock'?: boolean; 'OnOrder'?: boolean; 'HasPhoto'?: boolean | null; 'QuantityInStockFrom'?: number | null; 'QuantityInStockTo'?: number | null; 'LastModificationDateFrom'?: string | null; 'LastModificationDateTo'?: string | null; 'ViewsCountFrom'?: number | null; 'ViewsCountTo'?: number | null; 'StartedDealsCountFrom'?: number | null; 'StartedDealsCountTo'?: number | null; 'HasStartedDeals'?: boolean; 'HasCompletedDeals'?: boolean; 'OrganizationId'?: number | null; 'UserId'?: number | null; 'ParentObjectId'?: number | null; 'VendorCode'?: string | null; 'SellerCode'?: string | null; 'BarCode'?: string | null; 'CategoryIds'?: Array<string> | null; 'KladrCodeProductionRegions'?: Array<string> | null; };
+// @ts-ignore
+export interface OfferFilterAlt extends BaseFilterObjectAlt {
+  productName: string;
+  subProductName: string;
+  usedClassificator: UsedClassificatorTypeEnum;
+  classificatorCodes: string[];
+  priceFrom: number;
+  priceTo: number;
+  offerTermsFrom: string;
+  offerTermsTo: string;
+  offerState: ParticipantOfferStateEnum;
+  participantInn: string;
+  participantName: string;
+  offerType: ParticipantOfferTypeEnum;
+  publishDateFrom: string;
+  publishDateTo: string;
+  isPublicOffer: boolean;
+  onlyWithoutPictures: boolean;
+  participantOfferSource: ParticipantOfferSourceEnum;
+  onlyMyOffers: boolean;
+  itemInStock: boolean;
+  onOrder: boolean;
+  hasPhoto: boolean;
+  quantityInStockFrom: number;
+  quantityInStockTo: number;
+  lastModificationDateFrom: string;
+  lastModificationDateTo: string;
+  viewsCountFrom: number;
+  viewsCountTo: number;
+  startedDealsCountFrom: number;
+  startedDealsCountTo: number;
+  hasStartedDeals: boolean;
+  hasCompletedDeals: boolean;
+  organizationId: number;
+  userId: number;
+  parentObjectId: number;
+  vendorCode: string;
+  sellerCode: string;
+  barCode: string;
+  categoryIds: string[];
+  kladrCodeProductionRegions: string[];
+}

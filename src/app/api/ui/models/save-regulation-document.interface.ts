@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface SaveRegulationDocument {
   fileGuid: string;
   fileName: string;

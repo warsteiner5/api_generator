@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface KtruShort {
   code: string;
   name: string;

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface AddressDto2 {
   area: string;
   areaFiasId: string;

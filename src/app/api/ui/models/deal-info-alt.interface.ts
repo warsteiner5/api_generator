@@ -2,6 +2,7 @@ import { DealFormEnum } from '../enums/deal-form.enum';
 import { DealObjectEnum } from '../enums/deal-object.enum';
 import { DealStateEnum } from '../enums/deal-state.enum';
 
+// @ts-ignore
 export interface DealInfoAlt {
   conclusionDate: string;
   customerId: number;

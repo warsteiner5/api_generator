@@ -1,14 +1,13 @@
 import { OrganizationsIsCurrentOrganizationSmsp$Params } from '../../../swagger/fn/organizations/organizations-is-current-organization-smsp';
 
+// @ts-ignore
 export interface OrganizationsIsCurrentOrganizationSmspParams {
 }
 
-export const organizationsIsCurrentOrganizationSmspParamsAdapter = {
-  adapt(params?: OrganizationsIsCurrentOrganizationSmspParams): OrganizationsIsCurrentOrganizationSmsp$Params {
-    if (!params) {
-      return {} as OrganizationsIsCurrentOrganizationSmsp$Params;
-    }
-    return {
-    };
+export function organizationsIsCurrentOrganizationSmspAdapter(params?: OrganizationsIsCurrentOrganizationSmspParams): OrganizationsIsCurrentOrganizationSmsp$Params {
+  if (!params) {
+    return {} as OrganizationsIsCurrentOrganizationSmsp$Params;
   }
-};
+  return {
+  };
+}

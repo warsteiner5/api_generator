@@ -1,5 +1,6 @@
 import { TradeInfoForAnonymousAlt } from './trade-info-for-anonymous-alt.interface';
 
+// @ts-ignore
 export interface ApiSearchResultOfTradeInfoForAnonymousAlt {
   currpage: number;
   invdata: TradeInfoForAnonymousAlt[];

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface RegulationDocumentView {
   fileGuid: string;
   fileName: string;

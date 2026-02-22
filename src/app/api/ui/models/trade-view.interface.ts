@@ -13,6 +13,7 @@ import { TradeStateEnum } from '../enums/trade-state.enum';
 import { ViewApplicationsForTrade } from './view-applications-for-trade.interface';
 import { ZmoFinanceSourceEnum } from '../enums/zmo-finance-source.enum';
 
+// @ts-ignore
 export interface TradeView {
   actualChildOrderId: number;
   actualChildTradeId: number;

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ContactInformation {
   email: string;
   fio: string;

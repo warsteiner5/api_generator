@@ -8,6 +8,7 @@ import { MarketOrganizationProfileProducts } from './market-organization-profile
 import { OrganizationProfileDocument } from './organization-profile-document.interface';
 import { TagView } from './tag-view.interface';
 
+// @ts-ignore
 export interface OrganizanizationFullCard {
   addresses: MarketOrganizationCommonAddress;
   appearance: MarketOrganizationProfileAppearance;

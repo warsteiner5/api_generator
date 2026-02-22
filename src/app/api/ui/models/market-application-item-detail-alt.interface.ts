@@ -2,6 +2,7 @@ import { CommissionDecisionStatusEnum } from '../enums/commission-decision-statu
 import { ManufactureTypeEnum } from '../enums/manufacture-type.enum';
 import { MeetsRequirementsEnum } from '../enums/meets-requirements.enum';
 
+// @ts-ignore
 export interface MarketApplicationItemDetailAlt {
   countryConfirmation: string;
   decisionStatus: CommissionDecisionStatusEnum;

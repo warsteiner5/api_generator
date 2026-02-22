@@ -1,3 +1,6 @@
 import { BaseFilterAlt } from './base-filter-alt.interface';
 
-export type TenantOrganizationSettingsFilterAlt = BaseFilterAlt & { 'TenantId'?: number; };
+// @ts-ignore
+export interface TenantOrganizationSettingsFilterAlt extends BaseFilterAlt {
+  tenantId: number;
+}

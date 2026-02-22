@@ -7,6 +7,7 @@ import { Okpd2CodeMarket } from './okpd-2-code-market.interface';
 import { TruTypeEnum } from '../enums/tru-type.enum';
 import { UsedClassificatorTypeEnum } from '../enums/used-classificator-type.enum';
 
+// @ts-ignore
 export interface ProductDto2 {
   classificatorCode: string;
   classificatorDescription: string;

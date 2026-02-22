@@ -1,18 +1,17 @@
 import { QuotationSessionJoin$Params } from '../../../swagger/fn/quotation-session/quotation-session-join';
 import { QuotationSessionJoinAlt } from '../../models/quotation-session-join-alt.interface';
-import { adaptApiQuotationSessionJoinAltDto } from '../../adapters/toDto/api-quotation-session-join.adapter';
+import { apiQuotationSessionJoinAltDtoAdapter } from '../../adapters/models/api-quotation-session-join.adapter';
 
+// @ts-ignore
 export interface QuotationSessionJoinParams {
   body?: QuotationSessionJoinAlt;
 }
 
-export const quotationSessionJoinParamsAdapter = {
-  adapt(params?: QuotationSessionJoinParams): QuotationSessionJoin$Params {
-    if (!params) {
-      return {} as QuotationSessionJoin$Params;
-    }
-    return {
-      body: adaptApiQuotationSessionJoinAltDto(params.body),
-    };
+export function quotationSessionJoinAdapter(params?: QuotationSessionJoinParams): QuotationSessionJoin$Params {
+  if (!params) {
+    return {} as QuotationSessionJoin$Params;
   }
-};
+  return {
+      body: apiQuotationSessionJoinAltDtoAdapter(params.body),
+  };
+}

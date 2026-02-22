@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface Agreement2323 {
   hasAgreement: boolean;
   isCustomer: boolean;

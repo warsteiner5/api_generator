@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface CreateDealDraftByParticipantRequest {
   applicationId: number;
   applicationLotItemIds: number[];

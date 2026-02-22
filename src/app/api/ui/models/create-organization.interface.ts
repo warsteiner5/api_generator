@@ -1,6 +1,7 @@
 import { CreateOrganizationManager } from './create-organization-manager.interface';
 import { OrganizationTypeEnum } from '../enums/organization-type.enum';
 
+// @ts-ignore
 export interface CreateOrganization {
   address: string;
   contactPerson: string;

@@ -2,6 +2,7 @@ import { HideApplicationSettings } from './hide-application-settings.interface';
 import { M4DDealSignRequiredEnum } from '../enums/m-4-d-deal-sign-required.enum';
 import { SignatureStampFormatEnum } from '../enums/signature-stamp-format.enum';
 
+// @ts-ignore
 export interface MarketOrganizationSettingsAlt {
   alwaysSendInvitationsForVendors: boolean;
   autoProlongationEnabled: boolean;

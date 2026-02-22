@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface OrganizationShortInfo {
   adminFulName: string;
   guid: string;

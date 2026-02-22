@@ -2,6 +2,7 @@ import { DealDocument } from './deal-document.interface';
 import { DealObjectEnum } from '../enums/deal-object.enum';
 import { DealStateEnum } from '../enums/deal-state.enum';
 
+// @ts-ignore
 export interface ChangeDealForm {
   cancellationReason: string;
   conclusionDate: string;

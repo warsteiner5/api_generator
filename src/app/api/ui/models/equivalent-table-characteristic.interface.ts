@@ -3,6 +3,7 @@ import { CharacteristicOperationEnum } from '../enums/characteristic-operation.e
 import { CharacteristicTypeEnum } from '../enums/characteristic-type.enum';
 import { EquivalentTableCharacteristicValues } from './equivalent-table-characteristic-values.interface';
 
+// @ts-ignore
 export interface EquivalentTableCharacteristic {
   id: number;
   list: CharacteristicListValues[];

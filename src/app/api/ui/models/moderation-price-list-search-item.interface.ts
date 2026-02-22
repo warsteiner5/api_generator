@@ -3,6 +3,7 @@ import { OrganizationInfoForModerationInfoAlt } from './organization-info-for-mo
 import { UploaderRoleAltEnum } from '../enums/uploader-role-alt.enum';
 import { UserNameInfoAlt } from './user-name-info-alt.interface';
 
+// @ts-ignore
 export interface ModerationPriceListSearchItem {
   activeCount: number;
   complaintsInfo: ComplaintsCountInfo;

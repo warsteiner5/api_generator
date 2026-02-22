@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface MarketOrganizationStatisticAlt {
   dealCount: number;
   dealSum: number;

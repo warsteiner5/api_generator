@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface TagItemAlt {
   id: string;
   isActive: boolean;

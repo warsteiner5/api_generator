@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface OrderAvailableOperations {
   isAgreementApproveAllowed: boolean;
   isAgreementCreateAllowed: boolean;

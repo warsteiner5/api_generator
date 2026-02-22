@@ -2,4 +2,29 @@ import { BaseContractDtoWithIdAndRowVersionOfIntegerAndInteger } from './base-co
 import { PurchasePlanKindAltEnum } from '../enums/purchase-plan-kind-alt.enum';
 import { TradePlanLotItemMarket } from './trade-plan-lot-item-market.interface';
 
-export type TradePlanLotMarket = BaseContractDtoWithIdAndRowVersionOfIntegerAndInteger & { 'OrderNumber'?: string | null; 'Subject'?: string | null; 'StartingPrice'?: number | null; 'StartingPriceWithoutVat'?: number | null; 'PlanDepositPeriod'?: string | null; 'ExecutionAgreementDate'?: string | null; 'MethodPurchase'?: string | null; 'MethodPurchaseCode'?: number; 'PlanNumber'?: string | null; 'PlanId'?: number | null; 'PurchasePlanKind'?: PurchasePlanKindAltEnum | null; 'Okato'?: string | null; 'RegionName'?: string | null; 'Items'?: Array<TradePlanLotItemMarket> | null; 'Guid'?: string | null; 'CustomerName'?: string | null; 'TradeId'?: number | null; 'TradeIds'?: Array<number> | null; 'OrganizerId'?: number; 'OrganizerGuid'?: string; 'WorkGroups'?: Array<number> | null; 'BusinessUnitCode'?: string | null; 'CanCreateTrade'?: boolean; };
+// @ts-ignore
+export interface TradePlanLotMarket extends BaseContractDtoWithIdAndRowVersionOfIntegerAndInteger {
+  orderNumber: string;
+  subject: string;
+  startingPrice: number;
+  startingPriceWithoutVat: number;
+  planDepositPeriod: string;
+  executionAgreementDate: string;
+  methodPurchase: string;
+  methodPurchaseCode: number;
+  planNumber: string;
+  planId: number;
+  purchasePlanKind: PurchasePlanKindAltEnum;
+  okato: string;
+  regionName: string;
+  items: TradePlanLotItemMarket[];
+  guid: string;
+  customerName: string;
+  tradeId: number;
+  tradeIds: number[];
+  organizerId: number;
+  organizerGuid: string;
+  workGroups: number[];
+  businessUnitCode: string;
+  canCreateTrade: boolean;
+}

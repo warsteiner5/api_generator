@@ -4,6 +4,7 @@ import { ExternalDealItem } from './external-deal-item.interface';
 import { ExternalDealSupplier } from './external-deal-supplier.interface';
 import { SignedOutOfEpReasonTypeEnum } from '../enums/signed-out-of-ep-reason-type.enum';
 
+// @ts-ignore
 export interface ExternalDeal {
   dealAgreementDate: string;
   dealNumber: string;

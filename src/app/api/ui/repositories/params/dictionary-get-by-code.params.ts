@@ -1,20 +1,19 @@
 import { DictionaryGetByCode$Params } from '../../../swagger/fn/dictionary/dictionary-get-by-code';
 import { UsedClassificatorTypeEnum } from '../../enums/used-classificator-type.enum';
-import { adaptApiUsedClassificatorTypeEnum } from '../../adapters/toDto/api-used-classificator-type-enum.adapter';
+import { apiUsedClassificatorTypeEnumAdapter } from '../../adapters/enums/api-used-classificator-type-enum.adapter';
 
+// @ts-ignore
 export interface DictionaryGetByCodeParams {
   usedClassificatorType?: UsedClassificatorTypeEnum;
   value?: string;
 }
 
-export const dictionaryGetByCodeParamsAdapter = {
-  adapt(params?: DictionaryGetByCodeParams): DictionaryGetByCode$Params {
-    if (!params) {
-      return {} as DictionaryGetByCode$Params;
-    }
-    return {
-      UsedClassificatorType: adaptApiUsedClassificatorTypeEnum(params.usedClassificatorType),
-      Value: params.value,
-    };
+export function dictionaryGetByCodeAdapter(params?: DictionaryGetByCodeParams): DictionaryGetByCode$Params {
+  if (!params) {
+    return {} as DictionaryGetByCode$Params;
   }
-};
+  return {
+      UsedClassificatorType: apiUsedClassificatorTypeEnumAdapter(params.usedClassificatorType),
+      Value: params.value,
+  };
+}

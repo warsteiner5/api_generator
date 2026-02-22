@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface OrganizationPurchaseSettingsEisPrefs {
   canSendTradeToEIS: boolean;
   hideProtocolForTradeWithSentToEis: boolean;

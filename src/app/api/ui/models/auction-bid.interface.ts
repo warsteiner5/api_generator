@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface AuctionBid {
   id: number;
   isQuotationWithVat: boolean;

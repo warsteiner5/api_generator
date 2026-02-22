@@ -1,5 +1,6 @@
 import { DealInfoAlt } from './deal-info-alt.interface';
 
+// @ts-ignore
 export interface ApiSearchResultOfDealInfoAlt {
   currpage: number;
   invdata: DealInfoAlt[];

@@ -5,6 +5,7 @@ import { PriceRegionDetail } from './price-region-detail.interface';
 import { RequirementRequestForView } from './requirement-request-for-view.interface';
 import { VatRateStateEnum } from '../enums/vat-rate-state.enum';
 
+// @ts-ignore
 export interface CompetitiveListItemForParticipantOfferTemplate {
   characteristicsValues: CharacteristicValues[];
   chatId: number;

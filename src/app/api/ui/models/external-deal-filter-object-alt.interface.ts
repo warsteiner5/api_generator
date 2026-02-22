@@ -1,3 +1,14 @@
 import { BaseFilterObjectAlt } from './base-filter-object-alt.interface';
 
-export type ExternalDealFilterObjectAlt = BaseFilterObjectAlt & { 'DealNumber'?: string | null; 'ParticipantName'?: string | null; 'ParticipantInn'?: string | null; 'ParticipantKpp'?: string | null; 'ConclusionDateFrom'?: string | null; 'ConclusionDateTo'?: string | null; 'PriceMin'?: number | null; 'PriceMax'?: number | null; 'DealSubject'?: string | null; };
+// @ts-ignore
+export interface ExternalDealFilterObjectAlt extends BaseFilterObjectAlt {
+  dealNumber: string;
+  participantName: string;
+  participantInn: string;
+  participantKpp: string;
+  conclusionDateFrom: string;
+  conclusionDateTo: string;
+  priceMin: number;
+  priceMax: number;
+  dealSubject: string;
+}

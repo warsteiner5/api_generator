@@ -1,14 +1,13 @@
 import { TradesGetImportTemplateGuidByTenant$Params } from '../../../swagger/fn/trades/trades-get-import-template-guid-by-tenant';
 
+// @ts-ignore
 export interface TradesGetImportTemplateGuidByTenantParams {
 }
 
-export const tradesGetImportTemplateGuidByTenantParamsAdapter = {
-  adapt(params?: TradesGetImportTemplateGuidByTenantParams): TradesGetImportTemplateGuidByTenant$Params {
-    if (!params) {
-      return {} as TradesGetImportTemplateGuidByTenant$Params;
-    }
-    return {
-    };
+export function tradesGetImportTemplateGuidByTenantAdapter(params?: TradesGetImportTemplateGuidByTenantParams): TradesGetImportTemplateGuidByTenant$Params {
+  if (!params) {
+    return {} as TradesGetImportTemplateGuidByTenant$Params;
   }
-};
+  return {
+  };
+}

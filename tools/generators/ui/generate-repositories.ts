@@ -28,7 +28,7 @@ interface ParamUsage {
   sourceFilePath: string;
   fileBase: string;
   fileName: string;
-  adapterConstName: string;
+  adapterName: string;
 }
 
 interface RepositoryMethodMeta {
@@ -57,6 +57,28 @@ function toRelativeImport(fromFilePath: string, toFilePath: string): string {
 
 function lowerFirst(value: string): string {
   return value ? value.charAt(0).toLowerCase() + value.slice(1) : value;
+}
+
+function getUiEntityAdapterImportPath(
+  entity: LocalEntityMeta,
+  modelsBasePath: string,
+  enumsBasePath: string
+): string {
+  const fileBase = getAdapterFileBase(entity.localName);
+  return entity.kind === 'enum'
+    ? `${enumsBasePath}/${fileBase}.adapter`
+    : `${modelsBasePath}/${fileBase}.adapter`;
+}
+
+function getDtoEntityAdapterImportPath(
+  entity: LocalEntityMeta,
+  modelsBasePath: string,
+  enumsBasePath: string
+): string {
+  const fileBase = entity.sourceFileBase;
+  return entity.kind === 'enum'
+    ? `${enumsBasePath}/${fileBase}.adapter`
+    : `${modelsBasePath}/${fileBase}.adapter`;
 }
 
 function getMatchingAngleIndex(text: string, openIndex: number): number {
@@ -89,11 +111,11 @@ function extractObservableInnerType(returnTypeText: string): string {
 }
 
 function getUiAdapterName(localName: string): string {
-  return `adapt${localName}ToUI`;
+  return `${lowerFirst(localName)}Adapter`;
 }
 
 function getDtoAdapterName(swaggerName: string): string {
-  return `adapt${swaggerName}`;
+  return `${lowerFirst(swaggerName)}Adapter`;
 }
 
 function getEntityByTypeText(typeText: string, context: EntitiesContext): LocalEntityMeta | undefined {
@@ -149,7 +171,7 @@ function addUiAdapterImport(
   entity: LocalEntityMeta
 ): string {
   const adapterName = getUiAdapterName(entity.localName);
-  const adapterPath = `../adapters/toUI/${getAdapterFileBase(entity.localName)}.adapter`;
+  const adapterPath = getUiEntityAdapterImportPath(entity, '../adapters/models', '../adapters/enums');
   adapterImports.set(adapterName, `import { ${adapterName} } from '${adapterPath}';`);
   return adapterName;
 }
@@ -290,6 +312,13 @@ function getParamFileBase(uiParamTypeName: string): string {
   return toKebabCase(bare);
 }
 
+function getParamAdapterName(uiParamTypeName: string): string {
+  const bare = uiParamTypeName.endsWith('Params')
+    ? uiParamTypeName.slice(0, -'Params'.length)
+    : uiParamTypeName;
+  return `${lowerFirst(bare)}Adapter`;
+}
+
 function getObjectKey(name: string): string {
   return /^[A-Za-z_$][A-Za-z0-9_$]*$/.test(name) ? name : JSON.stringify(name);
 }
@@ -339,7 +368,7 @@ function resolveParamUsage(
     sourceFilePath,
     fileBase,
     fileName: `${fileBase}.params.ts`,
-    adapterConstName: `${lowerFirst(uiTypeName)}Adapter`
+    adapterName: getParamAdapterName(uiTypeName)
   };
   usagesMap.set(usageKey, usage);
   return usage;
@@ -369,7 +398,7 @@ function buildMethodMeta(
   );
 
   const callExpression = paramsUsage
-    ? `this._api.${methodName}(${paramsUsage.adapterConstName}.adapt(params))`
+    ? `this._api.${methodName}(${paramsUsage.adapterName}(params))`
     : `this._api.${methodName}()`;
 
   return {
@@ -431,14 +460,12 @@ function buildParamFileContent(
       '',
       `export type ${usage.uiTypeName} = unknown;`,
       '',
-      `export const ${usage.adapterConstName} = {`,
-      `  adapt(params?: ${usage.uiTypeName}): ${usage.swaggerTypeName} {`,
-      '    if (!params) {',
-      `      return {} as ${usage.swaggerTypeName};`,
-      '    }',
-      `    return params as unknown as ${usage.swaggerTypeName};`,
+      `export function ${usage.adapterName}(params?: ${usage.uiTypeName}): ${usage.swaggerTypeName} {`,
+      '  if (!params) {',
+      `    return {} as ${usage.swaggerTypeName};`,
       '  }',
-      '};'
+      `  return params as unknown as ${usage.swaggerTypeName};`,
+      '}'
     ];
     return `${lines.join('\n')}\n`;
   }
@@ -470,7 +497,11 @@ function buildParamFileContent(
 
       if (analysis.kind === 'entity' && analysis.entity) {
         const adapterName = getDtoAdapterName(analysis.entity.swaggerName);
-        const adapterPath = `../../adapters/toDto/${analysis.entity.sourceFileBase}.adapter`;
+        const adapterPath = getDtoEntityAdapterImportPath(
+          analysis.entity,
+          '../../adapters/models',
+          '../../adapters/enums'
+        );
         adapterImports.set(
           adapterName,
           `import { ${adapterName} } from '${adapterPath}';`
@@ -478,7 +509,11 @@ function buildParamFileContent(
         mappedExpression = `${adapterName}(${sourceAccessor})`;
       } else if (analysis.kind === 'array-entity' && analysis.entity) {
         const adapterName = getDtoAdapterName(analysis.entity.swaggerName);
-        const adapterPath = `../../adapters/toDto/${analysis.entity.sourceFileBase}.adapter`;
+        const adapterPath = getDtoEntityAdapterImportPath(
+          analysis.entity,
+          '../../adapters/models',
+          '../../adapters/enums'
+        );
         adapterImports.set(
           adapterName,
           `import { ${adapterName} } from '${adapterPath}';`
@@ -500,14 +535,12 @@ function buildParamFileContent(
       '',
       `export type ${usage.uiTypeName} = ${uiTypeText};`,
       '',
-      `export const ${usage.adapterConstName} = {`,
-      `  adapt(params?: ${usage.uiTypeName}): ${usage.swaggerTypeName} {`,
-      '    if (!params) {',
-      `      return {} as ${usage.swaggerTypeName};`,
-      '    }',
-      `    return params as unknown as ${usage.swaggerTypeName};`,
+      `export function ${usage.adapterName}(params?: ${usage.uiTypeName}): ${usage.swaggerTypeName} {`,
+      '  if (!params) {',
+      `    return {} as ${usage.swaggerTypeName};`,
       '  }',
-      '};'
+      `  return params as unknown as ${usage.swaggerTypeName};`,
+      '}'
     ];
     return `${typeLines.join('\n')}\n`;
   }
@@ -519,24 +552,23 @@ function buildParamFileContent(
     lines.push(...sortedAdapterImports);
   }
   lines.push('');
+  lines.push('// @ts-ignore');
   lines.push(`export interface ${usage.uiTypeName} {`);
   if (bodyLines.length) {
     lines.push(...bodyLines);
   }
   lines.push('}');
   lines.push('');
-  lines.push(`export const ${usage.adapterConstName} = {`);
-  lines.push(`  adapt(params?: ${usage.uiTypeName}): ${usage.swaggerTypeName} {`);
-  lines.push('    if (!params) {');
-  lines.push(`      return {} as ${usage.swaggerTypeName};`);
-  lines.push('    }');
-  lines.push('    return {');
+  lines.push(`export function ${usage.adapterName}(params?: ${usage.uiTypeName}): ${usage.swaggerTypeName} {`);
+  lines.push('  if (!params) {');
+  lines.push(`    return {} as ${usage.swaggerTypeName};`);
+  lines.push('  }');
+  lines.push('  return {');
   if (adapterPropertyLines.length) {
     lines.push(...adapterPropertyLines);
   }
-  lines.push('    };');
-  lines.push('  }');
-  lines.push('};');
+  lines.push('  };');
+  lines.push('}');
   return `${lines.join('\n')}\n`;
 }
 
@@ -621,7 +653,7 @@ async function generateRepositories(): Promise<void> {
         const paramImportPath = `./params/${methodMeta.paramsUsage.fileBase}.params`;
         imports.set(
           methodMeta.paramsUsage.uiTypeName,
-          `import { ${methodMeta.paramsUsage.uiTypeName}, ${methodMeta.paramsUsage.adapterConstName} } from '${paramImportPath}';`
+          `import { ${methodMeta.paramsUsage.uiTypeName}, ${methodMeta.paramsUsage.adapterName} } from '${paramImportPath}';`
         );
       }
 

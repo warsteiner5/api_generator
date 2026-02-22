@@ -3,6 +3,7 @@ import { ApplicationRejectionReason } from './application-rejection-reason.inter
 import { DealRejectionReasonList } from './deal-rejection-reason-list.interface';
 import { DealStateEnum } from '../enums/deal-state.enum';
 
+// @ts-ignore
 export interface ViewApplicationsForTrade {
   applications: ApplicationInfoForTrade[];
   dealId: number;

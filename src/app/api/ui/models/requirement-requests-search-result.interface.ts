@@ -1,6 +1,7 @@
 import { KladrRegionCode } from './kladr-region-code.interface';
 import { RequirementRequestStateEnum } from '../enums/requirement-request-state.enum';
 
+// @ts-ignore
 export interface RequirementRequestsSearchResult {
   approvedCharacteristicsCount: number;
   category: string;

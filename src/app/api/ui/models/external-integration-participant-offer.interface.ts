@@ -2,6 +2,7 @@ import { MinPromTorgCharacteristic } from './min-prom-torg-characteristic.interf
 import { OfferCreatedMethodEnum } from '../enums/offer-created-method.enum';
 import { ProductStatusAltEnum } from '../enums/product-status-alt.enum';
 
+// @ts-ignore
 export interface ExternalIntegrationParticipantOffer {
   additionalPhotos: string[];
   categoryId: string;

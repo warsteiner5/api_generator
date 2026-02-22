@@ -16,6 +16,7 @@ import { TruTypeEnum2 } from '../enums/tru-type-enum-2.enum';
 import { UsedClassificatorTypeEnum } from '../enums/used-classificator-type.enum';
 import { VatRateStateEnum } from '../enums/vat-rate-state.enum';
 
+// @ts-ignore
 export interface MarketParticipantOffer {
   category: Category;
   characteristicFileGuid: string;

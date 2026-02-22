@@ -5,4 +5,28 @@ import { ParticipantOfferStateEnum } from '../enums/participant-offer-state.enum
 import { ParticipantOfferTypeEnum } from '../enums/participant-offer-type.enum';
 import { UsedClassificatorTypeEnum } from '../enums/used-classificator-type.enum';
 
-export type PriceListFilter = BaseFilterObjectAlt & { 'ProductName'?: string | null; 'ProductNameFTS'?: string | null; 'UsedClassificator'?: UsedClassificatorTypeEnum | null; 'ClassificatorCodes'?: Array<string> | null; 'PriceFrom'?: number | null; 'PriceTo'?: number | null; 'OfferTermsFrom'?: string | null; 'OfferTermsTo'?: string | null; 'OfferState'?: ParticipantOfferStateEnum | null; 'ParticipantId'?: number | null; 'ParticipantInn'?: string | null; 'ParticipantName'?: string | null; 'OfferType'?: ParticipantOfferTypeEnum; 'ParticipantOfferSpecific'?: ParticipantOfferSpecificFlagEnum | null; 'PublishDateFrom'?: string | null; 'PublishDateTo'?: string | null; 'IsPublicOffer'?: boolean | null; 'Manufacturer'?: string | null; 'ShowGuaranteedSuppliers'?: boolean; 'IsHomeRegionsSearch'?: boolean; 'ShowTotal'?: boolean; 'PriceListsParam'?: GetPriceListsParamAlt | null; };
+// @ts-ignore
+export interface PriceListFilter extends BaseFilterObjectAlt {
+  productName: string;
+  productNameFTS: string;
+  usedClassificator: UsedClassificatorTypeEnum;
+  classificatorCodes: string[];
+  priceFrom: number;
+  priceTo: number;
+  offerTermsFrom: string;
+  offerTermsTo: string;
+  offerState: ParticipantOfferStateEnum;
+  participantId: number;
+  participantInn: string;
+  participantName: string;
+  offerType: ParticipantOfferTypeEnum;
+  participantOfferSpecific: ParticipantOfferSpecificFlagEnum;
+  publishDateFrom: string;
+  publishDateTo: string;
+  isPublicOffer: boolean;
+  manufacturer: string;
+  showGuaranteedSuppliers: boolean;
+  isHomeRegionsSearch: boolean;
+  showTotal: boolean;
+  priceListsParam: GetPriceListsParamAlt;
+}

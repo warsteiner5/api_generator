@@ -1,3 +1,6 @@
 import { ApiResultAlt } from './api-result-alt.interface';
 
-export type ApiResultOfInteger2Alt = ApiResultAlt & { 'Result'?: number; };
+// @ts-ignore
+export interface ApiResultOfInteger2Alt extends ApiResultAlt {
+  result: number;
+}

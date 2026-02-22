@@ -1,3 +1,7 @@
 import { SaveResultOfIntegerAlt } from './save-result-of-integer-alt.interface';
 
-export type LotSaveResultAlt = SaveResultOfIntegerAlt & { 'Customers'?: Array<SaveResultOfIntegerAlt> | null; 'Items'?: Array<SaveResultOfIntegerAlt> | null; };
+// @ts-ignore
+export interface LotSaveResultAlt extends SaveResultOfIntegerAlt {
+  customers: SaveResultOfIntegerAlt[];
+  items: SaveResultOfIntegerAlt[];
+}

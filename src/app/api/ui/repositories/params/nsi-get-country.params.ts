@@ -1,14 +1,13 @@
 import { NsiGetCountry$Params } from '../../../swagger/fn/nsi/nsi-get-country';
 
+// @ts-ignore
 export interface NsiGetCountryParams {
 }
 
-export const nsiGetCountryParamsAdapter = {
-  adapt(params?: NsiGetCountryParams): NsiGetCountry$Params {
-    if (!params) {
-      return {} as NsiGetCountry$Params;
-    }
-    return {
-    };
+export function nsiGetCountryAdapter(params?: NsiGetCountryParams): NsiGetCountry$Params {
+  if (!params) {
+    return {} as NsiGetCountry$Params;
   }
-};
+  return {
+  };
+}

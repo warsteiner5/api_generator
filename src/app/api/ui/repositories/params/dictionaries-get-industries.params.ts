@@ -1,14 +1,13 @@
 import { DictionariesGetIndustries$Params } from '../../../swagger/fn/dictionaries/dictionaries-get-industries';
 
+// @ts-ignore
 export interface DictionariesGetIndustriesParams {
 }
 
-export const dictionariesGetIndustriesParamsAdapter = {
-  adapt(params?: DictionariesGetIndustriesParams): DictionariesGetIndustries$Params {
-    if (!params) {
-      return {} as DictionariesGetIndustries$Params;
-    }
-    return {
-    };
+export function dictionariesGetIndustriesAdapter(params?: DictionariesGetIndustriesParams): DictionariesGetIndustries$Params {
+  if (!params) {
+    return {} as DictionariesGetIndustries$Params;
   }
-};
+  return {
+  };
+}

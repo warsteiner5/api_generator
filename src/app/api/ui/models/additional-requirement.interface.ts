@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface AdditionalRequirement {
   code: number;
   content: string;

@@ -1,14 +1,13 @@
 import { UsersRemoveLoginPreferences$Params } from '../../../swagger/fn/users/users-remove-login-preferences';
 
+// @ts-ignore
 export interface UsersRemoveLoginPreferencesParams {
 }
 
-export const usersRemoveLoginPreferencesParamsAdapter = {
-  adapt(params?: UsersRemoveLoginPreferencesParams): UsersRemoveLoginPreferences$Params {
-    if (!params) {
-      return {} as UsersRemoveLoginPreferences$Params;
-    }
-    return {
-    };
+export function usersRemoveLoginPreferencesAdapter(params?: UsersRemoveLoginPreferencesParams): UsersRemoveLoginPreferences$Params {
+  if (!params) {
+    return {} as UsersRemoveLoginPreferences$Params;
   }
-};
+  return {
+  };
+}

@@ -1,3 +1,6 @@
 import { UserFullNameAlt } from './user-full-name-alt.interface';
 
-export type UserNameInfoAlt = UserFullNameAlt & { 'Id'?: number; };
+// @ts-ignore
+export interface UserNameInfoAlt extends UserFullNameAlt {
+  id: number;
+}

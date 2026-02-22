@@ -1,5 +1,6 @@
 import { ParticipantOfferSourceEnum } from '../enums/participant-offer-source.enum';
 
+// @ts-ignore
 export interface TradeRecommendation {
   currencyCode: string;
   customerExternalOrganizationId: string;

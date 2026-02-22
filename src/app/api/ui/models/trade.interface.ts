@@ -12,6 +12,7 @@ import { TradeDocument } from './trade-document.interface';
 import { TradeStateEnum } from '../enums/trade-state.enum';
 import { ZmoFinanceSourceEnum } from '../enums/zmo-finance-source.enum';
 
+// @ts-ignore
 export interface Trade {
   additionalInfo: string;
   additionalRequirements: AdditionalRequirement[];

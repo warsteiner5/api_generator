@@ -1,18 +1,17 @@
 import { OrderRejectOrderBySupplier$Params } from '../../../swagger/fn/order/order-reject-order-by-supplier';
 import { RejectOrderBySupplierModelAlt } from '../../models/reject-order-by-supplier-model-alt.interface';
-import { adaptApiRejectOrderBySupplierModelAltDto } from '../../adapters/toDto/api-reject-order-by-supplier-model.adapter';
+import { apiRejectOrderBySupplierModelAltDtoAdapter } from '../../adapters/models/api-reject-order-by-supplier-model.adapter';
 
+// @ts-ignore
 export interface OrderRejectOrderBySupplierParams {
   body?: RejectOrderBySupplierModelAlt;
 }
 
-export const orderRejectOrderBySupplierParamsAdapter = {
-  adapt(params?: OrderRejectOrderBySupplierParams): OrderRejectOrderBySupplier$Params {
-    if (!params) {
-      return {} as OrderRejectOrderBySupplier$Params;
-    }
-    return {
-      body: adaptApiRejectOrderBySupplierModelAltDto(params.body),
-    };
+export function orderRejectOrderBySupplierAdapter(params?: OrderRejectOrderBySupplierParams): OrderRejectOrderBySupplier$Params {
+  if (!params) {
+    return {} as OrderRejectOrderBySupplier$Params;
   }
-};
+  return {
+      body: apiRejectOrderBySupplierModelAltDtoAdapter(params.body),
+  };
+}

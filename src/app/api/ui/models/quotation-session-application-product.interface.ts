@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface QuotationSessionApplicationProduct {
   id: number;
   name: string;

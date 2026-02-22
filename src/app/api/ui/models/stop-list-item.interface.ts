@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface StopListItem {
   banReason: string;
   bannedOrganizationId: number;

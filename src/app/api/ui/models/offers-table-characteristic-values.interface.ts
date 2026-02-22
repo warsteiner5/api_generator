@@ -1,5 +1,6 @@
 import { CompetitiveListItemStateEnum } from '../enums/competitive-list-item-state.enum';
 
+// @ts-ignore
 export interface OffersTableCharacteristicValues {
   characteristicId: number;
   comment: string;

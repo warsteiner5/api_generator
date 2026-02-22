@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface DocumentDto2 {
   base64Hash: string;
   changeDate: string;

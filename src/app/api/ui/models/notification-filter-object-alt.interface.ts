@@ -1,4 +1,12 @@
 import { BaseFilterObjectAlt } from './base-filter-object-alt.interface';
 import { NotificationTypeEnum } from '../enums/notification-type.enum';
 
-export type NotificationFilterObjectAlt = BaseFilterObjectAlt & { 'Sender'?: string | null; 'Message'?: string | null; 'Type'?: NotificationTypeEnum | null; 'UnreadOnly'?: boolean; 'IsMarketNotification'?: boolean; 'OrganizationIds'?: Array<number> | null; };
+// @ts-ignore
+export interface NotificationFilterObjectAlt extends BaseFilterObjectAlt {
+  sender: string;
+  message: string;
+  type: NotificationTypeEnum;
+  unreadOnly: boolean;
+  isMarketNotification: boolean;
+  organizationIds: number[];
+}

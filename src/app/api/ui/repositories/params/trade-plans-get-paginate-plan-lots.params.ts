@@ -1,20 +1,19 @@
 import { SearchObjectAlt } from '../../models/search-object-alt.interface';
 import { TradePlansGetPaginatePlanLots$Params } from '../../../swagger/fn/trade-plans/trade-plans-get-paginate-plan-lots';
-import { adaptApiSearchObjectAltDto } from '../../adapters/toDto/api-search-object.adapter';
+import { apiSearchObjectAltDtoAdapter } from '../../adapters/models/api-search-object.adapter';
 
+// @ts-ignore
 export interface TradePlansGetPaginatePlanLotsParams {
   id: number;
   body?: SearchObjectAlt;
 }
 
-export const tradePlansGetPaginatePlanLotsParamsAdapter = {
-  adapt(params?: TradePlansGetPaginatePlanLotsParams): TradePlansGetPaginatePlanLots$Params {
-    if (!params) {
-      return {} as TradePlansGetPaginatePlanLots$Params;
-    }
-    return {
-      id: params.id,
-      body: adaptApiSearchObjectAltDto(params.body),
-    };
+export function tradePlansGetPaginatePlanLotsAdapter(params?: TradePlansGetPaginatePlanLotsParams): TradePlansGetPaginatePlanLots$Params {
+  if (!params) {
+    return {} as TradePlansGetPaginatePlanLots$Params;
   }
-};
+  return {
+      id: params.id,
+      body: apiSearchObjectAltDtoAdapter(params.body),
+  };
+}

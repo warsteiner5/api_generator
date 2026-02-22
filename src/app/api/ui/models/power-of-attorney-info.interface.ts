@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface PowerOfAttorneyInfo {
   expiryDate: string;
   id: string;

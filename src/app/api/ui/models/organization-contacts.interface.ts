@@ -1,5 +1,6 @@
 import { Address } from './address.interface';
 
+// @ts-ignore
 export interface OrganizationContacts {
   address: Address;
   addressesSimilar: boolean;

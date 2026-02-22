@@ -1,5 +1,6 @@
 import { AvailableVatTypeEnum } from '../enums/available-vat-type.enum';
 
+// @ts-ignore
 export interface ImportedApplicationProduct {
   countryConfirmation: string;
   lotItemId: number;

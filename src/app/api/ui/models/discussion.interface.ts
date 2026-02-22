@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface Discussion {
   applicationId: number;
   chatOrganizationMembers: number[];

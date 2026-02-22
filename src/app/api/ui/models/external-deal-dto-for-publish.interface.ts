@@ -2,6 +2,7 @@ import { ExternalDealInfoDocumentForPublishAlt } from './external-deal-info-docu
 import { ExternalDealInfoItemForPublishAlt } from './external-deal-info-item-for-publish-alt.interface';
 import { ExternalDealSupplierForPublishAlt } from './external-deal-supplier-for-publish-alt.interface';
 
+// @ts-ignore
 export interface ExternalDealDtoForPublish {
   dealAgreemntDate: string;
   dealNumber: string;

@@ -5,6 +5,7 @@ import { OrderDetailAlt } from './order-detail-alt.interface';
 import { OrderDocument } from './order-document.interface';
 import { ZmoFinanceSourceEnum } from '../enums/zmo-finance-source.enum';
 
+// @ts-ignore
 export interface OrderAlt {
   additionalRequirements: AdditionalRequirementAlt[];
   comment: string;

@@ -1,18 +1,17 @@
 import { DocumentsSaveDocument$Params } from '../../../swagger/fn/documents/documents-save-document';
 import { OrganizationDocument } from '../../models/organization-document.interface';
-import { adaptApiOrganizationDocumentDto } from '../../adapters/toDto/api-organization-document-dto.adapter';
+import { apiOrganizationDocumentDtoAdapter } from '../../adapters/models/api-organization-document-dto.adapter';
 
+// @ts-ignore
 export interface DocumentsSaveDocumentParams {
   body?: OrganizationDocument;
 }
 
-export const documentsSaveDocumentParamsAdapter = {
-  adapt(params?: DocumentsSaveDocumentParams): DocumentsSaveDocument$Params {
-    if (!params) {
-      return {} as DocumentsSaveDocument$Params;
-    }
-    return {
-      body: adaptApiOrganizationDocumentDto(params.body),
-    };
+export function documentsSaveDocumentAdapter(params?: DocumentsSaveDocumentParams): DocumentsSaveDocument$Params {
+  if (!params) {
+    return {} as DocumentsSaveDocument$Params;
   }
-};
+  return {
+      body: apiOrganizationDocumentDtoAdapter(params.body),
+  };
+}

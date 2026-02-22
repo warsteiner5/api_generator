@@ -1,5 +1,6 @@
 import { HumanometrOptionsAlt } from './humanometr-options-alt.interface';
 
+// @ts-ignore
 export interface SignInModelAlt {
   appUrl: string;
   humanometrOptions: HumanometrOptionsAlt;

@@ -1,118 +1,118 @@
-import { adaptApiSearchResultOfOrderGridDtoForCustomerToUI } from '../adapters/toUI/api-search-result-of-order-grid-dto-for-customer.adapter';
-import { adaptExportFilesStatusAltToUI } from '../adapters/toUI/export-files-status-alt.adapter';
-import { adaptOrderViewToUI } from '../adapters/toUI/order-view.adapter';
 import { ApiSearchResultOfOrderGridDtoForCustomer } from '../models/api-search-result-of-order-grid-dto-for-customer.interface';
+import { apiSearchResultOfOrderGridDtoForCustomerAdapter } from '../adapters/models/api-search-result-of-order-grid-dto-for-customer.adapter';
 import { ExportFilesStatusAlt } from '../models/export-files-status-alt.interface';
+import { exportFilesStatusAltAdapter } from '../adapters/models/export-files-status-alt.adapter';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { OrderApiService } from '../../swagger/services/order-api.service';
-import { OrderApproveOrderByParticipantParams, orderApproveOrderByParticipantParamsAdapter } from './params/order-approve-order-by-participant.params';
-import { OrderApproveOrderBySupplierParams, orderApproveOrderBySupplierParamsAdapter } from './params/order-approve-order-by-supplier.params';
-import { OrderCancelOrderParams, orderCancelOrderParamsAdapter } from './params/order-cancel-order.params';
-import { OrderExportToExcelByFilterParams, orderExportToExcelByFilterParamsAdapter } from './params/order-export-to-excel-by-filter.params';
-import { OrderExportToExcelParams, orderExportToExcelParamsAdapter } from './params/order-export-to-excel.params';
-import { OrderGetFullOrderInfoForReSendParams, orderGetFullOrderInfoForReSendParamsAdapter } from './params/order-get-full-order-info-for-re-send.params';
-import { OrderGetFullOrderInfoParams, orderGetFullOrderInfoParamsAdapter } from './params/order-get-full-order-info.params';
-import { OrderGetOrdersForCustomerParams, orderGetOrdersForCustomerParamsAdapter } from './params/order-get-orders-for-customer.params';
-import { OrderGetOrdersForOperatorParams, orderGetOrdersForOperatorParamsAdapter } from './params/order-get-orders-for-operator.params';
-import { OrderGetOrdersForParticipantParams, orderGetOrdersForParticipantParamsAdapter } from './params/order-get-orders-for-participant.params';
-import { OrderGetSentToParticipantOrderCountParams, orderGetSentToParticipantOrderCountParamsAdapter } from './params/order-get-sent-to-participant-order-count.params';
-import { OrderLinkAndPublishPublicOfferOrderParams, orderLinkAndPublishPublicOfferOrderParamsAdapter } from './params/order-link-and-publish-public-offer-order.params';
-import { OrderRejectOrderByParticipantParams, orderRejectOrderByParticipantParamsAdapter } from './params/order-reject-order-by-participant.params';
-import { OrderRejectOrderBySupplierParams, orderRejectOrderBySupplierParamsAdapter } from './params/order-reject-order-by-supplier.params';
-import { OrderRemoveDraftParams, orderRemoveDraftParamsAdapter } from './params/order-remove-draft.params';
-import { OrderSaveAsDraftParams, orderSaveAsDraftParamsAdapter } from './params/order-save-as-draft.params';
-import { OrderSendOrderToParticipantGetParams, orderSendOrderToParticipantGetParamsAdapter } from './params/order-send-order-to-participant-get.params';
-import { OrderSendOrderToParticipantPostParams, orderSendOrderToParticipantPostParamsAdapter } from './params/order-send-order-to-participant-post.params';
+import { OrderApproveOrderByParticipantParams, orderApproveOrderByParticipantAdapter } from './params/order-approve-order-by-participant.params';
+import { OrderApproveOrderBySupplierParams, orderApproveOrderBySupplierAdapter } from './params/order-approve-order-by-supplier.params';
+import { OrderCancelOrderParams, orderCancelOrderAdapter } from './params/order-cancel-order.params';
+import { OrderExportToExcelByFilterParams, orderExportToExcelByFilterAdapter } from './params/order-export-to-excel-by-filter.params';
+import { OrderExportToExcelParams, orderExportToExcelAdapter } from './params/order-export-to-excel.params';
+import { OrderGetFullOrderInfoForReSendParams, orderGetFullOrderInfoForReSendAdapter } from './params/order-get-full-order-info-for-re-send.params';
+import { OrderGetFullOrderInfoParams, orderGetFullOrderInfoAdapter } from './params/order-get-full-order-info.params';
+import { OrderGetOrdersForCustomerParams, orderGetOrdersForCustomerAdapter } from './params/order-get-orders-for-customer.params';
+import { OrderGetOrdersForOperatorParams, orderGetOrdersForOperatorAdapter } from './params/order-get-orders-for-operator.params';
+import { OrderGetOrdersForParticipantParams, orderGetOrdersForParticipantAdapter } from './params/order-get-orders-for-participant.params';
+import { OrderGetSentToParticipantOrderCountParams, orderGetSentToParticipantOrderCountAdapter } from './params/order-get-sent-to-participant-order-count.params';
+import { OrderLinkAndPublishPublicOfferOrderParams, orderLinkAndPublishPublicOfferOrderAdapter } from './params/order-link-and-publish-public-offer-order.params';
+import { OrderRejectOrderByParticipantParams, orderRejectOrderByParticipantAdapter } from './params/order-reject-order-by-participant.params';
+import { OrderRejectOrderBySupplierParams, orderRejectOrderBySupplierAdapter } from './params/order-reject-order-by-supplier.params';
+import { OrderRemoveDraftParams, orderRemoveDraftAdapter } from './params/order-remove-draft.params';
+import { OrderSaveAsDraftParams, orderSaveAsDraftAdapter } from './params/order-save-as-draft.params';
+import { OrderSendOrderToParticipantGetParams, orderSendOrderToParticipantGetAdapter } from './params/order-send-order-to-participant-get.params';
+import { OrderSendOrderToParticipantPostParams, orderSendOrderToParticipantPostAdapter } from './params/order-send-order-to-participant-post.params';
 import { OrderView } from '../models/order-view.interface';
+import { orderViewAdapter } from '../adapters/models/order-view.adapter';
 
 @Injectable({ providedIn: 'root' })
 export class OrderRepository {
   private readonly _api = inject(OrderApiService);
 
   orderApproveOrderByParticipant(params?: OrderApproveOrderByParticipantParams): Observable<number> {
-    return this._api.orderApproveOrderByParticipant(orderApproveOrderByParticipantParamsAdapter.adapt(params));
+    return this._api.orderApproveOrderByParticipant(orderApproveOrderByParticipantAdapter(params));
   }
 
   orderApproveOrderBySupplier(params?: OrderApproveOrderBySupplierParams): Observable<number> {
-    return this._api.orderApproveOrderBySupplier(orderApproveOrderBySupplierParamsAdapter.adapt(params));
+    return this._api.orderApproveOrderBySupplier(orderApproveOrderBySupplierAdapter(params));
   }
 
   orderCancelOrder(params: OrderCancelOrderParams): Observable<number> {
-    return this._api.orderCancelOrder(orderCancelOrderParamsAdapter.adapt(params));
+    return this._api.orderCancelOrder(orderCancelOrderAdapter(params));
   }
 
   orderExportToExcel(params?: OrderExportToExcelParams): Observable<Blob> {
-    return this._api.orderExportToExcel(orderExportToExcelParamsAdapter.adapt(params));
+    return this._api.orderExportToExcel(orderExportToExcelAdapter(params));
   }
 
   orderExportToExcelByFilter(params?: OrderExportToExcelByFilterParams): Observable<ExportFilesStatusAlt> {
-    return this._api.orderExportToExcelByFilter(orderExportToExcelByFilterParamsAdapter.adapt(params)).pipe(
-      map((res) => adaptExportFilesStatusAltToUI(res))
+    return this._api.orderExportToExcelByFilter(orderExportToExcelByFilterAdapter(params)).pipe(
+      map((res) => exportFilesStatusAltAdapter(res))
     );
   }
 
   orderGetFullOrderInfo(params: OrderGetFullOrderInfoParams): Observable<OrderView> {
-    return this._api.orderGetFullOrderInfo(orderGetFullOrderInfoParamsAdapter.adapt(params)).pipe(
-      map((res) => adaptOrderViewToUI(res))
+    return this._api.orderGetFullOrderInfo(orderGetFullOrderInfoAdapter(params)).pipe(
+      map((res) => orderViewAdapter(res))
     );
   }
 
   orderGetFullOrderInfoForReSend(params: OrderGetFullOrderInfoForReSendParams): Observable<OrderView> {
-    return this._api.orderGetFullOrderInfoForReSend(orderGetFullOrderInfoForReSendParamsAdapter.adapt(params)).pipe(
-      map((res) => adaptOrderViewToUI(res))
+    return this._api.orderGetFullOrderInfoForReSend(orderGetFullOrderInfoForReSendAdapter(params)).pipe(
+      map((res) => orderViewAdapter(res))
     );
   }
 
   orderGetOrdersForCustomer(params?: OrderGetOrdersForCustomerParams): Observable<ApiSearchResultOfOrderGridDtoForCustomer> {
-    return this._api.orderGetOrdersForCustomer(orderGetOrdersForCustomerParamsAdapter.adapt(params)).pipe(
-      map((res) => adaptApiSearchResultOfOrderGridDtoForCustomerToUI(res))
+    return this._api.orderGetOrdersForCustomer(orderGetOrdersForCustomerAdapter(params)).pipe(
+      map((res) => apiSearchResultOfOrderGridDtoForCustomerAdapter(res))
     );
   }
 
   orderGetOrdersForOperator(params?: OrderGetOrdersForOperatorParams): Observable<ApiSearchResultOfOrderGridDtoForCustomer> {
-    return this._api.orderGetOrdersForOperator(orderGetOrdersForOperatorParamsAdapter.adapt(params)).pipe(
-      map((res) => adaptApiSearchResultOfOrderGridDtoForCustomerToUI(res))
+    return this._api.orderGetOrdersForOperator(orderGetOrdersForOperatorAdapter(params)).pipe(
+      map((res) => apiSearchResultOfOrderGridDtoForCustomerAdapter(res))
     );
   }
 
   orderGetOrdersForParticipant(params?: OrderGetOrdersForParticipantParams): Observable<ApiSearchResultOfOrderGridDtoForCustomer> {
-    return this._api.orderGetOrdersForParticipant(orderGetOrdersForParticipantParamsAdapter.adapt(params)).pipe(
-      map((res) => adaptApiSearchResultOfOrderGridDtoForCustomerToUI(res))
+    return this._api.orderGetOrdersForParticipant(orderGetOrdersForParticipantAdapter(params)).pipe(
+      map((res) => apiSearchResultOfOrderGridDtoForCustomerAdapter(res))
     );
   }
 
   orderGetSentToParticipantOrderCount(params?: OrderGetSentToParticipantOrderCountParams): Observable<Blob> {
-    return this._api.orderGetSentToParticipantOrderCount(orderGetSentToParticipantOrderCountParamsAdapter.adapt(params));
+    return this._api.orderGetSentToParticipantOrderCount(orderGetSentToParticipantOrderCountAdapter(params));
   }
 
   orderLinkAndPublishPublicOfferOrder(params?: OrderLinkAndPublishPublicOfferOrderParams): Observable<number> {
-    return this._api.orderLinkAndPublishPublicOfferOrder(orderLinkAndPublishPublicOfferOrderParamsAdapter.adapt(params));
+    return this._api.orderLinkAndPublishPublicOfferOrder(orderLinkAndPublishPublicOfferOrderAdapter(params));
   }
 
   orderRejectOrderByParticipant(params?: OrderRejectOrderByParticipantParams): Observable<number> {
-    return this._api.orderRejectOrderByParticipant(orderRejectOrderByParticipantParamsAdapter.adapt(params));
+    return this._api.orderRejectOrderByParticipant(orderRejectOrderByParticipantAdapter(params));
   }
 
   orderRejectOrderBySupplier(params?: OrderRejectOrderBySupplierParams): Observable<number> {
-    return this._api.orderRejectOrderBySupplier(orderRejectOrderBySupplierParamsAdapter.adapt(params));
+    return this._api.orderRejectOrderBySupplier(orderRejectOrderBySupplierAdapter(params));
   }
 
   orderRemoveDraft(params: OrderRemoveDraftParams): Observable<void> {
-    return this._api.orderRemoveDraft(orderRemoveDraftParamsAdapter.adapt(params));
+    return this._api.orderRemoveDraft(orderRemoveDraftAdapter(params));
   }
 
   orderSaveAsDraft(params?: OrderSaveAsDraftParams): Observable<number> {
-    return this._api.orderSaveAsDraft(orderSaveAsDraftParamsAdapter.adapt(params));
+    return this._api.orderSaveAsDraft(orderSaveAsDraftAdapter(params));
   }
 
   orderSendOrderToParticipantGet(params: OrderSendOrderToParticipantGetParams): Observable<number> {
-    return this._api.orderSendOrderToParticipantGet(orderSendOrderToParticipantGetParamsAdapter.adapt(params));
+    return this._api.orderSendOrderToParticipantGet(orderSendOrderToParticipantGetAdapter(params));
   }
 
   orderSendOrderToParticipantPost(params?: OrderSendOrderToParticipantPostParams): Observable<number> {
-    return this._api.orderSendOrderToParticipantPost(orderSendOrderToParticipantPostParamsAdapter.adapt(params));
+    return this._api.orderSendOrderToParticipantPost(orderSendOrderToParticipantPostAdapter(params));
   }
 
 }

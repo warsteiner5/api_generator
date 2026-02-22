@@ -1,3 +1,8 @@
 import { BaseFilterObjectAlt } from './base-filter-object-alt.interface';
 
-export type NicRegistrySearchFilter = BaseFilterObjectAlt & { 'ParticipantName'?: string | null; 'DateFrom'?: string | null; 'DateBy'?: string | null; };
+// @ts-ignore
+export interface NicRegistrySearchFilter extends BaseFilterObjectAlt {
+  participantName: string;
+  dateFrom: string;
+  dateBy: string;
+}

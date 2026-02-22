@@ -1,5 +1,6 @@
 import { KtruCharacteristicDto2 } from './ktru-characteristic-dto-2.interface';
 
+// @ts-ignore
 export interface Ktru {
   applicationDateEnd: string;
   applicationDateStart: string;

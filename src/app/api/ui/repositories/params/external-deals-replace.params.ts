@@ -1,20 +1,19 @@
 import { ExternalDeal } from '../../models/external-deal.interface';
 import { ExternalDealsReplace$Params } from '../../../swagger/fn/external-deals/external-deals-replace';
-import { adaptApiExternalDealDto } from '../../adapters/toDto/api-external-deal-dto.adapter';
+import { apiExternalDealDtoAdapter } from '../../adapters/models/api-external-deal-dto.adapter';
 
+// @ts-ignore
 export interface ExternalDealsReplaceParams {
   id: number;
   body?: ExternalDeal;
 }
 
-export const externalDealsReplaceParamsAdapter = {
-  adapt(params?: ExternalDealsReplaceParams): ExternalDealsReplace$Params {
-    if (!params) {
-      return {} as ExternalDealsReplace$Params;
-    }
-    return {
-      id: params.id,
-      body: adaptApiExternalDealDto(params.body),
-    };
+export function externalDealsReplaceAdapter(params?: ExternalDealsReplaceParams): ExternalDealsReplace$Params {
+  if (!params) {
+    return {} as ExternalDealsReplace$Params;
   }
-};
+  return {
+      id: params.id,
+      body: apiExternalDealDtoAdapter(params.body),
+  };
+}

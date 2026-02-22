@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface EquivalentTablePriceRegionDetail {
   deliveryPlace: string;
   kladrCode: string;

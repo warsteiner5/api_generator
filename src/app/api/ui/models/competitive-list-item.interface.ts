@@ -5,6 +5,7 @@ import { ParticipantOffer } from './participant-offer.interface';
 import { PriceRegionDetail } from './price-region-detail.interface';
 import { VatRateStateEnum } from '../enums/vat-rate-state.enum';
 
+// @ts-ignore
 export interface CompetitiveListItem {
   characteristicsValues: CharacteristicValues[];
   chatId: number;

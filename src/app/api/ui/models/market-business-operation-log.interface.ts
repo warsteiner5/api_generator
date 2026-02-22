@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface MarketBusinessOperationLog {
   comment: string;
   customer: string;

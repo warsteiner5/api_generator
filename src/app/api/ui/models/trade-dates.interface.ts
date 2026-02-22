@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface TradeDates {
   fillingApplicationEndDate: string;
   id: number;

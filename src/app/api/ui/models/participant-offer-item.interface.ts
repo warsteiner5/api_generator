@@ -4,6 +4,7 @@ import { ParticipantOfferSpecificFlagEnum } from '../enums/participant-offer-spe
 import { ParticipantOfferStateEnum } from '../enums/participant-offer-state.enum';
 import { VatRateStateEnum } from '../enums/vat-rate-state.enum';
 
+// @ts-ignore
 export interface ParticipantOfferItem {
   classificatorCode: string;
   deliveryPlace: string;

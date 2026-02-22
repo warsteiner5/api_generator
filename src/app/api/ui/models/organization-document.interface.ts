@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface OrganizationDocument {
   dateCreated: string;
   documentName: string;

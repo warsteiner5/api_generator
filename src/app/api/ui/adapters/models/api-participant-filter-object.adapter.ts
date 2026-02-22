@@ -1,0 +1,6 @@
+import { ParticipantFilterObjectAlt } from '../../models/participant-filter-object-alt.interface';
+import { ApiParticipantFilterObjectAltDto } from '../../../swagger/models/api-participant-filter-object';
+
+export const apiParticipantFilterObjectAltDtoAdapter = (source?: ParticipantFilterObjectAlt | null): ApiParticipantFilterObjectAltDto => {
+  return (source ?? {}) as ApiParticipantFilterObjectAltDto;
+}

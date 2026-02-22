@@ -1,16 +1,15 @@
 import { AdditionalAgreementsSendToParticipant$Params } from '../../../swagger/fn/additional-agreements/additional-agreements-send-to-participant';
 
+// @ts-ignore
 export interface AdditionalAgreementsSendToParticipantParams {
   id: number;
 }
 
-export const additionalAgreementsSendToParticipantParamsAdapter = {
-  adapt(params?: AdditionalAgreementsSendToParticipantParams): AdditionalAgreementsSendToParticipant$Params {
-    if (!params) {
-      return {} as AdditionalAgreementsSendToParticipant$Params;
-    }
-    return {
-      id: params.id,
-    };
+export function additionalAgreementsSendToParticipantAdapter(params?: AdditionalAgreementsSendToParticipantParams): AdditionalAgreementsSendToParticipant$Params {
+  if (!params) {
+    return {} as AdditionalAgreementsSendToParticipant$Params;
   }
-};
+  return {
+      id: params.id,
+  };
+}

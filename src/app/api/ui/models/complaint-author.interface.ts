@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ComplaintAuthor {
   employeeId: number;
   firstName: string;

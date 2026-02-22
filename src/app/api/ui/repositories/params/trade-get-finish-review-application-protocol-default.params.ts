@@ -1,18 +1,17 @@
 import { FinishReviewApplication } from '../../models/finish-review-application.interface';
 import { TradeGetFinishReviewApplicationProtocolDefault$Params } from '../../../swagger/fn/trade/trade-get-finish-review-application-protocol-default';
-import { adaptApiFinishReviewApplicationDto } from '../../adapters/toDto/api-finish-review-application-dto.adapter';
+import { apiFinishReviewApplicationDtoAdapter } from '../../adapters/models/api-finish-review-application-dto.adapter';
 
+// @ts-ignore
 export interface TradeGetFinishReviewApplicationProtocolDefaultParams {
   body?: FinishReviewApplication;
 }
 
-export const tradeGetFinishReviewApplicationProtocolDefaultParamsAdapter = {
-  adapt(params?: TradeGetFinishReviewApplicationProtocolDefaultParams): TradeGetFinishReviewApplicationProtocolDefault$Params {
-    if (!params) {
-      return {} as TradeGetFinishReviewApplicationProtocolDefault$Params;
-    }
-    return {
-      body: adaptApiFinishReviewApplicationDto(params.body),
-    };
+export function tradeGetFinishReviewApplicationProtocolDefaultAdapter(params?: TradeGetFinishReviewApplicationProtocolDefaultParams): TradeGetFinishReviewApplicationProtocolDefault$Params {
+  if (!params) {
+    return {} as TradeGetFinishReviewApplicationProtocolDefault$Params;
   }
-};
+  return {
+      body: apiFinishReviewApplicationDtoAdapter(params.body),
+  };
+}

@@ -2,4 +2,10 @@ import { ConsiderationProtocolDocument } from './consideration-protocol-document
 import { CustomerComissionProtocol } from './customer-comission-protocol.interface';
 import { ProtocolTypeEnum } from '../enums/protocol-type.enum';
 
-export type CustomerComissionProtocolWithDocs = CustomerComissionProtocol & { 'Documents'?: Array<ConsiderationProtocolDocument> | null; 'IsExported'?: boolean; 'PublishDate'?: string | null; 'ProtocolTypeEnum'?: ProtocolTypeEnum | null; };
+// @ts-ignore
+export interface CustomerComissionProtocolWithDocs extends CustomerComissionProtocol {
+  documents: ConsiderationProtocolDocument[];
+  isExported: boolean;
+  publishDate: string;
+  protocolTypeEnum: ProtocolTypeEnum;
+}

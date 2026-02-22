@@ -11,6 +11,7 @@ import { TenantFlowTypeAltEnum } from '../enums/tenant-flow-type-alt.enum';
 import { TenantRegionalProductSignSetting } from './tenant-regional-product-sign-setting.interface';
 import { TradeDocumentTypeEnum } from '../enums/trade-document-type.enum';
 
+// @ts-ignore
 export interface TenantSetting {
   allowSendToMovingPro: boolean;
   allowUserManagement: boolean;

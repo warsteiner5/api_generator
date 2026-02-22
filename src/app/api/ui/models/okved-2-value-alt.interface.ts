@@ -1,3 +1,7 @@
 import { DictionaryValueAlt } from './dictionary-value-alt.interface';
 
-export type Okved2ValueAlt = DictionaryValueAlt & { 'Actual'?: boolean; 'Comment'?: string | null; };
+// @ts-ignore
+export interface Okved2ValueAlt extends DictionaryValueAlt {
+  actual: boolean;
+  comment: string;
+}

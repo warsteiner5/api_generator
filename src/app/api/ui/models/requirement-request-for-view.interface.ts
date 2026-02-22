@@ -1,3 +1,14 @@
 import { RequirementRequest } from './requirement-request.interface';
 
-export type RequirementRequestForView = RequirementRequest & { 'PriceMin'?: number; 'PriceMax'?: number; 'PriceAverage'?: number; 'ShortOkeiName'?: string | null; 'IsEditRequirementRequestAvailable'?: boolean; 'ApprovedCharacteristicsCount'?: number | null; 'RejectedCharacteristicsCount'?: number | null; 'ConsiderationCharacteristicsCount'?: number | null; 'CompetetiveListItemCount'?: number | null; };
+// @ts-ignore
+export interface RequirementRequestForView extends RequirementRequest {
+  priceMin: number;
+  priceMax: number;
+  priceAverage: number;
+  shortOkeiName: string;
+  isEditRequirementRequestAvailable: boolean;
+  approvedCharacteristicsCount: number;
+  rejectedCharacteristicsCount: number;
+  considerationCharacteristicsCount: number;
+  competetiveListItemCount: number;
+}

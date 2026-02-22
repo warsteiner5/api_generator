@@ -1,5 +1,6 @@
 import { TradeLotCustomerDeliveryRegionCodes } from './trade-lot-customer-delivery-region-codes.interface';
 
+// @ts-ignore
 export interface TradeLotCustomer {
   applicationAmount: number;
   customerId: number;

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface OrganizationRegistrationEmployee {
   email: string;
   firstName: string;

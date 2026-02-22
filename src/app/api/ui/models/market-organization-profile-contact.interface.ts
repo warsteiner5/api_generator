@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface MarketOrganizationProfileContact {
   fio: string;
   id: number;

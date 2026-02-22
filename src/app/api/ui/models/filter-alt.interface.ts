@@ -1,5 +1,6 @@
 import { StarPurchaseTypeEnum } from '../enums/star-purchase-type.enum';
 
+// @ts-ignore
 export interface FilterAlt {
   availableTenantKeys: number[];
   businessFlowTypes: number[];

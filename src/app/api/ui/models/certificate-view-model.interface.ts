@@ -3,6 +3,7 @@ import { OrganizationCountryAltEnum } from '../enums/organization-country-alt.en
 import { PowerOfAttorneyRequiredStateEnum } from '../enums/power-of-attorney-required-state.enum';
 import { X509Certificate2Alt } from './x-509-certificate-2-alt.interface';
 
+// @ts-ignore
 export interface CertificateViewModel {
   cert: X509Certificate2Alt;
   certIssuer: string;

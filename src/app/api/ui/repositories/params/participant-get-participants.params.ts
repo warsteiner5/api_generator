@@ -1,7 +1,8 @@
 import { OrganizationTypeEnum } from '../../enums/organization-type.enum';
 import { ParticipantGetParticipants$Params } from '../../../swagger/fn/participant/participant-get-participants';
-import { adaptApiOrganizationTypeEnum } from '../../adapters/toDto/api-organization-type-enum.adapter';
+import { apiOrganizationTypeEnumAdapter } from '../../adapters/enums/api-organization-type-enum.adapter';
 
+// @ts-ignore
 export interface ParticipantGetParticipantsParams {
   id?: number;
   name?: string;
@@ -24,17 +25,16 @@ export interface ParticipantGetParticipantsParams {
   sortDirection?: string;
 }
 
-export const participantGetParticipantsParamsAdapter = {
-  adapt(params?: ParticipantGetParticipantsParams): ParticipantGetParticipants$Params {
-    if (!params) {
-      return {} as ParticipantGetParticipants$Params;
-    }
-    return {
+export function participantGetParticipantsAdapter(params?: ParticipantGetParticipantsParams): ParticipantGetParticipants$Params {
+  if (!params) {
+    return {} as ParticipantGetParticipants$Params;
+  }
+  return {
       Id: params.id,
       Name: params.name,
       Inn: params.inn,
       Address: params.address,
-      Type: adaptApiOrganizationTypeEnum(params.type),
+      Type: apiOrganizationTypeEnumAdapter(params.type),
       TradeId: params.tradeId,
       Regions: params.regions,
       ParticipantActualApplicationCountMax: params.participantActualApplicationCountMax,
@@ -49,6 +49,5 @@ export const participantGetParticipantsParamsAdapter = {
       ItemsPerPage: params.itemsPerPage,
       SortField: params.sortField,
       SortDirection: params.sortDirection,
-    };
-  }
-};
+  };
+}

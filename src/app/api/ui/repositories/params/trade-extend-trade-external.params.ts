@@ -1,18 +1,17 @@
 import { ExtendTrade } from '../../models/extend-trade.interface';
 import { TradeExtendTradeExternal$Params } from '../../../swagger/fn/trade/trade-extend-trade-external';
-import { adaptApiExtendTradeDto } from '../../adapters/toDto/api-extend-trade-dto.adapter';
+import { apiExtendTradeDtoAdapter } from '../../adapters/models/api-extend-trade-dto.adapter';
 
+// @ts-ignore
 export interface TradeExtendTradeExternalParams {
   body?: ExtendTrade;
 }
 
-export const tradeExtendTradeExternalParamsAdapter = {
-  adapt(params?: TradeExtendTradeExternalParams): TradeExtendTradeExternal$Params {
-    if (!params) {
-      return {} as TradeExtendTradeExternal$Params;
-    }
-    return {
-      body: adaptApiExtendTradeDto(params.body),
-    };
+export function tradeExtendTradeExternalAdapter(params?: TradeExtendTradeExternalParams): TradeExtendTradeExternal$Params {
+  if (!params) {
+    return {} as TradeExtendTradeExternal$Params;
   }
-};
+  return {
+      body: apiExtendTradeDtoAdapter(params.body),
+  };
+}

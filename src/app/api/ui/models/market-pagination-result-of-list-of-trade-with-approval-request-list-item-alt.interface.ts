@@ -1,5 +1,6 @@
 import { TradeWithApprovalRequestListItemAlt } from './trade-with-approval-request-list-item-alt.interface';
 
+// @ts-ignore
 export interface MarketPaginationResultOfListOfTradeWithApprovalRequestListItemAlt {
   currentPage: number;
   items: TradeWithApprovalRequestListItemAlt[];

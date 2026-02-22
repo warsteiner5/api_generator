@@ -1,3 +1,12 @@
 import { BaseFilterObjectAlt } from './base-filter-object-alt.interface';
 
-export type OutDocumentFilter = BaseFilterObjectAlt & { 'BeginDateFrom'?: string | null; 'BeginDateTo'?: string | null; 'NotificationNumber'?: string | null; 'OnlyNew'?: boolean; 'KindNames'?: Array<string> | null; 'OrganizationId'?: number; 'ExternalSystemId'?: number; };
+// @ts-ignore
+export interface OutDocumentFilter extends BaseFilterObjectAlt {
+  beginDateFrom: string;
+  beginDateTo: string;
+  notificationNumber: string;
+  onlyNew: boolean;
+  kindNames: string[];
+  organizationId: number;
+  externalSystemId: number;
+}

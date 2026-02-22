@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface KladrRegionCode {
   altCode: string;
   deliveryPlace: string;

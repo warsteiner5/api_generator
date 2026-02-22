@@ -3,6 +3,7 @@ import { DayPeriodEnum } from '../enums/day-period.enum';
 import { Field } from './field.interface';
 import { MarketSearchActionEnum } from '../enums/market-search-action.enum';
 
+// @ts-ignore
 export interface FilterObjectAlt {
   dayPeriod: DayPeriodEnum;
   daysOfWeek: DayOfWeekAltEnum[];

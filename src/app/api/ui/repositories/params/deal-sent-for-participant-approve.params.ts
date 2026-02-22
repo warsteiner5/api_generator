@@ -1,18 +1,17 @@
 import { DealSentForParticipantApprove$Params } from '../../../swagger/fn/deal/deal-sent-for-participant-approve';
 import { FullDeal } from '../../models/full-deal.interface';
-import { adaptApiFullDealDto } from '../../adapters/toDto/api-full-deal-dto.adapter';
+import { apiFullDealDtoAdapter } from '../../adapters/models/api-full-deal-dto.adapter';
 
+// @ts-ignore
 export interface DealSentForParticipantApproveParams {
   body?: FullDeal;
 }
 
-export const dealSentForParticipantApproveParamsAdapter = {
-  adapt(params?: DealSentForParticipantApproveParams): DealSentForParticipantApprove$Params {
-    if (!params) {
-      return {} as DealSentForParticipantApprove$Params;
-    }
-    return {
-      body: adaptApiFullDealDto(params.body),
-    };
+export function dealSentForParticipantApproveAdapter(params?: DealSentForParticipantApproveParams): DealSentForParticipantApprove$Params {
+  if (!params) {
+    return {} as DealSentForParticipantApprove$Params;
   }
-};
+  return {
+      body: apiFullDealDtoAdapter(params.body),
+  };
+}

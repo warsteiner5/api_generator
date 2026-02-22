@@ -1,3 +1,8 @@
 import { MarshalByRefObjectAlt } from './marshal-by-ref-object-alt.interface';
 
-export type StreamAlt = MarshalByRefObjectAlt & { 'CanTimeout'?: boolean; 'ReadTimeout'?: number; 'WriteTimeout'?: number; };
+// @ts-ignore
+export interface StreamAlt extends MarshalByRefObjectAlt {
+  canTimeout: boolean;
+  readTimeout: number;
+  writeTimeout: number;
+}

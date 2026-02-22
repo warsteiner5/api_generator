@@ -1,20 +1,19 @@
 import { PomogatorGetSettingsTag$Params } from '../../../swagger/fn/pomogator/pomogator-get-settings-tag';
 import { SearchTypeEnum } from '../../enums/search-type.enum';
-import { adaptApiSearchTypeEnum } from '../../adapters/toDto/api-search-type-enum.adapter';
+import { apiSearchTypeEnumAdapter } from '../../adapters/enums/api-search-type-enum.adapter';
 
+// @ts-ignore
 export interface PomogatorGetSettingsTagParams {
   id: string;
   type: SearchTypeEnum;
 }
 
-export const pomogatorGetSettingsTagParamsAdapter = {
-  adapt(params?: PomogatorGetSettingsTagParams): PomogatorGetSettingsTag$Params {
-    if (!params) {
-      return {} as PomogatorGetSettingsTag$Params;
-    }
-    return {
-      id: params.id,
-      type: adaptApiSearchTypeEnum(params.type),
-    };
+export function pomogatorGetSettingsTagAdapter(params?: PomogatorGetSettingsTagParams): PomogatorGetSettingsTag$Params {
+  if (!params) {
+    return {} as PomogatorGetSettingsTag$Params;
   }
-};
+  return {
+      id: params.id,
+      type: apiSearchTypeEnumAdapter(params.type),
+  };
+}

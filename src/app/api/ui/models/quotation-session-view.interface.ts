@@ -8,6 +8,7 @@ import { QuotationSessionDeal } from './quotation-session-deal.interface';
 import { VatRateStateEnum } from '../enums/vat-rate-state.enum';
 import { ZmoFinanceSourceEnum } from '../enums/zmo-finance-source.enum';
 
+// @ts-ignore
 export interface QuotationSessionView {
   autoProlongation: number;
   conditionsOfPayment: string;

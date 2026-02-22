@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface PartnerRequest {
   id: number;
   inn: string;

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface OrganizationBankInfo {
   bankAddress: string;
   bankBik: string;

@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ExternalDealInfoDocumentForPublishAlt {
   fileName: string;
   guidId: string;

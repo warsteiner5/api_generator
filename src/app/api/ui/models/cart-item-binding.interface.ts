@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface CartItemBinding {
   businessOperatorId: number;
   comment: string;

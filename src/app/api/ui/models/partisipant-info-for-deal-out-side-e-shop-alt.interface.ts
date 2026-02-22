@@ -1,5 +1,6 @@
 import { OrganizationTypeEnum } from '../enums/organization-type.enum';
 
+// @ts-ignore
 export interface PartisipantInfoForDealOutSideEShopAlt {
   address: string;
   bankBik: string;

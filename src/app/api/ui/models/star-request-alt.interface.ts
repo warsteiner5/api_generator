@@ -1,6 +1,7 @@
 import { FilterAlt } from './filter-alt.interface';
 import { FilterRequestContainerModelAlt } from './filter-request-container-model-alt.interface';
 
+// @ts-ignore
 export interface StarRequestAlt {
   and: FilterRequestContainerModelAlt[];
   filter: FilterAlt;

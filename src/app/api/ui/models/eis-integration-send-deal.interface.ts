@@ -1,6 +1,7 @@
 import { LongTermVolumeAlt } from './long-term-volume-alt.interface';
 import { MarketDealPosition } from './market-deal-position.interface';
 
+// @ts-ignore
 export interface EisIntegrationSendDeal {
   customContractNumber: string;
   dealId: number;

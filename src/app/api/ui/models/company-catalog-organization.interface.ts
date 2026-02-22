@@ -3,6 +3,7 @@ import { OrganizationCountryAltEnum } from '../enums/organization-country-alt.en
 import { OrganizationTypeEnum } from '../enums/organization-type.enum';
 import { TagView } from './tag-view.interface';
 
+// @ts-ignore
 export interface CompanyCatalogOrganization {
   country: OrganizationCountryAltEnum;
   foreignParticipantId: string;

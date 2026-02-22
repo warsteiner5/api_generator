@@ -1,20 +1,19 @@
 import { OrgSettingGetBoolOrgSetting$Params } from '../../../swagger/fn/org-setting/org-setting-get-bool-org-setting';
 import { OrgSettingNameEnum } from '../../enums/org-setting-name.enum';
-import { adaptApiOrgSettingNameEnum } from '../../adapters/toDto/api-org-setting-name-enum.adapter';
+import { apiOrgSettingNameEnumAdapter } from '../../adapters/enums/api-org-setting-name-enum.adapter';
 
+// @ts-ignore
 export interface OrgSettingGetBoolOrgSettingParams {
   organizationId: number;
   settingName: OrgSettingNameEnum;
 }
 
-export const orgSettingGetBoolOrgSettingParamsAdapter = {
-  adapt(params?: OrgSettingGetBoolOrgSettingParams): OrgSettingGetBoolOrgSetting$Params {
-    if (!params) {
-      return {} as OrgSettingGetBoolOrgSetting$Params;
-    }
-    return {
-      organizationId: params.organizationId,
-      settingName: adaptApiOrgSettingNameEnum(params.settingName),
-    };
+export function orgSettingGetBoolOrgSettingAdapter(params?: OrgSettingGetBoolOrgSettingParams): OrgSettingGetBoolOrgSetting$Params {
+  if (!params) {
+    return {} as OrgSettingGetBoolOrgSetting$Params;
   }
-};
+  return {
+      organizationId: params.organizationId,
+      settingName: apiOrgSettingNameEnumAdapter(params.settingName),
+  };
+}

@@ -5,6 +5,7 @@ import { ComplaintTypeEnum } from '../enums/complaint-type.enum';
 import { ManagerInfo } from './manager-info.interface';
 import { ParticipantOfferInfo } from './participant-offer-info.interface';
 
+// @ts-ignore
 export interface ComplaintInfo {
   closeComment: string;
   closeReason: ComplaintCloseReasonEnum;

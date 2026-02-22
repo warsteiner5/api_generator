@@ -1,18 +1,17 @@
 import { AuthVerifyLoginPassword$Params } from '../../../swagger/fn/auth/auth-verify-login-password';
 import { LoginVerifyModelAlt } from '../../models/login-verify-model-alt.interface';
-import { adaptApiLoginVerifyModelAltDto } from '../../adapters/toDto/api-login-verify-model.adapter';
+import { apiLoginVerifyModelAltDtoAdapter } from '../../adapters/models/api-login-verify-model.adapter';
 
+// @ts-ignore
 export interface AuthVerifyLoginPasswordParams {
   body?: LoginVerifyModelAlt;
 }
 
-export const authVerifyLoginPasswordParamsAdapter = {
-  adapt(params?: AuthVerifyLoginPasswordParams): AuthVerifyLoginPassword$Params {
-    if (!params) {
-      return {} as AuthVerifyLoginPassword$Params;
-    }
-    return {
-      body: adaptApiLoginVerifyModelAltDto(params.body),
-    };
+export function authVerifyLoginPasswordAdapter(params?: AuthVerifyLoginPasswordParams): AuthVerifyLoginPassword$Params {
+  if (!params) {
+    return {} as AuthVerifyLoginPassword$Params;
   }
-};
+  return {
+      body: apiLoginVerifyModelAltDtoAdapter(params.body),
+  };
+}

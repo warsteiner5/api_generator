@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface B2BCategory {
   code: string;
   description: string;

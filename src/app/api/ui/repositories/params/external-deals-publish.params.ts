@@ -1,18 +1,17 @@
 import { ExternalDeal } from '../../models/external-deal.interface';
 import { ExternalDealsPublish$Params } from '../../../swagger/fn/external-deals/external-deals-publish';
-import { adaptApiExternalDealDto } from '../../adapters/toDto/api-external-deal-dto.adapter';
+import { apiExternalDealDtoAdapter } from '../../adapters/models/api-external-deal-dto.adapter';
 
+// @ts-ignore
 export interface ExternalDealsPublishParams {
   body?: ExternalDeal;
 }
 
-export const externalDealsPublishParamsAdapter = {
-  adapt(params?: ExternalDealsPublishParams): ExternalDealsPublish$Params {
-    if (!params) {
-      return {} as ExternalDealsPublish$Params;
-    }
-    return {
-      body: adaptApiExternalDealDto(params.body),
-    };
+export function externalDealsPublishAdapter(params?: ExternalDealsPublishParams): ExternalDealsPublish$Params {
+  if (!params) {
+    return {} as ExternalDealsPublish$Params;
   }
-};
+  return {
+      body: apiExternalDealDtoAdapter(params.body),
+  };
+}

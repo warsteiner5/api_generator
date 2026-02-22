@@ -1,0 +1,105 @@
+import { ApiMarketSearchResultDto } from '../../../swagger/models/api-market-search-result-dto';
+import { MarketSearchResult } from '../../models/market-search-result.interface';
+import { countryAdapter } from './country.adapter';
+import { dictionaryItemAltAdapter } from './dictionary-item-alt.adapter';
+import { marketDealStateEnumAdapter } from '../enums/market-deal-state-enum.adapter';
+import { organizationCountryAltEnumAdapter } from '../enums/organization-country-alt-enum.adapter';
+import { participantOfferSourceEnumAdapter } from '../enums/participant-offer-source-enum.adapter';
+import { participantOfferStateEnumAdapter } from '../enums/participant-offer-state-enum.adapter';
+import { priceListStateEnumAdapter } from '../enums/price-list-state-enum.adapter';
+import { purchaseMethodTypeEnumAdapter } from '../enums/purchase-method-type-enum.adapter';
+import { regionKladrAdapter } from './region-kladr.adapter';
+import { retradingTypeEnumAdapter } from '../enums/retrading-type-enum.adapter';
+import { tagViewAdapter } from './tag-view.adapter';
+import { tradeBusinessFlowEnumAdapter } from '../enums/trade-business-flow-enum.adapter';
+import { vatRateStateEnumAdapter } from '../enums/vat-rate-state-enum.adapter';
+
+export const marketSearchResultAdapter = (source?: ApiMarketSearchResultDto | null): MarketSearchResult => {
+  return {
+    applicationsCount: source?.ApplicationsCount,
+    auctionEndDate: source?.AuctionEndDate,
+    barCode: source?.BarCode,
+    bidsCount: source?.BidsCount,
+    businessFlowType: source?.BusinessFlowType === null ? undefined : tradeBusinessFlowEnumAdapter(source?.BusinessFlowType),
+    country: source?.Country === null ? undefined : countryAdapter(source?.Country),
+    currencyCode: source?.CurrencyCode,
+    customerExternalOrganizationId: source?.CustomerExternalOrganizationId,
+    customerGuid: source?.CustomerGuid,
+    customerId: source?.CustomerId,
+    customerName: source?.CustomerName,
+    customerSource: source?.CustomerSource,
+    deliveryKladrRegionName: source?.DeliveryKladrRegionName,
+    deliveryKladrs: source?.DeliveryKladrs?.map((item) => dictionaryItemAltAdapter(item)),
+    discussionId: source?.DiscussionId,
+    duringDays: source?.DuringDays,
+    externalId: source?.ExternalId,
+    externalSystemId: source?.ExternalSystemId,
+    fillingApplicationEndDate: source?.FillingApplicationEndDate,
+    hosts: source?.Hosts,
+    id: source?.Id,
+    isAnyApplicationExists: source?.IsAnyApplicationExists,
+    isContractSigningSuspended: source?.IsContractSigningSuspended,
+    isCustomerAcceptByOkeiOffers: source?.IsCustomerAcceptByOkeiOffers,
+    isCustomerAcceptOnlyManualOffers: source?.IsCustomerAcceptOnlyManualOffers,
+    isExternal: source?.IsExternal,
+    isFavorite: source?.IsFavorite,
+    isForOnlySmb: source?.IsForOnlySmb,
+    isFoundMatchHighlightlInInnerScope: source?.IsFoundMatchHighlightlInInnerScope,
+    isFromManufacturer: source?.IsFromManufacturer,
+    isImmediate: source?.IsImmediate,
+    isImportPhaseout: source?.IsImportPhaseout,
+    isPhysicalPerson: source?.IsPhysicalPerson,
+    isRetradingEnabled: source?.IsRetradingEnabled,
+    isSmallBusinessEntity: source?.IsSmallBusinessEntity,
+    isSuspended: source?.IsSuspended,
+    isUnitBidding: source?.IsUnitBidding,
+    lastModificationDate: source?.LastModificationDate,
+    lotId: source?.LotId,
+    lotItemsCount: source?.LotItemsCount,
+    minQuantity: source?.MinQuantity,
+    name: source?.Name,
+    nameWithHighlight: source?.NameWithHighlight,
+    offerTerms: source?.OfferTerms,
+    okeiCode: source?.OkeiCode,
+    okpd2Code: source?.Okpd2Code,
+    okpd2Description: source?.Okpd2Description,
+    onlyOneRetradingBidAllowed: source?.OnlyOneRetradingBidAllowed,
+    organizationCountry: source?.OrganizationCountry === null ? undefined : organizationCountryAltEnumAdapter(source?.OrganizationCountry),
+    organizerExternalOrganizationId: source?.OrganizerExternalOrganizationId,
+    organizerGuid: source?.OrganizerGuid,
+    organizerId: source?.OrganizerId,
+    organizerName: source?.OrganizerName,
+    participant: source?.Participant,
+    participantOfferSource: source?.ParticipantOfferSource === null ? undefined : participantOfferSourceEnumAdapter(source?.ParticipantOfferSource),
+    participantOfferState: source?.ParticipantOfferState === null ? undefined : participantOfferStateEnumAdapter(source?.ParticipantOfferState),
+    pictureGuid: source?.PictureGuid,
+    planNumber: source?.PlanNumber,
+    planPositionNumber: source?.PlanPositionNumber,
+    price: source?.Price,
+    priceListId: source?.PriceListId,
+    priceListState: source?.PriceListState === null ? undefined : priceListStateEnumAdapter(source?.PriceListState),
+    productDescription: source?.ProductDescription,
+    publicationDate: source?.PublicationDate,
+    purchaseMethodType: source?.PurchaseMethodType === null ? undefined : purchaseMethodTypeEnumAdapter(source?.PurchaseMethodType),
+    quantity: source?.Quantity,
+    regionalProductSignTenantId: source?.RegionalProductSignTenantId,
+    regions: source?.Regions?.map((item) => regionKladrAdapter(item)),
+    retradingEndDate: source?.RetradingEndDate,
+    retradingStartDate: source?.RetradingStartDate,
+    retradingType: source?.RetradingType === null ? undefined : retradingTypeEnumAdapter(source?.RetradingType),
+    sellerCode: source?.SellerCode,
+    shortOkeiName: source?.ShortOkeiName,
+    shouldRedirectToAnotherTenant: source?.ShouldRedirectToAnotherTenant,
+    state: source?.State === null ? undefined : marketDealStateEnumAdapter(source?.State),
+    stateString: source?.StateString,
+    tags: source?.Tags?.map((item) => tagViewAdapter(item)),
+    tradeNumber: source?.TradeNumber,
+    uniqueId: source?.UniqueId,
+    unitPrice: source?.UnitPrice,
+    unitPriceInCurrency: source?.UnitPriceInCurrency,
+    vatRate: source?.VatRate,
+    vatRateDescription: source?.VatRateDescription,
+    vatRateState: source?.VatRateState === null ? undefined : vatRateStateEnumAdapter(source?.VatRateState),
+    vendorCode: source?.VendorCode,
+  };
+}

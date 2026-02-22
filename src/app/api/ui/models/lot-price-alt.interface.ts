@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface LotPriceAlt {
   sumVat: number;
   sumWithVat: number;

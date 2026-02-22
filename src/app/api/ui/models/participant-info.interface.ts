@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ParticipantInfo {
   address: string;
   email: string;

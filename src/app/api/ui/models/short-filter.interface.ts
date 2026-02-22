@@ -1,3 +1,21 @@
 import { BaseFilterObjectAlt } from './base-filter-object-alt.interface';
 
-export type ShortFilter = BaseFilterObjectAlt & { 'Keyword'?: string | null; 'PriceListId'?: number; 'States'?: Array<number> | null; 'MinPrice'?: number | null; 'MaxPrice'?: number | null; 'OkeiCode'?: string | null; 'CountryCodes'?: Array<string> | null; 'RegionCodes'?: Array<string> | null; 'CategoryIds'?: Array<string> | null; 'AvailableTenantIds'?: Array<number> | null; 'Okpd2Codes'?: Array<string> | null; 'WhiteList'?: Array<number> | null; 'BlackList'?: Array<number> | null; 'OrganizationId'?: number | null; 'HasYmlData'?: boolean | null; 'RegionalProductSignEmpty'?: boolean | null; };
+// @ts-ignore
+export interface ShortFilter extends BaseFilterObjectAlt {
+  keyword: string;
+  priceListId: number;
+  states: number[];
+  minPrice: number;
+  maxPrice: number;
+  okeiCode: string;
+  countryCodes: string[];
+  regionCodes: string[];
+  categoryIds: string[];
+  availableTenantIds: number[];
+  okpd2Codes: string[];
+  whiteList: number[];
+  blackList: number[];
+  organizationId: number;
+  hasYmlData: boolean;
+  regionalProductSignEmpty: boolean;
+}

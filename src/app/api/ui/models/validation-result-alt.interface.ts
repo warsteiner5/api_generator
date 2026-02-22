@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface ValidationResultAlt {
   errors: { [key: string]: Array<string>; };
   isCritical: boolean;

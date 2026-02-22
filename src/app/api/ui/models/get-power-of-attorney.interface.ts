@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface GetPowerOfAttorney {
   dealId: number;
   signedData: string;

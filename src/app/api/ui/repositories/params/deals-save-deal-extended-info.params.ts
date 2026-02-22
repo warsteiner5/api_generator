@@ -1,18 +1,17 @@
 import { DealExtendedInfoAlt } from '../../models/deal-extended-info-alt.interface';
 import { DealsSaveDealExtendedInfo$Params } from '../../../swagger/fn/deals/deals-save-deal-extended-info';
-import { adaptApiDealExtendedInfoAltDto } from '../../adapters/toDto/api-deal-extended-info.adapter';
+import { apiDealExtendedInfoAltDtoAdapter } from '../../adapters/models/api-deal-extended-info.adapter';
 
+// @ts-ignore
 export interface DealsSaveDealExtendedInfoParams {
   body?: DealExtendedInfoAlt;
 }
 
-export const dealsSaveDealExtendedInfoParamsAdapter = {
-  adapt(params?: DealsSaveDealExtendedInfoParams): DealsSaveDealExtendedInfo$Params {
-    if (!params) {
-      return {} as DealsSaveDealExtendedInfo$Params;
-    }
-    return {
-      body: adaptApiDealExtendedInfoAltDto(params.body),
-    };
+export function dealsSaveDealExtendedInfoAdapter(params?: DealsSaveDealExtendedInfoParams): DealsSaveDealExtendedInfo$Params {
+  if (!params) {
+    return {} as DealsSaveDealExtendedInfo$Params;
   }
-};
+  return {
+      body: apiDealExtendedInfoAltDtoAdapter(params.body),
+  };
+}

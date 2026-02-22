@@ -1,5 +1,6 @@
 import { ExternalDealTradeProduct } from './external-deal-trade-product.interface';
 
+// @ts-ignore
 export interface ExternalDealTradeInfo {
   price: number;
   priceWithVat: number;

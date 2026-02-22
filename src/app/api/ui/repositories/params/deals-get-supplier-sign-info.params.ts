@@ -1,22 +1,21 @@
 import { DealObjectEnum } from '../../enums/deal-object.enum';
 import { DealsGetSupplierSignInfo$Params } from '../../../swagger/fn/deals/deals-get-supplier-sign-info';
-import { adaptApiDealObjectEnum } from '../../adapters/toDto/api-deal-object-enum.adapter';
+import { apiDealObjectEnumAdapter } from '../../adapters/enums/api-deal-object-enum.adapter';
 
+// @ts-ignore
 export interface DealsGetSupplierSignInfoParams {
   dealId?: number;
   fileGuid?: string;
   dealObject?: DealObjectEnum;
 }
 
-export const dealsGetSupplierSignInfoParamsAdapter = {
-  adapt(params?: DealsGetSupplierSignInfoParams): DealsGetSupplierSignInfo$Params {
-    if (!params) {
-      return {} as DealsGetSupplierSignInfo$Params;
-    }
-    return {
+export function dealsGetSupplierSignInfoAdapter(params?: DealsGetSupplierSignInfoParams): DealsGetSupplierSignInfo$Params {
+  if (!params) {
+    return {} as DealsGetSupplierSignInfo$Params;
+  }
+  return {
       DealId: params.dealId,
       FileGuid: params.fileGuid,
-      DealObject: adaptApiDealObjectEnum(params.dealObject),
-    };
-  }
-};
+      DealObject: apiDealObjectEnumAdapter(params.dealObject),
+  };
+}

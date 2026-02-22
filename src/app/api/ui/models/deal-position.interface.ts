@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface DealPosition {
   id: number;
   lotItemId: number;

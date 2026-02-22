@@ -1,14 +1,13 @@
 import { UploadPut$Params } from '../../../swagger/fn/upload/upload-put';
 
+// @ts-ignore
 export interface UploadPutParams {
 }
 
-export const uploadPutParamsAdapter = {
-  adapt(params?: UploadPutParams): UploadPut$Params {
-    if (!params) {
-      return {} as UploadPut$Params;
-    }
-    return {
-    };
+export function uploadPutAdapter(params?: UploadPutParams): UploadPut$Params {
+  if (!params) {
+    return {} as UploadPut$Params;
   }
-};
+  return {
+  };
+}

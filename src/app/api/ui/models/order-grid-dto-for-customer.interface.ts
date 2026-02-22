@@ -1,4 +1,15 @@
 import { OrderGrid } from './order-grid.interface';
 import { OrganizationCountryAltEnum } from '../enums/organization-country-alt.enum';
 
-export type OrderGridDtoForCustomer = OrderGrid & { 'ParticipantNameAndInn'?: string | null; 'ParticipantName'?: string | null; 'ParticipantInn'?: string | null; 'ParticipantOrganizationCountry'?: OrganizationCountryAltEnum; 'CustomerFullName'?: string | null; 'CustomerOrganizationId'?: number; 'ZmoFzTypeString'?: string | null; 'ZmoFinanceSourceString'?: string | null; 'ParentNotTookPlaceTradeId'?: number | null; };
+// @ts-ignore
+export interface OrderGridDtoForCustomer extends OrderGrid {
+  participantNameAndInn: string;
+  participantName: string;
+  participantInn: string;
+  participantOrganizationCountry: OrganizationCountryAltEnum;
+  customerFullName: string;
+  customerOrganizationId: number;
+  zmoFzTypeString: string;
+  zmoFinanceSourceString: string;
+  parentNotTookPlaceTradeId: number;
+}

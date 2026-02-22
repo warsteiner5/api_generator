@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface CatalogItem {
   id: number;
   name: string;

@@ -5,4 +5,22 @@ import { SafeCertContextHandleAlt } from './safe-cert-context-handle-alt.interfa
 import { X500DistinguishedNameAlt } from './x-500-distinguished-name-alt.interface';
 import { X509CertificateAlt } from './x-509-certificate-alt.interface';
 
-export type X509Certificate2Alt = X509CertificateAlt & { 'Archived'?: boolean; 'Extensions'?: Array<any> | null; 'FriendlyName'?: string | null; 'IssuerName'?: X500DistinguishedNameAlt | null; 'NotAfter'?: string; 'NotBefore'?: string; 'HasPrivateKey'?: boolean; 'PrivateKey'?: AsymmetricAlgorithmAlt | null; 'PublicKey'?: PublicKeyAlt | null; 'RawData'?: string | null; 'SerialNumber'?: string | null; 'SubjectName'?: X500DistinguishedNameAlt | null; 'SignatureAlgorithm'?: OidAlt | null; 'Thumbprint'?: string | null; 'Version'?: number; 'CertContext'?: SafeCertContextHandleAlt | null; };
+// @ts-ignore
+export interface X509Certificate2Alt extends X509CertificateAlt {
+  archived: boolean;
+  extensions: any[];
+  friendlyName: string;
+  issuerName: X500DistinguishedNameAlt;
+  notAfter: string;
+  notBefore: string;
+  hasPrivateKey: boolean;
+  privateKey: AsymmetricAlgorithmAlt;
+  publicKey: PublicKeyAlt;
+  rawData: string;
+  serialNumber: string;
+  subjectName: X500DistinguishedNameAlt;
+  signatureAlgorithm: OidAlt;
+  thumbprint: string;
+  version: number;
+  certContext: SafeCertContextHandleAlt;
+}

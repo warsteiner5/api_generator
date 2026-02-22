@@ -1,6 +1,7 @@
 import { BiddingInfoTypeAltEnum } from '../enums/bidding-info-type-alt.enum';
 import { BiddingParticipationStatusAltEnum } from '../enums/bidding-participation-status-alt.enum';
 
+// @ts-ignore
 export interface CompletedBiddingInfoAlt {
   bestBid: number;
   comment: string;

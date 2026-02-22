@@ -1,5 +1,6 @@
 import { TradeDocumentTypeEnum } from '../enums/trade-document-type.enum';
 
+// @ts-ignore
 export interface DocumentAlt {
   fileGuid: string;
   isSigned: boolean;

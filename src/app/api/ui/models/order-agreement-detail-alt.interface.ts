@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface OrderAgreementDetailAlt {
   price: number;
   priceOfferId: number;

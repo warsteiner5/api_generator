@@ -1,3 +1,4 @@
+// @ts-ignore
 export interface KtruCharacteristicValue {
   concreteValue: number;
   formatId: number;

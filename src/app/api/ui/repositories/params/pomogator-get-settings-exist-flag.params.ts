@@ -1,14 +1,13 @@
 import { PomogatorGetSettingsExistFlag$Params } from '../../../swagger/fn/pomogator/pomogator-get-settings-exist-flag';
 
+// @ts-ignore
 export interface PomogatorGetSettingsExistFlagParams {
 }
 
-export const pomogatorGetSettingsExistFlagParamsAdapter = {
-  adapt(params?: PomogatorGetSettingsExistFlagParams): PomogatorGetSettingsExistFlag$Params {
-    if (!params) {
-      return {} as PomogatorGetSettingsExistFlag$Params;
-    }
-    return {
-    };
+export function pomogatorGetSettingsExistFlagAdapter(params?: PomogatorGetSettingsExistFlagParams): PomogatorGetSettingsExistFlag$Params {
+  if (!params) {
+    return {} as PomogatorGetSettingsExistFlag$Params;
   }
-};
+  return {
+  };
+}

@@ -1,5 +1,6 @@
 import { StandardTypeAltEnum } from '../enums/standard-type-alt.enum';
 
+// @ts-ignore
 export interface StandartAlt {
   code: string;
   dateEnd: string;

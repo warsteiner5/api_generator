@@ -1,3 +1,6 @@
 import { ApprovalRequestGetOrCreateRequestAlt } from './approval-request-get-or-create-request-alt.interface';
 
-export type ApprovalRequestWithCommentRequestAlt = ApprovalRequestGetOrCreateRequestAlt & { 'Comment'?: string | null; };
+// @ts-ignore
+export interface ApprovalRequestWithCommentRequestAlt extends ApprovalRequestGetOrCreateRequestAlt {
+  comment: string;
+}

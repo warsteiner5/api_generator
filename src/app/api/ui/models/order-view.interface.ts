@@ -11,6 +11,7 @@ import { TradeBusinessFlowEnum } from '../enums/trade-business-flow.enum';
 import { ViewApplicationsForTrade } from './view-applications-for-trade.interface';
 import { ZmoFinanceSourceEnum } from '../enums/zmo-finance-source.enum';
 
+// @ts-ignore
 export interface OrderView {
   applicationId: number;
   applicationSet: ViewApplicationsForTrade;
