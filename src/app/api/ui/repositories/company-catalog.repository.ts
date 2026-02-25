@@ -3,13 +3,14 @@ import { CompanyCatalogGetIndustryGroupsParams, companyCatalogGetIndustryGroupsA
 import { CompanyCatalogGetIndustryParams, companyCatalogGetIndustryAdapter } from './params/company-catalog-get-industry.params';
 import { CompanyCatalogGetOrganizationsForAutocompleteParams, companyCatalogGetOrganizationsForAutocompleteAdapter } from './params/company-catalog-get-organizations-for-autocomplete.params';
 import { CompanyCatalogOrganization } from '../models/company-catalog-organization.interface';
-import { companyCatalogOrganizationAdapter } from '../adapters/models/company-catalog-organization.adapter';
 import { CompanyCatalogSearchCompaniesParams, companyCatalogSearchCompaniesAdapter } from './params/company-catalog-search-companies.params';
 import { CompanyCatalogSearchFavoriteCompaniesParams, companyCatalogSearchFavoriteCompaniesAdapter } from './params/company-catalog-search-favorite-companies.params';
 import { Industry } from '../models/industry.interface';
 import { industryAdapter } from '../adapters/models/industry.adapter';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfCompanyCatalogOrganizationAdapter } from '../adapters/models/market-pagination-result-of-list-of-company-catalog-organization.adapter';
 import { Observable } from 'rxjs';
 import { PaginationResultOfOrganizationForAutocomplete } from '../models/pagination-result-of-organization-for-autocomplete.interface';
 import { paginationResultOfOrganizationForAutocompleteAdapter } from '../adapters/models/pagination-result-of-organization-for-autocomplete.adapter';
@@ -36,15 +37,15 @@ export class CompanyCatalogRepository {
     );
   }
 
-  companyCatalogSearchCompanies(params?: CompanyCatalogSearchCompaniesParams): Observable<CompanyCatalogOrganization[]> {
+  companyCatalogSearchCompanies(params?: CompanyCatalogSearchCompaniesParams): Observable<MarketPaginationResult<CompanyCatalogOrganization[]>> {
     return this._api.companyCatalogSearchCompanies(companyCatalogSearchCompaniesAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => companyCatalogOrganizationAdapter(item)))
+      map((res) => marketPaginationResultOfListOfCompanyCatalogOrganizationAdapter(res?.data))
     );
   }
 
-  companyCatalogSearchFavoriteCompanies(params?: CompanyCatalogSearchFavoriteCompaniesParams): Observable<CompanyCatalogOrganization[]> {
+  companyCatalogSearchFavoriteCompanies(params?: CompanyCatalogSearchFavoriteCompaniesParams): Observable<MarketPaginationResult<CompanyCatalogOrganization[]>> {
     return this._api.companyCatalogSearchFavoriteCompanies(companyCatalogSearchFavoriteCompaniesAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => companyCatalogOrganizationAdapter(item)))
+      map((res) => marketPaginationResultOfListOfCompanyCatalogOrganizationAdapter(res?.data))
     );
   }
 

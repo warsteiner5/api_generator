@@ -461,6 +461,7 @@ export * from './market-pagination-result-of-list-of-trade-plan-market-short.int
 export * from './market-pagination-result-of-list-of-trade-recommendation.interface';
 export * from './market-pagination-result-of-list-of-trade-with-approval-request-list-item-alt.interface';
 export * from './market-pagination-result-of-list-of-transaction-short.interface';
+export * from './market-pagination-result.interface';
 export * from './market-participant-offer-info.interface';
 export * from './market-participant-offer.interface';
 export * from './market-partner-organization.interface';

@@ -1,9 +1,5 @@
+import { MarketPaginationResult } from './market-pagination-result.interface';
 import { TagOperatorView } from './tag-operator-view.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfListOfTagOperatorView {
-  currentPage: number;
-  items: TagOperatorView[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfListOfTagOperatorView = MarketPaginationResult<TagOperatorView[]>;

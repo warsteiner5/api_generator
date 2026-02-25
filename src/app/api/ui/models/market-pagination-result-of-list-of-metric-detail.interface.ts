@@ -1,9 +1,5 @@
+import { MarketPaginationResult } from './market-pagination-result.interface';
 import { MetricDetail } from './metric-detail.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfListOfMetricDetail {
-  currentPage: number;
-  items: MetricDetail[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfListOfMetricDetail = MarketPaginationResult<MetricDetail[]>;

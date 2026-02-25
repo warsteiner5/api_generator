@@ -3,6 +3,7 @@ import {
   buildIndexContent,
   collectEntitiesContext,
   extractReferencedLocalEntities,
+  InterfaceEntityMeta,
   LocalEntityMeta,
   getEnumFileBase,
   getModelFileBase,
@@ -13,6 +14,9 @@ import {
   UI_MODELS_DIR,
   writeManagedDirectory
 } from './shared';
+
+const MARKET_PAGINATION_RESULT_GENERIC_NAME = 'MarketPaginationResult';
+const MARKET_PAGINATION_RESULT_GENERIC_FILE_BASE = 'market-pagination-result';
 
 function addEntityImport(
   imports: Map<string, string>,
@@ -37,11 +41,52 @@ function addEntityImport(
   imports.set(entity.localName, `import { ${entity.localName} } from '${importPath}';`);
 }
 
+function getStandardMarketPaginationItemsType(interfaceEntity: InterfaceEntityMeta): string | undefined {
+  if (!interfaceEntity.localName.startsWith('MarketPaginationResultOf')) {
+    return undefined;
+  }
+
+  const itemsProperty = interfaceEntity.properties.find((property) => property.name === 'items');
+  if (!itemsProperty) {
+    return undefined;
+  }
+
+  const standardFieldNames = new Set(['currentPage', 'items', 'total', 'totalPages']);
+  const entityFieldNames = new Set(interfaceEntity.properties.map((property) => property.name));
+
+  for (const requiredFieldName of standardFieldNames) {
+    if (!entityFieldNames.has(requiredFieldName)) {
+      return undefined;
+    }
+  }
+
+  if (interfaceEntity.properties.some((property) => !standardFieldNames.has(property.name))) {
+    return undefined;
+  }
+
+  return itemsProperty.typeText;
+}
+
 async function generateModels(): Promise<void> {
   const context = await collectEntitiesContext();
   const files = new Map<string, string>();
   const exportsForIndex: string[] = [];
   let generatedCount = 0;
+
+  files.set(
+    `${MARKET_PAGINATION_RESULT_GENERIC_FILE_BASE}.interface.ts`,
+    [
+      '// @ts-ignore',
+      `export interface ${MARKET_PAGINATION_RESULT_GENERIC_NAME}<TItems> {`,
+      '  currentPage: number;',
+      '  items: TItems;',
+      '  total: number;',
+      '  totalPages: number;',
+      '}',
+      ''
+    ].join('\n')
+  );
+  exportsForIndex.push(`./${MARKET_PAGINATION_RESULT_GENERIC_FILE_BASE}.interface`);
 
   for (const interfaceEntity of context.interfaces) {
     if (isExcludedMarketJsonResult(interfaceEntity.swaggerName)) {
@@ -52,6 +97,35 @@ async function generateModels(): Promise<void> {
     const fileName = `${fileBase}.interface.ts`;
     const imports = new Map<string, string>();
     const propertyLines: string[] = [];
+    const standardMarketPaginationItemsType = getStandardMarketPaginationItemsType(interfaceEntity);
+
+    if (standardMarketPaginationItemsType) {
+      const normalizedItemsType = normalizeTypeText(standardMarketPaginationItemsType, context.bySwaggerName);
+      imports.set(
+        MARKET_PAGINATION_RESULT_GENERIC_NAME,
+        `import { ${MARKET_PAGINATION_RESULT_GENERIC_NAME} } from './${MARKET_PAGINATION_RESULT_GENERIC_FILE_BASE}.interface';`
+      );
+
+      const referencedEntities = extractReferencedLocalEntities(normalizedItemsType, context.byLocalName);
+      for (const referencedEntity of referencedEntities) {
+        addEntityImport(imports, referencedEntity, interfaceEntity.localName);
+      }
+
+      const importLines = [...imports.values()].sort((left, right) => left.localeCompare(right));
+      const contentLines: string[] = [];
+      if (importLines.length) {
+        contentLines.push(...importLines, '');
+      }
+      contentLines.push('// @ts-ignore');
+      contentLines.push(
+        `export type ${interfaceEntity.localName} = ${MARKET_PAGINATION_RESULT_GENERIC_NAME}<${normalizedItemsType}>;`
+      );
+
+      files.set(fileName, `${contentLines.join('\n')}\n`);
+      exportsForIndex.push(`./${fileBase}.interface`);
+      generatedCount += 1;
+      continue;
+    }
 
     for (const property of interfaceEntity.properties) {
       const propertyType = normalizeTypeText(property.typeText, context.bySwaggerName);

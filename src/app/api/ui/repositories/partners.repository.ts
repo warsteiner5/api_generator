@@ -1,8 +1,9 @@
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfPartnerAdapter } from '../adapters/models/market-pagination-result-of-list-of-partner.adapter';
 import { Observable } from 'rxjs';
 import { Partner } from '../models/partner.interface';
-import { partnerAdapter } from '../adapters/models/partner.adapter';
 import { PartnerOrganization } from '../models/partner-organization.interface';
 import { partnerOrganizationAdapter } from '../adapters/models/partner-organization.adapter';
 import { PartnerRequest } from '../models/partner-request.interface';
@@ -64,9 +65,9 @@ export class PartnersRepository {
     );
   }
 
-  partnersSearch(params?: PartnersSearchParams): Observable<Partner[]> {
+  partnersSearch(params?: PartnersSearchParams): Observable<MarketPaginationResult<Partner[]>> {
     return this._api.partnersSearch(partnersSearchAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => partnerAdapter(item)))
+      map((res) => marketPaginationResultOfListOfPartnerAdapter(res?.data))
     );
   }
 

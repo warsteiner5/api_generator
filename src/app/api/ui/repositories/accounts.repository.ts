@@ -23,14 +23,15 @@ import { bankingDetailsAdapter } from '../adapters/models/banking-details.adapte
 import { ExternalUserInfoAlt } from '../models/external-user-info-alt.interface';
 import { externalUserInfoAltAdapter } from '../adapters/models/external-user-info-alt.adapter';
 import { FinDocument } from '../models/fin-document.interface';
-import { finDocumentAdapter } from '../adapters/models/fin-document.adapter';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfFinDocumentAdapter } from '../adapters/models/market-pagination-result-of-list-of-fin-document.adapter';
+import { marketPaginationResultOfListOfTransactionShortAdapter } from '../adapters/models/market-pagination-result-of-list-of-transaction-short.adapter';
 import { Observable } from 'rxjs';
 import { Transaction } from '../models/transaction.interface';
 import { transactionAdapter } from '../adapters/models/transaction.adapter';
 import { TransactionShort } from '../models/transaction-short.interface';
-import { transactionShortAdapter } from '../adapters/models/transaction-short.adapter';
 
 @Injectable({ providedIn: 'root' })
 export class AccountsRepository {
@@ -86,9 +87,9 @@ export class AccountsRepository {
     );
   }
 
-  accountsGetDocumentsByAccount(params: AccountsGetDocumentsByAccountParams): Observable<FinDocument[]> {
+  accountsGetDocumentsByAccount(params: AccountsGetDocumentsByAccountParams): Observable<MarketPaginationResult<FinDocument[]>> {
     return this._api.accountsGetDocumentsByAccount(accountsGetDocumentsByAccountAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => finDocumentAdapter(item)))
+      map((res) => marketPaginationResultOfListOfFinDocumentAdapter(res?.data))
     );
   }
 
@@ -128,9 +129,9 @@ export class AccountsRepository {
     );
   }
 
-  accountsGetTransactionsByAccount(params: AccountsGetTransactionsByAccountParams): Observable<TransactionShort[]> {
+  accountsGetTransactionsByAccount(params: AccountsGetTransactionsByAccountParams): Observable<MarketPaginationResult<TransactionShort[]>> {
     return this._api.accountsGetTransactionsByAccount(accountsGetTransactionsByAccountAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => transactionShortAdapter(item)))
+      map((res) => marketPaginationResultOfListOfTransactionShortAdapter(res?.data))
     );
   }
 

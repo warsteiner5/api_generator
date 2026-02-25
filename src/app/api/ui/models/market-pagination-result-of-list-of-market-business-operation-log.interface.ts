@@ -1,9 +1,5 @@
 import { MarketBusinessOperationLog } from './market-business-operation-log.interface';
+import { MarketPaginationResult } from './market-pagination-result.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfListOfMarketBusinessOperationLog {
-  currentPage: number;
-  items: MarketBusinessOperationLog[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfListOfMarketBusinessOperationLog = MarketPaginationResult<MarketBusinessOperationLog[]>;

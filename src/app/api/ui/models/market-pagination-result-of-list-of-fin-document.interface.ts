@@ -1,9 +1,5 @@
 import { FinDocument } from './fin-document.interface';
+import { MarketPaginationResult } from './market-pagination-result.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfListOfFinDocument {
-  currentPage: number;
-  items: FinDocument[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfListOfFinDocument = MarketPaginationResult<FinDocument[]>;

@@ -1,9 +1,5 @@
 import { MarketOfferShortModel } from './market-offer-short-model.interface';
+import { MarketPaginationResult } from './market-pagination-result.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfListOfMarketOfferShortModel {
-  currentPage: number;
-  items: MarketOfferShortModel[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfListOfMarketOfferShortModel = MarketPaginationResult<MarketOfferShortModel[]>;

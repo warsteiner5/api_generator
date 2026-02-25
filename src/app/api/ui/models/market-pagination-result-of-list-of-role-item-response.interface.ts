@@ -1,9 +1,5 @@
+import { MarketPaginationResult } from './market-pagination-result.interface';
 import { RoleItemResponse } from './role-item-response.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfListOfRoleItemResponse {
-  currentPage: number;
-  items: RoleItemResponse[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfListOfRoleItemResponse = MarketPaginationResult<RoleItemResponse[]>;

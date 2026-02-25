@@ -1,5 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfQuotationSessionItemAdapter } from '../adapters/models/market-pagination-result-of-list-of-quotation-session-item.adapter';
 import { Observable } from 'rxjs';
 import { PublishApplicationResultAlt } from '../models/publish-application-result-alt.interface';
 import { publishApplicationResultAltAdapter } from '../adapters/models/publish-application-result-alt.adapter';
@@ -24,7 +26,6 @@ import { QuotationSessionImportDetailsResponseAlt } from '../models/quotation-se
 import { quotationSessionImportDetailsResponseAltAdapter } from '../adapters/models/quotation-session-import-details-response-alt.adapter';
 import { QuotationSessionInitParams, quotationSessionInitAdapter } from './params/quotation-session-init.params';
 import { QuotationSessionItem } from '../models/quotation-session-item.interface';
-import { quotationSessionItemAdapter } from '../adapters/models/quotation-session-item.adapter';
 import { QuotationSessionJoinParams, quotationSessionJoinAdapter } from './params/quotation-session-join.params';
 import { QuotationSessionSaveAsDraftParams, quotationSessionSaveAsDraftAdapter } from './params/quotation-session-save-as-draft.params';
 import { QuotationSessionSpeedUpParams, quotationSessionSpeedUpAdapter } from './params/quotation-session-speed-up.params';
@@ -83,9 +84,9 @@ export class QuotationSessionRepository {
     );
   }
 
-  quotationSessionGetItems(params: QuotationSessionGetItemsParams): Observable<QuotationSessionItem[]> {
+  quotationSessionGetItems(params: QuotationSessionGetItemsParams): Observable<MarketPaginationResult<QuotationSessionItem[]>> {
     return this._api.quotationSessionGetItems(quotationSessionGetItemsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => quotationSessionItemAdapter(item)))
+      map((res) => marketPaginationResultOfListOfQuotationSessionItemAdapter(res?.data))
     );
   }
 

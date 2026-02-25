@@ -2,10 +2,11 @@ import { BidApiService } from '../../swagger/services/bid-api.service';
 import { BidCreateParams, bidCreateAdapter } from './params/bid-create.params';
 import { BidGetBidsParams, bidGetBidsAdapter } from './params/bid-get-bids.params';
 import { BidInfoAlt } from '../models/bid-info-alt.interface';
-import { bidInfoAltAdapter } from '../adapters/models/bid-info-alt.adapter';
 import { BidSignParams, bidSignAdapter } from './params/bid-sign.params';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfBidInfoOfAltAdapter } from '../adapters/models/market-pagination-result-of-bid-info-of-alt.adapter';
 import { Observable } from 'rxjs';
 import { SignBidResponseAlt } from '../models/sign-bid-response-alt.interface';
 import { signBidResponseAltAdapter } from '../adapters/models/sign-bid-response-alt.adapter';
@@ -18,9 +19,9 @@ export class BidRepository {
     return this._api.bidCreate(bidCreateAdapter(params));
   }
 
-  bidGetBids(params: BidGetBidsParams): Observable<BidInfoAlt[]> {
+  bidGetBids(params: BidGetBidsParams): Observable<MarketPaginationResult<BidInfoAlt[]>> {
     return this._api.bidGetBids(bidGetBidsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => bidInfoAltAdapter(item)))
+      map((res) => marketPaginationResultOfBidInfoOfAltAdapter(res?.data))
     );
   }
 

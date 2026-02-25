@@ -21,6 +21,7 @@ import {
 const SWAGGER_SERVICES_GLOB = 'src/app/api/swagger/services/*.ts';
 const UI_REPOSITORIES_DIR = path.resolve('src/app/api/ui/repositories');
 const UI_REPOSITORIES_PARAMS_DIR = path.join(UI_REPOSITORIES_DIR, 'params');
+const MARKET_PAGINATION_RESULT_GENERIC_NAME = 'MarketPaginationResult';
 
 interface ParamUsage {
   swaggerTypeName: string;
@@ -40,6 +41,7 @@ interface RepositoryMethodMeta {
   hasMap: boolean;
   mapExpression?: string;
   returnUiEntities: string[];
+  usesMarketPaginationResultGeneric: boolean;
   toUiAdapterImports: Map<string, string>;
 }
 
@@ -137,20 +139,128 @@ function getEntityByTypeText(typeText: string, context: EntitiesContext): LocalE
 }
 
 function getPropertyTypeFromTypeAlias(typeText: string, propertyName: string): string | undefined {
-  const escapedName = propertyName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const patterns = [
-    new RegExp(`['"]${escapedName}['"]\\??\\s*:\\s*([^;]+);`),
-    new RegExp(`\\b${escapedName}\\??\\s*:\\s*([^;]+);`)
-  ];
+  const stripOuterParentheses = (value: string): string => {
+    let result = value.trim();
+    while (result.startsWith('(') && result.endsWith(')')) {
+      let depth = 0;
+      let wrapsWhole = true;
+      for (let index = 0; index < result.length; index += 1) {
+        const char = result[index];
+        if (char === '(') {
+          depth += 1;
+        } else if (char === ')') {
+          depth -= 1;
+          if (depth === 0 && index < result.length - 1) {
+            wrapsWhole = false;
+            break;
+          }
+        }
+      }
 
-  for (const pattern of patterns) {
-    const match = typeText.match(pattern);
-    if (match?.[1]) {
-      return match[1].trim();
+      if (!wrapsWhole) {
+        break;
+      }
+
+      result = result.slice(1, -1).trim();
+    }
+
+    return result;
+  };
+
+  const objectLikeParts = splitTopLevel(typeText, '&')
+    .map((part) => stripOuterParentheses(part))
+    .filter((part) => part.startsWith('{') && part.endsWith('}'));
+
+  for (const objectLikePart of objectLikeParts) {
+    const inner = objectLikePart.slice(1, -1).trim();
+    for (const fragment of splitTopLevel(inner, ';')) {
+      const trimmed = fragment.trim();
+      if (!trimmed) {
+        continue;
+      }
+
+      const colonParts = splitTopLevel(trimmed, ':');
+      if (colonParts.length < 2) {
+        continue;
+      }
+
+      const rawName = colonParts[0].trim();
+      const rawType = colonParts.slice(1).join(':').trim();
+      const nameMatch = rawName.match(/^['"]?([^'"]+)['"]?\?$/) ?? rawName.match(/^['"]?([^'"]+)['"]?$/);
+      const currentPropertyName = nameMatch?.[1];
+
+      if (currentPropertyName === propertyName && rawType) {
+        return rawType;
+      }
     }
   }
 
   return undefined;
+}
+
+function stripOuterParentheses(text: string): string {
+  let value = text.trim();
+  while (value.startsWith('(') && value.endsWith(')')) {
+    let depth = 0;
+    let wrapsWhole = true;
+    for (let index = 0; index < value.length; index += 1) {
+      const char = value[index];
+      if (char === '(') {
+        depth += 1;
+      } else if (char === ')') {
+        depth -= 1;
+        if (depth === 0 && index < value.length - 1) {
+          wrapsWhole = false;
+          break;
+        }
+      }
+    }
+
+    if (!wrapsWhole) {
+      break;
+    }
+
+    value = value.slice(1, -1).trim();
+  }
+
+  return value;
+}
+
+function parseIndexSignatureObjectType(
+  typeText: string
+): { keyType: 'string' | 'number'; valueType: string } | undefined {
+  const unionParts = splitTopLevel(typeText.replace(/\s+/g, ' ').trim(), '|')
+    .map((part) => part.trim())
+    .filter(Boolean);
+  const candidateParts = unionParts.filter((part) => part !== 'null' && part !== 'undefined');
+  if (candidateParts.length !== 1) {
+    return undefined;
+  }
+
+  const single = stripOuterParentheses(candidateParts[0]);
+  if (!single.startsWith('{') || !single.endsWith('}')) {
+    return undefined;
+  }
+
+  const members = splitTopLevel(single.slice(1, -1), ';')
+    .map((part) => part.trim())
+    .filter(Boolean);
+  if (members.length !== 1) {
+    return undefined;
+  }
+
+  const match = members[0].match(/^\[\s*[A-Za-z_$][A-Za-z0-9_$]*\s*:\s*(string|number)\s*\]\s*:\s*(.+)$/);
+  if (!match?.[1] || !match[2]) {
+    return undefined;
+  }
+
+  const keyType = match[1] as 'string' | 'number';
+  const valueType = match[2].trim();
+  if (!valueType) {
+    return undefined;
+  }
+
+  return { keyType, valueType };
 }
 
 function getPrimitiveDefaultExpression(typeText: string): string {
@@ -164,6 +274,38 @@ function getPrimitiveDefaultExpression(typeText: string): string {
     return 'false';
   }
   return 'null as any';
+}
+
+function getStandardMarketPaginationItemsType(entity: LocalEntityMeta | undefined): string | undefined {
+  if (!entity || entity.kind !== 'interface') {
+    return undefined;
+  }
+
+  if (
+    !entity.swaggerName.startsWith('ApiMarketPaginationResultOf') &&
+    !entity.localName.startsWith('MarketPaginationResultOf')
+  ) {
+    return undefined;
+  }
+
+  const itemsProperty = entity.properties.find((property) => property.name === 'items');
+  if (!itemsProperty) {
+    return undefined;
+  }
+
+  const standardFieldNames = new Set(['currentPage', 'items', 'total', 'totalPages']);
+  const entityFieldNames = new Set(entity.properties.map((property) => property.name));
+  for (const requiredFieldName of standardFieldNames) {
+    if (!entityFieldNames.has(requiredFieldName)) {
+      return undefined;
+    }
+  }
+
+  if (entity.properties.some((property) => !standardFieldNames.has(property.name))) {
+    return undefined;
+  }
+
+  return itemsProperty.typeText;
 }
 
 function addUiAdapterImport(
@@ -224,26 +366,42 @@ function buildReturnMappingPlan(
       entity.swaggerName.startsWith('ApiMarketPaginationResultOf') ||
       entity.localName.startsWith('MarketPaginationResultOf')
     ) {
-      const itemsProperty = entity.properties.find((property) => property.name === 'items');
-      if (itemsProperty) {
-        return buildReturnMappingPlan(
-          itemsProperty.typeText,
-          `${sourceExpression}?.items`,
-          context,
-          adapterImports
-        );
-      }
-
-      const invdataProperty = entity.properties.find((property) => property.name === 'invdata');
-      if (invdataProperty) {
-        return buildReturnMappingPlan(
-          invdataProperty.typeText,
-          `${sourceExpression}?.invdata`,
-          context,
-          adapterImports
-        );
-      }
+      const adapterName = addUiAdapterImport(adapterImports, entity);
+      const standardItemsType = getStandardMarketPaginationItemsType(entity);
+      const uiType = standardItemsType
+        ? `${MARKET_PAGINATION_RESULT_GENERIC_NAME}<${normalizeTypeText(standardItemsType, context.bySwaggerName)}>`
+        : entity.localName;
+      return {
+        uiType,
+        expression: `${adapterName}(${sourceExpression})`,
+        adapterImports
+      };
     }
+  }
+
+  const indexSignatureObject = parseIndexSignatureObjectType(swaggerTypeText);
+  if (indexSignatureObject) {
+    const valueSourceExpression = 'value';
+    const valuePlan = buildReturnMappingPlan(
+      indexSignatureObject.valueType,
+      valueSourceExpression,
+      context,
+      adapterImports
+    );
+    const uiType = `{ [key: ${indexSignatureObject.keyType}]: ${valuePlan.uiType} }`;
+    const sourceObjectExpression = `(${sourceExpression} ?? {})`;
+    const typedKeyCast = indexSignatureObject.keyType === 'number' ? ' as unknown as number' : '';
+
+    return {
+      uiType,
+      expression:
+        `Object.keys(${sourceObjectExpression}).reduce((acc, key) => { ` +
+        `const value = ${sourceObjectExpression}[key]; ` +
+        `acc[key${typedKeyCast}] = ${valuePlan.expression}; ` +
+        'return acc; }, ' +
+        `{} as ${uiType})`,
+      adapterImports: valuePlan.adapterImports
+    };
   }
 
   const analysis = analyzePropertyType(swaggerTypeText, context);
@@ -410,6 +568,7 @@ function buildMethodMeta(
     hasMap,
     mapExpression,
     returnUiEntities,
+    usesMarketPaginationResultGeneric: uiReturnType.includes(`${MARKET_PAGINATION_RESULT_GENERIC_NAME}<`),
     toUiAdapterImports
   };
 }
@@ -659,6 +818,13 @@ async function generateRepositories(): Promise<void> {
 
       for (const localName of methodMeta.returnUiEntities) {
         addUiEntityImport(imports, localName, context, '../models', '../enums');
+      }
+
+      if (methodMeta.usesMarketPaginationResultGeneric) {
+        imports.set(
+          MARKET_PAGINATION_RESULT_GENERIC_NAME,
+          `import { ${MARKET_PAGINATION_RESULT_GENERIC_NAME} } from '../models/market-pagination-result.interface';`
+        );
       }
 
       for (const [key, importLine] of methodMeta.toUiAdapterImports.entries()) {

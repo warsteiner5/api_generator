@@ -3,7 +3,6 @@ import { employeeAdapter } from '../adapters/models/employee.adapter';
 import { EmployeeDataToSign } from '../models/employee-data-to-sign.interface';
 import { employeeDataToSignAdapter } from '../adapters/models/employee-data-to-sign.adapter';
 import { EmployeeItem } from '../models/employee-item.interface';
-import { employeeItemAdapter } from '../adapters/models/employee-item.adapter';
 import { EmployeesApiService } from '../../swagger/services/employees-api.service';
 import { EmployeesBlockParams, employeesBlockAdapter } from './params/employees-block.params';
 import { EmployeesGetEmployeeDataToSignParams, employeesGetEmployeeDataToSignAdapter } from './params/employees-get-employee-data-to-sign.params';
@@ -15,6 +14,8 @@ import { EmployeesUpdateParams, employeesUpdateAdapter } from './params/employee
 import { EmployeesUpdateSignedEmployeeParams, employeesUpdateSignedEmployeeAdapter } from './params/employees-update-signed-employee.params';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfEmployeeItemAdapter } from '../adapters/models/market-pagination-result-of-list-of-employee-item.adapter';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -39,9 +40,9 @@ export class EmployeesRepository {
     );
   }
 
-  employeesSearch(params?: EmployeesSearchParams): Observable<EmployeeItem[]> {
+  employeesSearch(params?: EmployeesSearchParams): Observable<MarketPaginationResult<EmployeeItem[]>> {
     return this._api.employeesSearch(employeesSearchAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => employeeItemAdapter(item)))
+      map((res) => marketPaginationResultOfListOfEmployeeItemAdapter(res?.data))
     );
   }
 

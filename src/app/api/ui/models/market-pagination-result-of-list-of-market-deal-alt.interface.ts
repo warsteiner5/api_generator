@@ -1,9 +1,5 @@
 import { MarketDealAlt } from './market-deal-alt.interface';
+import { MarketPaginationResult } from './market-pagination-result.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfListOfMarketDealAlt {
-  currentPage: number;
-  items: MarketDealAlt[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfListOfMarketDealAlt = MarketPaginationResult<MarketDealAlt[]>;

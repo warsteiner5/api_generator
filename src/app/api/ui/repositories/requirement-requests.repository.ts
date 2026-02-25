@@ -14,6 +14,8 @@ import { IdNameAlt } from '../models/id-name-alt.interface';
 import { idNameAltAdapter } from '../adapters/models/id-name-alt.adapter';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfRequirementRequestsSearchResultAdapter } from '../adapters/models/market-pagination-result-of-list-of-requirement-requests-search-result.adapter';
 import { MemoryStreamAlt } from '../models/memory-stream-alt.interface';
 import { memoryStreamAltAdapter } from '../adapters/models/memory-stream-alt.adapter';
 import { Observable } from 'rxjs';
@@ -22,6 +24,7 @@ import { offersTableAdapter } from '../adapters/models/offers-table.adapter';
 import { ParticipantOfferItem } from '../models/participant-offer-item.interface';
 import { participantOfferItemAdapter } from '../adapters/models/participant-offer-item.adapter';
 import { ReadItemInfoAlt } from '../models/read-item-info-alt.interface';
+import { readItemInfoAltAdapter } from '../adapters/models/read-item-info-alt.adapter';
 import { RequirementRequestForView } from '../models/requirement-request-for-view.interface';
 import { requirementRequestForViewAdapter } from '../adapters/models/requirement-request-for-view.adapter';
 import { RequirementRequestsAddChatMessageParams, requirementRequestsAddChatMessageAdapter } from './params/requirement-requests-add-chat-message.params';
@@ -59,7 +62,6 @@ import { RequirementRequestsRejectRequirementRequestCharacteristicParams, requir
 import { RequirementRequestsSaveAsDraftParams, requirementRequestsSaveAsDraftAdapter } from './params/requirement-requests-save-as-draft.params';
 import { RequirementRequestsSearchParams, requirementRequestsSearchAdapter } from './params/requirement-requests-search.params';
 import { RequirementRequestsSearchResult } from '../models/requirement-requests-search-result.interface';
-import { requirementRequestsSearchResultAdapter } from '../adapters/models/requirement-requests-search-result.adapter';
 import { RequirementRequestsUpdateEquivalentTableParams, requirementRequestsUpdateEquivalentTableAdapter } from './params/requirement-requests-update-equivalent-table.params';
 import { RequirementRequestsUpdateRequirementRequestStatesParams, requirementRequestsUpdateRequirementRequestStatesAdapter } from './params/requirement-requests-update-requirement-request-states.params';
 
@@ -171,9 +173,9 @@ export class RequirementRequestsRepository {
     );
   }
 
-  requirementRequestsGetReadItemInfo(params: RequirementRequestsGetReadItemInfoParams): Observable<({ [key: string]: Array<ReadItemInfoAlt>> {
+  requirementRequestsGetReadItemInfo(params: RequirementRequestsGetReadItemInfoParams): Observable<{ [key: string]: ReadItemInfoAlt[] }> {
     return this._api.requirementRequestsGetReadItemInfo(requirementRequestsGetReadItemInfoAdapter(params)).pipe(
-      map((res) => res?.data)
+      map((res) => Object.keys((res?.data ?? {})).reduce((acc, key) => { const value = (res?.data ?? {})[key]; acc[key] = (value ?? []).map((item) => readItemInfoAltAdapter(item)); return acc; }, {} as { [key: string]: ReadItemInfoAlt[] }))
     );
   }
 
@@ -207,9 +209,9 @@ export class RequirementRequestsRepository {
     );
   }
 
-  requirementRequestsPublicSearch(params?: RequirementRequestsPublicSearchParams): Observable<RequirementRequestsSearchResult[]> {
+  requirementRequestsPublicSearch(params?: RequirementRequestsPublicSearchParams): Observable<MarketPaginationResult<RequirementRequestsSearchResult[]>> {
     return this._api.requirementRequestsPublicSearch(requirementRequestsPublicSearchAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => requirementRequestsSearchResultAdapter(item)))
+      map((res) => marketPaginationResultOfListOfRequirementRequestsSearchResultAdapter(res?.data))
     );
   }
 
@@ -241,9 +243,9 @@ export class RequirementRequestsRepository {
     );
   }
 
-  requirementRequestsSearch(params?: RequirementRequestsSearchParams): Observable<RequirementRequestsSearchResult[]> {
+  requirementRequestsSearch(params?: RequirementRequestsSearchParams): Observable<MarketPaginationResult<RequirementRequestsSearchResult[]>> {
     return this._api.requirementRequestsSearch(requirementRequestsSearchAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => requirementRequestsSearchResultAdapter(item)))
+      map((res) => marketPaginationResultOfListOfRequirementRequestsSearchResultAdapter(res?.data))
     );
   }
 

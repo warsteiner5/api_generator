@@ -1,5 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfQuotationSessionItemAdapter } from '../adapters/models/market-pagination-result-of-list-of-quotation-session-item.adapter';
 import { Observable } from 'rxjs';
 import { PublishApplicationResultAlt } from '../models/publish-application-result-alt.interface';
 import { publishApplicationResultAltAdapter } from '../adapters/models/publish-application-result-alt.adapter';
@@ -8,7 +10,6 @@ import { quotationSessionAltAdapter } from '../adapters/models/quotation-session
 import { QuotationSessionImportDetailsResponseAlt } from '../models/quotation-session-import-details-response-alt.interface';
 import { quotationSessionImportDetailsResponseAltAdapter } from '../adapters/models/quotation-session-import-details-response-alt.adapter';
 import { QuotationSessionItem } from '../models/quotation-session-item.interface';
-import { quotationSessionItemAdapter } from '../adapters/models/quotation-session-item.adapter';
 import { QuotationSessionNewApiService } from '../../swagger/services/quotation-session-new-api.service';
 import { QuotationSessionNewCancelParams, quotationSessionNewCancelAdapter } from './params/quotation-session-new-cancel.params';
 import { QuotationSessionNewCreateParams, quotationSessionNewCreateAdapter } from './params/quotation-session-new-create.params';
@@ -57,9 +58,9 @@ export class QuotationSessionNewRepository {
     );
   }
 
-  quotationSessionNewGetItems(params: QuotationSessionNewGetItemsParams): Observable<QuotationSessionItem[]> {
+  quotationSessionNewGetItems(params: QuotationSessionNewGetItemsParams): Observable<MarketPaginationResult<QuotationSessionItem[]>> {
     return this._api.quotationSessionNewGetItems(quotationSessionNewGetItemsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => quotationSessionItemAdapter(item)))
+      map((res) => marketPaginationResultOfListOfQuotationSessionItemAdapter(res?.data))
     );
   }
 

@@ -1,5 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfNicRegistryGridAdapter } from '../adapters/models/market-pagination-result-of-list-of-nic-registry-grid.adapter';
 import { NicRegistryApiService } from '../../swagger/services/nic-registry-api.service';
 import { NicRegistryDeleteParams, nicRegistryDeleteAdapter } from './params/nic-registry-delete.params';
 import { NicRegistryEntry } from '../models/nic-registry-entry.interface';
@@ -9,7 +11,6 @@ import { NicRegistryGetAgreementForCurrentUserParams, nicRegistryGetAgreementFor
 import { NicRegistryGetByIdParams, nicRegistryGetByIdAdapter } from './params/nic-registry-get-by-id.params';
 import { NicRegistryGetModelForCreateParams, nicRegistryGetModelForCreateAdapter } from './params/nic-registry-get-model-for-create.params';
 import { NicRegistryGrid } from '../models/nic-registry-grid.interface';
-import { nicRegistryGridAdapter } from '../adapters/models/nic-registry-grid.adapter';
 import { NicRegistrySaveParams, nicRegistrySaveAdapter } from './params/nic-registry-save.params';
 import { NicRegistrySearchParams, nicRegistrySearchAdapter } from './params/nic-registry-search.params';
 import { NicRegistryTradeInfo } from '../models/nic-registry-trade-info.interface';
@@ -54,9 +55,9 @@ export class NicRegistryRepository {
     );
   }
 
-  nicRegistrySearch(params?: NicRegistrySearchParams): Observable<NicRegistryGrid[]> {
+  nicRegistrySearch(params?: NicRegistrySearchParams): Observable<MarketPaginationResult<NicRegistryGrid[]>> {
     return this._api.nicRegistrySearch(nicRegistrySearchAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => nicRegistryGridAdapter(item)))
+      map((res) => marketPaginationResultOfListOfNicRegistryGridAdapter(res?.data))
     );
   }
 

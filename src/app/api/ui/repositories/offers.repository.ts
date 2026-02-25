@@ -3,7 +3,9 @@ import { batchProcessingResultAltAdapter } from '../adapters/models/batch-proces
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { MarketOfferShortModel } from '../models/market-offer-short-model.interface';
-import { marketOfferShortModelAdapter } from '../adapters/models/market-offer-short-model.adapter';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfMarketOfferShortModelAdapter } from '../adapters/models/market-pagination-result-of-list-of-market-offer-short-model.adapter';
+import { marketPaginationResultOfListOfMarketParticipantOfferInfoAdapter } from '../adapters/models/market-pagination-result-of-list-of-market-participant-offer-info.adapter';
 import { MarketParticipantOfferInfo } from '../models/market-participant-offer-info.interface';
 import { marketParticipantOfferInfoAdapter } from '../adapters/models/market-participant-offer-info.adapter';
 import { Observable } from 'rxjs';
@@ -112,9 +114,9 @@ export class OffersRepository {
     );
   }
 
-  offersGetOffers(params?: OffersGetOffersParams): Observable<MarketParticipantOfferInfo[]> {
+  offersGetOffers(params?: OffersGetOffersParams): Observable<MarketPaginationResult<MarketParticipantOfferInfo[]>> {
     return this._api.offersGetOffers(offersGetOffersAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => marketParticipantOfferInfoAdapter(item)))
+      map((res) => marketPaginationResultOfListOfMarketParticipantOfferInfoAdapter(res?.data))
     );
   }
 
@@ -156,9 +158,9 @@ export class OffersRepository {
     );
   }
 
-  offersSearch(params?: OffersSearchParams): Observable<MarketOfferShortModel[]> {
+  offersSearch(params?: OffersSearchParams): Observable<MarketPaginationResult<MarketOfferShortModel[]>> {
     return this._api.offersSearch(offersSearchAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => marketOfferShortModelAdapter(item)))
+      map((res) => marketPaginationResultOfListOfMarketOfferShortModelAdapter(res?.data))
     );
   }
 

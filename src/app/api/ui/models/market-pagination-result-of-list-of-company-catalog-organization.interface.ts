@@ -1,9 +1,5 @@
 import { CompanyCatalogOrganization } from './company-catalog-organization.interface';
+import { MarketPaginationResult } from './market-pagination-result.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfListOfCompanyCatalogOrganization {
-  currentPage: number;
-  items: CompanyCatalogOrganization[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfListOfCompanyCatalogOrganization = MarketPaginationResult<CompanyCatalogOrganization[]>;

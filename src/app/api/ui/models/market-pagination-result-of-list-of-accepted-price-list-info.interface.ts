@@ -1,9 +1,5 @@
 import { AcceptedPriceListInfo } from './accepted-price-list-info.interface';
+import { MarketPaginationResult } from './market-pagination-result.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfListOfAcceptedPriceListInfo {
-  currentPage: number;
-  items: AcceptedPriceListInfo[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfListOfAcceptedPriceListInfo = MarketPaginationResult<AcceptedPriceListInfo[]>;

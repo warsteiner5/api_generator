@@ -11,6 +11,8 @@ import { FilterSaveFilterParams, filterSaveFilterAdapter } from './params/filter
 import { FilterUpdateFilterParams, filterUpdateFilterAdapter } from './params/filter-update-filter.params';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfFilterObjectAltAdapter } from '../adapters/models/market-pagination-result-of-list-of-filter-object-alt.adapter';
 import { MarketSearchRawModelAlt } from '../models/market-search-raw-model-alt.interface';
 import { marketSearchRawModelAltAdapter } from '../adapters/models/market-search-raw-model-alt.adapter';
 import { Observable } from 'rxjs';
@@ -29,9 +31,9 @@ export class FilterRepository {
     return this._api.filterDisableBanner(filterDisableBannerAdapter(params));
   }
 
-  filterFindMyFilledFilters(params?: FilterFindMyFilledFiltersParams): Observable<FilterObjectAlt[]> {
+  filterFindMyFilledFilters(params?: FilterFindMyFilledFiltersParams): Observable<MarketPaginationResult<FilterObjectAlt[]>> {
     return this._api.filterFindMyFilledFilters(filterFindMyFilledFiltersAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => filterObjectAltAdapter(item)))
+      map((res) => marketPaginationResultOfListOfFilterObjectAltAdapter(res?.data))
     );
   }
 

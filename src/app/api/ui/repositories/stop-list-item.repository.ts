@@ -1,14 +1,15 @@
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfStopListItemAdapter } from '../adapters/models/market-pagination-result-of-list-of-stop-list-item.adapter';
+import { marketPaginationResultOfListOfStopListItemExtendedAdapter } from '../adapters/models/market-pagination-result-of-list-of-stop-list-item-extended.adapter';
 import { Observable } from 'rxjs';
 import { StopListItem } from '../models/stop-list-item.interface';
-import { stopListItemAdapter } from '../adapters/models/stop-list-item.adapter';
 import { StopListItemApiService } from '../../swagger/services/stop-list-item-api.service';
 import { StopListItemBanSupplierParams, stopListItemBanSupplierAdapter } from './params/stop-list-item-ban-supplier.params';
 import { StopListItemCheckIfBannedParams, stopListItemCheckIfBannedAdapter } from './params/stop-list-item-check-if-banned.params';
 import { StopListItemCheckIfIamBannedParams, stopListItemCheckIfIamBannedAdapter } from './params/stop-list-item-check-if-iam-banned.params';
 import { StopListItemExtended } from '../models/stop-list-item-extended.interface';
-import { stopListItemExtendedAdapter } from '../adapters/models/stop-list-item-extended.adapter';
 import { StopListItemGetPaginateStopListItemExtetndedsParams, stopListItemGetPaginateStopListItemExtetndedsAdapter } from './params/stop-list-item-get-paginate-stop-list-item-extetndeds.params';
 import { StopListItemGetPaginateStopListItemsParams, stopListItemGetPaginateStopListItemsAdapter } from './params/stop-list-item-get-paginate-stop-list-items.params';
 import { StopListItemUnbanSupplierParams, stopListItemUnbanSupplierAdapter } from './params/stop-list-item-unban-supplier.params';
@@ -30,15 +31,15 @@ export class StopListItemRepository {
     return this._api.stopListItemCheckIfIamBanned(stopListItemCheckIfIamBannedAdapter(params));
   }
 
-  stopListItemGetPaginateStopListItemExtetndeds(params?: StopListItemGetPaginateStopListItemExtetndedsParams): Observable<StopListItemExtended[]> {
+  stopListItemGetPaginateStopListItemExtetndeds(params?: StopListItemGetPaginateStopListItemExtetndedsParams): Observable<MarketPaginationResult<StopListItemExtended[]>> {
     return this._api.stopListItemGetPaginateStopListItemExtetndeds(stopListItemGetPaginateStopListItemExtetndedsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => stopListItemExtendedAdapter(item)))
+      map((res) => marketPaginationResultOfListOfStopListItemExtendedAdapter(res?.data))
     );
   }
 
-  stopListItemGetPaginateStopListItems(params?: StopListItemGetPaginateStopListItemsParams): Observable<StopListItem[]> {
+  stopListItemGetPaginateStopListItems(params?: StopListItemGetPaginateStopListItemsParams): Observable<MarketPaginationResult<StopListItem[]>> {
     return this._api.stopListItemGetPaginateStopListItems(stopListItemGetPaginateStopListItemsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => stopListItemAdapter(item)))
+      map((res) => marketPaginationResultOfListOfStopListItemAdapter(res?.data))
     );
   }
 

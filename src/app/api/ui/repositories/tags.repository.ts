@@ -1,10 +1,12 @@
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfTagOperatorViewAdapter } from '../adapters/models/market-pagination-result-of-list-of-tag-operator-view.adapter';
+import { marketPaginationResultOfListOfTagParticipantViewAdapter } from '../adapters/models/market-pagination-result-of-list-of-tag-participant-view.adapter';
 import { Observable } from 'rxjs';
 import { TagOperatorView } from '../models/tag-operator-view.interface';
 import { tagOperatorViewAdapter } from '../adapters/models/tag-operator-view.adapter';
 import { TagParticipantView } from '../models/tag-participant-view.interface';
-import { tagParticipantViewAdapter } from '../adapters/models/tag-participant-view.adapter';
 import { TagsApiService } from '../../swagger/services/tags-api.service';
 import { TagsDeleteTagParams, tagsDeleteTagAdapter } from './params/tags-delete-tag.params';
 import { TagsDeleteTagParticipantOfferRuleParams, tagsDeleteTagParticipantOfferRuleAdapter } from './params/tags-delete-tag-participant-offer-rule.params';
@@ -48,15 +50,15 @@ export class TagsRepository {
     );
   }
 
-  tagsGetTagsForOperator(params?: TagsGetTagsForOperatorParams): Observable<TagOperatorView[]> {
+  tagsGetTagsForOperator(params?: TagsGetTagsForOperatorParams): Observable<MarketPaginationResult<TagOperatorView[]>> {
     return this._api.tagsGetTagsForOperator(tagsGetTagsForOperatorAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => tagOperatorViewAdapter(item)))
+      map((res) => marketPaginationResultOfListOfTagOperatorViewAdapter(res?.data))
     );
   }
 
-  tagsGetTagsForParticipant(params?: TagsGetTagsForParticipantParams): Observable<TagParticipantView[]> {
+  tagsGetTagsForParticipant(params?: TagsGetTagsForParticipantParams): Observable<MarketPaginationResult<TagParticipantView[]>> {
     return this._api.tagsGetTagsForParticipant(tagsGetTagsForParticipantAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => tagParticipantViewAdapter(item)))
+      map((res) => marketPaginationResultOfListOfTagParticipantViewAdapter(res?.data))
     );
   }
 

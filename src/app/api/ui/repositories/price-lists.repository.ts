@@ -1,5 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfMzPriceListAdapter } from '../adapters/models/market-pagination-result-of-list-of-mz-price-list.adapter';
 import { MzPriceList } from '../models/mz-price-list.interface';
 import { mzPriceListAdapter } from '../adapters/models/mz-price-list.adapter';
 import { MzPriceListShortInfo } from '../models/mz-price-list-short-info.interface';
@@ -74,9 +76,9 @@ export class PriceListsRepository {
     );
   }
 
-  priceListsGetPaginatedPriceLists(params?: PriceListsGetPaginatedPriceListsParams): Observable<MzPriceList[]> {
+  priceListsGetPaginatedPriceLists(params?: PriceListsGetPaginatedPriceListsParams): Observable<MarketPaginationResult<MzPriceList[]>> {
     return this._api.priceListsGetPaginatedPriceLists(priceListsGetPaginatedPriceListsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => mzPriceListAdapter(item)))
+      map((res) => marketPaginationResultOfListOfMzPriceListAdapter(res?.data))
     );
   }
 

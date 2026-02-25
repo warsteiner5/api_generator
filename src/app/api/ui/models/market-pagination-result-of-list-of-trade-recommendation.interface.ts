@@ -1,9 +1,5 @@
+import { MarketPaginationResult } from './market-pagination-result.interface';
 import { TradeRecommendation } from './trade-recommendation.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfListOfTradeRecommendation {
-  currentPage: number;
-  items: TradeRecommendation[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfListOfTradeRecommendation = MarketPaginationResult<TradeRecommendation[]>;

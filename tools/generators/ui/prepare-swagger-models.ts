@@ -114,6 +114,75 @@ function buildRenamePlan(declarations: ManagedDeclaration[]): RenamePlanItem[] {
   return plan;
 }
 
+function collectInterfaceConversionParts(typeAlias: TypeAliasDeclaration): { extendsTypes: string[]; memberTexts: string[] } | null {
+  const typeNode = typeAlias.getTypeNode();
+  if (!typeNode) {
+    return null;
+  }
+
+  if (Node.isTypeLiteral(typeNode)) {
+    return {
+      extendsTypes: [],
+      memberTexts: typeNode.getMembers().map((member) => member.getText())
+    };
+  }
+
+  if (!Node.isIntersectionTypeNode(typeNode)) {
+    return null;
+  }
+
+  const extendsTypes: string[] = [];
+  const memberTexts: string[] = [];
+
+  for (const part of typeNode.getTypeNodes()) {
+    if (Node.isTypeLiteral(part)) {
+      memberTexts.push(...part.getMembers().map((member) => member.getText()));
+      continue;
+    }
+
+    if (!Node.isTypeReference(part)) {
+      return null;
+    }
+
+    extendsTypes.push(part.getText());
+  }
+
+  if (!memberTexts.length) {
+    return null;
+  }
+
+  return { extendsTypes, memberTexts };
+}
+
+function replaceTypeAliasWithInterface(typeAlias: TypeAliasDeclaration, extendsTypes: string[], memberTexts: string[]): void {
+  const exportPrefix = typeAlias.isExported() ? 'export ' : '';
+  const typeParams = typeAlias.getTypeParameters();
+  const typeParamsText = typeParams.length ? `<${typeParams.map((param) => param.getText()).join(', ')}>` : '';
+  const extendsText = extendsTypes.length ? ` extends ${extendsTypes.join(', ')}` : '';
+  const membersText = memberTexts.map((member) => `${member}\n`).join('');
+  const docsText = typeAlias.getJsDocs().map((doc) => `${doc.getText()}\n`).join('');
+
+  typeAlias.replaceWithText(`${docsText}${exportPrefix}interface ${typeAlias.getName()}${typeParamsText}${extendsText} {\n${membersText}}`);
+}
+
+function convertEligibleTypeAliasesToInterfaces(project: Project): number {
+  let converted = 0;
+
+  for (const sourceFile of project.getSourceFiles(SWAGGER_MODELS_GLOB)) {
+    for (const typeAlias of sourceFile.getTypeAliases().filter((item) => item.isExported())) {
+      const conversionParts = collectInterfaceConversionParts(typeAlias);
+      if (!conversionParts) {
+        continue;
+      }
+
+      replaceTypeAliasWithInterface(typeAlias, conversionParts.extendsTypes, conversionParts.memberTexts);
+      converted += 1;
+    }
+  }
+
+  return converted;
+}
+
 export async function prepareSwaggerModels(): Promise<PrepareSwaggerModelsResult> {
   const project = new Project({
     skipAddingFilesFromTsConfig: true
@@ -147,6 +216,7 @@ export async function prepareSwaggerModels(): Promise<PrepareSwaggerModelsResult
     }
   }
 
+  convertEligibleTypeAliasesToInterfaces(project);
   await project.save();
 
   return {

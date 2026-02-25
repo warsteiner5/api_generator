@@ -1,7 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfModerationPriceListSearchItemAdapter } from '../adapters/models/market-pagination-result-of-list-of-moderation-price-list-search-item.adapter';
 import { ModerationPriceListSearchItem } from '../models/moderation-price-list-search-item.interface';
-import { moderationPriceListSearchItemAdapter } from '../adapters/models/moderation-price-list-search-item.adapter';
 import { ModeratorApiService } from '../../swagger/services/moderator-api.service';
 import { ModeratorGetPriceListsByFilterParams, moderatorGetPriceListsByFilterAdapter } from './params/moderator-get-price-lists-by-filter.params';
 import { ModeratorStartParams, moderatorStartAdapter } from './params/moderator-start.params';
@@ -12,9 +13,9 @@ import { Observable } from 'rxjs';
 export class ModeratorRepository {
   private readonly _api = inject(ModeratorApiService);
 
-  moderatorGetPriceListsByFilter(params?: ModeratorGetPriceListsByFilterParams): Observable<ModerationPriceListSearchItem[]> {
+  moderatorGetPriceListsByFilter(params?: ModeratorGetPriceListsByFilterParams): Observable<MarketPaginationResult<ModerationPriceListSearchItem[]>> {
     return this._api.moderatorGetPriceListsByFilter(moderatorGetPriceListsByFilterAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => moderationPriceListSearchItemAdapter(item)))
+      map((res) => marketPaginationResultOfListOfModerationPriceListSearchItemAdapter(res?.data))
     );
   }
 

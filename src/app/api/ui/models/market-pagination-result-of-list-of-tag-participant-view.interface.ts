@@ -1,9 +1,5 @@
+import { MarketPaginationResult } from './market-pagination-result.interface';
 import { TagParticipantView } from './tag-participant-view.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfListOfTagParticipantView {
-  currentPage: number;
-  items: TagParticipantView[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfListOfTagParticipantView = MarketPaginationResult<TagParticipantView[]>;

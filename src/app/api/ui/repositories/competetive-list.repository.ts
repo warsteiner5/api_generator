@@ -1,5 +1,4 @@
 import { AcceptedPriceListInfo } from '../models/accepted-price-list-info.interface';
-import { acceptedPriceListInfoAdapter } from '../adapters/models/accepted-price-list-info.adapter';
 import { AcceptedPriceListsExtendedResultAlt } from '../models/accepted-price-lists-extended-result-alt.interface';
 import { acceptedPriceListsExtendedResultAltAdapter } from '../adapters/models/accepted-price-lists-extended-result-alt.adapter';
 import { CompetetiveListAddParticipantOfferToCompetitiveListItemParams, competetiveListAddParticipantOfferToCompetitiveListItemAdapter } from './params/competetive-list-add-participant-offer-to-competitive-list-item.params';
@@ -32,6 +31,8 @@ import { CompetitiveListItemStateEnum } from '../enums/competitive-list-item-sta
 import { competitiveListItemStateEnumAdapter } from '../adapters/enums/competitive-list-item-state-enum.adapter';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfAcceptedPriceListInfoAdapter } from '../adapters/models/market-pagination-result-of-list-of-accepted-price-list-info.adapter';
 import { Observable } from 'rxjs';
 import { RequirementRequestOfferPricesInfo } from '../models/requirement-request-offer-prices-info.interface';
 import { requirementRequestOfferPricesInfoAdapter } from '../adapters/models/requirement-request-offer-prices-info.adapter';
@@ -68,9 +69,9 @@ export class CompetetiveListRepository {
     );
   }
 
-  competetiveListGetAcceptedPriceLists(params?: CompetetiveListGetAcceptedPriceListsParams): Observable<AcceptedPriceListInfo[]> {
+  competetiveListGetAcceptedPriceLists(params?: CompetetiveListGetAcceptedPriceListsParams): Observable<MarketPaginationResult<AcceptedPriceListInfo[]>> {
     return this._api.competetiveListGetAcceptedPriceLists(competetiveListGetAcceptedPriceListsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => acceptedPriceListInfoAdapter(item)))
+      map((res) => marketPaginationResultOfListOfAcceptedPriceListInfoAdapter(res?.data))
     );
   }
 

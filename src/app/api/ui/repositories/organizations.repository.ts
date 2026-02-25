@@ -18,6 +18,8 @@ import { MarketOrganizationCommonInfo } from '../models/market-organization-comm
 import { marketOrganizationCommonInfoAdapter } from '../adapters/models/market-organization-common-info.adapter';
 import { MarketOrganizationFullInfo } from '../models/market-organization-full-info.interface';
 import { marketOrganizationFullInfoAdapter } from '../adapters/models/market-organization-full-info.adapter';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfOrganizationWithAddressShortInfoAdapter } from '../adapters/models/market-pagination-result-of-list-of-organization-with-address-short-info.adapter';
 import { MarketPartnerOrganization } from '../models/market-partner-organization.interface';
 import { marketPartnerOrganizationAdapter } from '../adapters/models/market-partner-organization.adapter';
 import { Observable } from 'rxjs';
@@ -64,7 +66,6 @@ import { OrganizationsUpdateAddressesParams, organizationsUpdateAddressesAdapter
 import { OrganizationsUpdateBaseInfoParams, organizationsUpdateBaseInfoAdapter } from './params/organizations-update-base-info.params';
 import { OrganizationsUpdateDocumentsParams, organizationsUpdateDocumentsAdapter } from './params/organizations-update-documents.params';
 import { OrganizationWithAddressShortInfo } from '../models/organization-with-address-short-info.interface';
-import { organizationWithAddressShortInfoAdapter } from '../adapters/models/organization-with-address-short-info.adapter';
 import { PaginationResultOfForeignOrganization } from '../models/pagination-result-of-foreign-organization.interface';
 import { paginationResultOfForeignOrganizationAdapter } from '../adapters/models/pagination-result-of-foreign-organization.adapter';
 import { PaginationResultOfOrganizationForAutocomplete } from '../models/pagination-result-of-organization-for-autocomplete.interface';
@@ -184,9 +185,9 @@ export class OrganizationsRepository {
     );
   }
 
-  organizationsGetOrganizationsByFilter(params?: OrganizationsGetOrganizationsByFilterParams): Observable<OrganizationWithAddressShortInfo[]> {
+  organizationsGetOrganizationsByFilter(params?: OrganizationsGetOrganizationsByFilterParams): Observable<MarketPaginationResult<OrganizationWithAddressShortInfo[]>> {
     return this._api.organizationsGetOrganizationsByFilter(organizationsGetOrganizationsByFilterAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => organizationWithAddressShortInfoAdapter(item)))
+      map((res) => marketPaginationResultOfListOfOrganizationWithAddressShortInfoAdapter(res?.data))
     );
   }
 

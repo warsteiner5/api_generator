@@ -1,9 +1,5 @@
 import { MarketOrganizationShortInfo } from './market-organization-short-info.interface';
+import { MarketPaginationResult } from './market-pagination-result.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfListOfMarketOrganizationShortInfo {
-  currentPage: number;
-  items: MarketOrganizationShortInfo[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfListOfMarketOrganizationShortInfo = MarketPaginationResult<MarketOrganizationShortInfo[]>;

@@ -1,9 +1,5 @@
+import { MarketPaginationResult } from './market-pagination-result.interface';
 import { NotificationInfoAlt } from './notification-info-alt.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfListOfNotificationInfoAlt {
-  currentPage: number;
-  items: NotificationInfoAlt[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfListOfNotificationInfoAlt = MarketPaginationResult<NotificationInfoAlt[]>;

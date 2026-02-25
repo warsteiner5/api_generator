@@ -35,9 +35,11 @@ import { map } from 'rxjs/operators';
 import { MarketApplicationDetailAlt } from '../models/market-application-detail-alt.interface';
 import { marketApplicationDetailAltAdapter } from '../adapters/models/market-application-detail-alt.adapter';
 import { MarketDealAlt } from '../models/market-deal-alt.interface';
-import { marketDealAltAdapter } from '../adapters/models/market-deal-alt.adapter';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfMarketDealAltAdapter } from '../adapters/models/market-pagination-result-of-list-of-market-deal-alt.adapter';
+import { marketPaginationResultOfListOfMarketSearchResultAdapter } from '../adapters/models/market-pagination-result-of-list-of-market-search-result.adapter';
+import { marketPaginationResultOfListOfTradeRecommendationAdapter } from '../adapters/models/market-pagination-result-of-list-of-trade-recommendation.adapter';
 import { MarketSearchResult } from '../models/market-search-result.interface';
-import { marketSearchResultAdapter } from '../adapters/models/market-search-result.adapter';
 import { MarketTradePersonAlt } from '../models/market-trade-person-alt.interface';
 import { marketTradePersonAltAdapter } from '../adapters/models/market-trade-person-alt.adapter';
 import { MarketTradeView } from '../models/market-trade-view.interface';
@@ -48,6 +50,7 @@ import { priceReductionResponseAltAdapter } from '../adapters/models/price-reduc
 import { PublishApplicationResultAlt } from '../models/publish-application-result-alt.interface';
 import { publishApplicationResultAltAdapter } from '../adapters/models/publish-application-result-alt.adapter';
 import { ReadItemInfoAlt } from '../models/read-item-info-alt.interface';
+import { readItemInfoAltAdapter } from '../adapters/models/read-item-info-alt.adapter';
 import { StarLightSearchResult } from '../models/star-light-search-result.interface';
 import { starLightSearchResultAdapter } from '../adapters/models/star-light-search-result.adapter';
 import { StarSearchObjAlt } from '../models/star-search-obj-alt.interface';
@@ -59,7 +62,6 @@ import { tradeDto2Adapter } from '../adapters/models/trade-dto-2.adapter';
 import { TradePublishResultAlt } from '../models/trade-publish-result-alt.interface';
 import { tradePublishResultAltAdapter } from '../adapters/models/trade-publish-result-alt.adapter';
 import { TradeRecommendation } from '../models/trade-recommendation.interface';
-import { tradeRecommendationAdapter } from '../adapters/models/trade-recommendation.adapter';
 import { TradesAddChatMessageParams, tradesAddChatMessageAdapter } from './params/trades-add-chat-message.params';
 import { TradesAddCustomerDealCommentSystemMessageParams, tradesAddCustomerDealCommentSystemMessageAdapter } from './params/trades-add-customer-deal-comment-system-message.params';
 import { TradesAddDealSigningExpiredMessageParams, tradesAddDealSigningExpiredMessageAdapter } from './params/trades-add-deal-signing-expired-message.params';
@@ -307,9 +309,9 @@ export class TradesRepository {
     return this._api.tradesEnableSupplierMessages(tradesEnableSupplierMessagesAdapter(params));
   }
 
-  tradesExternalSearch(params?: TradesExternalSearchParams): Observable<MarketSearchResult[]> {
+  tradesExternalSearch(params?: TradesExternalSearchParams): Observable<MarketPaginationResult<MarketSearchResult[]>> {
     return this._api.tradesExternalSearch(tradesExternalSearchAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => marketSearchResultAdapter(item)))
+      map((res) => marketPaginationResultOfListOfMarketSearchResultAdapter(res?.data))
     );
   }
 
@@ -411,15 +413,15 @@ export class TradesRepository {
     );
   }
 
-  tradesGetChats(params: TradesGetChatsParams): Observable<({ [key: string]: string> {
+  tradesGetChats(params: TradesGetChatsParams): Observable<{ [key: string]: string }> {
     return this._api.tradesGetChats(tradesGetChatsAdapter(params)).pipe(
-      map((res) => res?.data)
+      map((res) => Object.keys((res?.data ?? {})).reduce((acc, key) => { const value = (res?.data ?? {})[key]; acc[key] = value; return acc; }, {} as { [key: string]: string }))
     );
   }
 
-  tradesGetChatsUnreadItems(params: TradesGetChatsUnreadItemsParams): Observable<({ [key: string]: number> {
+  tradesGetChatsUnreadItems(params: TradesGetChatsUnreadItemsParams): Observable<{ [key: string]: number }> {
     return this._api.tradesGetChatsUnreadItems(tradesGetChatsUnreadItemsAdapter(params)).pipe(
-      map((res) => res?.data)
+      map((res) => Object.keys((res?.data ?? {})).reduce((acc, key) => { const value = (res?.data ?? {})[key]; acc[key] = value; return acc; }, {} as { [key: string]: number }))
     );
   }
 
@@ -453,9 +455,9 @@ export class TradesRepository {
     );
   }
 
-  tradesGetDealsList(params?: TradesGetDealsListParams): Observable<MarketDealAlt[]> {
+  tradesGetDealsList(params?: TradesGetDealsListParams): Observable<MarketPaginationResult<MarketDealAlt[]>> {
     return this._api.tradesGetDealsList(tradesGetDealsListAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => marketDealAltAdapter(item)))
+      map((res) => marketPaginationResultOfListOfMarketDealAltAdapter(res?.data))
     );
   }
 
@@ -477,9 +479,9 @@ export class TradesRepository {
     );
   }
 
-  tradesGetReadItemInfo(params: TradesGetReadItemInfoParams): Observable<({ [key: string]: Array<ReadItemInfoAlt>> {
+  tradesGetReadItemInfo(params: TradesGetReadItemInfoParams): Observable<{ [key: string]: ReadItemInfoAlt[] }> {
     return this._api.tradesGetReadItemInfo(tradesGetReadItemInfoAdapter(params)).pipe(
-      map((res) => res?.data)
+      map((res) => Object.keys((res?.data ?? {})).reduce((acc, key) => { const value = (res?.data ?? {})[key]; acc[key] = (value ?? []).map((item) => readItemInfoAltAdapter(item)); return acc; }, {} as { [key: string]: ReadItemInfoAlt[] }))
     );
   }
 
@@ -537,9 +539,9 @@ export class TradesRepository {
     );
   }
 
-  tradesGetTradeRecommendations(params?: TradesGetTradeRecommendationsParams): Observable<TradeRecommendation[]> {
+  tradesGetTradeRecommendations(params?: TradesGetTradeRecommendationsParams): Observable<MarketPaginationResult<TradeRecommendation[]>> {
     return this._api.tradesGetTradeRecommendations(tradesGetTradeRecommendationsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => tradeRecommendationAdapter(item)))
+      map((res) => marketPaginationResultOfListOfTradeRecommendationAdapter(res?.data))
     );
   }
 
@@ -571,15 +573,15 @@ export class TradesRepository {
     );
   }
 
-  tradesPublicLightSearch(params: TradesPublicLightSearchParams): Observable<MarketSearchResult[]> {
+  tradesPublicLightSearch(params: TradesPublicLightSearchParams): Observable<MarketPaginationResult<MarketSearchResult[]>> {
     return this._api.tradesPublicLightSearch(tradesPublicLightSearchAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => marketSearchResultAdapter(item)))
+      map((res) => marketPaginationResultOfListOfMarketSearchResultAdapter(res?.data))
     );
   }
 
-  tradesPublicSearch2(params?: TradesPublicSearch2Params): Observable<MarketSearchResult[]> {
+  tradesPublicSearch2(params?: TradesPublicSearch2Params): Observable<MarketPaginationResult<MarketSearchResult[]>> {
     return this._api.tradesPublicSearch2(tradesPublicSearch2Adapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => marketSearchResultAdapter(item)))
+      map((res) => marketPaginationResultOfListOfMarketSearchResultAdapter(res?.data))
     );
   }
 

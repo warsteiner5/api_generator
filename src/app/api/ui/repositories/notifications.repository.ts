@@ -1,9 +1,10 @@
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfNotificationInfoAltAdapter } from '../adapters/models/market-pagination-result-of-list-of-notification-info-alt.adapter';
 import { Notification } from '../models/notification.interface';
 import { notificationAdapter } from '../adapters/models/notification.adapter';
 import { NotificationInfoAlt } from '../models/notification-info-alt.interface';
-import { notificationInfoAltAdapter } from '../adapters/models/notification-info-alt.adapter';
 import { NotificationsApiService } from '../../swagger/services/notifications-api.service';
 import { NotificationsGetNewNotificationsCountParams, notificationsGetNewNotificationsCountAdapter } from './params/notifications-get-new-notifications-count.params';
 import { NotificationsGetNotificationParams, notificationsGetNotificationAdapter } from './params/notifications-get-notification.params';
@@ -35,9 +36,9 @@ export class NotificationsRepository {
     );
   }
 
-  notificationsGetNotifications(params?: NotificationsGetNotificationsParams): Observable<NotificationInfoAlt[]> {
+  notificationsGetNotifications(params?: NotificationsGetNotificationsParams): Observable<MarketPaginationResult<NotificationInfoAlt[]>> {
     return this._api.notificationsGetNotifications(notificationsGetNotificationsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => notificationInfoAltAdapter(item)))
+      map((res) => marketPaginationResultOfListOfNotificationInfoAltAdapter(res?.data))
     );
   }
 

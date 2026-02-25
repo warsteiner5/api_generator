@@ -6,16 +6,17 @@ import { LogLogActionParams, logLogActionAdapter } from './params/log-log-action
 import { LogLogErrorParams, logLogErrorAdapter } from './params/log-log-error.params';
 import { map } from 'rxjs/operators';
 import { MarketBusinessOperationLog } from '../models/market-business-operation-log.interface';
-import { marketBusinessOperationLogAdapter } from '../adapters/models/market-business-operation-log.adapter';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfMarketBusinessOperationLogAdapter } from '../adapters/models/market-pagination-result-of-list-of-market-business-operation-log.adapter';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class LogRepository {
   private readonly _api = inject(LogApiService);
 
-  logGetBusinessOperationLogHistory(params?: LogGetBusinessOperationLogHistoryParams): Observable<MarketBusinessOperationLog[]> {
+  logGetBusinessOperationLogHistory(params?: LogGetBusinessOperationLogHistoryParams): Observable<MarketPaginationResult<MarketBusinessOperationLog[]>> {
     return this._api.logGetBusinessOperationLogHistory(logGetBusinessOperationLogHistoryAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => marketBusinessOperationLogAdapter(item)))
+      map((res) => marketPaginationResultOfListOfMarketBusinessOperationLogAdapter(res?.data))
     );
   }
 

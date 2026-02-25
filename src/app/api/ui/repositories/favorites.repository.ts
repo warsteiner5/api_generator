@@ -11,9 +11,10 @@ import { FavoritesGetFavoriteOrganizationsParams, favoritesGetFavoriteOrganizati
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { MarketOrganizationShortInfo } from '../models/market-organization-short-info.interface';
-import { marketOrganizationShortInfoAdapter } from '../adapters/models/market-organization-short-info.adapter';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfMarketOrganizationShortInfoAdapter } from '../adapters/models/market-pagination-result-of-list-of-market-organization-short-info.adapter';
+import { marketPaginationResultOfListOfMarketSearchResultAdapter } from '../adapters/models/market-pagination-result-of-list-of-market-search-result.adapter';
 import { MarketSearchResult } from '../models/market-search-result.interface';
-import { marketSearchResultAdapter } from '../adapters/models/market-search-result.adapter';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -44,21 +45,21 @@ export class FavoritesRepository {
     );
   }
 
-  favoritesGetFavoriteDeals(params?: FavoritesGetFavoriteDealsParams): Observable<MarketSearchResult[]> {
+  favoritesGetFavoriteDeals(params?: FavoritesGetFavoriteDealsParams): Observable<MarketPaginationResult<MarketSearchResult[]>> {
     return this._api.favoritesGetFavoriteDeals(favoritesGetFavoriteDealsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => marketSearchResultAdapter(item)))
+      map((res) => marketPaginationResultOfListOfMarketSearchResultAdapter(res?.data))
     );
   }
 
-  favoritesGetFavoriteOffers(params?: FavoritesGetFavoriteOffersParams): Observable<MarketSearchResult[]> {
+  favoritesGetFavoriteOffers(params?: FavoritesGetFavoriteOffersParams): Observable<MarketPaginationResult<MarketSearchResult[]>> {
     return this._api.favoritesGetFavoriteOffers(favoritesGetFavoriteOffersAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => marketSearchResultAdapter(item)))
+      map((res) => marketPaginationResultOfListOfMarketSearchResultAdapter(res?.data))
     );
   }
 
-  favoritesGetFavoriteOrganizations(params?: FavoritesGetFavoriteOrganizationsParams): Observable<MarketOrganizationShortInfo[]> {
+  favoritesGetFavoriteOrganizations(params?: FavoritesGetFavoriteOrganizationsParams): Observable<MarketPaginationResult<MarketOrganizationShortInfo[]>> {
     return this._api.favoritesGetFavoriteOrganizations(favoritesGetFavoriteOrganizationsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => marketOrganizationShortInfoAdapter(item)))
+      map((res) => marketPaginationResultOfListOfMarketOrganizationShortInfoAdapter(res?.data))
     );
   }
 

@@ -9,9 +9,10 @@ import { ApprovalRequestView } from '../models/approval-request-view.interface';
 import { approvalRequestViewAdapter } from '../adapters/models/approval-request-view.adapter';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfTradeWithApprovalRequestListItemAltAdapter } from '../adapters/models/market-pagination-result-of-list-of-trade-with-approval-request-list-item-alt.adapter';
 import { Observable } from 'rxjs';
 import { TradeWithApprovalRequestListItemAlt } from '../models/trade-with-approval-request-list-item-alt.interface';
-import { tradeWithApprovalRequestListItemAltAdapter } from '../adapters/models/trade-with-approval-request-list-item-alt.adapter';
 
 @Injectable({ providedIn: 'root' })
 export class ApprovalRequestRepository {
@@ -35,9 +36,9 @@ export class ApprovalRequestRepository {
     );
   }
 
-  approvalRequestGetTradesWithApprovalRequest(params?: ApprovalRequestGetTradesWithApprovalRequestParams): Observable<TradeWithApprovalRequestListItemAlt[]> {
+  approvalRequestGetTradesWithApprovalRequest(params?: ApprovalRequestGetTradesWithApprovalRequestParams): Observable<MarketPaginationResult<TradeWithApprovalRequestListItemAlt[]>> {
     return this._api.approvalRequestGetTradesWithApprovalRequest(approvalRequestGetTradesWithApprovalRequestAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => tradeWithApprovalRequestListItemAltAdapter(item)))
+      map((res) => marketPaginationResultOfListOfTradeWithApprovalRequestListItemAltAdapter(res?.data))
     );
   }
 

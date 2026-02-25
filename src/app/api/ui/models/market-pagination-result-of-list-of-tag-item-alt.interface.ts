@@ -1,9 +1,5 @@
+import { MarketPaginationResult } from './market-pagination-result.interface';
 import { TagItemAlt } from './tag-item-alt.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfListOfTagItemAlt {
-  currentPage: number;
-  items: TagItemAlt[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfListOfTagItemAlt = MarketPaginationResult<TagItemAlt[]>;

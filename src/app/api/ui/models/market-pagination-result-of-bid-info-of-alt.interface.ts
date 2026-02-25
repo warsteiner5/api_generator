@@ -1,9 +1,5 @@
 import { BidInfoAlt } from './bid-info-alt.interface';
+import { MarketPaginationResult } from './market-pagination-result.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfBidInfoOfAlt {
-  currentPage: number;
-  items: BidInfoAlt[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfBidInfoOfAlt = MarketPaginationResult<BidInfoAlt[]>;

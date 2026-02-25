@@ -4,11 +4,15 @@ import {
   analyzePropertyType,
   buildIndexContent,
   collectEntitiesContext,
+  EntitiesContext,
   getAdapterFileBase,
   getEnumFileBase,
   getModelFileBase,
+  InterfacePropertyMeta,
   isExcludedMarketJsonResult,
   LocalEntityMeta,
+  normalizeTypeText,
+  splitTopLevel,
   toCamelCaseProperty,
   UI_ADAPTERS_DIR,
   UI_ADAPTERS_ENUMS_DIR,
@@ -74,6 +78,178 @@ function getEntityAdapterFileBase(entity: LocalEntityMeta, direction: AdapterDir
 function getNestedAdapterPath(entity: LocalEntityMeta, direction: AdapterDirection): string {
   const fileBase = getEntityAdapterFileBase(entity, direction);
   return entity.kind === 'enum' ? `../enums/${fileBase}.adapter` : `./${fileBase}.adapter`;
+}
+
+interface ObjectAdapterBuildResult {
+  uiImports: Map<string, string>;
+  dtoImports: Map<string, string>;
+  uiPropertyLines: string[];
+  dtoPropertyLines: string[];
+}
+
+function buildObjectAdapterProperties(
+  entity: Pick<LocalEntityMeta, 'localName'>,
+  properties: InterfacePropertyMeta[],
+  context: EntitiesContext
+): ObjectAdapterBuildResult {
+  const uiAdapterImports = new Map<string, string>();
+  const dtoAdapterImports = new Map<string, string>();
+  const uiPropertyLines: string[] = [];
+  const dtoPropertyLines: string[] = [];
+
+  for (const property of properties) {
+    const analysis = analyzePropertyType(property.typeText, context);
+    const dtoSourceAccessor = getSourceAccessor(property.name);
+    const uiPropertyName = toCamelCaseProperty(property.name);
+    const uiSourceAccessor = getSourceAccessor(uiPropertyName);
+    const dtoPropertyName = getTargetPropertyName(property.name);
+    const isOptionalProperty = property.optional;
+
+    let toUiExpression: string;
+    let toDtoExpression: string;
+
+    if (
+      analysis.kind === 'array-entity' &&
+      analysis.entity &&
+      !isExcludedMarketJsonResult(analysis.entity.swaggerName)
+    ) {
+      const nestedUiAdapterName = getUiAdapterName(analysis.entity.localName);
+      const nestedDtoAdapterName = getDtoAdapterName(analysis.entity.swaggerName);
+      if (analysis.entity.localName !== entity.localName) {
+        uiAdapterImports.set(
+          nestedUiAdapterName,
+          `import { ${nestedUiAdapterName} } from '${getNestedAdapterPath(analysis.entity, 'ui')}';`
+        );
+        dtoAdapterImports.set(
+          nestedDtoAdapterName,
+          `import { ${nestedDtoAdapterName} } from '${getNestedAdapterPath(analysis.entity, 'dto')}';`
+        );
+      }
+      if (isOptionalProperty) {
+        toUiExpression = `${dtoSourceAccessor}?.map((item) => ${nestedUiAdapterName}(item))`;
+        toDtoExpression = `${uiSourceAccessor}?.map((item) => ${nestedDtoAdapterName}(item))`;
+      } else {
+        toUiExpression = `(${dtoSourceAccessor} ?? []).map((item) => ${nestedUiAdapterName}(item))`;
+        toDtoExpression = `(${uiSourceAccessor} ?? []).map((item) => ${nestedDtoAdapterName}(item))`;
+      }
+    } else if (
+      analysis.kind === 'entity' &&
+      analysis.entity &&
+      !isExcludedMarketJsonResult(analysis.entity.swaggerName)
+    ) {
+      const nestedUiAdapterName = getUiAdapterName(analysis.entity.localName);
+      const nestedDtoAdapterName = getDtoAdapterName(analysis.entity.swaggerName);
+      if (analysis.entity.localName !== entity.localName) {
+        uiAdapterImports.set(
+          nestedUiAdapterName,
+          `import { ${nestedUiAdapterName} } from '${getNestedAdapterPath(analysis.entity, 'ui')}';`
+        );
+        dtoAdapterImports.set(
+          nestedDtoAdapterName,
+          `import { ${nestedDtoAdapterName} } from '${getNestedAdapterPath(analysis.entity, 'dto')}';`
+        );
+      }
+      if (isOptionalProperty) {
+        toUiExpression = `${dtoSourceAccessor} === null ? undefined : ${nestedUiAdapterName}(${dtoSourceAccessor})`;
+        toDtoExpression = `${uiSourceAccessor} === null ? undefined : ${nestedDtoAdapterName}(${uiSourceAccessor})`;
+      } else {
+        toUiExpression = `${nestedUiAdapterName}(${dtoSourceAccessor})`;
+        toDtoExpression = `${nestedDtoAdapterName}(${uiSourceAccessor})`;
+      }
+    } else if (analysis.kind === 'array-primitive') {
+      if (isOptionalProperty) {
+        toUiExpression = dtoSourceAccessor;
+        toDtoExpression = uiSourceAccessor;
+      } else {
+        toUiExpression = `${dtoSourceAccessor} ?? []`;
+        toDtoExpression = `${uiSourceAccessor} ?? []`;
+      }
+    } else if (analysis.kind === 'primitive') {
+      toUiExpression = isOptionalProperty
+        ? dtoSourceAccessor
+        : getPrimitiveUiExpression(dtoSourceAccessor, analysis.uiType);
+      toDtoExpression = uiSourceAccessor;
+    } else {
+      toUiExpression = isOptionalProperty
+        ? `${dtoSourceAccessor} as any`
+        : `(${dtoSourceAccessor} ?? null) as any`;
+      toDtoExpression = `${uiSourceAccessor} as any`;
+    }
+
+    uiPropertyLines.push(`    ${uiPropertyName}: ${toUiExpression},`);
+    dtoPropertyLines.push(`    ${dtoPropertyName}: ${toDtoExpression},`);
+  }
+
+  return {
+    uiImports: uiAdapterImports,
+    dtoImports: dtoAdapterImports,
+    uiPropertyLines,
+    dtoPropertyLines
+  };
+}
+
+interface TypeAliasAdapterShape {
+  properties: InterfacePropertyMeta[];
+  extendsEntities: LocalEntityMeta[];
+  isSupported: boolean;
+}
+
+function parseTypeAliasAdapterShape(typeEntity: Extract<LocalEntityMeta, { kind: 'type' }>, context: EntitiesContext): TypeAliasAdapterShape {
+  const normalizedType = normalizeTypeText(typeEntity.typeText, context.bySwaggerName);
+  const intersectionParts = splitTopLevel(normalizedType, '&')
+    .map((part) => part.trim())
+    .filter(Boolean);
+
+  const isObjectLiteral = (value: string): boolean => value.startsWith('{') && value.endsWith('}');
+  const literalParts = intersectionParts.filter(isObjectLiteral);
+  const extendsParts = intersectionParts.filter((part) => !isObjectLiteral(part));
+
+  const properties: InterfacePropertyMeta[] = [];
+  for (const literalPart of literalParts) {
+    const literalContent = literalPart.slice(1, -1).trim();
+    if (!literalContent) {
+      continue;
+    }
+
+    for (const fragment of splitTopLevel(literalContent, ';')) {
+      const trimmed = fragment.trim();
+      if (!trimmed) {
+        continue;
+      }
+
+      const colonParts = splitTopLevel(trimmed, ':');
+      if (colonParts.length < 2) {
+        continue;
+      }
+
+      const rawName = colonParts[0].trim();
+      const rawType = colonParts.slice(1).join(':').trim();
+      const nameMatch = rawName.match(/^['"]?([^'"]+)['"]?(\?)?$/);
+      const propertyName = (nameMatch?.[1] ?? rawName).replace(/\?$/, '');
+      if (!propertyName) {
+        continue;
+      }
+
+      properties.push({
+        name: propertyName,
+        typeText: rawType || 'unknown',
+        optional: rawName.endsWith('?')
+      });
+    }
+  }
+
+  const extendsEntities: LocalEntityMeta[] = [];
+  for (const part of extendsParts) {
+    const entity = context.byLocalName.get(part) ?? context.bySwaggerName.get(part);
+    if (!entity || isExcludedMarketJsonResult(entity.swaggerName)) {
+      return { properties, extendsEntities: [], isSupported: false };
+    }
+    if (entity.localName !== typeEntity.localName) {
+      extendsEntities.push(entity);
+    }
+  }
+
+  return { properties, extendsEntities, isSupported: true };
 }
 
 async function generateAdapters(): Promise<void> {
@@ -158,25 +334,86 @@ async function generateAdapters(): Promise<void> {
     const uiAdapterName = getUiAdapterName(typeEntity.localName);
     const dtoAdapterName = getDtoAdapterName(typeEntity.swaggerName);
 
-    const uiLines: string[] = [
+    const typeShape = parseTypeAliasAdapterShape(typeEntity, context);
+
+    if (!typeShape.isSupported) {
+      const uiLines: string[] = [
+        `import { ${typeEntity.swaggerName} } from '../../../swagger/models/${typeEntity.sourceFileBase}';`,
+        `import { ${typeEntity.localName} } from '../../models/${getModelFileBase(typeEntity.localName)}.interface';`,
+        '',
+        `export const ${uiAdapterName} = (source?: ${typeEntity.swaggerName} | null): ${typeEntity.localName} => {`,
+        `  return (source ?? {}) as ${typeEntity.localName};`,
+        '}'
+      ];
+      modelFiles.set(uiFileName, `${uiLines.join('\n')}\n`);
+      modelExports.push(`./${uiFileBase}.adapter`);
+
+      const dtoLines: string[] = [
+        `import { ${typeEntity.localName} } from '../../models/${getModelFileBase(typeEntity.localName)}.interface';`,
+        `import { ${typeEntity.swaggerName} } from '../../../swagger/models/${typeEntity.sourceFileBase}';`,
+        '',
+        `export const ${dtoAdapterName} = (source?: ${typeEntity.localName} | null): ${typeEntity.swaggerName} => {`,
+        `  return (source ?? {}) as ${typeEntity.swaggerName};`,
+        '}'
+      ];
+      modelFiles.set(dtoFileName, `${dtoLines.join('\n')}\n`);
+      modelExports.push(`./${dtoFileBase}.adapter`);
+      generatedModelCount += 2;
+      continue;
+    }
+
+    const uiSpreadLines: string[] = [];
+    const dtoSpreadLines: string[] = [];
+    const shapeImports = buildObjectAdapterProperties(typeEntity, typeShape.properties, context);
+
+    for (const baseEntity of typeShape.extendsEntities) {
+      const nestedUiAdapterName = getUiAdapterName(baseEntity.localName);
+      const nestedDtoAdapterName = getDtoAdapterName(baseEntity.swaggerName);
+
+      shapeImports.uiImports.set(
+        nestedUiAdapterName,
+        `import { ${nestedUiAdapterName} } from '${getNestedAdapterPath(baseEntity, 'ui')}';`
+      );
+      shapeImports.dtoImports.set(
+        nestedDtoAdapterName,
+        `import { ${nestedDtoAdapterName} } from '${getNestedAdapterPath(baseEntity, 'dto')}';`
+      );
+
+      uiSpreadLines.push(`    ...${nestedUiAdapterName}(source as unknown as Parameters<typeof ${nestedUiAdapterName}>[0]),`);
+      dtoSpreadLines.push(`    ...${nestedDtoAdapterName}(source as unknown as Parameters<typeof ${nestedDtoAdapterName}>[0]),`);
+    }
+
+    const uiImportLines = [
       `import { ${typeEntity.swaggerName} } from '../../../swagger/models/${typeEntity.sourceFileBase}';`,
       `import { ${typeEntity.localName} } from '../../models/${getModelFileBase(typeEntity.localName)}.interface';`,
-      '',
-      `export const ${uiAdapterName} = (source?: ${typeEntity.swaggerName} | null): ${typeEntity.localName} => {`,
-      `  return (source ?? {}) as ${typeEntity.localName};`,
-      '}'
+      ...[...shapeImports.uiImports.values()].sort((left, right) => left.localeCompare(right))
     ];
+    const uiLines: string[] = [...uiImportLines, ''];
+    uiLines.push(
+      `export const ${uiAdapterName} = (source?: ${typeEntity.swaggerName} | null): ${typeEntity.localName} => {`,
+      '  return {',
+      ...uiSpreadLines,
+      ...shapeImports.uiPropertyLines,
+      '  };',
+      '}'
+    );
     modelFiles.set(uiFileName, `${uiLines.join('\n')}\n`);
     modelExports.push(`./${uiFileBase}.adapter`);
 
-    const dtoLines: string[] = [
+    const dtoImportLines = [
       `import { ${typeEntity.localName} } from '../../models/${getModelFileBase(typeEntity.localName)}.interface';`,
       `import { ${typeEntity.swaggerName} } from '../../../swagger/models/${typeEntity.sourceFileBase}';`,
-      '',
-      `export const ${dtoAdapterName} = (source?: ${typeEntity.localName} | null): ${typeEntity.swaggerName} => {`,
-      `  return (source ?? {}) as ${typeEntity.swaggerName};`,
-      '}'
+      ...[...shapeImports.dtoImports.values()].sort((left, right) => left.localeCompare(right))
     ];
+    const dtoLines: string[] = [...dtoImportLines, ''];
+    dtoLines.push(
+      `export const ${dtoAdapterName} = (source?: ${typeEntity.localName} | null): ${typeEntity.swaggerName} => {`,
+      '  return {',
+      ...dtoSpreadLines,
+      ...shapeImports.dtoPropertyLines,
+      '  };',
+      '}'
+    );
     modelFiles.set(dtoFileName, `${dtoLines.join('\n')}\n`);
     modelExports.push(`./${dtoFileBase}.adapter`);
 
@@ -195,104 +432,18 @@ async function generateAdapters(): Promise<void> {
     const uiAdapterName = getUiAdapterName(interfaceEntity.localName);
     const dtoAdapterName = getDtoAdapterName(interfaceEntity.swaggerName);
 
-    const uiAdapterImports = new Map<string, string>();
-    const dtoAdapterImports = new Map<string, string>();
-    const uiPropertyLines: string[] = [];
-    const dtoPropertyLines: string[] = [];
-
-    for (const property of interfaceEntity.properties) {
-      const analysis = analyzePropertyType(property.typeText, context);
-      const dtoSourceAccessor = getSourceAccessor(property.name);
-      const uiPropertyName = toCamelCaseProperty(property.name);
-      const uiSourceAccessor = getSourceAccessor(uiPropertyName);
-      const dtoPropertyName = getTargetPropertyName(property.name);
-      const isOptionalProperty = property.optional;
-
-      let toUiExpression: string;
-      let toDtoExpression: string;
-
-      if (
-        analysis.kind === 'array-entity' &&
-        analysis.entity &&
-        !isExcludedMarketJsonResult(analysis.entity.swaggerName)
-      ) {
-        const nestedUiAdapterName = getUiAdapterName(analysis.entity.localName);
-        const nestedDtoAdapterName = getDtoAdapterName(analysis.entity.swaggerName);
-        if (analysis.entity.localName !== interfaceEntity.localName) {
-          uiAdapterImports.set(
-            nestedUiAdapterName,
-            `import { ${nestedUiAdapterName} } from '${getNestedAdapterPath(analysis.entity, 'ui')}';`
-          );
-          dtoAdapterImports.set(
-            nestedDtoAdapterName,
-            `import { ${nestedDtoAdapterName} } from '${getNestedAdapterPath(analysis.entity, 'dto')}';`
-          );
-        }
-        if (isOptionalProperty) {
-          toUiExpression = `${dtoSourceAccessor}?.map((item) => ${nestedUiAdapterName}(item))`;
-          toDtoExpression = `${uiSourceAccessor}?.map((item) => ${nestedDtoAdapterName}(item))`;
-        } else {
-          toUiExpression = `(${dtoSourceAccessor} ?? []).map((item) => ${nestedUiAdapterName}(item))`;
-          toDtoExpression = `(${uiSourceAccessor} ?? []).map((item) => ${nestedDtoAdapterName}(item))`;
-        }
-      } else if (
-        analysis.kind === 'entity' &&
-        analysis.entity &&
-        !isExcludedMarketJsonResult(analysis.entity.swaggerName)
-      ) {
-        const nestedUiAdapterName = getUiAdapterName(analysis.entity.localName);
-        const nestedDtoAdapterName = getDtoAdapterName(analysis.entity.swaggerName);
-        if (analysis.entity.localName !== interfaceEntity.localName) {
-          uiAdapterImports.set(
-            nestedUiAdapterName,
-            `import { ${nestedUiAdapterName} } from '${getNestedAdapterPath(analysis.entity, 'ui')}';`
-          );
-          dtoAdapterImports.set(
-            nestedDtoAdapterName,
-            `import { ${nestedDtoAdapterName} } from '${getNestedAdapterPath(analysis.entity, 'dto')}';`
-          );
-        }
-        if (isOptionalProperty) {
-          toUiExpression = `${dtoSourceAccessor} === null ? undefined : ${nestedUiAdapterName}(${dtoSourceAccessor})`;
-          toDtoExpression = `${uiSourceAccessor} === null ? undefined : ${nestedDtoAdapterName}(${uiSourceAccessor})`;
-        } else {
-          toUiExpression = `${nestedUiAdapterName}(${dtoSourceAccessor})`;
-          toDtoExpression = `${nestedDtoAdapterName}(${uiSourceAccessor})`;
-        }
-      } else if (analysis.kind === 'array-primitive') {
-        if (isOptionalProperty) {
-          toUiExpression = dtoSourceAccessor;
-          toDtoExpression = uiSourceAccessor;
-        } else {
-          toUiExpression = `${dtoSourceAccessor} ?? []`;
-          toDtoExpression = `${uiSourceAccessor} ?? []`;
-        }
-      } else if (analysis.kind === 'primitive') {
-        toUiExpression = isOptionalProperty
-          ? dtoSourceAccessor
-          : getPrimitiveUiExpression(dtoSourceAccessor, analysis.uiType);
-        toDtoExpression = uiSourceAccessor;
-      } else {
-        toUiExpression = isOptionalProperty
-          ? `${dtoSourceAccessor} as any`
-          : `(${dtoSourceAccessor} ?? null) as any`;
-        toDtoExpression = `${uiSourceAccessor} as any`;
-      }
-
-      uiPropertyLines.push(`    ${uiPropertyName}: ${toUiExpression},`);
-      dtoPropertyLines.push(`    ${dtoPropertyName}: ${toDtoExpression},`);
-    }
+    const objectAdapter = buildObjectAdapterProperties(interfaceEntity, interfaceEntity.properties, context);
 
     const uiImportLines = [
       `import { ${interfaceEntity.swaggerName} } from '../../../swagger/models/${interfaceEntity.sourceFileBase}';`,
       `import { ${interfaceEntity.localName} } from '../../models/${getModelFileBase(interfaceEntity.localName)}.interface';`,
-      ...[...uiAdapterImports.values()].sort((left, right) => left.localeCompare(right))
+      ...[...objectAdapter.uiImports.values()].sort((left, right) => left.localeCompare(right))
     ];
     const uiLines: string[] = [...uiImportLines, ''];
     uiLines.push(
       `export const ${uiAdapterName} = (source?: ${interfaceEntity.swaggerName} | null): ${interfaceEntity.localName} => {`,
       '  return {',
-      ...uiPropertyLines,
+      ...objectAdapter.uiPropertyLines,
       '  };',
       '}'
     );
@@ -302,13 +453,13 @@ async function generateAdapters(): Promise<void> {
     const dtoImportLines = [
       `import { ${interfaceEntity.localName} } from '../../models/${getModelFileBase(interfaceEntity.localName)}.interface';`,
       `import { ${interfaceEntity.swaggerName} } from '../../../swagger/models/${interfaceEntity.sourceFileBase}';`,
-      ...[...dtoAdapterImports.values()].sort((left, right) => left.localeCompare(right))
+      ...[...objectAdapter.dtoImports.values()].sort((left, right) => left.localeCompare(right))
     ];
     const dtoLines: string[] = [...dtoImportLines, ''];
     dtoLines.push(
       `export const ${dtoAdapterName} = (source?: ${interfaceEntity.localName} | null): ${interfaceEntity.swaggerName} => {`,
       '  return {',
-      ...dtoPropertyLines,
+      ...objectAdapter.dtoPropertyLines,
       '  };',
       '}'
     );

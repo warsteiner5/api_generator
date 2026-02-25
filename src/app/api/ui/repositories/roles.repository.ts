@@ -1,10 +1,11 @@
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfRoleItemResponseAdapter } from '../adapters/models/market-pagination-result-of-list-of-role-item-response.adapter';
 import { Observable } from 'rxjs';
 import { RoleDetailResponseAlt } from '../models/role-detail-response-alt.interface';
 import { roleDetailResponseAltAdapter } from '../adapters/models/role-detail-response-alt.adapter';
 import { RoleItemResponse } from '../models/role-item-response.interface';
-import { roleItemResponseAdapter } from '../adapters/models/role-item-response.adapter';
 import { RolesActivateRoleParams, rolesActivateRoleAdapter } from './params/roles-activate-role.params';
 import { RolesApiService } from '../../swagger/services/roles-api.service';
 import { RolesCreateRoleParams, rolesCreateRoleAdapter } from './params/roles-create-role.params';
@@ -49,9 +50,9 @@ export class RolesRepository {
     );
   }
 
-  rolesSearchRoles(params?: RolesSearchRolesParams): Observable<RoleItemResponse[]> {
+  rolesSearchRoles(params?: RolesSearchRolesParams): Observable<MarketPaginationResult<RoleItemResponse[]>> {
     return this._api.rolesSearchRoles(rolesSearchRolesAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => roleItemResponseAdapter(item)))
+      map((res) => marketPaginationResultOfListOfRoleItemResponseAdapter(res?.data))
     );
   }
 

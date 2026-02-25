@@ -1,10 +1,12 @@
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfMarketSearchResultAdapter } from '../adapters/models/market-pagination-result-of-list-of-market-search-result.adapter';
+import { marketPaginationResultOfListOfTradePlanLotMarketAdapter } from '../adapters/models/market-pagination-result-of-list-of-trade-plan-lot-market.adapter';
+import { marketPaginationResultOfListOfTradePlanMarketShortAdapter } from '../adapters/models/market-pagination-result-of-list-of-trade-plan-market-short.adapter';
 import { MarketSearchResult } from '../models/market-search-result.interface';
-import { marketSearchResultAdapter } from '../adapters/models/market-search-result.adapter';
 import { Observable } from 'rxjs';
 import { TradePlanLotMarket } from '../models/trade-plan-lot-market.interface';
-import { tradePlanLotMarketAdapter } from '../adapters/models/trade-plan-lot-market.adapter';
 import { TradePlanMarketShort } from '../models/trade-plan-market-short.interface';
 import { tradePlanMarketShortAdapter } from '../adapters/models/trade-plan-market-short.adapter';
 import { TradePlansApiService } from '../../swagger/services/trade-plans-api.service';
@@ -27,21 +29,21 @@ export class TradePlansRepository {
     );
   }
 
-  tradePlansGetArchivePlans(params?: TradePlansGetArchivePlansParams): Observable<TradePlanMarketShort[]> {
+  tradePlansGetArchivePlans(params?: TradePlansGetArchivePlansParams): Observable<MarketPaginationResult<TradePlanMarketShort[]>> {
     return this._api.tradePlansGetArchivePlans(tradePlansGetArchivePlansAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => tradePlanMarketShortAdapter(item)))
+      map((res) => marketPaginationResultOfListOfTradePlanMarketShortAdapter(res?.data))
     );
   }
 
-  tradePlansGetPaginatePlanLots(params: TradePlansGetPaginatePlanLotsParams): Observable<TradePlanLotMarket[]> {
+  tradePlansGetPaginatePlanLots(params: TradePlansGetPaginatePlanLotsParams): Observable<MarketPaginationResult<TradePlanLotMarket[]>> {
     return this._api.tradePlansGetPaginatePlanLots(tradePlansGetPaginatePlanLotsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => tradePlanLotMarketAdapter(item)))
+      map((res) => marketPaginationResultOfListOfTradePlanLotMarketAdapter(res?.data))
     );
   }
 
-  tradePlansGetPaginatePublicPlanLots(params?: TradePlansGetPaginatePublicPlanLotsParams): Observable<TradePlanLotMarket[]> {
+  tradePlansGetPaginatePublicPlanLots(params?: TradePlansGetPaginatePublicPlanLotsParams): Observable<MarketPaginationResult<TradePlanLotMarket[]>> {
     return this._api.tradePlansGetPaginatePublicPlanLots(tradePlansGetPaginatePublicPlanLotsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => tradePlanLotMarketAdapter(item)))
+      map((res) => marketPaginationResultOfListOfTradePlanLotMarketAdapter(res?.data))
     );
   }
 
@@ -51,9 +53,9 @@ export class TradePlansRepository {
     );
   }
 
-  tradePlansGetTradesByPlanPostion(params: TradePlansGetTradesByPlanPostionParams): Observable<MarketSearchResult[]> {
+  tradePlansGetTradesByPlanPostion(params: TradePlansGetTradesByPlanPostionParams): Observable<MarketPaginationResult<MarketSearchResult[]>> {
     return this._api.tradePlansGetTradesByPlanPostion(tradePlansGetTradesByPlanPostionAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => marketSearchResultAdapter(item)))
+      map((res) => marketPaginationResultOfListOfMarketSearchResultAdapter(res?.data))
     );
   }
 

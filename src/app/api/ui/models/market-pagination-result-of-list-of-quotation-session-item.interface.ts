@@ -1,9 +1,5 @@
+import { MarketPaginationResult } from './market-pagination-result.interface';
 import { QuotationSessionItem } from './quotation-session-item.interface';
 
 // @ts-ignore
-export interface MarketPaginationResultOfListOfQuotationSessionItem {
-  currentPage: number;
-  items: QuotationSessionItem[];
-  total: number;
-  totalPages: number;
-}
+export type MarketPaginationResultOfListOfQuotationSessionItem = MarketPaginationResult<QuotationSessionItem[]>;

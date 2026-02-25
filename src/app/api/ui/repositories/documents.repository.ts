@@ -4,9 +4,10 @@ import { DocumentsGetMyDocumentsParams, documentsGetMyDocumentsAdapter } from '.
 import { DocumentsSaveDocumentParams, documentsSaveDocumentAdapter } from './params/documents-save-document.params';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfOrganizationDocumentAdapter } from '../adapters/models/market-pagination-result-of-list-of-organization-document.adapter';
 import { Observable } from 'rxjs';
 import { OrganizationDocument } from '../models/organization-document.interface';
-import { organizationDocumentAdapter } from '../adapters/models/organization-document.adapter';
 
 @Injectable({ providedIn: 'root' })
 export class DocumentsRepository {
@@ -18,9 +19,9 @@ export class DocumentsRepository {
     );
   }
 
-  documentsGetMyDocuments(params?: DocumentsGetMyDocumentsParams): Observable<OrganizationDocument[]> {
+  documentsGetMyDocuments(params?: DocumentsGetMyDocumentsParams): Observable<MarketPaginationResult<OrganizationDocument[]>> {
     return this._api.documentsGetMyDocuments(documentsGetMyDocumentsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => organizationDocumentAdapter(item)))
+      map((res) => marketPaginationResultOfListOfOrganizationDocumentAdapter(res?.data))
     );
   }
 

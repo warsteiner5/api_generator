@@ -1,7 +1,10 @@
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfMarketSearchResultAdapter } from '../adapters/models/market-pagination-result-of-list-of-market-search-result.adapter';
+import { marketPaginationResultOfListOfPriceListItemAltAdapter } from '../adapters/models/market-pagination-result-of-list-of-price-list-item-alt.adapter';
+import { marketPaginationResultOfListOfTagItemAltAdapter } from '../adapters/models/market-pagination-result-of-list-of-tag-item-alt.adapter';
 import { MarketSearchResult } from '../models/market-search-result.interface';
-import { marketSearchResultAdapter } from '../adapters/models/market-search-result.adapter';
 import { Observable } from 'rxjs';
 import { PomogatorAddMultipleTagsSettingsParams, pomogatorAddMultipleTagsSettingsAdapter } from './params/pomogator-add-multiple-tags-settings.params';
 import { PomogatorAddPriceListSettingsParams, pomogatorAddPriceListSettingsAdapter } from './params/pomogator-add-price-list-settings.params';
@@ -89,9 +92,9 @@ export class PomogatorRepository {
     );
   }
 
-  pomogatorGetSettingsPriceLists(params?: PomogatorGetSettingsPriceListsParams): Observable<PriceListItemAlt[]> {
+  pomogatorGetSettingsPriceLists(params?: PomogatorGetSettingsPriceListsParams): Observable<MarketPaginationResult<PriceListItemAlt[]>> {
     return this._api.pomogatorGetSettingsPriceLists(pomogatorGetSettingsPriceListsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => priceListItemAltAdapter(item)))
+      map((res) => marketPaginationResultOfListOfPriceListItemAltAdapter(res?.data))
     );
   }
 
@@ -113,9 +116,9 @@ export class PomogatorRepository {
     );
   }
 
-  pomogatorGetSettingsTags(params?: PomogatorGetSettingsTagsParams): Observable<TagItemAlt[]> {
+  pomogatorGetSettingsTags(params?: PomogatorGetSettingsTagsParams): Observable<MarketPaginationResult<TagItemAlt[]>> {
     return this._api.pomogatorGetSettingsTags(pomogatorGetSettingsTagsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => tagItemAltAdapter(item)))
+      map((res) => marketPaginationResultOfListOfTagItemAltAdapter(res?.data))
     );
   }
 
@@ -125,9 +128,9 @@ export class PomogatorRepository {
     );
   }
 
-  pomogatorGetTradeRecommendationsExtended(params?: PomogatorGetTradeRecommendationsExtendedParams): Observable<MarketSearchResult[]> {
+  pomogatorGetTradeRecommendationsExtended(params?: PomogatorGetTradeRecommendationsExtendedParams): Observable<MarketPaginationResult<MarketSearchResult[]>> {
     return this._api.pomogatorGetTradeRecommendationsExtended(pomogatorGetTradeRecommendationsExtendedAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => marketSearchResultAdapter(item)))
+      map((res) => marketPaginationResultOfListOfMarketSearchResultAdapter(res?.data))
     );
   }
 

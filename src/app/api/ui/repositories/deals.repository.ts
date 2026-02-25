@@ -9,9 +9,7 @@ import { dealFullPriceChangeAdapter } from '../adapters/models/deal-full-price-c
 import { DealHashToSign } from '../models/deal-hash-to-sign.interface';
 import { dealHashToSignAdapter } from '../adapters/models/deal-hash-to-sign.adapter';
 import { DealInfoAlt } from '../models/deal-info-alt.interface';
-import { dealInfoAltAdapter } from '../adapters/models/deal-info-alt.adapter';
 import { DealListItem } from '../models/deal-list-item.interface';
-import { dealListItemAdapter } from '../adapters/models/deal-list-item.adapter';
 import { DealsAddDealProvisionBySupplierParams, dealsAddDealProvisionBySupplierAdapter } from './params/deals-add-deal-provision-by-supplier.params';
 import { DealsAddPaperDealDocumentsParams, dealsAddPaperDealDocumentsAdapter } from './params/deals-add-paper-deal-documents.params';
 import { DealsApiService } from '../../swagger/services/deals-api.service';
@@ -89,6 +87,9 @@ import { MarketFullDeal } from '../models/market-full-deal.interface';
 import { marketFullDealAdapter } from '../adapters/models/market-full-deal.adapter';
 import { MarketFullOrderDeal } from '../models/market-full-order-deal.interface';
 import { marketFullOrderDealAdapter } from '../adapters/models/market-full-order-deal.adapter';
+import { MarketPaginationResult } from '../models/market-pagination-result.interface';
+import { marketPaginationResultOfListOfDealInfoAltAdapter } from '../adapters/models/market-pagination-result-of-list-of-deal-info-alt.adapter';
+import { marketPaginationResultOfListOfDealListItemAdapter } from '../adapters/models/market-pagination-result-of-list-of-deal-list-item.adapter';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -281,15 +282,15 @@ export class DealsRepository {
     );
   }
 
-  dealsGetDeals(params?: DealsGetDealsParams): Observable<DealInfoAlt[]> {
+  dealsGetDeals(params?: DealsGetDealsParams): Observable<MarketPaginationResult<DealInfoAlt[]>> {
     return this._api.dealsGetDeals(dealsGetDealsAdapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => dealInfoAltAdapter(item)))
+      map((res) => marketPaginationResultOfListOfDealInfoAltAdapter(res?.data))
     );
   }
 
-  dealsGetDeals2(params?: DealsGetDeals2Params): Observable<DealListItem[]> {
+  dealsGetDeals2(params?: DealsGetDeals2Params): Observable<MarketPaginationResult<DealListItem[]>> {
     return this._api.dealsGetDeals2(dealsGetDeals2Adapter(params)).pipe(
-      map((res) => (res?.data?.items ?? []).map((item) => dealListItemAdapter(item)))
+      map((res) => marketPaginationResultOfListOfDealListItemAdapter(res?.data))
     );
   }
 
